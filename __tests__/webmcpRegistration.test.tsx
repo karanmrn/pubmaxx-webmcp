@@ -13,7 +13,7 @@ type RegisteredTool = {
   annotations: Record<string, boolean>;
   execute: (
     input: unknown,
-    context: WebMcpToolExecutionContext,
+    context?: WebMcpToolExecutionContext,
   ) => Promise<WebMcpJsonValue>;
 };
 
@@ -221,6 +221,31 @@ describe("WebMCP tool registration", () => {
       input,
       context,
     );
+  });
+
+  it("supplies a safe execution signal when the browser omits call context", async () => {
+    const registrations: Registration[] = [];
+    const toolImplementations = implementations();
+
+    registerWebMcpTools({
+      modelContext: {
+        registerTool: (tool: RegisteredTool, options: { signal: AbortSignal }) => {
+          registrations.push({ tool, signal: options.signal });
+          return Promise.resolve(undefined);
+        },
+      },
+      implementations: toolImplementations,
+      onStatus: () => {},
+    });
+
+    const tool = registrations.find(
+      ({ tool: candidate }) => candidate.name === "search_pubmaxx_venues",
+    )!.tool;
+
+    await expect(tool.execute({ query: "Clapham" })).resolves.toEqual({ status: "ok" });
+    const executionContext = vi.mocked(toolImplementations.search_pubmaxx_venues).mock.calls[0][1];
+    expect(executionContext.signal).toBeInstanceOf(AbortSignal);
+    expect(executionContext.signal.aborted).toBe(false);
   });
 
   it("aborts every registration and reports failed when one rejects", async () => {

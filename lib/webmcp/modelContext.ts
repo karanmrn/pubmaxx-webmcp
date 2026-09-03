@@ -8,6 +8,10 @@ const WEBMCP_TOOL_NAMES = [
   "open_crawl_in_pubmaxx",
 ] as const;
 
+const FALLBACK_EXECUTION_CONTEXT: WebMcpToolExecutionContext = {
+  signal: new AbortController().signal,
+};
+
 export type WebMcpToolName = (typeof WEBMCP_TOOL_NAMES)[number];
 export type WebMcpRegistrationStatus =
   | "unavailable"
@@ -199,7 +203,10 @@ export function registerWebMcpTools({
           ...TOOL_REGISTRATIONS[name],
           execute: async (input, context) => {
             if (!validToolInput(name, input)) return invalidInput(name);
-            return await implementations[name](input as never, context);
+            return await implementations[name](
+              input as never,
+              context?.signal ? context : FALLBACK_EXECUTION_CONTEXT,
+            );
           },
         },
         { signal: controller.signal },

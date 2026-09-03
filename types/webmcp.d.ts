@@ -27,7 +27,7 @@ declare global {
     annotations?: WebMcpToolAnnotations;
     execute: (
       input: unknown,
-      context: WebMcpToolExecutionContext,
+      context?: WebMcpToolExecutionContext,
     ) => Promise<WebMcpJsonValue>;
   }
 
