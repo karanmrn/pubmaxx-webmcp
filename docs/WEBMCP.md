@@ -49,7 +49,7 @@ Open `http://localhost:3000/webmcp` in ChatGPT's in-app browser. No environment 
 Focused checks:
 
 ```sh
-npx vitest run __tests__/webmcpRegistration.test.tsx __tests__/webmcpBoard.test.ts
+npx vitest run __tests__/webmcpRegistration.test.tsx __tests__/webmcpBoard.test.ts __tests__/webmcpPage.test.ts
 npx eslint app/webmcp/page.tsx components/webmcp/WebMcpNightBoard.tsx lib/webmcp e2e/webmcp-night-board.spec.ts
 npx playwright test e2e/webmcp-night-board.spec.ts --project=chromium
 ```

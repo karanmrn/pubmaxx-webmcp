@@ -2,7 +2,7 @@
 
 ## Links
 
-- Live application: `https://pubmaxxing.com/webmcp`
+- Live application: `https://chengdu-ndpx8fznc-pubmax69.vercel.app/webmcp`
 - Public source: `https://github.com/karanmrn/pubmaxx-webmcp`
 - Public demo video: `YOUTUBE_URL_PENDING`
 
@@ -30,7 +30,7 @@ The top-level `/webmcp` client registers five tools through `document.modelConte
 
 ### 0:00 to 0:20 - Problem
 
-Open `pubmaxxing.com/webmcp`.
+Open `chengdu-ndpx8fznc-pubmax69.vercel.app/webmcp`.
 
 "Planning a London night needs personal taste, but venue and route claims still need a trusted product source. This is the PUBMAXX Agent Night Board, one visible surface for a person and a browser agent."
 
@@ -42,13 +42,13 @@ Show `Agent tools ready`. Ask the agent to list the WebMCP tools.
 
 ### 0:40 to 1:05 - Shared evidence
 
-Ask the agent to search for a Clapham pub and read London context. Show both evidence blocks together.
+Ask the agent to search for a Victoria pub and read London context. Show both evidence blocks together.
 
 "Search is limited to the curated PUBMAXX index. London context is capped, labelled as external evidence, and cannot steer another tool. Each result remains visible until that tool replaces it."
 
 ### 1:05 to 1:40 - Grounded route
 
-Ask: "Draft three affordable lively pubs in Clapham with a short walk." Show Revision 1, ordered Stops, reasons, walking time, confidence, and warnings.
+Ask: "Draft three pubs in Victoria." Show Revision 1, ordered Stops, reasons, walking time, confidence, and warnings.
 
 "The agent does not invent this route. It calls the existing grounded PUBMAXX planner. Revision checks stop two actions from overwriting each other."
 
