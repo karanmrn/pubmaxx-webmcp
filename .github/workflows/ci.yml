@@ -1,0 +1,320 @@
+name: CI
+
+# Stock GitHub-hosted runners (`ubuntu-latest`). Effective RLS stays in
+# rls-session.yml so this workflow stays lean and finishes under the 15-minute
+# wall budget. Re-enabled for pull_request / push after the captain rejected the
+# Blacksmith migration (#747); RLS already proves hosted allocation works.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  review-scope:
+    name: Review scope
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    steps:
+      - name: Checkout full diff
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Check changed-file scope
+        env:
+          REVIEW_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          REVIEW_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: node scripts/check_review_scope.mjs --base "$REVIEW_BASE_SHA" --head "$REVIEW_HEAD_SHA"
+
+  lint-and-types:
+    name: Lint and typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+        run: npx tsc --noEmit
+
+  production-build:
+    name: Production build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+        run: npm run build
+
+  unit-tests:
+    name: Unit tests (${{ matrix.shard }}/4)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      # Postgres/PostgREST proofs live in rls-session.yml. Hosted images can
+      # expose partial postgres client/server tools, which makes the RLS harness
+      # fail hard instead of skip; force the loud-skip path and omit the
+      # migration/RLS suites that need a real cluster.
+      - name: Unit tests
+        env:
+          PUBMAX_RLS_NO_PG: "1"
+        run: >-
+          npx vitest run
+          --shard=${{ matrix.shard }}/4
+          --exclude '__tests__/rlsWave2Session.test.ts'
+          --exclude '__tests__/socialCrewLegacyRoutesRls.test.ts'
+          --exclude '__tests__/socialCrewMigration.test.ts'
+          --exclude '__tests__/pintDropVerifiedReportsMigrationEffective.test.ts'
+          --exclude '__tests__/wantedPromotionMigrationEffective.test.ts'
+          --exclude '__tests__/**/*Migration.test.ts'
+
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Enforce coverage
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+          PUBMAX_RLS_NO_PG: "1"
+        run: >-
+          npm run coverage --
+          --exclude '__tests__/rlsWave2Session.test.ts'
+          --exclude '__tests__/socialCrewLegacyRoutesRls.test.ts'
+          --exclude '__tests__/socialCrewMigration.test.ts'
+          --exclude '__tests__/pintDropVerifiedReportsMigrationEffective.test.ts'
+          --exclude '__tests__/wantedPromotionMigrationEffective.test.ts'
+          --exclude '__tests__/**/*Migration.test.ts'
+
+  freshness:
+    name: Freshness release gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check every tracked feed
+        run: |
+          npm run check:freshness -- --artifacts-only
+          node scripts/check-production-store-freshness.mjs
+
+  # Speed is the product's claim, so a pull request that slows a budgeted route
+  # fails here rather than being noticed on a phone weeks later. The ceilings
+  # live in perf/route-budgets.json and docs/PERFORMANCE_BUDGETS.md owns the rule
+  # for changing one. Every route in that file is measured, two runs each after a
+  # thrown-away warm-up, under a 4x CPU throttle. The UX lane report is its OWN
+  # job below rather than a second sweep in this step: both build and serve the
+  # app themselves, and one 15-minute wall cannot hold two full sweeps of a
+  # route set whose map load alone runs 10 to 25 seconds cold.
+  performance-budget:
+    name: Performance budget
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      # Chromium only: the budget is measured in one engine on purpose, so a run
+      # is comparable to the one before it.
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      # Playwright's webServer builds and starts the production build itself
+      # (playwright.config.ts owns the env the keyless routes need). Measuring a
+      # dev server would be a number about the bundler, not about what a drinker
+      # downloads.
+      - name: Measure budgeted routes
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+          PUBMAX_PERF_BUDGET: "1"
+          PUBMAX_E2E_KEYLESS: "1"
+          PW_SKIP_KEYLESS_WEBSERVER: "1"
+        run: npx playwright test e2e/performance-budget.spec.ts --project=chromium --workers=1
+
+  # UX lane 13: four arrival routes (/, /near, /map/london, /out) reported with
+  # LCP and CLS beside decoded JS, attached as a markdown table for the PR body.
+  # It measures on the method e2e/helpers/perfMeasurement.ts owns, so its figures
+  # are comparable to the ceilings above. It REPORTS rather than gates: a route
+  # over its own ceiling is printed as a warning, because the ceilings are
+  # already enforced by the job above. It fails only on a route it could not
+  # measure at all, which is a broken route rather than a slow one.
+  ux-lane-performance:
+    name: UX lane performance
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Report UX lane routes
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+          PUBMAX_PERF_BUDGET: "1"
+          PUBMAX_E2E_KEYLESS: "1"
+          PW_SKIP_KEYLESS_WEBSERVER: "1"
+        run: npx playwright test e2e/ux-lane-perf-verification.spec.ts --project=chromium --workers=1
+
+      # The spec writes the table into its own Playwright output directory, so
+      # this glob names that file rather than the renamed attachments copy
+      # beside it. `warn` rather than `ignore`: a missing table is a finding,
+      # and rather than `error` because a sweep that failed early never wrote
+      # one and does not need a second red mark.
+      - name: Upload UX lane table
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ux-lane-13-perf
+          path: test-results/**/ux-lane-13-perf.md
+          if-no-files-found: warn

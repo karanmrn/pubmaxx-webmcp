@@ -1,0 +1,71 @@
+/* Vibe chips — house stamp skin (docs/DESIGN_SYSTEM.md caps policy).
+   One recipe for every surface that renders the seven owner-locked chips
+   from lib/vibeChips.ts. Sentence case, 44px floor, brass border.
+
+   The label face is var(--font-display) (Space Grotesk) and NOT the party
+   accent: Bungee draws cap-height glyphs only, so a sentence-case label still
+   reached the reader as ALL CAPS however the casing declaration read. The
+   party face itself is untouched everywhere else.
+
+   text-transform is stated as `none` rather than deleted: app/globals.css also
+   declares .vibeChip with `text-transform: lowercase`, so an absent declaration
+   here hands the label's casing to whichever sheet the bundler ordered last.
+   Every chip is a button or a link, so the recipe is also stated one notch up
+   at (0,1,1) and the casing holds whatever that order turns out to be. The
+   shell class cannot carry that job: callers rename it (tonightVibes,
+   palChatExamples), so an ancestor bump would match neither real surface. */
+
+.vibeChips {
+  /* Shell spacing is owned by each surface (Tonight margin, Pal examples pad). */
+}
+
+.vibeChipsLede {
+  margin: 0 0 8px;
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.vibeChipsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Load-bearing inside .palChat: its `button { font: inherit }` (0,1,1) resets
+   stamp typography unless this rule outranks it. */
+.palChat button.vibeChip,
+.palChat a.vibeChip,
+button.vibeChip,
+a.vibeChip,
+.vibeChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 32%, var(--line));
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.vibeChip[data-active="true"] {
+  border-color: color-mix(in srgb, var(--brass) 85%, var(--line));
+  background: color-mix(in srgb, var(--brass) 22%, var(--panel-raised));
+  color: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .vibeChip:hover {
+    border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  }
+}

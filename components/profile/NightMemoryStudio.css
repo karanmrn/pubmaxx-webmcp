@@ -1,0 +1,99 @@
+/* NightMemoryStudio supplemental styles.
+   The base layout tokens live in app/u/[handle]/profile.css (memoryStudio*).
+   This file adds the first-run onboarding callout that appears when a user
+   has no Memories or Stories yet — a clear starting point, not a broken page. */
+
+.memoryStudioFirstRun {
+  margin: 0 0 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel-raised) 85%, var(--panel) 15%);
+}
+
+.memoryStudioFirstRunTitle {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display, var(--serif), system-ui, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 750;
+  color: var(--ink);
+}
+
+.memoryStudioFirstRunBody {
+  margin: 0 0 1rem;
+  max-width: 52ch;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.memoryStudioFirstRunActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Primary action: start a Moment capture right now. */
+.memoryStudioFirstRunPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid color-mix(in srgb, var(--brass) 50%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .memoryStudioFirstRunPrimary:hover {
+    border-color: color-mix(in srgb, var(--brass) 75%, var(--line));
+    background: color-mix(in srgb, var(--brass) 20%, var(--panel-raised));
+  }
+}
+
+.memoryStudioFirstRunPrimary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Secondary: log a pint first (lighter weight). */
+.memoryStudioFirstRunSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.16s ease, color 0.16s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .memoryStudioFirstRunSecondary:hover {
+    border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+    color: var(--ink);
+  }
+}
+
+.memoryStudioFirstRunSecondary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memoryStudioFirstRunPrimary,
+  .memoryStudioFirstRunSecondary {
+    transition: none;
+  }
+}

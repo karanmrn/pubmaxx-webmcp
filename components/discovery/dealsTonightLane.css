@@ -1,0 +1,137 @@
+.dealsTonight {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 0;
+}
+
+.dealsTonightHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.dealsTonightHead h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.dealsTonightChecked {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.dealsTonightLead {
+  margin: 0 0 0.85rem;
+  max-width: 42rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.dealsTonightList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .dealsTonightList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dealsTonightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--line) 85%, var(--brass) 15%);
+  border-radius: 14px;
+  background: var(--panel-raised);
+  color: inherit;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.dealsTonightCard:hover,
+.dealsTonightCard:focus-visible {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  outline: none;
+}
+
+.dealsTonightCard strong {
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.dealsTonightCardHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.dealsTonightPlace {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* The closing time the row itself carries. Weighted like the place line: it is
+   a fact the reader acts on, not a decoration. */
+.dealsTonightEnds {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--brass);
+}
+
+.dealsTonightDetail {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  overflow-wrap: break-word;
+}
+
+/* Wraps, never truncates: an age cut mid-word is a freshness claim the reader
+   cannot finish reading, which is the one thing this caption exists to give. */
+.dealsTonightListingAge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  overflow-wrap: break-word;
+}
+
+.dealsTonightSource {
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--ink-soft) 80%, var(--brass));
+}
+
+.dealsTonightMap {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.dealsTonightMap:hover,
+.dealsTonightMap:focus-visible {
+  text-decoration: underline;
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Candidate E "The Crossroads" (wildcard): equal-weight X, terminals cut
+       perpendicular to each stroke (true rectangles), reaching corner to corner.
+       Maximally confident, bold, symmetric — the night at full tilt. -->
+  <polygon points="15.5,8.5 55.5,48.5 48.5,55.5 8.5,15.5" fill="#ff5a5f"/>
+  <polygon points="48.5,8.5 55.5,15.5 15.5,55.5 8.5,48.5" fill="#ff5a5f"/>
+</svg>

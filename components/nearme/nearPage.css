@@ -1,0 +1,74 @@
+/* /near page shell. Matches other app reading pages (discover/today): standard
+   SiteNav and shared wayfinding. Phones keep one centred answer column;
+   desktop widens that answer and adds a sticky Pint/Desk rail without changing
+   the markup. */
+
+.nmnPage {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  /* Same outer pad rhythm as .discoverPage / content pages keeps content inside
+     the screen gutters. The desktop composition widens the body below. */
+  padding: 16px var(--page-gutter) calc(96px + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+}
+
+.nmnPageBody {
+  width: 100%;
+  max-width: min(560px, 100%);
+  margin: 0 auto;
+  padding: var(--space-6, 24px) 0 var(--space-10, 48px);
+  box-sizing: border-box;
+}
+
+/* Poster QR arrival: one orientation line above the near-me answer. */
+.nmnPosterNote {
+  margin: 0 0 var(--space-4, 16px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  border-left: 3px solid var(--brass);
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+/* ── Desktop composition ──────────────────────────────────────────────────
+   The answer column was a flat 560px at every width, while the SiteNav pill
+   above it escapes its host to 1100px on desktop (siteNav.css) — so at 1440 a
+   wide bar sat over a thin ribbon and the ranked answer read as an afterthought
+   in a mostly empty page.
+
+   Desktop leads with the answer: the ranked list keeps its single ordered
+   column (rank is the whole point of it, so it is never split two-up) but takes
+   the primary width, and the Pint/Desk control moves into a sticky rail beside
+   it instead of stacking above it. DOM order is untouched — the control still
+   precedes the answer it governs for keyboard and screen-reader users, and no
+   markup changed, so every /near behaviour test still describes this page.
+   Mobile is unchanged by contract: the whole composition is inside the
+   breakpoint, and the nearme stylesheets carried no width query before it. */
+@media (min-width: 1024px) {
+  .nmnPageBody {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+    align-items: start;
+    justify-content: center;
+    column-gap: 48px;
+    max-width: var(--content-max-wide, 1240px);
+  }
+
+  /* The answer and its arrival note lead the primary column. */
+  .nmnPosterNote,
+  .nmnPageBody > .nmn {
+    grid-column: 1;
+  }
+
+  /* The mode control holds row 1 of the rail whether or not a poster note is
+     present above the answer, so it never drifts down the page. */
+  .nmnPageBody > .nearModeSwitch {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 96px; /* clears the floating SiteNav pill, as .feedRail does */
+    margin-bottom: 0;
+  }
+}

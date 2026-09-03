@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 64 64">
+  <!--
+    Store icon master (issue #440, re-branded to the Wave C icon identity,
+    #520/#523): a clean WHITE tile with the coral double-struck X. No text, no
+    rounding (both stores mask). This flips the retired ink-field / coral-Clink
+    lock to the current app-icon treatment — pure #ffffff field + coral #ff5a5f
+    mark — exactly as scripts/gen-native-app-icons.mjs stamps icon-only.png and
+    scripts/gen-brand-assets.mjs stamps the web tile. Geometry is the canonical
+    double-struck X from components/brand/PubmaxxMark.tsx MARK_GEOMETRY: one thick
+    descending stroke (\) over two thin parallel ascending strokes (/) as filled
+    polygons. NO ember — the static icon exports drop it (the crossing is already
+    the event); the ember lives only on the lit in-app surfaces. The scale 0.82
+    inset matches the native icon-only.png source exactly. No candle glow (a coral
+    wash is invisible on white and off the new icon system). Exports at or under
+    64px use icon-square-small.svg instead (the small-optics cut). Native
+    width/height 1024 so raster tools render this size before scaling.
+  -->
+  <rect width="64" height="64" fill="#ffffff"/>
+  <g transform="translate(32 32) scale(0.82) translate(-32 -32)">
+    <polygon points="42,10 47,10 13,54 8,54" fill="#ff5a5f"/>
+    <polygon points="51,10 56,10 22,54 17,54" fill="#ff5a5f"/>
+    <polygon points="9,10 21,10 55,54 43,54" fill="#ff5a5f"/>
+  </g>
+</svg>

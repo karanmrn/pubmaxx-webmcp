@@ -1,0 +1,2215 @@
+/* PUBMAXXING feed — an image-first vertical stream. Scoped under .feedShell so
+   nothing leaks into the app shell. Colour/spacing lean on the design-system
+   tokens declared in globals.css (--brass, --ink, --ink-soft, --panel,
+   --panel-raised, --line, --paper) so the surface inherits the shared theme. */
+
+.feedShell {
+  /* The default reading column adopts shared --content-max (640px). The feed
+     ran at a 20px-narrower 620px before the width audit; the token wins so the
+     stream lines up with /today, crawl and moment columns. Individual feed
+     surfaces may opt into --content-max-wide for desktop composition. */
+  --feed-max: var(--content-max);
+  --feed-card-max: 520px;
+  --feed-glass: var(--panel-raised);
+  --feed-glass-solid: var(--panel-raised);
+  --feed-border: color-mix(in srgb, var(--line) 72%, var(--panel-raised) 28%);
+  --feed-coral-wash: color-mix(in srgb, var(--brass) 11%, var(--panel-raised));
+  --feed-blue-wash: color-mix(in srgb, var(--river) 9%, var(--panel-raised));
+  --feed-green-wash: color-mix(in srgb, var(--pint) 9%, var(--panel-raised));
+  --feed-gold-wash: color-mix(in srgb, var(--amber) 12%, var(--panel-raised));
+  --feed-shadow: 0 14px 32px color-mix(in srgb, var(--ink-deep) 10%, transparent),
+    0 6px 14px color-mix(in srgb, var(--brass) 8%, transparent);
+
+  /* iOS Safari scroll stability: `vh` resolves to the LARGE viewport and, worse,
+     any `dvh` reflows as the URL bar collapses/expands mid-scroll — both make the
+     feed jump. `svh` is the SMALL (stable) viewport, so the shell never resizes
+     as the toolbar animates. The stable small viewport is intentional here. */
+  min-height: 100svh;
+  background:
+    linear-gradient(105deg, transparent 0 16%, color-mix(in srgb, var(--river) 7%, transparent) 16% 17%, transparent 17% 100%),
+    linear-gradient(150deg, transparent 0 72%, color-mix(in srgb, var(--amber) 8%, transparent) 72% 73%, transparent 73% 100%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--paper) 86%, var(--panel-raised) 14%) 0,
+      var(--paper) 430px
+    );
+  color: var(--ink);
+  padding: 22px var(--page-gutter) 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.feedShell *,
+.feedShell *::before,
+.feedShell *::after {
+  box-sizing: border-box;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────── */
+.feedHeader {
+  width: 100%;
+  max-width: var(--feed-max);
+  padding: 2px 4px 4px;
+  text-align: center;
+}
+
+/* .feedEyebrow / .feedLede are retired from the /feed header (spec #395: one
+   compact intro line only) but are still used by the We're-out surface, which
+   imports this stylesheet — so the rules stay. */
+.feedEyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  margin: 0 0 10px;
+  padding: 0 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 22%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 9%, transparent);
+  color: var(--brass);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.feedTitle {
+  margin: 0 0 10px;
+  font-family: var(--font-display, var(--serif), system-ui, sans-serif);
+  font-size: 2.65rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.feedLede {
+  margin: 0 auto;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.feedComposeActions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.feedMomentCta,
+.feedDropCta {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: .88rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.feedMomentCta {
+  border-color: color-mix(in srgb, var(--brass) 45%, var(--line));
+  background: var(--brass);
+  color: #fff;
+}
+
+.feedMomentCta:hover,
+.feedDropCta:hover {
+  transform: translateY(-1px);
+}
+
+/* ── "Live tonight" presence strip (PRD §1.5 / §5.1 tonight loop) ───────────
+   A compact horizontal band at the top of the feed showing who tapped "I'm
+   here" recently. Renders nothing when empty (the component returns null), so
+   these styles only ever apply to a populated strip. Horizontally scrollable on
+   overflow so a busy night never wraps into a tall block. */
+.presenceStrip {
+  width: 100%;
+  max-width: var(--feed-max);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  border: 1px solid var(--feed-border);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--ink-deep) 8%, transparent);
+  overflow: hidden;
+}
+
+.presenceStripLabel {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--brass);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* A small live "on air" dot next to the label. A soft pulse under
+   prefers-reduced-motion: no-preference (see the motion block at the bottom). */
+.presenceDot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--pint);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pint) 22%, transparent);
+}
+
+/* "X spilling right now" chip (issue #37) — a small live counter beside the
+   label, derived from the last hour of drops. */
+.presenceSpilling {
+  flex: 0 0 auto;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--pint);
+  white-space: nowrap;
+}
+
+/* "N new pints — tap to show" live pill (issue #37). A FLOATING overlay pinned
+   to the viewport (not an in-flow box), so it can appear/disappear on each live
+   poll WITHOUT displacing the reading surface — the reader is never shoved down
+   when new drops are buffered. (An in-flow pill relied on scroll anchoring to
+   keep the reader in place; iOS Safari doesn't implement it, so it jumped.)
+   Sits just below the floating SiteNav pill, centred, above the cards. */
+.feedNewPill {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 66px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  padding: 7px 16px;
+  border: 1px solid color-mix(in srgb, var(--brass) 38%, var(--feed-border));
+  border-radius: var(--control-radius, 14px);
+  background: var(--feed-coral-wash);
+  color: var(--brass);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brass) 14%, transparent);
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.feedNewPill:hover {
+  background: color-mix(in srgb, var(--brass) 15%, var(--panel-raised));
+}
+
+.feedNewPill:active {
+  transform: translateX(-50%) translateY(1px);
+}
+
+.presenceList {
+  flex: 1 1 auto;
+  /* Allow the scroll container to shrink inside the flex row; without this a
+     long "who's here" run keeps its content width and pushes the whole strip
+     into horizontal overflow instead of scrolling within it. */
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0 2px;
+  list-style: none;
+  overflow-x: auto;
+  touch-action: pan-y;
+  scrollbar-width: none;
+  /* D8: the ticker used to hard-clip whichever item sat at the scroll edge
+     mid-word ("@handle at 'T…") with no hint there was more to scroll.
+     Snapping keeps a rested scroll position on a full item, never a sliver
+     of the next one, and the mask fades that edge item to transparent
+     instead of a hard pixel cut when it doesn't fully fit. */
+  scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 22px), transparent 100%);
+  mask-image: linear-gradient(to right, black calc(100% - 22px), transparent 100%);
+}
+
+.presenceList::-webkit-scrollbar {
+  display: none;
+}
+
+.presenceItem {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  white-space: nowrap;
+  font-size: 0.86rem;
+}
+
+.presenceHandle {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.presenceAt {
+  color: var(--muted, #8a8577);
+}
+
+.presenceVenue {
+  display: inline-block;
+  max-width: 46vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  color: var(--river);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+  /* A single pathologically-long venue name clips with an ellipsis rather than
+     blowing out the ticker's scroll width. */
+  display: inline-block;
+  max-width: 14ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.presenceVenue:hover {
+  border-bottom-color: var(--river);
+}
+
+.presenceVenue:focus-visible {
+  outline: 2px solid var(--river);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.presenceAgo {
+  color: var(--muted, #8a8577);
+  font-size: 0.8rem;
+}
+
+/* Honest provenance chip on seeded ambient presence rows (lib/ambientPresence)
+   — the shared dashed/muted Demo idiom (docs/DESIGN_SYSTEM.md, matches
+   .drinkProvChip.demo), so demo liveliness never masquerades as a real tap. */
+.presenceDemoChip {
+  flex: 0 0 auto;
+  align-self: center;
+  padding: 1px 7px;
+  border: 1px dashed var(--muted, #8a8577);
+  border-radius: 999px;
+  color: var(--muted, #8a8577);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Filter chips ─────────────────────────────────────────────────────── */
+.feedFilters {
+  position: relative;
+  width: 100%;
+  max-width: var(--feed-max);
+  display: flex;
+  column-gap: 8px;
+  /* Vertical breathing room between chips when the strip wraps to a second row. */
+  row-gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Owner ruling (2026-07-23): the gliding brass underline strip beneath the
+   active chip is removed — "remove the dash underline, it's ugly". The active
+   chip's own filled gradient (.feedFilterChip.isActive below) already carries
+   the selected state, so no decorative indicator is needed. */
+
+.feedFilterChip {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--feed-border);
+  border-radius: 999px;
+  /* Wave I3: solid raised panel — less stacked glass on non-map pages */
+  background: var(--panel-raised, var(--panel));
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow, 0 2px 8px rgba(22, 18, 42, 0.05));
+  transition: border-color 180ms var(--ease-out-strong, ease-out),
+    background 180ms var(--ease-out-strong, ease-out),
+    color 180ms var(--ease-out-strong, ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .feedFilterChip:hover {
+    border-color: var(--brass);
+    color: var(--ink);
+  }
+}
+
+.feedFilterChip.isActive {
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright, var(--brass)));
+  border-color: var(--brass);
+  color: var(--color-on-accent, #fdfaf2);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brass) 18%, transparent);
+}
+
+.feedFilterChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.feedFilterDemo {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 16%, transparent);
+  color: var(--brass);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.feedFilterChip.isActive .feedFilterDemo {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fdfaf2;
+}
+
+/* ── The list ─────────────────────────────────────────────────────────── */
+.feedList {
+  width: 100%;
+  max-width: var(--feed-card-max);
+  display: flex;
+  flex-direction: column;
+  /* Taste fix (feed card slim): tighter rhythm so more than ~1.2 cards fit a
+     mobile viewport instead of one dominating the fold. */
+  gap: 14px;
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────── */
+.feedCard {
+  border: 1px solid var(--feed-border);
+  border-radius: 20px;
+  background: var(--panel-raised);
+  overflow: hidden;
+  box-shadow: var(--feed-shadow);
+}
+
+.feedCard-pending,
+.feedCard-uploading {
+  border-color: color-mix(in srgb, var(--brass) 45%, var(--line));
+}
+
+.feedCard-failed {
+  border-color: color-mix(in srgb, var(--brick, #9c3d2e) 55%, var(--line));
+}
+
+.feedCardStatus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line-soft, var(--line));
+  background: var(--feed-coral-wash);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.feedCardStatus-failed {
+  background: color-mix(in srgb, var(--brick, #9c3d2e) 10%, var(--panel));
+}
+
+.feedCardStatusText {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.feedUploadProgress {
+  width: 76px;
+  height: 7px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.feedUploadProgress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brass), var(--brass-bright, var(--brass)));
+}
+
+.feedRetryPost {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 6px 11px;
+  border: 1px solid var(--feed-border);
+  border-radius: var(--control-radius, 14px);
+  background: var(--feed-glass);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.feedRetryPost:hover {
+  border-color: var(--brick, var(--brass));
+}
+
+.feedRetryPost:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.feedCardHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px 10px;
+}
+
+.feedAvatar {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright, #ff8a5c));
+  color: var(--color-on-accent, #fdfaf2);
+  font-family: var(--font-display, var(--serif), system-ui, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--brass) 22%, transparent);
+}
+
+.feedWho {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.feedHandle {
+  font-weight: 700;
+  font-size: 0.92rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feedTime {
+  color: var(--muted, #8a8577);
+  font-size: 0.74rem;
+}
+
+/* Pub identity anchor (taste fix, feed card slim) — the pub name sits right
+   under the handle, ahead of the timestamp, so it reads before the price does
+   rather than getting buried in a line at the bottom of the card. */
+.feedVenueLinkHead {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--river);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+}
+
+.feedVenueLinkHead:hover {
+  border-bottom-color: var(--river);
+}
+
+.feedVenueLinkHead:focus-visible {
+  outline: 2px solid var(--river);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.feedMetaLine {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted, #8a8577);
+  font-size: 0.74rem;
+}
+
+.feedProv {
+  flex: 0 0 auto;
+  padding: 3px 9px;
+  border: 1px solid var(--feed-border);
+  border-radius: 999px;
+  background: var(--feed-glass);
+  color: var(--muted, #8a8577);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.feedProv-contributor {
+  border-color: color-mix(in srgb, var(--brass) 45%, transparent);
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  color: var(--brass);
+}
+
+.feedProv-anecdote {
+  font-style: italic;
+}
+
+/* Photo — bounded, square-ish, lazy. */
+.feedPhotoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--feed-blue-wash);
+  overflow: hidden;
+}
+
+.feedPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feedPriceStamp {
+  /* Wave I3: DESIGN_SYSTEM ink-stamp — brass price stamp, not a glass pill. */
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border: 1.5px solid color-mix(in srgb, var(--brass) 55%, var(--ink));
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--panel-raised) 92%, var(--brass) 8%);
+  color: color-mix(in srgb, var(--pint) 72%, var(--ink));
+  font-family: var(--font-data, var(--font-display), ui-monospace, monospace);
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow, 0 4px 12px rgba(22, 18, 42, 0.12));
+  transform: rotate(-2deg);
+  /* view-transition-name must be unique per card — set inline on FeedCard. */
+}
+
+/* Receipt fallback — a typographic card when there is no photo. Taste fix
+   (feed card slim): the price used to be the ONLY thing you saw at a glance
+   (3.05rem, centre stage); the pub identity now anchors the header above, so
+   the price can read as prominent-but-not-alone rather than dominant. Aspect
+   also tightened (1.6 → 1.9) so a text-only card doesn't out-weigh a photo one. */
+.feedReceipt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  aspect-ratio: 1.9;
+  padding: 20px 20px;
+  background:
+    linear-gradient(112deg, transparent 0 18%, color-mix(in srgb, var(--river) 9%, transparent) 18% 19%, transparent 19%),
+    linear-gradient(154deg, transparent 0 74%, color-mix(in srgb, var(--amber) 10%, transparent) 74% 75%, transparent 75%),
+    linear-gradient(160deg, var(--feed-coral-wash) 0%, var(--feed-glass-solid) 68%);
+  text-align: center;
+}
+
+.feedReceiptEyebrow {
+  color: var(--brass);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.feedReceiptPrice {
+  align-self: center;
+}
+
+.feedReceiptPriceMuted {
+  font-family: var(--font-display, var(--serif), system-ui, sans-serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.feedReceiptDrink {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.feedReceiptEra {
+  color: var(--muted, #8a8577);
+  font-size: 0.82rem;
+}
+
+/* Card body */
+.feedCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px 14px;
+}
+
+.feedVibes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feedVibe {
+  padding: 3px 10px;
+  border: 1px solid var(--feed-border);
+  border-radius: 999px;
+  background: var(--feed-glass);
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.feedVibe:nth-child(3n + 1) {
+  border-color: color-mix(in srgb, var(--river) 24%, var(--feed-border));
+  background: var(--feed-blue-wash);
+}
+
+.feedVibe:nth-child(3n + 2) {
+  border-color: color-mix(in srgb, var(--pint) 24%, var(--feed-border));
+  background: var(--feed-green-wash);
+}
+
+.feedVibe:nth-child(3n) {
+  border-color: color-mix(in srgb, var(--amber) 28%, var(--feed-border));
+  background: var(--feed-gold-wash);
+}
+
+.feedCaption {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* The pub name — a link to the map (?sel). Never the raw venue id. Now the
+   card's identity anchor, rendered up in the header (see .feedVenueLinkHead
+   above) rather than a separate line buried at the bottom of the body. */
+.feedVenueLink {
+  color: var(--river);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+}
+
+.feedVenueLink:hover {
+  border-bottom-color: var(--river);
+}
+
+.feedVenueLink:focus-visible {
+  outline: 2px solid var(--river);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Vertical 9:16 "Spill" card (issue #36) ──────────────────────────────────
+   The photo is the whole card, IG-Stories ratio, with everything overlaid on a
+   fixed dark scrim so text stays legible over an ARBITRARY photo in both themes. */
+.feedCardSpill {
+  /* The photo runs to the card edge — the overlaid content brings its own pad. */
+  overflow: hidden;
+}
+
+.feedSpill {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  /* Desktop guard: never let a single Spill dominate the viewport. */
+  max-height: 70vh;
+  background: var(--spill-surface);
+  overflow: hidden;
+}
+
+.feedSpillPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Provenance badge — top-left, always visible on the photo, verified-check idiom.
+   Sits on its own dark pill so it reads over any photo; the per-provenance colour
+   comes from the shared .feedProv-* classes (currentColor drives the glyph). */
+.feedSpillProv {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px 5px 8px;
+  border-radius: 999px;
+  background: var(--spill-veil);
+  backdrop-filter: blur(3px);
+  color: var(--brass-bright, #d8ab55);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brass) 40%, transparent);
+}
+
+/* On a photo the provenance colours must stay legible against the dark pill, so
+   they read brighter than the on-paper card variants. */
+.feedSpillProv.feedProv-contributor,
+.feedSpillProv.feedProv-sourced {
+  color: var(--brass-bright, #d8ab55);
+}
+
+.feedSpillProv.feedProv-anecdote {
+  color: #e7d8b4;
+  font-style: normal;
+}
+
+.feedSpillProv.feedProv-demo {
+  color: #cfc6b3;
+}
+
+.feedSpillProvGlyph {
+  flex: 0 0 auto;
+}
+
+.feedSpillProvLabel {
+  line-height: 1;
+}
+
+/* PriceBadge owns the price-stamp signature. This class only positions it over
+   the photo, so feed prices cannot drift from borough, recap, or sheet prices. */
+.feedSpillPrice {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+/* Bottom scrim — a FIXED dark gradient (never theme-mixed) so overlaid text is
+   legible over any photo in both themes. */
+.feedSpillScrim {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 56px 16px 16px;
+  color: #f3ecdc;
+  background: linear-gradient(
+    to top,
+    rgba(8, 7, 5, 0.92) 0%,
+    rgba(8, 7, 5, 0.7) 42%,
+    rgba(8, 7, 5, 0) 100%
+  );
+}
+
+.feedSpillWho {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.feedSpillAvatar {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright, #ff8a5c));
+  color: var(--color-on-accent, #fdfaf2);
+  font-family: var(--font-display, var(--serif), system-ui, sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--brass) 22%, transparent);
+}
+
+.feedSpillWhoText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.feedSpillHandle {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #fbf6ea;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feedSpillMeta {
+  font-size: 0.76rem;
+  color: #d9cfba;
+}
+
+.feedTrainBadge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 2px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.feedTrainBadge[data-tone="safe"] {
+  color: color-mix(in srgb, var(--pint, #138a63) 85%, #fff);
+  background: color-mix(in srgb, var(--pint, #138a63) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pint, #138a63) 40%, transparent);
+}
+
+.feedTrainBadge[data-tone="risk"] {
+  color: color-mix(in srgb, var(--brick, #b45309) 90%, #fff);
+  background: color-mix(in srgb, var(--brick, #b45309) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brick, #b45309) 40%, transparent);
+}
+
+.feedSpill .feedTrainBadge[data-tone="safe"] {
+  color: #c8f0dc;
+  background: color-mix(in srgb, #138a63 45%, transparent);
+  border-color: color-mix(in srgb, #9ae6c0 50%, transparent);
+}
+
+.feedSpill .feedTrainBadge[data-tone="risk"] {
+  color: #fde68a;
+  background: color-mix(in srgb, #b45309 45%, transparent);
+  border-color: color-mix(in srgb, #fbbf24 45%, transparent);
+}
+
+.feedWho .feedTrainBadge {
+  margin-left: 6px;
+}
+
+/* Pub identity anchor on the photo (taste fix, feed card slim): its own bold
+   line between the handle and the time/train meta, so the venue reads before
+   the price stamp does rather than getting lost as inline meta text. */
+.feedSpillVenueLink {
+  display: block;
+  color: var(--river-bright, #29b6f6);
+  font-size: 0.98rem;
+  font-weight: 800;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  border-bottom: 1px solid transparent;
+}
+
+.feedSpillVenueLink:hover {
+  border-bottom-color: var(--river-bright, #29b6f6);
+}
+
+.feedSpillVenueLink:focus-visible {
+  outline: 2px solid var(--river-bright, #29b6f6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* The passed-down note — serif, readable, over the scrim. Clamped so a long
+   note can't push the card, with the rest still on the permalink. */
+.feedSpillNote {
+  margin: 2px 0 0;
+  font-family: var(--font-garamond, var(--serif, Georgia), "Times New Roman", serif);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: #f3ecdc;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.feedSpillBarTab {
+  align-self: flex-start;
+  margin-top: 2px;
+  color: #e7d8b4;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231, 216, 180, 0.4);
+}
+
+.feedSpillBarTab:hover {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+
+.feedSpillBarTab:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Single compact action row (taste fix, feed card slim) ──────────────────
+   Reactions, share, "…" venue actions, the permalink and the comment count
+   all live on ONE row now instead of three stacked full-width bars. The row
+   wraps (flex-wrap) rather than overflow — on a narrow phone the reaction
+   chips can spill to a second visual line, but it's still one logical control
+   cluster, not three separate bordered sections. */
+.feedActionRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line-soft, var(--line));
+}
+
+.feedActionSpacer {
+  flex: 1 1 auto;
+}
+
+.feedMoreWrap {
+  display: inline-flex;
+}
+
+.feedReactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.feedReactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    transform var(--duration-press, 0.13s) var(--ease-out-strong, ease-out);
+}
+
+.feedReactBtn:hover {
+  border-color: var(--brass);
+  color: var(--ink);
+}
+
+.feedReactBtn:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+/* Pressed "on" token — a warm brass fill with a slightly firmer ring so the
+   state reads clearly at a glance, not just by colour. */
+.feedReactBtn.isOn {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel));
+  color: var(--brass);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brass) 30%, transparent);
+}
+
+.feedReactBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* A single quiet icon-shaped control shared by the "…" overflow, the icon
+   permalink and (via share.css) the compact ShareBar toggle — same size,
+   same brass-on-hover language, so the row reads as one family of controls. */
+.feedActionIconBtn,
+.feedPermalinkIcon,
+.commentToggleCompact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm, 6px);
+  background: var(--panel);
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease,
+    transform var(--duration-press, 0.13s) var(--ease-out-strong, ease-out);
+}
+
+.feedActionIconBtn:hover,
+.feedPermalinkIcon:hover,
+.commentToggleCompact:hover {
+  color: var(--brass);
+  border-color: var(--brass);
+  background: var(--panel-raised);
+}
+
+.feedActionIconBtn:active,
+.feedPermalinkIcon:active,
+.commentToggleCompact:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.feedActionIconBtn:focus-visible,
+.feedPermalinkIcon:focus-visible,
+.commentToggleCompact:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.feedActionIconBtn[aria-expanded="true"],
+.commentToggleCompact[aria-expanded="true"] {
+  color: var(--brass);
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel));
+}
+
+.commentToggleCompactCount {
+  font-size: 0.76rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The comment panel, opened from the compact pill, honestly breaks to its own
+   full-width line under the action row (flex-basis: 100% forces the wrap)
+   rather than squeezing into whatever space the icons left. */
+.commentPanelWrap {
+  flex: 1 1 100%;
+}
+
+.feedReactLabel {
+  white-space: nowrap;
+}
+
+/* Durable reaction count — a small tabular pill after the label. */
+.feedReactCount {
+  min-width: 1.1em;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.feedReactBtn.isOn .feedReactCount {
+  background: color-mix(in srgb, var(--brass) 20%, transparent);
+  color: var(--brass);
+}
+
+/* ── Load more / end ──────────────────────────────────────────────────── */
+.feedLoadMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Mobile infinite-scroll sentinel (PRD §2.5). Zero-height and aria-hidden so it
+   never affects layout or reading order — the IntersectionObserver watches it to
+   auto-reveal the next page on phones. The button below stays the fallback for
+   desktop, keyboard, and no-JS/observer-unsupported clients. */
+.feedSentinel {
+  width: 100%;
+  height: 1px;
+  pointer-events: none;
+}
+
+.feedLoadMoreBtn {
+  padding: 11px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--feed-glass-solid);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.feedLoadMoreBtn:hover {
+  border-color: var(--brass);
+  background: var(--panel-raised);
+}
+
+.feedLoadMoreBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.feedEndWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.feedEnd {
+  margin: 0;
+  color: var(--muted, #8a8577);
+  font-size: 0.84rem;
+  font-style: italic;
+}
+
+/* Primary CTA at the very end of the feed — closes the dead-end so the viewer
+   has one clear next step after exhausting the scroll. Sized to 44px min-height
+   (touch target), styled to match .feedMomentCta (same colour register). */
+.feedEndCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid color-mix(in srgb, var(--brass) 45%, var(--line));
+  border-radius: var(--control-radius, 14px);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .feedEndCta:hover {
+    border-color: color-mix(in srgb, var(--brass) 70%, var(--line));
+    background: color-mix(in srgb, var(--brass) 18%, var(--panel-raised));
+  }
+}
+
+.feedEndCta:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Error-state retry button. Same visual weight as .feedLoadMoreBtn but sized to
+   sit inside the shared EmptyState action slot. The error state uses role="alert"
+   so AT announces it immediately; the button gives keyboard users a one-tap path
+   back to the feed without a page reload. */
+.feedRetryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.16s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .feedRetryBtn:hover {
+    border-color: color-mix(in srgb, var(--brass) 50%, var(--line));
+  }
+}
+
+.feedRetryBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* ── Empty state ──────────────────────────────────────────────────────── */
+/* The visual pattern (dashed panel, eyebrow, serif title, muted body, one
+   action) now lives in the shared components/EmptyState.tsx + emptyState.css;
+   this class only widens it slightly for the feed's column layout. */
+.feedEmpty {
+  max-width: 500px;
+}
+
+/* Empty-feed CTA contract: one primary (44px) + at most one quiet secondary
+   link. Header compose is hidden on empty/error, so this pair is the whole
+   next-step surface, never a four-button stack. */
+.feedEmptyActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.feedEmpty .emptyStateAction a.feedEmptyPrimary {
+  min-height: 44px;
+}
+
+.feedEmpty .emptyStateAction a.feedEmptySecondary {
+  min-height: 44px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  filter: none;
+}
+
+.feedEmpty .emptyStateAction a.feedEmptySecondary:hover {
+  filter: none;
+  color: var(--ink);
+}
+
+/* ── Skeleton ─────────────────────────────────────────────────────────── */
+.feedCardSkeleton {
+  padding: 14px;
+  border-style: dashed;
+  border-color: var(--line-soft, var(--line));
+  box-shadow: none;
+}
+
+.feedSkelHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feedSkelAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--line-soft, var(--line));
+}
+
+.feedSkelPhoto {
+  width: 100%;
+  /* Wave L1 — most drops carry a photo and render as the 9:16 Spill card
+     (.feedSpill); a square skeleton used to snap to a much taller box the
+     instant real data landed. Matching the dominant card's silhouette here
+     means the loading state already hints at what's coming, and swap-in
+     doesn't jump the page as hard. */
+  aspect-ratio: 9 / 16;
+  max-height: 420px;
+  border-radius: 16px;
+  background: var(--line-soft, var(--line));
+  margin-bottom: 14px;
+}
+
+.feedSkelLine {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--line-soft, var(--line));
+  margin-bottom: 10px;
+}
+
+.feedSkelLineShort {
+  width: 45%;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Wave I1: tab bar centre Drop owns compose — hide the redundant header CTA.
+     Wave 2 (judge-w1 control-stack density): the Moment capture CTA falls to
+     the same reasoning — the tab bar's raised centre button IS "Capture a
+     Moment" on phones, so the header copy of it is pure duplication. Only
+     "We're out" (no tab of its own) keeps a header seat. */
+  .feedDropCta,
+  .feedMomentCta[href="/moment"] {
+    display: none;
+  }
+
+  /* Wave K3 — denser mobile stream; tightened again by the judge-w1 wave-2
+     pass: the control stack (title, CTA, scope tabs, filter chips) ran ~260px
+     before the first card. One header ROW (title left, We're out right), a
+     calmer title size, and tighter block gaps put the first card ~185px in.
+     Editorial density, not compression: every tap target stays 44px+. */
+  .feedShell {
+    /* Top padding is 10px (was 12px): SiteNav is the first child, so this sets
+       the standard bar's top offset. 10px + the bar's own env(safe-area) margin
+       matches the landing/map bars' shared top inset, so the bar lands on the
+       identical rect page-to-page. */
+    padding: 10px var(--page-gutter) calc(var(--mobile-tab-clearance, 72px) + 48px);
+    gap: 10px;
+  }
+
+  .feedHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: left;
+    padding: 0 2px;
+  }
+
+  .feedTitle {
+    font-size: clamp(1.3rem, 5.5vw, 1.6rem);
+    margin-bottom: 0;
+  }
+
+  .feedComposeActions {
+    margin-top: 0;
+    flex: 0 0 auto;
+  }
+
+  .feedLede {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .feedSocialTabs {
+    margin-bottom: 8px;
+  }
+
+  .feedList {
+    gap: 12px;
+  }
+
+  .feedCardHead {
+    padding: 10px 14px 8px;
+  }
+
+  .feedCardBody {
+    padding: 10px 12px;
+  }
+
+  .feedSpill {
+    /* Wave L1 — a taller cap so the 9:16 "IG Stories" ratio actually holds on
+       a phone (390×844-class viewport): the old 62vh/520px cap forced a much
+       squarer ~0.7 ratio (object-fit: cover was cropping the photo more than
+       the "every pint is a Story" treatment intends). Still short of the full
+       aspect-ratio-implied height, so the feed stays scrollable, not one card
+       eating the whole viewport. */
+    max-height: min(72vh, 620px);
+  }
+
+  .feedFilters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    touch-action: pan-y;
+    /* Judge-w2 polish 2 (second pass): tighter gap so all four primary labels
+       sit whole inside a 390px viewport and the at-rest cut lands BETWEEN
+       chips ("More" peeking under the fade), never mid-label — the w3 shot
+       still clipped "Cheap pints" mid-word at the edge. */
+    column-gap: 6px;
+    /* Extra trailing pad so the last chip ("Cheapest") clears the edge-fade
+       and isn't flush against the viewport edge — it used to read as cut off
+       with no hint the strip kept scrolling. */
+    padding: 0 28px 6px 2px;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 2px 28px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .feedFilterChip {
+    flex: 0 0 auto;
+    min-height: 44px;
+    /* Narrower pill inset on phones (same reason as the gap above); the 44px
+       min-height keeps every chip a full-size tap target. */
+    padding: 8px 12px;
+    scroll-snap-align: start;
+  }
+
+  /* Subtle edge fade — hints there's more to scroll. Only painted while the
+     strip actually has hidden content to the right (FeedFilters.tsx tracks
+     real scroll position), so it never dangles a hint with nothing behind it.
+     pointer-events: none keeps the last chip fully tappable underneath. */
+  .feedFilters.hasScrollHint::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 6px;
+    width: 32px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in srgb, var(--paper) 86%, var(--panel-raised) 14%) 78%
+    );
+  }
+
+}
+
+@media (max-width: 540px) {
+  /* Emoji-only reaction tokens on phones — a comfortable square tap target
+     instead of a cramped pill, so thumbs land cleanly. */
+  .feedReactLabel {
+    display: none;
+  }
+
+  .feedReactBtn {
+    min-height: 44px;
+    padding: 8px 14px;
+    font-size: 1.02rem;
+  }
+
+  .feedReactCount {
+    font-size: 0.8rem;
+  }
+
+  .feedReactions {
+    gap: 10px;
+  }
+}
+
+/* ── Motion (gated) ───────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .feedCard {
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+  }
+
+  .feedCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 46px rgba(44, 30, 62, 0.13),
+      0 10px 22px color-mix(in srgb, var(--brass) 10%, transparent);
+  }
+
+  /* Wave L1 — mount-only card entrance (FeedCard.tsx flips `entered` via rAF
+     right after first paint). A TRANSITION, not a @keyframes animation, so a
+     card torn down mid-entrance (fast filter switch, a live reveal) has
+     nothing to cancel or jump — it just stops wherever it was. Never scale
+     from 0: a small settle from scale(.98), matching the rubric. */
+  .feedCardEnter {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  .feedCardEntered {
+    opacity: 1;
+    transform: none;
+    transition-property: opacity, transform;
+    transition-duration: var(--duration-slow, 0.28s);
+    transition-timing-function: var(--ease-out-strong, ease-out);
+    transition-delay: 0ms;
+  }
+
+  /* A light stagger (30–80ms) across the first screenful only — capped so
+     page 2+ of "Load more"/infinite scroll never queues a long, draggy
+     cascade; everything past the 7th card settles together. */
+  .feedList > .feedCard:nth-child(2).feedCardEntered {
+    transition-delay: 40ms;
+  }
+  .feedList > .feedCard:nth-child(3).feedCardEntered {
+    transition-delay: 80ms;
+  }
+  .feedList > .feedCard:nth-child(4).feedCardEntered {
+    transition-delay: 120ms;
+  }
+  .feedList > .feedCard:nth-child(5).feedCardEntered {
+    transition-delay: 160ms;
+  }
+  .feedList > .feedCard:nth-child(6).feedCardEntered {
+    transition-delay: 200ms;
+  }
+  .feedList > .feedCard:nth-child(n + 7).feedCardEntered {
+    transition-delay: 240ms;
+  }
+
+  .feedSkelAvatar,
+  .feedSkelPhoto,
+  .feedSkelLine {
+    /* Wave L1 — calmer shimmer: a softer, wider glint mixed toward the raised
+       panel tone (not a stark line→line-soft jump) sweeping at a constant
+       (linear, not ease-in-out) pace. ease-in-out's deceleration right at the
+       loop boundary read as a small hitch/breath each cycle; linear keeps it
+       one continuous, unhurried glide. */
+    background: linear-gradient(
+      100deg,
+      var(--line-soft, var(--line)) 30%,
+      color-mix(in srgb, var(--line) 55%, var(--panel-raised) 45%) 50%,
+      var(--line-soft, var(--line)) 70%
+    );
+    background-size: 220% 100%;
+    animation: feedShimmer 1.9s linear infinite;
+  }
+
+  /* The "live tonight" dot breathes gently so the band reads as active. Gated
+     behind reduced-motion so it stays a static dot for anyone who opts out. */
+  .presenceDot {
+    animation: presencePulse 2.2s ease-in-out infinite;
+  }
+}
+
+@keyframes presencePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--pint) 22%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--pint) 6%, transparent);
+  }
+}
+
+@keyframes feedShimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ── Comments (CommentThread mounts per card) ──────────────────────────────
+   The same component the permalink uses (components/pintdrop/CommentThread),
+   but its class styles live in permalink.css which the feed doesn't load — so
+   the feed carries its own copy here, tuned to sit quietly under a feed card in
+   the printed-guidebook palette. Collapsed by default; the thread lazily mounts
+   + fetches only when the toggle is pressed. */
+.commentThread {
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft, var(--line));
+}
+
+.commentToggle {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.commentToggle:hover {
+  border-color: var(--brass);
+  color: var(--ink);
+}
+
+.commentToggle:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.commentPanel {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.commentList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.commentItem {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-soft, var(--line));
+}
+
+.commentItem:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* One-level threaded reply (issue #37): a single indent + a left rule so a
+   reply reads as hanging under its parent, no deeper nesting. */
+.commentItemReply {
+  margin-left: 18px;
+  padding-left: 12px;
+  border-left: 2px solid var(--line-soft, var(--line));
+}
+
+.commentReplyToggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--brick);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.commentReplyToggle:hover {
+  text-decoration: underline;
+}
+
+.commentReplyForm {
+  margin-top: 8px;
+}
+
+.commentHandle {
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+
+.commentTime {
+  margin-left: 8px;
+  font-size: 0.72rem;
+  color: var(--muted, #8a8577);
+}
+
+.commentBody {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.commentEmpty,
+.commentStatus,
+.commentError {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
+
+.commentError {
+  color: var(--brick);
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.commentHandleInput,
+.commentBodyInput {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  /* 16px so iOS never auto-zooms the viewport on focus (house precedent:
+     components/moment/moment.css). */
+  font-size: 16px;
+}
+
+.commentBodyInput {
+  min-height: 64px;
+  resize: vertical;
+}
+
+.commentHandleInput:focus-visible,
+.commentBodyInput:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.commentSubmit {
+  align-self: flex-start;
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: var(--control-radius, 14px);
+  background: var(--brass);
+  color: var(--ink-deep, #1a160e);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.commentSubmit:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.commentSubmit:focus-visible {
+  outline: 2px solid var(--ink-deep, #1c231d);
+  outline-offset: 2px;
+}
+
+/* The "…" overflow — Map / Drop / Pub, unfolded on demand instead of a
+   permanent full-width bar. Same 44px touch targets as before; it now only
+   costs layout space while a viewer actually wants it. */
+.feedCardActions {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  margin: 10px 0 0;
+}
+.feedCardActionsExpanded {
+  animation: feedCardActionsIn 0.18s var(--ease-out-strong, ease-out);
+}
+@keyframes feedCardActionsIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.feedCardAction {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--brass);
+  text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--brass) 45%, var(--line));
+  border-radius: var(--radius-sm, 6px);
+  background: color-mix(in srgb, var(--brass) 8%, transparent);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform var(--duration-press, 0.13s) var(--ease-out-strong, ease-out);
+}
+.feedCardAction:hover {
+  background: color-mix(in srgb, var(--brass) 16%, transparent);
+  border-color: var(--brass);
+}
+.feedCardAction:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+.feedCardAction:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* The permalink is now the icon-only control in the action row (see
+   .feedPermalinkIcon above) — this base class only carries the href/aria
+   contract forward; sizing/hover come from the shared icon-button rule. */
+.feedPermalink {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedCardActionsExpanded {
+    animation: none;
+  }
+}
+
+/* ── A4: primary one-tap Cheers placement ─────────────────────────────────
+   The CheersButton owns its own look (components/feed/cheersButton.css); these
+   wrappers just position it. On the text-only card it sits above the chip row
+   with a little breathing space; on the Spill scrim it sits below the note,
+   above the bar-tab link. */
+.feedCheers {
+  margin: 2px 0 4px;
+}
+.feedSpillCheers {
+  margin: 6px 0 2px;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   E5 · Drink-colour language on the feed card ("every drink has a colour")
+   ----------------------------------------------------------------------------
+   Each drop derives a category from its free-text drink label (honestly — an
+   unrecognised drink gets NO stripe, NO asserted label; see FeedCard.tsx). When
+   resolved the card carries `--feed-cat` (a `var(--cat-*)` token that flips per
+   theme + Legacy Mode automatically), spent here as: a left accent stripe, a
+   colour-driven category glyph, a colour+glyph+label chip (the redundant
+   non-colour cue, WCAG 1.4.1), a category-tinted gradient edge under the Spill
+   scrim, and the Cheers active state. Colour is layered ADDITIVELY on the
+   ink/paper base — brass (the brand accent) is untouched; the category hue only
+   identifies the drink family. `--feed-cat` falls back to --brass. Tokens only.
+
+   Contrast: chip TEXT is mixed 22% toward --ink so every category clears WCAG AA
+   normal (≥4.5) as small bold text on its tinted pill in light/dark/legacy
+   (computed); the GLYPH + border keep the pure token hue. ════════════════════ */
+.feedCard {
+  --feed-cat: var(--brass);
+}
+
+/* Left accent stripe — category-coloured card edge, only when categoryResolved. */
+.feedCardCat {
+  position: relative;
+}
+.feedCardCat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  z-index: 3;
+  background: var(--feed-cat);
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+/* Receipt (text-only card) — a faint category wash over the brass gradient, plus
+   the presiding glyph. Subtle so the price stays hero. */
+.feedCardCat .feedReceipt {
+  background:
+    radial-gradient(
+      120% 90% at 12% 0%,
+      color-mix(in srgb, var(--feed-cat) 14%, transparent) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--brass) 9%, var(--panel)) 0%,
+      var(--panel) 68%
+    );
+}
+
+.feedReceiptGlyph {
+  display: inline-flex;
+  margin-bottom: 2px;
+  opacity: 0.92;
+}
+
+/* Category chip on the text-only card — glyph (pure hue) + label (AA-safe text)
+   on a soft tinted pill. The label is the redundant non-colour cue. */
+.feedCatChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 4px 11px 4px 9px;
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--feed-cat) 78%, var(--ink));
+  background: color-mix(in srgb, var(--feed-cat) 12%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--feed-cat) 40%, transparent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.feedCatChip svg {
+  color: var(--feed-cat);
+}
+.feedCatChipLabel {
+  line-height: 1;
+}
+
+/* ── Spill (9:16) category treatment ─────────────────────────────────────── */
+/* Category-tinted gradient hugging the bottom edge, UNDER the fixed dark scrim
+   (z-index 1) so it tints only the edge, never the text. */
+.feedSpillCatEdge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--feed-cat) 55%, transparent) 0%,
+    transparent 100%
+  );
+}
+
+/* Category chip over the scrim — reads on the dark gradient (brighter tinted
+   fill), glyph + label, between venue meta and note. The scrim is FIXED dark in
+   BOTH themes, so the hue is pushed toward white to stay legible on near-black. */
+.feedSpillCat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--feed-cat) 72%, #ffffff);
+  background: rgba(12, 11, 8, 0.5);
+  backdrop-filter: blur(2px);
+  border: 1px solid color-mix(in srgb, var(--feed-cat) 55%, transparent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.feedSpillCat svg {
+  color: color-mix(in srgb, var(--feed-cat) 72%, #ffffff);
+}
+.feedSpillCatLabel {
+  line-height: 1;
+}
+html:not([data-theme="dark"]) .feedSpillCat,
+html:not([data-theme="dark"]) .feedSpillCat svg {
+  color: color-mix(in srgb, var(--feed-cat) 82%, #ffffff);
+}
+
+/* ── N4: desktop layout — filter rail + two-up stream ─────────────────────
+   Below 1024px the two wrappers are display:contents (zero box — children
+   stay direct flex items of .feedShell exactly as before, so mobile layout
+   is byte-identical). At >=1024px they become a sticky rail | stream grid. */
+
+.feedGrid,
+.feedRail,
+.feedMain {
+  display: contents;
+}
+
+@media (min-width: 1024px) {
+  .feedGrid {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+    width: 100%;
+    /* D2.4: was a hard 1180px — at 1440 that left ~130px dead side gutters past
+       the page padding. Align with the shared wide reading token so the rail +
+       two-up stream use the designed max without sprawling full-bleed. */
+    max-width: var(--content-max-wide, 1240px);
+    margin: 0 auto;
+  }
+
+  .feedRail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 96px; /* clears the floating SiteNav pill */
+    align-self: start;
+  }
+
+  .feedRail .feedFilters {
+    max-width: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .feedRail .presenceStrip {
+    max-width: none;
+    width: 100%;
+  }
+
+  .feedMain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .feedMain .feedList {
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    align-items: start;
+    gap: 24px;
+  }
+
+  .feedMain > .feedEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 420px;
+    max-width: none;
+    margin: 0;
+    padding: 56px 64px;
+    text-align: left;
+  }
+
+  .feedMain > .feedEmpty .emptyStateBody {
+    max-width: 52ch;
+    margin-inline: 0;
+  }
+}
+
+/* Desktop-only rail slot (D1): hidden on mobile so the feed stays
+   byte-identical below the grid breakpoint; a normal rail card above it. */
+.feedRailDesktopOnly {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .feedRailDesktopOnly {
+    display: block;
+  }
+
+  .feedRailDesktopOnly .tonightConditions {
+    margin: 0;
+  }
+}
+
+/* ── "We're out" check-in card (Social Loop v1) ───────────────────────────────
+   A calm, area-level presence post. Reuses .feedCard's border/surface; adds a
+   quiet layout for the who / where / note / when. No photo, price or reactions. */
+.feedCheckIn {
+  padding: 14px 16px;
+}
+
+.feedCheckInBody {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.feedCheckInAvatar {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--brass);
+  color: var(--color-on-accent, #fff);
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.feedCheckInText {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.feedCheckInLine {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.feedCheckInHandle {
+  font-weight: 800;
+}
+
+.feedCheckInVerb {
+  color: var(--ink-soft, var(--muted));
+}
+
+.feedCheckInWhere {
+  font-weight: 700;
+  color: var(--brass);
+}
+
+.feedCheckInNote {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink-soft, var(--ink));
+}
+
+.feedCheckInMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.feedCheckInTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brass) 40%, var(--line));
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+  color: var(--brass);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* ── Social Loop tabs (Your lot / Nearby / London) ────────────────────────────
+   The top-level feed axis. A segmented pill row above the chip filters. */
+.feedSocialTabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 12px;
+  border: 1px solid var(--feed-border);
+  border-radius: 999px;
+  background: var(--panel);
+}
+
+.feedSocialTab {
+  flex: 1 1 0;
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 8px 10px;
+  background: transparent;
+  color: var(--ink-soft, var(--muted));
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--duration-press, 120ms) ease, color var(--duration-press, 120ms) ease;
+}
+
+.feedSocialTab:hover {
+  color: var(--ink);
+}
+
+.feedSocialTab.isActive {
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--feed-shadow);
+}
+
+.feedSocialTab:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedSocialTab {
+    transition: none;
+  }
+}

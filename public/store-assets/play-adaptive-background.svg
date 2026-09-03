@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 108 108">
+  <!--
+    Play adaptive icon, background layer (issue #440, re-branded #520/#523): the
+    solid WHITE field behind play-adaptive-foreground.svg, matching the native
+    icon-background.png source and the white icon tile. Wave C flips this layer
+    from the retired ink-deep field to pure #ffffff so the coral X foreground
+    reads on it exactly like the iOS white tile. Deliberately flat, no glow and no
+    mark: launchers parallax this layer against the foreground, so anything
+    positional here would swim against the crossing.
+  -->
+  <rect width="108" height="108" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,39 @@
+name: Weather cache refresh
+
+# Daily Open-Meteo cache refresh. Workflow opens a review PR and never writes
+# directly to main.
+
+on:
+  schedule:
+    - cron: "15 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: weather-refresh-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Verify cache contract
+        run: npm test -- __tests__/weatherSnapshots.test.ts
+      - name: Configure review commit identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Refresh cache and open review PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run refresh:weather -- --open-pr

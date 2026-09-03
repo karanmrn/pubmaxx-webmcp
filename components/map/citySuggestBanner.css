@@ -1,0 +1,125 @@
+/* Geolocation city nudge — sits under the map toolbar; brass/ink tokens. */
+
+.citySuggestBanner {
+  position: absolute;
+  /* Clear the full closed toolbar block, including its always-visible
+     experience lens. The old +60px assumed a single-row toolbar and left this
+     control behind the lens, where it could not receive pointer events. */
+  top: calc(
+    var(--map-top-clearance, 0px) +
+    var(--map-toolbar-resting-height, 181px) +
+    12px
+  );
+  left: 50%;
+  /* Below map toolbar / CitySwitcher dropdown (560) so city picks stay tappable,
+     and below cityStatusBanner (--z-map-banner) so outage state wins the nudge. */
+  z-index: var(--z-map-suggest);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(420px, calc(100vw - 24px));
+  padding: 8px 8px 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 38%, var(--line));
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--panel-raised) 94%, transparent),
+      color-mix(in srgb, var(--surface-tint-lager) 62%, transparent)
+    ),
+    color-mix(in srgb, var(--panel-raised) 90%, transparent);
+  color: var(--ink);
+  box-shadow: var(--map-overlay-shadow);
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  transform: translateX(-50%);
+}
+
+.citySuggestBannerCopy {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.citySuggestBannerSwitch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 11px;
+  border: 1px solid var(--state-active-border);
+  border-radius: 999px;
+  background: var(--state-active-surface);
+  color: var(--state-active-ink);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.citySuggestBannerSwitch:hover:not(:disabled) {
+  border-color: var(--state-active-ink);
+  background: color-mix(in srgb, var(--state-active-surface) 82%, var(--ink) 18%);
+  color: var(--ink);
+}
+
+.citySuggestBannerSwitch:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.citySuggestBannerDismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.citySuggestBannerDismiss:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+@media (max-width: 640px) {
+  .citySuggestBanner {
+    /* F6: was a bare 52px, predating --map-top-clearance's safe-area-aware
+       mobile formula (globals.css). On a zero-safe-area viewport the toolbar
+       itself already starts at ~56px, so 52px sat the banner UNDER the
+       toolbar (z-index 512 < toolbar's 560) — completely hidden, but still
+       occupying the same tap target as the search bar. On a notched phone
+       (larger --map-top-clearance) it's positioned even further off from the
+       toolbar's real top. Anchor to --map-top-clearance like the desktop
+       rule above (D7) so this always clears the toolbar's own compact
+       single-row height — matches .mapCameraControls' mobile +58px offset,
+       the same "row after the toolbar" convention used elsewhere. */
+    top: calc(var(--map-top-clearance, 0px) + 112px);
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+    align-items: flex-start;
+    padding: 8px;
+    border-color: var(--line);
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--panel-raised) 96%, transparent);
+    transform: none;
+  }
+
+  .citySuggestBannerCopy {
+    display: block;
+    flex: 1 1 auto;
+  }
+}

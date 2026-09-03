@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PUBMAXX — X mark candidates</title>
+<style>
+  :root{
+    --coral:#ff5a5f; --ember:#ff7a55; --ink:#060607; --paper:#fff8f4;
+    --panel-dark:#141416; --line-dark:#2c2c30; --line-light:#efdcd2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#0a0a0b;color:#eef3ef;
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    padding:40px 32px 80px}
+  h1{font-size:22px;letter-spacing:.5px;margin:0 0 4px}
+  .sub{color:#9a9aa0;margin:0 0 40px;max-width:70ch}
+  .cand{border:1px solid #232327;border-radius:16px;margin:0 0 28px;overflow:hidden;
+    background:#0e0e10}
+  .cand-head{padding:18px 22px;border-bottom:1px solid #232327}
+  .cand-head h2{margin:0 0 3px;font-size:17px}
+  .cand-head .story{margin:0;color:#c9c9ce;font-size:13px}
+  .cand-head .tag{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:.6px;
+    text-transform:uppercase;color:#ff9a70;border:1px solid #4a2f26;border-radius:99px;
+    padding:2px 9px}
+  .rows{display:grid;grid-template-columns:1fr 1fr}
+  @media(max-width:720px){.rows{grid-template-columns:1fr}}
+  .row{padding:22px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:26px}
+  .row.dark{background:var(--ink)}
+  .row.light{background:var(--paper)}
+  .cell{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .cell small{font-size:10px;color:#8a8a90}
+  .row.light .cell small{color:#a08a80}
+  .rowlabel{width:100%;font-size:11px;letter-spacing:.6px;text-transform:uppercase;
+    color:#8a8a90;margin:-4px 0 2px}
+  .row.light .rowlabel{color:#b09a90}
+  /* favicon-in-tab mock */
+  .tab{display:flex;align-items:center;gap:7px;background:#26262b;border-radius:8px 8px 0 0;
+    padding:7px 12px 9px;max-width:190px}
+  .row.light .tab{background:#e7d3c8}
+  .tab .ttl{font-size:11px;color:#cfcfd6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .row.light .tab .ttl{color:#5a4a44}
+  /* app icon mocks */
+  .appicon{width:56px;height:56px;border-radius:13px;display:flex;align-items:center;
+    justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  .ai-coral{background:var(--coral)}
+  .ai-ink{background:var(--ink)}
+  .legend{color:#8a8a90;font-size:12px;margin:34px 0 0;max-width:70ch}
+</style>
+</head>
+<body>
+  <h1>PUBMAXX — X mark candidates</h1>
+  <p class="sub" style="border-left:3px solid var(--coral);padding-left:12px">
+  <b>CHOSEN (2026-07-22):</b> the double-struck / blackboard-bold X — one THICK solid
+  descending stroke (\, ~12u) over an ascending stroke SPLIT INTO TWO thin parallel
+  strokes (~5u each, ~4u channel) either side of it, the X Corp construction. No ember on
+  the icon silhouette; 16px falls back to a simplified single ascending slash. Final master:
+  <code>final-x.svg</code> / <code>MARK_GEOMETRY</code> in <code>components/brand/PubmaxxMark.tsx</code>.</p>
+  <p class="sub">Five directions toward a mark that reads instantly as a bold, clean X
+  (Twitter-grade letterform) while staying legally distinct and carrying the PUBMAXX
+  story — the crossing as two pints meeting, the crossroads of a night out. Each rendered
+  on ink and on paper, at 64 / 32 / 16 px, plus favicon-in-tab and app-icon mocks. The
+  16 px column is the survival test.</p>
+  <div id="stage"></div>
+  <p class="legend">Ember dot is <b>#ff7a55</b>; coral is <b>#ff5a5f</b>; ink <b>#060607</b>;
+  paper <b>#fff8f4</b>. On the app-icon mocks the mark sits knocked-out (ink on coral, or
+  coral on ink) exactly as the plaque/duo lockups do today.</p>
+
+<script>
+// Each candidate: inner SVG markup. {C} = arm colour (currentColor driven),
+// ember drawn as its own bright node where present.
+const ARM='fill="currentColor"';
+const CANDS=[
+  {id:'A', name:'The Cross', tag:'Recommended · closest to the ask',
+   story:'Pure letterform X. Thick descending stroke, thin ascending stroke — the X Corp weight tension, but our coral, our terminals, our story. Reads as an X at a glance; the asymmetry keeps it from being a plain multiplication sign.',
+   svg:`<polygon points="9,12 21,12 55,52 43,52" ${ARM}/><polygon points="45,12 53,12 19,52 11,52" ${ARM}/>`},
+  {id:'B', name:'The Toast', tag:'X + one clink notch',
+   story:'Candidate A with a single V-notch cut into the top-right terminal only — the lip of a tilted pint. One quiet detail; the silhouette stays a clean X.',
+   svg:`<polygon points="9,12 21,12 55,52 43,52" ${ARM}/><polygon points="45,12 49,15.5 53,12 19,52 11,52" ${ARM}/>`},
+  {id:'C', name:'Two Glasses', tag:'Overt pint-clink X',
+   story:'The X built from two tapered pint silhouettes — wide mouth up, narrow base down. Most literal on the story, least letterform-pure; the taper can read soft at 16 px.',
+   svg:`<polygon points="8,12 22,12 52,52 46,52" ${ARM}/><polygon points="42,12 56,12 18,52 12,52" ${ARM}/>`},
+  {id:'D', name:'The Ember X', tag:'Recommended · lit/duo variant',
+   story:'Candidate A’s pure letterform, keeping the ember as a lit bright dot at the crossing — the clink. Carries every drop of the current mark’s equity while fixing its silhouette. Pair: A for mono/favicon, D for the lit duo & app icon.',
+   svg:`<polygon points="9,12 21,12 55,52 43,52" ${ARM}/><polygon points="45,12 53,12 19,52 11,52" ${ARM}/><circle cx="32" cy="32" r="4" fill="#ff7a55"/>`},
+  {id:'E', name:'The Crossroads', tag:'Wildcard · equal-weight, corner-to-corner',
+   story:'Equal-weight X, terminals cut perpendicular to each stroke, reaching corner to corner. Maximally confident and symmetric — the night at full tilt. Bolder and more neutral than A; loses the letterform tension asymmetry gives.',
+   svg:`<polygon points="15.5,8.5 55.5,48.5 48.5,55.5 8.5,15.5" ${ARM}/><polygon points="48.5,8.5 55.5,15.5 15.5,55.5 8.5,48.5" ${ARM}/>`},
+];
+
+function svg(inner,size,color){
+  return `<svg width="${size}" height="${size}" viewBox="0 0 64 64" style="color:${color}">${inner}</svg>`;
+}
+function cell(inner,size,color){
+  return `<div class="cell">${svg(inner,size,color)}<small>${size}px</small></div>`;
+}
+function row(c, mode){
+  const isDark = mode==='dark';
+  const arm = isDark ? 'var(--paper)' : 'var(--ink)';      // mono variant colour
+  const coral = 'var(--coral)';
+  const tabBg = isDark ? 'var(--ink)' : 'var(--paper)';
+  // favicon tab uses coral mark
+  const tab = `<div class="cell"><div class="tab">${svg(c.svg,16,coral)}<span class="ttl">PUBMAXX · tonight</span></div><small>favicon</small></div>`;
+  // app icons: coral tile w/ ink mark, and ink tile w/ coral mark
+  const app1 = `<div class="cell"><div class="appicon ai-coral">${svg(c.svg,38,'var(--ink)')}</div><small>icon · coral</small></div>`;
+  const app2 = `<div class="cell"><div class="appicon ai-ink">${svg(c.svg,38,'var(--coral)')}</div><small>icon · ink</small></div>`;
+  return `<div class="row ${mode}">
+    <div class="rowlabel">${isDark?'On ink':'On paper'}</div>
+    ${cell(c.svg,64,arm)}${cell(c.svg,32,arm)}${cell(c.svg,16,arm)}
+    ${cell(c.svg,64,coral)}${cell(c.svg,32,coral)}${cell(c.svg,16,coral)}
+    ${tab}${app1}${app2}
+  </div>`;
+}
+document.getElementById('stage').innerHTML = CANDS.map(c=>`
+  <div class="cand">
+    <div class="cand-head">
+      <h2>${c.id} · ${c.name}</h2>
+      <p class="story">${c.story}</p>
+      <span class="tag">${c.tag}</span>
+    </div>
+    <div class="rows">${row(c,'dark')}${row(c,'light')}</div>
+  </div>`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Candidate D "The Ember X": Candidate A's pure letterform, but the ember
+       (the clink) is kept as a lit bright dot at the crossing. Brand equity. -->
+  <polygon points="9,12 21,12 55,52 43,52" fill="#ff5a5f"/>
+  <polygon points="45,12 53,12 19,52 11,52" fill="#ff5a5f"/>
+  <circle cx="32" cy="32" r="4" fill="#ff7a55"/>
+</svg>

@@ -1,0 +1,170 @@
+/* Floating create action. Destinations stay in the tab bar; this is the
+   compose affordance that used to sit in the centre of the row. Phone only.
+
+   It is the TOP member of the right-edge floating stack, and every berth below
+   it is published by mobileNav.css. It owns no offset of its own beyond the gap:
+   whichever member is on screen, this control clears that member's own top edge.
+   Rendered proof at 320/390/430 is e2e/mobile-map-chrome-fit.spec.ts. */
+
+.createFabRoot {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .createFabRoot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    position: fixed;
+    right: calc(12px + env(safe-area-inset-right, 0px));
+    bottom: var(--create-fab-bottom);
+    /* BELOW the map sheet portal. The portal is clipped at the tab bar so the
+       bar is never covered, and this control sits inside that clip, so a create
+       action at the bar's own layer floated on top of an open Filters or List
+       sheet - which is `mapOverlay` state, not `detail-open`, so the guard
+       below never fired for it. */
+    z-index: var(--z-float-action);
+    pointer-events: none;
+    transition:
+      opacity var(--duration-base) var(--ease-out),
+      transform var(--duration-base) var(--ease-out),
+      visibility 0s;
+  }
+
+  /* The root is a fixed, mostly empty box, so it must not eat taps around the
+     control; the control and its sheet opt back in. A hidden state has to turn
+     that opt-in OFF by name - an ancestor's `pointer-events: none` does not
+     reach a descendant that says `auto`, which left the FAB invisible, slid into
+     the tab-bar lane, and still tappable while the keyboard was up. */
+  .createFab,
+  .createFabMenu {
+    pointer-events: auto;
+  }
+
+  /* The analytics consent card is the one member this control does not stack
+     above: it is full-width, its height is content-driven (its text wraps to
+     three or four lines at 320px), and its Allow / No thanks column is exactly
+     where this control parks. A berth derived from a height nobody publishes
+     would be a guess, and the guess that matters here decides whether somebody
+     can answer a privacy question. So compose stands down until the card is
+     answered - it is one tap and one time, and it is the card's own lane.
+     The map's first-visit arrival card is the same shape and the same deal:
+     full width, its own two actions in this lane, and gone on one tap. */
+  /* A page that has no use for compose says so once, and the body clearance
+     below reads the same marker (mobileNav.css). The 404 is the reason this is
+     a marker and not a path: it renders under whatever address was mistyped, so
+     there is no pathname to test. */
+  body:has(.pageHidesCreateFab) .createFabRoot {
+    display: none;
+  }
+
+  body:has(.analyticsConsentPrompt) .createFabRoot,
+  body:has(.mapArrivalCard) .createFabRoot,
+  body:has(.appShell.detail-open) .createFabRoot,
+  body:has(.appShell.planning-open) .createFabRoot,
+  .createFabRoot.isKeyboardHidden {
+    opacity: 0;
+    transform: translateY(110%);
+    /* Delayed to the end of the slide, so the control is still painted while it
+       leaves and is out of hit-testing the moment it has gone. */
+    visibility: hidden;
+    transition:
+      opacity var(--duration-base) var(--ease-out),
+      transform var(--duration-base) var(--ease-out),
+      visibility 0s linear var(--duration-base);
+  }
+
+  body:has(.analyticsConsentPrompt) .createFabRoot :is(.createFab, .createFabMenu),
+  body:has(.mapArrivalCard) .createFabRoot :is(.createFab, .createFabMenu),
+  body:has(.appShell.detail-open) .createFabRoot :is(.createFab, .createFabMenu),
+  body:has(.appShell.planning-open) .createFabRoot :is(.createFab, .createFabMenu),
+  .createFabRoot.isKeyboardHidden :is(.createFab, .createFabMenu) {
+    pointer-events: none;
+  }
+
+  .createFab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--brass);
+    color: var(--color-on-accent, var(--paper));
+    box-shadow: 0 2px 10px color-mix(in srgb, var(--ink-deep, var(--ink)) 22%, transparent);
+    cursor: pointer;
+    transition: transform var(--duration-press, 0.13s) var(--ease-out);
+  }
+
+  /* The emphasized action owns its own press, so it opts OUT of the shared
+     scale by name. Taking both would compose to ~0.94, firmer than the 0.97
+     this control is specified at. */
+  .createFab:active {
+    --shared-press-scale: 1;
+    transform: scale(0.97);
+  }
+
+  .createFab:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  .createFabMenu {
+    display: flex;
+    flex-direction: column;
+    min-width: 11.5rem;
+    padding: 6px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--panel-raised, var(--paper));
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 14%, transparent);
+  }
+
+  .createFabRow {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: 10px;
+    color: var(--ink);
+    font: 650 0.95rem/1.2 var(--font-display, inherit);
+    text-decoration: none;
+  }
+
+  .createFabRow:hover,
+  .createFabRow:focus-visible {
+    background: color-mix(in srgb, var(--ink) 6%, transparent);
+  }
+
+  .createFabRow:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .createFab:active {
+    --shared-press-scale: 1;
+    transform: scale(1);
+  }
+
+  /* Every hidden state is restated here, because a media query adds no
+     specificity: a bare `.createFabRoot` loses to `.createFabRoot.isKeyboardHidden`
+     and to `body:has(...) .createFabRoot`, so the control kept sliding and fading
+     for a reader who asked for neither. Dropping the transition also drops the
+     delay the visibility flip was riding, so it withdraws at once. */
+  .createFabRoot,
+  .createFab,
+  .createFabRoot.isKeyboardHidden,
+  body:has(.analyticsConsentPrompt) .createFabRoot,
+  body:has(.mapArrivalCard) .createFabRoot,
+  body:has(.appShell.detail-open) .createFabRoot,
+  body:has(.appShell.planning-open) .createFabRoot {
+    transition: none;
+  }
+}

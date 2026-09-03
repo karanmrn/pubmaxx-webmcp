@@ -1,0 +1,114 @@
+[
+  {
+    "id": "rail-cambridge",
+    "name": "Cambridge station",
+    "category": "rail",
+    "coordinates": [0.1374, 52.194],
+    "rank": 1
+  },
+  {
+    "id": "bus-drummer-street",
+    "name": "Drummer Street bus station",
+    "category": "bus",
+    "coordinates": [0.1245, 52.2055],
+    "rank": 1
+  },
+  {
+    "id": "sight-kings-college-chapel",
+    "name": "King's College Chapel",
+    "category": "historic",
+    "coordinates": [0.1165, 52.2043],
+    "rank": 1
+  },
+  {
+    "id": "sight-great-st-marys",
+    "name": "Great St Mary's",
+    "category": "historic",
+    "coordinates": [0.1182, 52.2054],
+    "rank": 1
+  },
+  {
+    "id": "sight-round-church",
+    "name": "The Round Church",
+    "category": "historic",
+    "coordinates": [0.1189, 52.2084],
+    "rank": 2
+  },
+  {
+    "id": "sight-trinity-college",
+    "name": "Trinity College",
+    "category": "historic",
+    "coordinates": [0.117, 52.207],
+    "rank": 1
+  },
+  {
+    "id": "sight-st-johns-college",
+    "name": "St John's College",
+    "category": "historic",
+    "coordinates": [0.1168, 52.2085],
+    "rank": 2
+  },
+  {
+    "id": "sight-fitzwilliam",
+    "name": "Fitzwilliam Museum",
+    "category": "sight",
+    "coordinates": [0.1198, 52.1997],
+    "rank": 1
+  },
+  {
+    "id": "market-market-square",
+    "name": "Market Square",
+    "category": "market",
+    "coordinates": [0.1195, 52.2055],
+    "rank": 1
+  },
+  {
+    "id": "park-parkers-piece",
+    "name": "Parker's Piece",
+    "category": "park",
+    "coordinates": [0.1285, 52.2025],
+    "rank": 1
+  },
+  {
+    "id": "park-jesus-green",
+    "name": "Jesus Green",
+    "category": "park",
+    "coordinates": [0.12, 52.212],
+    "rank": 1
+  },
+  {
+    "id": "park-midsummer-common",
+    "name": "Midsummer Common",
+    "category": "park",
+    "coordinates": [0.128, 52.21],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-mathematical-bridge",
+    "name": "Mathematical Bridge",
+    "category": "viewpoint",
+    "coordinates": [0.115, 52.2022],
+    "rank": 1
+  },
+  {
+    "id": "river-quayside",
+    "name": "Quayside",
+    "category": "river",
+    "coordinates": [0.1165, 52.2095],
+    "rank": 1
+  },
+  {
+    "id": "sight-senate-house",
+    "name": "Senate House",
+    "category": "historic",
+    "coordinates": [0.1175, 52.2056],
+    "rank": 2
+  },
+  {
+    "id": "garden-botanic",
+    "name": "Cambridge University Botanic Garden",
+    "category": "garden",
+    "coordinates": [0.126, 52.1935],
+    "rank": 2
+  }
+]

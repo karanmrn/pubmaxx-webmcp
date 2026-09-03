@@ -1,0 +1,1997 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-09T22:43:45Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 20458787,
+      "lat": 52.1984389,
+      "lon": 0.1422292,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "133",
+        "addr:postcode": "CB1 3AA",
+        "addr:street": "Mill Road",
+        "amenity": "pub",
+        "check_date": "2026-03-13",
+        "check_date:opening_hours": "2025-05-12",
+        "fhrs:id": "1908339",
+        "name": "Earl of Beaconsfield",
+        "note": "Billiard room and Library",
+        "opening_hours": "Mo-We 16:00-23:00; Th 12:00-23:00; Fr-Su 12:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1223 483447",
+        "real_ale": "4 or 5 beers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20458870,
+      "lat": 52.1991085,
+      "lon": 0.1472394,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "72",
+        "addr:postcode": "CB1 3AX",
+        "addr:street": "Thoday Street",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "description:floor": "rough wood",
+        "fhrs:id": "1473133",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "name": "The Empress",
+        "opening_hours": "Su-Th 16:00-23:00, Fr,Sa 16:00-00:30",
+        "outdoor_seating": "no",
+        "pinball": "yes",
+        "real_ale": "at least 3 beers",
+        "wheelchair": "no",
+        "wheelchair:description": "There are steps going into the pub and different levels once you are inside."
+      }
+    },
+    {
+      "type": "node",
+      "id": 20823843,
+      "lat": 52.2047799,
+      "lon": 0.1303831,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housename": "The Free Press",
+        "addr:housenumber": "7",
+        "addr:postcode": "CB1 1DU",
+        "addr:street": "Prospect Row",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "check_date:opening_hours": "2025-03-14",
+        "fhrs:id": "1472945",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "name": "The Free Press",
+        "opening_hours": "Tu-Sa 12:00-23:00; Su 12:00-21:00",
+        "outdoor_seating": "yes",
+        "real_ale": "Greene King IPA, Abbot, 4 guests",
+        "source:addr:housenumber": "FHRS Open Data",
+        "website": "https://www.freepresscambridge.com/",
+        "wheelchair": "limited",
+        "wifi": "no",
+        "wikidata": "Q55099458",
+        "wikimedia_commons": "Category:The Free Press, Cambridge",
+        "wikipedia": "en:The Free Press, Cambridge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20823855,
+      "lat": 52.2051547,
+      "lon": 0.1294263,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "16a",
+        "addr:postcode": "CB1 1JT",
+        "addr:street": "Orchard Street",
+        "amenity": "pub",
+        "fhrs:id": "1472740",
+        "floor:material": "wood;carpet",
+        "indoor_seating": "yes",
+        "name": "The Elm Tree",
+        "note": "B&T signage on Windows (not Wells and Youngs) but no B&T beers currently",
+        "opening_hours": "Mo-Sa 11:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1223 502 632",
+        "real_ale": "7 or so",
+        "website": "http://theelmtreecambridge.co.uk/",
+        "wheelchair": "yes",
+        "wheelchair:description": "Entrance and through to outside seating flat, a step up to one drinking area"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20826694,
+      "lat": 52.2023787,
+      "lon": 0.1391899,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housename": "The Cambridge Blue",
+        "addr:housenumber": "85-87",
+        "addr:postcode": "CB1 2LG",
+        "addr:street": "Gwydir Street",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "cuisine": "burger",
+        "email": "bluebookings5@gmail.com",
+        "fhrs:id": "1473300",
+        "floor:material": "lino",
+        "food": "yes",
+        "name": "Cambridge Blue",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30",
+        "outdoor_seating": "yes",
+        "phone": "+441223471680",
+        "real_ale": "11 beers",
+        "real_cider": "yes",
+        "toilets": "yes",
+        "website": "https://cambridge.pub/the-blue/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20827166,
+      "lat": 52.1993383,
+      "lon": 0.1392595,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "109",
+        "addr:postcode": "CB1 2AZ",
+        "addr:street": "Mill Road",
+        "amenity": "pub",
+        "fhrs:id": "1473890",
+        "name": "White Swan",
+        "opening_hours": "Mo-Th 16:00-01:00, Fr 15:00-01:00, Sa 12:00-01:00, Su 12:00-24:00",
+        "source:addr:housenumber": "FHRS Open Data",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20921875,
+      "lat": 52.2089164,
+      "lon": 0.1181145,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "19",
+        "addr:postcode": "CB2 1UF",
+        "addr:street": "Bridge Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "brand:wikipedia": "en:Greene King",
+        "fhrs:id": "1473616",
+        "name": "Baron of Beef",
+        "note": "Alignment based on imagery, which seems aligned with other features. Patio clearly visible under large green umbrella.",
+        "operator": "Greene King",
+        "patio": "yes",
+        "real_ale": "2 from Greene King, 3 guests",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/baron-of-beef",
+        "wikidata": "Q7715679",
+        "wikimedia_commons": "Category:The Baron of Beef, Cambridge",
+        "wikipedia": "en:The Baron of Beef"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20921876,
+      "lat": 52.2088653,
+      "lon": 0.1182051,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "17",
+        "addr:postcode": "CB2 1UF",
+        "addr:street": "Bridge Street",
+        "amenity": "pub",
+        "brand": "Nicholson's",
+        "brand:wikidata": "Q113130666",
+        "fhrs:id": "1472562",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "The Mitre",
+        "note": "Open from early on Sunday morning",
+        "operator": "Nicholson's",
+        "outdoor_seating": "yes",
+        "real_ale": "4 or more",
+        "website": "https://www.nicholsonspubs.co.uk/restaurants/eastofengland/themitrecambridge#/",
+        "wheelchair": "yes",
+        "wikidata": "Q26419234",
+        "wikimedia_commons": "Category:The Mitre, Cambridge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20922152,
+      "lat": 52.2073062,
+      "lon": 0.1244397,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "68",
+        "addr:postcode": "CB1 1LN",
+        "addr:street": "King Street",
+        "amenity": "pub",
+        "contact:facebook": "https://www.facebook.com/ChampionOfTheThames/",
+        "fhrs:id": "1472969",
+        "floor:material": "rough_wood",
+        "food": "bar snacks (pies etc.)",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "Champion of the Thames",
+        "opening_hours": "Mo-Th 16:00-23:00; Fr,Sa 12:00-23:00; Su 16:00-22:00",
+        "outdoor_seating": "no",
+        "real_ale": "Greene King IPA, Abbot, + (rotating?) 3 guests",
+        "real_fire": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://thechampionofthethames.com/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Small lip at main entrance and very narrow",
+        "wikidata": "Q7722052",
+        "wikimedia_commons": "Category:Champion of the Thames, Cambridge",
+        "wikipedia": "en:The Champion of the Thames"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20922155,
+      "lat": 52.1999887,
+      "lon": 0.1270451,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "91",
+        "addr:postcode": "CB2 1AW",
+        "addr:street": "Regent Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "check_date": "2025-07-11",
+        "check_date:opening_hours": "2024-04-13",
+        "fhrs:id": "1473129",
+        "floor:material": "tiles",
+        "food": "yes",
+        "name": "Prince Regent",
+        "opening_hours:signed": "no",
+        "outdoor_seating": "yes",
+        "real_ale": "2 from GK, 2 unbranded (probably GK), 2 guests",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/prince-regent",
+        "wheelchair": "yes",
+        "wheelchair:description": "Rear entrance through outside drinking area flat"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20922157,
+      "lat": 52.203079,
+      "lon": 0.1237329,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "37",
+        "addr:postcode": "CB2 3AR",
+        "addr:street": "St Andrew's Street",
+        "amenity": "pub",
+        "fhrs:id": "1473647",
+        "name": "The Castle Bar",
+        "operator": "Greene King",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20922173,
+      "lat": 52.2072308,
+      "lon": 0.1216997,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "2-4",
+        "addr:postcode": "CB1 1LN",
+        "addr:street": "King Street",
+        "amenity": "pub",
+        "check_date": "2026-02-25",
+        "fhrs:id": "1472989",
+        "name": "d'Arry's",
+        "old_fhrs:id": "506819",
+        "old_name": "Cambridge Arms",
+        "old_name:2": "d'Arry's Liquor Loft and Restaurant",
+        "old_website": "http://www.darrys.co.uk",
+        "opening_hours": "Mo-Th 11:30-22:00; Fr-Sa 11:30-23:00; Su 11:30-18:00 \"Wine Bar & Restaurant\" || We-Th 17:00-22:00; Fr 17:00-00:00; Sa 12:00-00:00; Su 12:00-17:00 \"Liquor Loft\"",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.darrys.co.uk/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20940218,
+      "lat": 52.2141817,
+      "lon": 0.1254885,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "32",
+        "addr:postcode": "CB4 3AX",
+        "addr:street": "Chesterton Road",
+        "amenity": "pub",
+        "fhrs:id": "1473075",
+        "internet_access": "wlan",
+        "name": "The Waterman",
+        "phone": "+44 1223 323813",
+        "tourism": "guest_house",
+        "website": "https://www.thewatermancambridge.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20940220,
+      "lat": 52.2105324,
+      "lon": 0.113247,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "3",
+        "addr:postcode": "CB3 0AE",
+        "addr:street": "Pound Hill",
+        "amenity": "pub",
+        "fhrs:id": "1473124",
+        "name": "The Punter"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20940431,
+      "lat": 52.2157616,
+      "lon": 0.1142635,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "182-186",
+        "addr:postcode": "CB4 3DZ",
+        "addr:street": "Victoria Road",
+        "amenity": "pub",
+        "fhrs:id": "1473081",
+        "name": "Carpenters Arms",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-21:00",
+        "source:addr:housenumber": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 21137287,
+      "lat": 52.2179459,
+      "lon": 0.1454823,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "5",
+        "addr:postcode": "CB4 1NZ",
+        "addr:street": "Water Street",
+        "amenity": "pub",
+        "fhrs:id": "1473245",
+        "name": "Green Dragon",
+        "old_fhrs:id": "506538",
+        "source:addr:housenumber": "FHRS Open Data",
+        "wikidata": "Q26419012",
+        "wikimedia_commons": "Category:Green Dragon, Cambridge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 21391223,
+      "lat": 52.1964242,
+      "lon": 0.1249433,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "43",
+        "addr:postcode": "CB2 1HL",
+        "addr:street": "Panton Street",
+        "amenity": "pub",
+        "fhrs:id": "1473507",
+        "floor:material": "wood",
+        "food": "yes",
+        "name": "Panton Arms",
+        "outdoor_seating": "yes",
+        "real_ale": "1 from Greene King, 3 guests",
+        "website": "https://thepantonarms.co.uk/",
+        "wheelchair": "limited",
+        "wheelchair:description": "step at entrance then appears flat throughout",
+        "wikidata": "Q15990214",
+        "wikimedia_commons": "Category:Panton Arms, Cambridge",
+        "wikipedia": "en:Panton Arms"
+      }
+    },
+    {
+      "type": "node",
+      "id": 21391227,
+      "lat": 52.1959875,
+      "lon": 0.1253729,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "26",
+        "addr:postcode": "CB2 1HW",
+        "addr:street": "Russell Court",
+        "amenity": "pub",
+        "fhrs:id": "1473131",
+        "floor:material": "rough_wood",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "name": "The Alma",
+        "note": "Owned by Greene King but operated independently.",
+        "opening_hours": "Mo,Tu 16:00-24:00, We-Su 12:00-24:00",
+        "outdoor_seating": "yes",
+        "real_ale": "4-6",
+        "source": "survey",
+        "website": "https://thealmacambridge.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 23719278,
+      "lat": 52.1811855,
+      "lon": 0.0935751,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "2-4",
+        "addr:postcode": "CB3 9NQ",
+        "addr:street": "Broadway",
+        "amenity": "pub",
+        "check_date": "2025-07-09",
+        "contact:facebook": "https://www.facebook.com/people/The-Rupert-Brooke/61563360693698/",
+        "contact:instagram": "https://www.instagram.com/the.rupert.brooke",
+        "email": "info@therupertbrooke.com",
+        "fhrs:id": "1754134",
+        "food": "yes",
+        "name": "Rupert Brooke",
+        "note": "Very foody - arguably a restaurant rather than a pub",
+        "opening_hours": "Mo,Th 12:00-22:30; Tu-We off; Fr-Sa 12:00-23:00; Su 12:00-21:00",
+        "phone": "+44 1223 841875",
+        "real_ale": "yes",
+        "website": "https://therupertbrooke.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 23719482,
+      "lat": 52.1833304,
+      "lon": 0.0940465,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "57",
+        "addr:postcode": "CB3 9NQ",
+        "addr:street": "Broadway",
+        "amenity": "pub",
+        "fhrs:id": "1433421",
+        "name": "Blue Ball Inn",
+        "opening_hours": "We-Sa 12:00-22:00; Su 12:00-19:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1223 846004",
+        "website": "https://www.blueballgrantchester.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 24672502,
+      "lat": 52.1892439,
+      "lon": 0.1530615,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB1 3RX",
+        "addr:street": "Perne Road",
+        "amenity": "pub",
+        "fhrs:id": "1472700",
+        "name": "The Dumpling Tree",
+        "name:zh": "過橋米線",
+        "old_name": "The Med",
+        "opening_hours": "Su-Th 11:30-21:30; Fr,Sa 11:30-22:30",
+        "outdoor_seating": "yes",
+        "parking": "yes",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 24673114,
+      "lat": 52.188595,
+      "lon": 0.1398253,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB1 7AA",
+        "addr:street": "Cherry Hinton Road",
+        "amenity": "pub",
+        "club": "social",
+        "fhrs:id": "1473273",
+        "name": "Rathmore Club"
+      }
+    },
+    {
+      "type": "node",
+      "id": 25285250,
+      "lat": 52.1989253,
+      "lon": 0.1390513,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "1",
+        "addr:postcode": "CB1 2BH",
+        "addr:street": "Devonshire Road",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "brewery": "Milton Brewery",
+        "fhrs:id": "1473285",
+        "floor:material": "rough_wood",
+        "food": "yes",
+        "name": "Devonshire Arms",
+        "opening_hours": "Mo-We 16:00-23:00; Th-Sa 12:00-23:00; Su 12:00-22:30",
+        "operator": "Individual Pubs Ltd",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 1223 318610",
+        "real_ale": "6 or so from Milton, 2 or 3 guests",
+        "real_fire": "yes",
+        "website": "https://www.individualpubs.co.uk/devonshire/",
+        "wheelchair": "yes",
+        "wheelchair:description": "Small lip at main entrance, but otherwise flat",
+        "yelp": "http://www.yelp.com/biz/devonshire-arms-cambridge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 25285271,
+      "lat": 52.1983154,
+      "lon": 0.1354166,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "76",
+        "addr:postcode": "CB1 2DW",
+        "addr:street": "Tenison Road",
+        "amenity": "pub",
+        "check_date:opening_hours": "2023-05-26",
+        "fhrs:id": "1473220",
+        "food": "yes",
+        "name": "Salisbury Arms",
+        "opening_hours:signed": "no",
+        "real_ale": "Several guests"
+      }
+    },
+    {
+      "type": "node",
+      "id": 25285273,
+      "lat": 52.1993737,
+      "lon": 0.1351376,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "40",
+        "addr:postcode": "CB1 2EA",
+        "addr:street": "Mawson Road",
+        "amenity": "pub",
+        "description:floor": "Rough wood",
+        "fhrs:id": "1534415",
+        "name": "Live & Let Live",
+        "real_ale": "4-7 various beers",
+        "real_cider": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 25288641,
+      "lat": 52.1875591,
+      "lon": 0.1467045,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "200",
+        "addr:postcode": "CB1 7AW",
+        "addr:street": "Cherry Hinton Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "fhrs:id": "1472501",
+        "floor:material": "lino",
+        "food": "yes",
+        "name": "The Rock",
+        "opening_hours": "11:00-23:00",
+        "operator": "Greene King",
+        "outdoor_seating": "yes",
+        "parking": "yes",
+        "real_ale": "3 or 4 from Greene King or guests",
+        "sky": "yes",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/rock",
+        "wheelchair": "limited",
+        "wheelchair:description": "Flat access to most of pub, small step down to games room and steps down to beer garden and car park"
+      }
+    },
+    {
+      "type": "node",
+      "id": 262797752,
+      "lat": 52.2074415,
+      "lon": 0.1222216,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "1",
+        "addr:postcode": "CB1 1LH",
+        "addr:street": "King Street",
+        "amenity": "pub",
+        "check_date": "2026-02-25",
+        "contact:facebook": "https://www.facebook.com/TheCambridgeBrewHouse/",
+        "fhrs:id": "1472849",
+        "floor:material": "wood",
+        "food": "yes",
+        "microbrewery": "yes",
+        "name": "The Cambridge Brew House",
+        "note:real_ale": "6 is number of handpumps",
+        "opening_hours": "Mo-Th 11:00-23:30; Fr, Sa 11:00-00:00; Su 11:00-22:30",
+        "outdoor_seating": "yes",
+        "payment:cash": "no",
+        "payment:credit_cards": "yes",
+        "phone": "+44 1223 855185",
+        "real_ale": "5 or 6 of theirs",
+        "start_date": "2013",
+        "website": "https://www.thecambridgebrewhouse.com/",
+        "wheelchair": "yes",
+        "wheelchair:description": "Flat access from middle entrance"
+      }
+    },
+    {
+      "type": "node",
+      "id": 302381593,
+      "lat": 52.2006666,
+      "lon": 0.1197199,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "37",
+        "addr:postcode": "CB2 1QY",
+        "addr:street": "Trumpington Street",
+        "amenity": "pub",
+        "brand": "Loch Fyne",
+        "brand:wikidata": "Q6664920",
+        "brand:wikipedia": "en:Loch Fyne Restaurants",
+        "contact:website": "https://www.littlerosecambridge.com/",
+        "cuisine": "seafood",
+        "fhrs:id": "1472473",
+        "name": "Little Rose",
+        "old_name": "The Little Rose",
+        "opening_hours": "Mo-Sa 12:00-23:00, Su 12:00-22:00",
+        "panoramax": "66608f08-8673-4d2a-90b0-f3152ff62a16",
+        "wikidata": "Q26626687"
+      }
+    },
+    {
+      "type": "node",
+      "id": 429597760,
+      "lat": 52.2046367,
+      "lon": 0.1275966,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:county": "Cambridgeshire",
+        "addr:housenumber": "35-36",
+        "addr:postcode": "CB1 1JX",
+        "addr:street": "Clarendon Street",
+        "amenity": "pub",
+        "fhrs:id": "1720690",
+        "floor:material": "stone",
+        "name": "The Clarendon Arms",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr,Sa 12:00-23:30; Su 12:00-22:00",
+        "outdoor_seating": "yes",
+        "real_ale": "4 including 2 from Greene King",
+        "source:addr:housenumber": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594688118,
+      "lat": 52.2120376,
+      "lon": 0.1130864,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "43",
+        "addr:postcode": "CB3 0AH",
+        "addr:street": "Castle Street",
+        "amenity": "pub",
+        "fhrs:id": "1654768",
+        "name": "Architect"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594688120,
+      "lat": 52.2119866,
+      "lon": 0.1134995,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housename": "Castle Inn",
+        "addr:housenumber": "38",
+        "addr:postcode": "CB3 0AJ",
+        "addr:street": "Castle Street",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "fhrs:id": "1596367",
+        "food": "yes",
+        "name": "The Castle Inn",
+        "opening_hours": "Mo-Su 12:00-23:00",
+        "operator": "Adnams",
+        "real_ale": "5 from Adnams, Taylor Landlord, 2 or 3 guests",
+        "wheelchair": "no",
+        "wikidata": "Q26405672",
+        "wikimedia_commons": "Category:The Castle Inn, Cambridge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1832280892,
+      "lat": 52.2072285,
+      "lon": 0.1252435,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "86-88",
+        "addr:postcode": "CB1 1LN",
+        "addr:street": "King Street",
+        "amenity": "pub",
+        "contact:facebook": "https://www.facebook.com/KingStRun/",
+        "fhrs:id": "1669368",
+        "floor:material": "rough_wood",
+        "name": "King Street Run",
+        "opening_hours": "Mo-Th 15:00-23:00, Fr,Sa 11:00-24:00, Su 12:00-23:00",
+        "real_ale": "2 or so, may vary",
+        "source:addr": "FHRS Open Data",
+        "table_football": "yes",
+        "wheelchair": "yes",
+        "wheelchair:description": "Flat entrance, appears flat throughout",
+        "wikidata": "Q6412095"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2021774032,
+      "lat": 52.2006592,
+      "lon": 0.1266794,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB2 1AB",
+        "addr:street": "Regent Terrace",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "brand:wikipedia": "en:Greene King",
+        "fhrs:id": "1473356",
+        "food": "yes",
+        "name": "The Grain & Hop Store",
+        "operator": "Greene King",
+        "outdoor_seating": "no",
+        "real_ale": "5 beers inc gk ipa",
+        "source:name": "http://www.grainandhopstore-cambridge.co.uk/",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/grain-and-hop-store"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2538127975,
+      "lat": 52.2042033,
+      "lon": 0.1191156,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "10",
+        "addr:postcode": "CB2 3PP",
+        "addr:street": "Peas Hill",
+        "amenity": "pub",
+        "fhrs:id": "1473812",
+        "floor:material": "wood",
+        "food": "yes",
+        "name": "The Pint Shop",
+        "not:addr:postcode": "CB2 3PN",
+        "outdoor_seating": "yes",
+        "real_ale": "4 real_ales, 1 cider, 10 \"craft keg\"",
+        "real_cider": "yes",
+        "source:addr:postcode": "code-point_open",
+        "website": "https://www.pintshop.co.uk/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Flat entrance, steps up to first floor dining room. Toilets on 2nd floor, disabled toiets flat access on groum floor, steps to outside seating."
+      }
+    },
+    {
+      "type": "node",
+      "id": 4820111626,
+      "lat": 52.1949073,
+      "lon": 0.1376457,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "2",
+        "addr:postcode": "CB1 2GA",
+        "addr:street": "Station Square",
+        "addr:unit": "1",
+        "amenity": "pub",
+        "fhrs:id": "1473679",
+        "floor:material": "wood",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "name": "Station Tavern",
+        "operator": "Young's",
+        "outdoor_seating": "yes",
+        "real_ale": "2 from Youngs + 1",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited",
+        "wheelchair:description": "95% ⅚flat including entrances, small raised area to one side"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5676057080,
+      "lat": 52.1946413,
+      "lon": 0.1377721,
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB1 2JW",
+        "addr:street": "Station Road",
+        "amenity": "pub",
+        "fhrs:id": "1473686",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "Old Ticket Office",
+        "opening_hours": "Mo 12:00-22:00; Tu-Th 12:00-23:00; Fr,Sa 12:00-24:00; Su 12:00-21:00",
+        "outdoor_seating": "no",
+        "real_ale": "5 or so",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited",
+        "wheelchair:description": "Flat downstairs, toilets upstairs"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9042161425,
+      "lat": 52.2084986,
+      "lon": 0.1392105,
+      "tags": {
+        "addr:housenumber": "122",
+        "addr:postcode": "CB5 8HE",
+        "addr:street": "Newmarket Road",
+        "amenity": "pub",
+        "name": "The Bird or Worm?",
+        "opening_hours": "Mo-We 11:00-19:00; Th 11:00-21:00; Fr 11:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13142721772,
+      "lat": 52.2028241,
+      "lon": 0.1235286,
+      "tags": {
+        "amenity": "pub",
+        "name": "The Regal - JD Wetherspoon"
+      }
+    },
+    {
+      "type": "way",
+      "id": 37800469,
+      "center": {
+        "lat": 52.2012883,
+        "lon": 0.1407105
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "2",
+        "addr:postcode": "CB1 2QA",
+        "addr:street": "Sturton Street",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "2",
+        "check_date:opening_hours": "2023-07-07",
+        "fhrs:id": "1472648",
+        "food": "yes",
+        "name": "The Petersfield",
+        "old_name": "Backstreet Bistro",
+        "opening_hours:signed": "no",
+        "real_ale": "4 beers",
+        "roof:levels": "1",
+        "website": "https://www.thepetersfield.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 45827856,
+      "center": {
+        "lat": 52.2096423,
+        "lon": 0.1192179
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housename": "The Maypole",
+        "addr:housenumber": "20a",
+        "addr:postcode": "CB5 8AF",
+        "addr:street": "Portugal Place",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "2",
+        "fhrs:id": "1473347",
+        "food": "yes",
+        "internet_access": "wlan",
+        "name": "The Maypole",
+        "opening_hours": "Su-Fr 12:00-14:30,17:30-23:00; Sa 12:00-23:00",
+        "opening_hours:kitchen": "Su-Fr 12:00-14:00,17:30-21:00; Sa 12:00-21:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1223 352999",
+        "real_ale": "16 or so beers",
+        "roof:levels": "1",
+        "roof:shape": "gabled",
+        "source": "local knowledge",
+        "takeaway": "yes",
+        "website": "https://www.maypolefreehouse.co.uk/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Mostly flat, but small step up into one bar",
+        "wikidata": "Q113995971",
+        "wikimedia_commons": "Category:The Maypole, Cambridge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 50928339,
+      "center": {
+        "lat": 52.2038818,
+        "lon": 0.139364
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "22-24",
+        "addr:postcode": "CB1 2LL",
+        "addr:street": "Gwydir Street",
+        "alt_name": "The Alexandra Arms",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1472610",
+        "floor:material": "rough_wood",
+        "food": "yes",
+        "internet_access": "wlan",
+        "name": "The Alex",
+        "operator": "Greene King",
+        "outdoor_seating": "yes",
+        "real_ale": "Several from Greene King (some in mufti). A couple of others",
+        "website": "https://www.thealexcambridge.com/",
+        "website:menu": "http://www.thealexcambridge.com/downloads/food-menu.pdf",
+        "wheelchair": "limited",
+        "wheelchair:description": "Flat access to beer garden and one room beyond, possible flat access to one other. Steps elsewhere"
+      }
+    },
+    {
+      "type": "way",
+      "id": 52115600,
+      "center": {
+        "lat": 52.2054567,
+        "lon": 0.1400361
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "184",
+        "addr:postcode": "CB1 2QF",
+        "addr:street": "Sturton Street",
+        "amenity": "pub",
+        "building": "pub",
+        "description:floor": "tiled",
+        "fhrs:id": "1473132",
+        "name": "Dobblers Inn",
+        "opening_hours": "Mo-Th 14:00-23:00; Fr 13:30-23:00; Sa 12:00-23:00; Su 12:00-22:30",
+        "real_ale": "2 from Wells and Youngs, 2 guests",
+        "sky": "yes",
+        "source:addr:housenumber": "FHRS Open Data",
+        "table_football": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 67665889,
+      "center": {
+        "lat": 52.2036588,
+        "lon": 0.1421985
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "1",
+        "addr:postcode": "CB1 2PF",
+        "addr:street": "Ainsworth Street",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "building": "pub",
+        "fhrs:id": "1473739",
+        "food": "yes",
+        "name": "The Geldart",
+        "opening_hours": "Tu-Th 17:00-23:00; Fr 17:00-24:00+; Sa 12:00-24:00+; Su 12:00-23:00",
+        "real_ale": "6 or so beers",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 104927159,
+      "center": {
+        "lat": 52.2227498,
+        "lon": 0.1364193
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB4 1XG",
+        "addr:street": "Milton Road",
+        "amenity": "pub",
+        "brand": "Hungry Horse",
+        "brand:wikidata": "Q5943510",
+        "brand:wikipedia": "en:Hungry Horse",
+        "building": "pub",
+        "building:levels": "2",
+        "contact:website": "https://www.hungryhorse.co.uk/pubs/cambridgeshire/milton-arms/",
+        "fhrs:id": "1473116",
+        "name": "Milton Arms",
+        "operator": "Hungry Horse",
+        "roof:levels": "1",
+        "roof:shape": "gabled",
+        "source:outline": "Bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108883430,
+      "center": {
+        "lat": 52.1803892,
+        "lon": 0.0955864
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "33",
+        "addr:postcode": "CB3 9NF",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1433511",
+        "food": "yes",
+        "name": "Red Lion",
+        "source": "bing",
+        "website": "https://www.metropolitanpubcompany.com/our-pubs/the-red-lion/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 110256311,
+      "center": {
+        "lat": 52.2136541,
+        "lon": 0.123844
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "16",
+        "addr:postcode": "CB4 3AX",
+        "addr:street": "Chesterton Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1518602",
+        "name": "The Tivoli",
+        "operator": "City Pub Group",
+        "wheelchair": "yes",
+        "wikidata": "Q39197395"
+      }
+    },
+    {
+      "type": "way",
+      "id": 110256313,
+      "center": {
+        "lat": 52.2144217,
+        "lon": 0.1277523
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "1",
+        "addr:postcode": "CB4 1HB",
+        "addr:street": "Ferry Path",
+        "amenity": "pub",
+        "building": "pub",
+        "check_date:opening_hours": "2025-10-02",
+        "cuisine": "greek",
+        "fhrs:id": "1472749",
+        "name": "Old Spring",
+        "opening_hours": "Mo-Su 12:00-23:30",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 110256317,
+      "center": {
+        "lat": 52.2136996,
+        "lon": 0.1235262
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "14",
+        "addr:postcode": "CB4 3AX",
+        "addr:street": "Chesterton Road",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1473097",
+        "name": "The Boathouse",
+        "source:addr:housenumber": "FHRS Open Data",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 118943808,
+      "center": {
+        "lat": 52.2095223,
+        "lon": 0.1434344
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "231",
+        "addr:postcode": "CB5 8JE",
+        "addr:street": "Newmarket Road",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "2",
+        "description:floor": "Rough wood",
+        "fhrs:id": "1795809",
+        "food": "yes",
+        "name": "Corner House",
+        "opening_hours": "Mo-Th 12:00-22:00; Fr,Sa 12:00-23:00; Su 12:00-22:00",
+        "real_ale": "Greene King IPA + 3 guests",
+        "roof:levels": "1",
+        "roof:shape": "gabled"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126246128,
+      "center": {
+        "lat": 52.2221116,
+        "lon": 0.1188625
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB4 2BY",
+        "addr:street": "Carlton Way",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "1893093",
+        "name": "The Carlton Arms",
+        "source:name": "local_knowledge",
+        "source:outline": "Bing",
+        "website": "https://thecarltonarmscambridge.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 127367856,
+      "center": {
+        "lat": 52.2310501,
+        "lon": 0.1288658
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:county": "Cambridgeshire",
+        "addr:postcode": "CB4 2LG",
+        "addr:street": "Northfield Avenue",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1559820",
+        "name": "The Ship",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr 12:00-23:30; Sa 10:00-23:30; Su 12:00-22:30"
+      }
+    },
+    {
+      "type": "way",
+      "id": 127812957,
+      "center": {
+        "lat": 52.2134269,
+        "lon": 0.1121754
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "84",
+        "addr:postcode": "CB3 0AJ",
+        "addr:street": "Castle Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1473411",
+        "name": "Sir Isaac Newton",
+        "opening_hours": "PH,Mo-Su 11:30-18:00+"
+      }
+    },
+    {
+      "type": "way",
+      "id": 127965084,
+      "center": {
+        "lat": 52.2279675,
+        "lon": 0.1455712
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB4 1SP",
+        "addr:street": "Milton Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "pub",
+        "building:levels": "2",
+        "fhrs:id": "1473118",
+        "name": "The Golden Hind",
+        "phone": "+44 1223 420816",
+        "roof:levels": "1",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/golden-hind",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 131306510,
+      "center": {
+        "lat": 52.2174604,
+        "lon": 0.1394539
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "54",
+        "addr:postcode": "CB4 1NG",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "brewery": "Milton Brewery",
+        "building": "amenity",
+        "fhrs:id": "1473634",
+        "food": "yes",
+        "name": "The Haymakers",
+        "note": "reopened April 26, 2013",
+        "operator": "Milton Brewery",
+        "outdoor_seating": "yes",
+        "parking": "yes",
+        "phone": "+44 1223 318077",
+        "real_ale": "4 of theirs, 3 guests",
+        "website": "https://www.individualpubs.co.uk/haymakers/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 132851029,
+      "center": {
+        "lat": 52.1960794,
+        "lon": 0.1554075
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "25",
+        "addr:postcode": "CB1 3NW",
+        "addr:street": "Brookfields",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "building": "yes",
+        "fhrs:id": "1472693",
+        "name": "The Brook",
+        "opening_hours": "Su-Tu 12:00-22:00; We-Sa 12:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1223 410023",
+        "source:addr:housenumber": "FHRS Open Data",
+        "website": "https://thebrookpub.co.uk/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Step up to main bar, the flat. Outside seating access flat."
+      }
+    },
+    {
+      "type": "way",
+      "id": 134111534,
+      "center": {
+        "lat": 52.1969813,
+        "lon": 0.149732
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "292",
+        "addr:postcode": "CB1 3NL",
+        "addr:street": "Mill Road",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "building": "pub",
+        "check_date": "2026-05-05",
+        "fhrs:id": "1472848",
+        "food": "yes",
+        "internet_access": "wlan",
+        "name": "Royal Standard",
+        "opening_hours": "Mo-Fr 16:00-23:00; Sa 12:00-23:00; Su 12:00-22:30",
+        "real_ale": "5 or 6 beers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 134125339,
+      "center": {
+        "lat": 52.2003729,
+        "lon": 0.1397405
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housename": "Kingston Arms",
+        "addr:housenumber": "33",
+        "addr:postcode": "CB1 2NU",
+        "addr:street": "Kingston Street",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "building": "commercial",
+        "fhrs:id": "1651333",
+        "food": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Kingston Arms",
+        "old_fhrs:id": "506242",
+        "opening_hours": "Mo-Su 11:30-23:00",
+        "real_ale": "8 or so",
+        "source:addr:housenumber": "FHRS Open Data",
+        "source:wifi": "checked 20180803",
+        "website": "http://www.kingstonarms.co.uk/",
+        "wheelchair": "no",
+        "wheelchair:description": "Largish step at entrance, smaller step down into beer garden"
+      }
+    },
+    {
+      "type": "way",
+      "id": 134385094,
+      "center": {
+        "lat": 52.2048657,
+        "lon": 0.1366267
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "2",
+        "addr:postcode": "CB1 2LF",
+        "addr:street": "Norfolk Street",
+        "amenity": "pub",
+        "building": "retail",
+        "check_date": "2025-07-19",
+        "cuisine": "pizza",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "fhrs:id": "1473122",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "live_music": "yes",
+        "name": "The Blue Moon",
+        "note:name": "name changed under new management Nov 2013",
+        "old_name": "Man On The Moon",
+        "opening_hours": "Mo-We 16:00-24:00, Su 16:00-23:00, Fr 16:00-02:00, Th 16:00-01:00, Sa 14:00-02:00",
+        "payment:cash": "no",
+        "real_ale": "yes",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 134805845,
+      "center": {
+        "lat": 52.197142,
+        "lon": 0.1294898
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "21",
+        "addr:postcode": "CB2 1NW",
+        "addr:street": "Hills Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "3",
+        "check_date:opening_hours": "2025-03-18",
+        "cuisine": "tapas",
+        "fhrs:id": "1473044",
+        "indoor_seating": "yes",
+        "name": "The Emperor",
+        "opening_hours:signed": "no",
+        "outdoor_seating": "no",
+        "phone": "+44 1223 464633",
+        "real_ale": "yes",
+        "roof:levels": "1",
+        "website": "http://www.theemperorcambridge.com/",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 136196114,
+      "center": {
+        "lat": 52.2149913,
+        "lon": 0.1106845
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "19",
+        "addr:postcode": "CB4 3JB",
+        "addr:street": "Histon Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "1473248",
+        "name": "The Grapes",
+        "source:name": "local knowledge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 136330945,
+      "center": {
+        "lat": 52.2019315,
+        "lon": 0.1157523
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:postcode": "CB3 9EL",
+        "addr:street": "Silver Street",
+        "amenity": "pub",
+        "building": "pub",
+        "contact:phone": "+44 1223 353554",
+        "fhrs:id": "1473128",
+        "name": "The Anchor",
+        "source": "measured ground survey / Bing",
+        "website": "https://www.anchorcambridge.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 136330946,
+      "center": {
+        "lat": 52.2014876,
+        "lon": 0.116269
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "14",
+        "addr:postcode": "CB2 1RX",
+        "addr:street": "Mill Lane",
+        "amenity": "pub",
+        "building": "pub",
+        "check_date": "2022-10-03",
+        "fhrs:id": "1473450",
+        "food": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "The Mill",
+        "old_name": "Tap And Spile",
+        "opening_hours": "Mo-Fr 12:00-15:00,17:00-21:00; Sa-Su 12:00-21:00",
+        "payment:cash": "no",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 1223 311829",
+        "real_ale": "6",
+        "source": "measured ground survey / Bing",
+        "website": "https://www.themillpubcambridge.com/",
+        "wikidata": "Q26419121",
+        "wikimedia_commons": "Category:The Mill, Cambridge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 137326140,
+      "center": {
+        "lat": 52.2097315,
+        "lon": 0.143954
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "249",
+        "addr:postcode": "CB5 8JE",
+        "addr:street": "Newmarket Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "cuisine": "indian",
+        "fhrs:id": "1472909",
+        "food": "yes",
+        "name": "The Seven Stars",
+        "phone": "+44 1223 360993",
+        "source": "survey;Bing",
+        "website": "https://www.thesevenstars.pub/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 137328263,
+      "center": {
+        "lat": 52.2109791,
+        "lon": 0.1462944
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "337",
+        "addr:postcode": "CB5 8JE",
+        "addr:street": "Newmarket Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "1473340",
+        "name": "The Wrestlers",
+        "opening_hours": "Mo-Su 12:00-15:00,17:00-23:00",
+        "phone": "+44 1223 566 554",
+        "source": "survey;Bing",
+        "website": "http://www.charleswellspubs.co.uk/home/pub-guide/pub/wrestlers",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 137992313,
+      "center": {
+        "lat": 52.2099259,
+        "lon": 0.116197
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "30",
+        "addr:postcode": "CB3 0AF",
+        "addr:street": "Magdalene Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "pub",
+        "fhrs:id": "1473324",
+        "name": "The Pickerel",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/pickerel-inn",
+        "wheelchair": "limited",
+        "wikidata": "Q26394918",
+        "wikimedia_commons": "Category:The Pickerel, Cambridge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143469264,
+      "center": {
+        "lat": 52.1997039,
+        "lon": 0.1138481
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "14",
+        "addr:postcode": "CB3 9EX",
+        "addr:street": "Newnham Terrace",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "pub",
+        "fhrs:id": "1473155",
+        "name": "The Granta",
+        "real_ale": "yes",
+        "smoking": "outside",
+        "source": "bing;survey",
+        "source:addr": "FHRS Open Data;website",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/granta"
+      }
+    },
+    {
+      "type": "way",
+      "id": 148827006,
+      "center": {
+        "lat": 52.204652,
+        "lon": 0.1328395
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "2-5",
+        "addr:postcode": "CB1 1DY",
+        "addr:street": "Dover Street",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1473441",
+        "floor:material": "stone",
+        "food": "yes",
+        "name": "The Tram Depot",
+        "outdoor_seating": "yes",
+        "real_ale": "2 from Everards, 2 others",
+        "source:addr:housenumber": "FHRS Open Data",
+        "wheelchair": "yes",
+        "wheelchair:description": "appears flat throughout"
+      }
+    },
+    {
+      "type": "way",
+      "id": 149032866,
+      "center": {
+        "lat": 52.2040769,
+        "lon": 0.1179926
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "8",
+        "addr:postcode": "CB2 3QN",
+        "addr:street": "Bene't Street",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "brand:wikipedia": "en:Greene King",
+        "building": "retail",
+        "description:floor": "stone",
+        "fhrs:id": "1472482",
+        "food": "yes",
+        "name": "The Eagle",
+        "opening_hours": "Mo-Su 11:00+",
+        "operator": "Greene King",
+        "outdoor_seating": "no",
+        "real_ale": "Several from Greene King, 1 guest",
+        "source": "survey",
+        "toilets:wheelchair": "no",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/eagle",
+        "wheelchair": "limited",
+        "wheelchair:description": "Some bars have flat entrance from courtyard, some have steps",
+        "wikidata": "Q7731334",
+        "wikimedia_commons": "Category:The Eagle, Cambridge",
+        "wikipedia": "en:The Eagle, Cambridge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 149032883,
+      "center": {
+        "lat": 52.204143,
+        "lon": 0.1184859
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "3",
+        "addr:postcode": "CB2 3QN",
+        "addr:street": "Bene't Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "brand:wikipedia": "en:Greene King",
+        "building": "yes",
+        "fhrs:id": "1472816",
+        "floor:material": "wood",
+        "food": "yes",
+        "name": "The Bath House",
+        "operator": "Greene King",
+        "real_ale": "yes",
+        "source": "survey",
+        "website": "https://www.greeneking.co.uk/pubs/cambridgeshire/bath-house",
+        "wheelchair": "limited",
+        "wheelchair:description": "Step at entrance, but button to request ramp",
+        "wikidata": "Q26616702",
+        "wikimedia_commons": "Category:The Bath, Cambridge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 154730026,
+      "center": {
+        "lat": 52.1800352,
+        "lon": 0.0951156
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "59",
+        "addr:postcode": "CB3 9NF",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1613238",
+        "name": "The Green Man",
+        "real_cider": "1",
+        "wikidata": "Q26595957"
+      }
+    },
+    {
+      "type": "way",
+      "id": 166369101,
+      "center": {
+        "lat": 52.2144529,
+        "lon": 0.1246006
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:county": "Cambridgeshire",
+        "addr:housenumber": "129",
+        "addr:postcode": "CB4 3BA",
+        "addr:street": "Chesterton Road",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "2",
+        "fhrs:id": "1473762;1706227",
+        "floor:material": "wood",
+        "food": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Portland Arms",
+        "opening_hours": "Mo-We 16:30-23:00; Su, Th 12:00-23:00; Fr-Sa 12:00-00:00",
+        "real_cider": "yes",
+        "roof:levels": "1",
+        "roof:shape": "hipped",
+        "website": "http://www.theportlandarms.co.uk/",
+        "wheelchair": "limited",
+        "wheelchair:description": "step at entrance then appears flat throughout"
+      }
+    },
+    {
+      "type": "way",
+      "id": 171887754,
+      "center": {
+        "lat": 52.2082372,
+        "lon": 0.1327197
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "9-11",
+        "addr:postcode": "CB5 8EG",
+        "addr:street": "Newmarket Road",
+        "amenity": "pub",
+        "brand": "Charles Wells",
+        "building": "pub",
+        "fhrs:id": "1720692",
+        "name": "Burleigh Arms",
+        "opening_hours": "We-Fr 12:00-22:30; Tu 17:00-22:00; Mo off; Sa 12:00-23:00; Su 12:00-20:00",
+        "website": "https://www.burleigharmscambridge.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 172320765,
+      "center": {
+        "lat": 52.2076333,
+        "lon": 0.1266612
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "129",
+        "addr:postcode": "CB1 1LD",
+        "addr:street": "King Street",
+        "alt_name": "St Radegund",
+        "amenity": "pub",
+        "building": "pub",
+        "fixme": "In wheelchair:description, is \"toilets downstairs\" still true after 2025-6 refurb?",
+        "name": "St Radegund",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.stradegund.co.uk/",
+        "wheelchair:description": "Steps at entrances, toilets downstairs",
+        "wikidata": "Q7595412",
+        "wikimedia_commons": "Category:St Radegund, Cambridge",
+        "wikipedia": "en:St Radegund, Cambridge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 172407012,
+      "center": {
+        "lat": 52.2114689,
+        "lon": 0.1185342
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "3",
+        "addr:postcode": "CB5 8AQ",
+        "addr:street": "Thompson's Lane",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "2",
+        "fhrs:id": "1812571",
+        "name": "Byron's Bear",
+        "phone": "+44 1223 776969",
+        "roof:levels": "1",
+        "roof:shape": "hipped",
+        "website": "https://byronsbear.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 174752202,
+      "center": {
+        "lat": 52.196529,
+        "lon": 0.1086877
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housenumber": "11",
+        "addr:postcode": "CB3 9JZ",
+        "addr:street": "Barton Road",
+        "amenity": "pub",
+        "building": "pub",
+        "cuisine": "pizza",
+        "fhrs:id": "1472815",
+        "food": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "The Red Bull",
+        "outdoor_seating": "yes",
+        "real_ale": "4"
+      }
+    },
+    {
+      "type": "way",
+      "id": 179837563,
+      "center": {
+        "lat": 52.2124557,
+        "lon": 0.1277858
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:full": "Fort St George, MIdsummer Common, Victoria Avenue, CAMBRIDGE, CB4 1HA",
+        "addr:housename": "Fort St George",
+        "addr:place": "Midsummer Common",
+        "addr:postcode": "CB4 1HA",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "brand:wikipedia": "en:Greene King",
+        "building": "pub",
+        "check_date": "2025-07-11",
+        "fhrs:authority": "Cambridge City",
+        "fhrs:id": "1472838",
+        "fhrs:local_authority_id": "PI/000064023",
+        "food": "yes",
+        "name": "Fort St George",
+        "opening_hours": "Mo-Fr 11:00-23:00; Su 12:00-22:30; Sa 11:00-23:00",
+        "operator": "Greene King",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking-pubs.co.uk/pubs/cambridgeshire/fort-st-george/",
+        "wikidata": "Q5472087",
+        "wikimedia_commons": "Category:Fort St George, Cambridge",
+        "wikipedia": "en:Fort St George In England"
+      }
+    },
+    {
+      "type": "way",
+      "id": 225399270,
+      "center": {
+        "lat": 52.1921951,
+        "lon": 0.134303
+      },
+      "tags": {
+        "accommodation": "yes",
+        "addr:city": "Cambridge",
+        "addr:housenumber": "129",
+        "addr:postcode": "CB2 1PG",
+        "addr:street": "Hills Road",
+        "amenity": "pub",
+        "building": "pub",
+        "check_date": "2025-09-20",
+        "description:floor": "Rough Wood",
+        "fhrs:authority": "Cambridge City",
+        "fhrs:id": "1473307",
+        "fhrs:local_authority_id": "PI/000011508",
+        "food": "yes",
+        "name": "Earl of Derby",
+        "opening_hours": "Mo-Th 07:30-24:00, Fr-Sa 07:30-02:00, Su 08:30-24:00",
+        "operator": "Greene King",
+        "outdoor_seating": "yes",
+        "real_ale": "4 from Greene King",
+        "toilets:wheelchair": "yes",
+        "tourism": "guest_house",
+        "website": "www.theearlofderby.com",
+        "wheelchair": "yes",
+        "wheelchair:description": "Appears flat to all areas inc. accomodation"
+      }
+    },
+    {
+      "type": "way",
+      "id": 341321937,
+      "center": {
+        "lat": 52.180245,
+        "lon": 0.1530568
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:housename": "The Queen Edith",
+        "addr:postcode": "CB1 8QN",
+        "addr:street": "Wulfstan Way",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "2",
+        "building:levels:underground": "1",
+        "floor:material": "tiles",
+        "food": "yes",
+        "internet_access": "wlan",
+        "name": "The Queen Edith",
+        "note": "This is the replacement pub, not the original one demolished in 2013",
+        "opening_hours": "Mo-We 16:00-23:00; Th-Sa 12:00-23:00; Su 12:00-22:00",
+        "operator": "Milton Brewery",
+        "outdoor_seating": "yes",
+        "parking": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "phone": "+44 1223 318536",
+        "real_ale": "8 from Milton",
+        "shop": "alcohol",
+        "website": "https://www.individualpubs.co.uk/queenedith/",
+        "wheelchair": "yes",
+        "wheelchair:description": "Flat"
+      }
+    },
+    {
+      "type": "way",
+      "id": 372486548,
+      "center": {
+        "lat": 52.2003599,
+        "lon": 0.1344637
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "11",
+        "addr:postcode": "CB1 2HS",
+        "addr:street": "Covent Garden",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1473718",
+        "name": "Six Bells",
+        "opening_hours": "Su-Th 16:00-23:30, Fr,Sa 16:00-00:30",
+        "outdoor_seating": "yes",
+        "real_ale": "2 from Greene King, 2 guests",
+        "source:addr:housenumber": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 435193949,
+      "center": {
+        "lat": 52.2013308,
+        "lon": 0.1426738
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "23a",
+        "addr:postcode": "CB1 2NZ",
+        "addr:street": "Hooper Street",
+        "amenity": "pub",
+        "building": "shed",
+        "building:levels": "1",
+        "floor:material": "lino",
+        "microbrewery": "yes",
+        "name": "Calverley's Brewery and Tap Room",
+        "opening_hours": "Tu-Fr 17:00-22:30; Sa 12:00-22:30",
+        "real_ale": "11 or so of theirs on gravity, also some guests",
+        "shop": "alcohol",
+        "website": "https://www.calverleys.com/",
+        "wheelchair": "yes",
+        "wheelchair:description": "Flat"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1204234283,
+      "center": {
+        "lat": 52.2028556,
+        "lon": 0.1235352
+      },
+      "tags": {
+        "addr:city": "Cambridge",
+        "addr:country": "GB",
+        "addr:housenumber": "38-39",
+        "addr:postcode": "CB2 3AR",
+        "addr:street": "St Andrew's Street",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "fhrs:id": "1473416",
+        "floor:material": "wood",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "name": "The Regal",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "real_ale": "Green King Ruddles Best, Abbot + 6 (varies)",
+        "smoking": "no",
+        "toilets": "yes",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "website": "https://www.jdwetherspoon.com/pubs/the-regal-cambridge/",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/748/menus",
+        "wheelchair": "yes",
+        "wheelchair:description": "Step-free access to bar and one seating area, lift and steps down to main seating and outside seating"
+      }
+    }
+  ]
+}

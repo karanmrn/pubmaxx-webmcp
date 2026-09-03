@@ -1,0 +1,310 @@
+[
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/doggettscoatandbadgesouthbanklondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/doggettscoatandbadgesouthbanklondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/doggettscoatandbadgesouthbanklondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/doggettscoatandbadgesouthbanklondon/bookings",
+    "slug": "doggettscoatandbadgesouthbanklondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theargyllarmsoxfordcircuslondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theargyllarmsoxfordcircuslondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theargyllarmsoxfordcircuslondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theargyllarmsoxfordcircuslondon/bookings",
+    "slug": "theargyllarmsoxfordcircuslondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thebearandstaffleicestersquarelondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thebearandstaffleicestersquarelondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thebearandstaffleicestersquarelondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thebearandstaffleicestersquarelondon/bookings",
+    "slug": "thebearandstaffleicestersquarelondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theblackfriarblackfriarslondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theblackfriarblackfriarslondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theblackfriarblackfriarslondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theblackfriarblackfriarslondon/bookings",
+    "slug": "theblackfriarblackfriarslondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thecambridgecambridgecircuslondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thecambridgecambridgecircuslondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thecambridgecambridgecircuslondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thecambridgecambridgecircuslondon/bookings",
+    "slug": "thecambridgecambridgecircuslondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theclachankinglystreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theclachankinglystreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theclachankinglystreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theclachankinglystreetlondon/bookings",
+    "slug": "theclachankinglystreetlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theclarencemayfairlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theclarencemayfairlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theclarencemayfairlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theclarencemayfairlondon/bookings",
+    "slug": "theclarencemayfairlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thecoalholestrandlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thecoalholestrandlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thecoalholestrandlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thecoalholestrandlondon/bookings",
+    "slug": "thecoalholestrandlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thecrownbrewerstreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thecrownbrewerstreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thecrownbrewerstreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thecrownbrewerstreetlondon/bookings",
+    "slug": "thecrownbrewerstreetlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thedogandducksoholondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thedogandducksoholondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thedogandducksoholondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thedogandducksoholondon/bookings",
+    "slug": "thedogandducksoholondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theelephantandcastlekensingtonlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theelephantandcastlekensingtonlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theelephantandcastlekensingtonlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theelephantandcastlekensingtonlondon/bookings",
+    "slug": "theelephantandcastlekensingtonlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thefalconclaphamjunctionlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thefalconclaphamjunctionlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thefalconclaphamjunctionlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thefalconclaphamjunctionlondon/bookings",
+    "slug": "thefalconclaphamjunctionlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thefeatherswestminsterlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thefeatherswestminsterlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thefeatherswestminsterlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thefeatherswestminsterlondon/bookings",
+    "slug": "thefeatherswestminsterlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theflyinghorseoxfordstreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theflyinghorseoxfordstreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theflyinghorseoxfordstreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theflyinghorseoxfordstreetlondon/bookings",
+    "slug": "theflyinghorseoxfordstreetlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theglobemoorgatelondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theglobemoorgatelondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theglobemoorgatelondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theglobemoorgatelondon/bookings",
+    "slug": "theglobemoorgatelondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thehenryaddingtoncanarywharflondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thehenryaddingtoncanarywharflondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thehenryaddingtoncanarywharflondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thehenryaddingtoncanarywharflondon/bookings",
+    "slug": "thehenryaddingtoncanarywharflondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thehoopandgrapesaldgatelondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thehoopandgrapesaldgatelondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thehoopandgrapesaldgatelondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thehoopandgrapesaldgatelondon/bookings",
+    "slug": "thehoopandgrapesaldgatelondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thehornimanathayslondonbridge",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thehornimanathayslondonbridge/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thehornimanathayslondonbridge/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thehornimanathayslondonbridge/bookings",
+    "slug": "thehornimanathayslondonbridge"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thekingsheadmayfairlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thekingsheadmayfairlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thekingsheadmayfairlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thekingsheadmayfairlondon/bookings",
+    "slug": "thekingsheadmayfairlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thelordaberconwayliverpoolstreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thelordaberconwayliverpoolstreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thelordaberconwayliverpoolstreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thelordaberconwayliverpoolstreetlondon/bookings",
+    "slug": "thelordaberconwayliverpoolstreetlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/themagpiebishopsgatelondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/themagpiebishopsgatelondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/themagpiebishopsgatelondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/themagpiebishopsgatelondon/bookings",
+    "slug": "themagpiebishopsgatelondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbyrathbonestreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbyrathbonestreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbyrathbonestreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbyrathbonestreetlondon/bookings",
+    "slug": "themarquisofgranbyrathbonestreetlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbywestminsterlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbywestminsterlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbywestminsterlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbywestminsterlondon/bookings",
+    "slug": "themarquisofgranbywestminsterlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/themudlarklondonbridge",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/themudlarklondonbridge/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/themudlarklondonbridge/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/themudlarklondonbridge/bookings",
+    "slug": "themudlarklondonbridge"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theobservatory",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theobservatory/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theobservatory/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theobservatory/bookings",
+    "slug": "theobservatory"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldbelltavernfleetstreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldbelltavernfleetstreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldbelltavernfleetstreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldbelltavernfleetstreetlondon/bookings",
+    "slug": "theoldbelltavernfleetstreetlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldthamesideinnlondonbridge",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldthamesideinnlondonbridge/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldthamesideinnlondonbridge/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldthamesideinnlondonbridge/bookings",
+    "slug": "theoldthamesideinnlondonbridge"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theporcupineleicestersquarelondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theporcupineleicestersquarelondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theporcupineleicestersquarelondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theporcupineleicestersquarelondon/bookings",
+    "slug": "theporcupineleicestersquarelondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theprincessofwalescharingcrosslondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theprincessofwalescharingcrosslondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theprincessofwalescharingcrosslondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theprincessofwalescharingcrosslondon/bookings",
+    "slug": "theprincessofwalescharingcrosslondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theshiptalbotcourtlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theshiptalbotcourtlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theshiptalbotcourtlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theshiptalbotcourtlondon/bookings",
+    "slug": "theshiptalbotcourtlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thesirchristopherhattonhattongardenlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thesirchristopherhattonhattongardenlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thesirchristopherhattonhattongardenlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thesirchristopherhattonhattongardenlondon/bookings",
+    "slug": "thesirchristopherhattonhattongardenlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thestgeorgestavernvictorialondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thestgeorgestavernvictorialondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thestgeorgestavernvictorialondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thestgeorgestavernvictorialondon/bookings",
+    "slug": "thestgeorgestavernvictorialondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thesugarloafcannonstreet",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thesugarloafcannonstreet/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thesugarloafcannonstreet/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thesugarloafcannonstreet/bookings",
+    "slug": "thesugarloafcannonstreet"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theswanhammersmithlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theswanhammersmithlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theswanhammersmithlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theswanhammersmithlondon/bookings",
+    "slug": "theswanhammersmithlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thethreegreyhoundssoholondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thethreegreyhoundssoholondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thethreegreyhoundssoholondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thethreegreyhoundssoholondon/bookings",
+    "slug": "thethreegreyhoundssoholondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thewalrusandthecarpentermonumentlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thewalrusandthecarpentermonumentlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thewalrusandthecarpentermonumentlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thewalrusandthecarpentermonumentlondon/bookings",
+    "slug": "thewalrusandthecarpentermonumentlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thewellingtonstrandlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thewellingtonstrandlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thewellingtonstrandlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thewellingtonstrandlondon/bookings",
+    "slug": "thewellingtonstrandlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitehorsecarnabystreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitehorsecarnabystreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitehorsecarnabystreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitehorsecarnabystreetlondon/bookings",
+    "slug": "thewhitehorsecarnabystreetlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitelioncoventgardenlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitelioncoventgardenlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitelioncoventgardenlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitelioncoventgardenlondon/bookings",
+    "slug": "thewhitelioncoventgardenlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhiteswanlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhiteswanlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhiteswanlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhiteswanlondon/bookings",
+    "slug": "thewhiteswanlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/thewoodinsshadesbishopsgatelondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/thewoodinsshadesbishopsgatelondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/thewoodinsshadesbishopsgatelondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/thewoodinsshadesbishopsgatelondon/bookings",
+    "slug": "thewoodinsshadesbishopsgatelondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/theyorkislingtonlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/theyorkislingtonlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/theyorkislingtonlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/theyorkislingtonlondon/bookings",
+    "slug": "theyorkislingtonlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/williamsonstaverngrovelandcourtlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/williamsonstaverngrovelandcourtlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/williamsonstaverngrovelandcourtlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/williamsonstaverngrovelandcourtlondon/bookings",
+    "slug": "williamsonstaverngrovelandcourtlondon"
+  },
+  {
+    "base": "https://www.nicholsonspubs.co.uk/restaurants/london/yeoldewatlingwatlingstreetlondon",
+    "foodmenu": "https://www.nicholsonspubs.co.uk/restaurants/london/yeoldewatlingwatlingstreetlondon/foodmenu",
+    "drinks": "https://www.nicholsonspubs.co.uk/restaurants/london/yeoldewatlingwatlingstreetlondon/drinks",
+    "bookings": "https://www.nicholsonspubs.co.uk/restaurants/london/yeoldewatlingwatlingstreetlondon/bookings",
+    "slug": "yeoldewatlingwatlingstreetlondon"
+  }
+]

@@ -1,0 +1,57 @@
+/* Food hygiene badge — a neutral metadata chip on the venue sheet Overview.
+   Role-tokened per #328: this is FSA reference data, not a price or an accent,
+   so it rides the neutral --badge-* tokens (never the coral --accent-action).
+   Both themes via CSS variables; 390×844 first; 44px-safe; no motion. */
+
+.venueHygiene {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--badge-border);
+  background: var(--badge-surface);
+  color: var(--badge-ink);
+  font-size: 0.8rem;
+  line-height: 1.3;
+  /* 44px, not 32px: on the venue sheet this is a real link out to the FSA
+     record, sitting in a column of thumb-sized controls. */
+  min-height: 44px;
+  text-decoration: none;
+}
+
+a.venueHygiene:hover,
+a.venueHygiene:focus-visible {
+  border-color: var(--accent-action);
+  color: var(--ink);
+}
+
+a.venueHygiene:focus-visible {
+  outline: 2px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+.venueHygieneLabel {
+  font-weight: 600;
+}
+
+/* The FSA rating number sits in a small counter square, tabular so 0–5 line up. */
+.venueHygieneScore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: var(--radius-xs, 4px);
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  color: var(--ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.venueHygieneSource {
+  opacity: 0.72;
+  font-size: 0.72rem;
+}

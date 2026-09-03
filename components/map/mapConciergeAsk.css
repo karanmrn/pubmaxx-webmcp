@@ -1,0 +1,337 @@
+/* F3 concierge-as-map-home. Bottom-anchored below W2's top Tonight chip. When
+   either panel opens, the other surface yields so they never fight. Hidden
+   entirely while a venue sheet or planner is open. */
+.mapConciergeAsk {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  z-index: var(--z-map-ask); /* above the Tonight lane (512), below toolbar/banners — house z ledger */
+  display: flex;
+  justify-content: center;
+  padding: 0 12px;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .mapConciergeAsk {
+    bottom: calc(var(--mobile-tab-clearance, 72px) + 28px);
+  }
+}
+
+.mapConciergeAsk > * {
+  pointer-events: auto;
+}
+
+/* Only the expanded Tonight sheet needs to clear the bottom concierge pill;
+   its collapsed chip now lives under the map toolbar. */
+.mapConciergeAsk--collapsed ~ .tonightLane--open {
+  bottom: calc(84px + env(safe-area-inset-bottom, 0px) + 52px);
+}
+
+.mapConciergeAsk--open ~ .tonightLane {
+  display: none;
+}
+
+.appShell.detail-open .mapConciergeAsk,
+.appShell.planning-open .mapConciergeAsk {
+  display: none;
+}
+
+/* ── Collapsed pill ───────────────────────────────────────────────────────*/
+.mapConciergeAskPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: var(--control-radius, 14px);
+  border: 1px solid color-mix(in srgb, var(--line) 66%, var(--brass) 34%);
+  background: color-mix(in srgb, var(--panel-raised) 92%, var(--brass) 8%);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--ink-deep) 16%, transparent);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.mapConciergeAskPill svg {
+  color: var(--brass);
+}
+
+.mapConciergeAskPill picture,
+.mapConciergeAskEyebrow picture {
+  display: block;
+  line-height: 0;
+  flex: 0 0 auto;
+}
+
+.mapConciergeAskPill img,
+.mapConciergeAskEyebrow img {
+  display: block;
+  border-radius: 50%;
+}
+
+/* ── Open panel ───────────────────────────────────────────────────────────*/
+.mapConciergeAsk--open {
+  justify-content: center;
+}
+
+.mapConciergeAskPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(96vw, 460px);
+  max-height: min(62vh, 520px);
+  overflow-y: auto;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+  background: color-mix(in srgb, var(--panel-raised) 94%, var(--brass) 6%);
+  box-shadow: 0 14px 40px color-mix(in srgb, var(--ink-deep) 24%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.mapConciergeAskHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mapConciergeAskEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--brass) 70%, var(--ink));
+}
+
+.mapConciergeAskClose {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -8px -8px -8px 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.mapConciergeAskForm {
+  display: flex;
+  gap: 8px;
+}
+
+.mapConciergeAskInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.mapConciergeAskInput:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brass) 60%, transparent);
+  outline-offset: 1px;
+}
+
+.mapConciergeAskGo {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: 0;
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.mapConciergeAskGo:disabled {
+  opacity: 0.5;
+}
+
+.mapConciergeAskSr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mapConciergeAskExamples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mapConciergeAskChip {
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--control-radius, 14px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.mapConciergeAskMsg {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.mapConciergeAskMsg--error {
+  color: color-mix(in srgb, var(--danger, #c0392b) 80%, var(--ink));
+}
+
+.mapConciergeAskAnswer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mapConciergeAskList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mapConciergeAskCard {
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.mapConciergeAskCardTap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+}
+
+.mapConciergeAskCardTap--static {
+  cursor: default;
+}
+
+.mapConciergeAskCardTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mapConciergeAskCardTitle {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.mapConciergeAskCardPrice {
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--amber) 55%, var(--ink));
+}
+
+.mapConciergeAskCardPlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.mapConciergeAskCardNote {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: var(--ink);
+  opacity: 0.86;
+}
+
+.mapConciergeAskCardCta {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--river, #2f80ed) 60%, var(--ink));
+}
+
+.mapConciergeAskMsg--degraded {
+  opacity: 0.82;
+  font-size: 0.8rem;
+}
+
+.mapConciergeAskProposals {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mapConciergeAskProposal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.mapConciergeAskProposalConfirm,
+.mapConciergeAskProposalDismiss {
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.mapConciergeAskProposalConfirm {
+  border: 1px solid color-mix(in srgb, var(--line) 50%, var(--brass) 50%);
+  background: color-mix(in srgb, var(--brass) 22%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.mapConciergeAskProposalDismiss {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapConciergeAskPill,
+  .mapConciergeAskPanel {
+    transition: none;
+  }
+}

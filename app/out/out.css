@@ -1,0 +1,379 @@
+/* Out tab shell (L1). Role tokens only. Tab-bar clearance belongs to
+   mobileNav.css. No em dashes. */
+
+.outPage {
+  /* The shell floor every sibling route keeps: body paints the party gradient,
+     so a short page ends its gradient box mid-viewport and leaves a hard seam
+     below it. */
+  min-height: 100dvh;
+  min-height: 100svh;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) var(--page-gutter)
+    calc(var(--tabbar-h, 64px) + env(safe-area-inset-bottom, 0px) + 24px);
+  color: var(--ink);
+}
+
+.outHead {
+  margin: 4px 0 22px;
+}
+
+.outTitle {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 6.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+}
+
+.outDayChips {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  width: 100%;
+  min-height: 44px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised, var(--paper));
+  box-sizing: border-box;
+}
+
+.outDayChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill, 999px);
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.outDayChip[aria-current="page"] {
+  background: var(--brass);
+  color: var(--color-on-accent, var(--paper));
+}
+
+.outDayChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.outSectionTitle {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.outPlans,
+.outListings {
+  margin: 0 0 22px;
+}
+
+.outPlansSectionTitle {
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+
+.outPlansPlaceholder {
+  margin: 0;
+  color: color-mix(in srgb, var(--ink-soft) 82%, transparent);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.outPlansPlaceholderLink {
+  color: color-mix(in srgb, var(--ink-soft) 92%, transparent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.outStatus {
+  margin: 0 0 12px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.outListingUnmatched {
+  margin: 0 0 16px;
+}
+
+.outListingUnmatched .outListingUnmatchedLine {
+  margin-bottom: 6px;
+  overflow-wrap: anywhere;
+}
+
+.outListingUnmatchedCredit {
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.outListingUnmatchedCredit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.outListingUnmatchedWay {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* The card box is the LIST ITEM, not the link. The source credit is its own
+   link (a licence obligation for Skiddle), and an anchor inside an anchor is
+   invalid HTML the parser un-nests, so the two links are siblings inside one
+   bordered item. */
+.outList {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outList > li {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel-raised, var(--paper));
+}
+
+.outCard {
+  display: grid;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.outCard h2,
+.outCard h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.outCardMeta {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.outPrice {
+  margin: 0;
+  font-weight: 600;
+}
+
+.outSourceCredit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+}
+
+.outListingSurface {
+  display: grid;
+  gap: 22px;
+}
+
+.outGroup {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.outGroupTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.outGroupList {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outListingRow {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel-raised, var(--paper));
+}
+
+.outListingGig {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.outListingPubPair {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.outListingPubPair--absent {
+  color: color-mix(in srgb, var(--ink-soft) 82%, transparent);
+}
+
+.outListingPubPair--matched {
+  display: grid;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.outListingPubPairHead {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.outListingPubPairLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.outListingPubPairName {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.outListingPubPairLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 44px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.outListingPubPairLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .outListingPubPairLink:hover {
+    border-color: var(--state-active-border, var(--brass));
+    color: var(--ink);
+  }
+}
+
+.outOpenPlanList {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outOpenPlanCard {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel-raised, var(--paper));
+}
+
+.outOpenPlanLink {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.outOpenPlanTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.outOpenPlanMeta,
+.outOpenPlanMeet {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.outPlansFoot {
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+}
+
+.outPlansFootLink {
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 1024px) {
+  .outPage {
+    max-width: var(--content-max-wide, 1240px);
+  }
+
+  .outListingSurface {
+    max-width: 1120px;
+    margin-inline: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 28px;
+  }
+
+  .outListingRow {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+    column-gap: 18px;
+    align-items: start;
+  }
+
+  .outListingPubPair--matched {
+    padding-top: 0;
+    border-top: none;
+    border-left: 1px solid var(--line);
+    padding-left: 18px;
+  }
+
+  .outListingPubPair--absent {
+    border-left: 1px solid var(--line);
+    padding-left: 18px;
+    align-self: center;
+  }
+}

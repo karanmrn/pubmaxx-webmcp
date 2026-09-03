@@ -1,0 +1,237 @@
+/* Wanted Wave A — private list + paste capture. Matches product chrome. */
+
+.wantedPanel {
+  margin: 1.25rem 0 1.75rem;
+}
+
+.wantedPanel__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.wantedPanel__lede {
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--muted, var(--ink-soft, #5c5346));
+}
+
+.wantedCapture {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.wantedCapture__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wantedCapture__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.wantedCapture__input,
+.wantedCapture__note {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line, rgba(0, 0, 0, 0.14));
+  border-radius: 8px;
+  background: var(--paper, #fff);
+  color: var(--ink);
+  font: inherit;
+}
+
+.wantedCapture__note {
+  min-height: 44px;
+  resize: vertical;
+}
+
+.wantedCapture__submit,
+.wantedCapture__secondary,
+.wantedSaveBtn,
+.wantedCandidate,
+.wantedRow__map {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--line, rgba(0, 0, 0, 0.14));
+  background: var(--brass, #b08d57);
+  color: var(--paper, #fff);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.wantedCapture__secondary,
+.wantedCandidate,
+.wantedRow__map {
+  background: transparent;
+  color: var(--ink);
+}
+
+.wantedCapture__submit:disabled,
+.wantedSaveBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.wantedCapture__status,
+.wantedPanel__empty,
+.wantedFulfilNote {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--muted, var(--ink-soft, #5c5346));
+}
+
+.wantedFulfilNote {
+  color: var(--brass, #b08d57);
+  font-weight: 650;
+}
+
+.wantedCandidates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.wantedCandidate {
+  display: grid;
+  justify-items: start;
+  text-align: left;
+  gap: 0.15rem;
+  width: 100%;
+}
+
+.wantedCandidate__name {
+  font-weight: 700;
+}
+
+.wantedCandidate__meta {
+  font-size: 0.85rem;
+  color: var(--muted, var(--ink-soft, #5c5346));
+}
+
+.wantedList {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.wantedRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: start;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--line, rgba(0, 0, 0, 0.1));
+}
+
+.wantedRow__name {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.wantedRow__meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--muted, var(--ink-soft, #5c5346));
+}
+
+.wantedRow__actions,
+.wantedPromotion {
+  display: grid;
+  min-width: 0;
+  gap: 0.45rem;
+}
+
+.wantedRow__actions {
+  grid-column: 1 / -1;
+}
+
+.wantedPromotion label {
+  display: grid;
+  gap: 0.25rem;
+  color: var(--muted, var(--ink-soft, #5c5346));
+  font-size: 0.8rem;
+}
+
+.wantedPromotion select,
+.wantedPromotion button {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line, rgba(0, 0, 0, 0.14));
+  border-radius: 8px;
+  background: var(--paper, #fff);
+  color: var(--ink);
+  font: inherit;
+}
+
+.wantedPromotion button {
+  background: var(--brass, #b08d57);
+  color: var(--paper, #fff);
+  font-weight: 650;
+}
+
+.wantedPromotion [role="status"] {
+  max-width: 16rem;
+  color: var(--muted, var(--ink-soft, #5c5346));
+  font-size: 0.8rem;
+}
+
+.wantedPromotionState {
+  margin: 0;
+  color: var(--muted, var(--ink-soft, #5c5346));
+  font-size: 0.85rem;
+}
+
+.wantedSaveWrap {
+  margin-top: 0.65rem;
+}
+
+.wantedPlanChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.55rem 0 0.15rem;
+}
+
+.wantedPlanChips__label {
+  flex: 1 0 100%;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted, var(--ink-soft, #5c5346));
+}
+
+.wantedPlanChip {
+  min-height: 44px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--line, rgba(0, 0, 0, 0.14));
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,346 @@
+/* Corner Layers FAB + popover — all viewports (Wave J declutter).
+   Replaces desktop mid-map .poiToggle / .placeStoriesControl strip.
+   Structure matches #63; do not rebuild Outer London / security. */
+
+.mapLayersControl {
+  display: block;
+  position: absolute;
+  right: 14px;
+  /* Clear MapLibre's expanded desktop attribution so its links own their taps. */
+  bottom: 34px;
+  z-index: var(--z-map-hover);
+  pointer-events: none;
+}
+
+/* Keep an open panel above the live Tonight lane so every layer chip remains
+   tappable when the two bottom map surfaces overlap on a phone. */
+.mapLayersControl.isOpen {
+  z-index: var(--z-map-toolbar);
+}
+
+.mapLayersFab,
+.mapLayersPanel {
+  pointer-events: auto;
+}
+
+.mapLayersFab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px 0 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--brass) 12%, var(--panel-raised)),
+      var(--panel-raised)
+    );
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  box-shadow:
+    0 10px 22px color-mix(in srgb, var(--ink-deep) 16%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--brass) 12%, transparent);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.mapLayersFab:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.mapLayersFab.isActive {
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+  border-color: transparent;
+}
+
+.mapLayersFab:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.mapLayersPanel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  width: min(340px, calc(100vw - 24px));
+  max-height: min(62vh, 520px);
+  overflow-y: auto;
+  /* U6d — extra bottom padding so the last chip row never sits clipped
+     against the panel's rounded bottom edge while scrolling. */
+  padding: 12px 12px 18px;
+  border: 1px solid color-mix(in srgb, var(--brass) 26%, var(--line));
+  border-radius: 18px;
+  background: var(--panel-raised);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--ink-deep) 22%, transparent);
+  animation: mapLayersPanelIn var(--duration-base) var(--ease-out) both;
+}
+
+@keyframes mapLayersPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.mapLayersPanelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.mapLayersPanelHead strong {
+  font-family: var(--font-display, var(--serif));
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.mapLayersClose {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+  color: var(--ink-soft);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mapLayersHint {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.mapLayersReader {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
+}
+
+.mapLayersReaderAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  width: 100%;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 750;
+  box-shadow:
+    0 8px 18px color-mix(in srgb, var(--ink-deep) 12%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--brass) 16%, transparent);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.mapLayersReaderAction:active {
+  --shared-press-scale: 1;
+  transform: scale(0.97);
+}
+
+.mapLayersReaderAction.isOn {
+  box-shadow:
+    0 8px 18px color-mix(in srgb, var(--ink-deep) 12%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--brass) 42%, transparent);
+}
+
+.mapLayersReaderCount {
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.mapLayersReaderKey {
+  min-width: 0;
+}
+
+.mapLayersPriceBlock {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.mapLayersPriceOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mapLayersPriceChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--line) 72%, var(--pint) 28%);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 80%, var(--panel-raised));
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.mapLayersPriceChip:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.mapLayersPriceChip.isOn {
+  border-color: var(--pint);
+  background: color-mix(in srgb, var(--pint) 16%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.mapLayersPriceDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mapLayersPriceDot.green {
+  background: var(--pint);
+}
+
+.mapLayersPriceDot.amber {
+  background: var(--amber);
+}
+
+.mapLayersPriceDot.any {
+  background: color-mix(in srgb, var(--muted) 55%, transparent);
+}
+
+.mapLayersGroup,
+.mapLayersBandRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mapLayersSectionLabel {
+  margin: 12px 0 6px;
+  color: var(--brass);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mapLayersChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--line) 72%, var(--brass) 28%);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 80%, var(--panel-raised));
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.mapLayersChip:active {
+  transform: scale(0.96);
+  --shared-press-scale: 1;
+}
+
+.mapLayersChip.isOn {
+  border-color: var(--brass);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+}
+
+.mapLayersChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.mapLayersSwatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--panel-raised) 70%, transparent);
+}
+
+.mapLayersChip.isOn .mapLayersSwatch {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-on-accent) 40%, transparent);
+}
+
+.appShell.sheet-full .mapLayersControl,
+.appShell.detail-open .mapLayersControl {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .mapLayersControl {
+    right: 10px;
+    bottom: var(--map-bottom-fab-row, calc(var(--mobile-tab-clearance, 72px) + 18px));
+  }
+
+  .mapLayersPanel {
+    /* Phone key lives in the More sheet, so this panel can originate from
+       the Layers control instead of floating above a removed bottom stack. */
+    bottom: calc(100% + 10px);
+    max-height: min(
+      40vh,
+      calc(100dvh - var(--map-top-clearance, 80px) - var(--mobile-tab-clearance, 72px) - 152px)
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapLayersFab,
+  .mapLayersChip,
+  .mapLayersReaderAction,
+  .mapLayersPriceChip,
+  .mapLayersPanel {
+    transition: none;
+    animation: none;
+  }
+}

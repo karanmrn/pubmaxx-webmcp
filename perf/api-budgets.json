@@ -1,0 +1,87 @@
+{
+  "note": "Per-route API latency ceilings for the hot READS the map, Today and Out surfaces spend on arrival. Same discipline as perf/route-budgets.json: down is free, up is a decision. Seeded on 2026-09-01 from eight production samples per route measured as curl's time_starttransfer, which INCLUDES this machine's network round trip and a cold invocation in the first sample, so a seed is pessimistic against a probe running beside the deployment. The ceilings are looser again than the seed for that reason. The CI probe is the oracle and the ratchet check banks the slack.",
+  "method": {
+    "samples": 12,
+    "warmupSamples": 2,
+    "measure": "time to first byte of the response body, in milliseconds",
+    "target": "a deployed main commit, probed from the CI runner",
+    "countedUpTo": "The whole request: a reader waits for the byte, not for the handler. A route is only budgeted here when it is a public GET a surface spends on arrival, so a probe needs no session and a slow answer is a slow night for everybody."
+  },
+  "routes": [
+    {
+      "path": "/api/whats-on",
+      "why": "Tonight and Today both open on it, and it merges bundled rows with a live layer.",
+      "requiredJsonFields": {
+        "rows": "array",
+        "servedAt": "string",
+        "sourceFreshnessKind": "string"
+      },
+      "seedP50Ms": 257,
+      "seedP95Ms": 2774,
+      "p50Ms": 600,
+      "p95Ms": 3000
+    },
+    {
+      "path": "/api/out",
+      "why": "The Out tab's whole answer, and the one read with its own per-IP budget.",
+      "requiredJsonFields": {
+        "status": "string",
+        "events": "array"
+      },
+      "seedP50Ms": 149,
+      "seedP95Ms": 766,
+      "p50Ms": 500,
+      "p95Ms": 1500
+    },
+    {
+      "path": "/api/night-areas?city=london",
+      "why": "Bundled config behind the area picker, and now edge-cached, so it is the floor every other read here is judged against.",
+      "requiredJsonFields": {
+        "cityId": "string",
+        "areas": "array"
+      },
+      "seedP50Ms": 261,
+      "seedP95Ms": 482,
+      "p50Ms": 500,
+      "p95Ms": 1200
+    },
+    {
+      "path": "/api/pint-drops?city=london",
+      "why": "The map's community-price lane, spent on every cold map open.",
+      "requiredJsonFields": {
+        "drops": "array"
+      },
+      "seedP50Ms": 165,
+      "seedP95Ms": 467,
+      "p50Ms": 500,
+      "p95Ms": 1200
+    },
+    {
+      "path": "/api/map-search?q=lexington",
+      "why": "The national pub-name index behind map search, which opens a server-side file per request.",
+      "requiredJsonFields": {
+        "intent": "object",
+        "nationalPubs": "array",
+        "nationalStatus": "string"
+      },
+      "seedP50Ms": 134,
+      "seedP95Ms": 474,
+      "p50Ms": 500,
+      "p95Ms": 1200
+    },
+    {
+      "path": "/api/founding-members",
+      "why": "The founders wall read, and the one public list route that goes to the profile store.",
+      "requiredJsonFields": {
+        "members": "array",
+        "cap": "number"
+      },
+      "sampleCount": 5,
+      "sampleNote": "Five measured samples stay below this route's public 8-request-per-60-second limit. The median is intentionally coarser: nearest-rank p95 is the slowest of five, a worst-of-five, but it remains an enforceable ceiling.",
+      "seedP50Ms": 355,
+      "seedP95Ms": 536,
+      "p50Ms": 600,
+      "p95Ms": 1500
+    }
+  ]
+}

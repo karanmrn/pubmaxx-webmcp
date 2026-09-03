@@ -1,0 +1,29 @@
+{
+  "$comment": "Editorial provenance rules for hand-curated famous venue packs. Every fact cites a verified venue or award page.",
+  "version": 1,
+  "producers": [
+    {
+      "id": "manual",
+      "label": "Editorial curation",
+      "role": "source_page_verification",
+      "mayPublishFacts": true,
+      "factSource": "venue_or_award_page"
+    }
+  ],
+  "requiredRowFields": [
+    "id",
+    "category",
+    "job",
+    "name",
+    "description",
+    "address",
+    "area",
+    "location",
+    "sourceUrl",
+    "sourceName",
+    "observedAt",
+    "expiresAt",
+    "discoveredVia",
+    "extractedVia"
+  ]
+}

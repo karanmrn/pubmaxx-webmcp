@@ -1,0 +1,484 @@
+/* Night-crawl mid-crawl surface (U7) — the card-stack glance screen (Option A)
+   with Option B's giant arrive slab grafted on. Drawn for the hostile night-of
+   moment: outdoors, dark, cold hands, ~15% battery, weak signal, one thumb.
+
+   A night surface is OLED-dark in BOTH themes on purpose (the same way the map's
+   dusk signature is), so it defines a local dark palette rather than inheriting
+   the page's per-theme tokens. The values mirror the design system's dark column
+   (docs/DESIGN_SYSTEM.md — the same set the prototypes in
+   docs/design-explorations/night-crawl used). Coral owns the CTA here and in
+   the shipped dark theme; amber remains a route and price signal.
+
+   The quarantined Bungee display face is deliberately NOT adopted here, so this
+   plan family never enters the party-accent budget; display type is mimicked
+   with a letter-spaced uppercase system stack instead. */
+
+.nightCrawl {
+  --nc-paper: #070b0a;
+  --nc-panel: #0e1613;
+  --nc-panel-raised: #141c19;
+  --nc-panel-hi: #1a2420;
+  --nc-ink: #eef3ef;
+  --nc-ink-soft: #c5d0c9;
+  --nc-muted: #8fa399;
+  --nc-line: #24302b;
+  --nc-coral: #ff5a5f;
+  --nc-coral-bright: #ff7a55;
+  --nc-pint: #3dff9a;
+  --nc-amber: #f0a01a;
+  --nc-brick: #ff6b7a;
+  --nc-display: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --nc-data: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  position: fixed;
+  inset: 0;
+  z-index: 660; /* above page content + the global night pill (640); below modals (1200) */
+  display: flex;
+  flex-direction: column;
+  padding:
+    calc(env(safe-area-inset-top, 0px) + 14px)
+    max(env(safe-area-inset-right, 0px), 16px)
+    calc(env(safe-area-inset-bottom, 0px) + 14px)
+    max(env(safe-area-inset-left, 0px), 16px);
+  gap: 10px;
+  background:
+    radial-gradient(120% 60% at 50% -6%, rgba(255, 90, 95, 0.08), transparent 60%),
+    var(--nc-paper);
+  color: var(--nc-ink);
+  font-family: var(--nc-display);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: contain;
+  animation: nightCrawl-fade 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes nightCrawl-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Header: which crawl, how far along ─────────────────────────────────── */
+.nightCrawl__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.nightCrawl__headText { min-width: 0; }
+.nightCrawl__kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--nc-coral);
+}
+.nightCrawl__count {
+  margin-top: 6px;
+  font-family: var(--nc-data);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--nc-muted);
+}
+.nightCrawl__progress {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+}
+.nightCrawl__pip {
+  height: 6px;
+  border-radius: 3px;
+  flex: 1;
+  background: var(--nc-line);
+}
+.nightCrawl__pip[data-state="done"] { background: var(--nc-pint); }
+.nightCrawl__pip[data-state="now"] { background: var(--nc-coral); }
+
+/* The one utility control — return to the full plan. Kept thumb-sized. */
+.nightCrawl__exit {
+  flex: none;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--nc-line);
+  background: var(--nc-panel);
+  color: var(--nc-ink-soft);
+  font-family: var(--nc-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nightCrawl__exit:active { background: var(--nc-panel-hi); }
+
+/* ── The urgency-ranked stack ───────────────────────────────────────────── */
+.nightCrawl__stack {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Done row — shrunk, quiet, carrying its disposition (arrived / skipped). */
+.nightCrawl__done {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-line);
+}
+.nightCrawl__mark {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+.nightCrawl__done[data-disposition="arrived"] .nightCrawl__mark {
+  background: rgba(61, 255, 154, 0.14);
+  color: var(--nc-pint);
+}
+.nightCrawl__done[data-disposition="skipped"] .nightCrawl__mark {
+  background: rgba(255, 107, 122, 0.14);
+  color: var(--nc-brick);
+}
+.nightCrawl__done[data-disposition="none"] .nightCrawl__mark {
+  background: var(--nc-panel-hi);
+  color: var(--nc-muted);
+}
+.nightCrawl__doneBody { min-width: 0; }
+.nightCrawl__doneName {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nc-ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nightCrawl__doneMeta {
+  font-family: var(--nc-data);
+  font-size: 11px;
+  color: var(--nc-muted);
+  margin-top: 2px;
+}
+.nightCrawl__idx {
+  margin-left: auto;
+  font-family: var(--nc-data);
+  font-size: 12px;
+  color: var(--nc-muted);
+}
+
+/* HERO — the next stop owns the screen. */
+.nightCrawl__hero {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  padding: 20px;
+  background:
+    radial-gradient(130% 90% at 50% 0%, rgba(255, 90, 95, 0.16), transparent 62%),
+    linear-gradient(180deg, #1c1614, var(--nc-panel-raised));
+  border: 1px solid rgba(255, 90, 95, 0.32);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+}
+/* One-thumb glance: now / then / get home above the fold. */
+.nightCrawl__glance {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--nc-line);
+}
+.nightCrawl__glanceNow,
+.nightCrawl__glanceNext {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--nc-ink);
+}
+.nightCrawl__glanceNext { color: var(--nc-ink-soft); font-weight: 600; }
+.nightCrawl__glanceHome {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 0 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--nc-ink);
+  text-decoration: none;
+  background: var(--nc-panel-hi);
+  border: 1px solid var(--nc-line);
+}
+.nightCrawl__glanceHome:active { background: var(--nc-panel); }
+
+.nightCrawl__eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--nc-coral);
+}
+.nightCrawl__heroName {
+  margin-top: 8px;
+  font-size: clamp(30px, 9vw, 38px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--nc-ink);
+  text-wrap: balance;
+}
+
+/* Crew "who is where" — real presence, glance chips. */
+.nightCrawl__crew { margin-top: 16px; }
+.nightCrawl__crewLabel {
+  font-family: var(--nc-data);
+  font-size: 11px;
+  letter-spacing: 0.01em;
+  color: var(--nc-muted);
+  margin-bottom: 8px;
+}
+.nightCrawl__crewRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.nightCrawl__who {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px 6px 6px;
+  border-radius: 999px;
+  background: var(--nc-panel-hi);
+  border: 1px solid var(--nc-line);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nc-ink-soft);
+}
+.nightCrawl__ava {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #06110b;
+  background: var(--nc-muted);
+}
+.nightCrawl__whoState {
+  font-family: var(--nc-data);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--nc-muted);
+}
+.nightCrawl__who[data-tone="here"] .nightCrawl__ava { background: var(--nc-pint); }
+.nightCrawl__who[data-tone="here"] .nightCrawl__whoState { color: var(--nc-pint); }
+.nightCrawl__who[data-tone="ahead"] .nightCrawl__ava { background: var(--nc-coral); }
+.nightCrawl__who[data-tone="ahead"] .nightCrawl__whoState { color: var(--nc-coral); }
+.nightCrawl__who[data-tone="late"] .nightCrawl__ava { background: var(--nc-amber); }
+.nightCrawl__who[data-tone="late"] .nightCrawl__whoState { color: var(--nc-amber); }
+
+.nightCrawl__spacer { flex: 1; min-height: 12px; }
+
+/* Upcoming stops — compact, waiting their turn. */
+.nightCrawl__upcoming {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--nc-panel-raised);
+  border: 1px solid var(--nc-line);
+}
+.nightCrawl__upcoming .nightCrawl__mark {
+  background: var(--nc-panel-hi);
+  color: var(--nc-muted);
+  font-size: 12px;
+}
+.nightCrawl__upcomingName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--nc-ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Actions: giant arrive slab (Option B) + demoted skip ────────────────── */
+.nightCrawl__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.nightCrawl__arrive {
+  flex: 1.6;
+  min-height: 72px; /* the one giant target — well above the 64px graft floor */
+  border: 0;
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--nc-coral), #e23f52);
+  color: #22090a;
+  font-family: var(--nc-display);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(255, 90, 95, 0.38), inset 0 2px 0 rgba(255, 255, 255, 0.22);
+  transition: transform 0.12s ease;
+}
+.nightCrawl__arrive small,
+.nightCrawl__skip small {
+  font-family: var(--nc-data);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  opacity: 0.82;
+}
+.nightCrawl__skip {
+  flex: 1;
+  min-height: 72px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 107, 122, 0.5);
+  background: transparent;
+  color: var(--nc-brick);
+  font-family: var(--nc-display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+.nightCrawl__arrive:active,
+.nightCrawl__skip:active { transform: scale(0.97); --shared-press-scale: 1; }
+.nightCrawl__arrive:disabled,
+.nightCrawl__skip:disabled { opacity: 0.6; cursor: progress; }
+
+/* Honest, value-first feedback line. */
+.nightCrawl__note {
+  margin: 4px 2px 0;
+  font-family: var(--nc-data);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--nc-ink-soft);
+}
+.nightCrawl__note[data-tone="offline"],
+.nightCrawl__note[data-tone="pending"] { color: var(--nc-amber); }
+
+/* Final-stop line, when there's no stop left to advance to. */
+.nightCrawl__final {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-line);
+  font-size: 14px;
+  color: var(--nc-ink-soft);
+}
+
+/* ── Get-home escape hatch — pinned last, ALWAYS visible ─────────────────── */
+.nightCrawl__escape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  border-radius: 16px;
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-line);
+  color: var(--nc-ink-soft);
+  font-family: var(--nc-display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nightCrawl__escape small {
+  font-family: var(--nc-data);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--nc-muted);
+}
+.nightCrawl__escape:active { background: var(--nc-panel-hi); }
+
+/* ── Entry affordance (shown inline when the night is on but the surface is
+      collapsed to the full plan) ─────────────────────────────────────────── */
+.nightCrawl__enter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 18px auto 0;
+  max-width: 920px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  color: var(--ink);
+}
+.nightCrawl__enterText { min-width: 0; }
+.nightCrawl__enterKicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--brass-bright);
+}
+.nightCrawl__enterLede {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.nightCrawl__enterBtn {
+  flex: none;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent-action);
+  color: var(--color-on-accent-strong, #fff);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+/* Cold-hands, dying-battery, motion-sensitive: kill the entrance + press
+   transitions entirely when the viewer asks for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .nightCrawl { animation: none; }
+  .nightCrawl__arrive,
+  .nightCrawl__skip { transition: none; }
+  .nightCrawl__arrive:active,
+  .nightCrawl__skip:active { transform: none; }
+}

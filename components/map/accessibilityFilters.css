@@ -1,0 +1,63 @@
+/* Accessible-venue filters (PRD issue #28) — the small bits of styling the
+   accessibility section needs beyond the shared .panelSection/.toggles rules in
+   globals.css. Candle-lit palette via theme vars; nothing here overrides the
+   shared control styles, so keyboard focus + label hit-areas are inherited. */
+
+.accessibilityHint {
+  margin: -4px 0 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.accessibilityHint strong {
+  color: var(--color-text-soft);
+}
+
+/* Honest count/empty copy — a soft brass-tinted note so filtering down to a
+   handful of confirmed pubs reads as "help us", never as a broken filter. */
+.accessibilitySummary {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  border-left: 2px solid var(--brass);
+  background: var(--surface-tint-brass);
+  border-radius: 6px;
+  color: var(--color-text-soft);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* Accessibility chips on the venue inspector — known-true facts only. Sits with
+   the amenity row; a quiet, legible stamp rather than a loud badge. */
+.accessibilityChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+}
+
+.accessibilityChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  background: var(--surface-tint-brass);
+  color: var(--color-text-soft);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.accessibilityQuietHours {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.accessibilityQuietHours strong {
+  color: var(--color-text-soft);
+  font-weight: 600;
+}

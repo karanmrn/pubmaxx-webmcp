@@ -1,0 +1,1151 @@
+[
+  {
+    "id": "food-best-turkish-kebab",
+    "name": "The Best Turkish Kebab",
+    "address": "125 Stoke Newington Road, London N16 8BT",
+    "borough": "Hackney",
+    "lat": 51.55847,
+    "lng": -0.07422,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.theinfatuation.com/london/reviews/the-best-turkish-kebab"
+      },
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://tbtk.co.uk/"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://tbtk.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://tbtk.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "large_doner",
+      "label": "Large lamb doner",
+      "price": 15,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://tbtk.co.uk/"
+    },
+    "story": {
+      "text": "Stoke Newington's celebrity-photo-lined doner counter marked 44 years of shoulder-cut lamb and queue-side carving in 2026.",
+      "sourceUrl": "https://tbtk.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Stoke Newington's celebrity-photo-lined doner counter marked 44 years of shoulder-cut lamb and queue-side carving in 2026.",
+    "area": "Hackney",
+    "location": {
+      "lat": 51.55847,
+      "lng": -0.07422
+    },
+    "sourceName": "tbtk.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-super-kebab",
+    "name": "Super Kebab",
+    "address": "54 Stoke Newington Road, London N16 7XB",
+    "borough": "Hackney",
+    "lat": 51.55398,
+    "lng": -0.07505,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/blog/a-meat-slicing-robot-has-appeared-in-a-stoke-newington-kebab-shop-082015"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.superkebab.net/"
+      }
+    ],
+    "sourceUrl": "https://www.superkebab.net/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "large_doner",
+      "label": "Large lamb doner",
+      "price": 13,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.superkebab.net/"
+    },
+    "story": {
+      "text": "Super Kebab hand-makes its lamb doner and uses a rotating mechanical slicer to keep every shaving crisp at the edge.",
+      "sourceUrl": "https://www.superkebab.net/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Super Kebab hand-makes its lamb doner and uses a rotating mechanical slicer to keep every shaving crisp at the edge.",
+    "area": "Hackney",
+    "location": {
+      "lat": 51.55398,
+      "lng": -0.07505
+    },
+    "sourceName": "superkebab.net",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-mangal-1",
+    "name": "Mangal 1",
+    "address": "10 Arcola Street, London E8 2DJ",
+    "borough": "Hackney",
+    "lat": 51.54905,
+    "lng": -0.07072,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/mangal-ocakbasi"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://mangal1.com/"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://mangal1.com/"
+      }
+    ],
+    "sourceUrl": "https://mangal1.com/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Adana kebab",
+      "price": 18,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://mangal1.com/"
+    },
+    "story": {
+      "text": "Ali Dirik opened Dalston's first ocakbasi in 1991, establishing the charcoal-counter template that transformed the neighbourhood.",
+      "sourceUrl": "https://mangal1.com/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Ali Dirik opened Dalston's first ocakbasi in 1991, establishing the charcoal-counter template that transformed the neighbourhood.",
+    "area": "Hackney",
+    "location": {
+      "lat": 51.54905,
+      "lng": -0.07072
+    },
+    "sourceName": "mangal1.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-mangal-2",
+    "name": "Mangal 2",
+    "address": "4 Stoke Newington Road, London N16 7XN",
+    "borough": "Hackney",
+    "lat": 51.55285,
+    "lng": -0.07465,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.theinfatuation.com/london/reviews/mangal-ii"
+      },
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://mangal2.com/"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://mangal2.com/"
+      }
+    ],
+    "sourceUrl": "https://mangal2.com/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Adana kebab",
+      "price": 19,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://mangal2.com/"
+    },
+    "story": {
+      "text": "The second-generation Dirik family turned a beloved Dalston ocakbasi into a nationally recognised modern Turkish dining room.",
+      "sourceUrl": "https://mangal2.com/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "The second-generation Dirik family turned a beloved Dalston ocakbasi into a nationally recognised modern Turkish dining room.",
+    "area": "Hackney",
+    "location": {
+      "lat": 51.55285,
+      "lng": -0.07465
+    },
+    "sourceName": "mangal2.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-gokyuzu-harringay",
+    "name": "Gökyüzü Green Lanes",
+    "address": "26-28 Grand Parade, London N4 1LG",
+    "borough": "Haringey",
+    "lat": 51.57695,
+    "lng": -0.09882,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/gokyuzu"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://gokyuzurestaurant.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://gokyuzurestaurant.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "large_doner",
+      "label": "Large lamb doner",
+      "price": 21,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://gokyuzurestaurant.co.uk/"
+    },
+    "story": {
+      "text": "The Yavuz family brought recipes from their Kurdish village to Green Lanes in 1999 and grew a London Turkish institution.",
+      "sourceUrl": "https://gokyuzurestaurant.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "The Yavuz family brought recipes from their Kurdish village to Green Lanes in 1999 and grew a London Turkish institution.",
+    "area": "Haringey",
+    "location": {
+      "lat": 51.57695,
+      "lng": -0.09882
+    },
+    "sourceName": "gokyuzurestaurant.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-antepliler",
+    "name": "Antepliler",
+    "address": "139-143 Green Lanes, London N4 1EL",
+    "borough": "Haringey",
+    "lat": 51.57091,
+    "lng": -0.09622,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/antepliler"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://antepliler.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://antepliler.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Adana kebab",
+      "price": 19.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://antepliler.co.uk/"
+    },
+    "story": {
+      "text": "Named for the people of Gaziantep, Antepliler helped make Green Lanes synonymous with baklava, lahmacun and charcoal kebabs.",
+      "sourceUrl": "https://antepliler.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Named for the people of Gaziantep, Antepliler helped make Green Lanes synonymous with baklava, lahmacun and charcoal kebabs.",
+    "area": "Haringey",
+    "location": {
+      "lat": 51.57091,
+      "lng": -0.09622
+    },
+    "sourceName": "antepliler.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-diyarbakir",
+    "name": "Diyarbakir Restaurant",
+    "address": "69 Green Lanes, London N16 9BU",
+    "borough": "Hackney",
+    "lat": 51.56194,
+    "lng": -0.08729,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.theinfatuation.com/london/reviews/diyarbakr-restaurant"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://diyarbakir.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://diyarbakir.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Diyarbakir special kebab",
+      "price": 24,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://diyarbakir.co.uk/"
+    },
+    "story": {
+      "text": "This Green Lanes stalwart built its name on Kurdish and south-eastern Turkish charcoal cooking served late from an open grill.",
+      "sourceUrl": "https://diyarbakir.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "This Green Lanes stalwart built its name on Kurdish and south-eastern Turkish charcoal cooking served late from an open grill.",
+    "area": "Hackney",
+    "location": {
+      "lat": 51.56194,
+      "lng": -0.08729
+    },
+    "sourceName": "diyarbakir.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-hala",
+    "name": "Hala Restaurant",
+    "address": "29-31 Grand Parade, London N4 1LG",
+    "borough": "Haringey",
+    "lat": 51.57717,
+    "lng": -0.09904,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.theinfatuation.com/london/reviews/hala-restaurant"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://halarestaurant.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://halarestaurant.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Adana Kofte (Large)",
+      "price": 24.5,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://halarestaurant.co.uk/"
+    },
+    "story": {
+      "text": "Hala's bread oven and long charcoal counter have fed Green Lanes tables with pide, mezze and kebabs for more than two decades.",
+      "sourceUrl": "https://halarestaurant.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Hala's bread oven and long charcoal counter have fed Green Lanes tables with pide, mezze and kebabs for more than two decades.",
+    "area": "Haringey",
+    "location": {
+      "lat": 51.57717,
+      "lng": -0.09904
+    },
+    "sourceName": "halarestaurant.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-selale",
+    "name": "Selale",
+    "address": "1-2-3 Salisbury Promenade, London N8 0RX",
+    "borough": "Haringey",
+    "lat": 51.58671,
+    "lng": -0.10079,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/selale"
+      },
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://selale.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://selale.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Adana kebab",
+      "price": 19.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://selale.co.uk/"
+    },
+    "story": {
+      "text": "A veteran Green Lanes ocakbasi, Selale pairs a glass-fronted charcoal grill with the communal platters that define the strip.",
+      "sourceUrl": "https://selale.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "A veteran Green Lanes ocakbasi, Selale pairs a glass-fronted charcoal grill with the communal platters that define the strip.",
+    "area": "Haringey",
+    "location": {
+      "lat": 51.58671,
+      "lng": -0.10079
+    },
+    "sourceName": "selale.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-le-bab-soho",
+    "name": "Le Bab Soho",
+    "address": "Kingly Court, Carnaby Street, London W1B 5PW",
+    "borough": "Westminster",
+    "lat": 51.51303,
+    "lng": -0.13918,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/le-bab"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://eatlebab.com/"
+      }
+    ],
+    "sourceUrl": "https://eatlebab.com/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Lamb adana kebab",
+      "price": 16.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://eatlebab.com/"
+    },
+    "story": {
+      "text": "Le Bab put Michelin-trained cooking into a Soho kebab shop, serving charcoal meat on house flatbreads in Kingly Court.",
+      "sourceUrl": "https://eatlebab.com/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Le Bab put Michelin-trained cooking into a Soho kebab shop, serving charcoal meat on house flatbreads in Kingly Court.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.51303,
+      "lng": -0.13918
+    },
+    "sourceName": "eatlebab.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-testi",
+    "name": "Testi",
+    "address": "38 Stoke Newington High Street, London N16 7PL",
+    "borough": "Hackney",
+    "lat": 51.55553,
+    "lng": -0.07475,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://hackneypost.co.uk/stoke-newingtons-testi-tops-british-kebab-awards/"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://testirestaurant.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://testirestaurant.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Mixed kebab",
+      "price": 25,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://testirestaurant.co.uk/"
+    },
+    "story": {
+      "text": "Testi is the compact Stoke Newington ocakbasi where regulars sit almost within arm's reach of the charcoal fire.",
+      "sourceUrl": "https://testirestaurant.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Testi is the compact Stoke Newington ocakbasi where regulars sit almost within arm's reach of the charcoal fire.",
+    "area": "Hackney",
+    "location": {
+      "lat": 51.55553,
+      "lng": -0.07475
+    },
+    "sourceName": "testirestaurant.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-berenjak-soho",
+    "name": "Berenjak Soho",
+    "address": "27 Romilly Street, London W1D 5AL",
+    "borough": "Westminster",
+    "lat": 51.51286,
+    "lng": -0.13057,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/berenjak"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://berenjaklondon.com/soho"
+      }
+    ],
+    "sourceUrl": "https://berenjaklondon.com/soho",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Jujeh kabab",
+      "price": 19,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://berenjaklondon.com/soho"
+    },
+    "story": {
+      "text": "Berenjak models a Tehran hole-in-the-wall, grilling Persian kebabs over charcoal beside a tiny hayat courtyard.",
+      "sourceUrl": "https://berenjaklondon.com/soho"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Berenjak models a Tehran hole-in-the-wall, grilling Persian kebabs over charcoal beside a tiny hayat courtyard.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.51286,
+      "lng": -0.13057
+    },
+    "sourceName": "berenjaklondon.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-fm-mangal",
+    "name": "FM Mangal",
+    "address": "54 Camberwell Church Street, London SE5 8QZ",
+    "borough": "Southwark",
+    "lat": 51.47375,
+    "lng": -0.09057,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/fm-mangal"
+      },
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.fmmangal.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://www.fmmangal.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Adana kebab",
+      "price": 18.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.fmmangal.co.uk/"
+    },
+    "story": {
+      "text": "Camberwell's much-loved ocakbasi starts every table with smoky grilled onions in pomegranate dressing.",
+      "sourceUrl": "https://www.fmmangal.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Camberwell's much-loved ocakbasi starts every table with smoky grilled onions in pomegranate dressing.",
+    "area": "Southwark",
+    "location": {
+      "lat": 51.47375,
+      "lng": -0.09057
+    },
+    "sourceName": "fmmangal.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-lahore-kebab-house",
+    "name": "Lahore Kebab House",
+    "address": "2-10 Umberston Street, London E1 1PY",
+    "borough": "Tower Hamlets",
+    "lat": 51.51408,
+    "lng": -0.06362,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/lahore-kebab-house"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://lahore-kebabhouse.com/"
+      }
+    ],
+    "sourceUrl": "https://lahore-kebabhouse.com/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Seekh kebab",
+      "price": 9,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://lahore-kebabhouse.com/"
+    },
+    "story": {
+      "text": "Founded in 1972, this Whitechapel canteen made vast Pakistani grills, BYOB tables and family feasts a London rite.",
+      "sourceUrl": "https://lahore-kebabhouse.com/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Founded in 1972, this Whitechapel canteen made vast Pakistani grills, BYOB tables and family feasts a London rite.",
+    "area": "Tower Hamlets",
+    "location": {
+      "lat": 51.51408,
+      "lng": -0.06362
+    },
+    "sourceName": "lahore-kebabhouse.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-tayyabs",
+    "name": "Tayyabs",
+    "address": "83-89 Fieldgate Street, London E1 1JU",
+    "borough": "Tower Hamlets",
+    "lat": 51.51618,
+    "lng": -0.06351,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.tayyabs.co.uk/"
+      },
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/tayyabs"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://www.tayyabs.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://www.tayyabs.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Lamb chops",
+      "price": 13.95,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.tayyabs.co.uk/"
+    },
+    "story": {
+      "text": "The Tayyab family has served Punjabi food in Whitechapel since 1972, with sizzling lamb chops as the table's inevitable first order.",
+      "sourceUrl": "https://www.tayyabs.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "The Tayyab family has served Punjabi food in Whitechapel since 1972, with sizzling lamb chops as the table's inevitable first order.",
+    "area": "Tower Hamlets",
+    "location": {
+      "lat": 51.51618,
+      "lng": -0.06351
+    },
+    "sourceName": "tayyabs.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-ranoush-edgware-road",
+    "name": "Ranoush Juice",
+    "address": "43 Edgware Road, London W2 2JE",
+    "borough": "Westminster",
+    "lat": 51.51469,
+    "lng": -0.16085,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/ranoush-juice-3"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://www.maroush.com/restaurants/edgware-road"
+      }
+    ],
+    "sourceUrl": "https://www.maroush.com/restaurants/edgware-road",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Chicken shawarma",
+      "price": 9.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.maroush.com/restaurants/edgware-road"
+    },
+    "story": {
+      "text": "Maroush's fast counter has wrapped shawarma and pressed fruit late into the night on Edgware Road since the 1980s.",
+      "sourceUrl": "https://www.maroush.com/restaurants/edgware-road"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Maroush's fast counter has wrapped shawarma and pressed fruit late into the night on Edgware Road since the 1980s.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.51469,
+      "lng": -0.16085
+    },
+    "sourceName": "maroush.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-maroush-edgware-road",
+    "name": "Maroush Edgware Road",
+    "address": "21 Edgware Road, London W2 2JE",
+    "borough": "Westminster",
+    "lat": 51.51415,
+    "lng": -0.16008,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/maroush-i"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://www.maroush.com/restaurants"
+      }
+    ],
+    "sourceUrl": "https://www.maroush.com/restaurants",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Lamb shawarma",
+      "price": 10.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.maroush.com/restaurants"
+    },
+    "story": {
+      "text": "Marouf Abouzaki opened Maroush on Edgware Road in 1981 and helped make the street London's Lebanese heart.",
+      "sourceUrl": "https://www.maroush.com/blog/little-beirut-london-edgware-road"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Marouf Abouzaki opened Maroush on Edgware Road in 1981 and helped make the street London's Lebanese heart.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.51415,
+      "lng": -0.16008
+    },
+    "sourceName": "maroush.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-kebab-kid-fulham",
+    "name": "Kebab Kid",
+    "address": "90 New King's Road, London SW6 4LU",
+    "borough": "Hammersmith and Fulham",
+    "lat": 51.47346,
+    "lng": -0.19992,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/kebab-kid"
+      },
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://kebabkid.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://kebabkid.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "large_doner",
+      "label": "Large lamb doner",
+      "price": 13.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://kebabkid.co.uk/"
+    },
+    "story": {
+      "text": "A Fulham late-night fixture since 1976, Kebab Kid is still known for hand-stacked doner and a queue after closing time.",
+      "sourceUrl": "https://kebabkid.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "A Fulham late-night fixture since 1976, Kebab Kid is still known for hand-stacked doner and a queue after closing time.",
+    "area": "Hammersmith and Fulham",
+    "location": {
+      "lat": 51.47346,
+      "lng": -0.19992
+    },
+    "sourceName": "kebabkid.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-beigel-bake",
+    "name": "Beigel Bake",
+    "address": "159 Brick Lane, London E1 6SB",
+    "borough": "Tower Hamlets",
+    "lat": 51.52452,
+    "lng": -0.07193,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Beigel_Bake"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://www.beigelbake.co.uk/"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.beigelbake.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://www.beigelbake.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Salt beef beigel",
+      "price": 7.5,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://www.beigelbake.co.uk/"
+    },
+    "story": {
+      "text": "Open around the clock since 1979, the white-fronted Brick Lane bakery boils beigels continuously and carves salt beef to order.",
+      "sourceUrl": "https://www.beigelbake.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Open around the clock since 1979, the white-fronted Brick Lane bakery boils beigels continuously and carves salt beef to order.",
+    "area": "Tower Hamlets",
+    "location": {
+      "lat": 51.52452,
+      "lng": -0.07193
+    },
+    "sourceName": "beigelbake.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-polo-bar",
+    "name": "Polo Bar",
+    "address": "176 Bishopsgate, London EC2M 4NQ",
+    "borough": "City of London",
+    "lat": 51.51773,
+    "lng": -0.08019,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/things-to-do/11-unexpected-late-night-spots-worth-staying-up-for"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.polobar.co.uk/"
+      }
+    ],
+    "sourceUrl": "https://www.polobar.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Full English breakfast",
+      "price": 15.9,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.polobar.co.uk/"
+    },
+    "story": {
+      "text": "A 24-hour Bishopsgate cafe since 1959, Polo Bar feeds night workers and missed-train travellers opposite Liverpool Street.",
+      "sourceUrl": "https://www.polobar.co.uk/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "A 24-hour Bishopsgate cafe since 1959, Polo Bar feeds night workers and missed-train travellers opposite Liverpool Street.",
+    "area": "City of London",
+    "location": {
+      "lat": 51.51773,
+      "lng": -0.08019
+    },
+    "sourceName": "polobar.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-duck-waffle",
+    "name": "Duck & Waffle",
+    "address": "110 Bishopsgate, London EC2N 4AY",
+    "borough": "City of London",
+    "lat": 51.51503,
+    "lng": -0.08105,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/news/londons-24-hour-restaurant-duck-waffle-is-open-again-for-sky-high-dining-090921"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://duckandwaffle.com/london"
+      }
+    ],
+    "sourceUrl": "https://duckandwaffle.com/london",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Duck and waffle",
+      "price": 28,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://duckandwaffle.com/london"
+    },
+    "story": {
+      "text": "Forty floors above the City, the namesake confit duck and waffle made a sunrise meal part of London's night out.",
+      "sourceUrl": "https://duckandwaffle.com/london"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Forty floors above the City, the namesake confit duck and waffle made a sunrise meal part of London's night out.",
+    "area": "City of London",
+    "location": {
+      "lat": 51.51503,
+      "lng": -0.08105
+    },
+    "sourceName": "duckandwaffle.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-wong-kei",
+    "name": "Wong Kei",
+    "address": "41-43 Wardour Street, London W1D 6PY",
+    "borough": "Westminster",
+    "lat": 51.51173,
+    "lng": -0.13265,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://wongkeilondon.com/"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Wong_Kei"
+      }
+    ],
+    "sourceUrl": "https://wongkeilondon.com/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Roast duck on rice",
+      "price": 10.8,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://wongkeilondon.com/"
+    },
+    "story": {
+      "text": "Chinatown's vast, brisk canteen has served Cantonese roast meats and noodles across multiple floors since the 1970s.",
+      "sourceUrl": "https://wongkeilondon.com/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Chinatown's vast, brisk canteen has served Cantonese roast meats and noodles across multiple floors since the 1970s.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.51173,
+      "lng": -0.13265
+    },
+    "sourceName": "wongkeilondon.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-bar-italia",
+    "name": "Bar Italia",
+    "address": "22 Frith Street, London W1D 4RF",
+    "borough": "Westminster",
+    "lat": 51.51343,
+    "lng": -0.13165,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.instagram.com/baritaliasoho"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Bar_Italia"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.instagram.com/baritaliasoho"
+      }
+    ],
+    "sourceUrl": "https://www.instagram.com/baritaliasoho",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Panini",
+      "price": 8.5,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.instagram.com/baritaliasoho"
+    },
+    "story": {
+      "text": "The Polledri family opened Bar Italia in 1949 beneath the room where John Logie Baird first demonstrated television.",
+      "sourceUrl": "https://www.instagram.com/baritaliasoho"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "The Polledri family opened Bar Italia in 1949 beneath the room where John Logie Baird first demonstrated television.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.51343,
+      "lng": -0.13165
+    },
+    "sourceName": "instagram.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-vq-chelsea",
+    "name": "VQ Chelsea",
+    "address": "325 Fulham Road, London SW10 9QL",
+    "borough": "Kensington and Chelsea",
+    "lat": 51.48664,
+    "lng": -0.18156,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.theinfatuation.com/london/reviews/vingt-quatre"
+      },
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.vqrestaurants.com/locations/chelsea"
+      }
+    ],
+    "sourceUrl": "https://www.vqrestaurants.com/locations/chelsea",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Full English breakfast",
+      "price": 17.95,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://www.vqrestaurants.com/locations/chelsea"
+    },
+    "story": {
+      "text": "VQ began as Chelsea's Vingt-Quatre in 1995, making a proper sit-down meal available to west London around the clock.",
+      "sourceUrl": "https://www.vqrestaurants.com/locations/chelsea"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "VQ began as Chelsea's Vingt-Quatre in 1995, making a proper sit-down meal available to west London around the clock.",
+    "area": "Kensington and Chelsea",
+    "location": {
+      "lat": 51.48664,
+      "lng": -0.18156
+    },
+    "sourceName": "vqrestaurants.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "food-golden-dragon",
+    "name": "Golden Dragon",
+    "address": "28-29 Gerrard Street, London W1D 6JW",
+    "borough": "Westminster",
+    "lat": 51.51169,
+    "lng": -0.13121,
+    "kind": "food",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/golden-dragon"
+      },
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://goldendragonlondon.com/"
+      }
+    ],
+    "sourceUrl": "https://goldendragonlondon.com/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_item",
+      "label": "Roast duck on rice",
+      "price": 14.8,
+      "observedAt": "2026-07-26",
+      "sourceUrl": "https://goldendragonlondon.com/"
+    },
+    "story": {
+      "text": "Golden Dragon's long Gerrard Street dining room is a Chinatown constant for dim sum by day and Cantonese roast meats late.",
+      "sourceUrl": "https://goldendragonlondon.com/"
+    },
+    "category": "late_food",
+    "job": "crawl_ending_food",
+    "description": "Golden Dragon's long Gerrard Street dining room is a Chinatown constant for dim sum by day and Cantonese roast meats late.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.51169,
+      "lng": -0.13121
+    },
+    "sourceName": "goldendragonlondon.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  }
+]

@@ -1,0 +1,354 @@
+.mapKey {
+  display: grid;
+  gap: 12px;
+  color: var(--ink);
+}
+
+.mapKeySection {
+  display: grid;
+  gap: 6px;
+}
+
+.mapKeySection h3,
+.mapKeyDetails summary {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.mapKeySection p,
+.mapKeyNote {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.mapKeyPriceRows,
+.mapKeyList {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mapKeyPriceRows li {
+  display: grid;
+  grid-template-columns: 12px 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.mapKeyPriceSwatch {
+  width: 10px;
+  height: 10px;
+  border: 1px solid color-mix(in srgb, var(--panel-raised) 65%, var(--ink));
+  border-radius: 50%;
+}
+
+.mapKeyPriceSwatch--green {
+  background: var(--pint);
+}
+
+.mapKeyPriceSwatch--amber {
+  background: var(--amber);
+}
+
+.mapKeyPriceSwatch--red {
+  background: var(--brick);
+}
+
+.mapKeyPriceSwatch--grey {
+  background: color-mix(in srgb, var(--muted) 84%, transparent);
+}
+
+.mapKeyPriceCode {
+  color: var(--ink);
+  font-weight: 850;
+  letter-spacing: -0.08em;
+}
+
+.mapKeyClusterRow {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+}
+
+.mapKeyClusterSample {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--panel-raised), var(--panel-raised)) padding-box,
+    conic-gradient(
+      var(--pint) 0 35%,
+      var(--amber) 35% 62%,
+      var(--brick) 62% 78%,
+      #9a7a72 78% 100%
+    ) border-box;
+  color: var(--ink);
+  font-size: 0.64rem;
+  font-weight: 850;
+}
+
+.mapKeyDetails {
+  border-top: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  padding-top: 9px;
+}
+
+/* These rows are the only closed things in the key. `display: flex` drops the
+   browser's own disclosure triangle, so all three read as dead headings over
+   empty space: "Pin shapes", "Dots and rings", "Routes" and nothing under them
+   (design judgement 2026-08-01, finding 2.10). The chevron is the affordance,
+   and it turns to face the state it is in. */
+.mapKeyDetails summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mapKeyDetails summary::-webkit-details-marker {
+  display: none;
+}
+
+.mapKeyDetails summary::after {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-right: 2px solid var(--ink-soft);
+  border-bottom: 2px solid var(--ink-soft);
+  content: "";
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.mapKeyDetails[open] summary::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mapKeyDetails summary::after {
+    transition: transform 140ms ease;
+  }
+}
+
+.mapKeyList {
+  padding: 5px 0 4px;
+}
+
+.mapKeyItem {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.mapKeyItem > span:last-child {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.mapKeyItem strong {
+  color: var(--ink);
+  font-size: 0.72rem;
+}
+
+.mapKeyItem small {
+  color: var(--ink-soft);
+  font-size: 0.67rem;
+  line-height: 1.3;
+}
+
+.mapKeyMarker {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  color: var(--brass);
+}
+
+.mapKeyMarker--shape {
+  border: 1px solid color-mix(in srgb, var(--line) 74%, var(--brass));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--panel) 76%, var(--panel-raised));
+}
+
+.mapKeyMarker--base-pub {
+  border-style: dashed;
+  border-radius: 50%;
+}
+
+.mapKeyMarker--mark::before,
+.mapKeyMarker--mark::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+
+.mapKeyMarker--provisional::before {
+  width: 9px;
+  height: 9px;
+  right: 2px;
+  bottom: 3px;
+  background: var(--river-bright);
+  box-shadow: 0 0 0 1.5px var(--panel-raised);
+}
+
+.mapKeyMarker--your-location::before {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--paper);
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 22%, transparent);
+}
+
+.mapKeyMarker--tonight-opportunity::before {
+  width: 10px;
+  height: 10px;
+  background: var(--amber);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--river-bright) 35%, transparent);
+}
+
+.mapKeyMarker--pint-drop::before,
+.mapKeyMarker--quiz::before,
+.mapKeyMarker--sport::before,
+.mapKeyMarker--deal::before,
+.mapKeyMarker--music::before,
+.mapKeyMarker--public-listing::before,
+.mapKeyMarker--selected::before,
+.mapKeyMarker--story-band::before {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--river-bright);
+}
+
+.mapKeyMarker--quiz::before {
+  border-color: var(--amber);
+}
+
+.mapKeyMarker--sport::before {
+  border-color: var(--river-bright);
+}
+
+.mapKeyMarker--deal::before {
+  border-color: var(--brass-bright);
+}
+
+.mapKeyMarker--music::before {
+  border-color: var(--river);
+}
+
+.mapKeyMarker--public-listing::before {
+  border-width: 1px;
+  border-color: var(--brass);
+}
+
+.mapKeyMarker--base-selected::before {
+  width: 19px;
+  height: 19px;
+  border: 2px solid var(--brass);
+}
+
+.mapKeyMarker--selected::before {
+  border-color: var(--brass-bright);
+}
+
+.mapKeyMarker--selected::after {
+  width: 21px;
+  height: 21px;
+  border: 2px solid var(--brass);
+}
+
+.mapKeyMarker--story-band::before {
+  border-color: var(--map-key-marker-colour);
+}
+
+.mapKeyMarker--route {
+  color: var(--brass-bright);
+}
+
+.mapKeyMarker--walking-route::before {
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--map-key-marker-colour);
+  box-shadow: 0 0 0 1px var(--panel-raised);
+  content: "";
+}
+
+.mapKeyMarker--straight-route::before {
+  width: 24px;
+  height: 0;
+  border-top: 3px dashed var(--map-key-marker-colour);
+  content: "";
+}
+
+.mapKeyMarker--story-corridor::before {
+  width: 24px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--map-key-marker-colour);
+  content: "";
+  filter: blur(2px);
+  opacity: 0.38;
+}
+
+html[data-theme="dark"] .mapKeyPriceSwatch--grey {
+  background: color-mix(in srgb, var(--muted) 78%, transparent);
+}
+
+.mapKeyMarker--crawl-stop {
+  border: 2px solid var(--brass-bright);
+  border-radius: 50%;
+  background: var(--ink-deep);
+}
+
+.mapKeyRouteStopNumber {
+  color: var(--paper);
+  font-size: 0.64rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.mapKeyNote {
+  padding: 5px 0 2px 36px;
+}
+
+.mapKeyTrustList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.mapKeyTrustList li {
+  display: grid;
+  gap: 2px;
+}
+
+.mapKeyTrustList strong {
+  font-size: 0.78rem;
+}
+
+.mapKeyTrustList small {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}

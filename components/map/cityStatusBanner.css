@@ -1,0 +1,280 @@
+/* CityMCP London status strip — sits beside CitySuggestBanner, below the
+   CitySwitcher dropdown (z-index 560) so city picks stay tappable. */
+
+.appShell {
+  --city-status-desktop-top: calc(
+    var(--map-top-clearance, 0px) +
+    var(--map-toolbar-resting-height, 181px) +
+    82px
+  );
+}
+
+.cityStatusStack {
+  position: absolute;
+  top: var(--city-status-desktop-top);
+  left: 50%;
+  z-index: var(--z-map-banner);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(460px, calc(100vw - 24px));
+  max-height: calc(100dvh - var(--city-status-desktop-top) - 16px);
+  transform: translateX(-50%);
+}
+
+.cityStatusBanner {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 6px 6px 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 32%, var(--line));
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--panel-raised) 94%, transparent),
+      color-mix(in srgb, var(--surface-tint-lager) 58%, transparent)
+    ),
+    color-mix(in srgb, var(--panel-raised) 90%, transparent);
+  color: var(--ink);
+  box-shadow: var(--map-overlay-shadow);
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+}
+
+.cityStatusBanner[data-severity="major"] {
+  /* Role token, not a bare hex; --brick is the app's destructive/severe red
+     and tracks both themes. */
+  border-color: color-mix(in srgb, var(--brick) 55%, var(--line));
+}
+
+.cityStatusBanner[data-severity="notable"] {
+  border-color: color-mix(in srgb, var(--amber) 50%, var(--line));
+}
+
+/* The headline is an <a> when it points at a source, a <span> when it points
+   nowhere, and a <button> when the banner has a feed to open. Only the button
+   branch inherits the browser's own chrome, so a class that set colour and
+   nothing else painted a live disruption warning on a grey UA slab. The reset
+   lives with the class, the way .loginPageQuietLink's does. */
+.cityStatusBannerLink {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  text-align: left;
+  text-decoration: none;
+  /* `font` and not `font-family`: a <button> inherits neither size nor weight,
+     so the old family-only rule left the button branch at the UA's 13.33px
+     while the <a> beside it took the banner's own size. */
+  font: inherit;
+  cursor: pointer;
+}
+
+a.cityStatusBannerLink:hover {
+  text-decoration: underline;
+}
+
+/* A real, always-legible icon chip. The old bare glyph inherited a colour that
+   could collapse into the panel tint (a "ghost" icon in some themes); a tinted
+   backing disc guarantees the icon reads in both themes and at every severity. */
+.cityStatusBannerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 16%, transparent);
+  color: var(--brass);
+}
+
+.cityStatusBanner[data-severity="major"] .cityStatusBannerIcon {
+  background: color-mix(in srgb, var(--brick) 22%, transparent);
+  color: var(--brick);
+}
+
+.cityStatusBanner[data-severity="notable"] .cityStatusBannerIcon {
+  background: color-mix(in srgb, var(--amber) 22%, transparent);
+  color: var(--amber);
+}
+
+.cityStatusBannerCopy {
+  display: inline-block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.cityStatusBannerMobileCopy { display: none; }
+
+.cityStatusBannerDismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.cityStatusBannerDismiss:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+@media (max-width: 640px) {
+  .cityStatusStack {
+    top: calc(var(--map-top-clearance, 0px) + 60px);
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-height: calc(100dvh - var(--map-top-clearance, 0px) - 76px);
+    transform: none;
+  }
+
+  .cityStatusBanner {
+    /* F6: was a bare 108px, predating --map-top-clearance's safe-area-aware
+       mobile formula (globals.css). At zero safe-area that left as little as
+       2px of clearance under the toolbar; on a notched phone (bigger
+       --map-top-clearance pushes the toolbar further down) it overlapped the
+       toolbar/search-bar outright. Anchor to --map-top-clearance like the
+       desktop rule below (D7), stacked under .citySuggestBanner's own
+       (now anchored) +58px slot with room for its ~48px height. */
+    width: auto;
+    max-width: none;
+    min-height: 44px;
+    align-items: flex-start;
+    padding: 8px;
+    border-color: var(--line);
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--panel-raised) 96%, transparent);
+  }
+
+  .cityStatusBannerLink {
+    flex: 1 1 auto;
+    align-items: flex-start;
+  }
+
+  .cityStatusBannerCopy {
+    display: inline-block;
+  }
+}
+
+/* A4 — expandable "Tonight in London" signals sheet, additive to the pill above. */
+.cityStatusSignalSheet {
+  position: relative;
+  flex: 0 1 auto;
+  min-height: 0;
+  width: min(360px, 100%);
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 32%, var(--line));
+  border-radius: 16px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--map-overlay-shadow);
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cityStatusSignalSheet {
+    animation: cityStatusSignalSheetIn var(--duration-base) var(--ease-out) both;
+  }
+
+  @keyframes cityStatusSignalSheetIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+.cityStatusSignalSheetHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.cityStatusSignalSheetHead strong {
+  font-family: var(--font-display, var(--serif));
+  font-size: 0.9rem;
+}
+.cityStatusSignalSheetMeta {
+  margin-left: auto;
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+.cityStatusSignalSheetClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.cityStatusSignalSheetClose:hover { border-color: var(--brass); color: var(--brass); }
+
+.cityStatusSignalGroup + .cityStatusSignalGroup { margin-top: 10px; }
+.cityStatusSignalGroupLabel {
+  margin: 0 0 4px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--brass);
+}
+.cityStatusSignalList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cityStatusSignalRow {
+  display: flex;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.cityStatusSignalRow:last-child { border-bottom: none; }
+.cityStatusSignalRowIcon { color: var(--brass); flex-shrink: 0; margin-top: 2px; }
+.cityStatusSignalRowBody { min-width: 0; }
+.cityStatusSignalRowHeadline { margin: 0; font-size: 0.78rem; font-weight: 700; color: var(--ink); }
+.cityStatusSignalRowMeta { margin: 2px 0 0; font-size: 0.68rem; color: var(--ink-soft); }
+.cityStatusSignalRowSource { margin: 4px 0 0; font-size: 0.68rem; }
+.cityStatusSignalRowSource a { color: var(--brass); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.cityStatusSignalRowSource a:hover { text-decoration: underline; }
+.cityStatusSignalRowSource span { color: var(--ink-soft); }
+
+@media (max-width: 640px) {
+  .cityStatusSignalSheet {
+    width: 100%;
+    max-height: min(58dvh, 430px);
+  }
+}

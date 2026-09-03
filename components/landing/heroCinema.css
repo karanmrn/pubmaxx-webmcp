@@ -1,0 +1,109 @@
+/* Hero scroll cinema (PIECE 2 of feat(landing): hero scroll cinema with
+   aperture splash). Drives a scroll-linked transform on the existing
+   .thamesHeroPhoto card via a single JS-owned custom property,
+   --cinema-progress (0 = full-bleed dark open, 1 = settled contained card),
+   set on .lpHero in components/landing/LandingPage.tsx.
+
+   The card's own column footprint never changes - only transform, opacity,
+   and border-radius (paint-only, no layout box change) respond to
+   --cinema-progress, so .lpHeroCopy (h1, lede, actions) stays in normal
+   flow, visible and above the fold at rest. "Full bleed" here means the
+   card's own presentation (square edges, no ring, a near-black wash, a
+   small self-contained scale), not a viewport-covering takeover.
+
+   Reduced motion and phones (<=700px) get none of this: the whole block is
+   gated behind the same compound media query the mount effect checks, so
+   .thamesHeroPhoto renders with its plain landing.css treatment there -
+   the static composed hero required by the hard gate.
+
+   Progress defaults to 1 (the composed, settled hero) EVERYWHERE, including
+   wide viewports: without JS the reader must see the same finished hero
+   reduced-motion gets, never the dark progress-0 start frame. Only the mount
+   effect ever moves progress off 1 - its first write (0 at the top of the
+   page) rides the cinema-settle transition below as an authored open, a
+   state change rather than a scrub.
+
+   Scrubbing and transitions are mutually exclusive: while the effect is
+   scroll-scrubbing it sets data-cinema-scrub on .lpHero, which zeroes every
+   transition on the scrubbed properties so the card tracks the wheel 1:1
+   (motionDuration.cinemaSettle is documented as NOT for the scrubbed
+   transform - see lib/motionVocabulary.ts). The transitions only ever play
+   on state-driven jumps: the mount open above and an eligibility flip
+   (reduced-motion toggle / viewport crossing 701px) restoring the settled
+   card. */
+
+/* Timing comes from the house motion ledger (app/globals.css):
+   --duration-cinema-settle + --ease-weighted, which mirror
+   motionDuration.cinemaSettle / motionEase.weighted in lib/motionVocabulary.ts. */
+:root {
+  --cinema-progress: 1; /* safe default: settled, composed card (no-JS, mobile, reduced-motion) */
+  /* How far the open frame grows the card, and where it grows FROM. The card's
+     transform reads both, and so does the caption's clearance below, so the two
+     cannot drift: an origin above centre throws most of the growth downward,
+     which is the half the caption has to survive. */
+  --cinema-open-overscale: 0.06;
+  --cinema-origin-y: 0.42;
+}
+
+@media (min-width: 701px) and (prefers-reduced-motion: no-preference) {
+  .lpHeroMap::before {
+    opacity: var(--cinema-progress);
+    transition: opacity var(--duration-cinema-settle) var(--ease-weighted);
+  }
+
+  .thamesHeroPhoto {
+    border-radius: calc(32px * var(--cinema-progress));
+    transform: scale(
+      calc(1 + var(--cinema-open-overscale) * (1 - var(--cinema-progress)))
+    );
+    transform-origin: 50% calc(var(--cinema-origin-y) * 100%);
+    will-change: transform, border-radius;
+    transition:
+      border-radius var(--duration-cinema-settle) var(--ease-weighted),
+      transform var(--duration-cinema-settle) var(--ease-weighted);
+  }
+
+  /* The card's column footprint never changes, but its PAINT does: at the open
+     frame it is drawn 6% larger from an origin above centre, so it reaches
+     below its own layout box - and the caption sat 12px under that box, which
+     is how the first line came to be drawn across the photograph's bottom edge
+     (unreadable in light theme, where dark caption ink lands on a dark photo).
+     The clearance is the card's own overflow rather than a number somebody
+     eyeballed: the card is 4:3 here, so its height is 0.75 of this column, the
+     open frame paints --cinema-open-overscale of that height, and (1 - origin)
+     of the growth falls below. A percentage margin resolves against the
+     column's width, so the clearance tracks every viewport. It is reserved at
+     every progress value, because a margin that moved with the scrub would
+     make the caption jump while the card settles. */
+  /* Two classes on purpose: the base rule is `.lpHeroMap figcaption` (0,1,1)
+     with a `margin` SHORTHAND, so a bare `.lpHeroMapCaption` (0,1,0) loses the
+     top margin back to 12px. */
+  .lpHeroMap .lpHeroMapCaption {
+    margin-top: calc(
+      12px + var(--cinema-open-overscale) * 0.75 *
+        (1 - var(--cinema-origin-y)) * 100%
+    );
+  }
+
+  /* Near-black to warm off-white: a uniform ink-deep wash over the whole
+     card that fades away as the card settles, revealing the existing
+     thamesHeroScrim/photo treatment underneath. pointer-events: none keeps
+     the pins clickable through the wash. */
+  .thamesHeroPhoto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--ink-deep);
+    opacity: calc(0.55 * (1 - var(--cinema-progress)));
+    transition: opacity var(--duration-cinema-settle) var(--ease-weighted);
+    pointer-events: none;
+  }
+
+  /* Scroll is the clock while scrubbing: any duration here would make the
+     card answer this wheel event half a second from now. */
+  .lpHero[data-cinema-scrub] .lpHeroMap::before,
+  .lpHero[data-cinema-scrub] .thamesHeroPhoto,
+  .lpHero[data-cinema-scrub] .thamesHeroPhoto::after {
+    transition: none;
+  }
+}

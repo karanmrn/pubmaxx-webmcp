@@ -1,0 +1,615 @@
+/* W1/W2 Tonight lane — a quiet, top-anchored chip until the viewer asks for
+   the bottom card sheet. Hidden while a venue sheet or planner owns the map. */
+.tonightLane {
+  position: absolute;
+  top: calc(var(--map-top-clearance, 0px) + 60px);
+  left: max(12px, env(safe-area-inset-left, 0px));
+  z-index: 512;
+  pointer-events: none;
+}
+
+.tonightLane > * {
+  pointer-events: auto;
+}
+
+.appShell.detail-open .tonightLane,
+.appShell.planning-open .tonightLane {
+  display: none;
+}
+
+.tonightLaneCollapsed {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: min(360px, calc(100vw - 24px));
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--brass) 52%, var(--line));
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--brass) 12%, var(--panel-raised)),
+      color-mix(in srgb, var(--amber) 7%, var(--panel-raised))
+    ),
+    var(--panel-raised);
+  box-shadow: var(--map-overlay-shadow-tight);
+  color: var(--ink);
+  backdrop-filter: blur(12px) saturate(1.08);
+  -webkit-backdrop-filter: blur(12px) saturate(1.08);
+}
+
+.tonightLaneCollapsedMain {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tonightLaneCollapsedMain[role="status"] {
+  cursor: default;
+}
+
+.tonightLaneCollapsedTitle {
+  flex: 0 0 auto;
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.tonightLaneCollapsedChecked {
+  min-width: 0;
+  overflow-wrap: break-word;
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 650;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+.tonightLane--open {
+  top: auto;
+  right: auto;
+  bottom: calc(var(--mobile-tab-clearance, 58px) + 26px);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(760px, calc(100vw - 24px));
+  max-height: min(62vh, 520px);
+  padding: 14px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid color-mix(in srgb, var(--brass) 38%, var(--line));
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--brass) 7%, var(--panel-raised)),
+      color-mix(in srgb, var(--panel-raised) 95%, transparent)
+    ),
+    var(--panel-raised);
+  box-shadow: 0 16px 42px color-mix(in srgb, var(--ink-deep) 24%, transparent);
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+/* In-sheet variant: the bottom sheet owns positioning, chrome and scroll, so
+   strip the map-edge float (absolute position, translateX, viewport-width math,
+   panel background/border/shadow) and let the lane fill the sheet body in
+   normal flow. Placed after .tonightLane--open so it wins at equal specificity. */
+.tonightLane--sheet {
+  position: static;
+  inset: auto;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transform: none;
+  animation: none;
+  pointer-events: auto;
+}
+
+/* Stack full-width cards vertically; the sheet body handles the scroll. */
+.tonightLane--sheet .tonightLaneScroll {
+  flex-direction: column;
+  overflow: visible;
+  scroll-snap-type: none;
+}
+
+.tonightLane--sheet .tonightLaneCard {
+  width: 100%;
+}
+
+.tonightLane--sheet .tonightLaneCardPlace span {
+  max-width: none;
+}
+
+.tonightLaneEmpty {
+  margin: 0;
+  padding: 8px 2px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.tonightLane--error {
+  max-width: calc(100vw - 24px);
+  padding: 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 35%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel-raised) 92%, var(--amber) 8%);
+  box-shadow: var(--map-overlay-shadow-tight);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 640px) {
+  /* Tonight and TfL are peers in one compact live rail. They no longer stack
+     into three full-width banners above the map. */
+  .tonightLaneCollapsed { max-width: calc(100vw - 158px); border-color: var(--line); background: color-mix(in srgb, var(--panel-raised) 94%, transparent); }
+  .tonightLaneCollapsedMain { padding-block: 7px; }
+}
+
+.tonightLaneHead {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tonightLaneTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tonightLaneTitleMeta {
+  display: inline-flex;
+  align-items: baseline;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  min-width: 0;
+  gap: 10px;
+}
+
+.tonightLaneTitleActions {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 2px;
+}
+
+.tonightLaneOverlayToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 5px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel-raised) 82%, transparent);
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tonightLaneCollapsed .tonightLaneOverlayToggle {
+  align-self: stretch;
+  border-width: 0 0 0 1px;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--brass) 7%, transparent);
+}
+
+.tonightLaneOverlayToggle[data-active="true"] {
+  background: color-mix(in srgb, var(--amber) 20%, var(--panel-raised));
+  color: color-mix(in srgb, var(--amber) 58%, var(--ink));
+}
+
+.tonightLaneOverlayCount {
+  min-width: 15px;
+  padding: 1px 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  font-size: 0.6rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.tonightLaneOverlayDismiss,
+.tonightLaneClose {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -8px -8px -8px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tonightLaneOverlayDismiss {
+  margin: 0;
+}
+
+.tonightLaneCollapsed .tonightLaneOverlayDismiss {
+  align-self: stretch;
+  border-left: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  border-radius: 0;
+}
+
+.tonightLaneTitle {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.tonightLaneChecked {
+  min-width: 0;
+  overflow-wrap: break-word;
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: normal;
+}
+
+.tonightLaneGardenCue {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.66rem;
+  font-weight: 650;
+  line-height: 1.25;
+  color: color-mix(in srgb, var(--amber) 70%, var(--ink));
+}
+
+.tonightLaneCardWalk {
+  margin-left: 0.35rem;
+  color: var(--muted);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.tonightLaneCardWalk::before {
+  content: "·";
+  margin-right: 0.35rem;
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+
+.tonightLaneChips {
+  display: flex;
+  gap: 6px;
+  min-width: 0;
+  overflow-x: auto;
+  touch-action: pan-y;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.tonightLaneChips::-webkit-scrollbar {
+  display: none;
+}
+
+.tonightLaneChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  /* 44px tap target + touch-action (adopted from #232's parallel lane) so the
+     facet chips meet the mobile hit-size bar without double-tap zoom lag. */
+  min-height: 44px;
+  padding: 4px 12px;
+  touch-action: manipulation;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel-raised) 92%, transparent);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.tonightLaneChip[data-active="true"] {
+  background: color-mix(in srgb, var(--amber) 20%, var(--panel-raised));
+  border-color: color-mix(in srgb, var(--amber) 55%, var(--line));
+  color: color-mix(in srgb, var(--amber) 60%, var(--ink));
+}
+
+.tonightLaneChipCount {
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.tonightLaneScroll {
+  display: flex;
+  gap: 10px;
+  min-height: 0;
+  margin: 0;
+  padding: 2px 0 4px;
+  list-style: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tonightLaneScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.tonightLaneCard {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 208px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brass);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel-raised) 94%, transparent);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--ink-deep) 14%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.tonightLaneCard[data-kind="quiz"] { border-left-color: var(--amber); }
+.tonightLaneCard[data-kind="sport"] { border-left-color: var(--river-bright); }
+.tonightLaneCard[data-kind="deal"] { border-left-color: var(--brass-bright); }
+.tonightLaneCard[data-kind="music"] { border-left-color: var(--river); }
+
+.tonightLaneCardTap {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.tonightLaneCardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.tonightLaneCardKind {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--brass) 55%, var(--ink));
+}
+
+.tonightLaneCardPrice {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.tonightLaneCardTitle {
+  margin: 0 0 2px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+.tonightLaneCardPlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.tonightLaneCardPlace span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 158px;
+}
+
+.tonightLaneCardWhen {
+  margin: 0 0 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--river) 45%, var(--ink));
+}
+
+/* The deal's own closing time, beside the start it already prints. */
+.tonightLaneCardEnds {
+  font-weight: 800;
+  color: var(--brass);
+}
+
+.tonightLaneCardSource {
+  margin: 0;
+  font-size: 0.62rem;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Wraps rather than truncating: half a listing age is worse than none. */
+.tonightLaneCardListingAge {
+  margin: 2px 0 0;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.tonightLanePlan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px tap target + touch-action — same #232-adopted hit-size bar as the chips. */
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 4px 12px;
+  touch-action: manipulation;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brass) 45%, var(--line));
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+  color: color-mix(in srgb, var(--brass) 55%, var(--ink));
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tonightLanePlan:hover {
+  background: color-mix(in srgb, var(--brass) 20%, transparent);
+}
+
+.tonightLaneCollapsed:hover,
+.tonightLaneCollapsed:has(:focus-visible) {
+  border-color: var(--brass);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--brass) 18%, var(--panel-raised)),
+      color-mix(in srgb, var(--amber) 11%, var(--panel-raised))
+    ),
+    var(--panel-raised);
+}
+
+.tonightLaneOverlayToggle:hover,
+.tonightLaneOverlayDismiss:hover,
+.tonightLaneClose:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.tonightLaneCollapsedMain:focus-visible,
+.tonightLaneOverlayToggle:focus-visible,
+.tonightLaneOverlayDismiss:focus-visible,
+.tonightLaneClose:focus-visible,
+.tonightLaneChip:focus-visible,
+.tonightLaneCardTap:focus-visible,
+.tonightLanePlan:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.tonightLaneCollapsedMain:focus-visible,
+.tonightLaneCollapsed .tonightLaneOverlayToggle:focus-visible {
+  outline-offset: -3px;
+}
+
+@media (max-width: 420px) {
+  .tonightLaneTitleRow {
+    gap: 6px;
+  }
+
+  .tonightLaneTitleMeta {
+    gap: 6px;
+  }
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tonightLane--collapsed {
+    animation: tonightLaneChipIn 140ms ease-out both;
+  }
+
+  .tonightLane--open {
+    animation: tonightLaneSheetIn 180ms ease-out both;
+  }
+
+  /* The sheet float-in keyframe ends at translate(-50%, 0); with `both` its fill
+     would reinstate the map-edge -50% offset inside the sheet. In-sheet the lane
+     is static and needs no entrance of its own (the sheet animates in). */
+  .tonightLane--sheet {
+    animation: none;
+    transform: none;
+  }
+
+  .tonightLaneCard {
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+  .tonightLaneCardTap:active {
+    transform: scale(0.98);
+    --shared-press-scale: 1;
+  }
+  /* Pointer-down feedback stays visual-only (:active); activation itself is
+     onClick so keyboard users and drag-scrolls on the chip rail behave. */
+  .tonightLaneChip {
+    transition: transform 120ms ease;
+  }
+  .tonightLaneChip:active {
+    transform: scale(0.96);
+    --shared-press-scale: 1;
+  }
+}
+
+@keyframes tonightLaneChipIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tonightLaneSheetIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

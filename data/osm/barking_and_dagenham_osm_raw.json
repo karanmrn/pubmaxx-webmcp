@@ -1,0 +1,1353 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-17T22:26:40Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 250766138,
+      "lat": 51.5814345,
+      "lon": 0.1167026,
+      "tags": {
+        "amenity": "pub",
+        "name": "The Hawbush"
+      }
+    },
+    {
+      "type": "node",
+      "id": 597238716,
+      "lat": 51.6003652,
+      "lon": 0.1772876,
+      "tags": {
+        "addr:housenumber": "73",
+        "addr:postcode": "RM5 3SP",
+        "addr:street": "Gobions Avenue",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "check_date": "2025-05-25",
+        "fhrs:id": "374040",
+        "live_sport": "yes",
+        "name": "The Aspen Tree",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greeneking.co.uk/pubs/essex/aspen-tree"
+      }
+    },
+    {
+      "type": "node",
+      "id": 598355051,
+      "lat": 51.535343,
+      "lon": 0.0796786,
+      "tags": {
+        "addr:city": "Barking",
+        "addr:housename": "The Victoria Ph",
+        "addr:postcode": "IG11 7LZ",
+        "addr:street": "Axe Street",
+        "amenity": "pub",
+        "fhrs:id": "102229",
+        "name": "The Victoria",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 763170888,
+      "lat": 51.5598078,
+      "lon": 0.0765491,
+      "tags": {
+        "amenity": "pub",
+        "food": "yes",
+        "name": "General Havelock"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1777189056,
+      "lat": 51.5950358,
+      "lon": 0.0980035,
+      "tags": {
+        "amenity": "pub",
+        "real_ale": "yes",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1973224858,
+      "lat": 51.5079329,
+      "lon": 0.0642154,
+      "tags": {
+        "addr:city": "London",
+        "addr:housename": "University of East London",
+        "addr:housenumber": "4-6",
+        "addr:postcode": "E16 2RD",
+        "addr:street": "University Way",
+        "addr:suburb": "Beckton",
+        "amenity": "bar",
+        "fhrs:id": "1132137",
+        "fhrs:local_authority_id": "19/00454/FOOD",
+        "name": "University Gallery",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4175592346,
+      "lat": 51.5754159,
+      "lon": 0.1887337,
+      "tags": {
+        "amenity": "pub",
+        "name": "Queen Victoria",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.craftunionpubs.com/the-victoria-romford"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4358645296,
+      "lat": 51.5658397,
+      "lon": 0.177501,
+      "tags": {
+        "addr:street": "Rush Green Road",
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The Havering Well",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.craftunionpubs.com/havering-well-romford"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5370783631,
+      "lat": 51.5763481,
+      "lon": 0.1826436,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "87-89",
+        "addr:postcode": "RM1 1PA",
+        "addr:street": "South Street",
+        "amenity": "pub",
+        "check_date": "2025-05-25",
+        "contact:phone": "+44 1708 748244",
+        "fhrs:id": "1924335",
+        "indoor_seating": "yes",
+        "name": "The Crowning Angel",
+        "old_name": "Yates",
+        "old_operator": "Stonegate",
+        "old_website": "https://www.greatukpubs.co.uk/yates-romford",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.craftunionpubs.com/crowning-angel-romford/opening-times"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5370783633,
+      "lat": 51.575868,
+      "lon": 0.1830551,
+      "tags": {
+        "amenity": "bar",
+        "name": "Missoula"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5370783634,
+      "lat": 51.5757041,
+      "lon": 0.1831804,
+      "tags": {
+        "addr:housenumber": "113-117",
+        "addr:interpolation": "odd",
+        "addr:postcode": "RM1 1NX",
+        "addr:street": "South Street",
+        "amenity": "pub",
+        "fhrs:id": "1751491",
+        "indoor_seating": "yes",
+        "name": "Ivy Tree",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5370783638,
+      "lat": 51.5764318,
+      "lon": 0.1820824,
+      "tags": {
+        "amenity": "bar",
+        "name": "Jukebox LDN",
+        "old_name": "Kosho",
+        "website": "https://jukeboxldn.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5382875197,
+      "lat": 51.5784833,
+      "lon": 0.1800662,
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "2",
+        "addr:postcode": "RM1 1HR",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "live_sport": "yes",
+        "name": "The Golden Lion",
+        "website": "https://www.greeneking-pubs.co.uk/pubs/essex/golden-lion/",
+        "wikidata": "Q27085567"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5793837555,
+      "lat": 51.5988869,
+      "lon": 0.1609218,
+      "tags": {
+        "addr:city": "Romford",
+        "addr:county": "Essex",
+        "addr:housenumber": "54-56",
+        "addr:postcode": "RM5 3PA",
+        "addr:street": "Collier Row Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "brewery": "various",
+        "building": "yes",
+        "changing_table": "yes",
+        "contact:phone": "+44 1708 760633",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "fhrs:authority": "Havering",
+        "fhrs:confidence_management": "5",
+        "fhrs:hygiene": "0",
+        "fhrs:id": "373980",
+        "fhrs:local_authority_id": "9365",
+        "fhrs:rating": "5",
+        "fhrs:rating_date": "2020-02-04T00:00:00",
+        "fhrs:structural": "5",
+        "food": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "The Colley Rowe Inn",
+        "note": "Has TV screens",
+        "opening_hours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-24:00",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "real_ale": "yes",
+        "source:fhrs": "FHRS Open Data",
+        "source:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-colley-rowe-inn-collier-row",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-colley-rowe-inn-collier-row",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/614/menus",
+        "wheelchair": "yes",
+        "wheelchair:description": "Step free access. Children are welcomed",
+        "wikidata": "Q88916809"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10302786554,
+      "lat": 51.5354443,
+      "lon": 0.0945437,
+      "tags": {
+        "addr:city": "Barking",
+        "addr:housenumber": "390",
+        "addr:postcode": "IG11 9RS",
+        "addr:street": "Ripple Road",
+        "amenity": "bar",
+        "name": "Beks Zone",
+        "website": "1073055"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10582631413,
+      "lat": 51.559642,
+      "lon": 0.0698741,
+      "tags": {
+        "addr:city": "Ilford",
+        "addr:street": "Cranbrook Road",
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "Jono's"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10728654718,
+      "lat": 51.5884349,
+      "lon": 0.0810853,
+      "tags": {
+        "addr:city": "Ilford",
+        "addr:country": "GB",
+        "addr:housenumber": "2",
+        "addr:postcode": "IG6 2DD",
+        "addr:street": "High Street",
+        "addr:suburb": "Barkingside",
+        "amenity": "pub",
+        "email": "publican@thechequersbarkingside.co.uk",
+        "fhrs:id": "443213",
+        "fhrs:local_authority_id": "151035",
+        "food": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "live_sport": "yes",
+        "name": "The Chequers",
+        "note": "Has High Road road sign on fence",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-00:00; Su 12:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 3659 3948",
+        "source": "local knowledge;streetlevel imagery",
+        "source:addr": "FHRS Open Data",
+        "sport": "table_soccer",
+        "website": "https://www.thechequersbarkingside.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10764787525,
+      "lat": 51.5649251,
+      "lon": 0.08316,
+      "tags": {
+        "addr:city": "Ilford",
+        "addr:housenumber": "361",
+        "addr:postcode": "IG1 4AA",
+        "addr:street": "Ley Street",
+        "alt_name": "Oko Resto Lounge",
+        "amenity": "bar",
+        "fhrs:id": "1096798",
+        "fhrs:local_authority_id": "181496",
+        "name": "Oko Lounge",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11112252905,
+      "lat": 51.5185987,
+      "lon": 0.1193447,
+      "tags": {
+        "addr:city": "Barking",
+        "addr:housename": "Project Office",
+        "addr:postcode": "IG11 0YP",
+        "addr:street": "Project Road",
+        "amenity": "bar",
+        "fhrs:id": "1689813",
+        "indoor_seating": "yes",
+        "instagram": "https://www.instagram.com/theexchange.london/",
+        "name": "The Exchange",
+        "opening_hours": "Fr 17:00-21:00; Sa 14:00-22:00; Su 14:00-19:00",
+        "outdoor_seating": "yes",
+        "source:opening_hours": "sigange on site 2025-08-03",
+        "was:name": "Meetini Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12862452125,
+      "lat": 51.5757927,
+      "lon": 0.1831234,
+      "tags": {
+        "amenity": "bar",
+        "brand": "Slug and Lettuce",
+        "brand:wikidata": "Q7542224",
+        "cocktails": "yes",
+        "food": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13766742035,
+      "lat": 51.5720244,
+      "lon": 0.1413846,
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "218",
+        "addr:postcode": "RM6 6LS",
+        "addr:street": "High Road",
+        "addr:suburb": "Chadwell Heath",
+        "amenity": "bar",
+        "fhrs:id": "1852971",
+        "name": "Nebula",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.nebulalounge.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13766742038,
+      "lat": 51.5720069,
+      "lon": 0.1411164,
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "212",
+        "addr:postcode": "RM6 6LS",
+        "addr:street": "High Road",
+        "addr:suburb": "Chadwell Heath",
+        "amenity": "bar",
+        "fhrs:id": "1689802",
+        "name": "212 Lounge",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 88440420,
+      "center": {
+        "lat": 51.5399662,
+        "lon": 0.1616996
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:postcode": "RM10 9XA",
+        "addr:street": "Crown Street",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "119290",
+        "fhrs:local_authority_id": "4850",
+        "listed_status": "Grade II",
+        "name": "The Cross Keys",
+        "ref:GB:nhle": "1064410",
+        "ref:GB:uprn": "100039830",
+        "start_date": "1954",
+        "wikidata": "Q26317614"
+      }
+    },
+    {
+      "type": "way",
+      "id": 119397108,
+      "center": {
+        "lat": 51.5355354,
+        "lon": 0.1514566
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:housenumber": "141",
+        "addr:postcode": "RM10 9HP",
+        "addr:street": "Broad Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "553046",
+        "fhrs:local_authority_id": "4675",
+        "live_sport": "yes",
+        "name": "The Admiral Vernon",
+        "ref:GB:uprn": "100038133",
+        "wikidata": "Q113554208",
+        "wikipedia": "en:Admiral Vernon, Dagenham"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122317993,
+      "center": {
+        "lat": 51.5322412,
+        "lon": 0.1470397
+      },
+      "tags": {
+        "addr:street": "Goresbrook Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-04-06",
+        "name": "Me'An O'Brien's"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122597484,
+      "center": {
+        "lat": 51.5423875,
+        "lon": 0.148328
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:postcode": "RM10 8QS",
+        "addr:street": "Heathway",
+        "amenity": "pub",
+        "building": "yes",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "The Lord Denman",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "100090438",
+        "source:addr:postcode": "ONSUD;OS Open UPRN"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122871638,
+      "center": {
+        "lat": 51.5515628,
+        "lon": 0.1616011
+      },
+      "tags": {
+        "addr:housename": "Eastbrook Hotel",
+        "addr:postcode": "RM10 7UP",
+        "addr:street": "Dagenham Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1060847",
+        "fhrs:local_authority_id": "72655",
+        "name": "The Eastbrook",
+        "opening_hours": "Mo-Su 11:00-23:00",
+        "real_ale": "yes",
+        "wikidata": "Q16707729"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122888258,
+      "center": {
+        "lat": 51.5527167,
+        "lon": 0.1350341
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:postcode": "RM8 3LJ",
+        "addr:street": "Wood Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "129118",
+        "live_sport": "yes",
+        "name": "The Cherry Tree",
+        "real_ale": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123796105,
+      "center": {
+        "lat": 51.5416065,
+        "lon": 0.113318
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:country": "GB",
+        "addr:postcode": "RM8 2HY",
+        "addr:street": "Lodge Avenue",
+        "addr:suburb": "Becontree",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Roundhouse",
+        "smoking": "outside",
+        "wikidata": "Q5208489"
+      }
+    },
+    {
+      "type": "way",
+      "id": 124121752,
+      "center": {
+        "lat": 51.5610073,
+        "lon": 0.1498154
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:housename": "The Three Travellers Ph",
+        "addr:postcode": "RM10 7DS",
+        "addr:street": "Wood Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "110403",
+        "name": "The Three Travellers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 182324819,
+      "center": {
+        "lat": 51.5177067,
+        "lon": 0.1903759
+      },
+      "tags": {
+        "addr:city": "Rainham",
+        "addr:postcode": "RM13 9YW",
+        "addr:street": "Broadway",
+        "amenity": "pub",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "The Phoenix",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "ref:GB:uprn": "100023215221;100021348083",
+        "website": "https://www.craftunionpubs.com/phoenix-rainham"
+      }
+    },
+    {
+      "type": "way",
+      "id": 202989797,
+      "center": {
+        "lat": 51.6014897,
+        "lon": 0.0837608
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "food": "yes",
+        "name": "Old Maypole",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 222275286,
+      "center": {
+        "lat": 51.5067676,
+        "lon": 0.0731883
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housename": "Gallions Hotel",
+        "addr:postcode": "E16 2QS",
+        "addr:street": "Basin Approach",
+        "addr:suburb": "Beckton",
+        "amenity": "bar",
+        "building": "yes",
+        "building:levels": "3",
+        "contact:email": "danyel@galyons.co.uk",
+        "contact:phone": "+44 20 7476 8689",
+        "contact:website": "https://galyons-royal-docks.square.site/",
+        "fhrs:id": "962559",
+        "fhrs:local_authority_id": "17/00233/FOOD",
+        "he:inscription_date": "1998-08-27",
+        "heritage": "2",
+        "heritage:operator": "Historic England",
+        "heritage:website": "https://historicengland.org.uk/listing/the-list/list-entry/1376224",
+        "historic:name": "Gallions Hotel & Station",
+        "listed_status": "Grade II*",
+        "name": "Galyons Royal Docks",
+        "ref:GB:nhle": "1376224",
+        "wikidata": "Q17553250"
+      }
+    },
+    {
+      "type": "way",
+      "id": 313944705,
+      "center": {
+        "lat": 51.5379879,
+        "lon": 0.0784849
+      },
+      "tags": {
+        "addr:housenumber": "15",
+        "addr:street": "London Road",
+        "amenity": "bar",
+        "description": "\"Bar & restaurant\"",
+        "name": "Iyke",
+        "source:addr:housenumber": "extrapolation"
+      }
+    },
+    {
+      "type": "way",
+      "id": 313951414,
+      "center": {
+        "lat": 51.5384832,
+        "lon": 0.0794187
+      },
+      "tags": {
+        "addr:city": "Barking",
+        "addr:housenumber": "2",
+        "addr:postcode": "IG11 8HG",
+        "addr:street": "Linton Road",
+        "amenity": "bar",
+        "building": "yes",
+        "building:levels": "2",
+        "fhrs:id": "1030084",
+        "fhrs:local_authority_id": "63860",
+        "name": "Kings Lounge",
+        "website": "https://www.kings-lounge.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 314794003,
+      "center": {
+        "lat": 51.5400251,
+        "lon": 0.0818153
+      },
+      "tags": {
+        "amenity": "bar",
+        "building": "retail",
+        "building:levels": "1",
+        "cuisine": "indian",
+        "name": "Flavorz Wine Bar & Restaurant",
+        "source": "Bing;photograph"
+      }
+    },
+    {
+      "type": "way",
+      "id": 314794012,
+      "center": {
+        "lat": 51.5399202,
+        "lon": 0.081714
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "building:material": "brick",
+        "check_date": "2025-12-06",
+        "food": "yes",
+        "live_sport": "yes",
+        "name": "The Spotted Dog",
+        "phone": "+44 20 8594 0228",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 377284543,
+      "center": {
+        "lat": 51.5790158,
+        "lon": 0.1715514
+      },
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "44",
+        "addr:postcode": "RM7 7HT",
+        "addr:street": "Mawney Road",
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "building": "retail",
+        "contact:website": "https://www.emberinns.co.uk/nationalsearch/london/the-mawney-arms-romford",
+        "fhrs:id": "373871",
+        "name": "The Mawney Arms",
+        "ref:GB:uprn": "200002668906",
+        "source:addr": "FHRS Open Data",
+        "source:addr:postcode": "ONSUD;OS Open UPRN"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466452722,
+      "center": {
+        "lat": 51.5321543,
+        "lon": 0.1170846
+      },
+      "tags": {
+        "addr:city": "Barking",
+        "addr:postcode": "IG11 0SN",
+        "addr:street": "Ripple Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Ship and Shovel",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 555986366,
+      "center": {
+        "lat": 51.5912363,
+        "lon": 0.1667347
+      },
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "120",
+        "addr:postcode": "RM5 3DT",
+        "addr:street": "Collier Row Lane",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "373966",
+        "name": "Collier Row & Havering Royal British Legion",
+        "opening_hours": "12:00-23:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 611600821,
+      "center": {
+        "lat": 51.5941121,
+        "lon": 0.0849783
+      },
+      "tags": {
+        "addr:city": "Ilford",
+        "addr:postcode": "IG6 2JP",
+        "addr:street": "Fencepiece Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "breakfast": "yes",
+        "building": "public",
+        "contact:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-new-fairlop-oak-fairlop",
+        "fhrs:id": "443088",
+        "food": "yes",
+        "name": "The New Fairlop Oak",
+        "operator": "J D Wetherspoom",
+        "real_ale": "yes",
+        "ref:GB:uprn": "10013586146;10034930003;100023051561",
+        "source:addr": "FHRS Open Data",
+        "source:geometry": "bing",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/43/menus",
+        "wikidata": "Q88916765"
+      }
+    },
+    {
+      "type": "way",
+      "id": 671045075,
+      "center": {
+        "lat": 51.5760418,
+        "lon": 0.1830682
+      },
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "99-103",
+        "addr:postcode": "RM1 1NX",
+        "addr:street": "South Street",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "brewery": "yes",
+        "check_date": "2025-05-25",
+        "fhrs:id": "372495",
+        "indoor_seating": "yes",
+        "name": "The Moon and Stars",
+        "outdoor_seating": "yes",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-moon-and-stars-romford",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/79/menus",
+        "wikidata": "Q88917004"
+      }
+    },
+    {
+      "type": "way",
+      "id": 676486617,
+      "center": {
+        "lat": 51.5312203,
+        "lon": 0.1481414
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:postcode": "RM9 6YS",
+        "addr:street": "Chequers Lane",
+        "amenity": "pub",
+        "brand": "Brewers Fayre",
+        "brand:wikidata": "Q4962678",
+        "brand:wikipedia": "en:Brewers Fayre",
+        "building": "commercial",
+        "building:levels": "2",
+        "check_date": "2026-02-08",
+        "cuisine": "british",
+        "indoor_seating": "yes",
+        "name": "Brewers Fayre",
+        "outdoor_seating": "yes",
+        "roof:levels": "0",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 676769826,
+      "center": {
+        "lat": 51.5286903,
+        "lon": 0.1022365
+      },
+      "tags": {
+        "addr:city": "Barking",
+        "addr:housenumber": "109",
+        "addr:postcode": "IG11 0NX",
+        "addr:street": "Bastable Avenue",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "Thelightermanbarking",
+        "contact:instagram": "Thelightermanbarking",
+        "contact:twitter": "Thelightermanb1",
+        "dog": "yes",
+        "email": "info@thelightermanbarking.co.uk",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "live_sport": "yes",
+        "name": "The Lighterman",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 3802 4864",
+        "website": "https://www.thelightermanbarking.co.uk",
+        "website:menu": "https://www.thelightermanbarking.co.uk/food"
+      }
+    },
+    {
+      "type": "way",
+      "id": 718184975,
+      "center": {
+        "lat": 51.5961195,
+        "lon": 0.1644068
+      },
+      "tags": {
+        "addr:housenumber": "248",
+        "addr:postcode": "RM5 3JB",
+        "addr:street": "Collier Row Lane",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "373188",
+        "live_sport": "yes",
+        "name": "The Bell & Gate",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 807171824,
+      "center": {
+        "lat": 51.5329918,
+        "lon": 0.1065274
+      },
+      "tags": {
+        "addr:city": "Barking",
+        "addr:housename": "The Thatched House Ph",
+        "addr:postcode": "IG11 9PG",
+        "addr:street": "Ripple Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "110396",
+        "fhrs:local_authority_id": "40089",
+        "name": "The Thatched House"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860397939,
+      "center": {
+        "lat": 51.5458591,
+        "lon": 0.1657886
+      },
+      "tags": {
+        "addr:city": "Dagenham",
+        "addr:postcode": "RM10 7FN",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Pipe Major",
+        "ref:GB:uprn": "10091586786"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1043076956,
+      "center": {
+        "lat": 51.5655588,
+        "lon": 0.1885834
+      },
+      "tags": {
+        "addr:city": "Hornchurch",
+        "addr:housenumber": "360",
+        "addr:postcode": "RM12 4TW",
+        "addr:street": "Hornchurch Road",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "374080",
+        "name": "The Crown",
+        "ref:GB:uprn": "100021332971;10070702418;200003142386",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1057261441,
+      "center": {
+        "lat": 51.5879406,
+        "lon": 0.1343732
+      },
+      "tags": {
+        "addr:postcode": "RM6 5PT",
+        "addr:street": "Billet Road",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1073060",
+        "name": "The Harrow"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1079882786,
+      "center": {
+        "lat": 51.5228554,
+        "lon": 0.1917759
+      },
+      "tags": {
+        "addr:city": "Rainham",
+        "addr:housenumber": "2",
+        "addr:postcode": "RM13 8SS",
+        "addr:street": "Rainham Road",
+        "amenity": "pub",
+        "barrier": "fence",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "fhrs:id": "372445",
+        "fhrs:local_authority_id": "10105",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "The Albion",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "100021354866",
+        "website": "https://www.greeneking.co.uk/pubs/essex/albion"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112549296,
+      "center": {
+        "lat": 51.5073066,
+        "lon": 0.1077457
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "14",
+        "addr:postcode": "SE28 8RA",
+        "addr:street": "Joyce Dawson Way",
+        "addr:suburb": "Thamesmead",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "694446",
+        "live_sport": "yes",
+        "name": "The Cutty Sark",
+        "source:outline": "Bing",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1133768512,
+      "center": {
+        "lat": 51.5458955,
+        "lon": 0.0931208
+      },
+      "tags": {
+        "addr:city": "Barking",
+        "addr:housenumber": "201-203",
+        "addr:postcode": "IG11 8UF",
+        "addr:street": "Longbridge Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Royal Oak",
+        "website": "https://www.thequeenshouse.co.uk/new-opening-barking"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1134980294,
+      "center": {
+        "lat": 51.5614226,
+        "lon": 0.1417233
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Beacon Tree"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1135278013,
+      "center": {
+        "lat": 51.5619999,
+        "lon": 0.0690402
+      },
+      "tags": {
+        "addr:city": "Ilford",
+        "addr:county": "Essex",
+        "addr:housenumber": "114-116",
+        "addr:postcode": "IG1 4LZ",
+        "addr:street": "Cranbrook Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "brewery": "various",
+        "building": "yes",
+        "changing_table": "yes",
+        "contact:phone": "+44 20 8518 0535",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "fhrs:authority": "Redbridge",
+        "fhrs:confidence_management": "0",
+        "fhrs:hygiene": "0",
+        "fhrs:id": "443273",
+        "fhrs:local_authority_id": "151807",
+        "fhrs:rating": "5",
+        "fhrs:rating_date": "2022-11-25T00:00:00",
+        "fhrs:structural": "5",
+        "food": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "The Great Spoon of Ilford",
+        "note": "Has TV screens",
+        "opening_hours": "Mo,Tu,We,Th,Su 08:00-24:00; Fr,Sa 08:00-25:00",
+        "outdoor_seating": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "real_ale": "yes",
+        "source:fhrs": "FHRS Open Data",
+        "source:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-great-spoon-of-ilford-ilford",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-great-spoon-of-ilford-ilford",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/90/menus",
+        "wheelchair": "yes",
+        "wikidata": "Q88916763"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1135490946,
+      "center": {
+        "lat": 51.578359,
+        "lon": 0.0709157
+      },
+      "tags": {
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "King George V",
+        "website": "https://www.greeneking.co.uk/pubs/essex/king-george-v"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1137432542,
+      "center": {
+        "lat": 51.5918746,
+        "lon": 0.0628494
+      },
+      "tags": {
+        "addr:city": "Ilford",
+        "addr:postcode": "IG5 0NY",
+        "amenity": "pub",
+        "brand": "Hive Pubs",
+        "brand:wikidata": "Q115594794",
+        "building": "yes",
+        "name": "The Unicorn",
+        "ref:GB:uprn": "10034921102",
+        "website": "https://www.unicornilford.co.uk/index"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1153632684,
+      "center": {
+        "lat": 51.5588665,
+        "lon": 0.0708194
+      },
+      "tags": {
+        "amenity": "pub",
+        "brand": "O'Neill's",
+        "brand:wikidata": "Q7071905",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "O'Neill's Ilford",
+        "theme": "irish"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1155893539,
+      "center": {
+        "lat": 51.5575987,
+        "lon": 0.0704803
+      },
+      "tags": {
+        "amenity": "bar",
+        "building": "yes",
+        "name": "Champ's"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1156054922,
+      "center": {
+        "lat": 51.5564824,
+        "lon": 0.0679625
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "The Papermakers Arms"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1156329852,
+      "center": {
+        "lat": 51.5591211,
+        "lon": 0.0859312
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "Prince of Wales"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1299238183,
+      "center": {
+        "lat": 51.5752964,
+        "lon": 0.1760488
+      },
+      "tags": {
+        "addr:postcode": "RM7 9QA",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Sun",
+        "ref:GB:uprn": "100021384057",
+        "source:addr:postcode": "ONSUD;OS Open UPRN"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1304639979,
+      "center": {
+        "lat": 51.5725152,
+        "lon": 0.1413486
+      },
+      "tags": {
+        "addr:city": "Romford",
+        "addr:postcode": "RM6 6QT",
+        "addr:street": "High Road",
+        "addr:suburb": "Chadwell Heath",
+        "amenity": "pub",
+        "brand": "Sizzling Pubs",
+        "brand:wikidata": "Q118314187",
+        "building": "yes",
+        "fhrs:id": "124159",
+        "name": "Tollgate Tavern",
+        "website": "https://www.sizzlingpubs.co.uk/findapub/eastandwestmidlands/thetollgateromford#/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1304666211,
+      "center": {
+        "lat": 51.5723859,
+        "lon": 0.1909409
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Durham Arms",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1304666218,
+      "center": {
+        "lat": 51.5717342,
+        "lon": 0.1875895
+      },
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "45",
+        "addr:postcode": "RM1 2HD",
+        "addr:street": "Wheatsheaf Road",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "373160",
+        "name": "The Wheatsheaf",
+        "ref:GB:uprn": "200002669797",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1324117856,
+      "center": {
+        "lat": 51.5740743,
+        "lon": 0.184396
+      },
+      "tags": {
+        "addr:postcode": "RM1 2JA",
+        "addr:street": "Victoria Road",
+        "amenity": "bar",
+        "building": "retail",
+        "fhrs:id": "1246861",
+        "name": "De Quilox Lounge and Bar",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1324138135,
+      "center": {
+        "lat": 51.5747408,
+        "lon": 0.1840248
+      },
+      "tags": {
+        "addr:city": "Romford",
+        "addr:housenumber": "143",
+        "addr:postcode": "RM1 1PL",
+        "addr:street": "South Street",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "373887",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "The Goose",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "100023660432;100021397110;200002669759",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greatukpubs.co.uk/goose-romford"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1504081862,
+      "center": {
+        "lat": 51.5705303,
+        "lon": 0.1302361
+      },
+      "tags": {
+        "addr:city": "Romford",
+        "addr:country": "GB",
+        "addr:housenumber": "1128",
+        "addr:postcode": "RM6 4AH",
+        "addr:street": "High Road",
+        "addr:suburb": "Chadwell Heath",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "breakfast": "yes",
+        "building": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "fhrs:id": "442871",
+        "fhrs:local_authority_id": "108461",
+        "food": "yes",
+        "name": "The Eva Hart",
+        "real_ale": "yes",
+        "source:outline": "Bing",
+        "website": "https://www.jdwetherspoon.com/pubs/the-eva-hart-chadwell-heath/",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/562/menus",
+        "wikidata": "Q88917003"
+      }
+    }
+  ]
+}

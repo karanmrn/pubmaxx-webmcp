@@ -1,0 +1,2573 @@
+{
+  "summary": {
+    "generatedAt": "2026-07-18T07:05:35.524Z",
+    "totalOsmUnpriced": 658,
+    "withWebsite": 271,
+    "chainsSkipped": 63,
+    "independentsSwept": 105,
+    "requestsUsed": 155,
+    "priced": 4,
+    "manualQaDropped": 0,
+    "note": "Outer-London complete (2 sweeps). Raw harvest surfaced candidates; strict serving-size + promo-vs-standard QA kept only first-party STANDARD draught PINT prices."
+  },
+  "log": [
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Shy Horse",
+      "website": "https://www.vintageinn.co.uk/restaurants/london/theshyhorsechessington",
+      "host": "vintageinn.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The California",
+      "website": "https://www.emberinns.co.uk/nationalsearch/london/the-california-sutton/food",
+      "host": "emberinns.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Harrow",
+      "website": "https://www.crafted-social.co.uk/harrow-cheam",
+      "host": "crafted-social.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Old Bank",
+      "website": "https://www.greatukpubs.co.uk/old-bank-sutton",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "Slug & Lettuce",
+      "website": "https://www.slugandlettuce.co.uk/sutton",
+      "host": "slugandlettuce.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Star",
+      "website": "https://www.craftunionpubs.com/star-wallington",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "William Bourne",
+      "website": "https://www.greatukpubs.co.uk/william-bourne-chessington",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Crown",
+      "website": "https://www.craftunionpubs.com/crown-pub-sutton",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Butterchurn",
+      "website": "https://www.greeneking.co.uk/pubs/surrey/butterchurn",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The North Star",
+      "website": "https://www.emberinns.co.uk/nationalsearch/london/the-north-star-chessington",
+      "host": "emberinns.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Gander",
+      "website": "https://www.greatukpubs.co.uk/gander-inn-sutton",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The North End Tavern",
+      "website": "https://www.greatukpubs.co.uk/north-end-tavern-worcester-park",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "Lord Nelson",
+      "website": "https://www.greatukpubs.co.uk/lord-nelson-sutton",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Coronation Hall",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-coronation-hall-surbiton",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "O'Neills",
+      "website": "https://www.oneills.co.uk/national-search/south-east/kingston-upon-thames",
+      "host": "oneills.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Druids Head",
+      "website": "https://www.greeneking.co.uk/pubs/surrey/druids-head",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Kings Tun",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-kings-tun-kingston-upon-thames",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Moon on the Square",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-moon-on-the-square-basildon",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "White Hart",
+      "website": "https://www.craftunionpubs.com/white-hart-eltham",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Green Man",
+      "website": "https://www.greeneking.co.uk/pubs/middlesex/green-man",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "Lamplighter",
+      "website": "https://www.craftunionpubs.com/lamplighter-hounslow",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Bell",
+      "website": "https://www.craftunionpubs.com/the-bell-hounslow",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Fox Under The Hill",
+      "website": "https://www.greeneking.co.uk/pubs/greater-london/fox-under-the-hill",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Lost Hour",
+      "website": "https://www.crafted-social.co.uk/lost-hour-greenwich",
+      "host": "crafted-social.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Ye Olde Rose and Crown",
+      "website": "https://www.greeneking-pubs.co.uk/pubs/greater-london/ye-olde-rose-crown/",
+      "host": "greeneking-pubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Kings Arms",
+      "website": "https://www.greeneking-pubs.co.uk/pubs/greater-london/kings-arms-greenwich/",
+      "host": "greeneking-pubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Yacht",
+      "website": "https://www.greeneking.co.uk/pubs/greater-london/yacht",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Great Harry",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-great-harry-woolwich",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Earl of Chatham",
+      "website": "https://www.craftunionpubs.com/earl-of-chatham-woolwich",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "All Bar One",
+      "website": "https://www.allbarone.co.uk/national-search/london/all-bar-one-o2",
+      "host": "allbarone.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Slug & Lettuce",
+      "website": "https://www.slugandlettuce.co.uk/o2-arena-london",
+      "host": "slugandlettuce.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Stargazer",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-stargazer",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Miller's Well",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-millers-well-east-ham",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Abbey Tap",
+      "website": "https://www.crafted-social.co.uk/abbey-tap-stratford",
+      "host": "crafted-social.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Sportsman",
+      "website": "https://www.greatukpubs.co.uk/sportsman-stratford",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Newham",
+      "pub": "Goldengrove",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/goldengrove-stratford",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Brent",
+      "pub": "North London Tavern",
+      "website": "https://www.greeneking.co.uk/pubs/greater-london/north-london-tavern",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Newham",
+      "pub": "Fox & Hounds",
+      "website": "https://www.craftunionpubs.com/fox-and-hounds-forest-gate",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Beaten Docket",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-beaten-docket-cricklewood",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Golden Fleece",
+      "website": "https://www.greeneking.co.uk/pubs/greater-london/golden-fleece",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Black Horse",
+      "website": "https://www.emberinns.co.uk/nationalsearch/london/the-black-horse-wembley#/",
+      "host": "emberinns.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Bell",
+      "website": "https://www.craftunionpubs.com/the-bell-leytonstone",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Torch",
+      "website": "https://www.greeneking.co.uk/pubs/middlesex/torch",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Preston",
+      "website": "https://www.emberinns.co.uk/nationalsearch/london/the-preston-wembley",
+      "host": "emberinns.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Walnut Tree",
+      "website": "https://www.jdwetherspoon.com/pubs/the-walnut-tree-leytonstone/",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Barking and Dagenham",
+      "pub": "Tollgate Tavern",
+      "website": "https://www.sizzlingpubs.co.uk/findapub/eastandwestmidlands/thetollgateromford#/",
+      "host": "sizzlingpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Goose",
+      "website": "https://www.greatukpubs.co.uk/goose-walthamstow/contact",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The High Cross",
+      "website": "https://www.instagram.com/highcrosslondon/",
+      "host": "instagram.com",
+      "result": "no-price-published",
+      "reason": "chain: Social/holding page (no first-party menu)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Bell",
+      "website": "https://www.crafted-social.co.uk/bell-walthamstow",
+      "host": "crafted-social.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Mossy Well",
+      "website": "https://www.jdwetherspoon.com/pubs/the-mossy-well-muswell-hill/",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Elbow Room",
+      "website": "https://www.craftunionpubs.com/elbow-room-tottenham",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The County Arms",
+      "website": "https://www.greeneking.co.uk/pubs/greater-london/county-arms",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The King's Ford",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-kings-ford-chingford",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Wishing Well",
+      "website": "https://www.craftunionpubs.com/wishing-well-chingford",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Woodman",
+      "website": "https://www.facebook.com/woodmansouthgate/",
+      "host": "facebook.com",
+      "result": "no-price-published",
+      "reason": "chain: Social/holding page (no first-party menu)"
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Queen Elizabeth",
+      "website": "https://www.emberinns.co.uk/nationalsearch/london/the-queen-elizabeth-chingford",
+      "host": "emberinns.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Queens Head",
+      "website": "https://www.greatukpubs.co.uk/the-queens-head-winchmore-hill",
+      "host": "greatukpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Great Local Pubs / Stonegate (no web prices)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The New Crown",
+      "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-new-crown-southgate",
+      "host": "jdwetherspoon.com",
+      "result": "no-price-published",
+      "reason": "chain: J D Wetherspoon (prices in Order & Pay app only)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "Stag & Hounds",
+      "website": "https://www.emberinns.co.uk/nationalsearch/london/the-stag-and-hounds-edmonton",
+      "host": "emberinns.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Gryphon Pub",
+      "website": "https://www.emberinns.co.uk/nationalsearch/london/thegryphonenfield/",
+      "host": "emberinns.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "Crown & Horseshoe",
+      "website": "https://www.greeneking.co.uk/pubs/middlesex/crown-and-horseshoes",
+      "host": "greeneking.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Greene King (image-only web menus)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The White House",
+      "website": "https://www.craftunionpubs.com/white-house-enfield",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Prince Albert",
+      "website": "https://www.craftunionpubs.com/prince-albert-enfield",
+      "host": "craftunionpubs.com",
+      "result": "no-price-published",
+      "reason": "chain: Stonegate (prices in app only)"
+    },
+    {
+      "borough": "Sutton",
+      "pub": "Ebb & Flow",
+      "website": "http://www.treasurypub.co.uk/",
+      "host": "treasurypub.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Windsor Castle",
+      "website": "https://www.windsorcastlepub.com/",
+      "host": "windsorcastlepub.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Little Windsor",
+      "website": "https://www.littlewindsorsutton.co.uk/",
+      "host": "littlewindsorsutton.co.uk",
+      "result": "blocked",
+      "reason": "http 500",
+      "requests": 1
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Greyhound",
+      "website": "http://www.greyhoundhotel.net/",
+      "host": "greyhoundhotel.net",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Hope",
+      "website": "http://www.hopecarshalton.co.uk/",
+      "host": "hopecarshalton.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Sun",
+      "website": "https://www.thesuncarshalton.com/",
+      "host": "thesuncarshalton.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Plough",
+      "website": "https://www.youngs.co.uk/pub-detail.asp?PubID=437",
+      "host": "youngs.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Lucky Rover",
+      "website": "https://www.luckyroverchessington.co.uk/",
+      "host": "luckyroverchessington.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Sutton",
+      "pub": "The Railway Tavern",
+      "website": "https://www.railwaytaverncarshalton.co.uk/",
+      "host": "railwaytaverncarshalton.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Prince of Wales",
+      "website": "https://www.princeofwalessurbiton.co.uk/",
+      "host": "princeofwalessurbiton.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Elm Tree",
+      "website": "https://www.elmtreesurbiton.co.uk/",
+      "host": "elmtreesurbiton.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Woodies Freehouse",
+      "website": "https://woodiesfreehouse.co.uk/",
+      "host": "woodiesfreehouse.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Victoria",
+      "website": "https://www.thevictoriasurbiton.co.uk/",
+      "host": "thevictoriasurbiton.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Surbiton Flyer",
+      "website": "https://www.surbitonflyer.co.uk/",
+      "host": "surbitonflyer.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Brave New World",
+      "website": "https://www.bravebar.co.uk/",
+      "host": "bravebar.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Berrylands",
+      "website": "https://www.theberrylands.co.uk/",
+      "host": "theberrylands.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Waggon & Horses",
+      "website": "https://thewaggonsurbiton.co.uk/",
+      "host": "thewaggonsurbiton.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Hanjan",
+      "website": "https://www.hanjannewmalden.com/",
+      "host": "hanjannewmalden.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Cocoanut",
+      "website": "https://www.cocoanut.co.uk/",
+      "host": "cocoanut.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Ram",
+      "website": "https://www.theramkingston.com/",
+      "host": "theramkingston.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "WeBrew",
+      "website": "https://webrew.co.uk/venues/kingston/",
+      "host": "webrew.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Albion",
+      "website": "https://www.thealbionkingston.com/",
+      "host": "thealbionkingston.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Bishop",
+      "website": "http://thebishopkingston.co.uk",
+      "host": "thebishopkingston.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Wheelwrights Arms",
+      "website": "https://www.wheelieslive.co.uk/",
+      "host": "wheelieslive.co.uk",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.wheelieslive.co.uk\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Whelans",
+      "website": "https://whelanspubs.co.uk/whelans-irish-traditional/whelans-kingston/",
+      "host": "whelanspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Canbury Arms",
+      "website": "https://www.canburyarmskingston.co.uk/",
+      "host": "canburyarmskingston.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Black Horse",
+      "website": "https://blackhorsekingston.uk/",
+      "host": "blackhorsekingston.uk",
+      "result": "blocked",
+      "reason": "http 500",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Norbiton",
+      "website": "https://frontierpubs.co.uk/pub/the-norbiton/",
+      "host": "frontierpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Grey Horse",
+      "website": "https://www.grey-horse.co.uk",
+      "host": "grey-horse.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Albert",
+      "website": "https://www.thealbertkingston.co.uk/",
+      "host": "thealbertkingston.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Wych Elm",
+      "website": "https://thewych.co.uk/",
+      "host": "thewych.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "The Queens Head",
+      "website": "https://www.queensheadkingston.co.uk/",
+      "host": "queensheadkingston.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "pub": "Boaters Inn",
+      "website": "https://www.boaterskingston.com/",
+      "host": "boaterskingston.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "KTM ROX",
+      "website": "https://www.ktmrox.co.uk/index",
+      "host": "ktmrox.co.uk",
+      "result": "blocked",
+      "reason": "http 500",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Black Boy",
+      "website": "https://blackboysidcup.com/",
+      "host": "blackboysidcup.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "M'Arks Sky Bar",
+      "website": "https://marksskybar.com/",
+      "host": "marksskybar.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"marksskybar.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Last Drop Inn",
+      "website": "https://www.thelastdropinn.co.uk/",
+      "host": "thelastdropinn.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Bell on the Green",
+      "website": "https://thebellonthegreen.com/",
+      "host": "thebellonthegreen.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Long Pond",
+      "website": "https://thelongpond.co.uk/",
+      "host": "thelongpond.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Royal Oak",
+      "website": "https://www.royaloakisleworth.co.uk/",
+      "host": "royaloakisleworth.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Swan Inn",
+      "website": "https://www.swaninnisleworth.co.uk/",
+      "host": "swaninnisleworth.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The George & Dragon",
+      "website": "https://georgedragon.com/",
+      "host": "georgedragon.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Graduate",
+      "website": "https://thegraduate.uk/",
+      "host": "thegraduate.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Ashburnham Arms",
+      "website": "https://www.ashburnham-arms.co.uk/",
+      "host": "ashburnham-arms.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Rising Sun",
+      "website": "https://www.risingsunisleworth.co.uk/",
+      "host": "risingsunisleworth.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "British Oak",
+      "website": "https://britishoakblackheath.com/",
+      "host": "britishoakblackheath.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Prince Of Greenwich",
+      "website": "https://www.theprinceofgreenwichpub.com",
+      "host": "theprinceofgreenwichpub.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Richard I",
+      "website": "https://www.richardthefirst.co.uk/",
+      "host": "richardthefirst.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Royal Standard",
+      "website": "https://www.royalstandardblackheath.co.uk",
+      "host": "royalstandardblackheath.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Green Goddess",
+      "website": "https://www.thegreengoddess.pub/",
+      "host": "thegreengoddess.pub",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Vintners Yard Bar",
+      "website": "https://vintnersyard.co.uk/residents/yard-bar/",
+      "host": "vintnersyard.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Duck and Ball",
+      "website": "https://www.chiswickcc.org/clients/",
+      "host": "chiswickcc.org",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Oliver's Jazz Bar",
+      "website": "https://oliversjazzbar.com",
+      "host": "oliversjazzbar.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Duke",
+      "website": "https://thedukedeptford.com/",
+      "host": "thedukedeptford.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Coach and Horses",
+      "website": "https://www.the-coach-and-horses.co.uk/",
+      "host": "the-coach-and-horses.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Bugle Horn",
+      "website": "https://buglehornpub.com/",
+      "host": "buglehornpub.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Watergate",
+      "website": "https://www.thewatergate.co.uk/",
+      "host": "thewatergate.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Plume of Feathers",
+      "website": "https://plumegreenwich.com/",
+      "host": "plumegreenwich.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Lower Deck",
+      "website": "https://www.greenwichsu.co.uk/lowerdeck/",
+      "host": "greenwichsu.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Gipsy Moth",
+      "website": "https://www.thegipsymothgreenwich.co.uk/",
+      "host": "thegipsymothgreenwich.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "Six Bells",
+      "website": "https://www.six-bells-brentford.co.uk/",
+      "host": "six-bells-brentford.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Brewery Tap",
+      "website": "https://www.brewery-tap.co.uk/",
+      "host": "brewery-tap.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Magpie and Crown",
+      "website": "https://www.freewebs.com/magpieandcrown/",
+      "host": "freewebs.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Old Brewery",
+      "website": "https://www.oldbrewerygreenwich.com/",
+      "host": "oldbrewerygreenwich.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Oystercatcher",
+      "website": "https://oystercatchergreenwich.co.uk/",
+      "host": "oystercatchergreenwich.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Sail Loft",
+      "website": "https://www.sailloftgreenwich.co.uk/",
+      "host": "sailloftgreenwich.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Vanbrugh",
+      "website": "https://www.thevanbrugh.com/",
+      "host": "thevanbrugh.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Beehive",
+      "website": "https://www.beehivebrentford.co.uk/",
+      "host": "beehivebrentford.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Bull's Head",
+      "website": "https://www.chefandbrewer.com/pubs/greater-london/bulls-head",
+      "host": "chefandbrewer.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Angle 90",
+      "website": "https://www.angle90.co.uk/",
+      "host": "angle90.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "Queen's Head",
+      "website": "https://www.queens-head-cranford.co.uk/",
+      "host": "queens-head-cranford.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Crown",
+      "website": "https://frontierpubs.co.uk/pub/the-crown/",
+      "host": "frontierpubs.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The City Barge",
+      "website": "https://www.citybargechiswick.com/",
+      "host": "citybargechiswick.com",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.citybargechiswick.com/",
+      "observedAt": "2026-07-18T05:38:55.488Z",
+      "requests": 2,
+      "reason": "manual-QA drop: single generic \"Stout £5.00\" too thin to assert as a specific named pint; could not re-verify (credits exhausted)",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Stout",
+          "priceGbp": 5
+        }
+      ]
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The River Ale House",
+      "website": "https://www.theriveralehouse.com/",
+      "host": "theriveralehouse.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Angerstein Hotel",
+      "website": "https://angerstein-hotel.com/",
+      "host": "angerstein-hotel.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"angerstein-hotel.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Pelton Arms",
+      "website": "https://www.peltonarms.com/",
+      "host": "peltonarms.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Griffin",
+      "website": "https://www.griffinbrentford.co.uk/",
+      "host": "griffinbrentford.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Rose of Denmark",
+      "website": "https://roseofdenmarkpub.co.uk/",
+      "host": "roseofdenmarkpub.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Steam Packet",
+      "website": "https://www.brunningandprice.co.uk/steampacket/",
+      "host": "brunningandprice.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "One Over The Ait",
+      "website": "https://www.oneovertheait.co.uk/",
+      "host": "oneovertheait.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "Express Tavern",
+      "website": "http://www.expresstavern.co.uk/",
+      "host": "expresstavern.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Globe",
+      "website": "https://www.globebrentford.co.uk/",
+      "host": "globebrentford.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Enderby House",
+      "website": "https://www.enderbyhousepub.co.uk/",
+      "host": "enderbyhousepub.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Lord Nelson",
+      "website": "https://www.thelordnelsonbrentford.co.uk/",
+      "host": "thelordnelsonbrentford.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "Hare and Hounds",
+      "website": "https://www.hareandhoundsosterley.co.uk/",
+      "host": "hareandhoundsosterley.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Guard House",
+      "website": "https://www.theguardhousewoolwich.co.uk/",
+      "host": "theguardhousewoolwich.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The George IV",
+      "website": "https://www.georgeiv.co.uk/",
+      "host": "georgeiv.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "SALT Woolwich",
+      "website": "https://www.saltbeerfactory.co.uk/",
+      "host": "saltbeerfactory.co.uk",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.saltbeerfactory.co.uk/",
+      "observedAt": "2026-07-18T05:38:55.488Z",
+      "requests": 1,
+      "reason": "manual-QA drop: extracted name contaminated (| BIG POTATO GAMES); £3.25/£4.00 are SALT third/two-third measures not pints; venue→brewery-site match dubious",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "HERD MENTALITY 4.5% INDIA PALE LAGER | BIG POTATO GAMES",
+          "priceGbp": 3.25
+        },
+        {
+          "drinkName": "BANOFFEE 7.0% PUDDING STOUT",
+          "priceGbp": 4
+        }
+      ]
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Gunnersbury",
+      "website": "https://www.thegunnersburypub.com/",
+      "host": "thegunnersburypub.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "Connolly's Bar",
+      "website": "https://www.connollysofchiswick.com/",
+      "host": "connollysofchiswick.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Pilot Inn",
+      "website": "https://www.pilotgreenwich.co.uk/",
+      "host": "pilotgreenwich.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Windjammer",
+      "website": "https://www.windjammerlondon.co.uk/",
+      "host": "windjammerlondon.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "The Dial",
+      "website": "https://thedialldn.com/",
+      "host": "thedialldn.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Newham",
+      "pub": "Tattoo Bar",
+      "website": "https://tattoo-bar.co.uk/",
+      "host": "tattoo-bar.co.uk",
+      "result": "priced",
+      "cheapestPint": 6,
+      "drink": "Aspall Draught Cyder",
+      "allDraught": [
+        {
+          "drinkName": "Aspall Draught Cyder",
+          "priceGbp": 6
+        },
+        {
+          "drinkName": "Estrella Damm",
+          "priceGbp": 6.8
+        },
+        {
+          "drinkName": "Poretti",
+          "priceGbp": 6.8
+        },
+        {
+          "drinkName": "Brooklyn IPA",
+          "priceGbp": 6.8
+        },
+        {
+          "drinkName": "1644 Blanc",
+          "priceGbp": 6.8
+        },
+        {
+          "drinkName": "Guinness Microdraught Pint",
+          "priceGbp": 6.8
+        }
+      ],
+      "sourceUrl": "https://tattoo-bar.co.uk/menu",
+      "observedAt": "2026-07-18T05:38:55.488Z",
+      "requests": 2
+    },
+    {
+      "borough": "Greenwich",
+      "pub": "Boom Battle Bar",
+      "website": "https://boombattlebar.com/uk/theo2/",
+      "host": "boombattlebar.com",
+      "result": "priced",
+      "cheapestPint": 5,
+      "drink": "BOOM Lager",
+      "allDraught": [
+        {
+          "drinkName": "BOOM Lager",
+          "priceGbp": 5
+        }
+      ],
+      "sourceUrl": "https://boombattlebar.com/uk/theo2/",
+      "observedAt": "2026-07-18T05:38:55.488Z",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "La Barrique",
+      "website": "https://www.labarrique.co.uk/",
+      "host": "labarrique.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Newham",
+      "pub": "Husk Brewery & Taproom",
+      "website": "https://www.huskbrewing.com/",
+      "host": "huskbrewing.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Berneliu Uzeiga - Shepherds Inn",
+      "website": "https://www.berneliaiuk.co.uk/languages-beckton",
+      "host": "berneliaiuk.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Eadn London",
+      "website": "https://eadn.co.uk",
+      "host": "eadn.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Brent",
+      "pub": "Parlour Kensal",
+      "website": "http://parlourkensal.com/",
+      "host": "parlourkensal.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Barking and Dagenham",
+      "pub": "The Lighterman",
+      "website": "https://www.thelightermanbarking.co.uk",
+      "host": "thelightermanbarking.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Brent",
+      "pub": "Paradise by way of Kensal Green",
+      "website": "http://www.theparadise.co.uk/",
+      "host": "theparadise.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Black Lion",
+      "website": "http://www.blacklionplaistow.co.uk/",
+      "host": "blacklionplaistow.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Whippet Inn",
+      "website": "http://www.thewhippetinn.com/",
+      "host": "thewhippetinn.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Jim & Tonic at The Print House",
+      "website": "https://www.jimandtonic.com/pages/print-house-bar-and-restaurant",
+      "host": "jimandtonic.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Alice House",
+      "website": "https://www.thealicehouse.co.uk/",
+      "host": "thealicehouse.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Island",
+      "website": "https://theislandnw10.com/",
+      "host": "theislandnw10.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Brent",
+      "pub": "Wolfpack",
+      "website": "https://wolfpackbars.com/queens-park-bar/",
+      "host": "wolfpackbars.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Freaks and Geeks",
+      "website": "https://www.escapebars.uk/",
+      "host": "escapebars.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Roof East",
+      "website": "https://www.roofeast.com/",
+      "host": "roofeast.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Bat and Ball",
+      "website": "https://www.thebatandball.com/",
+      "host": "thebatandball.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Newham",
+      "pub": "Prosecco Caffè",
+      "website": "https://www.prosecco.wine/en/prosecco-and/prosecco-caffe",
+      "host": "prosecco.wine",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Tap East",
+      "website": "http://www.tapeast.co.uk/",
+      "host": "tapeast.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Barking and Dagenham",
+      "pub": "The Royal Oak",
+      "website": "https://www.thequeenshouse.co.uk/new-opening-barking",
+      "host": "thequeenshouse.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Tina We Salute You",
+      "website": "http://www.tinawesaluteyou.com/",
+      "host": "tinawesaluteyou.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "Mother Kelly's E20",
+      "website": "http://motherkellys.co.uk/",
+      "host": "motherkellys.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Brent",
+      "pub": "Beer + Burger",
+      "website": "https://www.beerandburgerstore.com/",
+      "host": "beerandburgerstore.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Newham",
+      "pub": "Forest Tavern",
+      "website": "https://foresttavern.com",
+      "host": "foresttavern.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Brent",
+      "pub": "Masti",
+      "website": "http://www.masti-wembley.com",
+      "host": "masti-wembley.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.masti-wembley.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Arch",
+      "website": "https://thearchwembley.co.uk/",
+      "host": "thearchwembley.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Joyau",
+      "website": "https://joyau.co/london",
+      "host": "joyau.co",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Holly Tree",
+      "website": "https://thehollytreepub.co.uk/",
+      "host": "thehollytreepub.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Pretty Decent Beer Co Taproom",
+      "website": "https://www.prettydecentbeer.co/",
+      "host": "prettydecentbeer.co",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.prettydecentbeer.co/",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 1,
+      "reason": "manual-QA drop: £ values are Shopify online-shop can/case prices (Sale/Regular price + free-delivery), not draught pints",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Broadband Abs - 5% DDH Pale Ale",
+          "priceGbp": 4.65
+        },
+        {
+          "drinkName": "UniTiger - 5% DDH Pale",
+          "priceGbp": 4.75
+        },
+        {
+          "drinkName": "Where Have All the Pogs Gone? - 8% DIPA",
+          "priceGbp": 7
+        }
+      ]
+    },
+    {
+      "borough": "Brent",
+      "pub": "The Green Man",
+      "website": "http://www.thegreenmanhotelatwembley.co.uk/",
+      "host": "thegreenmanhotelatwembley.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Brent",
+      "pub": "The White Horse",
+      "website": "https://www.whitehorsewembley.co.uk/",
+      "host": "whitehorsewembley.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Leyton Engineer",
+      "website": "https://theleytonengineer.co.uk/",
+      "host": "theleytonengineer.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Leytonstone Tavern",
+      "website": "http://leytonstonetavern.com/",
+      "host": "leytonstonetavern.com",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.leytonstonetavern.com/public/#menus",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 2,
+      "reason": "manual-QA drop: \"£5 LOCAL PINTS\" is a Monday-only promo, not a standard published price",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Local Pints",
+          "priceGbp": 5
+        }
+      ]
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Northcote Arms",
+      "website": "https://www.thenorthcotee11.com/",
+      "host": "thenorthcotee11.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Heathcote & Star",
+      "website": "https://heathcoteandstar.co.uk/",
+      "host": "heathcoteandstar.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Red Lion",
+      "website": "https://theredlionleytonstone.com/",
+      "host": "theredlionleytonstone.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "89 Social",
+      "website": "http://89social.co.uk/",
+      "host": "89social.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Neckstamper Brewing",
+      "website": "https://neckstamper.com/",
+      "host": "neckstamper.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Gravity Well Taproom",
+      "website": "https://www.gravitywellbrewing.co.uk/",
+      "host": "gravitywellbrewing.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Brent",
+      "pub": "Club 182",
+      "website": "http://www.club-182.com",
+      "host": "club-182.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.club-182.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Duke's Head",
+      "website": "http://www.thedukesheadhighgate.co.uk",
+      "host": "thedukesheadhighgate.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Queer Brewing Project",
+      "website": "https://www.thequeerbrewingproject.com/taproom",
+      "host": "thequeerbrewingproject.com",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.thequeerbrewingproject.com/taproom",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 1,
+      "reason": "manual-QA drop: \"£5 pints\" is Friday happy-hour (4-6pm) promo, not a standard price",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Pint of Beer",
+          "priceGbp": 5
+        }
+      ]
+    },
+    {
+      "borough": "Barking and Dagenham",
+      "pub": "Nebula",
+      "website": "https://www.nebulalounge.co.uk/",
+      "host": "nebulalounge.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Red Lion & Sun",
+      "website": "https://www.theredlionandsun.com/",
+      "host": "theredlionandsun.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Prince of Wales",
+      "website": "https://pow-leyton.com/",
+      "host": "pow-leyton.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Nicholas Nickleby",
+      "website": "https://www.nicholasnickleby.co.uk/",
+      "host": "nicholasnickleby.co.uk",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.nicholasnickleby.co.uk\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Night Cafe",
+      "website": "https://wineartist.co.uk",
+      "host": "wineartist.co.uk",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"wineartist.co.uk\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "King William IV",
+      "website": "https://williamthefourth.co.uk/",
+      "host": "williamthefourth.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The European",
+      "website": "https://theeuropeanpub.co.uk/",
+      "host": "theeuropeanpub.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Wrestlers",
+      "website": "https://thewrestlershighgate.com/",
+      "host": "thewrestlershighgate.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Bull",
+      "website": "https://www.thebullhighgate.com/",
+      "host": "thebullhighgate.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Railway Tavern",
+      "website": "https://www.the-railwaytavern.co.uk/",
+      "host": "the-railwaytavern.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Floral Hall",
+      "website": "https://www.floralhall-london.com/",
+      "host": "floralhall-london.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Woodman",
+      "website": "https://www.the-woodman.com/",
+      "host": "the-woodman.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Old Ale Emporium",
+      "website": "https://the-old-ale-emporium.edan.io/",
+      "host": "the-old-ale-emporium.edan.io",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "King's Head",
+      "website": "https://www.thekingsheadcrouchend.co.uk/#/",
+      "host": "thekingsheadcrouchend.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Small Beer",
+      "website": "https://www.smallbeern8.co.uk",
+      "host": "smallbeern8.co.uk",
+      "result": "priced",
+      "cheapestPint": 5.5,
+      "drink": "Best Bitter, Bitter, 4.5%, Almasty (Newcastle)",
+      "allDraught": [
+        {
+          "drinkName": "Best Bitter, Bitter, 4.5%, Almasty (Newcastle)",
+          "priceGbp": 5.5
+        },
+        {
+          "drinkName": "Session IPA, IPA, 4.0%, Two By Two (Newcastle)",
+          "priceGbp": 5.5
+        },
+        {
+          "drinkName": "Stand and Deliver, Dark Mild, 4.5% (Hackney)",
+          "priceGbp": 6.2
+        },
+        {
+          "drinkName": "Martina, Lager, 4.0%, Bohem (Tottenham)",
+          "priceGbp": 6.5
+        },
+        {
+          "drinkName": "Life Coach, London Stout, 4.4%, Howling Hops (Hackney)",
+          "priceGbp": 8
+        },
+        {
+          "drinkName": "Helles, Helles Lager, 4.5%, Two Flints (Windsor)",
+          "priceGbp": 8.2
+        }
+      ],
+      "sourceUrl": "https://www.smallbeern8.co.uk/drinks",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "St James Bar",
+      "website": "https://goergios-bar-grill.edan.io/",
+      "host": "goergios-bar-grill.edan.io",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Fox at Crouch End",
+      "website": "https://www.urbanpubsandbars.com/venues/the-fox-at-crouch-end",
+      "host": "urbanpubsandbars.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Untraditional Pub",
+      "website": "https://www.pillarsbrewery.com/pages/untraditional-pub",
+      "host": "pillarsbrewery.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Little Mercies",
+      "website": "https://littlemercies.co.uk/",
+      "host": "littlemercies.co.uk",
+      "result": "no-price-published",
+      "sourceUrl": "https://littlemercies.co.uk/menu-preview/",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 2,
+      "reason": "manual-QA drop: draught served in 330ml measures (cocktail bar), not pints",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Helles Lager",
+          "priceGbp": 6.25
+        },
+        {
+          "drinkName": "Keller Pils",
+          "priceGbp": 6.25
+        },
+        {
+          "drinkName": "Dalston Sunrise",
+          "priceGbp": 6.5
+        }
+      ]
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Raglan",
+      "website": "https://lordraglanpub.com/",
+      "host": "lordraglanpub.com",
+      "result": "blocked",
+      "reason": "http 500",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Queens",
+      "website": "https://www.thequeenscrouchend.co.uk/",
+      "host": "thequeenscrouchend.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "True Craft",
+      "website": "https://www.truecraftlondon.co.uk/",
+      "host": "truecraftlondon.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Brouhaha Bar",
+      "website": "https://www.brouhahabar.com",
+      "host": "brouhahabar.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Maynard Arms",
+      "website": "https://www.maynardarmsn8.co.uk/",
+      "host": "maynardarmsn8.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Queens Arms",
+      "website": "https://www.queensarms-e17.co.uk/",
+      "host": "queensarms-e17.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Village Public House",
+      "website": "https://www.village-walthamstow.com/",
+      "host": "village-walthamstow.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Good Reader",
+      "website": "https://thegoodreader.co.uk/",
+      "host": "thegoodreader.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Brent",
+      "pub": "Fizz Sports Bar",
+      "website": "http://www.fizzsportsbar.com/",
+      "host": "fizzsportsbar.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.fizzsportsbar.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Pillars Brewery",
+      "website": "https://www.pillarsbrewery.com/",
+      "host": "pillarsbrewery.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Trap Taproom",
+      "website": "https://realal.co/",
+      "host": "realal.co",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Mother's Ruin Gin Factory",
+      "website": "https://www.mothersruin.net/",
+      "host": "mothersruin.net",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Nag's Head",
+      "website": "https://www.thenagsheade17.com/",
+      "host": "thenagsheade17.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.thenagsheade17.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "True Craft",
+      "website": "https://truecraftlondon.co.uk",
+      "host": "truecraftlondon.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Langham Working Mens Club",
+      "website": "https://www.langhamclub.co.uk/",
+      "host": "langhamclub.co.uk",
+      "result": "priced",
+      "cheapestPint": 3.6,
+      "drink": "Pint of Beer",
+      "allDraught": [
+        {
+          "drinkName": "Pint of Beer",
+          "priceGbp": 3.6
+        },
+        {
+          "drinkName": "Pint of Lager",
+          "priceGbp": 4.25
+        }
+      ],
+      "sourceUrl": "https://www.langhamclub.co.uk/",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "No5 Dining and Lounge",
+      "website": "https://no5dining.co.uk",
+      "host": "no5dining.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Esplanade Club",
+      "website": "https://esplanadeclub.london/",
+      "host": "esplanadeclub.london",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"esplanadeclub.london\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Ferry Boat Inn",
+      "website": "https://www.heritagepubs.co.uk/ferry-boat-tottenham",
+      "host": "heritagepubs.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Priory",
+      "website": "https://www.thepriorypubn8.com",
+      "host": "thepriorypubn8.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Victoria Stakes",
+      "website": "https://www.victoriastakes.com",
+      "host": "victoriastakes.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Three Compasses",
+      "website": "https://www.threecompasseshornsey.com/",
+      "host": "threecompasseshornsey.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Ye Olde Rose and Crown",
+      "website": "https://www.yeolderoseandcrowntheatrepub.co.uk/",
+      "host": "yeolderoseandcrowntheatrepub.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Post Bar",
+      "website": "https://www.thepostbar.co.uk/",
+      "host": "thepostbar.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Mother Kelly's",
+      "website": "https://motherkellys.co.uk/",
+      "host": "motherkellys.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Pressure Drop",
+      "website": "https://pressuredropbrewing.co.uk/pages/taproom",
+      "host": "pressuredropbrewing.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Clissold Arms",
+      "website": "https://clissoldarms.co.uk",
+      "host": "clissoldarms.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Big Penny Social",
+      "website": "https://bigpennysocial.co.uk/",
+      "host": "bigpennysocial.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Beavertown Brewery Taproom",
+      "website": "https://beavertownbrewery.co.uk/pages/taproom",
+      "host": "beavertownbrewery.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Signature Brew Taproom",
+      "website": "https://www.signaturebrew.co.uk/pages/visit-the-brewers-bar-at-signature-brew-in-blackhorse-road-walthamstow",
+      "host": "signaturebrew.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Beehive",
+      "website": "https://beehiven17.com/",
+      "host": "beehiven17.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Belmeis",
+      "website": "https://belmeis.com",
+      "host": "belmeis.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"belmeis.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Exale Taproom",
+      "website": "https://exalebrew.co.uk/",
+      "host": "exalebrew.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Goodness Brewing Company",
+      "website": "https://www.thegoodnessbrew.co/",
+      "host": "thegoodnessbrew.co",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Phoenix",
+      "website": "https://www.alexandrapalace.com/food-drink/phoenix-bar-pizzeria/",
+      "host": "alexandrapalace.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "East London Brewery",
+      "website": "https://www.wildcardbrewery.co.uk/",
+      "host": "wildcardbrewery.co.uk",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.wildcardbrewery.co.uk\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "40ft Brewery",
+      "website": "https://www.hackneybrewery.com/",
+      "host": "hackneybrewery.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Tavern On The Hill",
+      "website": "https://www.tavernonthehill.co.uk/",
+      "host": "tavernonthehill.co.uk",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.tavernonthehill.co.uk/",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 1,
+      "reason": "manual-QA drop: \"£5 Pints\" is a Mon/Tue promo, not a standard price",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "East London Brewing Pints",
+          "priceGbp": 5
+        }
+      ]
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Victoria",
+      "website": "https://www.thevictoriatottenham.com/",
+      "host": "thevictoriatottenham.com",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Nag's Head",
+      "website": "https://thenagshead.pub/",
+      "host": "thenagshead.pub",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Bluecoats Pub",
+      "website": "https://thebluecoatspub.com/",
+      "host": "thebluecoatspub.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Ludo's",
+      "website": "https://ludoslondon.co.uk/",
+      "host": "ludoslondon.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Starting Gate",
+      "website": "https://www.thestartinggate.co.uk/",
+      "host": "thestartinggate.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Maid of Muswell",
+      "website": "https://www.themaidofmuswell.co.uk/",
+      "host": "themaidofmuswell.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "The Antwerp Arms",
+      "website": "https://www.antwerparms.co.uk/",
+      "host": "antwerparms.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Beavertown Corner Pin",
+      "website": "https://beavertownbrewery.co.uk/pages/corner-pin",
+      "host": "beavertownbrewery.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Haringey",
+      "pub": "Tap Room",
+      "website": "https://www.bohembrewery.com/bohem-tap-room/",
+      "host": "bohembrewery.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Occasional Half",
+      "website": "http://www.occasionalhalf.co.uk/",
+      "host": "occasionalhalf.co.uk",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.occasionalhalf.co.uk\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "The Old Hall Tavern",
+      "website": "https://www.oldhalltavernchingford.co.uk/",
+      "host": "oldhalltavernchingford.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Alfred Herring",
+      "website": "https://www.thealfredherring.co.uk/",
+      "host": "thealfredherring.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Greene Man",
+      "website": "https://www.hungryhorse.co.uk/pubs/greater-london/greene-man/",
+      "host": "hungryhorse.co.uk",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.hungryhorse.co.uk/pubs/greater-london/greene-man/deals/3-pound-drinks",
+      "observedAt": "2026-07-18T07:05:35.524Z",
+      "requests": 2,
+      "reason": "manual-QA drop: Hungry Horse (Greene King chain), £3 app-only promo 23-26 Jul, not a standard price",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Peroni Nastro Azzurro",
+          "priceGbp": 3
+        }
+      ]
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Salisbury Arms",
+      "website": "https://www.thesalisburyarmswinchmorehill.co.uk/",
+      "host": "thesalisburyarmswinchmorehill.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Waltham Forest",
+      "pub": "Spice Station",
+      "website": "http://www.spicestationandbar.co.uk/",
+      "host": "spicestationandbar.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Enfield",
+      "pub": "FBI Studio",
+      "website": "http://www.fbitattoolondon.com/staff/louise",
+      "host": "fbitattoolondon.com",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"www.fbitattoolondon.com\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Red Lion",
+      "website": "https://redlionenfield.co.uk/",
+      "host": "redlionenfield.co.uk",
+      "result": "blocked",
+      "reason": "DNS resolution failed for hostname \"redlionenfield.co.uk\". This means the domain name could not be translated to an IP address. Possible causes: (1) The domain name is misspelled (check for typos), (2) The domain does not exist or has expired, (3) The DNS servers are temporarily unavailable, or (4) The domain was recently registered and DNS has not propagated yet. Please verify the URL is correct and the website exists.",
+      "requests": 1
+    },
+    {
+      "borough": "Enfield",
+      "pub": "The Sun and Woolpack",
+      "website": "http://www.sunandwoolpack.co.uk/",
+      "host": "sunandwoolpack.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    }
+  ]
+}

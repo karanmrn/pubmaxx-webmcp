@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-08-16T04:01:27.583Z",
+  "source": "OpenStreetMap Overpass",
+  "license": "ODbL",
+  "attribution": "© OpenStreetMap contributors",
+  "note": "London is a bounding box over Greater London, used only to split a count. It is never a claim that a venue is inside a borough.",
+  "greaterLondonBbox": [
+    51.28,
+    -0.53,
+    51.7,
+    0.34
+  ],
+  "kinds": [
+    "bar",
+    "cafe",
+    "coworking",
+    "food",
+    "hotel_lounge",
+    "library",
+    "other",
+    "pub",
+    "restaurant"
+  ],
+  "uk": {
+    "total": 91431,
+    "byKind": {
+      "pub": 38207,
+      "bar": 7195,
+      "other": 2572,
+      "restaurant": 517,
+      "hotel_lounge": 296,
+      "cafe": 38266,
+      "food": 319,
+      "library": 3601,
+      "coworking": 458
+    },
+    "byTaxonomyKey": {
+      "pub": 38207,
+      "bar": 7168,
+      "off_licence": 2465,
+      "restaurant_bar": 517,
+      "hotel_bar": 296,
+      "biergarten": 27,
+      "cafe": 37897,
+      "coffee_shop": 369,
+      "late_fast_food": 319,
+      "library": 3601,
+      "coworking": 458,
+      "community_centre_wifi": 107
+    }
+  },
+  "london": {
+    "total": 13477,
+    "byKind": {
+      "pub": 3650,
+      "bar": 1246,
+      "other": 513,
+      "hotel_lounge": 43,
+      "restaurant": 159,
+      "cafe": 7203,
+      "food": 46,
+      "library": 463,
+      "coworking": 154
+    },
+    "byTaxonomyKey": {
+      "pub": 3650,
+      "biergarten": 10,
+      "bar": 1236,
+      "off_licence": 503,
+      "hotel_bar": 43,
+      "restaurant_bar": 159,
+      "cafe": 7133,
+      "coffee_shop": 70,
+      "late_fast_food": 46,
+      "library": 463,
+      "community_centre_wifi": 10,
+      "coworking": 154
+    }
+  },
+  "groups": [
+    {
+      "group": "drink",
+      "venues": 48680,
+      "bytes": 22091176
+    },
+    {
+      "group": "food",
+      "venues": 38585,
+      "bytes": 17731746
+    },
+    {
+      "group": "work",
+      "venues": 4166,
+      "bytes": 2052800
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+/* Programmatic fact layer (Wave S3.1 / S3.2) — the server-rendered fact block +
+   FAQ block shared by borough pages, city map pages and the Pint Index. Depends
+   only on the globally-loaded design tokens (--brass, --ink, --line, --panel…);
+   no route-scoped variables. Mirrors the borough/discover aesthetic (hairline
+   borders, brass price stamps, Garamond headings) so the fact layer reads as one
+   system in both light and dark themes. Mobile-first, comfortable at 390px. */
+
+.factBlock {
+  margin: 32px 0 0;
+}
+
+.factBlockTitle {
+  margin: 0 0 6px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.factBlockProse {
+  margin: 0 0 14px;
+  max-width: 62ch;
+}
+
+.factBlockProse p {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.factBlockProse p:last-child {
+  margin-bottom: 0;
+}
+
+/* The observation-window sentence reads quieter — it's a provenance stamp, not
+   a headline. Never says "live". */
+.factBlockProse .factBlockStamp {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.factStatTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+
+.factStatTable caption {
+  text-align: left;
+  padding: 12px 14px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.factStatTable th[scope="row"] {
+  text-align: left;
+  padding: 11px 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.factStatTable td {
+  padding: 11px 14px;
+  text-align: right;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.factStatTable tr:last-child th[scope="row"],
+.factStatTable tr:last-child td {
+  border-bottom: 0;
+}
+
+/* --- FAQ block ------------------------------------------------------------ */
+
+.faqBlock {
+  margin: 32px 0 0;
+}
+
+.faqBlockTitle {
+  margin: 0 0 14px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.faqList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.faqItem {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.faqItem summary {
+  cursor: pointer;
+  padding: 13px 16px;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 15px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary::after {
+  content: "+";
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.faqItem[open] summary::after {
+  content: "\2212"; /* minus */
+}
+
+.faqItem summary:hover {
+  color: var(--brass);
+}
+
+.faqAnswer {
+  margin: 0;
+  padding: 0 16px 14px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.faqItem summary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+  border-radius: 8px;
+}
+
+/* --- internal cross-links (Wave S3.5) ------------------------------------- */
+
+.factLinks {
+  margin: 32px 0 0;
+}
+
+.factLinksTitle {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.factLinksList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.factLinksList a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.factLinksList a:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.factLinksList a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* City map page: the fact layer sits below the full-height map shell, so it
+   needs its own centred, padded reading column (the map owns the viewport). */
+.cityFactRegion {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 8px 20px 72px;
+  color: var(--ink);
+}
+
+/* On the interactive map route the fact region renders below the map shell.
+   The mobile map is a full-viewport interactive surface — extra scrollable
+   prose behind it confuses the sheet/scroll gestures — so the region is
+   desktop-only there. The DOM (and JSON-LD) still ships identically at every
+   width; this is layout, not cloaking. Standalone pages (/pint-index,
+   /borough/*) render fact blocks outside this wrapper and are unaffected. */
+@media (max-width: 1023px) {
+  .cityFactRegion {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .factStatTable th[scope="row"],
+  .factStatTable td {
+    padding: 11px 12px;
+  }
+
+  .cityFactRegion {
+    padding: 8px 14px 64px;
+  }
+}

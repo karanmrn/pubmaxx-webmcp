@@ -1,0 +1,380 @@
+.webmcpPage {
+  min-height: 100dvh;
+  padding: 20px var(--page-gutter) calc(96px + env(safe-area-inset-bottom, 0px));
+  color: var(--ink);
+}
+
+.webmcpShell {
+  width: min(1180px, 100%);
+  margin: 28px auto 0;
+}
+
+.webmcpHead {
+  display: grid;
+  gap: 18px;
+  align-items: end;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline-strong);
+}
+
+.webmcpEyebrow {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font: 650 var(--text-xs)/1.2 var(--font-data);
+}
+
+.webmcpHead h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 8vw, 4.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.webmcpHead p:last-child {
+  max-width: 58ch;
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.webmcpStatus {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border: 1px solid var(--badge-border);
+  border-radius: 999px;
+  background: var(--badge-surface);
+  color: var(--badge-ink);
+  font: 650 var(--text-xs)/1.2 var(--font-data);
+}
+
+.webmcpStatus span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.webmcpStatus--ready span { background: var(--pint); }
+.webmcpStatus--failed span { background: var(--brick); }
+.webmcpStatus--registering span { background: var(--amber); }
+
+.webmcpAlert {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--brick) 36%, var(--line));
+  border-radius: var(--radius, 10px);
+  background: color-mix(in srgb, var(--brick) 8%, var(--panel-raised));
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.webmcpAlert--quiet {
+  border-color: var(--hairline-strong);
+  background: var(--panel-raised);
+}
+
+.webmcpGrid {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.webmcpRoute,
+.webmcpEvidence {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-lg, 18px);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.webmcpSectionHead,
+.webmcpEvidenceTitleRow {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.webmcpSectionHead h2,
+.webmcpEvidenceBlock h3 {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.webmcpSectionHead h2 { font-size: var(--text-lg); }
+.webmcpEvidenceBlock h3 { font-size: var(--text-md); }
+
+.webmcpSectionHead > span {
+  color: var(--muted);
+  font: 600 var(--text-2xs)/1.2 var(--font-data);
+  white-space: nowrap;
+}
+
+.webmcpDraft {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.webmcpDraft label,
+.webmcpEvidenceBlock label {
+  color: var(--ink-soft);
+  font: 650 var(--text-xs)/1.3 var(--font-data);
+}
+
+.webmcpDraft textarea,
+.webmcpEvidenceBlock input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.webmcpDraft textarea {
+  min-height: 108px;
+  resize: vertical;
+  padding: 12px 13px;
+  line-height: 1.5;
+}
+
+.webmcpEvidenceBlock input {
+  min-height: 44px;
+  padding: 9px 11px;
+}
+
+.webmcpDraft textarea:focus-visible,
+.webmcpEvidenceBlock input:focus-visible,
+.webmcpPage button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brass) 48%, transparent);
+  outline-offset: 2px;
+}
+
+.webmcpPage button {
+  min-height: 44px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  padding: 9px 15px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: 700 var(--text-sm)/1 var(--font-body);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.webmcpPage button:active:not(:disabled) { transform: translateY(1px); }
+.webmcpPage button:disabled { cursor: not-allowed; opacity: 0.48; }
+
+.webmcpDraft > button,
+.webmcpOpen {
+  border-color: var(--accent-action);
+  background: var(--accent-action);
+  color: var(--color-on-accent);
+}
+
+.webmcpDraft > button { justify-self: start; }
+
+.webmcpStops {
+  display: grid;
+  gap: 0;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--hairline);
+}
+
+.webmcpStops li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.webmcpStopNumber {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--badge-surface);
+  color: var(--badge-ink);
+  font: 700 var(--text-xs)/1 var(--font-data);
+}
+
+.webmcpStops h3 {
+  margin: 2px 0 5px;
+  overflow-wrap: anywhere;
+  font-size: var(--text-base);
+}
+
+.webmcpStops p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.webmcpStops .webmcpAlternatives {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  overflow-wrap: anywhere;
+}
+
+.webmcpAlternatives strong { color: var(--ink-soft); }
+
+.webmcpRouteMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.webmcpRouteMeta span {
+  padding: 6px 9px;
+  border: 1px solid var(--badge-border);
+  border-radius: 999px;
+  background: var(--badge-surface);
+  color: var(--badge-ink);
+  font: 600 var(--text-2xs)/1.2 var(--font-data);
+}
+
+.webmcpWarnings {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.webmcpProvenance {
+  margin-top: 14px;
+  padding-top: 13px;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+.webmcpProvenance > strong { color: var(--ink); }
+.webmcpProvenance ul { margin: 6px 0 0; padding-left: 18px; }
+
+.webmcpOpen { width: 100%; margin-top: 18px; }
+
+.webmcpEmpty {
+  display: grid;
+  gap: 7px;
+  min-height: 180px;
+  place-content: center;
+  margin-top: 18px;
+  padding: 24px;
+  border: 1px dashed var(--hairline-strong);
+  border-radius: var(--radius, 10px);
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.webmcpEmpty strong { color: var(--ink); }
+
+.webmcpNotice {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+.webmcpEvidenceBlock {
+  min-width: 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.webmcpEvidenceBlock:first-of-type { margin-top: 16px; }
+.webmcpEvidenceBlock:last-child { padding-bottom: 0; }
+
+.webmcpEvidenceBlock form {
+  display: grid;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.webmcpEvidenceBlock form > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.webmcpEvidenceList,
+.webmcpContext ul {
+  display: grid;
+  gap: 9px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.webmcpEvidenceList li {
+  display: flex;
+  min-width: 0;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--text-sm);
+}
+
+.webmcpEvidenceList strong { overflow-wrap: anywhere; }
+.webmcpEvidenceList span { color: var(--muted); text-align: right; }
+
+.webmcpEvidenceState {
+  margin: 13px 0 0;
+  color: var(--muted);
+  font: 550 var(--text-xs)/1.45 var(--font-data);
+  overflow-wrap: anywhere;
+}
+
+.webmcpContext p,
+.webmcpContext li {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  line-height: 1.48;
+}
+
+.webmcpContext strong { color: var(--ink); }
+
+.webmcpTrustLabel {
+  margin: 13px 0 0;
+  padding: 8px 10px;
+  border-left: 3px solid var(--amber);
+  background: color-mix(in srgb, var(--amber) 8%, var(--panel));
+  color: var(--ink-soft);
+}
+
+@media (min-width: 760px) {
+  .webmcpHead { grid-template-columns: minmax(0, 1fr) auto; }
+  .webmcpGrid { grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.8fr); }
+  .webmcpRoute,
+  .webmcpEvidence { padding: 24px; }
+  .webmcpOpen { width: auto; }
+}
+
+@media (max-width: 480px) {
+  .webmcpStops li { grid-template-columns: 34px minmax(0, 1fr); }
+  .webmcpStops li button { grid-column: 2; justify-self: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .webmcpPage button { transition: none; }
+  .webmcpPage button:active:not(:disabled) { transform: none; }
+}

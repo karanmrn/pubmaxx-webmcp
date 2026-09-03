@@ -1,0 +1,30 @@
+.whatsOnUrgencyBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.whatsOnUrgencyBadge[data-tier="live"] {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--brass) 22%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--brass) 45%, var(--line));
+}
+
+.whatsOnUrgencyBadge[data-tier="soon"] {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--coral, #e85d4c) 14%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--coral, #e85d4c) 35%, var(--line));
+}
+
+.whatsOnUrgencyBadge[data-tier="later"] {
+  color: var(--ink-soft);
+  background: var(--panel-raised);
+  border: 1px solid color-mix(in srgb, var(--line) 90%, var(--brass) 10%);
+}

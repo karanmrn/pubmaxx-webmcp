@@ -1,0 +1,39 @@
+name: Weekly digest
+
+# DISABLED until an email provider is wired (Cycle 8 PRD item 2). The weekly
+# cron below is intentionally commented out so this workflow never fires on a
+# schedule while delivery is a no-op — enable it in the same change that lands
+# RESEND_API_KEY + EMAIL_FROM (and the Supabase admin secrets). Follows the
+# scripts/refresh_whats_on / weather-refresh idiom; manual dispatch stays
+# available so the safe no-op can be exercised on demand.
+
+on:
+  # Enable the schedule when provider keys land. Monday 09:00 UTC.
+  # schedule:
+  #   - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Verify digest contract (generator + provider seam)
+        run: npm test -- __tests__/weeklyDigest.test.ts __tests__/emailProvider.test.ts
+      - name: Send weekly digest (safe no-op until keys land)
+        env:
+          # All optional today — absent ⇒ the script logs and exits 0 without
+          # sending. Populate these secrets to activate delivery.
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/send_weekly_digest.mjs

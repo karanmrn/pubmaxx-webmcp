@@ -1,0 +1,343 @@
+{
+  "$comment": "Rows removed from product-facing venue data because postcode and coordinates contradict each other and available evidence does not settle which venue owns the recorded price. Keep each disposition explicit so quarantine is auditable, not a silent drop. sourceRows entries are exact one-based physical CSV lines in preserved scrape evidence.",
+  "rows": [
+    {
+      "pubName": "The Lincoln Arms",
+      "appPriceId": "app_price_000339",
+      "recordedPrice": "GUINNESS £4.40",
+      "postcode": "EN1 1QT",
+      "latitude": 51.5332,
+      "longitude": -0.1222,
+      "sourceUrl": "https://www.pint-prices.com/pub/EN1%201QT/The%20Lincoln%20Arms",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:110",
+        "data/all_pint_prices_combined.csv:1400",
+        "data/all_pint_prices_combined.csv:5013",
+        "data/borough_embedded_pint_prices.csv:348",
+        "data/borough_embedded_pint_prices.csv:3428",
+        "data/borough_embedded_pint_prices.csv:6571",
+        "data/borough_embedded_pint_prices.csv:7779",
+        "data/borough_embedded_pint_prices.csv:10243",
+        "data/pub_locations_map_data.csv:781"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.pint-prices.com/pub/EN1%201QT/The%20Lincoln%20Arms",
+          "finding": "Recorded source page prints EN1 1QT while its inline map script places the marker at 51.5332, -0.1222, so the source repeats rather than resolves the contradiction."
+        },
+        {
+          "url": "https://camra.org.uk/pubs/lincoln-arms-london-124779",
+          "finding": "CAMRA identifies a Lincoln Arms by King's Cross at 52 York Way, London N1 9AB."
+        },
+        {
+          "url": "https://acp.planninginspectorate.gov.uk/ViewDocument.aspx?fileid=53814608",
+          "finding": "Planning Inspectorate evidence identifies a different Lincoln Arms at 155 Percival Road, Enfield EN1 1QT."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "Both postcode and coordinates correspond to distinct pubs named The Lincoln Arms. Evidence does not establish which pub owns the recorded £4.40 Guinness price, so assigning the row to either venue would be a guess.",
+      "quarantinedAt": "2026-07-29"
+    },
+    {
+      "pubName": "The Bishops Finger",
+      "appPriceId": "app_price_000263",
+      "recordedPrice": "GUINNESS £6.90",
+      "postcode": "CT2 8AF",
+      "latitude": 51.5185,
+      "longitude": -0.101913,
+      "sourceUrl": "https://www.pint-prices.com/pub/%20CT2%208AF/The%20Bishops%20Finger",
+      "evidence": [
+        {
+          "source": "data/osm/uk/uk_osm_pubs.json",
+          "finding": "Product coordinates match The Bishops Finger at West Smithfield EC1A 9JR, while CT2 8AF matches The Bishop's Finger in Canterbury."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "The price URL names the Canterbury postcode while the point names the Smithfield pub. No individual pub-page extraction ties the price to either physical venue.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:310",
+        "data/all_pint_prices_combined.csv:812",
+        "data/all_pint_prices_combined.csv:2249",
+        "data/borough_embedded_pint_prices.csv:271",
+        "data/borough_embedded_pint_prices.csv:718",
+        "data/borough_embedded_pint_prices.csv:2758",
+        "data/borough_embedded_pint_prices.csv:5901",
+        "data/borough_embedded_pint_prices.csv:9573",
+        "data/borough_embedded_pint_prices.csv:11615",
+        "data/pub_locations_map_data.csv:470"
+      ]
+    },
+    {
+      "pubName": "The Coach & Horses",
+      "appPriceId": "app_price_000274",
+      "recordedPrice": "TIMOTHY TAYLOR’S LANDLORD ALE £5.10",
+      "postcode": "WD3 1ER",
+      "latitude": 51.5139,
+      "longitude": -0.129688,
+      "sourceUrl": "https://www.pint-prices.com/pub/WD3%201ER/The%20Coach%20%26%20Horses",
+      "evidence": [
+        {
+          "source": "data/osm/uk/uk_osm_pubs.json",
+          "finding": "Product coordinates match The Coach & Horses on Old Compton Street W1D 4TA, while WD3 1ER identifies a Coach and Horses in Rickmansworth."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "The source URL and map point identify different same-named pubs, so price ownership is not established.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:122",
+        "data/all_pint_prices_combined.csv:2673",
+        "data/all_pint_prices_combined.csv:5243",
+        "data/borough_embedded_pint_prices.csv:283",
+        "data/borough_embedded_pint_prices.csv:2893",
+        "data/borough_embedded_pint_prices.csv:6036",
+        "data/borough_embedded_pint_prices.csv:9708",
+        "data/borough_embedded_pint_prices.csv:12326",
+        "data/pub_locations_map_data.csv:551"
+      ]
+    },
+    {
+      "pubName": "The Globe",
+      "appPriceId": "app_price_000719",
+      "recordedPrice": "JOHN SMITH'S £2.45",
+      "postcode": "E9 6NA",
+      "latitude": 51.5081,
+      "longitude": -0.0971864,
+      "sourceUrl": "https://www.pint-prices.com/pub/E9%206NA/The%20Globe",
+      "evidence": [
+        {
+          "source": "data/osm/uk/uk_osm_pubs.json",
+          "finding": "E9 6NA identifies The Globe on Morning Lane, while product coordinates sit among several different Globe pubs around Southwark and the City."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "Common venue name and conflicting source geography leave the £2.45 observation without a proven physical owner.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:436",
+        "data/all_pint_prices_combined.csv:1934",
+        "data/borough_embedded_pint_prices.csv:772",
+        "data/borough_embedded_pint_prices.csv:3156",
+        "data/borough_embedded_pint_prices.csv:6299",
+        "data/borough_embedded_pint_prices.csv:9971",
+        "data/borough_embedded_pint_prices.csv:11653",
+        "data/pub_locations_map_data.csv:685"
+      ]
+    },
+    {
+      "pubName": "The Lounge",
+      "appPriceId": "app_price_000977",
+      "recordedPrice": "PRETTY VACANT £3.90",
+      "postcode": "NE24 1AX",
+      "latitude": 51.3719,
+      "longitude": -0.108514,
+      "sourceUrl": "https://www.pint-prices.com/pub/NE24%201AX/The%20Lounge",
+      "evidence": [
+        {
+          "source": "public/data/pint_prices_app_dataset.json",
+          "finding": "Recorded postcode is in Blyth, coordinates are in Croydon, and no individual pub-page extraction is present."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "Available committed evidence does not establish whether postcode or coordinates own the price observation.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:1063",
+        "data/borough_embedded_pint_prices.csv:1094",
+        "data/borough_embedded_pint_prices.csv:3477",
+        "data/borough_embedded_pint_prices.csv:6620",
+        "data/borough_embedded_pint_prices.csv:10292",
+        "data/pub_locations_map_data.csv:796"
+      ]
+    },
+    {
+      "pubName": "McCafferty’s",
+      "appPriceId": "app_price_001220",
+      "recordedPrice": "CARLING £4.50",
+      "postcode": "KT19 8BT",
+      "latitude": 51.5838,
+      "longitude": -0.116568,
+      "sourceUrl": "https://www.pint-prices.com/pub/KT19%208BT/McCafferty%E2%80%99s",
+      "evidence": [
+        {
+          "source": "data/osm/uk/uk_osm_pubs.json",
+          "finding": "KT19 8BT identifies McCaffertys Bar in Epsom, while product coordinates and borough place the row in Haringey."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "Source postcode and product point identify different areas, with no individual pub-page extraction to settle price ownership.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:1351",
+        "data/all_pint_prices_combined.csv:1352",
+        "data/borough_embedded_pint_prices.csv:1354",
+        "data/borough_embedded_pint_prices.csv:1355",
+        "data/borough_embedded_pint_prices.csv:2157",
+        "data/borough_embedded_pint_prices.csv:2158",
+        "data/borough_embedded_pint_prices.csv:5300",
+        "data/borough_embedded_pint_prices.csv:5301",
+        "data/borough_embedded_pint_prices.csv:8972",
+        "data/borough_embedded_pint_prices.csv:8973",
+        "data/pub_locations_map_data.csv:257"
+      ]
+    },
+    {
+      "pubName": "The Crown",
+      "appPriceId": "app_price_001614",
+      "recordedPrice": "PINEAPPLE AND RASPBERRY OLD MOUT £6.00",
+      "postcode": "CV37 7ZY",
+      "latitude": 51.4512,
+      "longitude": -0.318682,
+      "sourceUrl": "https://www.pint-prices.com/pub/CV37%207ZY%20/The%20Crown",
+      "evidence": [
+        {
+          "source": "public/data/pint_prices_app_dataset.json",
+          "finding": "Recorded postcode is in Stratford-upon-Avon while coordinates and borough place this common-named pub in Richmond upon Thames."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "The Crown is too common a name to infer which venue owns the price when source postcode and point disagree.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:1919",
+        "data/borough_embedded_pint_prices.csv:2966",
+        "data/borough_embedded_pint_prices.csv:6109",
+        "data/borough_embedded_pint_prices.csv:9781",
+        "data/borough_embedded_pint_prices.csv:11350",
+        "data/pub_locations_map_data.csv:589"
+      ]
+    },
+    {
+      "pubName": "The Prince Albert",
+      "appPriceId": "app_price_002037",
+      "recordedPrice": "ESTRELLA £6.85",
+      "postcode": "SW13 9QQ",
+      "latitude": 51.4796,
+      "longitude": -0.16579,
+      "sourceUrl": "https://www.pint-prices.com/pub/SW13%209QQ/The%20Prince%20Albert",
+      "evidence": [
+        {
+          "source": "public/data/pint_prices_app_dataset.json",
+          "finding": "A separate app_price_002127 row already preserves the sourced Battersea Estrella observation at 85 Albert Bridge Road SW11 4PF. The caught rows merge that point with SW13 9QQ, while the Fosters source remains the SW13 page."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "Correcting would duplicate the separately preserved Battersea price and guess that the SW13 Fosters price belongs there.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/borough_embedded_pint_prices.csv:3774",
+        "data/borough_embedded_pint_prices.csv:6917",
+        "data/borough_embedded_pint_prices.csv:10589",
+        "data/borough_embedded_pint_prices.csv:12371",
+        "data/pub_locations_map_data.csv:912"
+      ]
+    },
+    {
+      "pubName": "The Prince Albert",
+      "appPriceId": "app_price_002038",
+      "recordedPrice": "FOSTERS £6.40",
+      "postcode": "SW13 9QQ",
+      "latitude": 51.4796,
+      "longitude": -0.16579,
+      "sourceUrl": "https://www.pint-prices.com/pub/SW13%209QQ/The%20Prince%20Albert",
+      "evidence": [
+        {
+          "source": "public/data/pint_prices_app_dataset.json",
+          "finding": "A separate app_price_002127 row already preserves the sourced Battersea Estrella observation at 85 Albert Bridge Road SW11 4PF. The caught rows merge that point with SW13 9QQ, while the Fosters source remains the SW13 page."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "Correcting would duplicate the separately preserved Battersea price and guess that the SW13 Fosters price belongs there.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:2785",
+        "data/all_pint_prices_combined.csv:5132",
+        "data/borough_embedded_pint_prices.csv:3773",
+        "data/borough_embedded_pint_prices.csv:6916",
+        "data/borough_embedded_pint_prices.csv:10588",
+        "data/borough_embedded_pint_prices.csv:12370",
+        "data/pub_locations_map_data.csv:912"
+      ]
+    },
+    {
+      "pubName": "Kings Lounge",
+      "appPriceId": "app_price_002312",
+      "recordedPrice": "All Pints £4.95",
+      "postcode": "SW17 9HP",
+      "latitude": 51.5385,
+      "longitude": 0.0793927,
+      "sourceUrl": "https://www.pint-prices.com/pub/SW17%209HP/Kings%20Lounge",
+      "evidence": [
+        {
+          "source": "public/data/pint_prices_app_dataset.json",
+          "finding": "Recorded postcode is in Tooting while coordinates and primary borough place the row in Barking and Dagenham. Row has only anomaly-bearing embedded-map provenance."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "No visible leaderboard or individual pub-page source establishes which area owns the price.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/borough_embedded_pint_prices.csv:2086",
+        "data/borough_embedded_pint_prices.csv:5229",
+        "data/borough_embedded_pint_prices.csv:8901",
+        "data/pub_locations_map_data.csv:232"
+      ]
+    },
+    {
+      "pubName": "The Barley Mow",
+      "appPriceId": "app_price_002483",
+      "recordedPrice": "Guiness £4.80",
+      "postcode": "LE6 6FE",
+      "latitude": 51.5197,
+      "longitude": -0.155659,
+      "sourceUrl": "https://www.pint-prices.com/pub/LE6%206FE/The%20Barley%20Mow",
+      "evidence": [
+        {
+          "source": "data/osm/uk/uk_osm_pubs.json",
+          "finding": "Coordinates exactly match The Barley Mow at 8 Dorset Street W1U 6QW, while source URL uses a Leicestershire postcode. Row has no visible leaderboard or individual pub-page evidence."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "London identity enrichment cannot prove that the Leicestershire price belongs to the Marylebone pub.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/borough_embedded_pint_prices.csv:2712",
+        "data/borough_embedded_pint_prices.csv:2713",
+        "data/borough_embedded_pint_prices.csv:2714",
+        "data/borough_embedded_pint_prices.csv:5855",
+        "data/borough_embedded_pint_prices.csv:5856",
+        "data/borough_embedded_pint_prices.csv:5857",
+        "data/borough_embedded_pint_prices.csv:9527",
+        "data/borough_embedded_pint_prices.csv:9528",
+        "data/borough_embedded_pint_prices.csv:9529",
+        "data/pub_locations_map_data.csv:455"
+      ]
+    },
+    {
+      "pubName": "The Stags Head",
+      "appPriceId": "app_price_002908",
+      "recordedPrice": "Madri £7.40",
+      "postcode": "W1W 6XW",
+      "latitude": 51.4658,
+      "longitude": -0.252189,
+      "sourceUrl": "https://www.pint-prices.com/pub/W1w%206xw/The%20Stags%20Head",
+      "evidence": [
+        {
+          "source": "public/data/pint_prices_app_dataset.json",
+          "finding": "Separate app_price_000374 and app_price_000375 rows already preserve The Stags Head at 102 New Cavendish Street W1W 6XW. Caught row uses coordinates matching The Stags Head at Priests Bridge SW14 8TA."
+        }
+      ],
+      "disposition": "quarantined",
+      "reason": "The correct W1W venue and price already exist; retaining the caught row would attach the same observation to a different pub.",
+      "quarantinedAt": "2026-07-29",
+      "sourceRows": [
+        "data/all_pint_prices_combined.csv:393",
+        "data/borough_embedded_pint_prices.csv:4033",
+        "data/borough_embedded_pint_prices.csv:7176",
+        "data/borough_embedded_pint_prices.csv:10848",
+        "data/pub_locations_map_data.csv:1028"
+      ]
+    }
+  ]
+}

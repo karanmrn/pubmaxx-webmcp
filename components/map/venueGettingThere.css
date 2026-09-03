@@ -1,0 +1,168 @@
+.venueGettingThere {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(
+      110deg,
+      color-mix(in srgb, var(--brass) 10%, var(--panel-raised)),
+      color-mix(in srgb, var(--panel) 94%, transparent)
+    );
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--panel-raised) 80%, transparent);
+}
+
+.venueGettingThere__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.venueGettingThere__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.venueGettingThere__eyebrow {
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.venueGettingThere__routes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.venueGettingThere__route {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.venueGettingThere__route svg {
+  flex: 0 0 auto;
+  color: var(--brass);
+}
+
+.venueGettingThere__route--tfl {
+  color: var(--ink-soft);
+}
+
+.venueGettingThere__route--tfl strong {
+  color: var(--ink);
+}
+
+.venueGettingThere__privacy {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.venueGettingThere__srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.venueGettingThere__maps,
+.venueGettingThere__location,
+.venueGettingThere__forget,
+.venueGettingThere__retry,
+.venueGettingThere__venueMaps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  color: var(--brass);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.venueGettingThere__venueMaps {
+  width: 100%;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.venueGettingThere__maps {
+  margin: -8px -8px -8px 0;
+  padding: 6px 9px;
+  text-decoration: none;
+}
+
+.venueGettingThere__forget {
+  min-width: 44px;
+  padding: 6px 9px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.venueGettingThere__retry {
+  width: fit-content;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--brass) 26%, var(--line));
+  background: transparent;
+  cursor: pointer;
+}
+
+.venueGettingThere__location {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--brass) 26%, var(--line));
+  background: color-mix(in srgb, var(--brass) 6%, var(--panel-raised));
+  cursor: pointer;
+}
+
+.venueGettingThere__location:hover:not(:disabled),
+.venueGettingThere__maps:hover,
+.venueGettingThere__forget:hover,
+.venueGettingThere__retry:hover,
+.venueGettingThere__venueMaps:hover {
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+}
+
+.venueGettingThere__location:disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+.venueGettingThere__location:focus-visible,
+.venueGettingThere__maps:focus-visible,
+.venueGettingThere__forget:focus-visible,
+.venueGettingThere__retry:focus-visible,
+.venueGettingThere__venueMaps:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (max-width: 390px) {
+  .venueGettingThere__routes {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

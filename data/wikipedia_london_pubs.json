@@ -1,0 +1,4200 @@
+{
+  "source": "https://en.wikipedia.org/wiki/List_of_pubs_in_London",
+  "extractedAt": "2026-07-12T12:02:11.030Z",
+  "method": "Firecrawl v2 scrape + markdown table/list parse",
+  "count": 580,
+  "pubs": [
+    {
+      "name": "Admiral Duncan",
+      "url": "https://en.wikipedia.org/wiki/Admiral_Duncan_(pub)",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Admiral Vernon",
+      "url": "https://en.wikipedia.org/wiki/Admiral_Vernon,_Dagenham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Admiralty",
+      "url": "https://en.wikipedia.org/wiki/Admiralty,_Trafalgar_Square",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Amersham Arms",
+      "url": "https://en.wikipedia.org/wiki/Amersham_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Anchor Bankside",
+      "url": "https://en.wikipedia.org/wiki/Anchor_Bankside",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Angel and Crown",
+      "url": "https://en.wikipedia.org/wiki/Angel_and_Crown,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Angel and Crown, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/Angel_and_Crown,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Anglesea Arms",
+      "url": "https://en.wikipedia.org/wiki/Anglesea_Arms,_South_Kensington",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Aragon House",
+      "url": "https://en.wikipedia.org/wiki/Aragon_House",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Archway Tavern",
+      "url": "https://en.wikipedia.org/wiki/Archway_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Argyll Arms",
+      "url": "https://en.wikipedia.org/wiki/Argyll_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Army and Navy",
+      "url": "https://en.wikipedia.org/wiki/Army_and_Navy,_Stoke_Newington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Army and Navy, Stoke Newington",
+      "url": "https://en.wikipedia.org/wiki/Army_and_Navy,_Stoke_Newington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Assembly House",
+      "url": "https://en.wikipedia.org/wiki/Assembly_House,_Kentish_Town",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Assembly House, Kentish Town",
+      "url": "https://en.wikipedia.org/wiki/Assembly_House,_Kentish_Town",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Barley Mow, Marylebone",
+      "url": "https://en.wikipedia.org/wiki/Barley_Mow,_Marylebone",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Baxter's Court, Hackney",
+      "url": "https://en.wikipedia.org/wiki/Baxter's_Court,_Hackney?action=edit&redlink=1",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Be at One, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Bell,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Bell Inn",
+      "url": "https://en.wikipedia.org/wiki/Bell_Inn,_Enfield",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Bell Inn, Enfield",
+      "url": "https://en.wikipedia.org/wiki/Bell_Inn,_Enfield",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Bell Savage Inn",
+      "url": "https://en.wikipedia.org/wiki/Bell_Savage_Inn",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Black Horse",
+      "url": "https://en.wikipedia.org/wiki/Black_Horse,_Eastcote",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Black Horse, Eastcote",
+      "url": "https://en.wikipedia.org/wiki/Black_Horse,_Eastcote",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Black Horse, Stepney",
+      "url": "https://en.wikipedia.org/wiki/Black_Horse,_Stepney",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Black Lion",
+      "url": "https://en.wikipedia.org/wiki/Black_Lion,_Kilburn",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Black Lion, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/Black_Lion,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Black Lion, Kilburn",
+      "url": "https://en.wikipedia.org/wiki/Black_Lion,_Kilburn",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Black Prince",
+      "url": "https://en.wikipedia.org/wiki/Black_Prince,_Bexley",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Blossom's Inn",
+      "url": "https://en.wikipedia.org/wiki/Blossom's_Inn",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Blue Anchor",
+      "url": "https://en.wikipedia.org/wiki/Blue_Anchor,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Blue Anchor, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/Blue_Anchor,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Blythe Hill Tavern",
+      "url": "https://en.wikipedia.org/wiki/Blythe_Hill_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Boar's Head Inn",
+      "url": "https://en.wikipedia.org/wiki/Boar's_Head_Inn,_Southwark",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Boar's Head Inn, Eastcheap",
+      "url": "https://en.wikipedia.org/wiki/Boar's_Head_Inn,_Eastcheap",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Boleyn Tavern",
+      "url": "https://en.wikipedia.org/wiki/Boleyn_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Brewery Tap, Wandsworth",
+      "url": "https://en.wikipedia.org/wiki/Brewery_Tap,_Wandsworth",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Bricklayer's Arms",
+      "url": "https://en.wikipedia.org/wiki/Bricklayer's_Arms,_Putney",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Bricklayer's Arms, Putney",
+      "url": "https://en.wikipedia.org/wiki/Bricklayer's_Arms,_Putney",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Britannia",
+      "url": "https://en.wikipedia.org/wiki/Britannia,_Richmond",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Britannia, Richmond",
+      "url": "https://en.wikipedia.org/wiki/Britannia,_Richmond",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Brown Bear",
+      "url": "https://en.wikipedia.org/wiki/Brown_Bear,_Whitechapel",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Bull & Gate",
+      "url": "https://en.wikipedia.org/wiki/Bull_&_Gate",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Bull and Crown",
+      "url": "https://en.wikipedia.org/wiki/Bull_and_Crown,_Chingford",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Bull and Crown, Chingford",
+      "url": "https://en.wikipedia.org/wiki/Bull_and_Crown,_Chingford",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Bull and Mouth Inn",
+      "url": "https://en.wikipedia.org/wiki/Bull_and_Mouth_Inn",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Bull's Head",
+      "url": "https://en.wikipedia.org/wiki/Bull's_Head,_Strand-on-the-Green",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Bull's Head, Strand-on-the-Green",
+      "url": "https://en.wikipedia.org/wiki/Bull's_Head,_Strand-on-the-Green",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Bunch of Grapes",
+      "url": "https://en.wikipedia.org/wiki/Bunch_of_Grapes,_Knightsbridge",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Candy Bar",
+      "url": "https://en.wikipedia.org/wiki/Candy_Bar_(London)",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Captain Kidd",
+      "url": "https://en.wikipedia.org/wiki/Captain_Kidd_(pub)",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Carlton Tavern, Kilburn",
+      "url": "https://en.wikipedia.org/wiki/Carlton_Tavern,_Kilburn",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Case is Altered",
+      "url": "https://en.wikipedia.org/wiki/Case_is_Altered,_Eastcote",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Case is Altered, Eastcote",
+      "url": "https://en.wikipedia.org/wiki/Case_is_Altered,_Eastcote",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Chalk Farm Tavern",
+      "url": "https://en.wikipedia.org/wiki/Chalk_Farm_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Charlie Brown's",
+      "url": "https://en.wikipedia.org/wiki/Charlie_Brown's,_Limehouse",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Charlie Brown's (Railway Tavern)",
+      "url": "https://en.wikipedia.org/wiki/Charlie_Brown's,_Limehouse",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Chelsea Potter",
+      "url": "https://en.wikipedia.org/wiki/Chelsea_Potter",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Chesham Arms",
+      "url": "https://en.wikipedia.org/wiki/Chesham_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Cittie of Yorke",
+      "url": "https://en.wikipedia.org/wiki/Cittie_of_Yorke",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coach and Horses",
+      "url": "https://en.wikipedia.org/wiki/Coach_and_Horses,_Isleworth",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coach and Horses, Hill Street",
+      "url": "https://en.wikipedia.org/wiki/Coach_and_Horses,_Hill_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coach and Horses, Isleworth",
+      "url": "https://en.wikipedia.org/wiki/Coach_and_Horses,_Isleworth",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Coach and Horses, Mayfair",
+      "url": "https://en.wikipedia.org/wiki/Coach_and_Horses,_Mayfair",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Coach and Horses, Soho",
+      "url": "https://en.wikipedia.org/wiki/Coach_and_Horses,_Soho",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coachmakers Arms",
+      "url": "https://en.wikipedia.org/wiki/Coachmakers_Arms,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coal Hole",
+      "url": "https://en.wikipedia.org/wiki/Coal_Hole,_Strand",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coal Hole, Strand",
+      "url": "https://en.wikipedia.org/wiki/Coal_Hole,_Strand",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Cock Tavern Theatre",
+      "url": "https://en.wikipedia.org/wiki/Cock_Tavern_Theatre",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coleherne",
+      "url": "https://en.wikipedia.org/wiki/Coleherne,_Earls_Court",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Coleherne, Earls Court",
+      "url": "https://en.wikipedia.org/wiki/Coleherne,_Earls_Court",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Commercial Tavern",
+      "url": "https://en.wikipedia.org/wiki/Commercial_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Comptons of Soho",
+      "url": "https://en.wikipedia.org/wiki/Comptons_of_Soho",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Crocker's Folly",
+      "url": "https://en.wikipedia.org/wiki/Crocker's_Folly",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Crooked Billet",
+      "url": "https://en.wikipedia.org/wiki/Crooked_Billet,_Wimbledon",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Crooked Billet, Wimbledon",
+      "url": "https://en.wikipedia.org/wiki/Crooked_Billet,_Wimbledon",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Cross Keys",
+      "url": "https://en.wikipedia.org/wiki/Cross_Keys,_Dagenham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Cross Keys, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/Cross_Keys,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Cross Keys, Dagenham",
+      "url": "https://en.wikipedia.org/wiki/Cross_Keys,_Dagenham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Crown and Anchor, Euston",
+      "url": "https://en.wikipedia.org/wiki/Crown_and_Anchor,_Euston",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Crown and Treaty",
+      "url": "https://en.wikipedia.org/wiki/Crown_and_Treaty",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Cutty Sark",
+      "url": "https://en.wikipedia.org/wiki/Cutty_Sark,_Greenwich",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Cutty Sark, Greenwich",
+      "url": "https://en.wikipedia.org/wiki/Cutty_Sark,_Greenwich",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "De Hems",
+      "url": "https://en.wikipedia.org/wiki/De_Hems",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Denbigh Arms",
+      "url": "https://en.wikipedia.org/wiki/Denbigh_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Denmark Arms",
+      "url": "https://en.wikipedia.org/wiki/Denmark_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Devonshire Arms",
+      "url": "https://en.wikipedia.org/wiki/Devonshire_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Dirty Dicks",
+      "url": "https://en.wikipedia.org/wiki/Dirty_Dick",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Dog & Bull",
+      "url": "https://en.wikipedia.org/wiki/Dog_&_Bull",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Dog and Duck",
+      "url": "https://en.wikipedia.org/wiki/Dog_and_Duck,_St_George's_Fields",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Dog and Duck, Soho",
+      "url": "https://en.wikipedia.org/wiki/Dog_and_Duck,_Soho",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Dog and Duck, St George's Fields",
+      "url": "https://en.wikipedia.org/wiki/Dog_and_Duck,_St_George's_Fields",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Drayton Arms",
+      "url": "https://en.wikipedia.org/wiki/Drayton_Arms,_Earls_Court",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Drayton Arms, Earls Court",
+      "url": "https://en.wikipedia.org/wiki/Drayton_Arms,_Earls_Court",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Druid's Head",
+      "url": "https://en.wikipedia.org/wiki/Druid's_Head,_Kingston_upon_Thames",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Dublin Castle",
+      "url": "https://en.wikipedia.org/wiki/Dublin_Castle,_Camden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Dublin Castle, Camden",
+      "url": "https://en.wikipedia.org/wiki/Dublin_Castle,_Camden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Duke of Cumberland",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_Cumberland,_Fulham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Duke of Cumberland, Fulham",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_Cumberland,_Fulham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Duke of Kent",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_Kent,_Ealing",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Duke of Kent, Ealing",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_Kent,_Ealing",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Duke of Sussex",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_Sussex,_Acton_Green",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Duke of Wellington",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_Wellington,_Bethnal_Green",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Duke of Wellington, Belgravia",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_Wellington,_Belgravia",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Duke of York, Bloomsbury",
+      "url": "https://en.wikipedia.org/wiki/Duke_of_York,_Bloomsbury",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Dysart Arms",
+      "url": "https://en.wikipedia.org/wiki/Dysart_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Earl of Essex",
+      "url": "https://en.wikipedia.org/wiki/Earl_of_Essex,_Manor_Park",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Earl of Essex, Manor Park",
+      "url": "https://en.wikipedia.org/wiki/Earl_of_Essex,_Manor_Park",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "East India Arms",
+      "url": "https://en.wikipedia.org/wiki/East_India_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Eastbrook",
+      "url": "https://en.wikipedia.org/wiki/Eastbrook,_Dagenham",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Edinboro Castle",
+      "url": "https://en.wikipedia.org/wiki/Edinboro_Castle",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Eight Bells",
+      "url": "https://en.wikipedia.org/wiki/Eight_Bells,_Fulham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Eight Bells, Fulham",
+      "url": "https://en.wikipedia.org/wiki/Eight_Bells,_Fulham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Elgin",
+      "url": "https://en.wikipedia.org/wiki/Elgin,_Ladbroke_Grove",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Elgin, Ladbroke Grove",
+      "url": "https://en.wikipedia.org/wiki/Elgin,_Ladbroke_Grove",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Falcon, Battersea",
+      "url": "https://en.wikipedia.org/wiki/Falcon,_Battersea",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Fallow Buck Inn",
+      "url": "https://en.wikipedia.org/wiki/Fallow_Buck_Inn",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Fellowship Inn",
+      "url": "https://en.wikipedia.org/wiki/Fellowship_Inn",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Fishmongers Arms",
+      "url": "https://en.wikipedia.org/wiki/Fishmongers_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Fitzroy Tavern",
+      "url": "https://en.wikipedia.org/wiki/Fitzroy_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Flying Scotsman",
+      "url": "https://en.wikipedia.org/wiki/Flying_Scotsman,_Kings_Cross",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Flying Scotsman, Kings Cross",
+      "url": "https://en.wikipedia.org/wiki/Flying_Scotsman,_Kings_Cross",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Fox and Anchor",
+      "url": "https://en.wikipedia.org/wiki/Fox_and_Anchor",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Fox and Pheasant",
+      "url": "https://en.wikipedia.org/wiki/Fox_and_Pheasant",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Freemasons Arms, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/Freemasons_Arms,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Freemasons' Tavern",
+      "url": "https://en.wikipedia.org/wiki/Freemasons'_Tavern",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "George and Devonshire",
+      "url": "https://en.wikipedia.org/wiki/George_and_Devonshire",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "George and Dragon",
+      "url": "https://en.wikipedia.org/wiki/George_and_Dragon,_Fitzrovia",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "George and Dragon, Fitzrovia",
+      "url": "https://en.wikipedia.org/wiki/George_and_Dragon,_Fitzrovia",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "George and Dragon, Shoreditch",
+      "url": "https://en.wikipedia.org/wiki/George_and_Dragon,_Shoreditch",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "George and Vulture",
+      "url": "https://en.wikipedia.org/wiki/George_and_Vulture",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "George IV",
+      "url": "https://en.wikipedia.org/wiki/George_IV,_Brixton",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "George Tavern",
+      "url": "https://en.wikipedia.org/wiki/George_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Gloucester Arms",
+      "url": "https://en.wikipedia.org/wiki/Gloucester_Arms,_Kensington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Goat in Boots",
+      "url": "https://en.wikipedia.org/wiki/Goat_in_Boots",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Golden Heart",
+      "url": "https://en.wikipedia.org/wiki/Golden_Heart,_Spitalfields",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Golden Heart, Spitalfields",
+      "url": "https://en.wikipedia.org/wiki/Golden_Heart,_Spitalfields",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Golden Lion",
+      "url": "https://en.wikipedia.org/wiki/Golden_Lion,_Fulham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Golden Lion, Fulham",
+      "url": "https://en.wikipedia.org/wiki/Golden_Lion,_Fulham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Goldsmiths Tavern",
+      "url": "https://en.wikipedia.org/wiki/Goldsmiths_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Great Northern Railway Tavern",
+      "url": "https://en.wikipedia.org/wiki/Great_Northern_Railway_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Great Northern Railway, Hornsey",
+      "url": "https://en.wikipedia.org/wiki/Great_Northern_Railway,_Hornsey",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Green Man",
+      "url": "https://en.wikipedia.org/wiki/Green_Man,_Blackheath",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Green Man, Putney",
+      "url": "https://en.wikipedia.org/wiki/Green_Man,_Putney",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Greene Man",
+      "url": "https://en.wikipedia.org/wiki/Greene_Man",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Greenwich Tavern",
+      "url": "https://en.wikipedia.org/wiki/Greenwich_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Half Moon",
+      "url": "https://en.wikipedia.org/wiki/Half_Moon,_Herne_Hill",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Half Moon, Herne Hill",
+      "url": "https://en.wikipedia.org/wiki/Half_Moon,_Herne_Hill",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Half-Way House",
+      "url": "https://en.wikipedia.org/wiki/Half-Way_House,_West_Ealing",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Half-Way House, West Ealing",
+      "url": "https://en.wikipedia.org/wiki/Half-Way_House,_West_Ealing",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Hampshire Hog",
+      "url": "https://en.wikipedia.org/wiki/Hampshire_Hog",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hand and Shears",
+      "url": "https://en.wikipedia.org/wiki/Hand_and_Shears",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hare and Billet",
+      "url": "https://en.wikipedia.org/wiki/Hare_and_Billet",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hare and Hounds",
+      "url": "https://en.wikipedia.org/wiki/Hare_and_Hounds,_East_Sheen",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hare and Hounds, Sheen",
+      "url": "https://en.wikipedia.org/wiki/Hare_and_Hounds,_Sheen",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Herne Tavern",
+      "url": "https://en.wikipedia.org/wiki/Herne_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hollywood Arms, Chelsea",
+      "url": "https://en.wikipedia.org/wiki/Hollywood_Arms,_Chelsea",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Hoop and Grapes",
+      "url": "https://en.wikipedia.org/wiki/Hoop_and_Grapes,_Aldgate_High_Street",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Hoop and Grapes, Aldgate High Street",
+      "url": "https://en.wikipedia.org/wiki/Hoop_and_Grapes,_Aldgate_High_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hoop and Grapes, Farringdon Street",
+      "url": "https://en.wikipedia.org/wiki/Hoop_and_Grapes,_Farringdon_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hope and Anchor",
+      "url": "https://en.wikipedia.org/wiki/Hope_and_Anchor,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Hope and Anchor, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/Hope_and_Anchor,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Jack Straw's Castle",
+      "url": "https://en.wikipedia.org/wiki/Jack_Straw's_Castle,_Hampstead",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Jack Straw's Castle, Hampstead",
+      "url": "https://en.wikipedia.org/wiki/Jack_Straw's_Castle,_Hampstead",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Jamaica Wine House",
+      "url": "https://en.wikipedia.org/wiki/Jamaica_Wine_House",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "John Snow",
+      "url": "https://en.wikipedia.org/wiki/John_Snow_(public_house)",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Jolly Coopers",
+      "url": "https://en.wikipedia.org/wiki/Jolly_Coopers,_Hampton",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "King Edward VII",
+      "url": "https://en.wikipedia.org/wiki/King_Edward_VII,_Stratford",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "King Edward VII, Stratford",
+      "url": "https://en.wikipedia.org/wiki/King_Edward_VII,_Stratford",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "King's Arms",
+      "url": "https://en.wikipedia.org/wiki/King's_Arms,_Waterloo",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "King's Arms, Waterloo",
+      "url": "https://en.wikipedia.org/wiki/King's_Arms,_Waterloo",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "King's Head",
+      "url": "https://en.wikipedia.org/wiki/King's_Head,_Bexley",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "King's Head, Bexley",
+      "url": "https://en.wikipedia.org/wiki/King's_Head,_Bexley",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "King's Head, Roehampton",
+      "url": "https://en.wikipedia.org/wiki/King's_Head,_Roehampton",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "King's Head, Tooting",
+      "url": "https://en.wikipedia.org/wiki/King's_Head,_Tooting",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Kings Arms",
+      "url": "https://en.wikipedia.org/wiki/Kings_Arms,_Leaves_Green",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Kings Arms, Hanwell",
+      "url": "https://en.wikipedia.org/wiki/Kings_Arms,_Hanwell",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Kings Arms, Leaves Green",
+      "url": "https://en.wikipedia.org/wiki/Kings_Arms,_Leaves_Green",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Kings Arms, Woolwich",
+      "url": "https://en.wikipedia.org/wiki/Kings_Arms,_Woolwich",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Knave of Clubs",
+      "url": "https://en.wikipedia.org/wiki/Knave_of_Clubs",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Lamb and Flag",
+      "url": "https://en.wikipedia.org/wiki/Lamb_and_Flag,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Lamb and Flag, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/Lamb_and_Flag,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Laurie Arms",
+      "url": "https://en.wikipedia.org/wiki/Laurie_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Leather Bottle",
+      "url": "https://en.wikipedia.org/wiki/Leather_Bottle,_Earlsfield",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Leather Bottle, Earlsfield",
+      "url": "https://en.wikipedia.org/wiki/Leather_Bottle,_Earlsfield",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "List of bars",
+      "url": "https://en.wikipedia.org/wiki/List_of_bars",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "List of companies based in London",
+      "url": "https://en.wikipedia.org/wiki/List_of_companies_based_in_London",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "List of public house topics",
+      "url": "https://en.wikipedia.org/wiki/List_of_public_house_topics",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "List of real London pubs in literature",
+      "url": "https://en.wikipedia.org/wiki/List_of_real_London_pubs_in_literature",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "List of restaurants in London",
+      "url": "https://en.wikipedia.org/wiki/List_of_restaurants_in_London",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "London Apprentice",
+      "url": "https://en.wikipedia.org/wiki/London_Apprentice,_Isleworth",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "London Apprentice, Isleworth",
+      "url": "https://en.wikipedia.org/wiki/London_Apprentice,_Isleworth",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "London Tavern",
+      "url": "https://en.wikipedia.org/wiki/London_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Lord High Admiral",
+      "url": "https://en.wikipedia.org/wiki/Lord_High_Admiral,_Pimlico",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Lord High Admiral, Pimlico",
+      "url": "https://en.wikipedia.org/wiki/Lord_High_Admiral,_Pimlico",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Lord Nelson",
+      "url": "https://en.wikipedia.org/wiki/Lord_Nelson,_Bermondsey",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Lord Nelson, Bermondsey",
+      "url": "https://en.wikipedia.org/wiki/Lord_Nelson,_Bermondsey",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Lord Tredegar",
+      "url": "https://en.wikipedia.org/wiki/Lord_Tredegar,_Bow",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Markham Arms",
+      "url": "https://en.wikipedia.org/wiki/Markham_Arms,_Chelsea",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Mason's Arms",
+      "url": "https://en.wikipedia.org/wiki/Mason's_Arms,_Battersea",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Mason's Arms, Battersea",
+      "url": "https://en.wikipedia.org/wiki/Mason's_Arms,_Battersea",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Mawson Arms",
+      "url": "https://en.wikipedia.org/wiki/Mawson_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Mercers Arms",
+      "url": "https://en.wikipedia.org/wiki/Mercers_Arms,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Mitre Inn",
+      "url": "https://en.wikipedia.org/wiki/Mitre_Inn,_Chipping_Barnet",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Mitre Inn, Chipping Barnet",
+      "url": "https://en.wikipedia.org/wiki/Mitre_Inn,_Chipping_Barnet",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Montague Arms",
+      "url": "https://en.wikipedia.org/wiki/Montague_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Morpeth Arms",
+      "url": "https://en.wikipedia.org/wiki/Morpeth_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Museum Tavern",
+      "url": "https://en.wikipedia.org/wiki/Museum_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Nag's Head",
+      "url": "https://en.wikipedia.org/wiki/Nag's_Head,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Nag's Head, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/Nag's_Head,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Nell Gwynne Tavern",
+      "url": "https://en.wikipedia.org/wiki/Nell_Gwynne_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "New Cross Inn",
+      "url": "https://en.wikipedia.org/wiki/New_Cross_Inn",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "New Inn",
+      "url": "https://en.wikipedia.org/wiki/The_New_Inn,_Ham_Common",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Newman Arms",
+      "url": "https://en.wikipedia.org/wiki/Newman_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "O'Neill's",
+      "url": "https://en.wikipedia.org/wiki/O'Neill's_pub,_Muswell_Hill",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old Bell",
+      "url": "https://en.wikipedia.org/wiki/Old_Bell,_Fleet_Street",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old Doctor Butler's Head",
+      "url": "https://en.wikipedia.org/wiki/Old_Doctor_Butler's_Head",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old Jail, Biggin Hill",
+      "url": "https://en.wikipedia.org/wiki/Old_Jail,_Biggin_Hill",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old Pack Horse",
+      "url": "https://en.wikipedia.org/wiki/Old_Pack_Horse",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old Packhorse",
+      "url": "https://en.wikipedia.org/wiki/Old_Packhorse",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Old Red Lion",
+      "url": "https://en.wikipedia.org/wiki/Old_Red_Lion,_Holborn",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old Red Lion, Holborn",
+      "url": "https://en.wikipedia.org/wiki/Old_Red_Lion,_Holborn",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Old Red Lion, Kennington",
+      "url": "https://en.wikipedia.org/wiki/Old_Red_Lion,_Kennington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Old Ship",
+      "url": "https://en.wikipedia.org/wiki/Old_Ship,_Richmond",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old Ship, Richmond",
+      "url": "https://en.wikipedia.org/wiki/Old_Ship,_Richmond",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Old White Bear",
+      "url": "https://en.wikipedia.org/wiki/Old_White_Bear",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Old White Horse Cellar",
+      "url": "https://en.wikipedia.org/wiki/Old_White_Horse_Cellar",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "One Bell",
+      "url": "https://en.wikipedia.org/wiki/One_Bell",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Owl and Pussycat",
+      "url": "https://en.wikipedia.org/wiki/Owl_and_Pussycat,_Shoreditch",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Owl and Pussycat, Shoreditch",
+      "url": "https://en.wikipedia.org/wiki/Owl_and_Pussycat,_Shoreditch",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Park Hotel",
+      "url": "https://en.wikipedia.org/wiki/Park_Hotel,_Teddington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Paxtons Head",
+      "url": "https://en.wikipedia.org/wiki/Paxtons_Head",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Peacock Inn",
+      "url": "https://en.wikipedia.org/wiki/Peacock_Inn,_Islington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Peacock Inn, Islington",
+      "url": "https://en.wikipedia.org/wiki/Peacock_Inn,_Islington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Pillars of Hercules",
+      "url": "https://en.wikipedia.org/wiki/Pillars_of_Hercules,_Soho",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Pillars of Hercules, Soho",
+      "url": "https://en.wikipedia.org/wiki/Pillars_of_Hercules,_Soho",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Plumbers Arms",
+      "url": "https://en.wikipedia.org/wiki/Plumbers_Arms,_Belgravia",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Plumbers Arms, Belgravia",
+      "url": "https://en.wikipedia.org/wiki/Plumbers_Arms,_Belgravia",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Prince Alfred",
+      "url": "https://en.wikipedia.org/wiki/Prince_Alfred,_Maida_Vale",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Prince Alfred, Maida Vale",
+      "url": "https://en.wikipedia.org/wiki/Prince_Alfred,_Maida_Vale",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Prince of Teck",
+      "url": "https://en.wikipedia.org/wiki/Prince_of_Teck,_Earl's_Court",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Prince of Teck, Earl's Court",
+      "url": "https://en.wikipedia.org/wiki/Prince_of_Teck,_Earl's_Court",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Prince of Wales",
+      "url": "https://en.wikipedia.org/wiki/Prince_of_Wales,_Euston",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Prince of Wales, Euston",
+      "url": "https://en.wikipedia.org/wiki/Prince_of_Wales,_Euston",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Prince of Wales, Highgate",
+      "url": "https://en.wikipedia.org/wiki/Prince_of_Wales,_Highgate",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Princess Louise",
+      "url": "https://en.wikipedia.org/wiki/Princess_Louise,_Holborn",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Princess Louise, Holborn",
+      "url": "https://en.wikipedia.org/wiki/Princess_Louise,_Holborn",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Princess Victoria",
+      "url": "https://en.wikipedia.org/wiki/Princess_Victoria_(public_house)",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Princess Victoria, Uxbridge Road",
+      "url": "https://en.wikipedia.org/wiki/Princess_Victoria_(public_house)",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Prospect of Whitby",
+      "url": "https://en.wikipedia.org/wiki/Prospect_of_Whitby",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "PS Tattershall Castle",
+      "url": "https://en.wikipedia.org/wiki/PS_Tattershall_Castle",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Pub on the Park",
+      "url": "https://en.wikipedia.org/wiki/Pub_on_the_Park?action=edit&redlink=1",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Pubs in Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/Pubs_in_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Queen's Head",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Head,_Brook_Green",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Queen's Head Tavern",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Head_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Queen's Head, Brixton",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Head,_Brixton",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Queen's Head, Brook Green",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Head,_Brook_Green",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Queen's Head, Pinner",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Head,_Pinner",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Queen's Head, Uxbridge",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Head,_Uxbridge",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Queen's Hotel, Primrose Hill",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Hotel,_Primrose_Hill",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Queens, Crouch End",
+      "url": "https://en.wikipedia.org/wiki/Queens,_Crouch_End",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Railway Hotel",
+      "url": "https://en.wikipedia.org/wiki/Railway_Hotel,_Edgware",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Ram Inn (Brewery Tap)",
+      "url": "https://en.wikipedia.org/wiki/Ram_Inn,_Wandsworth",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Raven Inn",
+      "url": "https://en.wikipedia.org/wiki/Raven_Inn,_Battersea",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rayners",
+      "url": "https://en.wikipedia.org/wiki/Rayners,_Rayners_Lane",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rayners, Rayners Lane",
+      "url": "https://en.wikipedia.org/wiki/Rayners,_Rayners_Lane",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Red Lion",
+      "url": "https://en.wikipedia.org/wiki/Red_Lion,_Hillingdon",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Red Lion, Duke of York Street",
+      "url": "https://en.wikipedia.org/wiki/Red_Lion,_Duke_of_York_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Red Lion, Hillingdon",
+      "url": "https://en.wikipedia.org/wiki/Red_Lion,_Hillingdon",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Red Lion, St James's",
+      "url": "https://en.wikipedia.org/wiki/Red_Lion,_St_James's",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Red Lion, Westminster",
+      "url": "https://en.wikipedia.org/wiki/Red_Lion,_Westminster",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rising Sun",
+      "url": "https://en.wikipedia.org/wiki/Rising_Sun,_Mill_Hill",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rising Sun, Carter Lane",
+      "url": "https://en.wikipedia.org/wiki/Rising_Sun,_Carter_Lane",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rising Sun, Cloth Fair",
+      "url": "https://en.wikipedia.org/wiki/Rising_Sun,_Cloth_Fair",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rising Sun, Euston",
+      "url": "https://en.wikipedia.org/wiki/Rising_Sun,_Euston",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Rising Sun, Fitzrovia",
+      "url": "https://en.wikipedia.org/wiki/Rising_Sun,_Fitzrovia",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rising Sun, Mill Hill",
+      "url": "https://en.wikipedia.org/wiki/Rising_Sun,_Mill_Hill",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Rose and Crown",
+      "url": "https://en.wikipedia.org/wiki/Rose_and_Crown,_Isleworth",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rose and Crown, Isleworth",
+      "url": "https://en.wikipedia.org/wiki/Rose_and_Crown,_Isleworth",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Rose and Crown, Stoke Newington",
+      "url": "https://en.wikipedia.org/wiki/Rose_and_Crown,_Stoke_Newington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Royal Albert",
+      "url": "https://en.wikipedia.org/wiki/Royal_Albert,_Deptford",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Royal Oak",
+      "url": "https://en.wikipedia.org/wiki/Royal_Oak,_Bexleyheath",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Royal Oak, Bexleyheath",
+      "url": "https://en.wikipedia.org/wiki/Royal_Oak,_Bexleyheath",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Royal Vauxhall Tavern",
+      "url": "https://en.wikipedia.org/wiki/Royal_Vauxhall_Tavern",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Rutland Arms",
+      "url": "https://en.wikipedia.org/wiki/Rutland_Arms,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Rutland Arms, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/Rutland_Arms,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Salmon and Ball",
+      "url": "https://en.wikipedia.org/wiki/Salmon_and_Ball",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Salutation",
+      "url": "https://en.wikipedia.org/wiki/Salutation,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Salutation, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/Salutation,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Scarsdale Tavern",
+      "url": "https://en.wikipedia.org/wiki/Scarsdale_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Seven Balls",
+      "url": "https://en.wikipedia.org/wiki/Seven_Balls",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Seven Stars",
+      "url": "https://en.wikipedia.org/wiki/Seven_Stars,_West_Kensington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Seven Stars, Holborn",
+      "url": "https://en.wikipedia.org/wiki/Seven_Stars,_Holborn",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Shacklewell Arms",
+      "url": "https://en.wikipedia.org/wiki/Shacklewell_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Ship and Shovell",
+      "url": "https://en.wikipedia.org/wiki/Ship_and_Shovell",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Ship Tavern",
+      "url": "https://en.wikipedia.org/wiki/Ship_Tavern,_Holborn",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Ship Tavern, Holborn",
+      "url": "https://en.wikipedia.org/wiki/Ship_Tavern,_Holborn",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Silver Cross Tavern",
+      "url": "https://en.wikipedia.org/wiki/Silver_Cross_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Simpson's Tavern",
+      "url": "https://en.wikipedia.org/wiki/Simpson's_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Sir Richard Steele",
+      "url": "https://en.wikipedia.org/wiki/Sir_Richard_Steele_(public_house)",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Sir Richard Steele (public house)",
+      "url": "https://en.wikipedia.org/wiki/Sir_Richard_Steele_(public_house)",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Slug and Lettuce",
+      "url": "https://en.wikipedia.org/wiki/Slug_and_Lettuce,_Islington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Slug and Lettuce, Islington",
+      "url": "https://en.wikipedia.org/wiki/Slug_and_Lettuce,_Islington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Spaniards Inn",
+      "url": "https://en.wikipedia.org/wiki/Spaniards_Inn",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Spanish Galleon",
+      "url": "https://en.wikipedia.org/wiki/Spanish_Galleon,_Greenwich",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Spanish Galleon, Greenwich",
+      "url": "https://en.wikipedia.org/wiki/Spanish_Galleon,_Greenwich",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Spotted Dog",
+      "url": "https://en.wikipedia.org/wiki/Spotted_Dog,_Forest_Gate",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Spotted Dog, Forest Gate",
+      "url": "https://en.wikipedia.org/wiki/Spotted_Dog,_Forest_Gate",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Spread Eagle",
+      "url": "https://en.wikipedia.org/wiki/Spread_Eagle,_Camden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Spread Eagle, Wandsworth",
+      "url": "https://en.wikipedia.org/wiki/Spread_Eagle,_Wandsworth",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "St Paul's Tavern",
+      "url": "https://en.wikipedia.org/wiki/St_Paul's_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "St Stephen's Tavern",
+      "url": "https://en.wikipedia.org/wiki/St_Stephen's_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Stag's Head",
+      "url": "https://en.wikipedia.org/wiki/Stag's_Head,_Hoxton",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Stag's Head, Hoxton",
+      "url": "https://en.wikipedia.org/wiki/Stag's_Head,_Hoxton",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Staple Inn",
+      "url": "https://en.wikipedia.org/wiki/Staple_Inn",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Star Tavern",
+      "url": "https://en.wikipedia.org/wiki/Star_Tavern,_Belgravia",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Star Tavern, Belgravia",
+      "url": "https://en.wikipedia.org/wiki/Star_Tavern,_Belgravia",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Sun and 13 Cantons",
+      "url": "https://en.wikipedia.org/wiki/Sun_and_13_Cantons",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Sun in the Sands",
+      "url": "https://en.wikipedia.org/wiki/Sun_in_the_Sands",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Sun Inn",
+      "url": "https://en.wikipedia.org/wiki/Sun_Inn,_Barnes",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Sun Inn, Barnes",
+      "url": "https://en.wikipedia.org/wiki/Sun_Inn,_Barnes",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Swan & Edgar",
+      "url": "https://en.wikipedia.org/wiki/Swan_&_Edgar,_Marylebone",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Swan & Edgar, Marylebone",
+      "url": "https://en.wikipedia.org/wiki/Swan_&_Edgar,_Marylebone",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Swan Inn",
+      "url": "https://en.wikipedia.org/wiki/Swan_Inn",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Swan with Two Necks",
+      "url": "https://en.wikipedia.org/wiki/Swan_with_Two_Necks,_London",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Temperance Billiard Hall",
+      "url": "https://en.wikipedia.org/wiki/Temperance_Billiard_Hall,_Fulham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Temperance Billiard Hall, Fulham",
+      "url": "https://en.wikipedia.org/wiki/Temperance_Billiard_Hall,_Fulham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Ten Bells",
+      "url": "https://en.wikipedia.org/wiki/Ten_Bells",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Thatched House Tavern",
+      "url": "https://en.wikipedia.org/wiki/Thatched_House_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Admiral Duncan",
+      "url": "https://en.wikipedia.org/wiki/The_Admiral_Duncan",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Albert",
+      "url": "https://en.wikipedia.org/wiki/The_Albert",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Alchemist",
+      "url": "https://en.wikipedia.org/wiki/The_Alchemist,_Battersea",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Alchemist, Battersea",
+      "url": "https://en.wikipedia.org/wiki/The_Alchemist,_Battersea",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Alexandra",
+      "url": "https://en.wikipedia.org/wiki/The_Alexandra,_New_Barnet",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Anchor",
+      "url": "https://en.wikipedia.org/wiki/The_Anchor,_Bankside",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Angel",
+      "url": "https://en.wikipedia.org/wiki/The_Angel,_Hayes",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Angel, Hayes",
+      "url": "https://en.wikipedia.org/wiki/The_Angel,_Hayes",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Angel, Islington",
+      "url": "https://en.wikipedia.org/wiki/The_Angel,_Islington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Barley Mow",
+      "url": "https://en.wikipedia.org/wiki/The_Barley_Mow,_Marylebone",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Bedford",
+      "url": "https://en.wikipedia.org/wiki/The_Bedford,_Balham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Bedford, Balham",
+      "url": "https://en.wikipedia.org/wiki/The_Bedford,_Balham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Beehive",
+      "url": "https://en.wikipedia.org/wiki/The_Beehive,_Marylebone",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Beehive, Marylebone",
+      "url": "https://en.wikipedia.org/wiki/The_Beehive,_Marylebone",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Bell",
+      "url": "https://en.wikipedia.org/wiki/The_Bell,_City_of_London",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Black Cap",
+      "url": "https://en.wikipedia.org/wiki/The_Black_Cap",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Black Friar",
+      "url": "https://en.wikipedia.org/wiki/The_Black_Friar,_Blackfriars",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Black Friar, Blackfriars",
+      "url": "https://en.wikipedia.org/wiki/The_Black_Friar,_Blackfriars",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Blind Beggar",
+      "url": "https://en.wikipedia.org/wiki/The_Blind_Beggar",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Bobbin",
+      "url": "https://en.wikipedia.org/wiki/The_Bobbin,_Clapham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Bobbin, Clapham",
+      "url": "https://en.wikipedia.org/wiki/The_Bobbin,_Clapham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Boot, Cromer Street",
+      "url": "https://en.wikipedia.org/wiki/The_Boot,_Cromer_Street",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Brown Cow, Parsons Green",
+      "url": "https://en.wikipedia.org/wiki/The_Brown_Cow,_Parsons_Green?action=edit&redlink=1",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Bull, Chislehurst",
+      "url": "https://en.wikipedia.org/wiki/The_Bull,_Chislehurst",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Bull, St Paul's Cray",
+      "url": "https://en.wikipedia.org/wiki/The_Bull,_St_Paul's_Cray",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Bull's Head, Barnes",
+      "url": "https://en.wikipedia.org/wiki/The_Bull's_Head,_Barnes",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Camden Head",
+      "url": "https://en.wikipedia.org/wiki/The_Camden_Head",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Castle",
+      "url": "https://en.wikipedia.org/wiki/The_Castle,_Harrow",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Castle, Harrow",
+      "url": "https://en.wikipedia.org/wiki/The_Castle,_Harrow",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Centre Page",
+      "url": "https://en.wikipedia.org/wiki/The_Centre_Page",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Champion",
+      "url": "https://en.wikipedia.org/wiki/The_Champion,_Wells_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Cheshire Cheese",
+      "url": "https://en.wikipedia.org/wiki/The_Cheshire_Cheese",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Churchill Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Churchill_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Clachan",
+      "url": "https://en.wikipedia.org/wiki/The_Clachan",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Cock",
+      "url": "https://en.wikipedia.org/wiki/The_Cock,_Fulham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Cock, Fulham",
+      "url": "https://en.wikipedia.org/wiki/The_Cock,_Fulham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Cockpit",
+      "url": "https://en.wikipedia.org/wiki/The_Cockpit_(public_house)",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Colony Room",
+      "url": "https://en.wikipedia.org/wiki/The_Colony_Room",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Colony Room Club",
+      "url": "https://en.wikipedia.org/wiki/The_Colony_Room_Club",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Commercial",
+      "url": "https://en.wikipedia.org/wiki/The_Commercial,_Herne_Hill",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Commercial, Herne Hill",
+      "url": "https://en.wikipedia.org/wiki/The_Commercial,_Herne_Hill",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Cross Keys",
+      "url": "https://en.wikipedia.org/wiki/The_Cross_Keys,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Cross Keys, Chelsea",
+      "url": "https://en.wikipedia.org/wiki/The_Cross_Keys,_Chelsea",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Cross Keys, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/The_Cross_Keys,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Crown",
+      "url": "https://en.wikipedia.org/wiki/The_Crown,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Crown and Greyhound",
+      "url": "https://en.wikipedia.org/wiki/The_Crown_and_Greyhound",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Crown and Horseshoes",
+      "url": "https://en.wikipedia.org/wiki/The_Crown_and_Horseshoes",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Crown, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/The_Crown,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Crown, Cowley",
+      "url": "https://en.wikipedia.org/wiki/The_Crown,_Cowley",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Crown, Islington",
+      "url": "https://en.wikipedia.org/wiki/The_Crown,_Islington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Daylight Inn",
+      "url": "https://en.wikipedia.org/wiki/The_Daylight_Inn",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Devereux",
+      "url": "https://en.wikipedia.org/wiki/The_Devereux",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Devil Tavern",
+      "url": "https://en.wikipedia.org/wiki/The_Devil_Tavern",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Dolphin",
+      "url": "https://en.wikipedia.org/wiki/The_Dolphin,_Hackney",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Dolphin, Hackney",
+      "url": "https://en.wikipedia.org/wiki/The_Dolphin,_Hackney",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Dove",
+      "url": "https://en.wikipedia.org/wiki/The_Dove,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Dove, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/The_Dove,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Drayton Court",
+      "url": "https://en.wikipedia.org/wiki/The_Drayton_Court",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Duke of Edinburgh",
+      "url": "https://en.wikipedia.org/wiki/The_Duke_of_Edinburgh,_Brixton",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Duke of Edinburgh, Brixton",
+      "url": "https://en.wikipedia.org/wiki/The_Duke_of_Edinburgh,_Brixton",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Duke of Hamilton",
+      "url": "https://en.wikipedia.org/wiki/The_Duke_of_Hamilton",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Duke of Wellington, Marylebone",
+      "url": "https://en.wikipedia.org/wiki/The_Duke_of_Wellington,_Marylebone",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Duke of York, Fitzrovia",
+      "url": "https://en.wikipedia.org/wiki/The_Duke_of_York,_Fitzrovia",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Duke's Head",
+      "url": "https://en.wikipedia.org/wiki/The_Duke's_Head,_Putney",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Duke's Head, Putney",
+      "url": "https://en.wikipedia.org/wiki/The_Duke's_Head,_Putney",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Edgar Wallace",
+      "url": "https://en.wikipedia.org/wiki/The_Edgar_Wallace",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Falcon",
+      "url": "https://en.wikipedia.org/wiki/The_Falcon,_Camden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Falcon, Camden",
+      "url": "https://en.wikipedia.org/wiki/The_Falcon,_Camden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Favourite",
+      "url": "https://en.wikipedia.org/wiki/The_Favourite_(pub)",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Fellowship and Star",
+      "url": "https://en.wikipedia.org/wiki/The_Fellowship_and_Star",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Flask, Hampstead",
+      "url": "https://en.wikipedia.org/wiki/The_Flask,_Hampstead",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Flask, Highgate",
+      "url": "https://en.wikipedia.org/wiki/The_Flask,_Highgate",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Flora",
+      "url": "https://en.wikipedia.org/wiki/The_Flora",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Flying Horse",
+      "url": "https://en.wikipedia.org/wiki/The_Flying_Horse",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Forester",
+      "url": "https://en.wikipedia.org/wiki/The_Forester,_Ealing",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Forester, Ealing",
+      "url": "https://en.wikipedia.org/wiki/The_Forester,_Ealing",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Fortune of War Public House",
+      "url": "https://en.wikipedia.org/wiki/The_Fortune_of_War_Public_House",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Fox",
+      "url": "https://en.wikipedia.org/wiki/The_Fox,_Palmers_Green",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Fox Inn",
+      "url": "https://en.wikipedia.org/wiki/The_Fox_Inn,_Hanwell",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Fox Inn, Hanwell",
+      "url": "https://en.wikipedia.org/wiki/The_Fox_Inn,_Hanwell",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Fox, Palmers Green",
+      "url": "https://en.wikipedia.org/wiki/The_Fox,_Palmers_Green",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Fox, Twickenham",
+      "url": "https://en.wikipedia.org/wiki/The_Fox,_Twickenham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The French House",
+      "url": "https://en.wikipedia.org/wiki/The_French_House,_Soho",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The French House, Soho",
+      "url": "https://en.wikipedia.org/wiki/The_French_House,_Soho",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Gatehouse, Highgate",
+      "url": "https://en.wikipedia.org/wiki/The_Gatehouse,_Highgate",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The George",
+      "url": "https://en.wikipedia.org/wiki/The_George,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The George Inn",
+      "url": "https://en.wikipedia.org/wiki/The_George_Inn,_Southwark",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The George Inn, Southwark",
+      "url": "https://en.wikipedia.org/wiki/The_George_Inn,_Southwark",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The George, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/The_George,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Gladstone Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Gladstone_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Globe",
+      "url": "https://en.wikipedia.org/wiki/The_Globe,_Moorgate",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Globe in Morning Lane",
+      "url": "https://en.wikipedia.org/wiki/The_Globe_in_Morning_Lane?action=edit&redlink=1",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Goat",
+      "url": "https://en.wikipedia.org/wiki/The_Goat,_Kensington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Goat, Kensington",
+      "url": "https://en.wikipedia.org/wiki/The_Goat,_Kensington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Grapes",
+      "url": "https://en.wikipedia.org/wiki/The_Grapes,_Limehouse",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Grapes, Wandsworth",
+      "url": "https://en.wikipedia.org/wiki/The_Grapes,_Wandsworth",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Green Man",
+      "url": "https://en.wikipedia.org/wiki/Green_Man,_Whetstone",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Grenadier",
+      "url": "https://en.wikipedia.org/wiki/The_Grenadier",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Greyhound",
+      "url": "https://en.wikipedia.org/wiki/The_Greyhound,_Kensington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Gun, Coldharbour",
+      "url": "https://en.wikipedia.org/wiki/The_Gun,_Coldharbour",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Half Moon",
+      "url": "https://en.wikipedia.org/wiki/The_Half_Moon,_Putney",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Half Moon, Putney",
+      "url": "https://en.wikipedia.org/wiki/The_Half_Moon,_Putney",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Hansom Cab",
+      "url": "https://en.wikipedia.org/wiki/The_Hansom_Cab",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Harp",
+      "url": "https://en.wikipedia.org/wiki/The_Harp",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Harrow",
+      "url": "https://en.wikipedia.org/wiki/The_Harrow,_London",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Holly Bush",
+      "url": "https://en.wikipedia.org/wiki/The_Holly_Bush,_Hampstead",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Holly Bush, Hampstead",
+      "url": "https://en.wikipedia.org/wiki/The_Holly_Bush,_Hampstead",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Hollywood Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Hollywood_Arms,_Kensington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Hop Poles",
+      "url": "https://en.wikipedia.org/wiki/The_Hop_Poles",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Hope",
+      "url": "https://en.wikipedia.org/wiki/The_Hope,_Smithfield",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Hope and Anchor, Islington",
+      "url": "https://en.wikipedia.org/wiki/The_Hope_and_Anchor,_Islington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Intrepid Fox",
+      "url": "https://en.wikipedia.org/wiki/The_Intrepid_Fox",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Island Queen",
+      "url": "https://en.wikipedia.org/wiki/The_Island_Queen,_Islington",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Ivy House",
+      "url": "https://en.wikipedia.org/wiki/The_Ivy_House",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Joiners Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Joiners_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Jugged Hare",
+      "url": "https://en.wikipedia.org/wiki/The_Jugged_Hare",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The King's Head",
+      "url": "https://en.wikipedia.org/wiki/The_King's_Head,_Fulham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The King's Head and Eight Bells",
+      "url": "https://en.wikipedia.org/wiki/The_King's_Head_and_Eight_Bells",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The King's Head, Fulham",
+      "url": "https://en.wikipedia.org/wiki/The_King's_Head,_Fulham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Lamb, Bloomsbury",
+      "url": "https://en.wikipedia.org/wiki/The_Lamb,_Bloomsbury",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Lexington",
+      "url": "https://en.wikipedia.org/wiki/The_Lexington,_Islington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Magdala",
+      "url": "https://en.wikipedia.org/wiki/The_Magdala",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Marquis of Clanricarde",
+      "url": "https://en.wikipedia.org/wiki/The_Marquis_of_Clanricarde",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Marquis of Granby",
+      "url": "https://en.wikipedia.org/wiki/The_Marquis_of_Granby",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Mitre",
+      "url": "https://en.wikipedia.org/wiki/The_Mitre,_Greenwich",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Mitre, Bayswater",
+      "url": "https://en.wikipedia.org/wiki/The_Mitre,_Bayswater",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Mitre, Greenwich",
+      "url": "https://en.wikipedia.org/wiki/The_Mitre,_Greenwich",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Montague Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Montague_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The New Inn, Ham Common",
+      "url": "https://en.wikipedia.org/wiki/The_New_Inn,_Ham_Common",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Old Bank of England",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Bank_of_England",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Old Bell",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Bell,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Old Bull and Bush",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Bull_and_Bush",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Old Fire Station",
+      "url": "https://en.wikipedia.org/wiki/Hammersmith_Fire_Station",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Old Queens Head",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Queens_Head",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Old Red Lion",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Red_Lion,_Islington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Old Red Lion, Islington",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Red_Lion,_Islington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Old Shades",
+      "url": "https://en.wikipedia.org/wiki/The_Old_Shades",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Olde Wine Shades",
+      "url": "https://en.wikipedia.org/wiki/The_Olde_Wine_Shades",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Only Running Footman",
+      "url": "https://en.wikipedia.org/wiki/The_Only_Running_Footman",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Palm Tree",
+      "url": "https://en.wikipedia.org/wiki/The_Palm_Tree,_Mile_End",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Palm Tree, Mile End",
+      "url": "https://en.wikipedia.org/wiki/The_Palm_Tree,_Mile_End",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Paviours Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Paviours_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Perseverance",
+      "url": "https://en.wikipedia.org/wiki/The_Perseverance",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Phene",
+      "url": "https://en.wikipedia.org/wiki/The_Phene",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Pineapple",
+      "url": "https://en.wikipedia.org/wiki/The_Pineapple,_Kentish_Town",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Pineapple, Kentish Town",
+      "url": "https://en.wikipedia.org/wiki/The_Pineapple,_Kentish_Town",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Pride of Spitalfields",
+      "url": "https://en.wikipedia.org/wiki/The_Pride_of_Spitalfields",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Punch Bowl",
+      "url": "https://en.wikipedia.org/wiki/The_Punch_Bowl,_Mayfair",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Punch Bowl, Mayfair",
+      "url": "https://en.wikipedia.org/wiki/The_Punch_Bowl,_Mayfair",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Punch Tavern",
+      "url": "https://en.wikipedia.org/wiki/The_Punch_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Queen Adelaide",
+      "url": "https://en.wikipedia.org/wiki/The_Queen_Adelaide",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Queen's",
+      "url": "https://en.wikipedia.org/wiki/Queen's_Hotel,_Primrose_Hill",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Queens",
+      "url": "https://en.wikipedia.org/wiki/The_Queens,_Crouch_End",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Red Lion",
+      "url": "https://en.wikipedia.org/wiki/The_Red_Lion,_Chipping_Barnet",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Red Lion, Chipping Barnet",
+      "url": "https://en.wikipedia.org/wiki/The_Red_Lion,_Chipping_Barnet",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Rocket",
+      "url": "https://en.wikipedia.org/wiki/The_Rocket,_Euston",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Roebuck",
+      "url": "https://en.wikipedia.org/wiki/The_Roebuck",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Rose and Crown",
+      "url": "https://en.wikipedia.org/wiki/The_Rose_and_Crown,_Clay_Hill",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Rose and Crown, Clay Hill",
+      "url": "https://en.wikipedia.org/wiki/The_Rose_and_Crown,_Clay_Hill",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Royal Oak",
+      "url": "https://en.wikipedia.org/wiki/The_Royal_Oak,_Bethnal_Green",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Royal Oak, Bethnal Green",
+      "url": "https://en.wikipedia.org/wiki/The_Royal_Oak,_Bethnal_Green",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Salisbury",
+      "url": "https://en.wikipedia.org/wiki/The_Salisbury",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Salisbury, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/The_Salisbury,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Scots Hoose",
+      "url": "https://en.wikipedia.org/wiki/The_Scots_Hoose",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Sherlock Holmes",
+      "url": "https://en.wikipedia.org/wiki/The_Sherlock_Holmes",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Ship",
+      "url": "https://en.wikipedia.org/wiki/The_Ship,_New_Cavendish_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Ship and Shovell",
+      "url": "https://en.wikipedia.org/wiki/Ship_and_Shovell",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Ship, Hart Street",
+      "url": "https://en.wikipedia.org/wiki/The_Ship,_Hart_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Ship, Lime Street",
+      "url": "https://en.wikipedia.org/wiki/The_Ship,_Lime_Street",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Ship, New Cavendish Street",
+      "url": "https://en.wikipedia.org/wiki/The_Ship,_New_Cavendish_Street",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Shipwrights Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Shipwrights_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Shovel",
+      "url": "https://en.wikipedia.org/wiki/The_Shovel,_Cowley",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Shovel, Cowley",
+      "url": "https://en.wikipedia.org/wiki/The_Shovel,_Cowley",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Shuckburgh Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Shuckburgh_Arms,_Chelsea",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Shuckburgh Arms, Chelsea",
+      "url": "https://en.wikipedia.org/wiki/The_Shuckburgh_Arms,_Chelsea",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Sir George Robey",
+      "url": "https://en.wikipedia.org/wiki/The_Sir_George_Robey",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Spice of Life",
+      "url": "https://en.wikipedia.org/wiki/The_Spice_of_Life,_London",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Star",
+      "url": "https://en.wikipedia.org/wiki/The_Star,_St_John's_Wood",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Swan",
+      "url": "https://en.wikipedia.org/wiki/The_Swan,_Hammersmith",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Swan Inn",
+      "url": "https://en.wikipedia.org/wiki/The_Swan_Inn,_Ruislip",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Swan Inn, Ruislip",
+      "url": "https://en.wikipedia.org/wiki/The_Swan_Inn,_Ruislip",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Swan, Hammersmith",
+      "url": "https://en.wikipedia.org/wiki/The_Swan,_Hammersmith",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Tabard",
+      "url": "https://en.wikipedia.org/wiki/The_Tabard",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Tabard, Chiswick",
+      "url": "https://en.wikipedia.org/wiki/The_Tabard,_Chiswick",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Tally Ho",
+      "url": "https://en.wikipedia.org/wiki/The_Tally_Ho,_Finchley",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Tally Ho, Finchley",
+      "url": "https://en.wikipedia.org/wiki/The_Tally_Ho,_Finchley",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Tea Clipper",
+      "url": "https://en.wikipedia.org/wiki/The_Tea_Clipper",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Tipperary",
+      "url": "https://en.wikipedia.org/wiki/The_Tipperary",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Turks Head",
+      "url": "https://en.wikipedia.org/wiki/Turks_Head,_Belgravia",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Victoria",
+      "url": "https://en.wikipedia.org/wiki/The_Victoria,_Richmond",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Victoria, Bayswater",
+      "url": "https://en.wikipedia.org/wiki/The_Victoria,_Bayswater",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Warrington",
+      "url": "https://en.wikipedia.org/wiki/The_Warrington,_Maida_Vale",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Warrington, Maida Vale",
+      "url": "https://en.wikipedia.org/wiki/The_Warrington,_Maida_Vale",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Washington",
+      "url": "https://en.wikipedia.org/wiki/The_Washington,_Belsize_Park",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Washington, Belsize Park",
+      "url": "https://en.wikipedia.org/wiki/The_Washington,_Belsize_Park",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Wenlock Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Wenlock_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Wheatsheaf",
+      "url": "https://en.wikipedia.org/wiki/The_Wheatsheaf,_Southwark",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Wheatsheaf, Fitzrovia",
+      "url": "https://en.wikipedia.org/wiki/The_Wheatsheaf,_Fitzrovia",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The White Bear, Clerkenwell",
+      "url": "https://en.wikipedia.org/wiki/The_White_Bear,_Clerkenwell",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The White Horse",
+      "url": "https://en.wikipedia.org/wiki/The_White_Horse,_Enfield",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The White Horse, Enfield",
+      "url": "https://en.wikipedia.org/wiki/The_White_Horse,_Enfield",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The White Horse, Fulham",
+      "url": "https://en.wikipedia.org/wiki/The_White_Horse,_Fulham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The White Lion",
+      "url": "https://en.wikipedia.org/wiki/The_White_Lion,_Putney",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The White Lion, Putney",
+      "url": "https://en.wikipedia.org/wiki/The_White_Lion,_Putney",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The White Swan",
+      "url": "https://en.wikipedia.org/wiki/The_White_Swan,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The White Swan, Twickenham",
+      "url": "https://en.wikipedia.org/wiki/The_White_Swan,_Twickenham",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Widow's Son",
+      "url": "https://en.wikipedia.org/wiki/The_Widow's_Son,_London",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Widow's Son, London",
+      "url": "https://en.wikipedia.org/wiki/The_Widow's_Son,_London",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Wilton Arms",
+      "url": "https://en.wikipedia.org/wiki/The_Wilton_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Winchester",
+      "url": "https://en.wikipedia.org/wiki/The_Winchester,_Highgate",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The Winchester, Highgate",
+      "url": "https://en.wikipedia.org/wiki/The_Winchester,_Highgate",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Wonder",
+      "url": "https://en.wikipedia.org/wiki/The_Wonder_(pub)",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The World's End",
+      "url": "https://en.wikipedia.org/wiki/The_World's_End,_Camden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "The World's End, Camden",
+      "url": "https://en.wikipedia.org/wiki/The_World's_End,_Camden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The World's End, Chelsea",
+      "url": "https://en.wikipedia.org/wiki/The_World's_End,_Chelsea",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "The Yorkshire Grey",
+      "url": "https://en.wikipedia.org/wiki/The_Yorkshire_Grey",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Three Horseshoes",
+      "url": "https://en.wikipedia.org/wiki/Three_Horseshoes,_Southall",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Three Horseshoes, Southall",
+      "url": "https://en.wikipedia.org/wiki/Three_Horseshoes,_Southall",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Three Tuns",
+      "url": "https://en.wikipedia.org/wiki/Three_Tuns,_Uxbridge",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Three Tuns, Uxbridge",
+      "url": "https://en.wikipedia.org/wiki/Three_Tuns,_Uxbridge",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Town of Ramsgate",
+      "url": "https://en.wikipedia.org/wiki/Town_of_Ramsgate",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Trafalgar Tavern",
+      "url": "https://en.wikipedia.org/wiki/Trafalgar_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Two Brewers",
+      "url": "https://en.wikipedia.org/wiki/Two_Brewers,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Two Brewers, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/Two_Brewers,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Two Chairmen",
+      "url": "https://en.wikipedia.org/wiki/Two_Chairmen",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Two Puddings",
+      "url": "https://en.wikipedia.org/wiki/Two_Puddings",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Upper Flask",
+      "url": "https://en.wikipedia.org/wiki/Upper_Flask",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Viaduct Tavern",
+      "url": "https://en.wikipedia.org/wiki/Viaduct_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Warwick Castle",
+      "url": "https://en.wikipedia.org/wiki/Warwick_Castle,_Maida_Vale",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Warwick Castle, Maida Vale",
+      "url": "https://en.wikipedia.org/wiki/Warwick_Castle,_Maida_Vale",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Wells Tavern",
+      "url": "https://en.wikipedia.org/wiki/Wells_Tavern,_Hampstead",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Wells Tavern, Hampstead",
+      "url": "https://en.wikipedia.org/wiki/Wells_Tavern,_Hampstead",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Westminster Arms",
+      "url": "https://en.wikipedia.org/wiki/Westminster_Arms",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Wetherspoons",
+      "url": "https://en.wikipedia.org/wiki/Wetherspoons",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "White Cross",
+      "url": "https://en.wikipedia.org/wiki/White_Cross,_Richmond",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "White Cross, Richmond",
+      "url": "https://en.wikipedia.org/wiki/White_Cross,_Richmond",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "White Hart",
+      "url": "https://en.wikipedia.org/wiki/White_Hart,_Southwark",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "White Lion",
+      "url": "https://en.wikipedia.org/wiki/White_Lion,_Covent_Garden",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "White Lion, Covent Garden",
+      "url": "https://en.wikipedia.org/wiki/White_Lion,_Covent_Garden",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "White Swan",
+      "url": "https://en.wikipedia.org/wiki/The_White_Swan,_Twickenham",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Windermere",
+      "url": "https://en.wikipedia.org/wiki/Windermere,_South_Kenton",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Windermere, South Kenton",
+      "url": "https://en.wikipedia.org/wiki/Windermere,_South_Kenton",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Windsor Castle",
+      "url": "https://en.wikipedia.org/wiki/Windsor_Castle,_Kensington",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Windsor Castle, Kensington",
+      "url": "https://en.wikipedia.org/wiki/Windsor_Castle,_Kensington",
+      "sources": [
+        "table"
+      ]
+    },
+    {
+      "name": "Windsor Castle, Maida Vale",
+      "url": "https://en.wikipedia.org/wiki/Windsor_Castle,_Maida_Vale",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Ye Olde Cherry Tree",
+      "url": "https://en.wikipedia.org/wiki/Ye_Olde_Cherry_Tree",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Ye Olde Cheshire Cheese",
+      "url": "https://en.wikipedia.org/wiki/Ye_Olde_Cheshire_Cheese",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Ye Olde Cock Tavern",
+      "url": "https://en.wikipedia.org/wiki/Ye_Olde_Cock_Tavern",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Ye Olde Mitre",
+      "url": "https://en.wikipedia.org/wiki/Ye_Olde_Mitre",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "York & Albany",
+      "url": "https://en.wikipedia.org/wiki/York_&_Albany",
+      "sources": [
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Yorkshire Stingo",
+      "url": "https://en.wikipedia.org/wiki/Yorkshire_Stingo",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    },
+    {
+      "name": "Zetland Arms",
+      "url": "https://en.wikipedia.org/wiki/Zetland_Arms",
+      "sources": [
+        "table",
+        "borough-list"
+      ]
+    }
+  ]
+}

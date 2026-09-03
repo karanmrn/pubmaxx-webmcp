@@ -1,0 +1,357 @@
+/* The Golden Thread — per-venue price story block, rendered inside the Pints tab
+   of .venueInspector. Scoped to .venuePriceStory only; reuses role tokens
+   (--accent-action, --ink, --ink-soft, --line, --panel-raised, --pint, --brick,
+   --amber, --font-data, --radius-sm) and the global .provChip idiom. Data
+   prices are stable badges; the field-guide feel comes from muted rules. */
+
+.venuePriceStory {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+/* Screen-reader-only movement sentence (no global .srOnly in this repo). */
+.venuePriceStory .srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Then → Now price pair. */
+.vpsPricePair {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 4px;
+}
+
+.vpsPriceGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.vpsPriceLabel {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.vpsPriceValue {
+  padding: 4px 10px;
+  /* The shared PriceBadge uses the mono data face, which looks great in compact
+     tables but leaves an exaggerated decimal gap at this larger Golden Thread
+     size on mobile (e.g. "£5. 50"). Use the app text face here while preserving
+     tabular numeric alignment. */
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "kern" 0;
+  letter-spacing: -0.01em;
+  font-size: 1rem;
+  min-inline-size: 4.9rem;
+}
+
+.vpsPriceThen {
+  transform: none;
+}
+
+.vpsPriceNow {
+  transform: none;
+}
+
+.vpsArrow {
+  align-self: center;
+  padding-bottom: 6px;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+}
+
+/* Proportional comparison bars — the taller bar is the dearer pint. */
+.vpsBars {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0 4px;
+}
+
+.vpsBarRow {
+  display: grid;
+  grid-template-columns: 58px 1fr auto;
+  align-items: center;
+  gap: 9px;
+}
+
+.vpsBarLabel {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.vpsBarTrack {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.vpsBarFill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.vpsBarFillThen {
+  background: color-mix(in srgb, var(--ink-soft) 55%, transparent);
+}
+
+.vpsBarFillNow {
+  background: var(--accent-price);
+}
+
+.vpsBarValue {
+  font-family: var(--font-data);
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+/* Delta line — rust for dearer, sober-green for cheaper. */
+.vpsDelta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+  font-size: 0.86rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.vpsDelta-up {
+  color: var(--brick);
+}
+
+.vpsDelta-down {
+  color: var(--pint);
+}
+
+.vpsDelta-flat {
+  color: var(--ink-soft);
+}
+
+/* Honest price conflict: on-record vs a freshly-vouched different price. Shown
+   plainly, never resolved away. A quiet caution band, not an alarm. */
+.vpsConflict {
+  margin: 10px 0 0;
+  padding: 9px 11px;
+  border: 1px solid rgba(176, 129, 58, 0.32);
+  border-radius: var(--radius-sm);
+  background: rgba(176, 129, 58, 0.09);
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The inflation line — a dated, priced memory revalued into today's money. */
+.vpsInflation {
+  margin-top: 12px;
+  padding: 11px 12px;
+  border: 1px solid rgba(176, 129, 58, 0.32);
+  border-radius: var(--radius-sm);
+  background: rgba(176, 129, 58, 0.09);
+}
+
+.vpsInflationLine {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.vpsInflationLine strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.vpsInflationLine .vpsToday {
+  color: var(--accent-price-ink);
+}
+
+.vpsInflationMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.vpsInflationBy {
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+}
+
+.vpsFootnote {
+  margin: 10px 0 0;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* ── "Still £X?" price-confirm micro-contribution chip ───────────────────────
+   A one-tap community "still accurate?" signal on the freshest price. Idle: a
+   quiet brass-tinted pill invitation. Confirmed: a --pint "verified" pill that
+   pops in (scale .95→1 + opacity) with the tick stroke-drawing on. This is a
+   signal, never a price — the copy reads "Confirmed just now · N confirms", it
+   never restates or edits a figure. All motion is opacity/transform only and is
+   fully gated behind no-preference; reduced-motion shows the finished tick with
+   no movement. The idle chip is a <button>, so it inherits the global press
+   feedback (scale on :active) — no bespoke transform here to conflict with it. */
+.vpsConfirm {
+  margin: 12px 0 2px;
+}
+
+.vpsConfirmBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-action) 34%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-action) 7%, var(--panel-raised));
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+
+.vpsConfirmBtn .vpsConfirmTick {
+  color: var(--ink-soft);
+}
+
+.vpsConfirmBtn:focus-visible {
+  outline: 2px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .vpsConfirmBtn:hover {
+    border-color: var(--accent-action);
+    background: color-mix(in srgb, var(--accent-action) 12%, var(--panel-raised));
+  }
+}
+
+.vpsConfirmDone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 2px;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--pint) 34%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--pint) 10%, var(--panel-raised));
+  color: var(--pint);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.vpsConfirmDone .vpsConfirmTick {
+  flex: 0 0 auto;
+  color: var(--pint);
+}
+
+.vpsConfirmCount {
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Satisfying pop on confirm — a little spring overshoot because the tap
+     carried intent (rubric: ease-spring for momentum entrances only). */
+  .vpsConfirmDone {
+    animation: vpsConfirmIn var(--duration-base) var(--ease-spring) both;
+  }
+
+  /* The tick draws itself on, just after the pill has begun settling. */
+  .vpsConfirmDone .vpsConfirmTickPath {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    animation: vpsTickDraw var(--duration-slow) var(--ease-out-strong) 40ms forwards;
+  }
+}
+
+@keyframes vpsConfirmIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes vpsTickDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ── Confidence states (lib/priceConfidence.ts) ──────────────────────────────
+   The plaque keeps its dignity as signals age: FRESH renders exactly as today
+   (no class needed beyond the hook), AGING quietly lowers the plaque's voice,
+   STALE visibly humbles it — an old truth beats a blank, but it must not
+   impersonate a fresh one. Colors stay inside the existing token set. */
+.vpsConfidence-aging {
+  opacity: 0.86;
+}
+.vpsConfidence-stale {
+  opacity: 0.68;
+  filter: saturate(0.75);
+}
+
+/* "It's changed" — the correction path. Deliberately quieter than the confirm
+   chip (text-button weight): correcting is welcome, but confirming is the
+   one-tap hero. Same 44px minimum target as every action. */
+.vpsChangedBtn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  min-height: 44px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  border-radius: var(--radius-sm, 6px);
+}
+.vpsChangedBtn:hover,
+.vpsChangedBtn:focus-visible {
+  color: var(--ink);
+}
+.vpsChangedBtn:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vpsChangedBtn:active {
+    transform: none;
+  }
+}

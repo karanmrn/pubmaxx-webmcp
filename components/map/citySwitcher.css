@@ -1,0 +1,243 @@
+/* Compact city switcher — sits in MapToolbar; coral/ink tokens only. */
+
+.citySwitcher {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.citySwitcher--list {
+  width: 100%;
+}
+
+.citySwitcherTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.citySwitcher.isOpen .citySwitcherTrigger,
+.citySwitcherTrigger:hover {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--brass);
+}
+
+.citySwitcherLabel {
+  max-width: 7.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.citySwitcherLabelShort {
+  display: none;
+}
+
+.citySwitcherCaret {
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4px solid currentcolor;
+  opacity: 0.75;
+}
+
+.citySwitcherList {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  /* Above CitySuggestBanner (540) and map camera controls (530) so taps land. */
+  z-index: var(--z-map-toolbar);
+  min-width: 9.5rem;
+  max-height: min(70vh, 22rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+  border-radius: 12px;
+  background: var(--panel-raised);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--ink-deep) 14%, transparent);
+}
+
+.citySwitcherLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.citySwitcherLocation {
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+}
+
+.citySwitcherLocationLink {
+  justify-content: flex-start;
+  gap: 8px;
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+}
+
+.citySwitcherArea {
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+}
+
+.citySwitcherAreaLink {
+  color: var(--ink-soft);
+}
+
+.citySwitcherLocationLink:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.citySwitcher--list .citySwitcherList {
+  position: static;
+  width: 100%;
+  max-height: min(44vh, 22rem);
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+.citySwitcher--list .citySwitcherNational {
+  display: none;
+}
+
+.citySwitcherLink:hover {
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+  color: var(--brass);
+}
+
+.citySwitcherLink.isActive {
+  background: color-mix(in srgb, var(--brass) 14%, transparent);
+  color: var(--brass);
+}
+
+.citySwitcherNational {
+  display: grid;
+  gap: 2px;
+  padding-top: 6px;
+  margin-top: 4px;
+  border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.citySwitcherNationalLink {
+  text-align: left;
+  text-decoration: none;
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .citySwitcher {
+    min-width: 0;
+    max-width: 5rem;
+  }
+
+  .citySwitcherTrigger {
+    max-width: 100%;
+    padding-inline: 8px;
+  }
+
+  .citySwitcherLabelFull {
+    display: none;
+  }
+
+  .citySwitcherLabelShort {
+    display: inline;
+    max-width: none;
+    letter-spacing: 0.04em;
+  }
+
+  /* A named area keeps its name at this width: the code below is the CITY's
+     abbreviation and says nothing about an area, and the control announces the
+     area either way. Ordered after the rules above so it wins on source order
+     at equal specificity for the width, and on specificity for the label. */
+  .citySwitcher--named {
+    max-width: none;
+  }
+
+  .citySwitcher--named .citySwitcherLabelFull {
+    display: inline;
+  }
+}
+
+@media (max-width: 640px) {
+  .citySwitcherTrigger {
+    min-height: 44px;
+    height: 44px;
+    padding: 0 8px;
+    font-size: 0.75rem;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+
+  /* Full name on wider phones; short code frees width for Search/Drinks/Plan. */
+  .citySwitcherLabelFull {
+    display: none;
+  }
+
+  .citySwitcherLabelShort {
+    display: inline;
+    max-width: none;
+    letter-spacing: 0.04em;
+  }
+
+  .citySwitcherList {
+    right: 0;
+    left: auto;
+    z-index: var(--z-map-toolbar);
+  }
+
+  .citySwitcher--list .citySwitcherList {
+    right: auto;
+    left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .citySwitcherTrigger {
+    transition: none;
+  }
+}
+
+.citySwitcherNational {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+}
+
+.citySwitcherNationalLink {
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-decoration: none;
+  box-sizing: border-box;
+}

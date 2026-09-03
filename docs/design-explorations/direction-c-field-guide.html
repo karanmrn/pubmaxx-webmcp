@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PubMax · Direction C — Field Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #eef4f2;
+      --paper-warm: #f5f1e6;
+      --panel: #fbfdfb;
+      --ink: #14201c;
+      --ink-soft: #2f433c;
+      --muted: #5d7269;
+      --line: #c9d8d1;
+      --river: #2f6f8f;
+      --river-bright: #3f8fb3;
+      --pint: #2f8f5b;
+      --pint-bright: #3aa86c;
+      --brass: #b8892a;
+      --brass-bright: #d3a44a;
+      --brick: #b5493a;
+      --map-land: #e4eee8;
+      --map-water: #c5dce6;
+      --map-road: #d5e2da;
+      --route: #2f6f8f;
+      --radius: 4px;
+      --font-display: Fraunces, Georgia, serif;
+      --font-ui: Figtree, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: var(--font-ui);
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, #d9e8e4 0%, #e8efe6 40%, #ebe4d0 100%);
+    }
+
+    .stage {
+      width: 1440px;
+      height: 900px;
+      max-width: 100%;
+      background: var(--paper);
+      border: 1px solid #b7c9c0;
+      border-radius: 6px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 72px 1fr;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.65) inset,
+        0 28px 70px rgba(20, 40, 35, 0.14);
+      animation: stage-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: auto auto 1fr auto auto;
+      align-items: center;
+      gap: 18px;
+      padding: 0 22px;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 11px,
+          rgba(47, 111, 143, 0.04) 11px,
+          rgba(47, 111, 143, 0.04) 12px
+        ),
+        linear-gradient(180deg, #f7faf8 0%, var(--paper) 100%);
+      border-bottom: 2px solid var(--ink);
+      z-index: 3;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .brand span { color: var(--river); }
+
+    .city {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius);
+      background: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 420px;
+      width: 100%;
+      justify-self: center;
+      padding: 9px 14px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .search strong { color: var(--ink-soft); font-weight: 600; }
+
+    .cta {
+      appearance: none;
+      border: 1.5px solid var(--ink);
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      background: var(--brass-bright);
+      padding: 11px 18px;
+      border-radius: var(--radius);
+      box-shadow: 3px 3px 0 var(--ink);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .cta:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .back {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back:hover { color: var(--river); }
+
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      min-height: 0;
+    }
+
+    .map {
+      position: relative;
+      background:
+        radial-gradient(ellipse at 25% 25%, rgba(47, 111, 143, 0.1), transparent 45%),
+        radial-gradient(ellipse at 80% 70%, rgba(47, 143, 91, 0.1), transparent 40%),
+        var(--map-land);
+      overflow: hidden;
+    }
+
+    .map::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px dashed rgba(20, 32, 28, 0.18);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .map-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-label {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      z-index: 2;
+      max-width: 380px;
+      animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+    }
+
+    .map-label h1 {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      text-wrap: balance;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .map-label p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+      max-width: 36ch;
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      margin-top: 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+
+    .legend i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: -1px;
+    }
+
+    .pin { animation: pin-pop 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .pin:nth-child(1) { animation-delay: 0.35s; }
+    .pin:nth-child(2) { animation-delay: 0.45s; }
+    .pin:nth-child(3) { animation-delay: 0.55s; }
+    .pin:nth-child(4) { animation-delay: 0.65s; }
+
+    .pin-active .halo {
+      animation: pulse 2.2s ease-out infinite;
+    }
+
+    .route-line {
+      stroke-dasharray: 520;
+      stroke-dashoffset: 520;
+      animation: draw 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+    }
+
+    .price {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      fill: #fff;
+    }
+
+    .sheet {
+      background: var(--panel);
+      border-left: 2px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      animation: slide 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    .sheet-head {
+      padding: 20px 22px 14px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(47, 111, 143, 0.08), transparent 60%),
+        var(--panel);
+    }
+
+    .sheet-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--river);
+      margin-bottom: 6px;
+    }
+
+    .sheet-head h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .meta { font-size: 0.82rem; color: var(--muted); }
+
+    .friends {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-warm);
+    }
+
+    .avatars { display: flex; }
+
+    .av {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-left: -8px;
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .av:first-child { margin-left: 0; }
+    .av-1 { background: var(--river); }
+    .av-2 { background: var(--pint); }
+    .av-3 { background: var(--brass); }
+    .av-4 { background: var(--ink); }
+
+    .invite {
+      margin-left: auto;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #fff;
+      border: 1.5px solid var(--ink);
+      padding: 7px 11px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: var(--font-ui);
+    }
+
+    .stops {
+      list-style: none;
+      padding: 10px 12px 18px;
+      overflow: auto;
+      flex: 1;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 36px 1fr auto;
+      gap: 12px;
+      align-items: start;
+      padding: 13px 12px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+    }
+
+    .stop + .stop {
+      margin-top: 2px;
+      border-top: 1px dashed var(--line);
+      border-radius: 0;
+      padding-top: 15px;
+    }
+
+    .stop.is-active {
+      background: rgba(47, 111, 143, 0.08);
+      border-color: rgba(47, 111, 143, 0.25);
+      border-radius: var(--radius);
+      border-style: solid;
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #fff;
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      margin-top: 2px;
+    }
+
+    .stop.is-active .num {
+      background: var(--river);
+      border-color: var(--river);
+      color: #fff;
+    }
+
+    .stop h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+
+    .stop p { font-size: 0.78rem; color: var(--muted); }
+
+    .stamp {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 7px;
+      border-radius: 2px;
+      border: 1.5px solid var(--ink);
+      background: #fff;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stamp.mid { background: var(--brass-bright); }
+    .stamp.cheap { background: var(--pint); color: #fff; border-color: var(--pint); }
+    .stamp.dear { background: var(--brick); color: #fff; border-color: var(--brick); }
+
+    .sheet-foot {
+      padding: 14px 22px 20px;
+      border-top: 2px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      background: var(--paper-warm);
+    }
+
+    .sheet-foot strong { color: var(--ink); font-weight: 700; }
+
+    @keyframes stage-in {
+      from { opacity: 0; transform: translateY(16px) scale(0.985); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes slide {
+      from { opacity: 0; transform: translateX(24px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes pin-pop {
+      from { opacity: 0; transform: scale(0.4); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse {
+      0% { opacity: 0.45; }
+      100% { opacity: 0; transform: scale(2); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .route-line { stroke-dashoffset: 0; }
+    }
+
+    @media (max-width: 1480px) {
+      body { padding: 12px; place-items: start center; }
+      .stage {
+        width: 100%;
+        height: auto;
+        min-height: min(900px, 100vh);
+        aspect-ratio: 1440 / 900;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .stage { aspect-ratio: auto; height: auto; }
+      .main { grid-template-columns: 1fr; }
+      .map { min-height: 420px; }
+      .sheet { border-left: none; border-top: 2px solid var(--ink); }
+      .top { grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 10px; padding: 12px; height: auto; }
+      .search { grid-column: 1 / -1; max-width: none; justify-self: stretch; }
+      .map-label h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage" role="img" aria-label="Desktop mockup: Field Guide color direction for PubMax planner">
+    <header class="top">
+      <div class="brand">PUBMAX<span>XING</span></div>
+      <div class="city" aria-label="City: London">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        London
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div class="search" role="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span>Search pubs · <strong>Borough → London Bridge</strong></span>
+      </div>
+      <button class="cta" type="button">Plan tonight</button>
+      <a class="back" href="index.html">Gallery</a>
+    </header>
+
+    <div class="main">
+      <section class="map" aria-label="Map of tonight's crawl">
+        <svg class="map-svg" viewBox="0 0 1060 828" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M-20 520 C 180 480, 280 560, 420 540 C 580 515, 700 470, 820 500 C 940 530, 1020 490, 1100 510 L 1100 900 L -20 900 Z" fill="var(--map-water)"/>
+          <path d="M-20 505 C 160 475, 300 545, 450 525 C 620 500, 740 455, 860 485" fill="none" stroke="#9fc4d4" stroke-width="16" stroke-linecap="round"/>
+          <ellipse cx="180" cy="220" rx="120" ry="70" fill="#d5e8d8" opacity="0.85"/>
+          <ellipse cx="780" cy="200" rx="90" ry="55" fill="#d5e8d8" opacity="0.65"/>
+          <g stroke="var(--map-road)" stroke-width="10" stroke-linecap="round" fill="none">
+            <path d="M80 180 C 220 200, 300 280, 360 360"/>
+            <path d="M200 80 C 260 200, 400 260, 520 300"/>
+            <path d="M480 120 C 520 240, 560 320, 620 420"/>
+            <path d="M700 90 C 680 220, 640 340, 700 460"/>
+            <path d="M120 420 C 280 400, 420 440, 580 480 C 720 515, 860 470, 980 420"/>
+            <path d="M340 620 C 460 560, 600 540, 760 560"/>
+          </g>
+          <path class="route-line" d="M280 280 C 340 320, 380 360, 420 390 C 470 430, 530 455, 590 470 C 660 488, 720 500, 780 455" fill="none" stroke="var(--route)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- river / pint / brass / brick pins by role -->
+          <g class="pin pin-active" transform="translate(280 280)">
+            <circle class="halo" cx="0" cy="0" r="20" fill="var(--river)" opacity="0.3"/>
+            <circle cx="0" cy="0" r="16" fill="var(--river)"/>
+            <text class="price" x="0" y="4" text-anchor="middle">£5.2</text>
+          </g>
+          <g class="pin" transform="translate(420 390)">
+            <circle cx="0" cy="0" r="15" fill="var(--brass)"/>
+            <text class="price" x="0" y="4" text-anchor="middle">£6.4</text>
+          </g>
+          <g class="pin" transform="translate(590 470)">
+            <circle cx="0" cy="0" r="15" fill="var(--pint)"/>
+            <text class="price" x="0" y="4" text-anchor="middle">£4.8</text>
+          </g>
+          <g class="pin" transform="translate(780 455)">
+            <circle cx="0" cy="0" r="15" fill="var(--brick)"/>
+            <text class="price" x="0" y="4" text-anchor="middle">£7.1</text>
+          </g>
+        </svg>
+
+        <div class="map-label">
+          <h1>A field guide you can walk.</h1>
+          <p>River, pint, and brass each keep a job — colorful pins, structured chrome.</p>
+          <div class="legend" aria-hidden="true">
+            <span><i style="background:var(--river)"></i>river</span>
+            <span><i style="background:var(--pint)"></i>pint</span>
+            <span><i style="background:var(--brass)"></i>brass</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sheet" aria-label="Crawl stop list">
+        <div class="sheet-head">
+          <div class="sheet-kicker">Tonight · Plan</div>
+          <h2>Borough crawl</h2>
+          <p class="meta">4 stops · ~2.1 mi · first pint 7:30</p>
+        </div>
+
+        <div class="friends">
+          <div class="avatars" aria-label="Friends on this plan">
+            <div class="av av-1">KM</div>
+            <div class="av av-2">AL</div>
+            <div class="av av-3">RJ</div>
+            <div class="av av-4">+</div>
+          </div>
+          <button class="invite" type="button">Invite friends</button>
+        </div>
+
+        <ol class="stops">
+          <li class="stop is-active">
+            <span class="num">1</span>
+            <div>
+              <h3>The George</h3>
+              <p>Borough High St · 7:30 · by the river</p>
+            </div>
+            <span class="stamp cheap">£5.20</span>
+          </li>
+          <li class="stop">
+            <span class="num">2</span>
+            <div>
+              <h3>Market Porter</h3>
+              <p>Stoney St · 8:20</p>
+            </div>
+            <span class="stamp mid">£6.40</span>
+          </li>
+          <li class="stop">
+            <span class="num">3</span>
+            <div>
+              <h3>The Rake</h3>
+              <p>Winchester Walk · 9:10</p>
+            </div>
+            <span class="stamp cheap">£4.80</span>
+          </li>
+          <li class="stop">
+            <span class="num">4</span>
+            <div>
+              <h3>Shipwrights Arms</h3>
+              <p>Tooley St · 10:00</p>
+            </div>
+            <span class="stamp dear">£7.10</span>
+          </li>
+        </ol>
+
+        <div class="sheet-foot">
+          <span>Avg pint <strong>£5.88</strong></span>
+          <span>Walk between · <strong>12–15 min</strong></span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

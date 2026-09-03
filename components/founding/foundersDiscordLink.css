@@ -1,0 +1,25 @@
+/* The founders' door. A plain brass-edged anchor, sized to the 44px tap floor
+   the phone chrome contract holds every control to. Tokens only. */
+
+.foundersDiscordLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+  color: var(--brass);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.foundersDiscordLink:hover,
+.foundersDiscordLink:focus-visible {
+  background: var(--brass);
+  color: var(--color-on-accent);
+}

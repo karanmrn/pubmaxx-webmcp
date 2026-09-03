@@ -1,0 +1,351 @@
+/* Visit Reports. Compact enough for a 390px venue sheet, but every control
+   keeps the 44px floor needed when used one-handed in a busy pub. */
+
+.visitReportPanel {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border, var(--line, rgba(0, 0, 0, 0.12)));
+}
+
+/* Overview peek: same lane, tighter so it sits under the action strip. */
+.visitReportPanel--peek {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.visitReportPanel--peek .visitReportRow {
+  padding: 0.65rem 0.75rem;
+}
+
+.visitReportHead,
+.visitReportCardHead,
+.visitReportByline {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.visitReportLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, var(--muted, #6b6b6b));
+}
+
+.visitReportTitle {
+  margin: 0.15rem 0 0;
+  font-size: 1rem;
+  color: var(--color-text, var(--ink, #1a1a1a));
+}
+
+.visitReportOpen,
+.visitReportDismiss,
+.visitReportFlag,
+.visitChip,
+.visitReportSubmit {
+  min-height: 44px;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.visitReportOpen {
+  flex: 0 0 auto;
+  border: 1px solid var(--color-accent, var(--brass, #8a6d3b));
+  border-radius: var(--radius-sm, 8px);
+  padding: 0.45rem 0.75rem;
+  background: transparent;
+  color: var(--color-accent, var(--brass, #8a6d3b));
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.visitReportEmpty,
+.visitReportTrust,
+.visitReportCardHead p {
+  margin: 0;
+  color: var(--color-text-muted, var(--muted, #6b6b6b));
+}
+
+.visitReportEmpty {
+  font-size: 0.88rem;
+}
+
+.visitReportList {
+  display: grid;
+  min-width: 0;
+  gap: 0.65rem;
+}
+
+.visitReportRow {
+  display: grid;
+  min-width: 0;
+  gap: 0.55rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border, var(--line, rgba(0, 0, 0, 0.12)));
+  border-radius: var(--radius-sm, 10px);
+  background: var(--color-surface-raised, var(--panel-raised, rgba(0, 0, 0, 0.025)));
+}
+
+.visitReportByline {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  gap: 0.2rem;
+  color: var(--color-text-muted, var(--muted, #6b6b6b));
+  font-size: 0.78rem;
+}
+
+.visitReportByline strong {
+  color: var(--color-text, var(--ink, #1a1a1a));
+}
+
+.visitReportAccount {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--color-text, var(--ink, #1a1a1a));
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.visitReportFacts {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visitReportFacts li {
+  max-width: 100%;
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  background: var(--color-surface, rgba(128, 128, 128, 0.09));
+  color: var(--color-text-soft, var(--ink-soft, #444));
+  font-size: 0.74rem;
+  overflow-wrap: anywhere;
+}
+
+.visitReportFlag {
+  justify-self: start;
+  border: 0;
+  padding: 0 0.35rem;
+  background: transparent;
+  color: var(--color-text-muted, var(--muted, #6b6b6b));
+  font-size: 0.78rem;
+  text-decoration: underline;
+  text-underline-offset: 0.16rem;
+}
+
+.visitReportCard {
+  display: grid;
+  min-width: 0;
+  gap: 0.85rem;
+  padding: 0.85rem;
+  border: 1px solid var(--color-border, var(--line, rgba(0, 0, 0, 0.12)));
+  border-radius: var(--radius-sm, 10px);
+  background: var(--color-surface-raised, var(--panel-raised, rgba(0, 0, 0, 0.025)));
+}
+
+.visitReportCardHead {
+  align-items: flex-start;
+}
+
+.visitReportCardTitle {
+  display: block;
+  color: var(--color-text, var(--ink, #1a1a1a));
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.visitReportCardHead p {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.visitReportDismiss {
+  width: 44px;
+  flex: 0 0 44px;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  background: transparent;
+  color: var(--color-text-muted, var(--muted, #6b6b6b));
+  font-size: 1.3rem;
+}
+
+.visitReportDate,
+.visitReportNoteWrap,
+.visitReportHandleWrap {
+  display: grid;
+  min-width: 0;
+  gap: 0.35rem;
+  color: var(--color-text, var(--ink, #1a1a1a));
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.visitReportDate input,
+.visitReportHandle,
+.visitReportNote {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--color-border, var(--line, rgba(0, 0, 0, 0.18)));
+  border-radius: var(--radius-sm, 8px);
+  background: var(--color-surface, #fff);
+  color: var(--color-text, var(--ink, #1a1a1a));
+  font: inherit;
+}
+
+.visitReportDate input,
+.visitReportHandle {
+  min-height: 44px;
+  padding: 0.55rem 0.65rem;
+}
+
+.visitReportDate input {
+  color-scheme: light dark;
+}
+
+.visitReportChoiceGroup {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.visitReportChoiceGroup legend {
+  margin-bottom: 0.4rem;
+  color: var(--color-text, var(--ink, #1a1a1a));
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.visitReportChips {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.visitChip {
+  min-width: 0;
+  border: 1px solid var(--color-border, var(--line, rgba(0, 0, 0, 0.18)));
+  border-radius: 999px;
+  padding: 0.4rem 0.35rem;
+  background: transparent;
+  color: var(--color-text, var(--ink, #1a1a1a));
+  font-size: 0.76rem;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.visitChip.active {
+  border-color: var(--color-accent, var(--brass, #8a6d3b));
+  background: var(--color-accent, var(--brass, #8a6d3b));
+  color: var(--color-surface-raised, #fff);
+}
+
+.visitReportNote {
+  min-height: 92px;
+  resize: vertical;
+  padding: 0.65rem;
+  line-height: 1.4;
+}
+
+.visitReportDate small {
+  color: var(--color-text-muted, var(--muted, #6b6b6b));
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+.visitReportNoteWrap small {
+  justify-self: end;
+  color: var(--color-text-muted, var(--muted, #6b6b6b));
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+.visitReportSubmit {
+  width: 100%;
+  border: 1px solid var(--color-accent, var(--brass, #8a6d3b));
+  border-radius: var(--radius-sm, 8px);
+  padding: 0.55rem 0.8rem;
+  background: var(--color-accent, var(--brass, #8a6d3b));
+  color: var(--color-surface-raised, #fff);
+  font-weight: 700;
+}
+
+.visitReportOpen:focus-visible,
+.visitReportDismiss:focus-visible,
+.visitReportFlag:focus-visible,
+.visitChip:focus-visible,
+.visitReportSubmit:focus-visible,
+.visitReportDate input:focus-visible,
+.visitReportHandle:focus-visible,
+.visitReportNote:focus-visible {
+  outline: 3px solid var(--color-focus, var(--river, #2f6e8e));
+  outline-offset: 2px;
+}
+
+.visitReportSubmit:disabled,
+.visitReportFlag:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.visitReportTrust {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.visitReportError,
+.visitReportOk {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+/* --brick / --pint are tuned for price bands and pin fills, not for 0.82rem body
+   text: raw, both land near 2.9:1 on the light card. Read them the way
+   PriceBadge does — pulled 28% toward the theme's own ink — so the one line a
+   submitter has to read clears AA in both themes. */
+.visitReportError {
+  color: color-mix(in srgb, var(--color-negative, var(--brick, #9f2f2f)) 72%, var(--ink, #17171a));
+}
+
+.visitReportOk {
+  color: color-mix(in srgb, var(--color-positive, var(--pint, #317347)) 72%, var(--ink, #17171a));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visitReportOpen,
+  .visitReportDismiss,
+  .visitReportFlag,
+  .visitChip,
+  .visitReportSubmit {
+    transition: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .visitReportHead {
+    align-items: flex-start;
+  }
+
+  .visitReportCard,
+  .visitReportRow {
+    padding: 0.75rem;
+  }
+}

@@ -1,0 +1,337 @@
+/* Accessibility "List view": the keyboard/SR-reachable DOM list of the
+   venues on the map. Anchored bottom-left so it clears the top toolbar, tonight
+   lane, and bottom navigation. The planner action is suppressed while this list
+   is open rather than layered above or below its rows. Hidden while a venue sheet
+   or planner owns the map (the user is already inside a venue / planning).
+   Tokens + both themes come for free from the design system; the global
+   reduced-motion reset neutralises the panel's transition. */
+.mapVenueList {
+  position: absolute;
+  left: max(12px, env(safe-area-inset-left, 0px));
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  z-index: 516; /* above contextual map lanes, below toolbar controls */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.mapVenueList > * {
+  pointer-events: auto;
+}
+
+.appShell.detail-open .mapVenueList,
+.appShell.planning-open .mapVenueList,
+.appShell.onboarding-open .mapVenueList {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mapVenueList {
+    /* max() so the fallback path (var undefined) still clears the home-indicator
+       inset the base rule guarantees — the clearance token already folds the
+       inset in, so this never double-counts. */
+    bottom: calc(max(var(--mobile-tab-clearance, 58px), env(safe-area-inset-bottom, 0px)) + 12px);
+  }
+
+  /* List panel owns this lane until it closes; the story notice then returns. */
+  .mapStage:has(.mapVenueList--open) .bandOnboardingChip {
+    display: none;
+  }
+}
+
+/* Panel — the disclosed list. */
+.mapVenueListPanel {
+  display: flex;
+  flex-direction: column;
+  width: min(340px, calc(100vw - 24px));
+  max-height: min(52vh, 440px);
+  border: 1px solid color-mix(in srgb, var(--brass) 32%, var(--line));
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--surface-tint-river, var(--panel)) 30%, var(--panel-raised)), var(--panel-raised));
+  box-shadow: var(--map-overlay-shadow);
+  overflow: hidden;
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  animation: mapVenueListIn 160ms ease;
+}
+
+@keyframes mapVenueListIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* The global reduced-motion reset only neutralises transitions, not this
+   entrance ANIMATION — gate it here so reduced-motion users get the static panel. */
+@media (prefers-reduced-motion: reduce) {
+  .mapVenueListPanel {
+    animation: none;
+  }
+}
+
+/* The same three-column head every surface in this product wears: leading
+   Back, the name, trailing Home (components/ui/surface-nav.tsx). The leading
+   cell sits empty when the list opened straight off the map, because there
+   Back and Home are the same journey. */
+.mapVenueListHead {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.mapVenueListHeadMeta {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.mapVenueListHeadMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mapVenueListTitle {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 850;
+  color: var(--ink);
+}
+
+.mapVenueListCount {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Nearest / Cheapest sort for the pubs currently in view. Default stays
+   nearest; cheapest ranks priced pubs and leaves unpriced ones last. */
+.mapVenueListSort {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px 0;
+}
+
+.mapVenueListSortChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  min-width: 44px;
+  padding: 0 12px;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mapVenueListSortChip[aria-pressed="true"] {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.mapVenueListSortChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.mapVenueListClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  margin: -8px -6px -8px 0;
+  border: 0;
+  background: transparent;
+  border-radius: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mapVenueListClose:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.mapVenueListClose:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+.mapVenueListGroups {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mapVenueListGroup + .mapVenueListGroup {
+  border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.mapVenueListGroupTitle {
+  margin: 0;
+  padding: 10px 16px 4px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mapVenueListGroup--unverified .mapVenueListGroupTitle {
+  color: var(--brass);
+}
+
+.mapVenueListItems {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+}
+
+.mapVenueListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mapVenueListItem:hover {
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.mapVenueListItem:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+.mapVenueListItemName {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.83rem;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mapVenueListItemName svg {
+  flex: 0 0 auto;
+  color: var(--brass);
+}
+
+.mapVenueListItemMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.mapVenueListItemDist {
+  color: color-mix(in srgb, var(--ink-soft, var(--ink)) 70%, var(--muted));
+}
+
+.mapVenueListCompactPrice {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 160px;
+  min-width: 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.mapVenueListCompactPrice > span,
+.mapVenueListPriceProvenance {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.mapVenueListPriceProvenance {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+/* A pint row's caption is a figure; a drink lens's is a whole finding ("No
+   whisky price logged"). At 390px both cannot share one line: the caption wraps
+   to two and the NAME is the side that loses characters. Stack the row on a
+   phone so the name owns a full line and the caption wraps under it - neither is
+   ever ellipsed. Must stay AFTER the base row rules above (source order
+   decides). Pinned by __tests__/mobileChromeFit.test.ts. */
+@media (max-width: 640px) {
+  .mapVenueListItem {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .mapVenueListItemName {
+    align-items: flex-start;
+    width: 100%;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .mapVenueListItemName svg {
+    margin-top: 2px;
+  }
+
+  .mapVenueListItemMeta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .mapVenueListCompactPrice {
+    align-items: flex-start;
+    max-width: 100%;
+  }
+}
+
+.mapVenueListEmpty {
+  margin: 0;
+  padding: 16px 16px 20px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.mapVenueListCoverage {
+  margin: 0;
+  padding: 0 16px 8px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--muted);
+}

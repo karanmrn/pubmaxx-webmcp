@@ -1,0 +1,156 @@
+/* The founders wall. A ledger, not a leaderboard: one column of numbered rows
+   in arrival order, with no ranking, no scores and nothing to beat. Tokens
+   only, per docs/DESIGN_SYSTEM.md, so it flips light and dark with the rest. */
+
+.foundersPage {
+  min-height: 100dvh;
+  color: var(--ink);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brass) 4%, var(--paper)) 0,
+      var(--paper) 300px
+    );
+}
+
+.foundersMain {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 40px var(--page-gutter) 88px;
+}
+
+.foundersHead {
+  padding: clamp(22px, 5vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--panel-raised);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+/* The eyebrow prints the wordmark, which is already set in capitals in the
+   markup. It carries no text-transform, because the house rule keeps plain-text
+   eyebrows in sentence case (__tests__/designTasteWave1.test.ts). */
+.foundersKicker {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--brass);
+}
+
+.foundersTitle {
+  margin: 0;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.foundersLede {
+  margin: var(--space-3) 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.foundersCount {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+}
+
+.foundersNotice {
+  margin: var(--space-5) 0 0;
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.foundersList {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.foundersRow {
+  display: grid;
+  grid-template-columns: 2.6rem 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 56px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.foundersNumber {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--brass);
+  text-align: right;
+}
+
+.foundersAvatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+  color: var(--brass);
+  font-weight: 700;
+}
+
+.foundersAvatarImage {
+  object-fit: cover;
+}
+
+.foundersWho {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.foundersHandle {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.foundersHandle:hover,
+.foundersHandle:focus-visible {
+  text-decoration: underline;
+}
+
+.foundersSubHandle {
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+/* The row already leads with its number, so the mark inside it stays a caption.
+   Below the phone breakpoint it drops out entirely rather than squeezing the
+   handle: the number is already there, twice would be noise. */
+.foundersRowMark {
+  justify-self: end;
+}
+
+@media (max-width: 480px) {
+  .foundersRow {
+    grid-template-columns: 2.2rem 44px minmax(0, 1fr);
+  }
+
+  .foundersRowMark {
+    display: none;
+  }
+}

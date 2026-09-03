@@ -1,0 +1,49 @@
+/* Lockup: mark + wordmark as one horizontal unit. Clear space between them
+   tracks the wordmark type size (0.42em) so the pair scales together. Minimum
+   clear space around the whole lockup = half the mark's height (enforce in host
+   layout, not here). */
+.pubmaxxLockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42em;
+  color: currentColor;
+  font: inherit;
+}
+
+.pubmaxxWordmark {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+  color: currentColor;
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.pubmaxxWordmarkLetters {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.pubmaxxWordmarkAccent {
+  color: var(--brass);
+}
+
+.pubmaxxWordmarkSr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

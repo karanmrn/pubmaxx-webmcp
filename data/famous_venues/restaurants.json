@@ -1,0 +1,1152 @@
+[
+  {
+    "id": "restaurant-rules",
+    "name": "Rules",
+    "address": "35 Maiden Lane, London WC2E 7LB",
+    "borough": "Westminster",
+    "lat": 51.5108285,
+    "lng": -0.1231906,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://rules.co.uk/history"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Rules_(restaurant)"
+      }
+    ],
+    "sourceUrl": "https://rules.co.uk/our-menus",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Steak & Kidney Pudding",
+      "course": "mains",
+      "price": 26.25,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://rules.co.uk/our-menus"
+    },
+    "story": {
+      "text": "Rules has served traditional British cooking in Covent Garden since 1798.",
+      "sourceUrl": "https://rules.co.uk/history"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Rules has served traditional British cooking in Covent Garden since 1798.",
+    "area": "Covent Garden",
+    "location": {
+      "lat": 51.5108285,
+      "lng": -0.1231906
+    },
+    "sourceName": "rules.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-ivy-west-street",
+    "name": "The Ivy West Street",
+    "address": "1-5 West Street, London WC2H 9NQ",
+    "borough": "Camden",
+    "lat": 51.512931,
+    "lng": -0.1280402,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://ivycollection.com/restaurants-near-me/the-ivy-london/the-ivy-west-street-covent-garden"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/The_Ivy_(UK)"
+      }
+    ],
+    "sourceUrl": "https://ivycollection.com/restaurants-near-me/the-ivy-london/the-ivy-west-street-covent-garden/the-original-ivy-heritage-menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "The Ivy Shepherd's Pie",
+      "course": "mains",
+      "price": 29.95,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://ivycollection.com/restaurants-near-me/the-ivy-london/the-ivy-west-street-covent-garden/the-original-ivy-heritage-menu"
+    },
+    "story": {
+      "text": "The Ivy has been a West End meeting place for actors, writers and audiences since 1917.",
+      "sourceUrl": "https://ivycollection.com/restaurants-near-me/the-ivy-london/the-ivy-west-street-covent-garden"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "The Ivy has been a West End meeting place for actors, writers and audiences since 1917.",
+    "area": "Covent Garden",
+    "location": {
+      "lat": 51.512931,
+      "lng": -0.1280402
+    },
+    "sourceName": "ivycollection.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-scotts",
+    "name": "Scott's",
+    "address": "20 Mount Street, London W1K 2HE",
+    "borough": "Westminster",
+    "lat": 51.5098163,
+    "lng": -0.1509327,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://scotts-mayfair.com"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Scott%27s_(restaurant)"
+      }
+    ],
+    "sourceUrl": "https://scotts-mayfair.com/wp-content/uploads/2025/10/ALC-01.10.2025-1.pdf",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Dover Sole, 16oz",
+      "course": "mains",
+      "price": 54,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://scotts-mayfair.com/wp-content/uploads/2025/10/ALC-01.10.2025-1.pdf"
+    },
+    "story": {
+      "text": "Scott's traces its seafood rooms to 1851 and remains a Mayfair institution.",
+      "sourceUrl": "https://scotts-mayfair.com"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Scott's traces its seafood rooms to 1851 and remains a Mayfair institution.",
+    "area": "Mayfair",
+    "location": {
+      "lat": 51.5098163,
+      "lng": -0.1509327
+    },
+    "sourceName": "scotts-mayfair.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-j-sheekey",
+    "name": "J Sheekey",
+    "address": "28-32 St Martin's Court, London WC2N 4AL",
+    "borough": "Westminster",
+    "lat": 51.51138,
+    "lng": -0.12758,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://j-sheekey.co.uk/our-story"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/j-sheekey"
+      }
+    ],
+    "sourceUrl": "https://j-sheekey.co.uk/wp-content/uploads/2026/05/JSheekey_Spring-Menus_ALC-28_05_26-VW.pdf",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "J. Sheekey Fish Pie",
+      "course": "mains",
+      "price": 25,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://j-sheekey.co.uk/wp-content/uploads/2026/05/JSheekey_Spring-Menus_ALC-28_05_26-VW.pdf"
+    },
+    "story": {
+      "text": "J Sheekey has fed theatregoers and performers beside the West End stages since 1896.",
+      "sourceUrl": "https://j-sheekey.co.uk/our-story"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "J Sheekey has fed theatregoers and performers beside the West End stages since 1896.",
+    "area": "Covent Garden",
+    "location": {
+      "lat": 51.51138,
+      "lng": -0.12758
+    },
+    "sourceName": "j-sheekey.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-quo-vadis",
+    "name": "Quo Vadis",
+    "address": "26-29 Dean Street, London W1D 3LL",
+    "borough": "Westminster",
+    "lat": 51.5140415,
+    "lng": -0.1325841,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://www.quovadissoho.co.uk/history"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/quo-vadis"
+      }
+    ],
+    "sourceUrl": "https://www.quovadissoho.co.uk/wp-content/uploads/2019/01/QV195-June-26-ALC_01.pdf",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Smoked Eel Sandwich",
+      "course": "bar-snacks",
+      "price": 18.5,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://www.quovadissoho.co.uk/wp-content/uploads/2019/01/QV195-June-26-ALC_01.pdf"
+    },
+    "story": {
+      "text": "Quo Vadis occupies a Georgian Soho house once lived in by Karl Marx.",
+      "sourceUrl": "https://www.quovadissoho.co.uk/history"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Quo Vadis occupies a Georgian Soho house once lived in by Karl Marx.",
+    "area": "Soho",
+    "location": {
+      "lat": 51.5140415,
+      "lng": -0.1325841
+    },
+    "sourceName": "quovadissoho.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-st-john-smithfield",
+    "name": "St. JOHN Smithfield",
+    "address": "26 St John Street, London EC1M 4AY",
+    "borough": "Islington",
+    "lat": 51.5204809,
+    "lng": -0.1012748,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://stjohnrestaurant.com/a/restaurants/smithfield"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/St._John_(restaurant)"
+      }
+    ],
+    "sourceUrl": "https://stjohnrestaurant.com/a/menus/1",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Roast Bone Marrow & Parsley Salad",
+      "course": "starters",
+      "price": 16.5,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://stjohnrestaurant.com/a/menus/1"
+    },
+    "story": {
+      "text": "Fergus Henderson opened St. JOHN in a former smokehouse in 1994 and made nose-to-tail cooking its signature.",
+      "sourceUrl": "https://stjohnrestaurant.com/a/restaurants/smithfield"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Fergus Henderson opened St. JOHN in a former smokehouse in 1994 and made nose-to-tail cooking its signature.",
+    "area": "Smithfield",
+    "location": {
+      "lat": 51.5204809,
+      "lng": -0.1012748
+    },
+    "sourceName": "stjohnrestaurant.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-river-cafe",
+    "name": "The River Cafe",
+    "address": "Thames Wharf, Rainville Road, London W6 9HA",
+    "borough": "Hammersmith and Fulham",
+    "lat": 51.4837627,
+    "lng": -0.2245519,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://www.rivercafe.co.uk/about"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/The_River_Caf%C3%A9_(London)"
+      }
+    ],
+    "sourceUrl": "https://www.rivercafe.co.uk/",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Chocolate Nemesis",
+      "course": "desserts",
+      "price": 15,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://www.rivercafe.co.uk/"
+    },
+    "story": {
+      "text": "Ruth Rogers and Rose Gray opened The River Cafe beside the Thames in 1987.",
+      "sourceUrl": "https://www.rivercafe.co.uk/about"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Ruth Rogers and Rose Gray opened The River Cafe beside the Thames in 1987.",
+    "area": "Hammersmith",
+    "location": {
+      "lat": 51.4837627,
+      "lng": -0.2245519
+    },
+    "sourceName": "rivercafe.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-wolseley",
+    "name": "The Wolseley",
+    "address": "160 Piccadilly, London W1J 9EB",
+    "borough": "Westminster",
+    "lat": 51.5073927,
+    "lng": -0.1409072,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.thewolseley.com/history"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/The_Wolseley"
+      }
+    ],
+    "sourceUrl": "https://www.thewolseley.com/app/uploads/2026/02/00506_WOLSELEY_Winter_2025_Breakfast_A5-12pp_Kcals29.pdf",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Eggs Benedict, large",
+      "course": "breakfast",
+      "price": 21.5,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://www.thewolseley.com/app/uploads/2026/02/00506_WOLSELEY_Winter_2025_Breakfast_A5-12pp_Kcals29.pdf"
+    },
+    "story": {
+      "text": "The Wolseley fills a listed former car showroom with the rituals of a grand European cafe.",
+      "sourceUrl": "https://www.thewolseley.com/history"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "The Wolseley fills a listed former car showroom with the rituals of a grand European cafe.",
+    "area": "Piccadilly",
+    "location": {
+      "lat": 51.5073927,
+      "lng": -0.1409072
+    },
+    "sourceName": "thewolseley.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-brasserie-zedel",
+    "name": "Brasserie Zédel",
+    "address": "20 Sherwood Street, London W1F 7ED",
+    "borough": "Westminster",
+    "lat": 51.5106309,
+    "lng": -0.1355893,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.brasseriezedel.com"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/brasserie-zedel"
+      }
+    ],
+    "sourceUrl": "https://www.brasseriezedel.com/wp-content/uploads/2020/02/Zedel-summer-2026-Kcal-combined-wine-menu.pdf",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Steak Haché et Frites",
+      "course": "mains",
+      "price": 16,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://www.brasseriezedel.com/wp-content/uploads/2020/02/Zedel-summer-2026-Kcal-combined-wine-menu.pdf"
+    },
+    "story": {
+      "text": "Brasserie Zédel serves French classics in a vast 1930s dining room below Piccadilly.",
+      "sourceUrl": "https://www.brasseriezedel.com"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Brasserie Zédel serves French classics in a vast 1930s dining room below Piccadilly.",
+    "area": "Piccadilly",
+    "location": {
+      "lat": 51.5106309,
+      "lng": -0.1355893
+    },
+    "sourceName": "brasseriezedel.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-veeraswamy",
+    "name": "Veeraswamy",
+    "address": "Victory House, 99 Regent Street, London W1B 4EZ",
+    "borough": "Westminster",
+    "lat": 51.5098955,
+    "lng": -0.1379192,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://www.veeraswamy.com/about"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Veeraswamy"
+      }
+    ],
+    "sourceUrl": "https://www.veeraswamy.com/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Raj Kachori",
+      "course": "starters",
+      "price": 19,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://www.veeraswamy.com/menu"
+    },
+    "story": {
+      "text": "Veeraswamy opened in 1926 and is London's oldest surviving Indian restaurant.",
+      "sourceUrl": "https://www.veeraswamy.com/about"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Veeraswamy opened in 1926 and is London's oldest surviving Indian restaurant.",
+    "area": "Regent Street",
+    "location": {
+      "lat": 51.5098955,
+      "lng": -0.1379192
+    },
+    "sourceName": "veeraswamy.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-dishoom-covent-garden",
+    "name": "Dishoom Covent Garden",
+    "address": "12 Upper St Martin's Lane, London WC2H 9FB",
+    "borough": "Westminster",
+    "lat": 51.5124271,
+    "lng": -0.126856,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://www.dishoom.com/covent-garden"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Dishoom_(restaurant)"
+      }
+    ],
+    "sourceUrl": "https://www.dishoom.com/menu/collection-covent-garden",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Bacon Naan Roll",
+      "course": "breakfast",
+      "price": 11.7,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://www.dishoom.com/menu/collection-covent-garden"
+    },
+    "story": {
+      "text": "Dishoom's first Bombay-cafe dining room opened in Covent Garden in 2010.",
+      "sourceUrl": "https://www.dishoom.com/covent-garden"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Dishoom's first Bombay-cafe dining room opened in Covent Garden in 2010.",
+    "area": "Covent Garden",
+    "location": {
+      "lat": 51.5124271,
+      "lng": -0.126856
+    },
+    "sourceName": "dishoom.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-ottolenghi-spitalfields",
+    "name": "Ottolenghi Spitalfields",
+    "address": "50 Artillery Lane, London E1 7LJ",
+    "borough": "Tower Hamlets",
+    "lat": 51.5182341,
+    "lng": -0.0773112,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://ottolenghi.co.uk/pages/restaurants/spitalfields"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Yotam_Ottolenghi"
+      }
+    ],
+    "sourceUrl": "https://ottolenghi.co.uk/pages/restaurants/spitalfields",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Shakshuka",
+      "course": "breakfast",
+      "price": 15.5,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://ottolenghi.co.uk/pages/restaurants/spitalfields"
+    },
+    "story": {
+      "text": "Ottolenghi Spitalfields turns the chef's vivid salads, bakes and Middle Eastern flavours into an all-day restaurant.",
+      "sourceUrl": "https://ottolenghi.co.uk/pages/restaurants/spitalfields"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Ottolenghi Spitalfields turns the chef's vivid salads, bakes and Middle Eastern flavours into an all-day restaurant.",
+    "area": "Spitalfields",
+    "location": {
+      "lat": 51.5182341,
+      "lng": -0.0773112
+    },
+    "sourceName": "ottolenghi.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-moro",
+    "name": "Moro",
+    "address": "34-36 Exmouth Market, London EC1R 4QE",
+    "borough": "Islington",
+    "lat": 51.5258357,
+    "lng": -0.1090005,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://moro.co.uk/about"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://guide.michelin.com/gb/en/greater-london/london/restaurant/moro"
+      }
+    ],
+    "sourceUrl": "https://moro.co.uk/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Charcoal-grilled Lamb",
+      "course": "mains",
+      "price": 38,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://moro.co.uk/menu"
+    },
+    "story": {
+      "text": "Moro has cooked across the flavours of Spain and the Muslim Mediterranean on Exmouth Market since 1997.",
+      "sourceUrl": "https://moro.co.uk/about"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Moro has cooked across the flavours of Spain and the Muslim Mediterranean on Exmouth Market since 1997.",
+    "area": "Clerkenwell",
+    "location": {
+      "lat": 51.5258357,
+      "lng": -0.1090005
+    },
+    "sourceName": "moro.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-rochelle-canteen",
+    "name": "Rochelle Canteen",
+    "address": "Rochelle School, Arnold Circus, London E2 7ES",
+    "borough": "Tower Hamlets",
+    "lat": 51.52699,
+    "lng": -0.07171,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://rochellecanteen.com"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://guide.michelin.com/gb/en/greater-london/london/restaurant/rochelle-canteen"
+      }
+    ],
+    "sourceUrl": "https://rochellecanteen.com/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Chocolate Tart",
+      "course": "desserts",
+      "price": 11,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://rochellecanteen.com/menu"
+    },
+    "story": {
+      "text": "Rochelle Canteen sits behind the gates of a former Victorian school in Arnold Circus.",
+      "sourceUrl": "https://rochellecanteen.com"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Rochelle Canteen sits behind the gates of a former Victorian school in Arnold Circus.",
+    "area": "Shoreditch",
+    "location": {
+      "lat": 51.52699,
+      "lng": -0.07171
+    },
+    "sourceName": "rochellecanteen.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-duck-and-waffle",
+    "name": "Duck & Waffle",
+    "address": "110 Bishopsgate, London EC2N 4AY",
+    "borough": "City of London",
+    "lat": 51.5162092,
+    "lng": -0.0810446,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.duckandwaffle.com/london"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/duck-waffle"
+      }
+    ],
+    "sourceUrl": "https://www.duckandwaffle.com/london/menu/dinner",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Duck & Waffle",
+      "course": "mains",
+      "price": 26,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://www.duckandwaffle.com/london/menu/dinner"
+    },
+    "story": {
+      "text": "Duck & Waffle pairs its namesake dish with a dining room forty floors above Bishopsgate.",
+      "sourceUrl": "https://www.duckandwaffle.com/london"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Duck & Waffle pairs its namesake dish with a dining room forty floors above Bishopsgate.",
+    "area": "City of London",
+    "location": {
+      "lat": 51.5162092,
+      "lng": -0.0810446
+    },
+    "sourceName": "duckandwaffle.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-padella-borough",
+    "name": "Padella Borough Market",
+    "address": "6 Southwark Street, London SE1 1TQ",
+    "borough": "Southwark",
+    "lat": 51.505008,
+    "lng": -0.08981,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.padella.co/borough-market"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/padella"
+      }
+    ],
+    "sourceUrl": "https://www.padella.co/borough-market",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Pici Cacio & Pepe",
+      "course": "mains",
+      "price": 13.5,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://www.padella.co/borough-market"
+    },
+    "story": {
+      "text": "Padella rolls pasta in the window at its original Borough Market counter.",
+      "sourceUrl": "https://www.padella.co/borough-market"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Padella rolls pasta in the window at its original Borough Market counter.",
+    "area": "Borough Market",
+    "location": {
+      "lat": 51.505008,
+      "lng": -0.08981
+    },
+    "sourceName": "padella.co",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-blacklock-soho",
+    "name": "Blacklock Soho",
+    "address": "24 Great Windmill Street, London W1D 7LG",
+    "borough": "Westminster",
+    "lat": 51.5117726,
+    "lng": -0.1346407,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://theblacklock.com/restaurants/blacklock-soho"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/blacklock"
+      }
+    ],
+    "sourceUrl": "https://theblacklock.com/menus",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "All In",
+      "course": "sharers",
+      "price": 28,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://theblacklock.com/menus"
+    },
+    "story": {
+      "text": "Blacklock built its Soho name on charcoal-grilled chops served from a former basement brothel.",
+      "sourceUrl": "https://theblacklock.com/restaurants/blacklock-soho"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Blacklock built its Soho name on charcoal-grilled chops served from a former basement brothel.",
+    "area": "Soho",
+    "location": {
+      "lat": 51.5117726,
+      "lng": -0.1346407
+    },
+    "sourceName": "theblacklock.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-poppies-spitalfields",
+    "name": "Poppies Spitalfields",
+    "address": "6-8 Hanbury Street, London E1 6QR",
+    "borough": "Tower Hamlets",
+    "lat": 51.520297,
+    "lng": -0.074097,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://poppiesfishandchips.co.uk/poppies-spitalfields"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.visitlondon.com/things-to-do/place/19469810-poppies-fish-and-chips"
+      }
+    ],
+    "sourceUrl": "https://poppiesfishandchips.co.uk/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Regular Haddock & Chips",
+      "course": "mains",
+      "price": 20.99,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://poppiesfishandchips.co.uk/menu"
+    },
+    "story": {
+      "text": "Poppies serves fish and chips amid Pop Newland's collection of mid-century East End memorabilia.",
+      "sourceUrl": "https://poppiesfishandchips.co.uk/poppies-spitalfields"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Poppies serves fish and chips amid Pop Newland's collection of mid-century East End memorabilia.",
+    "area": "Spitalfields",
+    "location": {
+      "lat": 51.520297,
+      "lng": -0.074097
+    },
+    "sourceName": "poppiesfishandchips.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-wiltons",
+    "name": "Wiltons",
+    "address": "55 Jermyn Street, London SW1Y 6LX",
+    "borough": "Westminster",
+    "lat": 51.5076994,
+    "lng": -0.1392041,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://wiltons.co.uk/history"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://guide.michelin.com/gb/en/greater-london/london/restaurant/wiltons"
+      }
+    ],
+    "sourceUrl": "https://wiltons.co.uk/s/010726-Copy.pdf",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Potted Shrimps",
+      "course": "starters",
+      "price": 28,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://wiltons.co.uk/s/010726-Copy.pdf"
+    },
+    "story": {
+      "text": "Wiltons grew from an 1742 oyster stall into a Jermyn Street dining room.",
+      "sourceUrl": "https://wiltons.co.uk/history"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Wiltons grew from an 1742 oyster stall into a Jermyn Street dining room.",
+    "area": "St James's",
+    "location": {
+      "lat": 51.5076994,
+      "lng": -0.1392041
+    },
+    "sourceName": "wiltons.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-hawksmoor-seven-dials",
+    "name": "Hawksmoor Seven Dials",
+    "address": "11 Langley Street, London WC2H 9JG",
+    "borough": "Westminster",
+    "lat": 51.5134572,
+    "lng": -0.1257487,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://thehawksmoor.com/locations/seven-dials"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Hawksmoor_(restaurant)"
+      }
+    ],
+    "sourceUrl": "https://thehawksmoor.com/locations/seven-dials/food/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Rib-eye, 350g",
+      "course": "mains",
+      "price": 45,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://thehawksmoor.com/locations/seven-dials/food/menu"
+    },
+    "story": {
+      "text": "Hawksmoor Seven Dials grills British beef in the former Watney-Combe brewery.",
+      "sourceUrl": "https://thehawksmoor.com/locations/seven-dials"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Hawksmoor Seven Dials grills British beef in the former Watney-Combe brewery.",
+    "area": "Covent Garden",
+    "location": {
+      "lat": 51.5134572,
+      "lng": -0.1257487
+    },
+    "sourceName": "thehawksmoor.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-bob-bob-ricard",
+    "name": "Bob Bob Ricard Soho",
+    "address": "1 Upper James Street, London W1F 9DF",
+    "borough": "Westminster",
+    "lat": 51.5123234,
+    "lng": -0.1371738,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.bobbobricard.com/soho"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Bob_Bob_Ricard"
+      }
+    ],
+    "sourceUrl": "https://www.bobbobricard.com/soho/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Chicken Kyiv",
+      "course": "mains",
+      "price": 22,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://www.bobbobricard.com/soho/menu"
+    },
+    "story": {
+      "text": "Bob Bob Ricard wraps Anglo-Russian cooking in blue booths with a champagne call button at each table.",
+      "sourceUrl": "https://www.bobbobricard.com/soho"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Bob Bob Ricard wraps Anglo-Russian cooking in blue booths with a champagne call button at each table.",
+    "area": "Soho",
+    "location": {
+      "lat": 51.5123234,
+      "lng": -0.1371738
+    },
+    "sourceName": "bobbobricard.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-flat-iron-soho",
+    "name": "Flat Iron Soho",
+    "address": "17 Beak Street, London W1F 9RW",
+    "borough": "Westminster",
+    "lat": 51.5121137,
+    "lng": -0.1383699,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "cultural_weight",
+        "sourceUrl": "https://flatironsteak.co.uk/restaurant/soho"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/flat-iron"
+      }
+    ],
+    "sourceUrl": "https://flatironsteak.co.uk/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Flat Iron Steak",
+      "course": "mains",
+      "price": 15,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://flatironsteak.co.uk/menu"
+    },
+    "story": {
+      "text": "Flat Iron's first permanent restaurant made its one-steak blackboard a Soho fixture.",
+      "sourceUrl": "https://flatironsteak.co.uk/restaurant/soho"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Flat Iron's first permanent restaurant made its one-steak blackboard a Soho fixture.",
+    "area": "Soho",
+    "location": {
+      "lat": 51.5121137,
+      "lng": -0.1383699
+    },
+    "sourceName": "flatironsteak.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-roti-king-euston",
+    "name": "Roti King Euston",
+    "address": "40 Doric Way, London NW1 1LH",
+    "borough": "Camden",
+    "lat": 51.5290041,
+    "lng": -0.132048,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.rotiking.com"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/roti-king"
+      }
+    ],
+    "sourceUrl": "https://rotiking.com/food-drink",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Chicken Roti Canai",
+      "course": "mains",
+      "price": 10.95,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://rotiking.com/food-drink"
+    },
+    "story": {
+      "text": "Roti King built its reputation on Malaysian roti canai in a compact basement beside Euston.",
+      "sourceUrl": "https://rotiking.com/"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Roti King built its reputation on Malaysian roti canai in a compact basement beside Euston.",
+    "area": "Euston",
+    "location": {
+      "lat": 51.5290041,
+      "lng": -0.132048
+    },
+    "sourceName": "rotiking.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-regency-cafe",
+    "name": "Regency Cafe",
+    "address": "17-19 Regency Street, London SW1P 4BY",
+    "borough": "Westminster",
+    "lat": 51.494002,
+    "lng": -0.1320948,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "longevity",
+        "sourceUrl": "https://regencycafe.co.uk"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Regency_Cafe"
+      }
+    ],
+    "sourceUrl": "https://regencycafe.co.uk/menu",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Set Breakfast",
+      "course": "breakfast",
+      "price": 9.99,
+      "observedAt": "2026-08-25",
+      "sourceUrl": "https://regencycafe.co.uk/menu"
+    },
+    "story": {
+      "text": "Regency Cafe has served fry-ups from its tiled Westminster dining room since 1946.",
+      "sourceUrl": "https://regencycafe.co.uk"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Regency Cafe has served fry-ups from its tiled Westminster dining room since 1946.",
+    "area": "Westminster",
+    "location": {
+      "lat": 51.494002,
+      "lng": -0.1320948
+    },
+    "sourceName": "regencycafe.co.uk",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  },
+  {
+    "id": "restaurant-hoppers-soho",
+    "name": "Hoppers Soho",
+    "address": "49 Frith Street, London W1D 4SG",
+    "borough": "Westminster",
+    "lat": 51.51324,
+    "lng": -0.1314,
+    "kind": "restaurant",
+    "hasStory": true,
+    "fameGates": [
+      {
+        "kind": "distinct_experience",
+        "sourceUrl": "https://www.hopperslondon.com/soho"
+      },
+      {
+        "kind": "recognition",
+        "sourceUrl": "https://www.timeout.com/london/restaurants/hoppers"
+      }
+    ],
+    "sourceUrl": "https://www.hopperslondon.com/wp-content/uploads/2026/06/Hoppers-Soho-Main-Menu-A3-JUNE-2026-UPDATE.pdf",
+    "observedAt": "2026-08-25",
+    "anchor": {
+      "kind": "signature_dish",
+      "label": "Bone Marrow Varuval",
+      "course": "short-eats",
+      "price": 13.5,
+      "observedAt": "2026-07-27",
+      "sourceUrl": "https://www.hopperslondon.com/wp-content/uploads/2026/06/Hoppers-Soho-Main-Menu-A3-JUNE-2026-UPDATE.pdf"
+    },
+    "story": {
+      "text": "Hoppers brought Sri Lankan hoppers, dosas and Tamil bar snacks to its first Soho room in 2015.",
+      "sourceUrl": "https://www.hopperslondon.com/soho"
+    },
+    "category": "restaurant",
+    "job": "near_pub_food",
+    "description": "Hoppers brought Sri Lankan hoppers, dosas and Tamil bar snacks to its first Soho room in 2015.",
+    "area": "Soho",
+    "location": {
+      "lat": 51.51324,
+      "lng": -0.1314
+    },
+    "sourceName": "hopperslondon.com",
+    "expiresAt": "2026-09-24",
+    "discoveredVia": "manual",
+    "extractedVia": "manual"
+  }
+]

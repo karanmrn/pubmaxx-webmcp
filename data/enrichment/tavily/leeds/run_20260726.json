@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "city": "leeds",
+  "generatedAt": "2026-07-26T07:13:02.882Z",
+  "complete": false,
+  "nextIndex": 10,
+  "totalPubs": 437,
+  "stats": {
+    "pubsProcessed": 10,
+    "pubsMatched": 8,
+    "pricesExtracted": 6,
+    "queriesSpentThisRun": 10,
+    "creditsSpentThisRun": 20,
+    "queriesSpentTotal": 10,
+    "creditsSpentTotal": 20,
+    "chainPubsDelegated": 0
+  },
+  "pages": [
+    {
+      "osmId": "way/442916250",
+      "venueKey": "bay horse|66, town street, pudsey, ls28 5lf|53.81344|-1.67068",
+      "pubName": "Bay Horse",
+      "address": "66, Town Street, Pudsey, LS28 5LF",
+      "officialUrl": "https://www.craftunionpubs.com/bay-horse-inn-farsley/occasions/crafty-christmas",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 0,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "osmId": "node/4935984922",
+      "venueKey": "bingley arms|37, church lane, leeds, ls17 9dr|53.88156|-1.44829",
+      "pubName": "Bingley Arms",
+      "address": "37, Church Lane, Leeds, LS17 9DR",
+      "officialUrl": "https://www.bingleyarms.com",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 0,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "osmId": "way/248480535",
+      "venueKey": "brudenell social club|33, queen's road, leeds, ls6 1ny|53.80993|-1.57077",
+      "pubName": "Brudenell Social Club",
+      "address": "33, Queen's Road, Leeds, LS6 1NY",
+      "officialUrl": "https://www.brudenellsocialclub.co.uk/whats-on",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 0,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "osmId": "node/2124265336",
+      "venueKey": "bundobust|6, mill hill, leeds, ls1 5dq|53.79548|-1.54556",
+      "pubName": "Bundobust",
+      "address": "6, Mill Hill, Leeds, LS1 5DQ",
+      "officialUrl": "https://bundobust.com/wp-content/uploads/2026/04/Bundobust-Drinks-Menu-MARCH-2026-DIGITAL-1.pdf",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 6,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "osmId": "way/195207219",
+      "venueKey": "crossgates and district recreational hall|poplar avenue, leeds, ls15 8eb|53.80664|-1.44664",
+      "pubName": "Crossgates and District Recreational Hall",
+      "address": "Poplar Avenue, Leeds, LS15 8EB",
+      "officialUrl": "https://crossgatesrec.org.uk",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 0,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "osmId": "node/2157985584",
+      "venueKey": "friends of ham|4-8, new station street, leeds, ls1 5dl|53.79552|-1.54511",
+      "pubName": "Friends of Ham",
+      "address": "4-8, New Station Street, Leeds, LS1 5DL",
+      "officialUrl": "https://friendsofham.com/pages/frams-food-pairing-experience",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 0,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "osmId": "node/10685409958",
+      "venueKey": "granville's beer & gin house|24, long row, leeds, ls18 5aa|53.84212|-1.63528",
+      "pubName": "Granville's Beer & Gin House",
+      "address": "24, Long Row, Leeds, LS18 5AA",
+      "officialUrl": "https://www.granvilleshouse.co.uk/gallery",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 0,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "osmId": "way/532690146",
+      "venueKey": "hanover arms|65, lower wortley road, leeds, ls12 4sl|53.78539|-1.59306",
+      "pubName": "Hanover Arms",
+      "address": "65, Lower Wortley Road, Leeds, LS12 4SL",
+      "officialUrl": "https://www.craftunionpubs.com/hanover-arms-wortley/sport/football",
+      "matchBasis": "osm-website-domain",
+      "priceCount": 0,
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    }
+  ],
+  "delegatedChains": []
+}

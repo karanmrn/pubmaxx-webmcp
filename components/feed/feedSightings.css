@@ -1,0 +1,145 @@
+/* Ambient price sightings on the feed's London tab. Read visually apart from
+   drinker cards (no avatar, no reactions, a quiet "sourced" tone) so they can
+   never be mistaken for user activity. Colour/spacing lean on the shared design
+   tokens (--brass, --ink, --ink-soft, --muted, --line, --panel-raised, --paper,
+   --radius) so both themes are covered with no per-theme overrides. */
+
+.feedSightings {
+  width: 100%;
+  max-width: var(--feed-card-max, 520px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ── Primary: the surface when nobody has logged tonight ─────────────────── */
+
+.feedSightingsPrimary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedSightingsTitle {
+  margin: 0;
+  padding: 4px 2px;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+/* The cold-start line: why this surface carries sourced rows and not drops.
+   Wraps freely — it explains a claim, so it is never clamped or ellipsed. */
+.feedSightingsLede {
+  margin: 0;
+  padding: 0 2px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ink-soft, var(--muted));
+}
+
+/* ── Strip: a quiet cluster below real user drops ────────────────────────── */
+
+.feedSightingsStrip {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--feed-border, var(--line));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── The list + each sighting row ────────────────────────────────────────── */
+
+.feedSightingsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedSightingsList > li + li {
+  border-top: 1px solid var(--feed-border, var(--line));
+}
+
+.feedSighting {
+  display: block;
+  min-height: 44px;
+  padding: 12px 2px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.feedSightingMain {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 12px;
+  row-gap: 3px;
+  min-width: 0;
+}
+
+.feedSightingDrink {
+  grid-column: 1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.feedSightingVenue {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: var(--ink-soft, var(--muted));
+  overflow-wrap: anywhere;
+}
+
+.feedSightingPrice {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  white-space: nowrap;
+}
+
+.feedSightingSource {
+  grid-column: 1 / -1;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: var(--muted, var(--ink-soft));
+  overflow-wrap: anywhere;
+}
+
+.feedSightingsCta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 2px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--brass);
+  color: var(--paper);
+  font-weight: 650;
+  font-size: 0.92rem;
+  text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--brass) 70%, var(--ink) 30%);
+}
+
+/* Motion only when the reader welcomes it (reduced-motion safe by default). */
+@media (prefers-reduced-motion: no-preference) {
+  .feedSighting {
+    transition: background-color 140ms ease;
+  }
+}
+
+@media (hover: hover) {
+  .feedSighting:hover {
+    background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  }
+}

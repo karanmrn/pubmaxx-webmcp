@@ -1,0 +1,23 @@
+# Keep npm dependencies patched. Security hardening plan Phase 6.3.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - security
+    groups:
+      production-deps:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      dev-deps:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch

@@ -1,0 +1,340 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T08:43:37.191Z",
+  "region": "greater-london",
+  "notes": "Website and opening hours read off each venue's OWN page, and only where the page states them. A day the page never mentions is absent rather than assumed; an explicitly closed day is an empty window list. `statedDays` says how much of the week the page actually spoke about. Records accumulate across runs and are replaced only by a fresher reading of the same venue.",
+  "venues": [
+    {
+      "venueId": "venue-11n9s46",
+      "placeName": "The Yorkshire Grey",
+      "website": "https://www.yorkshiregrey.com/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Yorkshire Grey - official site",
+        "url": "https://www.yorkshiregrey.com/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-136xtuu",
+      "placeName": "The Colonel Fawcett",
+      "website": "https://thecolonelfawcett.co.uk/",
+      "openingHours": {
+        "2": [
+          {
+            "opens": "15:00",
+            "closes": "23:00"
+          }
+        ]
+      },
+      "statedDays": [
+        "Tuesday"
+      ],
+      "source": {
+        "label": "The Colonel Fawcett - official site",
+        "url": "https://thecolonelfawcett.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-18p3brm",
+      "placeName": "The Sutton Arms",
+      "website": "https://www.sutton-arms.co.uk/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Sutton Arms - official site",
+        "url": "https://www.sutton-arms.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-1ar7s8w",
+      "placeName": "The Boot",
+      "website": "https://theboot.website/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Boot - official site",
+        "url": "https://theboot.website/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-1f5ygjb",
+      "placeName": "The Bohemia",
+      "website": "https://www.thebohemia.co.uk/",
+      "openingHours": {
+        "0": [
+          {
+            "opens": "12:00",
+            "closes": "22:30"
+          },
+          {
+            "opens": "12:00",
+            "closes": "21:00"
+          }
+        ],
+        "1": [
+          {
+            "opens": "15:00",
+            "closes": "23:00"
+          },
+          {
+            "opens": "16:00",
+            "closes": "21:30"
+          }
+        ],
+        "2": [
+          {
+            "opens": "15:00",
+            "closes": "23:00"
+          },
+          {
+            "opens": "16:00",
+            "closes": "21:30"
+          }
+        ],
+        "3": [
+          {
+            "opens": "15:00",
+            "closes": "23:00"
+          },
+          {
+            "opens": "16:00",
+            "closes": "21:30"
+          }
+        ],
+        "4": [
+          {
+            "opens": "15:00",
+            "closes": "23:00"
+          },
+          {
+            "opens": "16:00",
+            "closes": "21:30"
+          }
+        ],
+        "5": [
+          {
+            "opens": "12:00",
+            "closes": "01:00"
+          },
+          {
+            "opens": "12:00",
+            "closes": "22:00"
+          }
+        ],
+        "6": [
+          {
+            "opens": "12:00",
+            "closes": "01:00"
+          },
+          {
+            "opens": "12:00",
+            "closes": "22:00"
+          }
+        ]
+      },
+      "statedDays": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "source": {
+        "label": "The Bohemia - official site",
+        "url": "https://www.thebohemia.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-1pf9vt5",
+      "placeName": "The Furze Wren - JD Wetherspoon",
+      "website": "https://www.jdwetherspoon.com/pubs/the-furze-wren-bexleyheath/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Furze Wren - JD Wetherspoon - official site",
+        "url": "https://www.jdwetherspoon.com/pubs/the-furze-wren-bexleyheath/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-1pfnt71",
+      "placeName": "Blues Kitchen",
+      "website": "https://theblueskitchen.com/camden/",
+      "openingHours": {
+        "0": [
+          {
+            "opens": "11:00",
+            "closes": "01:00"
+          }
+        ],
+        "5": [
+          {
+            "opens": "12:00",
+            "closes": "02:30"
+          }
+        ]
+      },
+      "statedDays": [
+        "Sunday",
+        "Friday"
+      ],
+      "source": {
+        "label": "Blues Kitchen - official site",
+        "url": "https://theblueskitchen.com/camden/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-1r447i7",
+      "placeName": "The Tipperary",
+      "website": "http://www.thetipperarypub.com/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Tipperary - official site",
+        "url": "http://www.thetipperarypub.com/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-1xu6lap",
+      "placeName": "The Enterprise",
+      "website": "https://www.the-enterprise.co.uk/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Enterprise - official site",
+        "url": "https://www.the-enterprise.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-2k9hok",
+      "placeName": "Canonbury Tavern",
+      "website": "https://www.thecanonbury.co.uk/",
+      "openingHours": {
+        "0": [
+          {
+            "opens": "12:00",
+            "closes": "23:00"
+          },
+          {
+            "opens": "12:00",
+            "closes": "21:00"
+          }
+        ],
+        "1": [
+          {
+            "opens": "11:00",
+            "closes": "23:00"
+          }
+        ],
+        "2": [
+          {
+            "opens": "11:00",
+            "closes": "23:00"
+          }
+        ],
+        "3": [
+          {
+            "opens": "11:00",
+            "closes": "23:00"
+          }
+        ],
+        "4": [
+          {
+            "opens": "11:00",
+            "closes": "00:00"
+          }
+        ],
+        "5": [
+          {
+            "opens": "11:00",
+            "closes": "00:00"
+          }
+        ]
+      },
+      "statedDays": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "source": {
+        "label": "Canonbury Tavern - official site",
+        "url": "https://www.thecanonbury.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-3h52h",
+      "placeName": "The Elephant Inn",
+      "website": "https://www.elephantinnfinchley.co.uk/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Elephant Inn - official site",
+        "url": "https://www.elephantinnfinchley.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-59ibpp",
+      "placeName": "The Marian Anderson",
+      "website": "https://themariananderson.com/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Marian Anderson - official site",
+        "url": "https://themariananderson.com/"
+      },
+      "observedAt": "2026-08-09T20:12:53.595Z"
+    },
+    {
+      "venueId": "venue-ac8hv3",
+      "placeName": "The Albion",
+      "website": "https://www.thealbionlondon.com/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Albion - official site",
+        "url": "https://www.thealbionlondon.com/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-d6icqd",
+      "placeName": "Sheephaven Bay",
+      "website": "https://sheephavenbaycamden.co.uk/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "Sheephaven Bay - official site",
+        "url": "https://sheephavenbaycamden.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    },
+    {
+      "venueId": "venue-kn357t",
+      "placeName": "The Rose",
+      "website": "https://therosebexley.co.uk/",
+      "openingHours": {},
+      "statedDays": [],
+      "source": {
+        "label": "The Rose - official site",
+        "url": "https://therosebexley.co.uk/"
+      },
+      "observedAt": "2026-08-10T08:43:37.191Z"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>You're offline — PUBMAXXING</title>
+    <!--
+      Served by public/sw.js as the last rung of the navigation fallback
+      ladder. Fully self-contained: no external CSS/JS/fonts, because by
+      definition nothing else is loading. Tokens are inlined from the
+      field-guide palette (app/globals.css / app/theme.css).
+    -->
+    <style>
+      :root {
+        --paper: #f4efe4;
+        --panel: #fbf8f0;
+        --ink: #1b2620;
+        --ink-soft: #3d4842;
+        --muted: #6b726a;
+        --line: #ddd5c4;
+        --brass: #9a6a24;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #12100c;
+          --panel: #1a1712;
+          --ink: #ece3d2;
+          --ink-soft: #c4bca9;
+          --muted: #8a8272;
+          --line: #2e2a21;
+          --brass: #d3a44a;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        padding: 24px;
+      }
+      main {
+        max-width: 26rem;
+        text-align: center;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 12px;
+        padding: 40px 28px;
+      }
+      .mark {
+        font-size: 0.75rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--brass);
+        margin: 0 0 16px;
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      }
+      h1 {
+        font-size: 1.6rem;
+        line-height: 1.25;
+        margin: 0 0 12px;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 10px;
+        color: var(--ink-soft);
+        line-height: 1.55;
+        font-size: 0.95rem;
+      }
+      p.small {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      a.retry {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 10px 22px;
+        border: 1px solid var(--brass);
+        border-radius: 999px;
+        color: var(--brass);
+        text-decoration: none;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="mark">PUBMAXXING</p>
+      <h1>You're offline &mdash; the map remembers what it can.</h1>
+      <p>
+        No signal down here. Any pubs and tiles you've already visited are
+        still on the map, but live prices and last-train times need a
+        connection &mdash; we won't show you stale ones.
+      </p>
+      <p class="small">
+        Cellar signal is a known hazard of the trade. Surface, or find the
+        landlord's wifi.
+      </p>
+      <a class="retry" href="/map">Back to the map</a>
+    </main>
+  </body>
+</html>

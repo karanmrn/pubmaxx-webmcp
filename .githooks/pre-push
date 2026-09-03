@@ -1,0 +1,13 @@
+#!/bin/sh
+# Local CI gate — a free stand-in for GitHub Actions.
+# Runs validate-data + lint + typecheck + coverage before every push so broken
+# code never leaves your machine. Enable once with:  npm run setup  (sets
+# core.hooksPath=.githooks)
+#
+# The heavier `next build` is intentionally left out here (it's slow); Vercel
+# runs the full `npm run ci` (incl. build) on every deploy via vercel.json, so
+# a broken build still can't reach production.
+set -e
+echo "pre-push › validate-data · lint · typecheck · coverage"
+npm run verify
+echo "pre-push › green ✓"

@@ -1,0 +1,1289 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-17T22:40:59Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 26422089,
+      "lat": 51.3176651,
+      "lon": -0.1901579,
+      "tags": {
+        "addr:city": "Banstead",
+        "addr:postcode": "SM7 3DS",
+        "addr:street": "Park Road",
+        "amenity": "pub",
+        "brand": "Vintage Inns",
+        "brand:wikidata": "Q87067899",
+        "check_date": "2024-08-20",
+        "check_date:opening_hours": "2024-08-20",
+        "contact:website": "https://www.vintageinn.co.uk/restaurants/south-east/themintbanstead",
+        "fhrs:id": "17166",
+        "name": "The Mint",
+        "opening_hours": "Mo-Fr 12:00-23:00; Sa 09:00-23:00; Su 09:00-22:00",
+        "source:addr": "fhrs"
+      }
+    },
+    {
+      "type": "node",
+      "id": 31275782,
+      "lat": 51.3689042,
+      "lon": -0.1619811,
+      "tags": {
+        "amenity": "pub",
+        "name": "The Lord Palmerston"
+      }
+    },
+    {
+      "type": "node",
+      "id": 33583650,
+      "lat": 51.367124,
+      "lon": -0.1641978,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:postcode": "SM5 2HU",
+        "addr:street": "North Street",
+        "amenity": "pub",
+        "name": "The Sun",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-24:00; Su 12:00-22:30",
+        "phone": "+44 20 8773 4549",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.thesuncarshalton.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 33665778,
+      "lat": 51.3685885,
+      "lon": -0.1551403,
+      "tags": {
+        "addr:city": "Wallington",
+        "addr:housename": "Wallington Corner",
+        "addr:postcode": "SM6 7HX",
+        "addr:street": "Wallington Corner",
+        "amenity": "pub",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "1728896",
+        "live_sport": "yes",
+        "name": "Rose & Crown",
+        "source": "survey;fhrs",
+        "source:addr": "FHRS Open Data",
+        "survey:date": "2018-11-18"
+      }
+    },
+    {
+      "type": "node",
+      "id": 36314175,
+      "lat": 51.3650377,
+      "lon": -0.1623319,
+      "tags": {
+        "addr:city": "Carshalton",
+        "addr:housenumber": "12",
+        "addr:postcode": "SM5 3AG",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "fhrs:id": "904155",
+        "name": "Coach & Horses",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 36585191,
+      "lat": 51.3650042,
+      "lon": -0.1625787,
+      "tags": {
+        "amenity": "pub",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "live_sport": "yes",
+        "name": "The Woodman",
+        "wikidata": "Q26318736"
+      }
+    },
+    {
+      "type": "node",
+      "id": 36868088,
+      "lat": 51.3562255,
+      "lon": -0.2162302,
+      "tags": {
+        "amenity": "pub",
+        "created_by": "Potlatch 0.8c",
+        "name": "The Railway"
+      }
+    },
+    {
+      "type": "node",
+      "id": 36869280,
+      "lat": 51.3556652,
+      "lon": -0.2222369,
+      "tags": {
+        "amenity": "pub",
+        "name": "The Grumpy Mole",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 36989169,
+      "lat": 51.3576314,
+      "lon": -0.2157505,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The Harrow",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.crafted-social.co.uk/harrow-cheam"
+      }
+    },
+    {
+      "type": "node",
+      "id": 37124435,
+      "lat": 51.3693298,
+      "lon": -0.1658625,
+      "tags": {
+        "addr:city": "Carshalton",
+        "addr:housenumber": "47",
+        "addr:postcode": "SM5 2HG",
+        "addr:street": "North Street",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "570943",
+        "live_sport": "yes",
+        "name": "The Railway Tavern",
+        "source": "survey;code-point open;fhrs",
+        "website": "https://www.railwaytaverncarshalton.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 37155037,
+      "lat": 51.369505,
+      "lon": -0.1802281,
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:postcode": "SM1 3AS",
+        "addr:street": "Erskine Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "539497",
+        "name": "The Butterchurn",
+        "source": "survey;https://ratings.food.gov.uk/OpenDataFiles/FHRS529en-GB.xml",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greeneking.co.uk/pubs/surrey/butterchurn"
+      }
+    },
+    {
+      "type": "node",
+      "id": 39601041,
+      "lat": 51.3723143,
+      "lon": -0.1316804,
+      "tags": {
+        "addr:city": "Croydon",
+        "addr:housenumber": "27",
+        "addr:postcode": "CR0 4TG",
+        "addr:street": "Beddington Lane",
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "Harvest Home"
+      }
+    },
+    {
+      "type": "node",
+      "id": 40175772,
+      "lat": 51.3627599,
+      "lon": -0.1852127,
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:housenumber": "53",
+        "addr:postcode": "SM1 4LG",
+        "addr:street": "Carshalton Road",
+        "amenity": "pub",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "539499",
+        "name": "The Nightingale",
+        "old_name": "Jenny Lind",
+        "source:addr": "FHRS Open Data",
+        "source:old_name": "visit",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 153620231,
+      "lat": 51.3618835,
+      "lon": -0.1932923,
+      "tags": {
+        "addr:housenumber": "5-9",
+        "addr:postcode": "SM1 1DZ",
+        "addr:street": "Hill Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "fhrs:id": "20823",
+        "level": "0",
+        "name": "The Moon on the Hill",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-moon-on-the-hill-sutton",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/106/menus",
+        "wikidata": "Q88917038"
+      }
+    },
+    {
+      "type": "node",
+      "id": 206348091,
+      "lat": 51.3675107,
+      "lon": -0.1321916,
+      "tags": {
+        "addr:city": "Croydon",
+        "addr:parentstreet": "Plough Lane",
+        "addr:postcode": "CR0 4QR",
+        "addr:street": "The Broadway",
+        "addr:village": "Beddington",
+        "amenity": "pub",
+        "brewery": "Charles Wells",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "570886",
+        "live_sport": "yes",
+        "name": "The Plough",
+        "not:addr:street": "Croydon Road",
+        "operator": "Young & Co",
+        "source:addr": "fhrs/royal mail postcode finder",
+        "source:not:addr": "website",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.youngs.co.uk/pub-detail.asp?PubID=437"
+      }
+    },
+    {
+      "type": "node",
+      "id": 247364732,
+      "lat": 51.3189353,
+      "lon": -0.1505156,
+      "tags": {
+        "addr:city": "Coulsdon",
+        "addr:housenumber": "320",
+        "addr:postcode": "CR5 3BE",
+        "addr:street": "Chipstead Valley Road",
+        "amenity": "pub",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "1848",
+        "live_sport": "yes",
+        "name": "The Smuggler's Inn",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1737 550 043",
+        "source": "survey",
+        "survey:date": "2018-09-14"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266702613,
+      "lat": 51.363021,
+      "lon": -0.2478212,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:postcode": "KT17 2JA",
+        "addr:street": "The Broadway Stoneleigh",
+        "alt_name": "The Stoneleigh",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "fhrs:id": "23890",
+        "name": "The Station",
+        "source": "photo",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/surrey/station",
+        "wheelchair": "limited",
+        "wikidata": "Q21008706"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266739623,
+      "lat": 51.3638084,
+      "lon": -0.1967096,
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:housenumber": "52",
+        "addr:postcode": "SM1 1SH",
+        "addr:street": "West Street",
+        "amenity": "pub",
+        "fhrs:id": "1626007",
+        "live_sport": "yes",
+        "name": "Robin Hood",
+        "source": "photo",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266749352,
+      "lat": 51.3728734,
+      "lon": -0.2320993,
+      "tags": {
+        "amenity": "pub",
+        "created_by": "JOSM",
+        "name": "The Drill",
+        "source": "photo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266880851,
+      "lat": 51.3606475,
+      "lon": -0.2176109,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The Prince of Wales"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266890511,
+      "lat": 51.3764631,
+      "lon": -0.237058,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The North End Tavern",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greatukpubs.co.uk/north-end-tavern-worcester-park"
+      }
+    },
+    {
+      "type": "node",
+      "id": 277834910,
+      "lat": 51.3598578,
+      "lon": -0.1913538,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The Old Bank",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.greatukpubs.co.uk/old-bank-sutton"
+      }
+    },
+    {
+      "type": "node",
+      "id": 277834913,
+      "lat": 51.361022,
+      "lon": -0.1922077,
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:housenumber": "37",
+        "addr:postcode": "SM1 1DJ",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "brand": "O'Neill's",
+        "brand:wikidata": "Q7071905",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "20798",
+        "live_sport": "yes",
+        "name": "O'Neills",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 371762019,
+      "lat": 51.3715155,
+      "lon": -0.208954,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The Gander",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greatukpubs.co.uk/gander-inn-sutton"
+      }
+    },
+    {
+      "type": "node",
+      "id": 490699731,
+      "lat": 51.3587878,
+      "lon": -0.2168247,
+      "tags": {
+        "amenity": "bar",
+        "name": "Claret's Wine Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 599828855,
+      "lat": 51.3799178,
+      "lon": -0.2186212,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "Lord Nelson",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.greatukpubs.co.uk/lord-nelson-sutton"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1132744385,
+      "lat": 51.3600646,
+      "lon": -0.1496904,
+      "tags": {
+        "addr:city": "Wallington",
+        "addr:housenumber": "25",
+        "addr:postcode": "SM6 8QF",
+        "addr:street": "Ross Parade",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "747553",
+        "name": "The Whispering Moon",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-whispering-moon-wallington",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/55/menus",
+        "wikidata": "Q88917077"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1676757006,
+      "lat": 51.3681532,
+      "lon": -0.195304,
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:housenumber": "285",
+        "addr:postcode": "SM1 1LD",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "fhrs:id": "1028942",
+        "live_sport": "yes",
+        "name": "The Crown",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.craftunionpubs.com/crown-pub-sutton",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1678982781,
+      "lat": 51.3910884,
+      "lon": -0.2218995,
+      "tags": {
+        "addr:postcode": "SM4 4SS",
+        "addr:street": "Lower Morden Lane",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "fhrs:id": "200178",
+        "live_sport": "yes",
+        "name": "The Morden Brook",
+        "source:name": "survey",
+        "website": "https://www.greeneking.co.uk/pubs/surrey/morden-brook"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1998691296,
+      "lat": 51.3618581,
+      "lon": -0.1925404,
+      "tags": {
+        "addr:housenumber": "67",
+        "addr:postcode": "SM1 1DT",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "check_date": "2025-08-20",
+        "check_date:opening_hours": "2025-08-20",
+        "name": "Shinner and Sudtone",
+        "opening_hours": "Su,Mo 12:00-23:00, Tu-Th 12:00-24:00, Fr,Sa 12:00-01:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1998691300,
+      "lat": 51.3609135,
+      "lon": -0.1921674,
+      "tags": {
+        "addr:housenumber": "33-35",
+        "addr:postcode": "SM1 1DJ",
+        "addr:street": "High Street",
+        "amenity": "bar",
+        "brand": "Slug and Lettuce",
+        "brand:wikidata": "Q7542224",
+        "cocktails": "yes",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "877459",
+        "food": "yes",
+        "name": "Slug & Lettuce",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "source": "survey",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.slugandlettuce.co.uk/sutton",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1998691305,
+      "lat": 51.3616662,
+      "lon": -0.1924599,
+      "tags": {
+        "addr:housenumber": "59-61",
+        "addr:postcode": "SM1 1DT",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "check_date:opening_hours": "2025-08-20",
+        "fhrs:id": "20800",
+        "live_sport": "yes",
+        "name": "Ebb & Flow",
+        "opening_hours:signed": "no",
+        "website": "http://www.treasurypub.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2404204569,
+      "lat": 51.3629446,
+      "lon": -0.2471426,
+      "tags": {
+        "amenity": "bar",
+        "name": "Masons"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3568560093,
+      "lat": 51.3379162,
+      "lon": -0.1154489,
+      "tags": {
+        "addr:city": "Purley",
+        "addr:housenumber": "12",
+        "addr:postcode": "CR8 2AA",
+        "addr:street": "High Street",
+        "amenity": "bar",
+        "name": "Wine Gallery",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3568630094,
+      "lat": 51.3382787,
+      "lon": -0.1156614,
+      "tags": {
+        "addr:city": "Purley",
+        "addr:housenumber": "5",
+        "addr:postcode": "CR8 2AF",
+        "addr:street": "High Street",
+        "amenity": "bar",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "4344",
+        "fhrs:local_authority_id": "01079/0005/0/200",
+        "name": "Elliotts",
+        "phone": "+44 20 8668 3361",
+        "website": "www.elliottspurley.co.uk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3569220793,
+      "lat": 51.3397341,
+      "lon": -0.115249,
+      "tags": {
+        "addr:city": "Purley",
+        "addr:housenumber": "908",
+        "addr:postcode": "CR8 2LN",
+        "addr:street": "Brighton Road",
+        "amenity": "pub",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "1710025",
+        "fhrs:local_authority_id": "00289/0908/0/200",
+        "live_sport": "yes",
+        "name": "The Pear Tree",
+        "opening_hours": "Mo-Sa 10:00-23:00; Su 12:00-22:30",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "phone": "+44 20 8660 6396",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greatukpubs.co.uk/pear-tree-purley"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3569354105,
+      "lat": 51.3394139,
+      "lon": -0.1176527,
+      "tags": {
+        "addr:city": "Purley",
+        "addr:housenumber": "8-9",
+        "addr:parentstreet": "Russell Hill Road",
+        "addr:postcode": "CR8 2LE",
+        "addr:street": "Russell Parade",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "1824716",
+        "fhrs:local_authority_id": "01839/0008/0/200",
+        "name": "The Foxley Hatch",
+        "phone": "+44 20 8763 9307",
+        "source": "survey;https://ratings.food.gov.uk/OpenDataFiles/FHRS507en-GB.xml",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-foxley-hatch-purley",
+        "wikidata": "Q88916806"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4682459836,
+      "lat": 51.3663292,
+      "lon": -0.1673205,
+      "tags": {
+        "addr:city": "Carshalton",
+        "addr:housenumber": "17",
+        "addr:postcode": "SM5 2PT",
+        "addr:street": "West Street",
+        "amenity": "pub",
+        "check_date": "2024-07-21",
+        "fhrs:id": "1875283",
+        "live_sport": "yes",
+        "name": "The Racehorse",
+        "note": "Signs up asking for staff and inviting you to watch sport but the hours on the door betray the fact it is shut when surveyed? 2024-07-21",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5751200090,
+      "lat": 51.3195711,
+      "lon": -0.1392455,
+      "tags": {
+        "addr:city": "Coulsdon",
+        "addr:housenumber": "202",
+        "addr:postcode": "CR5 2NF",
+        "addr:street": "Brighton Road",
+        "amenity": "bar",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "1027130",
+        "fhrs:local_authority_id": "18/00019/COMM",
+        "name": "Frames Sports Bar",
+        "source": "survey",
+        "sport": "snooker;pool"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5841434707,
+      "lat": 51.3565545,
+      "lon": -0.1172361,
+      "tags": {
+        "addr:city": "Croydon",
+        "addr:housename": "Airport House",
+        "addr:postcode": "CR0 0XZ",
+        "addr:street": "Purley Way",
+        "amenity": "bar",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "1341317",
+        "name": "Imperial Lounge & Restaurant",
+        "source": "survey",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6503338427,
+      "lat": 51.3715457,
+      "lon": -0.1170962,
+      "tags": {
+        "addr:city": "Croydon",
+        "addr:housenumber": "325",
+        "addr:postcode": "CR0 4NU",
+        "addr:street": "Purley Way",
+        "amenity": "pub",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "7097",
+        "name": "The Hare and Hounds",
+        "source": "survey;https://ratings.food.gov.uk/OpenDataFiles/FHRS507en-GB.xml"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9492781001,
+      "lat": 51.3613525,
+      "lon": -0.1927261,
+      "tags": {
+        "amenity": "bar",
+        "name": "Also Barbers",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa 08:30-17:30; Su 10:00-19:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12154500676,
+      "lat": 51.3917119,
+      "lon": -0.1637551,
+      "tags": {
+        "addr:city": "Mitcham",
+        "addr:housename": "Unit 8, Willow Business Centre",
+        "addr:housenumber": "17",
+        "addr:postcode": "CR4 4NX",
+        "addr:street": "Willow Lane",
+        "amenity": "bar",
+        "brewery": "drop_project",
+        "craft": "brewery",
+        "name": "Drop Project Brewing",
+        "opening_hours": "Fr-Sa [1] 13:00-22:00",
+        "operator": "Drop Project",
+        "product": "beer",
+        "website": "https://www.drop-project.co.uk/taproom"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13424773902,
+      "lat": 51.3672471,
+      "lon": -0.1318941,
+      "tags": {
+        "addr:city": "Croydon",
+        "addr:housenumber": "14",
+        "addr:postcode": "CR0 4QR",
+        "addr:street": "The Broadway",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/p/The-Dog-House-100085210053235/",
+        "name": "The Dog House"
+      }
+    },
+    {
+      "type": "way",
+      "id": 97377424,
+      "center": {
+        "lat": 51.3667419,
+        "lon": -0.1538409
+      },
+      "tags": {
+        "addr:city": "Wallington",
+        "addr:housenumber": "6",
+        "addr:postcode": "SM6 7NT",
+        "addr:street": "Manor Road North",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "570898",
+        "name": "Duke's Head Hotel",
+        "outdoor_seating": "yes",
+        "source": "survey;code-point open;fhrs",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 97392534,
+      "center": {
+        "lat": 51.3783127,
+        "lon": -0.1575857
+      },
+      "tags": {
+        "addr:postcode": "SM6 7AX",
+        "addr:street": "Hackbridge Road",
+        "addr:suburb": "Hackbridge",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "962347",
+        "live_sport": "yes",
+        "name": "The Red Lion",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 97425688,
+      "center": {
+        "lat": 51.3670483,
+        "lon": -0.167107
+      },
+      "tags": {
+        "addr:city": "Carshalton",
+        "addr:housenumber": "48",
+        "addr:postcode": "SM5 2PR",
+        "addr:street": "West Street",
+        "amenity": "pub",
+        "building": "retail",
+        "check_date": "2024-07-21",
+        "email": "admin@hopecarshalton.co.uk",
+        "fhrs:id": "407031",
+        "name": "The Hope",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30",
+        "phone": "+44 20 8240 1255",
+        "source:addr": "FHRS Open Data",
+        "website": "http://www.hopecarshalton.co.uk/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 97586401,
+      "center": {
+        "lat": 51.3621064,
+        "lon": -0.1934618
+      },
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:housenumber": "2",
+        "addr:postcode": "SM1 1DZ",
+        "addr:street": "Hill Road",
+        "amenity": "bar",
+        "brand": "All Bar One",
+        "brand:wikidata": "Q4728624",
+        "brand:wikipedia": "en:All Bar One",
+        "building": "yes",
+        "cocktails": "yes",
+        "fhrs:id": "20822",
+        "name": "All Bar One",
+        "source:housenumber": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 147669044,
+      "center": {
+        "lat": 51.3890731,
+        "lon": -0.1589886
+      },
+      "tags": {
+        "addr:city": "Mitcham",
+        "addr:postcode": "CR4 4HJ",
+        "addr:street": "Carshalton Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-10-05",
+        "cuisine": "indian;chinese",
+        "fhrs:authority": "Merton",
+        "fhrs:id": "439698",
+        "name": "Crown of Mitcham",
+        "source": "survey;code-point open;fhrs",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 148803004,
+      "center": {
+        "lat": 51.364897,
+        "lon": -0.164484
+      },
+      "tags": {
+        "addr:city": "Carshalton",
+        "addr:housenumber": "2",
+        "addr:postcode": "SM5 3PE",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "430835",
+        "food": "yes",
+        "name": "The Greyhound",
+        "source:addr": "FHRS Open Data",
+        "website": "http://www.greyhoundhotel.net/",
+        "wikidata": "Q26318679"
+      }
+    },
+    {
+      "type": "way",
+      "id": 151411430,
+      "center": {
+        "lat": 51.3625892,
+        "lon": -0.1686127
+      },
+      "tags": {
+        "addr:city": "Carshalton",
+        "addr:housenumber": "378",
+        "addr:postcode": "SM5 3PT",
+        "addr:street": "Carshalton Road",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "1604826",
+        "name": "The Windsor Castle",
+        "source": "survey",
+        "source:addr": "FHRS Open Data",
+        "survey:date": "2018-09-29",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.windsorcastlepub.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 154792747,
+      "center": {
+        "lat": 51.3442669,
+        "lon": -0.1972086
+      },
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:housenumber": "267",
+        "addr:postcode": "SM2 5SU",
+        "addr:street": "Brighton Road",
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "The California",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "5870027942;5870128246",
+        "website": "https://www.emberinns.co.uk/nationalsearch/london/the-california-sutton/food"
+      }
+    },
+    {
+      "type": "way",
+      "id": 155270437,
+      "center": {
+        "lat": 51.3676087,
+        "lon": -0.195243
+      },
+      "tags": {
+        "addr:housenumber": "265",
+        "addr:postcode": "SM1 1LD",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "571102",
+        "name": "The Winning Post",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 188072069,
+      "center": {
+        "lat": 51.3640143,
+        "lon": -0.1868745
+      },
+      "tags": {
+        "addr:housenumber": "13",
+        "addr:postcode": "SM1 4BY",
+        "addr:street": "Greyhound Road",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "yes",
+        "check_date:opening_hours": "2025-08-19",
+        "live_sport": "yes",
+        "name": "The Little Windsor",
+        "opening_hours:signed": "no",
+        "website": "https://www.littlewindsorsutton.co.uk/",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 270582394,
+      "center": {
+        "lat": 51.3268306,
+        "lon": -0.1543903
+      },
+      "tags": {
+        "addr:city": "Coulsdon",
+        "addr:housename": "Jack and Jill",
+        "addr:postcode": "CR5 2QJ",
+        "addr:street": "Longlands Avenue",
+        "amenity": "pub",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "Jack and Jill",
+        "source": "survey;code-point open",
+        "wikimedia_commons": "File:The 'Jack and Jill', Clock House, Sutton, Surrey - geograph.org.uk - 688960.jpg"
+      }
+    },
+    {
+      "type": "way",
+      "id": 328572823,
+      "center": {
+        "lat": 51.3945104,
+        "lon": -0.2391344
+      },
+      "tags": {
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "The Earl Beatty",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.greeneking.co.uk/pubs/surrey/earl-beatty",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 351140834,
+      "center": {
+        "lat": 51.3381734,
+        "lon": -0.116354
+      },
+      "tags": {
+        "addr:city": "Purley",
+        "addr:housenumber": "7",
+        "addr:postcode": "CR8 2HA",
+        "addr:street": "Purley Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "801877",
+        "fhrs:local_authority_id": "15/00174/COMM",
+        "live_sport": "yes",
+        "name": "Jolly Farmers",
+        "phone": "+44 20 8660 2076",
+        "website": "https://jollyfarmers-purley.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 365268265,
+      "center": {
+        "lat": 51.3595981,
+        "lon": -0.2158231
+      },
+      "tags": {
+        "amenity": "pub",
+        "area": "yes",
+        "building": "yes",
+        "name": "Ye Olde Red Lion"
+      }
+    },
+    {
+      "type": "way",
+      "id": 369174405,
+      "center": {
+        "lat": 51.3240785,
+        "lon": -0.1716683
+      },
+      "tags": {
+        "addr:city": "Banstead",
+        "addr:postcode": "SM7 3NL",
+        "addr:street": "Woodmansterne Street",
+        "addr:village": "Woodmansterne",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:authority": "Reigate and Banstead",
+        "fhrs:id": "35760",
+        "name": "The Woodman",
+        "ref:GB:uprn": "68163153;68124778"
+      }
+    },
+    {
+      "type": "way",
+      "id": 610164112,
+      "center": {
+        "lat": 51.3210142,
+        "lon": -0.1388148
+      },
+      "tags": {
+        "addr:city": "Coulsdon",
+        "addr:housenumber": "12-16",
+        "addr:postcode": "CR5 2RA",
+        "addr:street": "Chipstead Valley Road",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "1",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "26114",
+        "fhrs:local_authority_id": "08/00200/COMM",
+        "live_sport": "yes",
+        "name": "The Pembroke",
+        "opening_hours": "Mo-Sa 10:00-00:00; Su 11:00-23:00",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8763 0800",
+        "ref:GB:uprn": "100023534280",
+        "smoking": "outside",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greatukpubs.co.uk/pembroke-coulsdon"
+      }
+    },
+    {
+      "type": "way",
+      "id": 635746696,
+      "center": {
+        "lat": 51.324146,
+        "lon": -0.1956209
+      },
+      "tags": {
+        "addr:city": "Banstead",
+        "addr:postcode": "SM7 2NZ",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "retail",
+        "email": "thewoolpack@sky.com",
+        "fhrs:authority": "Reigate and Banstead",
+        "fhrs:id": "16679",
+        "name": "The Woolpack",
+        "opening_hours": "Mo-Sa 11:00-23:00; Su 12:00-22:30",
+        "phone": "+44 1737 354560",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "http://thewoolpackbanstead.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 653145311,
+      "center": {
+        "lat": 51.3612864,
+        "lon": -0.1500406
+      },
+      "tags": {
+        "addr:city": "Wallington",
+        "addr:housenumber": "89",
+        "addr:postcode": "SM6 0DE",
+        "addr:street": "Melbourne Road",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "1035454",
+        "live_sport": "yes",
+        "name": "The Star",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "source": "survey",
+        "survey:date": "2018-11-18",
+        "website": "https://www.craftunionpubs.com/star-wallington"
+      }
+    },
+    {
+      "type": "way",
+      "id": 671115609,
+      "center": {
+        "lat": 51.3723934,
+        "lon": -0.2259847
+      },
+      "tags": {
+        "addr:city": "North Cheam",
+        "addr:country": "GB",
+        "addr:housenumber": "552-556",
+        "addr:postcode": "SM3 9AA",
+        "addr:street": "London Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "building": "yes",
+        "contact:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-nonsuch-inn-north-cheam",
+        "fhrs:id": "372414",
+        "name": "The Nonsuch Inn",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/154/menus",
+        "wikidata": "Q88917036"
+      }
+    },
+    {
+      "type": "way",
+      "id": 901272257,
+      "center": {
+        "lat": 51.3800772,
+        "lon": -0.2444446
+      },
+      "tags": {
+        "addr:city": "Worcester Park",
+        "addr:country": "GB",
+        "addr:housenumber": "181",
+        "addr:postcode": "KT4 8DR",
+        "addr:street": "Central Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "name": "The Brook",
+        "ref:GB:uprn": "5870007530;5870120922"
+      }
+    },
+    {
+      "type": "way",
+      "id": 907797527,
+      "center": {
+        "lat": 51.3771123,
+        "lon": -0.2391622
+      },
+      "tags": {
+        "addr:city": "Worcester Park",
+        "addr:housenumber": "25",
+        "addr:postcode": "KT4 8EG",
+        "addr:street": "Central Road",
+        "amenity": "bar",
+        "building": "yes",
+        "name": "Rumours Bar"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1257722890,
+      "center": {
+        "lat": 51.386691,
+        "lon": -0.1173071
+      },
+      "tags": {
+        "addr:city": "Croydon",
+        "addr:housenumber": "144",
+        "addr:postcode": "CR0 3QB",
+        "addr:street": "Stanley Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:authority": "Croydon",
+        "fhrs:id": "1813433",
+        "live_sport": "yes",
+        "name": "Golden Lion",
+        "source": "survey",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1500205604,
+      "center": {
+        "lat": 51.3639046,
+        "lon": -0.1968094
+      },
+      "tags": {
+        "addr:city": "Sutton",
+        "addr:housenumber": "52",
+        "addr:postcode": "SM1 1SH",
+        "addr:street": "West Street",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "1626007",
+        "name": "Robin Hood",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data"
+      }
+    }
+  ]
+}

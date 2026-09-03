@@ -1,0 +1,262 @@
+/* The Bar Tab — an IG-profile grid of a venue's recent Spills (issue #36).
+   Tokens only (--brass, --ink, --panel, --line, --paper …) so it inherits the
+   printed-guidebook palette and both themes. No new colours invented. */
+
+.barTabPage {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px 64px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.barTabHead {
+  padding: 24px 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.barTabEyebrow {
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.barTabTitle {
+  margin: 0;
+  font-family: var(--font-garamond, var(--serif, Georgia), "Times New Roman", serif);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.barTabAddress {
+  margin: 6px 0 0;
+  color: var(--muted, #8a8577);
+  font-size: 0.92rem;
+}
+
+.barTabHeadRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.barTabCheapest {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: var(--radius);
+  background: var(--ink-deep, #1c231d);
+  color: var(--brass-bright, #d8ab55);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brass) 40%, transparent);
+}
+
+.barTabCheapestLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.barTabCheapestValue {
+  font-family: var(--font-garamond, var(--serif, Georgia), serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.barTabCount {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.barTabHeadActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.barTabMapLink,
+.barTabLedgerLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm, 8px);
+}
+
+.barTabMapLink:hover,
+.barTabLedgerLink:hover {
+  border-color: var(--brass);
+}
+
+.barTabMapLink:focus-visible,
+.barTabLedgerLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* The grid — 2 cols on phones, 3 from tablet up. */
+.barTabGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 700px) {
+  .barTabGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+.barTabCell {
+  margin: 0;
+}
+
+.barTabTile {
+  position: relative;
+  display: flex;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-sm, 10px);
+  border: 1px solid var(--line);
+  background: var(--panel-raised);
+  text-decoration: none;
+  color: inherit;
+}
+
+.barTabTile:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.barTabTilePhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.barTabTile--photo:hover .barTabTilePhoto {
+  transform: scale(1.03);
+}
+
+.barTabTilePrice {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 9px;
+  border-radius: 8px;
+  background: var(--ink-deep, #1c231d);
+  color: var(--brass-bright, #d8ab55);
+  font-family: var(--font-garamond, var(--serif, Georgia), serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px color-mix(in srgb, var(--brass) 40%, transparent);
+}
+
+/* Text-only drop → a mini receipt tile so the grid never has a gap. */
+.barTabTile--receipt {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 12px;
+  text-align: center;
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--brass) 9%, var(--panel)) 0%,
+    var(--panel) 68%
+  );
+}
+
+.barTabTileEyebrow {
+  color: var(--ink-soft);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.barTabTileReceiptPrice {
+  font-family: var(--font-garamond, var(--serif, Georgia), serif);
+  font-size: clamp(1.4rem, 6vw, 2rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--pint, var(--brass));
+}
+
+.barTabTileDrink {
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.barTabTileNote {
+  color: var(--muted, #8a8577);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Empty + not-found states */
+.barTabEmpty {
+  margin-top: 32px;
+}
+
+.barTabPage--empty {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.barTabEmptyCard {
+  margin: auto;
+  max-width: 420px;
+  padding: 32px;
+  text-align: center;
+}
+
+.barTabEmptyTitle {
+  margin: 8px 0 10px;
+  font-family: var(--font-garamond, var(--serif, Georgia), serif);
+  font-size: 1.6rem;
+  color: var(--ink);
+}
+
+.barTabEmptyBody {
+  margin: 0 0 18px;
+  color: var(--muted, #8a8577);
+}
+
+.barTabPrimaryLink {
+  color: var(--brass);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--brass);
+}

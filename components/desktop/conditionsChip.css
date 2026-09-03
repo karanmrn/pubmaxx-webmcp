@@ -1,0 +1,28 @@
+/* Compact conditions chip in the desktop map toolbar. Quiet metadata surface:
+   neutral badge tokens, never the loud accent. Desktop-only host (MapToolbar
+   renders only on non-mobile viewports), so no mobile rules needed. */
+
+.conditionsChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--badge-border);
+  background: var(--badge-surface);
+  color: var(--badge-ink);
+  font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex: none;
+  box-sizing: border-box;
+}
+
+.conditionsChipWeather {
+  font-weight: 600;
+}
+
+.conditionsChipVerdict {
+  opacity: 0.8;
+}

@@ -1,0 +1,364 @@
+/* First-run onboarding tour: centred card on desktop, bottom-docked on phones,
+   over a dimming scrim.
+   Design rubric: one coral accent (--brass) owns the CTA in both themes;
+   candle-peach --panel-raised card, --radius-lg, --shadow for lift; Space
+   Grotesk (--serif) title, Inter body, sentence case. Motion animates only
+   transform/opacity, never ease-in, all gated behind prefers-reduced-motion
+   with an opacity-only fallback; :hover gated behind hover+fine pointer. */
+
+.tourScrim {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay-top);
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  /* Soft focus dim — deep ink so the card and CTA carry the eye. */
+  background: color-mix(in srgb, var(--ink-deep) 34%, transparent);
+  /* Always-on base = opacity cross-fade (the reduced-motion fallback);
+     transform/scale is layered in only under no-preference below. */
+  animation: tourFadeIn var(--duration-slow) var(--ease-out-strong) both;
+}
+
+.tourScrim.isClosing {
+  animation: tourFadeOut var(--duration-base) var(--ease-out-strong) both;
+}
+
+.tourCard {
+  position: relative;
+  width: min(100%, 25rem);
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  /* Modal-style: scales from its own center, never from a corner. */
+  transform-origin: center;
+  outline: none;
+  /* Base = opacity cross-fade; scale added under no-preference. */
+  animation: tourFadeIn var(--duration-slow) var(--ease-out-strong) both;
+}
+
+.tourScrim.isClosing .tourCard {
+  animation: tourFadeOut var(--duration-base) var(--ease-out-strong) both;
+}
+
+/* Base step swap = opacity cross-fade; slide added under no-preference.
+   min-height keeps the card from jumping as the copy length changes. */
+.tourStep {
+  min-height: 5.75rem;
+  animation: tourFadeIn var(--duration-base) var(--ease-out-strong) both;
+}
+
+.tourClose {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.tourEyebrow {
+  margin: 0 0 var(--space-2);
+  font-family: var(--serif);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.tourTitle {
+  margin: 0 0 var(--space-3);
+  font-family: var(--serif);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: var(--ink);
+}
+
+.tourBody {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.tourLegend {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.tourLegendRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 28px;
+  font-size: var(--text-sm);
+  color: var(--ink);
+}
+
+.tourLegendRow .mapPriceDot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-pill);
+  flex: 0 0 auto;
+}
+
+.tourLegendRow .mapPriceDot.green {
+  background: var(--pint);
+}
+
+.tourLegendRow .mapPriceDot.amber {
+  background: var(--amber);
+}
+
+.tourLegendRow .mapPriceDot.red {
+  /* Dearer price band, not a failure state. Keep first-visit guidance warm
+     and neutral while keeping it distinct from the middle amber band. */
+  background: color-mix(in srgb, var(--amber) 48%, var(--ink) 52%);
+}
+
+.tourLegendRow .mapPriceDot.grey {
+  background: color-mix(in srgb, var(--muted) 84%, transparent);
+}
+
+.tourDots {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  margin: var(--space-5) 0 var(--space-5);
+}
+
+.tourDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--ink-soft) 32%, transparent);
+}
+
+.tourDot.isActive {
+  width: 20px;
+  background: var(--brass);
+}
+
+.tourActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tourSkip,
+.tourNext {
+  font: inherit;
+  font-weight: 650;
+  font-size: var(--text-sm);
+  min-height: 44px;
+  line-height: 1;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.tourSkip {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.tourNext {
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--brass);
+  background: var(--brass);
+  color: var(--color-on-accent);
+}
+
+.tourClose:focus-visible,
+.tourSkip:focus-visible,
+.tourNext:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  /* Keep Westminster and the map's orientation layer visible on first open.
+     The modal stays modal, but becomes a compact dock above the real bottom
+     navigation instead of sitting across the geographic centre. */
+  .tourScrim {
+    place-items: end center;
+    padding: var(--space-3) var(--space-3)
+      calc(
+        env(safe-area-inset-bottom, 0px) + var(--tabbar-h, 64px) +
+          var(--float-stack-gap, 12px)
+      );
+  }
+
+  .tourCard {
+    width: 100%;
+    padding: var(--space-4);
+    transform-origin: bottom center;
+  }
+
+  .tourStep {
+    min-height: 0;
+    padding-right: 44px;
+  }
+
+  .tourEyebrow {
+    margin-bottom: var(--space-1);
+  }
+
+  .tourTitle {
+    margin-bottom: var(--space-1);
+    font-size: var(--text-lg);
+  }
+
+  .tourBody {
+    font-size: var(--text-sm);
+    line-height: 1.4;
+  }
+
+  .tourLegend {
+    margin-top: var(--space-2);
+    gap: var(--space-1);
+  }
+
+  .tourLegendRow {
+    min-height: 24px;
+    font-size: var(--text-xs);
+  }
+
+  .tourActions {
+    margin-top: var(--space-3);
+  }
+
+  .tourDots {
+    margin: var(--space-3) 0;
+  }
+
+}
+
+/* Give the card a touch more room on narrow phones. */
+@media (max-width: 400px) {
+  .tourCard {
+    padding: var(--space-5) var(--space-5) var(--space-4);
+  }
+  .tourTitle {
+    font-size: var(--text-lg);
+  }
+}
+
+/* — Motion: entrances, exits, and the step crossfade only exist for users who
+     accept motion. Outside this block the overlay simply appears (no scale,
+     no slide) — the opacity-only fallback. */
+@media (prefers-reduced-motion: no-preference) {
+  /* The card materialises from its center: scale .95→1 + opacity. Exit
+     reverses. The scrim keeps its plain opacity fade in both modes. */
+  .tourCard {
+    animation: tourCardIn var(--duration-slow) var(--ease-out-strong) both;
+  }
+  .tourScrim.isClosing .tourCard {
+    animation: tourCardOut var(--duration-base) var(--ease-out-strong) both;
+  }
+
+  /* Step advance: quick direction-aware slide + fade (Next → from right,
+     Back → from left). Keyed remount replays this per step. */
+  .tourStep[data-dir="1"] {
+    animation: tourStepInRight var(--duration-base) var(--ease-out-strong) both;
+  }
+  .tourStep[data-dir="-1"] {
+    animation: tourStepInLeft var(--duration-base) var(--ease-out-strong) both;
+  }
+}
+
+@keyframes tourFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tourFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes tourCardIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tourCardOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+@keyframes tourStepInRight {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tourStepInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* :hover only where a real hovering pointer exists (no sticky mobile hover). */
+@media (hover: hover) and (pointer: fine) {
+  .tourClose:hover {
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  .tourSkip:hover {
+    color: var(--ink);
+  }
+  .tourNext:hover {
+    background: var(--brass-bright);
+    border-color: var(--brass-bright);
+  }
+}

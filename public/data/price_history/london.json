@@ -1,0 +1,1243 @@
+{
+ "version": 1,
+ "generatedAt": "2026-07-27",
+ "note": "Dated historical pint prices for London venues, gathered by hand from archived pub reviews and read by a person before shipping. History only: never a current price. See public/data/price_history/README.md and lib/priceHistory.ts.",
+ "observations": [
+  {
+   "venueId": "venue-1g9ombc",
+   "venueName": "All Bar One",
+   "priceGbp": 5,
+   "observedOn": "2013-03-23",
+   "quote": "sierra nevada pale ale was tip top,but at £5 a pint it has to be.miss the becks vier in here,but peroni is good .and as",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1366/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-qk6ti7",
+   "venueName": "Camden Head",
+   "priceGbp": 4.5,
+   "observedOn": "2014-01-22",
+   "quote": "All in all an average place but one sadly I'm unlikely to return to at £4.50 for a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/39318/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-w9me9i",
+   "venueName": "Chelsea Potter",
+   "priceGbp": 5.8,
+   "observedOn": "2018-06-21",
+   "quote": "I know it's Chelsea and the Kings Road but isn't £5.80 for a pint of Sam Brooks Pale Ale over the top!!!!",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1004/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-11lxzu",
+   "venueName": "Cutty Sark",
+   "priceGbp": 4.35,
+   "observedOn": "2013-09-14",
+   "quote": "4 youngs beers + guest + 3 meantime beers (£4.35 a pint) and interesting largers on tap Had the youngs gold - dull and meantime yakima red - very simcoe-y Great interiour, good food at 10.50 for burger / fish and chips.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1197/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-16nj2fe",
+   "venueName": "Eastbrook",
+   "priceGbp": 3.4,
+   "observedOn": "2016-10-04",
+   "quote": "Pale Ale, a decent pint (not the best ale to be fair) and fairly priced at £3.40 a pint. Music played, the tele's were on mute showing various football shows",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/29541/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-y4v0kd",
+   "venueName": "Flannery's Bar",
+   "priceGbp": 4.5,
+   "observedOn": "2016-11-07",
+   "quote": "No ale on cask but they did have the very drinkable Guinness Hop House 13 lager, a tad pricey at £4.50 a pint but it was blinking good.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/44499/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1w54puk",
+   "venueName": "Fountains Abbey",
+   "priceGbp": 4.14,
+   "observedOn": "2014-03-31",
+   "quote": "I went for the guest instead (forget the name) which was decent enough, but at £4.14 a pint, even more expensive than the station pub.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1344/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1vqfgdi",
+   "venueName": "Hand and Shears",
+   "priceGbp": 4,
+   "observedOn": "2013-04-17",
+   "quote": "Good range of beers and decent beer but at £4.00 a pint it should be.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2902/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1vqfgdi",
+   "venueName": "Hand and Shears",
+   "priceGbp": 5.5,
+   "observedOn": "2022-07-02",
+   "quote": "My £5.50 pint of Frisky Bear Opulence was in decent condition; I didn't try the Portobello Stiff Lip, Twickenham Summer Sun or Young's London Original.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2902/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1056hlu",
+   "venueName": "Hare and Billet",
+   "priceGbp": 7,
+   "observedOn": "2016-05-23",
+   "quote": "4.6% and finally Signature Brew’s Bullhorn @ 7.3%...the last one was a whopping £7.00 a pint! Pricey but worth every penny. Pretty busy for a Tuesday night, nice",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/685/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-18tzld0",
+   "venueName": "Jamaica Wine House",
+   "priceGbp": 3.89,
+   "observedOn": "2013-05-12",
+   "quote": "£3.89 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2903/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-lcr7wu",
+   "venueName": "Leyton Orient Supporters Club",
+   "priceGbp": 2.9,
+   "observedOn": "2012-11-11",
+   "quote": "It was very busy for a further Thursday evening and good value at £2.90 per pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/33215/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-5vc4aa",
+   "venueName": "Orange Tree",
+   "priceGbp": 3.9,
+   "observedOn": "2014-12-29",
+   "quote": "A very nice pint priced at £3.90.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/8056/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-gugv4t",
+   "venueName": "Paxtons Head",
+   "priceGbp": 5.05,
+   "observedOn": "2013-07-23",
+   "quote": "£5.05 for a pint of Peroni!!!!!!",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/135/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-17rj45g",
+   "venueName": "Prince of Wales",
+   "priceGbp": 4.45,
+   "observedOn": "2014-01-27",
+   "quote": "At £4.45 (!) I expected a well poured, fresh, clear pint of beer.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/877/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-4xlgb0",
+   "venueName": "Princess Louise",
+   "priceGbp": 4.25,
+   "observedOn": "2012-12-18",
+   "quote": "Try anything else (such as the organic beer or cider) and you're looking at an eye-watering £4.25 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/194/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-4xlgb0",
+   "venueName": "Princess Louise",
+   "priceGbp": 2.9,
+   "observedOn": "2013-01-25",
+   "quote": "Sam Smith's bitter was nice and only £2.90 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/194/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-14alocj",
+   "venueName": "Richard I",
+   "priceGbp": 4.1,
+   "observedOn": "2014-12-29",
+   "quote": "Typical local price of £4.10 a pint but very well kept.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1202/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-14alocj",
+   "venueName": "Richard I",
+   "priceGbp": 4.15,
+   "observedOn": "2017-08-03",
+   "quote": "The Young's \"Ordinary\" was better than on our previous visit (though still not as good as when Mark ran the pub) - at £4.15 a pint I should hope it was!",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1202/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-gk4wt6",
+   "venueName": "Robin Hood",
+   "priceGbp": 4.05,
+   "observedOn": "2016-06-04",
+   "quote": "My pint of AK was nicely chilled and drinkable, but at £4.05 is on the pricey side.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/13361/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-cg19na",
+   "venueName": "Royal Oak",
+   "priceGbp": 3.1,
+   "observedOn": "2012-11-18",
+   "quote": "Cheap prices (£3.10 for a pint of Guinness in November 2012) and open until 1.30am at the weekends, which is a bonus if you fancy a late drink.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/7123/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-6npyie",
+   "venueName": "Royal Standard",
+   "priceGbp": 3.8,
+   "observedOn": "2016-01-18",
+   "quote": "Not the cheapest place (£3.80 for HSB, January 2016) but quiet, relaxed, friendly.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2106/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1tmo1hz",
+   "venueName": "Swan",
+   "priceGbp": 5,
+   "observedOn": "2015-02-04",
+   "quote": "From 8 cask hand pumps I choose London Fields Brewery Texan Tea @ 6.0%, a very strong black IPA but not as strong as the price...£5.00 a pint!!!",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2336/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1dqfi1i",
+   "venueName": "Sylvan Post",
+   "priceGbp": 3.6,
+   "observedOn": "2014-04-23",
+   "quote": "£3.60 a pint but to me worth every penny.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/43627/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-re5kgk",
+   "venueName": "Tap East",
+   "priceGbp": 6.5,
+   "observedOn": "2014-02-07",
+   "quote": "No complaints re this place, I ordered a pint and the barmaid informed me it was £6.50 before pulling it.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/42996/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-7dkj4q",
+   "venueName": "The Albany",
+   "priceGbp": 4.1,
+   "observedOn": "2014-08-13",
+   "quote": "Not surprised as the Sambrook's Lavender Hill was £4.10 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1099/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1wgjxs6",
+   "venueName": "The Albion",
+   "priceGbp": 4.2,
+   "observedOn": "2013-05-02",
+   "quote": "At £4.20 a pint for the Deuchars I should have felt the warning signs straight away.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/3942/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-iwod6",
+   "venueName": "The Alexandra",
+   "priceGbp": 4.75,
+   "observedOn": "2014-10-05",
+   "quote": "It was just about worth paying £4.75 for a pint of keg Aspall's for a one-off visit to the roof terrace, but at that price I won't make a habbit of it.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/103/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1vzaiwq",
+   "venueName": "The Antelope",
+   "priceGbp": 4,
+   "observedOn": "2016-09-11",
+   "quote": "The beer was £4 a pint whatever the gravity and the pub has a bonus card,so many stamps and you get a free pint.I wish this pub with the Big Smoke Brewery were my local.9/10.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/424/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-12gvm3w",
+   "venueName": "The Beehive - JD Wetherspoon",
+   "priceGbp": 2.5,
+   "observedOn": "2016-05-19",
+   "quote": "Old Thumper at £2.50 a pint - yes!",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/347/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1pvfl2x",
+   "venueName": "The Black Dog",
+   "priceGbp": 5,
+   "observedOn": "2014-10-14",
+   "quote": "A fully paid up member of the over-priced Craft Brewery racket it seems (£5 a pint for the guest lager?!), but there’s Beck’s Vier for those of us who aren't quite so solvent.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/44010/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-eltcmh",
+   "venueName": "The Blackfriar",
+   "priceGbp": 3.6,
+   "observedOn": "2013-07-14",
+   "quote": "Back to London prices at £3.60 as I'd spent the day in Shropshire paying £3.00 or less for a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/602/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-eltcmh",
+   "venueName": "The Blackfriar",
+   "priceGbp": 3.75,
+   "observedOn": "2015-08-05",
+   "quote": "My pint of Doombar (£3.75) was refreshing & the ongoing chatter very amusing.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/602/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-5cjjk6",
+   "venueName": "The Blind Beggar",
+   "priceGbp": 5,
+   "observedOn": "2013-08-23",
+   "quote": "A very bland pub completely lacking in soul or character, a pint of Peroni (I know, I know but it was a hot day) here will set you back £5.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/648/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1pzhlva",
+   "venueName": "The Brewery Tap",
+   "priceGbp": 6.5,
+   "observedOn": "2023-05-31",
+   "quote": "Monday or Tuesday but as they’re charging £6.50 for a pint I suppose they can afford to open less",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2343/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1d8a5xb",
+   "venueName": "The Captain Kidd",
+   "priceGbp": 4.25,
+   "observedOn": "2012-12-18",
+   "quote": "£4.25 for a pint of pure??",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/4000/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1z94t6",
+   "venueName": "The Case is Altered",
+   "priceGbp": 3.35,
+   "observedOn": "2013-06-04",
+   "quote": "There were 4 ales on today, and at £3.35 a pint, a lot cheaper than my locals on Harrow on the Hill.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/14720/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-99ht4f",
+   "venueName": "The Castle",
+   "priceGbp": 3.4,
+   "observedOn": "2014-06-23",
+   "quote": "I try a pint of the later and it is very nice and cost £3.40.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/6066/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-q92xb4",
+   "venueName": "The Castle",
+   "priceGbp": 4.3,
+   "observedOn": "2017-05-06",
+   "quote": "It was reasonable but at £4.30 for a pint, not good value.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/809/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-q92xb4",
+   "venueName": "The Castle",
+   "priceGbp": 5,
+   "observedOn": "2018-06-15",
+   "quote": "They do try to deter drinkers though with reserved cards on most tables and charging a cool £5 a pint for average lager.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/809/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-133en5b",
+   "venueName": "The Chequers",
+   "priceGbp": 3.8,
+   "observedOn": "2013-12-05",
+   "quote": "Has a good range of beers, but a bit expensive (£3.80 a pint), which seems to have deterred a lot of the locals (customers seem to",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2207/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-170rkc0",
+   "venueName": "The Coach and Horses",
+   "priceGbp": 3.7,
+   "observedOn": "2013-03-19",
+   "quote": "Quite pricey but nice, my pint was £3.70.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1079/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-dbukrn",
+   "venueName": "The Coal Hole",
+   "priceGbp": 4.45,
+   "observedOn": "2016-05-12",
+   "quote": "So I had a pint of London Pride which at £4.45 was on the expensive side, even for London.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/813/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-12rqlci",
+   "venueName": "The Crown",
+   "priceGbp": 2.8,
+   "observedOn": "2018-05-28",
+   "quote": "TT's Landlord - £2.80 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/19610/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-13sug69",
+   "venueName": "The Crown Tavern",
+   "priceGbp": 4.5,
+   "observedOn": "2012-12-02",
+   "quote": "(2) The Orchard cider is excellent (not “real”, for the purists, but all the better for that as far as I am concerned); but £4.50 a pint seems a bit extreme.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/17288/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-gdct33",
+   "venueName": "The Devereux",
+   "priceGbp": 4.45,
+   "observedOn": "2015-07-28",
+   "quote": "There was nothing special about the pub itself - though it is situated in an interesting and largely hidden part of London devoted to legal profession - perhaps they don't mind paying £4.45 for a pint but I do!",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/476/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-ai2xg7",
+   "venueName": "The Dial Arch",
+   "priceGbp": 3.94,
+   "observedOn": "2013-09-12",
+   "quote": "My pint of DNA was perfect but rather pricey @ £3.94 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/42203/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-xvusrx",
+   "venueName": "The Dickens Inn",
+   "priceGbp": 4.25,
+   "observedOn": "2013-06-17",
+   "quote": "4 real ales on tap so tried the Doombar at £4.25 (YIKES!) a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/3905/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-cn9acj",
+   "venueName": "The Eastbrook",
+   "priceGbp": 3.4,
+   "observedOn": "2016-10-04",
+   "quote": "Pale Ale, a decent pint (not the best ale to be fair) and fairly priced at £3.40 a pint. Music played, the tele's were on mute showing various football shows",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/29541/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1138j1m",
+   "venueName": "The Flower Pot",
+   "priceGbp": 3.6,
+   "observedOn": "2015-12-06",
+   "quote": "It was a very reasonable £3.60 a pint so no complaints about the prices.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/5575/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1lf3cw",
+   "venueName": "The Founder's Arms",
+   "priceGbp": 4.39,
+   "observedOn": "2013-12-11",
+   "quote": "However, even for a tourist trap £4.39 for real ales and £5.19 for a pint of lager is taking the Carlsberg.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/513/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1lf3cw",
+   "venueName": "The Founder's Arms",
+   "priceGbp": 4.6,
+   "observedOn": "2017-02-28",
+   "quote": "£4.60 for a pint of Youngs Ordinary?",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/513/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-18h2bv8",
+   "venueName": "The Gate Clock - JD Wetherspoon",
+   "priceGbp": 2.7,
+   "observedOn": "2013-12-22",
+   "quote": "The beer was only £2.70 a pint for 4% real ale called Mrs Claus it was a good ale.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1082/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-sasap1",
+   "venueName": "The Gipsy Moth",
+   "priceGbp": 4,
+   "observedOn": "2012-11-11",
+   "quote": "As usually for prime tourist area my pint (3.9% ABV) was £4.00.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1081/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-sasap1",
+   "venueName": "The Gipsy Moth",
+   "priceGbp": 4.7,
+   "observedOn": "2018-07-22",
+   "quote": "Pub next to the Cutty Sark,good pint of Oakham citra £4.70",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1081/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1mgvg3y",
+   "venueName": "The Great Harry",
+   "priceGbp": 5.1,
+   "observedOn": "2014-11-13",
+   "quote": "very nice and a good choice of beers but at £5.10 for a lovely pint of Brooklyn beer is even dearer than the Dial Arch so it's",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/10460/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1ha28jc",
+   "venueName": "The Grenadier",
+   "priceGbp": 4.75,
+   "observedOn": "2014-01-21",
+   "quote": "Please tell me my landlord was not £4.75 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/455/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-s0go8s",
+   "venueName": "The Half Moon - JD Wetherspoon",
+   "priceGbp": 2.6,
+   "observedOn": "2014-07-28",
+   "quote": "Decent pint of Adnams at £2.60.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/3178/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-2txloa",
+   "venueName": "The horniman at hays",
+   "priceGbp": 3.95,
+   "observedOn": "2014-01-16",
+   "quote": "£3.95 for a pint of alright Doom Bar.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1097/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-7qifhm",
+   "venueName": "The Horniman at Hays",
+   "priceGbp": 3.95,
+   "observedOn": "2014-01-16",
+   "quote": "£3.95 for a pint of alright Doom Bar.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1097/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-aihlwx",
+   "venueName": "The Horniman at Hays",
+   "priceGbp": 3.95,
+   "observedOn": "2014-01-16",
+   "quote": "£3.95 for a pint of alright Doom Bar.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1097/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-16s3et4",
+   "venueName": "The Jolly Gardeners",
+   "priceGbp": 4.5,
+   "observedOn": "2013-02-23",
+   "quote": "Draught beers are normally £4.50 a pint, and Schnitzels anywhere between £10-£16, but they have a Happy Hour on Monday Nights where pints are a mere £3.50 and all Schnitzels are £7.95.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/21842/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-k0jc3w",
+   "venueName": "The Kings Arms",
+   "priceGbp": 5.25,
+   "observedOn": "2019-03-17",
+   "quote": "Not as good as when last visited and expensive - £5.25 for a bog standard pint of Kronenbourg.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/17157/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-q9lryg",
+   "venueName": "The Lyceum Tavern",
+   "priceGbp": 2.9,
+   "observedOn": "2013-08-02",
+   "quote": "He then charged me £2.90 for my pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/694/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-adtn0e",
+   "venueName": "The Magpie and Crown",
+   "priceGbp": 3.5,
+   "observedOn": "2012-11-24",
+   "quote": "Most beers £3.50 a pint so not cheap, but who's quibbling when you have 6 real ales, a draft cider and a draft perry to choose from.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2341/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-qall4d",
+   "venueName": "The Moon on the Hill - JD Wetherspoon",
+   "priceGbp": 2.89,
+   "observedOn": "2013-04-24",
+   "quote": "a top pint of surreyhills shere drop,was £2.89,but worth every penny for its quality and taste.then tried the cronx porter",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1547/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-hsxeap",
+   "venueName": "The Nags Head",
+   "priceGbp": 5,
+   "observedOn": "2013-12-15",
+   "quote": "Tried again last night, Surly barmaids, no please or thank you and to top that Pints were £5.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/3637/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-17qpap6",
+   "venueName": "The New Inn",
+   "priceGbp": 4.55,
+   "observedOn": "2013-06-14",
+   "quote": "Paid £4.55 for a pint of Heineken which was ok at best.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/940/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-ue7jm0",
+   "venueName": "The New Inn",
+   "priceGbp": 3.5,
+   "observedOn": "2015-03-30",
+   "quote": "A fantastic pint of Guinness for £3.50, easily the best I've had in London, and yes I'm aware that everyone makes that claim every now and again.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2355/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-rks0cf",
+   "venueName": "The Northcote",
+   "priceGbp": 4.7,
+   "observedOn": "2016-05-27",
+   "quote": "I was warned but still shocked to pay £4.70 for a pint of ale, not 'craft fizzy beer' but ale from the hand pump.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/8109/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1lzgsab",
+   "venueName": "The Old Mill",
+   "priceGbp": 3.8,
+   "observedOn": "2013-10-03",
+   "quote": "Major refurb in progress inside and out hence the £3.80 for a pint of Doombar?",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/7416/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-lorfew",
+   "venueName": "The Pride of Spitalfields",
+   "priceGbp": 3,
+   "observedOn": "2012-12-02",
+   "quote": "Had a pint of Brewers Gold (£3) and Doombar, both which went down nicely.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/17739/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-lorfew",
+   "venueName": "The Pride of Spitalfields",
+   "priceGbp": 3.1,
+   "observedOn": "2013-09-18",
+   "quote": "Well kept Crouch Vale Brewer's Gold for a phenomenally cheap £3.10 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/17739/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1pk3v0q",
+   "venueName": "The Prince Regent",
+   "priceGbp": 3.45,
+   "observedOn": "2013-01-06",
+   "quote": "The guest was £3.45 a pint which is better than the £4.00 I paid in Holborn the other night.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/7278/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1pk3v0q",
+   "venueName": "The Prince Regent",
+   "priceGbp": 3.9,
+   "observedOn": "2016-12-04",
+   "quote": "Had a very nice pint of Springhead Outlawed,3.8%, £3.90.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/7278/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-14rduxi",
+   "venueName": "The Princess of Wales",
+   "priceGbp": 5,
+   "observedOn": "2015-08-03",
+   "quote": "Had a crap pint of Truman's Pale here yesterday - £5 and tasted like whatever they use to clean the taps with",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/3408/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-fpmfjs",
+   "venueName": "The Rake",
+   "priceGbp": 3.6,
+   "observedOn": "2014-09-07",
+   "quote": "Some are expensive but the pint i had was £3.60 which aint bad for london.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/30491/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1iyj2h1",
+   "venueName": "The Red Lion",
+   "priceGbp": 3.5,
+   "observedOn": "2013-11-27",
+   "quote": "My pint of St Andrews from an unknown brewery was very good and at £3.50 it was reasonable.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/5256/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-19flvcj",
+   "venueName": "The Rosemary Branch",
+   "priceGbp": 4,
+   "observedOn": "2012-11-25",
+   "quote": "Cycling past, looked in, as it looked as if it had a good vibe- but offhand service, £4 a pint for poor quality Seafarers, and no acknowledgment on departure, so I won't be returning in a hurry.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1707/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-4k7ida",
+   "venueName": "The Royal Standard",
+   "priceGbp": 4.1,
+   "observedOn": "2016-11-20",
+   "quote": "Had a pint of London Pride at £4.10 and was superb - one of the best I've ever had outside Fullers own pubs.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2162/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1l9ehj3",
+   "venueName": "The Salusbury",
+   "priceGbp": 4.5,
+   "observedOn": "2013-10-19",
+   "quote": "£4.50 for a pint of Bitburger(think I saw a poster of Che Guevara on the wall...) they have some decent ales on tap.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/3365/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-o6cthk",
+   "venueName": "The Sir Julian Huxley - JD Wetherspoon",
+   "priceGbp": 2.15,
+   "observedOn": "2018-11-05",
+   "quote": "The Invited brewers are from Bedlam Brewery from Plumpton Green, East Sussex.The Cask beers at the Huxley are currently £2.15 a pint !",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/5487/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1gz2vse",
+   "venueName": "The Sir Richard Steele",
+   "priceGbp": 5.5,
+   "observedOn": "2019-09-22",
+   "quote": "No ale on at all now and £5.50 for a very iffy pint of Estrella.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1474/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-oj2cg",
+   "venueName": "The Stag",
+   "priceGbp": 3.5,
+   "observedOn": "2013-10-22",
+   "quote": "Selling pints of pride for £3.50, which i see as very reasonable especially as it tasted great.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/5982/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-16l3l9x",
+   "venueName": "The Stapleton Tavern",
+   "priceGbp": 4,
+   "observedOn": "2015-03-31",
+   "quote": "Improved and trendier since Antic took it over, but expensive at £4 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2298/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1giuqdh",
+   "venueName": "The Town Wharf",
+   "priceGbp": 2.9,
+   "observedOn": "2014-06-23",
+   "quote": "A pint of Sam Smiths Old Brewery Bitter costs £2.90.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1603/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1do2gfz",
+   "venueName": "The Victoria",
+   "priceGbp": 3.6,
+   "observedOn": "2016-11-04",
+   "quote": "I opted for Chiswick Bitter, a nice well kept pint and at £3.60 a pint it was very reasonable in this part of town.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2833/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1lpbgp3",
+   "venueName": "The Washington",
+   "priceGbp": 4.2,
+   "observedOn": "2014-01-02",
+   "quote": "I got a decent pint of 'Top of the Hops' but at £4.20 I doubt I'll be",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1475/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1bsihwr",
+   "venueName": "The Water Rats",
+   "priceGbp": 4.7,
+   "observedOn": "2016-07-06",
+   "quote": "£4.70 for a pint of Whitstable Pale Ale is pushing it so not surprised there were only 2 other people",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/29851/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1bsihwr",
+   "venueName": "The Water Rats",
+   "priceGbp": 5.8,
+   "observedOn": "2017-04-21",
+   "quote": "Dreadfully overpriced for something not at all special - was charged £5.80 for a pint of \"craft\" keg that resembled Whitbread Tankard.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/29851/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-5cqxbo",
+   "venueName": "The White Hart",
+   "priceGbp": 2.6,
+   "observedOn": "2012-11-15",
+   "quote": "The price of £2.60 a pint is excellent for London and especially this area, but as per a previous comment there is a lot of wasted space inside.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/27068/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1bbusqd",
+   "venueName": "The White Horse",
+   "priceGbp": 3.5,
+   "observedOn": "2014-02-07",
+   "quote": "The selective house bitter, Hobsons Best (3.8% ; from Shropshire), at £3.50 per pint is no longer available having been recently replaced by the returning ubiquitous house bitter, Harveys Best Bitter (4% ; from East Sussex), at £3.90",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/107/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1bbusqd",
+   "venueName": "The White Horse",
+   "priceGbp": 4.5,
+   "observedOn": "2016-12-27",
+   "quote": "An expensive pub (£4.50 for a pint, £14 for fish & chips) but very well run.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/107/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-lm7rmo",
+   "venueName": "The Windmill",
+   "priceGbp": 3.5,
+   "observedOn": "2014-08-08",
+   "quote": "Pool table, space invaders table, a pint of decent ale was £3.50 which is pretty decent given I was coughing up £4.75 somewhere around Holborn the previous night.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/35892/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-jmt0dy",
+   "venueName": "The Wrong Un - JD Wetherspoon",
+   "priceGbp": 2.15,
+   "observedOn": "2013-09-08",
+   "quote": "Again as expected a very reasonable £2.15 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/5027/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-137r3lb",
+   "venueName": "The Yacht",
+   "priceGbp": 4.05,
+   "observedOn": "2013-09-21",
+   "quote": "I had an okay pint of ferrymans gold but for £4.05!!!",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1196/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-137r3lb",
+   "venueName": "The Yacht",
+   "priceGbp": 4.8,
+   "observedOn": "2015-08-29",
+   "quote": "Pint of Sambrookes Junction, £4.80.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1196/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-82qxv1",
+   "venueName": "Viaduct Tavern",
+   "priceGbp": 4,
+   "observedOn": "2013-10-23",
+   "quote": "What you get is a decent pint, although pricey at £4 for a real ale.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/5472/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-82qxv1",
+   "venueName": "Viaduct Tavern",
+   "priceGbp": 5,
+   "observedOn": "2015-04-28",
+   "quote": "A full £5 for a not particularly well kept pint of bog standard keg cider.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/5472/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-1yexvrp",
+   "venueName": "Wenlock Arms",
+   "priceGbp": 3.4,
+   "observedOn": "2013-06-17",
+   "quote": "10 Hand pulls with prices of > 4.5% £3.40 a pint and over that £3.60.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1316/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-u5unwx",
+   "venueName": "Westminster Arms",
+   "priceGbp": 3.85,
+   "observedOn": "2014-09-11",
+   "quote": "Beer was mainly Shepherd Neame, and although I'm not a fan of Master Brew (eeeeurghhh) or Spitfire, the Whitstable Pale Ale was very quaffable and at £3.85 per pint is reasonable value for the local area.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/2102/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-789vcy",
+   "venueName": "Windermere",
+   "priceGbp": 3.3,
+   "observedOn": "2013-04-24",
+   "quote": "The latter was quite nice and was £3.30 a pint.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/3175/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  },
+  {
+   "venueId": "venue-18uogns",
+   "venueName": "Ye Olde Swiss Cottage",
+   "priceGbp": 3.16,
+   "observedOn": "2016-05-17",
+   "quote": "I had a pint of Sovereign ale (£3.16) and pulled pork pie which tasty enough.",
+   "source": {
+    "label": "beerintheevening.com",
+    "url": "https://www.beerintheevening.com/pubs/comments.shtml/1000/",
+    "licence": "User review published on beerintheevening.com; quoted with attribution for a dated price claim."
+   }
+  }
+ ]
+}

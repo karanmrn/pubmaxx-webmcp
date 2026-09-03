@@ -1,0 +1,128 @@
+/* The sheet behind a UK base pin (components/map/UnverifiedPubSheet.tsx).
+   Scoped to .unverifiedPub; reuses the shared app tokens (--brass, --ink,
+   --ink-soft, --line, --muted, --panel-raised, --radius-*) so it inherits both
+   themes without forking a hex. Mobile-first at 390px: nothing here relies on
+   hover, and the submit card below it owns every touch target. */
+
+.unverifiedPub {
+  padding: 18px 18px 24px;
+}
+
+.unverifiedPubHead {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* The status the whole sheet exists to state - quiet, not a warning. */
+.unverifiedPubTag {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  color: var(--brass);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.unverifiedPubName {
+  margin: 0;
+  font-family: var(--font-display, var(--serif));
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.unverifiedPubAddress {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--ink-soft, var(--muted));
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.unverifiedPubAddress svg {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+
+/* Same rule the curated inspector needs (components/map/venueSheet.css): the
+   portal sheet's own header already shows the pub name as the centred sheet
+   title, so the in-panel name is a duplicate there. The desktop drawer has no
+   titled head, so outside the portal this heading stays the only name. */
+.mobileSharedSheet .unverifiedPubName {
+  display: none;
+}
+
+.unverifiedPubLead {
+  margin: 14px 0 0;
+  color: var(--ink-soft, var(--muted));
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.unverifiedPubLead strong {
+  color: var(--ink);
+}
+
+.unverifiedPubSource {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.unverifiedPubSource a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.unverifiedPubOverlay {
+  margin: 14px 0 0;
+}
+
+.unverifiedPubActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.unverifiedPubActions a,
+.unverifiedPubLoreMeta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--brass);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.unverifiedPubLore {
+  margin: 12px 0 0;
+}
+
+.unverifiedPubLore p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.unverifiedPubLoreMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+}

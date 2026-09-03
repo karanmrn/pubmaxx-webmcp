@@ -1,0 +1,1212 @@
+/* Auth UI — token-driven, matches the pub-guidebook surfaces. Scoped to the
+   sign-in buttons + signed-in menu so it can't leak into the rest of the app. */
+
+/* One alignment system for the standalone sign-in wall: the two provider
+   buttons stack full-width in a single column, exactly matching the email
+   field + CTA below them (see `.authOptions .authSignIn` and
+   `.authMagicLinkRow`). No intrinsic-width centered pills, no full-width row
+   sitting beside centered ones. The compact nav popover (.authMenu) is
+   unaffected — it renders its buttons outside .authProviders. */
+.authProviders {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.authOptions {
+  display: grid;
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 26rem;
+  min-width: 0;
+  margin-inline: auto;
+  box-sizing: border-box;
+  /* Named container: label full/short swaps on CONTAINER width so a tight
+     empty-state card at a wide viewport no longer forces clipped full labels.
+     The direct wrapper and .authUser:not(.authUserNav) below both fill their
+     host column and may shrink; otherwise size containment can collapse under
+     justify-items:center. */
+  container-type: inline-size;
+  container-name: auth-options;
+}
+
+/* Every control in the standalone wall is a full-width pill — the two provider
+   buttons and the "Email me a link" CTA share one width and one centre line.
+   Scoped to .authOptions so the nav's inline .authSignIn (flex:0 1 auto) and the
+   .authMenu popover keep their own sizing. */
+.authOptions .authSignIn {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+}
+
+/* A full-width provider pill always has room for the full "Continue with …"
+   label, so never fall back to the side-by-side short-label swap here. */
+.authProviders .authSignInLabelFull {
+  display: inline;
+}
+
+.authProviders .authSignInLabelShort {
+  display: none;
+}
+
+.authMagicLink {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.authMagicLinkLabel {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Field + CTA stack full-width in the same single column as the provider
+   buttons — one bounded stack, every control the same width. */
+.authMagicLinkRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.authMagicLinkInput {
+  min-width: 9rem;
+  min-height: 44px;
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+/* iOS Safari zooms focused controls below 16px. Keep desktop density and
+   raise this component selector only for coarse pointers. */
+@media (pointer: coarse) {
+  .authMagicLinkInput {
+    font-size: 16px;
+  }
+}
+
+.authMagicLinkInput:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.authMagicLinkInput:disabled {
+  opacity: 0.65;
+}
+
+/* "Email me a link" is the primary action of the sign-in wall, so it wears the
+   house accent fill (brass + on-accent) instead of inheriting the quiet
+   panel-raised pill the OAuth buttons use. Fixes the low-contrast white-on-grey
+   render on /activity and /messages, in both themes.
+
+   THE SELECTOR CARRIES BOTH CLASSES ON PURPOSE. `.authSignIn` is declared later
+   in this file and sets `background: var(--panel-raised)` plus the `border`
+   SHORTHAND, so at equal specificity it won every one of these declarations
+   back and this rule moved no pixel anywhere: /login's only primary measured
+   `rgb(32,32,36)`, the same fill as the active thumb of the segmented control
+   above it, and the front door had no primary at all. Raising the selector
+   rather than reordering the file keeps the fix true whatever the source order
+   becomes. */
+.authSignIn.authMagicLinkButton {
+  flex: 0 0 auto;
+  min-height: 44px;
+  border-color: var(--brass-accessible);
+  background: var(--brass-accessible);
+  color: var(--color-on-photo);
+  font-weight: 700;
+}
+
+.authSignIn.authMagicLinkButton:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--brass-accessible) 88%, var(--ink-deep) 12%);
+  background: color-mix(in srgb, var(--brass-accessible) 88%, var(--ink-deep) 12%);
+}
+
+.authMagicLinkCancel {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.authMagicLinkCancel:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.authMagicLinkSuccess,
+.authMagicLink .authError {
+  margin: 0;
+  max-width: 25rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.authMagicLinkSuccess {
+  color: var(--ink-soft);
+}
+
+.authCallbackNotice {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  left: 50%;
+  z-index: var(--z-modal, 60);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: min(32rem, calc(100vw - 2rem));
+  padding: 0.75rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--brick) 35%, var(--line));
+  border-radius: 0.8rem;
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--ink-deep) 22%, transparent);
+  transform: translateX(-50%);
+}
+
+/* Success path for attempt-less token sign-in confirmation (not an error). */
+.authCallbackNotice--ok {
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+}
+
+.authCallbackNotice span {
+  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.authCallbackNotice button {
+  min-height: 44px;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.authCallbackNotice button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.authSignIn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Lets the button shrink inside the nav's flex row instead of forcing an
+     overflow/clip when the bar is tight (see the 390px fix below). */
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+  /* Soft overflow: never hard-clip mid-glyph when the pill is still tight
+     (magic-link "Email me a link" shares this class). */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+/* Label text can shrink inside the pill; the provider mark stays solid. */
+.authSignIn .authProviderMark {
+  flex: 0 0 auto;
+}
+
+.authSignInLabelFull,
+.authSignInLabelShort {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Full vs. short label: only one renders at a time (both are real text, not a
+   display:none replacement of the accessible name — each button keeps its own
+   aria-label regardless of which is visible). Default (room to spare) shows
+   the full label; tight containers / ≤720px viewports swap to short provider
+   names so Google + Apple never crowd or clip. */
+.authSignInLabelShort {
+  display: none;
+}
+
+/* ── Container-aware label swap (primary) ────────────────────────────────
+   Root cause of the /activity clip: empty-state cards constrain the auth
+   block to ~26rem while the viewport stays 1440, so viewport-only short
+   labels never fired. When the options/providers container is too tight
+   for two full "Continue with …" pills side-by-side, use short names.
+   Very narrow containers (stacked phone rows) restore full labels. */
+@container auth-options (max-width: 32rem) {
+  .authSignIn {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.82rem;
+    gap: 0.35rem;
+  }
+
+  .authSignInLabelFull {
+    display: none;
+  }
+
+  .authSignInLabelShort {
+    display: inline;
+  }
+
+  /* Stack the email field + CTA so "Email me a link" never mid-glyph clips
+     next to the input in a ~26rem empty-state card. */
+  .authMagicLinkRow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .authMagicLinkButton {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+}
+
+/* Phone-narrow container: each pill can take a full row — prefer full labels. */
+@container auth-options (max-width: 22rem) {
+  .authProviders {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .authSignIn {
+    min-height: 44px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .authSignInLabelFull {
+    display: inline;
+  }
+
+  .authSignInLabelShort {
+    display: none;
+  }
+
+  .authMagicLinkRow {
+    display: grid;
+  }
+
+  .authMagicLinkButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Viewport fallback for browsers without container queries (same thresholds
+   as before this fix). Order after @container so ≤480 still wins on phones. */
+@media (max-width: 720px) {
+  .authSignIn {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.82rem;
+    gap: 0.35rem;
+  }
+
+  .authSignInLabelFull {
+    display: none;
+  }
+
+  .authSignInLabelShort {
+    display: inline;
+  }
+}
+
+/* U6f — at phone widths keep the full "Continue with …" labels visible (an
+   icon-only pill is unlabelled UI) and guarantee a 44px touch target. Two
+   full-width buttons wrap onto their own rows instead of cramming into one.
+   The one surface that genuinely can't afford labels — the floating map nav —
+   keeps its own icon-only override (globals.css .siteNavBarFloating rules),
+   and the standard nav hides .authUser entirely at this width (siteNav.css). */
+@media (max-width: 480px) {
+  .authProviders {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .authSignIn {
+    min-height: 44px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .authSignInLabelFull {
+    display: inline;
+  }
+
+  .authSignInLabelShort {
+    display: none;
+  }
+
+  .authMagicLinkRow {
+    display: grid;
+  }
+
+  .authMagicLinkButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Compact nav sign-in (UX defect fix) ─────────────────────────────────
+   In the top navigation the two full "Continue with …" buttons only fit next
+   to a full link row on very wide screens. Below that they crowded the nav
+   links into overlapping fragments (1440px on /borough, /pubs, /discover) or
+   overflowed the landing top bar off-screen at 390px. Nav hosts now render
+   SignInButton with `compact`: a single "Sign in" disclosure (44px target)
+   opens the two fully-labelled provider buttons in a token-styled popover.
+   The inline pair never returns in a nav host — even huge viewports keep the
+   bar inside a bounded pill, so two ~210px buttons never genuinely fit. */
+.authUserNav {
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+.authCompact {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.authCompactTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  /* 44px touch target at every width. */
+  min-height: 44px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.authCompactTrigger:hover {
+  border-color: var(--brass);
+}
+
+.authCompactTrigger:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.authCompactTrigger[aria-expanded="true"] {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+}
+
+/* Tablet band only: the eight-link row is at its densest, so the trigger
+   drops to an icon-only 44px disc (its aria-label keeps the accessible name)
+   and the labels get the room back. Phones (≤640px) are excluded on purpose:
+   SiteNav hides .authUser entirely there (the bottom tab bar owns nav) and
+   the landing top bar has room for the labelled pill. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .authUserNav .authCompactLabel {
+    display: none;
+  }
+
+  .authUserNav .authCompactTrigger {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+  }
+}
+
+/* Popover with the two full provider buttons — anchored to the trigger's
+   right edge so it never pushes the bar wider or clips off-screen. */
+.authMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: var(--z-modal, 60);
+  display: grid;
+  gap: 0.4rem;
+  width: min(22rem, calc(100vw - 2rem));
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--panel-raised);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--ink-deep) 22%, transparent);
+}
+
+@keyframes authMenuRise {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .authMenu {
+    animation: authMenuRise 0.18s ease-out;
+  }
+}
+
+/* Inside the popover there is always room for the full labels; each row is a
+   full-width 44px target regardless of the viewport-driven swaps above. */
+.authMenu .authSignIn {
+  width: 100%;
+  min-height: 44px;
+  justify-content: flex-start;
+}
+
+.authMenu .authMagicLink {
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.authAccountSummary {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 2rem;
+  padding-inline: 0.2rem;
+}
+
+/* Signed-in account card. The face, the name and the handle are the identity;
+   the links are the three places a person actually goes; the email is account
+   plumbing and reads as such. */
+.authAccountMenu {
+  gap: 0.35rem;
+  padding: 0.6rem;
+  /* A device may hold five accounts, so this card has a variable height: the
+     identity, three links, up to four switch rows, Add account and two ways out.
+     Bound it to the space below the bar and let it scroll, rather than run off
+     the foot of a short laptop viewport. */
+  max-height: calc(100dvh - var(--topbar-h, 52px) - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.authAccountCard {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0.35rem 0.2rem 0.55rem;
+}
+
+.authAccountAvatar {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.authAccountAvatarFallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--brass) 14%, transparent);
+  color: var(--brass);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.authAccountCardText {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.authAccountName {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.authAccountHandle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brass);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.authAccountLinks {
+  display: grid;
+  gap: 0.15rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.authAccountLinks a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 0.55rem;
+  border-radius: var(--control-radius, 14px);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.authAccountLinks a:hover {
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.authAccountLinks a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+/* Switch account. A standard control for anybody running more than one, so it
+   sits in the card's own rhythm rather than reading as an extra feature: the
+   same 44px rows, the same divider, the same brass hover the links use. */
+.authSwitcher {
+  display: grid;
+  gap: 0.15rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.authSwitcherToggle {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 0.55rem;
+  border: 0;
+  border-radius: var(--control-radius, 14px);
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.authSwitcherToggle:hover {
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.authSwitcherChevron {
+  margin-left: auto;
+  color: var(--muted);
+  transition: transform 0.16s ease-out;
+}
+
+.authSwitcherToggle[aria-expanded="true"] .authSwitcherChevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .authSwitcherChevron {
+    transition: none;
+  }
+}
+
+.authSwitcherToggle:focus-visible,
+.authSwitcherRow:focus-visible,
+.authSwitcherAdd:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+.authSwitcherList {
+  display: grid;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.authSwitcherRow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.25rem 0.55rem;
+  border: 0;
+  border-radius: var(--control-radius, 14px);
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.authSwitcherRow:hover {
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.authSwitcherRow:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.authSwitcherAvatar {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 0.8rem;
+}
+
+.authSwitcherRowText {
+  display: grid;
+  gap: 0.05rem;
+  min-width: 0;
+}
+
+.authSwitcherName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.authSwitcherHandle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brass);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* A state, not a hint: this row cannot be swapped into silently. Quiet, and it
+   keeps a readable contrast rather than an opacity that dims it out of reach. */
+.authSwitcherState {
+  margin-left: auto;
+  padding-left: 0.4rem;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.authSwitcherAdd {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 0.55rem;
+  border-radius: var(--control-radius, 14px);
+  color: var(--brass);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.authSwitcherAdd:hover {
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.authSwitcherError {
+  margin: 0;
+  padding-inline: 0.55rem;
+  font-size: 0.78rem;
+}
+
+/* The second way out. Same shape as the first so neither reads as the safe one,
+   and it is only rendered when the device really holds more than one account. */
+.authMenu > .authSignOutDevice {
+  color: var(--muted);
+}
+
+.authAccountEmail {
+  margin: 0;
+  padding: 0.5rem 0.55rem 0.25rem;
+  border-top: 1px solid var(--line);
+  /* Quiet, not faint. This is still the address a person signs in with, so it
+     keeps a readable contrast rather than an opacity that dims it below one. */
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.authMenu > .authSignOut {
+  width: 100%;
+  min-height: 44px;
+  text-align: center;
+}
+
+.authMenu > .clerkAccount {
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--line);
+}
+
+/* A rare OAuth-call error in the compact host renders as a small anchored
+   note instead of stretching the (nowrap) nav row. */
+.authUserNav > .authError {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: max-content;
+  max-width: 16rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--brick) 35%, var(--line));
+  border-radius: 0.6rem;
+  background: var(--panel-raised);
+}
+
+.authSignIn:hover {
+  border-color: var(--brass);
+}
+
+.authSignIn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.authSignIn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Provider marks keep their own brand colours (never token-tinted). */
+.authProviderMark {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+}
+
+/* Signed-in cluster: avatar + name, with a quiet sign-out control. */
+.authUser {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+:where(:has(> .authUser:not(.authUserNav))) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.authUser:not(.authUserNav) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.authAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.authAvatarFallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+  color: var(--brass);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.authName {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 12ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.authSignOut {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.authSignOut:hover {
+  border-color: var(--brick);
+  color: var(--brick);
+}
+
+.authSignOut:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.authError {
+  font-size: 0.8rem;
+  color: var(--brick);
+  width: 100%;
+  text-align: right;
+}
+
+/* ── Wave L3: Claim your night ───────────────────────────────────────────── */
+
+.claimNightBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-backdrop);
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: color-mix(in srgb, var(--ink-deep) 48%, transparent);
+  animation: claimNightFade 0.22s ease-out;
+}
+
+@keyframes claimNightFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.claimNightDialog {
+  width: min(100%, 26rem);
+  padding: 1.35rem 1.4rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--ink-deep) 22%, transparent);
+  animation: claimNightRise 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes claimNightRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.claimNightTitle {
+  margin: 0 0 0.45rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.claimNightLead,
+.claimNightActivity,
+.claimNightSingle {
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.claimNightActivity strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.claimNightHandle {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.claimNightConflict,
+.claimNightError {
+  margin: 0 0 0.85rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--brick) 35%, var(--line));
+  background: color-mix(in srgb, var(--brick) 8%, var(--panel));
+  color: var(--brick);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.claimNightChoices {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.claimNightLegend {
+  padding: 0;
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.claimNightOption {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  align-items: start;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--panel);
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.claimNightOption:hover {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+}
+
+.claimNightOption:has(input:checked) {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel));
+}
+
+.claimNightOption input {
+  margin-top: 0.2rem;
+  accent-color: var(--brass);
+}
+
+.claimNightOptionHint {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.claimNightActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+
+.claimNightConfirm,
+.claimNightSkip {
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--control-radius, 14px);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.claimNightConfirm {
+  border: 1px solid var(--brass);
+  background: var(--brass);
+  color: #fff;
+}
+
+.claimNightConfirm:hover:not(:disabled) {
+  background: var(--brass-bright);
+  border-color: var(--brass-bright);
+}
+
+.claimNightSkip {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.claimNightSkip:hover:not(:disabled) {
+  border-color: var(--ink-soft);
+  color: var(--ink);
+}
+
+.claimNightConfirm:focus-visible,
+.claimNightSkip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.claimNightConfirm:disabled,
+.claimNightSkip:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .claimNightDialog {
+    padding: 1.15rem 1.1rem 1.05rem;
+  }
+
+  .claimNightActions {
+    flex-direction: column-reverse;
+  }
+
+  .claimNightConfirm,
+  .claimNightSkip {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claimNightBackdrop,
+  .claimNightDialog {
+    animation: none;
+  }
+}
+
+/* ── Clerk account controls ──────────────────────────────────────────────
+   Clerk sits inside the SAME surface as the Google / Apple / magic-link
+   options, so it borrows .authSignIn rather than shipping a second button
+   language. Only the layout, the lead emphasis and the caption are new.
+
+   The rule DESIGN.md §6 makes explicit and this block obeys: no new card, no
+   second accent. Coral already owns the primary action, so the lead button is
+   a weight and border change, not another colour. */
+.clerkAccount {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.clerkAccountActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.clerkAccountActions .authSignIn {
+  justify-content: center;
+  width: 100%;
+}
+
+/* NOTE ON PRESS FEEDBACK: these pills need none of their own. app/globals.css
+   already presses every <button> on :active via --press-scale, behind a
+   prefers-reduced-motion: no-preference gate, and __tests__/designCraftCss.test.ts
+   holds that to ONE scale owner per control. A local transform: scale() here
+   would be a second owner and would lose the reduced-motion gate with it. */
+
+/* The lead action. Coral is already the app's one accent, so emphasis here is
+   a firmer edge and a heavier label, never a second hue. */
+.clerkAccountPrimary {
+  border-color: var(--brass);
+  font-weight: 700;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .clerkAccountPrimary:hover {
+    background: var(--panel);
+    border-color: var(--brass-bright);
+  }
+}
+
+.clerkAccountPrimary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* The honesty caption. It wraps and never truncates: a disclosure cut mid
+   sentence is a disclosure the reader never received. */
+.clerkAccountNote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+.clerkAccountSignedIn {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clerkAccountNoteInline {
+  min-width: 0;
+}

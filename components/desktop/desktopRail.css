@@ -1,0 +1,21 @@
+/* Shared desktop right-rail host (Wave D2.1). Layout only, and TRANSPARENT: each
+   slot keeps its own card chrome, so the rail carries no border, surface, or
+   colour of its own — which is also why it needs no light/dark rules. A vertical
+   stack that becomes sticky at the >=1024 rail breakpoint, matching the feed and
+   tonight rails already on main (same 16px rhythm, same 96px offset). Unwired in
+   D2 — no page mounts it yet. */
+
+.desktopRail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .desktopRail {
+    position: sticky;
+    top: var(--desktop-rail-top, 96px); /* clears the floating SiteNav pill */
+    align-self: start;
+  }
+}

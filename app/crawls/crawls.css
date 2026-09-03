@@ -1,0 +1,636 @@
+/* Crawl Story poster. All selectors here are new + scoped to this page; the
+   values lean on the existing design-system CSS vars so the poster inherits the
+   "printed guidebook" theme (brass accent, cream paper, display headings via
+   var(--serif) — the legacy alias that now resolves to Space Grotesk). */
+
+.crawlsShell {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 24px var(--page-gutter) 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* --- shared bits ---------------------------------------------------------- */
+
+.crawlEyebrow {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--state-active-ink);
+  font-weight: 700;
+}
+
+/* --- empty state ---------------------------------------------------------- */
+
+/* Deliberate non-adopter of --content-max: the empty state is a single centered
+   panel that intentionally runs wider (760px) than the reading column so its
+   short prompt does not look starved on a blank page. */
+.crawlEmpty {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+  padding: 40px 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.crawlEmpty h1 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.crawlEmptyBody {
+  margin: 0 auto 24px;
+  max-width: 440px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.crawlOwnLead {
+  margin-bottom: 16px;
+}
+
+/* --- route packs (compact jump-nav above the crawl grid) ------------------ */
+/* E4 (Gate-Z): this used to be a dense two-column text index (title + blurb +
+   "Open on map" + "Browse N routes" per pack) stacked above the curated card
+   grid it precedes — duplicate content, since every pack's routes already
+   surface as full cards (thumbnail, price range, badges, CTA) below. Now a
+   slim chip row: click a pack to filter the grid to its routes (?pack=id),
+   full pack blurb still reachable via the chip's title tooltip. */
+
+.routePackNav {
+  width: 100%;
+  margin: 0 0 28px;
+  text-align: left;
+}
+
+.routePackChipRow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.routePackChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .routePackChip:hover {
+    border-color: var(--brass);
+    color: var(--state-active-ink);
+  }
+}
+
+.routePackChip:focus-visible {
+  border-color: var(--brass);
+  color: var(--state-active-ink);
+}
+
+.routePackChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.routePackChip.isActive {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 14%, transparent);
+  color: var(--state-active-ink);
+}
+
+.routePackChipCount {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.routePackActiveNote {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.routePackActiveNote a {
+  color: var(--state-active-ink);
+  font-weight: 700;
+}
+
+/* --- curated crawls (empty-state grid) ------------------------------------ */
+
+.curatedGrid {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  text-align: left;
+}
+
+.curatedCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow);
+}
+
+.curatedBadge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--brass);
+  color: var(--state-active-ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.curatedName {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.curatedBlurb {
+  margin: 0;
+  flex: 1 1 auto;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.curatedMeta {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+/* --- honest route metrics on the curated card (E4) ------------------------ */
+
+.curatedRoute {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Route-shape thumbnail. currentColor drives the polyline + dots, so a muted
+   ink tone here (not the loud brass) keeps it a quiet supporting mark. */
+.curatedRouteThumb {
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+}
+
+.curatedRouteMeta {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.curatedPriceFrom {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--accent-price-ink);
+}
+
+/* "Starts at Big Ben"-style origin chip (story 27). */
+.curatedOriginChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.curatedOriginChip svg {
+  color: var(--brass);
+}
+
+.curatedPlaceStoryChip {
+  border-color: color-mix(in srgb, var(--brass) 35%, var(--line));
+  color: var(--ink);
+  background: color-mix(in srgb, var(--brass) 8%, transparent);
+}
+
+.curatedLink,
+.curatedPlanBtn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--brass);
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  transition: filter 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .curatedLink:hover,
+  .curatedPlanBtn:hover {
+    filter: brightness(1.05);
+    text-decoration: none;
+  }
+}
+
+.curatedLink:focus-visible,
+.curatedPlanBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* --- featured crawl (one full card, replaces the old repeated grid) ------- */
+
+.curatedFeaturedWrap {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 0 28px;
+  text-align: left;
+}
+
+.curatedFeaturedEyebrow {
+  margin: 0 0 10px;
+}
+
+.curatedFeaturedCard {
+  width: 100%;
+}
+
+/* --- compact crawl rows (E: kill the template-repetition wall) ------------ */
+/* Every crawl after the featured one is a single scannable line — name, area,
+   stop count, price range — grouped under its crawlStyle theme heading.
+   Taps open the same map deep-link the old full card's CTA used (curated
+   crawls have no dedicated detail route). */
+
+.crawlCompactGroups {
+  width: 100%;
+  display: grid;
+  gap: 22px;
+  margin: 0 0 28px;
+  text-align: left;
+}
+
+.crawlCompactGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.crawlCompactGroupHeading {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.crawlCompactList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel-raised);
+}
+
+.crawlCompactRow + .crawlCompactRow {
+  border-top: 1px solid var(--line);
+}
+
+.crawlCompactLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 44px;
+  padding: 10px 14px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .crawlCompactLink:hover {
+    background: color-mix(in srgb, var(--brass) 6%, transparent);
+  }
+}
+
+.crawlCompactLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+.crawlCompactLink:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.crawlCompactName {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crawlCompactMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  overflow: hidden;
+}
+
+.crawlCompactArea {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crawlCompactStops {
+  flex: 0 0 auto;
+}
+
+.crawlCompactPrice {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--accent-price-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crawlCompactLink {
+    transition: none;
+  }
+
+  .crawlCompactLink:active {
+    transform: none;
+  }
+}
+
+/* --- poster --------------------------------------------------------------- */
+
+.crawlPoster {
+  width: 100%;
+  max-width: var(--content-max);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 18px 48px rgba(15, 28, 22, 0.1);
+}
+
+.crawlPosterHead {
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 20px;
+}
+
+.crawlPosterHead h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 34px;
+  line-height: 1.12;
+}
+
+.crawlCaption {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.crawlTags {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.crawlTag {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--brass);
+  color: var(--state-active-ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* --- stops ---------------------------------------------------------------- */
+
+.crawlStops {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0 0;
+}
+
+.crawlStop {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.crawlStopNumber {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--brass);
+  color: var(--panel-raised);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.crawlStopBody {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.crawlStopBody strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.crawlStopNote {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.crawlStopPrice {
+  flex: 0 0 auto;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  padding-top: 2px;
+}
+
+/* --- receipt-style total -------------------------------------------------- */
+
+.crawlReceipt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--brass);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+}
+
+.crawlReceipt > span {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.crawlReceipt small {
+  margin-top: 2px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+}
+
+.crawlReceipt strong {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--accent-price-ink);
+}
+
+/* --- actions -------------------------------------------------------------- */
+
+.crawlActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.crawlPrimaryBtn,
+.crawlSecondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.crawlPrimaryBtn {
+  background: var(--brass);
+  color: var(--color-on-accent);
+  border: 1px solid var(--brass);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .crawlPrimaryBtn:hover {
+    filter: brightness(1.05);
+  }
+}
+
+.crawlSecondaryBtn {
+  background: var(--panel-raised);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .crawlSecondaryBtn:hover {
+    border-color: var(--brass);
+  }
+}
+
+.crawlPrimaryBtn:focus-visible,
+.crawlSecondaryBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.crawlFootnote {
+  margin: 22px 0 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 520px) {
+  .crawlPoster {
+    padding: 24px 18px;
+  }
+  .crawlPosterHead h1 {
+    font-size: 27px;
+  }
+}
+
+/* RoundStarter styles live in components/round/roundStarter.css (shared with Plan drawer). */

@@ -1,0 +1,191 @@
+.palAvatar {
+  --pal-accent: #e3a236;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(72vw, 420px);
+  aspect-ratio: 1;
+  isolation: isolate;
+  filter: drop-shadow(
+    0 22px 50px color-mix(in srgb, var(--pal-accent) 20%, transparent)
+  );
+}
+.palAvatar.isCompact {
+  width: 36px;
+}
+.palHalo {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid color-mix(in srgb, var(--pal-accent) 44%, transparent);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 12px color-mix(in srgb, var(--pal-accent) 4%, transparent),
+    inset 0 0 48px color-mix(in srgb, var(--pal-accent) 11%, transparent);
+  animation: palOrbit 14s linear infinite;
+}
+.palBody {
+  position: relative;
+  width: 58%;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--pal-accent) 66%, white 8%);
+  display: grid;
+  place-items: center;
+  clip-path: polygon(
+    20% 10%,
+    80% 10%,
+    96% 38%,
+    84% 87%,
+    50% 100%,
+    16% 87%,
+    4% 38%
+  );
+  background:
+    repeating-linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--pal-accent) 11%, transparent) 0 1px,
+      transparent 1px 7px
+    ),
+    radial-gradient(
+      circle at 50% 42%,
+      color-mix(in srgb, var(--pal-accent) 24%, transparent),
+      transparent 62%
+    );
+  backdrop-filter: blur(4px);
+  animation: palBreathe 4.2s ease-in-out infinite;
+}
+.palBody svg {
+  width: 66%;
+  height: 66%;
+  overflow: visible;
+  fill: color-mix(in srgb, var(--pal-accent) 42%, var(--ink-deep));
+  stroke: color-mix(in srgb, var(--pal-accent) 78%, white);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--pal-accent) 60%, transparent));
+}
+.palBody b {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 10px var(--pal-accent);
+}
+.palParticles i {
+  --angle: calc(var(--p) * 40deg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  background: var(--pal-accent);
+  transform: rotate(var(--angle)) translateX(calc(90px + var(--p) * 5px));
+  opacity: 0.38;
+  animation: palParticle 3s calc(var(--p) * -0.2s) ease-in-out infinite;
+}
+.pal-beer {
+  --pal-accent: #e3a236;
+}
+.pal-gin {
+  --pal-accent: #b7ffe4;
+}
+.pal-rum {
+  --pal-accent: #c66a42;
+}
+.pal-whisky {
+  --pal-accent: #d08b39;
+}
+.pal-brandy {
+  --pal-accent: #d36d55;
+}
+.pal-vodka {
+  --pal-accent: #bfcaff;
+}
+.palAvatar.isCompact .palHalo {
+  inset: 0;
+}
+.palAvatar.isCompact .palBody {
+  width: 74%;
+}
+.palAvatar.isCompact .palParticles {
+  display: none;
+}
+.palAvatar.isCompact .palBody svg {
+  width: 72%;
+  height: 72%;
+}
+@keyframes palOrbit {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes palBreathe {
+  50% {
+    transform: translateY(-7px) scale(1.02);
+  }
+}
+@keyframes palParticle {
+  50% {
+    opacity: 0.08;
+    filter: blur(2px);
+    transform: rotate(var(--angle)) translateX(calc(110px + var(--p) * 5px));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .palAvatar * {
+    animation: none !important;
+  }
+}
+.palSummon {
+  position: fixed;
+  right: 18px;
+  /* Lower berth of the right-edge floating stack (mobileNav.css owns both
+     numbers, so the create action above can be derived from them). */
+  bottom: var(--pal-summon-bottom);
+  z-index: 545;
+  min-height: var(--pal-summon-h);
+  padding: 7px 12px 7px 8px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid color-mix(in srgb, var(--brass) 24%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel-raised) 92%, transparent);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(16px);
+  color: var(--ink);
+  text-decoration: none;
+}
+.palSummon > span {
+  display: grid;
+  gap: 1px;
+}
+.palSummon strong {
+  font: 700 11px var(--font-display);
+}
+.palSummon small {
+  font-size: 9px;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  /* On the phone map the plan pill is full width and the Near me FAB owns the
+     right edge, so the summon pill stops short of that lane. */
+  body:has(.mobilePlanActivation) .palSummon {
+    left: max(12px, env(safe-area-inset-left, 0px));
+    right: calc(max(12px, env(safe-area-inset-right, 0px)) + 52px + 12px);
+  }
+}
+@media (min-width: 641px) {
+  .palSummon {
+    bottom: 22px;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .palSummon {
+    background: var(--panel-raised);
+    backdrop-filter: none;
+  }
+}

@@ -1,0 +1,5619 @@
+[
+  {
+    "id": "tube-kings-cross-st-pancras",
+    "name": "King's Cross St Pancras",
+    "category": "tube",
+    "coordinates": [
+      -0.124,
+      51.5308
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-oxford-circus",
+    "name": "Oxford Circus",
+    "category": "tube",
+    "coordinates": [
+      -0.1417,
+      51.5152
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-victoria",
+    "name": "Victoria",
+    "category": "tube",
+    "coordinates": [
+      -0.144,
+      51.4965
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-waterloo",
+    "name": "Waterloo",
+    "category": "tube",
+    "coordinates": [
+      -0.1133,
+      51.5033
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-liverpool-street",
+    "name": "Liverpool Street",
+    "category": "tube",
+    "coordinates": [
+      -0.0817,
+      51.5178
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-paddington",
+    "name": "Paddington",
+    "category": "tube",
+    "coordinates": [
+      -0.1759,
+      51.5154
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-baker-street",
+    "name": "Baker Street",
+    "category": "tube",
+    "coordinates": [
+      -0.1571,
+      51.5226
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-bank",
+    "name": "Bank",
+    "category": "tube",
+    "coordinates": [
+      -0.0886,
+      51.5133
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-camden-town",
+    "name": "Camden Town",
+    "category": "tube",
+    "coordinates": [
+      -0.1426,
+      51.5392
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-brixton",
+    "name": "Brixton",
+    "category": "tube",
+    "coordinates": [
+      -0.1145,
+      51.4627
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-shoreditch-high-street",
+    "name": "Shoreditch High Street",
+    "category": "tube",
+    "coordinates": [
+      -0.0754,
+      51.5234
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-canary-wharf",
+    "name": "Canary Wharf",
+    "category": "tube",
+    "coordinates": [
+      -0.0192,
+      51.5051
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-stratford",
+    "name": "Stratford",
+    "category": "tube",
+    "coordinates": [
+      -0.0042,
+      51.5416
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-angel",
+    "name": "Angel",
+    "category": "tube",
+    "coordinates": [
+      -0.1058,
+      51.5322
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-old-street",
+    "name": "Old Street",
+    "category": "tube",
+    "coordinates": [
+      -0.0877,
+      51.5258
+    ]
+  },
+  {
+    "id": "tube-notting-hill-gate",
+    "name": "Notting Hill Gate",
+    "category": "tube",
+    "coordinates": [
+      -0.1966,
+      51.509
+    ]
+  },
+  {
+    "id": "tube-clapham-common",
+    "name": "Clapham Common",
+    "category": "tube",
+    "coordinates": [
+      -0.162,
+      51.4618
+    ]
+  },
+  {
+    "id": "tube-euston",
+    "name": "Euston",
+    "category": "tube",
+    "coordinates": [
+      -0.1335,
+      51.5282
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-marylebone",
+    "name": "Marylebone",
+    "category": "tube",
+    "coordinates": [
+      -0.1631,
+      51.5225
+    ]
+  },
+  {
+    "id": "tube-london-bridge",
+    "name": "London Bridge",
+    "category": "tube",
+    "coordinates": [
+      -0.0864,
+      51.5049
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-tottenham-court-road",
+    "name": "Tottenham Court Road",
+    "category": "tube",
+    "coordinates": [
+      -0.1308,
+      51.5165
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-leicester-square",
+    "name": "Leicester Square",
+    "category": "tube",
+    "coordinates": [
+      -0.1281,
+      51.5113
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-piccadilly-circus",
+    "name": "Piccadilly Circus",
+    "category": "tube",
+    "coordinates": [
+      -0.1341,
+      51.5099
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-green-park",
+    "name": "Green Park",
+    "category": "tube",
+    "coordinates": [
+      -0.1428,
+      51.5068
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-westminster",
+    "name": "Westminster",
+    "category": "tube",
+    "coordinates": [
+      -0.1254,
+      51.501
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-embankment",
+    "name": "Embankment",
+    "category": "tube",
+    "coordinates": [
+      -0.1223,
+      51.5074
+    ]
+  },
+  {
+    "id": "tube-charing-cross",
+    "name": "Charing Cross",
+    "category": "tube",
+    "coordinates": [
+      -0.1247,
+      51.5081
+    ]
+  },
+  {
+    "id": "tube-holborn",
+    "name": "Holborn",
+    "category": "tube",
+    "coordinates": [
+      -0.1201,
+      51.5174
+    ],
+    "rank": 1
+  },
+  {
+    "id": "tube-russell-square",
+    "name": "Russell Square",
+    "category": "tube",
+    "coordinates": [
+      -0.124,
+      51.523
+    ]
+  },
+  {
+    "id": "tube-farringdon",
+    "name": "Farringdon",
+    "category": "tube",
+    "coordinates": [
+      -0.1051,
+      51.5203
+    ]
+  },
+  {
+    "id": "tube-moorgate",
+    "name": "Moorgate",
+    "category": "tube",
+    "coordinates": [
+      -0.0887,
+      51.5186
+    ]
+  },
+  {
+    "id": "tube-aldgate",
+    "name": "Aldgate",
+    "category": "tube",
+    "coordinates": [
+      -0.0755,
+      51.5143
+    ]
+  },
+  {
+    "id": "tube-tower-hill",
+    "name": "Tower Hill",
+    "category": "tube",
+    "coordinates": [
+      -0.0766,
+      51.5099
+    ]
+  },
+  {
+    "id": "tube-monument",
+    "name": "Monument",
+    "category": "tube",
+    "coordinates": [
+      -0.0861,
+      51.5108
+    ]
+  },
+  {
+    "id": "tube-cannon-street",
+    "name": "Cannon Street",
+    "category": "tube",
+    "coordinates": [
+      -0.0904,
+      51.5113
+    ]
+  },
+  {
+    "id": "tube-blackfriars",
+    "name": "Blackfriars",
+    "category": "tube",
+    "coordinates": [
+      -0.1039,
+      51.5116
+    ]
+  },
+  {
+    "id": "tube-temple",
+    "name": "Temple",
+    "category": "tube",
+    "coordinates": [
+      -0.1144,
+      51.5111
+    ]
+  },
+  {
+    "id": "tube-covent-garden",
+    "name": "Covent Garden",
+    "category": "tube",
+    "coordinates": [
+      -0.1243,
+      51.5129
+    ]
+  },
+  {
+    "id": "tube-goodge-street",
+    "name": "Goodge Street",
+    "category": "tube",
+    "coordinates": [
+      -0.1347,
+      51.5205
+    ]
+  },
+  {
+    "id": "tube-warren-street",
+    "name": "Warren Street",
+    "category": "tube",
+    "coordinates": [
+      -0.1387,
+      51.5247
+    ]
+  },
+  {
+    "id": "tube-great-portland-street",
+    "name": "Great Portland Street",
+    "category": "tube",
+    "coordinates": [
+      -0.1441,
+      51.5238
+    ]
+  },
+  {
+    "id": "tube-edgware-road",
+    "name": "Edgware Road",
+    "category": "tube",
+    "coordinates": [
+      -0.167,
+      51.5203
+    ]
+  },
+  {
+    "id": "tube-bond-street",
+    "name": "Bond Street",
+    "category": "tube",
+    "coordinates": [
+      -0.1497,
+      51.5142
+    ]
+  },
+  {
+    "id": "tube-marble-arch",
+    "name": "Marble Arch",
+    "category": "tube",
+    "coordinates": [
+      -0.1587,
+      51.5136
+    ]
+  },
+  {
+    "id": "tube-lancaster-gate",
+    "name": "Lancaster Gate",
+    "category": "tube",
+    "coordinates": [
+      -0.1755,
+      51.5119
+    ]
+  },
+  {
+    "id": "tube-queensway",
+    "name": "Queensway",
+    "category": "tube",
+    "coordinates": [
+      -0.1871,
+      51.5107
+    ]
+  },
+  {
+    "id": "tube-high-street-kensington",
+    "name": "High Street Kensington",
+    "category": "tube",
+    "coordinates": [
+      -0.1925,
+      51.501
+    ]
+  },
+  {
+    "id": "tube-south-kensington",
+    "name": "South Kensington",
+    "category": "tube",
+    "coordinates": [
+      -0.1737,
+      51.4941
+    ]
+  },
+  {
+    "id": "tube-gloucester-road",
+    "name": "Gloucester Road",
+    "category": "tube",
+    "coordinates": [
+      -0.1829,
+      51.4945
+    ]
+  },
+  {
+    "id": "tube-earls-court",
+    "name": "Earl's Court",
+    "category": "tube",
+    "coordinates": [
+      -0.1939,
+      51.4915
+    ]
+  },
+  {
+    "id": "tube-sloane-square",
+    "name": "Sloane Square",
+    "category": "tube",
+    "coordinates": [
+      -0.1564,
+      51.4924
+    ]
+  },
+  {
+    "id": "tube-knightsbridge",
+    "name": "Knightsbridge",
+    "category": "tube",
+    "coordinates": [
+      -0.1603,
+      51.5015
+    ]
+  },
+  {
+    "id": "tube-hyde-park-corner",
+    "name": "Hyde Park Corner",
+    "category": "tube",
+    "coordinates": [
+      -0.1527,
+      51.5027
+    ]
+  },
+  {
+    "id": "tube-pimlico",
+    "name": "Pimlico",
+    "category": "tube",
+    "coordinates": [
+      -0.1334,
+      51.4893
+    ]
+  },
+  {
+    "id": "tube-vauxhall",
+    "name": "Vauxhall",
+    "category": "tube",
+    "coordinates": [
+      -0.1229,
+      51.4861
+    ]
+  },
+  {
+    "id": "tube-elephant-and-castle",
+    "name": "Elephant & Castle",
+    "category": "tube",
+    "coordinates": [
+      -0.1005,
+      51.4943
+    ]
+  },
+  {
+    "id": "tube-borough",
+    "name": "Borough",
+    "category": "tube",
+    "coordinates": [
+      -0.094,
+      51.5011
+    ]
+  },
+  {
+    "id": "tube-oval",
+    "name": "Oval",
+    "category": "tube",
+    "coordinates": [
+      -0.1129,
+      51.4819
+    ]
+  },
+  {
+    "id": "tube-kennington",
+    "name": "Kennington",
+    "category": "tube",
+    "coordinates": [
+      -0.1055,
+      51.4884
+    ]
+  },
+  {
+    "id": "tube-stockwell",
+    "name": "Stockwell",
+    "category": "tube",
+    "coordinates": [
+      -0.1229,
+      51.4723
+    ]
+  },
+  {
+    "id": "tube-clapham-north",
+    "name": "Clapham North",
+    "category": "tube",
+    "coordinates": [
+      -0.1301,
+      51.4653
+    ]
+  },
+  {
+    "id": "tube-tooting-bec",
+    "name": "Tooting Bec",
+    "category": "tube",
+    "coordinates": [
+      -0.1595,
+      51.4359
+    ]
+  },
+  {
+    "id": "tube-finsbury-park",
+    "name": "Finsbury Park",
+    "category": "tube",
+    "coordinates": [
+      -0.1064,
+      51.5642
+    ]
+  },
+  {
+    "id": "tube-highbury-islington",
+    "name": "Highbury & Islington",
+    "category": "tube",
+    "coordinates": [
+      -0.1027,
+      51.5464
+    ]
+  },
+  {
+    "id": "tube-kentish-town",
+    "name": "Kentish Town",
+    "category": "tube",
+    "coordinates": [
+      -0.1403,
+      51.5504
+    ]
+  },
+  {
+    "id": "tube-archway",
+    "name": "Archway",
+    "category": "tube",
+    "coordinates": [
+      -0.1348,
+      51.5654
+    ]
+  },
+  {
+    "id": "tube-tufnell-park",
+    "name": "Tufnell Park",
+    "category": "tube",
+    "coordinates": [
+      -0.1382,
+      51.5567
+    ]
+  },
+  {
+    "id": "tube-chalk-farm",
+    "name": "Chalk Farm",
+    "category": "tube",
+    "coordinates": [
+      -0.1533,
+      51.5441
+    ]
+  },
+  {
+    "id": "tube-swiss-cottage",
+    "name": "Swiss Cottage",
+    "category": "tube",
+    "coordinates": [
+      -0.1746,
+      51.5432
+    ]
+  },
+  {
+    "id": "tube-hampstead",
+    "name": "Hampstead",
+    "category": "tube",
+    "coordinates": [
+      -0.178,
+      51.5568
+    ]
+  },
+  {
+    "id": "tube-bethnal-green",
+    "name": "Bethnal Green",
+    "category": "tube",
+    "coordinates": [
+      -0.0553,
+      51.527
+    ]
+  },
+  {
+    "id": "tube-whitechapel",
+    "name": "Whitechapel",
+    "category": "tube",
+    "coordinates": [
+      -0.0616,
+      51.5194
+    ]
+  },
+  {
+    "id": "tube-mile-end",
+    "name": "Mile End",
+    "category": "tube",
+    "coordinates": [
+      -0.0334,
+      51.5252
+    ]
+  },
+  {
+    "id": "tube-bow-road",
+    "name": "Bow Road",
+    "category": "tube",
+    "coordinates": [
+      -0.025,
+      51.5269
+    ]
+  },
+  {
+    "id": "tube-hackney-central",
+    "name": "Hackney Central",
+    "category": "tube",
+    "coordinates": [
+      -0.0553,
+      51.5471
+    ]
+  },
+  {
+    "id": "tube-dalston-junction",
+    "name": "Dalston Junction",
+    "category": "tube",
+    "coordinates": [
+      -0.0752,
+      51.5459
+    ]
+  },
+  {
+    "id": "tube-hoxton",
+    "name": "Hoxton",
+    "category": "tube",
+    "coordinates": [
+      -0.0755,
+      51.5312
+    ]
+  },
+  {
+    "id": "tube-canada-water",
+    "name": "Canada Water",
+    "category": "tube",
+    "coordinates": [
+      -0.0498,
+      51.498
+    ]
+  },
+  {
+    "id": "tube-greenwich",
+    "name": "Greenwich",
+    "category": "tube",
+    "coordinates": [
+      -0.0134,
+      51.4781
+    ]
+  },
+  {
+    "id": "tube-fulham-broadway",
+    "name": "Fulham Broadway",
+    "category": "tube",
+    "coordinates": [
+      -0.1948,
+      51.4804
+    ]
+  },
+  {
+    "id": "tube-hammersmith",
+    "name": "Hammersmith",
+    "category": "tube",
+    "coordinates": [
+      -0.2249,
+      51.4923
+    ]
+  },
+  {
+    "id": "park-hyde",
+    "name": "Hyde Park",
+    "category": "park",
+    "coordinates": [
+      -0.1657,
+      51.5073
+    ]
+  },
+  {
+    "id": "park-kensington-gardens",
+    "name": "Kensington Gardens",
+    "category": "park",
+    "coordinates": [
+      -0.1795,
+      51.5074
+    ]
+  },
+  {
+    "id": "park-regents",
+    "name": "Regent's Park",
+    "category": "park",
+    "coordinates": [
+      -0.1471,
+      51.5313
+    ]
+  },
+  {
+    "id": "park-green",
+    "name": "Green Park",
+    "category": "park",
+    "coordinates": [
+      -0.1428,
+      51.5041
+    ]
+  },
+  {
+    "id": "park-st-jamess",
+    "name": "St James's Park",
+    "category": "park",
+    "coordinates": [
+      -0.1338,
+      51.5027
+    ]
+  },
+  {
+    "id": "park-hampstead-heath",
+    "name": "Hampstead Heath",
+    "category": "park",
+    "coordinates": [
+      -0.1608,
+      51.5608
+    ]
+  },
+  {
+    "id": "park-greenwich",
+    "name": "Greenwich Park",
+    "category": "park",
+    "coordinates": [
+      -0.001,
+      51.4769
+    ]
+  },
+  {
+    "id": "park-victoria",
+    "name": "Victoria Park",
+    "category": "park",
+    "coordinates": [
+      -0.0389,
+      51.5363
+    ]
+  },
+  {
+    "id": "park-battersea",
+    "name": "Battersea Park",
+    "category": "park",
+    "coordinates": [
+      -0.1553,
+      51.4791
+    ]
+  },
+  {
+    "id": "park-richmond",
+    "name": "Richmond Park",
+    "category": "park",
+    "coordinates": [
+      -0.2757,
+      51.4426
+    ]
+  },
+  {
+    "id": "park-clapham-common",
+    "name": "Clapham Common",
+    "category": "park",
+    "coordinates": [
+      -0.1481,
+      51.4614
+    ]
+  },
+  {
+    "id": "park-finsbury",
+    "name": "Finsbury Park",
+    "category": "park",
+    "coordinates": [
+      -0.1006,
+      51.5717
+    ]
+  },
+  {
+    "id": "park-holland",
+    "name": "Holland Park",
+    "category": "park",
+    "coordinates": [
+      -0.2016,
+      51.5028
+    ]
+  },
+  {
+    "id": "park-hyde-serpentine",
+    "name": "The Serpentine",
+    "category": "park",
+    "coordinates": [
+      -0.1655,
+      51.5052
+    ]
+  },
+  {
+    "id": "park-primrose-hill",
+    "name": "Primrose Hill",
+    "category": "park",
+    "coordinates": [
+      -0.1587,
+      51.539
+    ]
+  },
+  {
+    "id": "park-brockwell",
+    "name": "Brockwell Park",
+    "category": "park",
+    "coordinates": [
+      -0.105,
+      51.4527
+    ]
+  },
+  {
+    "id": "park-hackney-marshes",
+    "name": "Hackney Marshes",
+    "category": "park",
+    "coordinates": [
+      -0.0355,
+      51.5527
+    ]
+  },
+  {
+    "id": "park-london-fields",
+    "name": "London Fields",
+    "category": "park",
+    "coordinates": [
+      -0.0608,
+      51.5411
+    ]
+  },
+  {
+    "id": "park-crystal-palace",
+    "name": "Crystal Palace Park",
+    "category": "park",
+    "coordinates": [
+      -0.0678,
+      51.4212
+    ]
+  },
+  {
+    "id": "park-dulwich",
+    "name": "Dulwich Park",
+    "category": "park",
+    "coordinates": [
+      -0.0837,
+      51.4436
+    ]
+  },
+  {
+    "id": "park-wandsworth-common",
+    "name": "Wandsworth Common",
+    "category": "park",
+    "coordinates": [
+      -0.169,
+      51.4463
+    ]
+  },
+  {
+    "id": "park-wimbledon-common",
+    "name": "Wimbledon Common",
+    "category": "park",
+    "coordinates": [
+      -0.2314,
+      51.434
+    ]
+  },
+  {
+    "id": "park-bushy",
+    "name": "Bushy Park",
+    "category": "park",
+    "coordinates": [
+      -0.3453,
+      51.411
+    ]
+  },
+  {
+    "id": "park-alexandra",
+    "name": "Alexandra Park",
+    "category": "park",
+    "coordinates": [
+      -0.1201,
+      51.5942
+    ]
+  },
+  {
+    "id": "sight-london-eye",
+    "name": "London Eye",
+    "category": "sight",
+    "coordinates": [
+      -0.1195,
+      51.5033
+    ]
+  },
+  {
+    "id": "sight-buckingham-palace",
+    "name": "Buckingham Palace",
+    "category": "sight",
+    "coordinates": [
+      -0.1419,
+      51.5014
+    ]
+  },
+  {
+    "id": "sight-piccadilly-circus",
+    "name": "Piccadilly Circus",
+    "category": "sight",
+    "coordinates": [
+      -0.1342,
+      51.51
+    ]
+  },
+  {
+    "id": "sight-trafalgar-square",
+    "name": "Trafalgar Square",
+    "category": "sight",
+    "coordinates": [
+      -0.1281,
+      51.508
+    ]
+  },
+  {
+    "id": "sight-covent-garden",
+    "name": "Covent Garden",
+    "category": "sight",
+    "coordinates": [
+      -0.1225,
+      51.5117
+    ]
+  },
+  {
+    "id": "sight-the-shard",
+    "name": "The Shard",
+    "category": "sight",
+    "coordinates": [
+      -0.0865,
+      51.5045
+    ]
+  },
+  {
+    "id": "sight-leadenhall-market",
+    "name": "Leadenhall Market",
+    "category": "sight",
+    "coordinates": [
+      -0.0836,
+      51.5128
+    ]
+  },
+  {
+    "id": "sight-sky-garden",
+    "name": "Sky Garden",
+    "category": "sight",
+    "coordinates": [
+      -0.0836,
+      51.5113
+    ]
+  },
+  {
+    "id": "sight-tate-modern",
+    "name": "Tate Modern",
+    "category": "sight",
+    "coordinates": [
+      -0.0993,
+      51.5076
+    ]
+  },
+  {
+    "id": "sight-tate-britain",
+    "name": "Tate Britain",
+    "category": "sight",
+    "coordinates": [
+      -0.1276,
+      51.4911
+    ]
+  },
+  {
+    "id": "sight-kew-gardens",
+    "name": "Kew Gardens",
+    "category": "sight",
+    "coordinates": [
+      -0.2955,
+      51.4787
+    ]
+  },
+  {
+    "id": "sight-somerset-house",
+    "name": "Somerset House",
+    "category": "sight",
+    "coordinates": [
+      -0.1172,
+      51.511
+    ]
+  },
+  {
+    "id": "sight-national-gallery",
+    "name": "National Gallery",
+    "category": "sight",
+    "coordinates": [
+      -0.1281,
+      51.5089
+    ]
+  },
+  {
+    "id": "sight-national-portrait-gallery",
+    "name": "National Portrait Gallery",
+    "category": "sight",
+    "coordinates": [
+      -0.1284,
+      51.5094
+    ]
+  },
+  {
+    "id": "sight-victoria-and-albert-museum",
+    "name": "Victoria & Albert Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.172,
+      51.4966
+    ]
+  },
+  {
+    "id": "sight-science-museum",
+    "name": "Science Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1746,
+      51.4978
+    ]
+  },
+  {
+    "id": "sight-london-zoo",
+    "name": "London Zoo",
+    "category": "sight",
+    "coordinates": [
+      -0.1535,
+      51.5353
+    ]
+  },
+  {
+    "id": "sight-madame-tussauds",
+    "name": "Madame Tussauds",
+    "category": "sight",
+    "coordinates": [
+      -0.1556,
+      51.523
+    ]
+  },
+  {
+    "id": "sight-st-katharine-docks",
+    "name": "St Katharine Docks",
+    "category": "sight",
+    "coordinates": [
+      -0.0718,
+      51.5068
+    ]
+  },
+  {
+    "id": "sight-carnaby-street",
+    "name": "Carnaby Street",
+    "category": "sight",
+    "coordinates": [
+      -0.1387,
+      51.5133
+    ]
+  },
+  {
+    "id": "sight-oxford-street",
+    "name": "Oxford Street",
+    "category": "sight",
+    "coordinates": [
+      -0.145,
+      51.515
+    ]
+  },
+  {
+    "id": "sight-regent-street",
+    "name": "Regent Street",
+    "category": "sight",
+    "coordinates": [
+      -0.14,
+      51.5115
+    ]
+  },
+  {
+    "id": "sight-the-mall",
+    "name": "The Mall",
+    "category": "sight",
+    "coordinates": [
+      -0.1319,
+      51.5052
+    ]
+  },
+  {
+    "id": "sight-portobello-road-market",
+    "name": "Portobello Road Market",
+    "category": "sight",
+    "coordinates": [
+      -0.2058,
+      51.5175
+    ]
+  },
+  {
+    "id": "sight-columbia-road-flower-market",
+    "name": "Columbia Road Flower Market",
+    "category": "sight",
+    "coordinates": [
+      -0.0692,
+      51.5296
+    ]
+  },
+  {
+    "id": "sight-brick-lane",
+    "name": "Brick Lane",
+    "category": "sight",
+    "coordinates": [
+      -0.0716,
+      51.5216
+    ]
+  },
+  {
+    "id": "sight-spitalfields-market",
+    "name": "Old Spitalfields Market",
+    "category": "sight",
+    "coordinates": [
+      -0.0755,
+      51.5194
+    ]
+  },
+  {
+    "id": "sight-imperial-war-museum",
+    "name": "Imperial War Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1085,
+      51.4956
+    ]
+  },
+  {
+    "id": "sight-cutty-sark",
+    "name": "Cutty Sark",
+    "category": "sight",
+    "coordinates": [
+      -0.0104,
+      51.4827
+    ]
+  },
+  {
+    "id": "sight-o2-arena",
+    "name": "The O2",
+    "category": "sight",
+    "coordinates": [
+      0.003,
+      51.503
+    ]
+  },
+  {
+    "id": "rail-waterloo",
+    "name": "Waterloo",
+    "category": "rail",
+    "coordinates": [
+      -0.1123,
+      51.5036
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-victoria",
+    "name": "London Victoria",
+    "category": "rail",
+    "coordinates": [
+      -0.143,
+      51.4952
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-kings-cross",
+    "name": "King's Cross",
+    "category": "rail",
+    "coordinates": [
+      -0.1231,
+      51.532
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-st-pancras",
+    "name": "St Pancras International",
+    "category": "rail",
+    "coordinates": [
+      -0.1265,
+      51.531
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-paddington",
+    "name": "London Paddington",
+    "category": "rail",
+    "coordinates": [
+      -0.1749,
+      51.5165
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-liverpool-street",
+    "name": "Liverpool Street",
+    "category": "rail",
+    "coordinates": [
+      -0.0807,
+      51.5185
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-euston",
+    "name": "London Euston",
+    "category": "rail",
+    "coordinates": [
+      -0.1325,
+      51.529
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-london-bridge",
+    "name": "London Bridge",
+    "category": "rail",
+    "coordinates": [
+      -0.0854,
+      51.5052
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-charing-cross",
+    "name": "Charing Cross",
+    "category": "rail",
+    "coordinates": [
+      -0.1237,
+      51.5088
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-marylebone",
+    "name": "Marylebone",
+    "category": "rail",
+    "coordinates": [
+      -0.1631,
+      51.5232
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-fenchurch-street",
+    "name": "Fenchurch Street",
+    "category": "rail",
+    "coordinates": [
+      -0.0785,
+      51.5116
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-cannon-street",
+    "name": "Cannon Street",
+    "category": "rail",
+    "coordinates": [
+      -0.0904,
+      51.5106
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-blackfriars",
+    "name": "Blackfriars",
+    "category": "rail",
+    "coordinates": [
+      -0.1039,
+      51.5109
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-vauxhall",
+    "name": "Vauxhall",
+    "category": "rail",
+    "coordinates": [
+      -0.1219,
+      51.4868
+    ],
+    "rank": 1
+  },
+  {
+    "id": "rail-clapham-junction",
+    "name": "Clapham Junction",
+    "category": "rail",
+    "coordinates": [
+      -0.1706,
+      51.4642
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-trafalgar-square",
+    "name": "Trafalgar Square",
+    "category": "bus",
+    "coordinates": [
+      -0.1281,
+      51.5074
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-victoria",
+    "name": "Victoria Bus Station",
+    "category": "bus",
+    "coordinates": [
+      -0.1449,
+      51.4952
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-aldgate",
+    "name": "Aldgate",
+    "category": "bus",
+    "coordinates": [
+      -0.0757,
+      51.514
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-elephant-castle",
+    "name": "Elephant & Castle",
+    "category": "bus",
+    "coordinates": [
+      -0.1,
+      51.4946
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-brixton",
+    "name": "Brixton",
+    "category": "bus",
+    "coordinates": [
+      -0.1136,
+      51.4626
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-hackney-central",
+    "name": "Hackney Central",
+    "category": "bus",
+    "coordinates": [
+      -0.0555,
+      51.5472
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-marble-arch",
+    "name": "Marble Arch",
+    "category": "bus",
+    "coordinates": [
+      -0.159,
+      51.5131
+    ],
+    "rank": 1
+  },
+  {
+    "id": "bus-waterloo",
+    "name": "Waterloo",
+    "category": "bus",
+    "coordinates": [
+      -0.112,
+      51.5024
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-westminster",
+    "name": "Westminster Pier",
+    "category": "river",
+    "coordinates": [
+      -0.1237,
+      51.501
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-embankment",
+    "name": "Embankment Pier",
+    "category": "river",
+    "coordinates": [
+      -0.121,
+      51.5085
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-bankside",
+    "name": "Bankside Pier",
+    "category": "river",
+    "coordinates": [
+      -0.0955,
+      51.5075
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-london-bridge-city",
+    "name": "London Bridge City Pier",
+    "category": "river",
+    "coordinates": [
+      -0.0857,
+      51.5065
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-tower",
+    "name": "Tower Pier",
+    "category": "river",
+    "coordinates": [
+      -0.079,
+      51.5061
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-canary-wharf",
+    "name": "Canary Wharf Pier",
+    "category": "river",
+    "coordinates": [
+      -0.0195,
+      51.5045
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-greenwich",
+    "name": "Greenwich Pier",
+    "category": "river",
+    "coordinates": [
+      -0.0093,
+      51.4835
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-battersea",
+    "name": "Battersea Power Station Pier",
+    "category": "river",
+    "coordinates": [
+      -0.144,
+      51.4805
+    ],
+    "rank": 1
+  },
+  {
+    "id": "river-north-greenwich",
+    "name": "North Greenwich Pier",
+    "category": "river",
+    "coordinates": [
+      0.004,
+      51.503
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-burgess-park",
+    "name": "Burgess Park",
+    "category": "park",
+    "coordinates": [
+      -0.0818,
+      51.4836
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-peckham-rye",
+    "name": "Peckham Rye",
+    "category": "park",
+    "coordinates": [
+      -0.061,
+      51.4578
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-southwark-park",
+    "name": "Southwark Park",
+    "category": "park",
+    "coordinates": [
+      -0.056,
+      51.495
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-mile-end-park",
+    "name": "Mile End Park",
+    "category": "park",
+    "coordinates": [
+      -0.0375,
+      51.5261
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-ruskin-park",
+    "name": "Ruskin Park",
+    "category": "park",
+    "coordinates": [
+      -0.0937,
+      51.4647
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-kennington-park",
+    "name": "Kennington Park",
+    "category": "park",
+    "coordinates": [
+      -0.1089,
+      51.4842
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-highbury-fields",
+    "name": "Highbury Fields",
+    "category": "park",
+    "coordinates": [
+      -0.1017,
+      51.5503
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-clissold-park",
+    "name": "Clissold Park",
+    "category": "park",
+    "coordinates": [
+      -0.0881,
+      51.5611
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-waterlow-park",
+    "name": "Waterlow Park",
+    "category": "park",
+    "coordinates": [
+      -0.145,
+      51.569
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-golders-hill-park",
+    "name": "Golders Hill Park",
+    "category": "park",
+    "coordinates": [
+      -0.189,
+      51.567
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-ravenscourt-park",
+    "name": "Ravenscourt Park",
+    "category": "park",
+    "coordinates": [
+      -0.2385,
+      51.497
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-bishops-park",
+    "name": "Bishops Park",
+    "category": "park",
+    "coordinates": [
+      -0.2161,
+      51.4706
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-gunnersbury-park",
+    "name": "Gunnersbury Park",
+    "category": "park",
+    "coordinates": [
+      -0.292,
+      51.498
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-morden-hall-park",
+    "name": "Morden Hall Park",
+    "category": "park",
+    "coordinates": [
+      -0.1875,
+      51.4011
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-trent-park",
+    "name": "Trent Park",
+    "category": "park",
+    "coordinates": [
+      -0.1344,
+      51.66
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-coram-s-fields",
+    "name": "Coram's Fields",
+    "category": "park",
+    "coordinates": [
+      -0.1197,
+      51.5247
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-lincoln-s-inn-fields",
+    "name": "Lincoln's Inn Fields",
+    "category": "park",
+    "coordinates": [
+      -0.1166,
+      51.5161
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-vauxhall-gardens",
+    "name": "Vauxhall Gardens",
+    "category": "park",
+    "coordinates": [
+      -0.1208,
+      51.4875
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-victoria-tower-gardens",
+    "name": "Victoria Tower Gardens",
+    "category": "park",
+    "coordinates": [
+      -0.125,
+      51.4969
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-blackheath-london",
+    "name": "Blackheath, London",
+    "category": "park",
+    "coordinates": [
+      0.01,
+      51.47
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-tooting-commons",
+    "name": "Tooting Commons",
+    "category": "park",
+    "coordinates": [
+      -0.1447,
+      51.4333
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-streatham-common",
+    "name": "Streatham Common",
+    "category": "park",
+    "coordinates": [
+      -0.1244,
+      51.4222
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-barnes-common",
+    "name": "Barnes Common",
+    "category": "park",
+    "coordinates": [
+      -0.237,
+      51.4702
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-myatt-s-fields-park",
+    "name": "Myatt's Fields Park",
+    "category": "park",
+    "coordinates": [
+      -0.1033,
+      51.4733
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-isabella-plantation",
+    "name": "Isabella Plantation",
+    "category": "garden",
+    "coordinates": [
+      -0.277,
+      51.433
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-phoenix-garden",
+    "name": "Phoenix Garden",
+    "category": "garden",
+    "coordinates": [
+      -0.1286,
+      51.5147
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-st-dunstan-in-the-east",
+    "name": "St Dunstan-in-the-East",
+    "category": "garden",
+    "coordinates": [
+      -0.0827,
+      51.5097
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-bonnington-square",
+    "name": "Bonnington Square",
+    "category": "garden",
+    "coordinates": [
+      -0.12,
+      51.4843
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-barbican-conservatory",
+    "name": "Barbican Conservatory",
+    "category": "garden",
+    "coordinates": [
+      -0.095,
+      51.5202
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-camden-market",
+    "name": "Camden Market",
+    "category": "market",
+    "coordinates": [
+      -0.1464,
+      51.5414
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-maltby-street-market",
+    "name": "Maltby Street Market",
+    "category": "market",
+    "coordinates": [
+      -0.0762,
+      51.4996
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-brixton-market",
+    "name": "Brixton Market",
+    "category": "market",
+    "coordinates": [
+      -0.114,
+      51.462
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-petticoat-lane-market",
+    "name": "Petticoat Lane Market",
+    "category": "market",
+    "coordinates": [
+      -0.0733,
+      51.5167
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-smithfield-london",
+    "name": "Smithfield, London",
+    "category": "market",
+    "coordinates": [
+      -0.102,
+      51.519
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-billingsgate-fish-market",
+    "name": "Billingsgate Fish Market",
+    "category": "market",
+    "coordinates": [
+      -0.0142,
+      51.5064
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-exmouth-market",
+    "name": "Exmouth Market",
+    "category": "market",
+    "coordinates": [
+      -0.1089,
+      51.5259
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-chapel-market",
+    "name": "Chapel Market",
+    "category": "market",
+    "coordinates": [
+      -0.1093,
+      51.5334
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-ridley-road-market",
+    "name": "Ridley Road Market",
+    "category": "market",
+    "coordinates": [
+      -0.0729,
+      51.5481
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-whitecross-street",
+    "name": "Whitecross Street",
+    "category": "market",
+    "coordinates": [
+      -0.0928,
+      51.5229
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-roman-road-london",
+    "name": "Roman Road, London",
+    "category": "market",
+    "coordinates": [
+      -0.0317,
+      51.5325
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-leather-lane",
+    "name": "Leather Lane",
+    "category": "market",
+    "coordinates": [
+      -0.1094,
+      51.52
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-shepherd-s-bush-market",
+    "name": "Shepherd's Bush Market",
+    "category": "market",
+    "coordinates": [
+      -0.2266,
+      51.504
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-walthamstow-market",
+    "name": "Walthamstow Market",
+    "category": "market",
+    "coordinates": [
+      -0.027,
+      51.583
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-berwick-street",
+    "name": "Berwick Street",
+    "category": "market",
+    "coordinates": [
+      -0.1358,
+      51.5147
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-church-street-market",
+    "name": "Church Street Market",
+    "category": "market",
+    "coordinates": [
+      -0.1704,
+      51.5234
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-london-wall",
+    "name": "London Wall",
+    "category": "historic",
+    "coordinates": [
+      -0.077,
+      51.5099
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-temple-church",
+    "name": "Temple Church",
+    "category": "historic",
+    "coordinates": [
+      -0.1104,
+      51.5132
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-the-cenotaph",
+    "name": "The Cenotaph",
+    "category": "historic",
+    "coordinates": [
+      -0.1261,
+      51.5027
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-london-charterhouse",
+    "name": "London Charterhouse",
+    "category": "historic",
+    "coordinates": [
+      -0.1001,
+      51.5215
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-guildhall-london",
+    "name": "Guildhall, London",
+    "category": "historic",
+    "coordinates": [
+      -0.092,
+      51.5159
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-mansion-house-london",
+    "name": "Mansion House, London",
+    "category": "historic",
+    "coordinates": [
+      -0.0894,
+      51.5132
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-royal-exchange-london",
+    "name": "Royal Exchange, London",
+    "category": "historic",
+    "coordinates": [
+      -0.0872,
+      51.5136
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-wilton-s-music-hall",
+    "name": "Wilton's Music Hall",
+    "category": "historic",
+    "coordinates": [
+      -0.0669,
+      51.5107
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-dennis-severs-house",
+    "name": "Dennis Severs' House",
+    "category": "historic",
+    "coordinates": [
+      -0.0767,
+      51.5208
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-sir-john-soane-s-museum",
+    "name": "Sir John Soane's Museum",
+    "category": "historic",
+    "coordinates": [
+      -0.1174,
+      51.517
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-apsley-house",
+    "name": "Apsley House",
+    "category": "historic",
+    "coordinates": [
+      -0.1517,
+      51.5035
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-banqueting-house",
+    "name": "Banqueting House",
+    "category": "historic",
+    "coordinates": [
+      -0.1256,
+      51.5044
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-eltham-palace",
+    "name": "Eltham Palace",
+    "category": "historic",
+    "coordinates": [
+      0.0481,
+      51.4472
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-fulham-palace",
+    "name": "Fulham Palace",
+    "category": "historic",
+    "coordinates": [
+      -0.2161,
+      51.4706
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-lambeth-palace",
+    "name": "Lambeth Palace",
+    "category": "historic",
+    "coordinates": [
+      -0.1197,
+      51.4956
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-southwark-cathedral",
+    "name": "Southwark Cathedral",
+    "category": "historic",
+    "coordinates": [
+      -0.0897,
+      51.5061
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-st-bartholomew-the-great",
+    "name": "St Bartholomew-the-Great",
+    "category": "historic",
+    "coordinates": [
+      -0.0997,
+      51.5189
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-temple-bar-london",
+    "name": "Temple Bar, London",
+    "category": "historic",
+    "coordinates": [
+      -0.1119,
+      51.5136
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-seven-dials-london",
+    "name": "Seven Dials, London",
+    "category": "historic",
+    "coordinates": [
+      -0.127,
+      51.5138
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-postman-s-park",
+    "name": "Postman's Park",
+    "category": "historic",
+    "coordinates": [
+      -0.0976,
+      51.5168
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-bunhill-fields",
+    "name": "Bunhill Fields",
+    "category": "historic",
+    "coordinates": [
+      -0.0889,
+      51.5236
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-highgate-cemetery",
+    "name": "Highgate Cemetery",
+    "category": "historic",
+    "coordinates": [
+      -0.147,
+      51.567
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-abney-park-cemetery",
+    "name": "Abney Park Cemetery",
+    "category": "historic",
+    "coordinates": [
+      -0.0781,
+      51.5649
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-kensal-green-cemetery",
+    "name": "Kensal Green Cemetery",
+    "category": "historic",
+    "coordinates": [
+      -0.2241,
+      51.5286
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-brompton-cemetery",
+    "name": "Brompton Cemetery",
+    "category": "historic",
+    "coordinates": [
+      -0.1908,
+      51.4849
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-cross-bones",
+    "name": "Cross Bones",
+    "category": "historic",
+    "coordinates": [
+      -0.093,
+      51.5042
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-leighton-house",
+    "name": "Leighton House",
+    "category": "historic",
+    "coordinates": [
+      -0.2031,
+      51.4986
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-two-temple-place",
+    "name": "Two Temple Place",
+    "category": "historic",
+    "coordinates": [
+      -0.1124,
+      51.5116
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-strawberry-hill-house",
+    "name": "Strawberry Hill House",
+    "category": "historic",
+    "coordinates": [
+      -0.3348,
+      51.4382
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-ham-house",
+    "name": "Ham House",
+    "category": "historic",
+    "coordinates": [
+      -0.3142,
+      51.4442
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-marble-hill-house",
+    "name": "Marble Hill House",
+    "category": "historic",
+    "coordinates": [
+      -0.3133,
+      51.4494
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-chiswick-house",
+    "name": "Chiswick House",
+    "category": "historic",
+    "coordinates": [
+      -0.2587,
+      51.4838
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-kenwood-house",
+    "name": "Kenwood House",
+    "category": "historic",
+    "coordinates": [
+      -0.1675,
+      51.5714
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-valentines-park",
+    "name": "Valentines Park",
+    "category": "historic",
+    "coordinates": [
+      0.0711,
+      51.5706
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-michelin-house",
+    "name": "Michelin House",
+    "category": "historic",
+    "coordinates": [
+      -0.1689,
+      51.4933
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-whitechapel-bell-foundry",
+    "name": "Whitechapel Bell Foundry",
+    "category": "historic",
+    "coordinates": [
+      -0.0672,
+      51.5169
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-st-mary-le-bow",
+    "name": "St Mary-le-Bow",
+    "category": "historic",
+    "coordinates": [
+      -0.0936,
+      51.5139
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-st-bride-s-church",
+    "name": "St Bride's Church",
+    "category": "historic",
+    "coordinates": [
+      -0.1055,
+      51.5138
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-all-hallows-by-the-tower",
+    "name": "All Hallows-by-the-Tower",
+    "category": "historic",
+    "coordinates": [
+      -0.0794,
+      51.5094
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-st-stephen-walbrook",
+    "name": "St Stephen Walbrook",
+    "category": "historic",
+    "coordinates": [
+      -0.0899,
+      51.5126
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-christ-church-spitalfields",
+    "name": "Christ Church, Spitalfields",
+    "category": "historic",
+    "coordinates": [
+      -0.0742,
+      51.5191
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-wesley-s-chapel",
+    "name": "Wesley's Chapel",
+    "category": "historic",
+    "coordinates": [
+      -0.0869,
+      51.5236
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-bevis-marks-synagogue",
+    "name": "Bevis Marks Synagogue",
+    "category": "historic",
+    "coordinates": [
+      -0.0792,
+      51.5144
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-old-operating-theatre-museum-and-herb-garret",
+    "name": "Old Operating Theatre Museum and Herb Garret",
+    "category": "historic",
+    "coordinates": [
+      -0.0885,
+      51.5051
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-22-bishopsgate",
+    "name": "22 Bishopsgate",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0829,
+      51.5145
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-one-new-change",
+    "name": "One New Change",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0958,
+      51.5137
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-severndroog-castle",
+    "name": "Severndroog Castle",
+    "category": "viewpoint",
+    "coordinates": [
+      0.0599,
+      51.4666
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-richmond-hill-london",
+    "name": "Richmond Hill, London",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.2992,
+      51.4528
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-shooter-s-hill",
+    "name": "Shooter's Hill",
+    "category": "viewpoint",
+    "coordinates": [
+      0.0669,
+      51.4691
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-design-museum",
+    "name": "Design Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.2002,
+      51.4999
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-saatchi-gallery",
+    "name": "Saatchi Gallery",
+    "category": "sight",
+    "coordinates": [
+      -0.1589,
+      51.4906
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-wallace-collection",
+    "name": "Wallace Collection",
+    "category": "sight",
+    "coordinates": [
+      -0.153,
+      51.5175
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-courtauld-gallery",
+    "name": "Courtauld Gallery",
+    "category": "sight",
+    "coordinates": [
+      -0.1175,
+      51.5117
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-hayward-gallery",
+    "name": "Hayward Gallery",
+    "category": "sight",
+    "coordinates": [
+      -0.1156,
+      51.5061
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-whitechapel-gallery",
+    "name": "Whitechapel Gallery",
+    "category": "sight",
+    "coordinates": [
+      -0.0705,
+      51.516
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-serpentine-galleries",
+    "name": "Serpentine Galleries",
+    "category": "sight",
+    "coordinates": [
+      -0.1751,
+      51.5047
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-wellcome-collection",
+    "name": "Wellcome Collection",
+    "category": "sight",
+    "coordinates": [
+      -0.1339,
+      51.5259
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-horniman-museum",
+    "name": "Horniman Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.0608,
+      51.4406
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-london-museum-docklands",
+    "name": "London Museum Docklands",
+    "category": "sight",
+    "coordinates": [
+      -0.0236,
+      51.5075
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-london-transport-museum",
+    "name": "London Transport Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1217,
+      51.5119
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-foundling-museum",
+    "name": "Foundling Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1217,
+      51.5253
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-fashion-and-textile-museum",
+    "name": "Fashion and Textile Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.0811,
+      51.4986
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-garden-museum",
+    "name": "Garden Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1202,
+      51.495
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-florence-nightingale-museum",
+    "name": "Florence Nightingale Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1175,
+      51.5003
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-churchill-war-rooms",
+    "name": "Churchill War Rooms",
+    "category": "sight",
+    "coordinates": [
+      -0.129,
+      51.5021
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-horse-guards-building",
+    "name": "Horse Guards (building)",
+    "category": "sight",
+    "coordinates": [
+      -0.1272,
+      51.5047
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-bank-of-england-museum",
+    "name": "Bank of England Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.0881,
+      51.5141
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-museum-of-brands",
+    "name": "Museum of Brands",
+    "category": "sight",
+    "coordinates": [
+      -0.211,
+      51.5163
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-the-cartoon-museum",
+    "name": "The Cartoon Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1386,
+      51.5176
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-freud-museum",
+    "name": "Freud Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1778,
+      51.5483
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-keats-house",
+    "name": "Keats House",
+    "category": "sight",
+    "coordinates": [
+      -0.1682,
+      51.5555
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-dr-johnson-s-house",
+    "name": "Dr Johnson's House",
+    "category": "sight",
+    "coordinates": [
+      -0.1081,
+      51.515
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-handel-hendrix-house",
+    "name": "Handel Hendrix House",
+    "category": "sight",
+    "coordinates": [
+      -0.1459,
+      51.513
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-benjamin-franklin-house",
+    "name": "Benjamin Franklin House",
+    "category": "sight",
+    "coordinates": [
+      -0.125,
+      51.5075
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-charles-dickens-museum",
+    "name": "Charles Dickens Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1169,
+      51.5239
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-neal-s-yard",
+    "name": "Neal's Yard",
+    "category": "sight",
+    "coordinates": [
+      -0.1265,
+      51.5144
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-chinatown-london",
+    "name": "Chinatown, London",
+    "category": "sight",
+    "coordinates": [
+      -0.1314,
+      51.5111
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-london-dungeon",
+    "name": "London Dungeon",
+    "category": "sight",
+    "coordinates": [
+      -0.1194,
+      51.5027
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-sea-life-london-aquarium",
+    "name": "Sea Life London Aquarium",
+    "category": "sight",
+    "coordinates": [
+      -0.1189,
+      51.5019
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-arcelormittal-orbit",
+    "name": "ArcelorMittal Orbit",
+    "category": "sight",
+    "coordinates": [
+      -0.0133,
+      51.5383
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-london-cable-car",
+    "name": "London cable car",
+    "category": "sight",
+    "coordinates": [
+      0.0131,
+      51.5036
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-hunterian-museum-london",
+    "name": "Hunterian Museum, London",
+    "category": "sight",
+    "coordinates": [
+      -0.1158,
+      51.5153
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-grant-museum-of-zoology-and-comparative-anatomy",
+    "name": "Grant Museum of Zoology and Comparative Anatomy",
+    "category": "sight",
+    "coordinates": [
+      -0.1343,
+      51.5238
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-petrie-museum-of-egyptian-archaeology",
+    "name": "Petrie Museum of Egyptian Archaeology",
+    "category": "sight",
+    "coordinates": [
+      -0.1331,
+      51.5236
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-parliament-hill",
+    "name": "Parliament Hill",
+    "category": "park",
+    "coordinates": [
+      -0.1605,
+      51.5597
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-hampstead-heath-extension",
+    "name": "Hampstead Heath Extension",
+    "category": "park",
+    "coordinates": [
+      -0.1835,
+      51.5752
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-queens-park-london",
+    "name": "Queen's Park",
+    "category": "park",
+    "coordinates": [
+      -0.2088,
+      51.5342
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-gladstone-park",
+    "name": "Gladstone Park",
+    "category": "park",
+    "coordinates": [
+      -0.2415,
+      51.5578
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-fryent-country-park",
+    "name": "Fryent Country Park",
+    "category": "park",
+    "coordinates": [
+      -0.2745,
+      51.5688
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-welsh-harp",
+    "name": "Welsh Harp / Brent Reservoir",
+    "category": "park",
+    "coordinates": [
+      -0.2555,
+      51.5715
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-harrow-recreation-ground",
+    "name": "Harrow Recreation Ground",
+    "category": "park",
+    "coordinates": [
+      -0.3372,
+      51.5805
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-canons-park",
+    "name": "Canons Park",
+    "category": "park",
+    "coordinates": [
+      -0.2948,
+      51.6075
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-grovelands-park",
+    "name": "Grovelands Park",
+    "category": "park",
+    "coordinates": [
+      -0.1165,
+      51.6328
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-broomfield-park",
+    "name": "Broomfield Park",
+    "category": "park",
+    "coordinates": [
+      -0.1208,
+      51.6322
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-markfield-park",
+    "name": "Markfield Park",
+    "category": "park",
+    "coordinates": [
+      -0.0635,
+      51.5838
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-downhills-park",
+    "name": "Downhills Park",
+    "category": "park",
+    "coordinates": [
+      -0.0905,
+      51.5885
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-lordship-recreation-ground",
+    "name": "Lordship Recreation Ground",
+    "category": "park",
+    "coordinates": [
+      -0.0805,
+      51.5972
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-springfield-park-hackney",
+    "name": "Springfield Park",
+    "category": "park",
+    "coordinates": [
+      -0.0555,
+      51.5708
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-hackney-downs",
+    "name": "Hackney Downs",
+    "category": "park",
+    "coordinates": [
+      -0.0608,
+      51.5515
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-victoria-park-hackney",
+    "name": "Victoria Park (Hackney)",
+    "category": "park",
+    "coordinates": [
+      -0.0385,
+      51.5365
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-wennington-green",
+    "name": "Wennington Green",
+    "category": "park",
+    "coordinates": [
+      -0.0488,
+      51.5322
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-mudchute-park",
+    "name": "Mudchute Park & Farm",
+    "category": "park",
+    "coordinates": [
+      -0.0125,
+      51.4928
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-island-gardens",
+    "name": "Island Gardens",
+    "category": "park",
+    "coordinates": [
+      -0.0095,
+      51.4872
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-thamesmead-park",
+    "name": "Thamesmead Linear Park",
+    "category": "park",
+    "coordinates": [
+      0.1055,
+      51.5045
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-lesnes-abbey-woods",
+    "name": "Lesnes Abbey Woods",
+    "category": "park",
+    "coordinates": [
+      0.1295,
+      51.4895
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-oxleas-wood",
+    "name": "Oxleas Wood",
+    "category": "park",
+    "coordinates": [
+      0.0685,
+      51.4625
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-danson-park",
+    "name": "Danson Park",
+    "category": "park",
+    "coordinates": [
+      0.1185,
+      51.4525
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-well-hall-pleasaunce",
+    "name": "Well Hall Pleasaunce",
+    "category": "park",
+    "coordinates": [
+      0.0505,
+      51.4555
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-maryon-park",
+    "name": "Maryon Park",
+    "category": "park",
+    "coordinates": [
+      0.0405,
+      51.4885
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-charlton-park",
+    "name": "Charlton Park",
+    "category": "park",
+    "coordinates": [
+      0.0455,
+      51.4825
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-greenwich-park-extension",
+    "name": "Greenwich Park (south)",
+    "category": "park",
+    "coordinates": [
+      0.0015,
+      51.4735
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-blackheath-heath",
+    "name": "Blackheath",
+    "category": "park",
+    "coordinates": [
+      0.0085,
+      51.4655
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-horniman-gardens",
+    "name": "Horniman Museum Gardens",
+    "category": "park",
+    "coordinates": [
+      -0.0615,
+      51.4405
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-sydenham-wells-park",
+    "name": "Sydenham Wells Park",
+    "category": "park",
+    "coordinates": [
+      -0.0555,
+      51.4285
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-beckenham-place-park",
+    "name": "Beckenham Place Park",
+    "category": "park",
+    "coordinates": [
+      -0.0155,
+      51.4185
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-crystal-palace-park-south",
+    "name": "Crystal Palace Park (south)",
+    "category": "park",
+    "coordinates": [
+      -0.0705,
+      51.4185
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-belair-park",
+    "name": "Belair Park",
+    "category": "park",
+    "coordinates": [
+      -0.0905,
+      51.4455
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-geraldine-mary-harmsworth",
+    "name": "Geraldine Mary Harmsworth Park",
+    "category": "park",
+    "coordinates": [
+      -0.1085,
+      51.4965
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-archbishops-park",
+    "name": "Archbishop's Park",
+    "category": "park",
+    "coordinates": [
+      -0.1175,
+      51.4955
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-kennington-oval-green",
+    "name": "Kennington Green",
+    "category": "park",
+    "coordinates": [
+      -0.1105,
+      51.4835
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-larkhall-park",
+    "name": "Larkhall Park",
+    "category": "park",
+    "coordinates": [
+      -0.1285,
+      51.4735
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-clapham-common-west",
+    "name": "Clapham Common (west)",
+    "category": "park",
+    "coordinates": [
+      -0.1555,
+      51.4585
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-tooting-bec-common",
+    "name": "Tooting Bec Common",
+    "category": "park",
+    "coordinates": [
+      -0.1485,
+      51.4355
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-wandsworth-park",
+    "name": "Wandsworth Park",
+    "category": "park",
+    "coordinates": [
+      -0.2085,
+      51.4625
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-king-georges-park",
+    "name": "King George's Park",
+    "category": "park",
+    "coordinates": [
+      -0.1955,
+      51.4485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-putney-heath",
+    "name": "Putney Heath",
+    "category": "park",
+    "coordinates": [
+      -0.2255,
+      51.4485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-wimbledon-park",
+    "name": "Wimbledon Park",
+    "category": "park",
+    "coordinates": [
+      -0.2085,
+      51.4385
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-cannizaro-park",
+    "name": "Cannizaro Park",
+    "category": "park",
+    "coordinates": [
+      -0.2285,
+      51.4225
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-richmond-park-pen-ponds",
+    "name": "Richmond Park (Pen Ponds)",
+    "category": "park",
+    "coordinates": [
+      -0.2755,
+      51.4425
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-osterley-park",
+    "name": "Osterley Park",
+    "category": "park",
+    "coordinates": [
+      -0.3485,
+      51.4885
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-syon-park",
+    "name": "Syon Park",
+    "category": "park",
+    "coordinates": [
+      -0.3125,
+      51.4765
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-gunnersbury-triangle",
+    "name": "Gunnersbury Triangle",
+    "category": "park",
+    "coordinates": [
+      -0.2825,
+      51.4945
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-acton-park",
+    "name": "Acton Park",
+    "category": "park",
+    "coordinates": [
+      -0.2585,
+      51.5085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-ealing-common",
+    "name": "Ealing Common",
+    "category": "park",
+    "coordinates": [
+      -0.2885,
+      51.5105
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-walpole-park",
+    "name": "Walpole Park",
+    "category": "park",
+    "coordinates": [
+      -0.3085,
+      51.5105
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-northala-fields",
+    "name": "Northala Fields",
+    "category": "park",
+    "coordinates": [
+      -0.3685,
+      51.5425
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-horsenden-hill",
+    "name": "Horsenden Hill",
+    "category": "park",
+    "coordinates": [
+      -0.3385,
+      51.5525
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-perivale-wood",
+    "name": "Perivale Wood",
+    "category": "park",
+    "coordinates": [
+      -0.3255,
+      51.5385
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-hillingdon-court-park",
+    "name": "Hillingdon Court Park",
+    "category": "park",
+    "coordinates": [
+      -0.4555,
+      51.5385
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-crane-park",
+    "name": "Crane Park",
+    "category": "park",
+    "coordinates": [
+      -0.3755,
+      51.4485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-bushy-park-waterhouse",
+    "name": "Bushy Park (Waterhouse)",
+    "category": "park",
+    "coordinates": [
+      -0.3355,
+      51.4155
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-home-park-hampton",
+    "name": "Home Park (Hampton Court)",
+    "category": "park",
+    "coordinates": [
+      -0.3255,
+      51.4055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-morden-park",
+    "name": "Morden Park",
+    "category": "park",
+    "coordinates": [
+      -0.2155,
+      51.3925
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-nonsuch-park",
+    "name": "Nonsuch Park",
+    "category": "park",
+    "coordinates": [
+      -0.2285,
+      51.3585
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-lloyd-park-walthamstow",
+    "name": "Lloyd Park (Walthamstow)",
+    "category": "park",
+    "coordinates": [
+      -0.0155,
+      51.5885
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-highams-park",
+    "name": "Highams Park Lake",
+    "category": "park",
+    "coordinates": [
+      0.0005,
+      51.6085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-chingford-plain",
+    "name": "Chingford Plain",
+    "category": "park",
+    "coordinates": [
+      0.0055,
+      51.6355
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-eeping-forest-wanstead",
+    "name": "Wanstead Flats",
+    "category": "park",
+    "coordinates": [
+      0.0285,
+      51.5585
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-valentinies-park",
+    "name": "Valentines Park",
+    "category": "park",
+    "coordinates": [
+      0.0685,
+      51.5725
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-goodmayes-park",
+    "name": "Goodmayes Park",
+    "category": "park",
+    "coordinates": [
+      0.1085,
+      51.5625
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-raphael-park",
+    "name": "Raphael Park",
+    "category": "park",
+    "coordinates": [
+      0.1885,
+      51.5825
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-bedfords-park",
+    "name": "Bedfords Park",
+    "category": "park",
+    "coordinates": [
+      0.1985,
+      51.6125
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-hainault-forest",
+    "name": "Hainault Forest",
+    "category": "park",
+    "coordinates": [
+      0.1285,
+      51.6125
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-fairlop-waters",
+    "name": "Fairlop Waters",
+    "category": "park",
+    "coordinates": [
+      0.0985,
+      51.5985
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-barking-park",
+    "name": "Barking Park",
+    "category": "park",
+    "coordinates": [
+      0.0885,
+      51.5425
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-mayesbrook-park",
+    "name": "Mayesbrook Park",
+    "category": "park",
+    "coordinates": [
+      0.1085,
+      51.5485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-central-park-east-ham",
+    "name": "Central Park (East Ham)",
+    "category": "park",
+    "coordinates": [
+      0.0585,
+      51.5325
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-beck-park",
+    "name": "Beckton District Park",
+    "category": "park",
+    "coordinates": [
+      0.0685,
+      51.5185
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-thames-barrier-park",
+    "name": "Thames Barrier Park",
+    "category": "park",
+    "coordinates": [
+      0.0355,
+      51.4985
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-queen-elizabeth-olympic",
+    "name": "Queen Elizabeth Olympic Park",
+    "category": "park",
+    "coordinates": [
+      -0.0165,
+      51.5435
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-hackney-marsh-north",
+    "name": "Hackney Marsh (north)",
+    "category": "park",
+    "coordinates": [
+      -0.0255,
+      51.5585
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-walthamstow-wetlands",
+    "name": "Walthamstow Wetlands",
+    "category": "park",
+    "coordinates": [
+      -0.0485,
+      51.5885
+    ],
+    "rank": 1
+  },
+  {
+    "id": "park-woodberry-wetlands",
+    "name": "Woodberry Wetlands",
+    "category": "park",
+    "coordinates": [
+      -0.0885,
+      51.5725
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-camley-street-natural",
+    "name": "Camley Street Natural Park",
+    "category": "park",
+    "coordinates": [
+      -0.1285,
+      51.5355
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-st-johns-lodge-garden",
+    "name": "St John's Lodge Garden",
+    "category": "park",
+    "coordinates": [
+      -0.1525,
+      51.5285
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-russell-square-garden",
+    "name": "Russell Square Gardens",
+    "category": "park",
+    "coordinates": [
+      -0.1265,
+      51.5225
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-gordon-square",
+    "name": "Gordon Square",
+    "category": "park",
+    "coordinates": [
+      -0.1305,
+      51.5245
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-brunswick-square",
+    "name": "Brunswick Square Gardens",
+    "category": "park",
+    "coordinates": [
+      -0.1235,
+      51.5245
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-red-lion-square",
+    "name": "Red Lion Square",
+    "category": "park",
+    "coordinates": [
+      -0.1185,
+      51.5195
+    ],
+    "rank": 2
+  },
+  {
+    "id": "park-goldsmiths-fields",
+    "name": "Goldsmiths' Fields",
+    "category": "park",
+    "coordinates": [
+      -0.0555,
+      51.4755
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-chelsea-physic",
+    "name": "Chelsea Physic Garden",
+    "category": "garden",
+    "coordinates": [
+      -0.1625,
+      51.4855
+    ],
+    "rank": 1
+  },
+  {
+    "id": "garden-kyoto-garden",
+    "name": "Kyoto Garden (Holland Park)",
+    "category": "garden",
+    "coordinates": [
+      -0.2045,
+      51.5025
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-hill-garden-pergola",
+    "name": "Hill Garden & Pergola",
+    "category": "garden",
+    "coordinates": [
+      -0.1785,
+      51.5685
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-queen-marys-rose",
+    "name": "Queen Mary's Gardens",
+    "category": "garden",
+    "coordinates": [
+      -0.1525,
+      51.5275
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-inner-temple",
+    "name": "Inner Temple Garden",
+    "category": "garden",
+    "coordinates": [
+      -0.1105,
+      51.5115
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-middle-temple",
+    "name": "Middle Temple Garden",
+    "category": "garden",
+    "coordinates": [
+      -0.1125,
+      51.5115
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-geffrye-museum",
+    "name": "Museum of the Home Gardens",
+    "category": "garden",
+    "coordinates": [
+      -0.0755,
+      51.5315
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-rookery-streatham",
+    "name": "The Rookery (Streatham)",
+    "category": "garden",
+    "coordinates": [
+      -0.1285,
+      51.4285
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-myatts-fields",
+    "name": "Myatt's Fields Park Garden",
+    "category": "garden",
+    "coordinates": [
+      -0.1025,
+      51.4735
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-barbican-lakeside",
+    "name": "Barbican Lakeside Terrace",
+    "category": "garden",
+    "coordinates": [
+      -0.0935,
+      51.5205
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-crossrail-place",
+    "name": "Crossrail Place Roof Garden",
+    "category": "garden",
+    "coordinates": [
+      -0.0175,
+      51.5055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "garden-sky-garden-public",
+    "name": "Sky Garden (public levels)",
+    "category": "garden",
+    "coordinates": [
+      -0.0835,
+      51.5115
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-borough-market",
+    "name": "Borough Market",
+    "category": "market",
+    "coordinates": [
+      -0.0905,
+      51.5055
+    ],
+    "rank": 1
+  },
+  {
+    "id": "market-greenwich-market",
+    "name": "Greenwich Market",
+    "category": "market",
+    "coordinates": [
+      -0.0095,
+      51.4815
+    ],
+    "rank": 1
+  },
+  {
+    "id": "market-deptford-market",
+    "name": "Deptford Market",
+    "category": "market",
+    "coordinates": [
+      -0.0265,
+      51.4785
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-broadway-market",
+    "name": "Broadway Market",
+    "category": "market",
+    "coordinates": [
+      -0.0615,
+      51.5405
+    ],
+    "rank": 1
+  },
+  {
+    "id": "market-chatsworth-road",
+    "name": "Chatsworth Road Market",
+    "category": "market",
+    "coordinates": [
+      -0.0425,
+      51.5485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-queens-crescent",
+    "name": "Queen's Crescent Market",
+    "category": "market",
+    "coordinates": [
+      -0.1555,
+      51.5505
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-north-end-road",
+    "name": "North End Road Market",
+    "category": "market",
+    "coordinates": [
+      -0.1985,
+      51.4825
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-portobello-green",
+    "name": "Portobello Green Market",
+    "category": "market",
+    "coordinates": [
+      -0.2085,
+      51.5185
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-golborne-road",
+    "name": "Golborne Road Market",
+    "category": "market",
+    "coordinates": [
+      -0.2085,
+      51.5225
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-lower-marsh",
+    "name": "Lower Marsh Market",
+    "category": "market",
+    "coordinates": [
+      -0.1125,
+      51.5005
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-southall-broadway",
+    "name": "Southall Broadway Market",
+    "category": "market",
+    "coordinates": [
+      -0.3755,
+      51.5105
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-tooting-market",
+    "name": "Tooting Market",
+    "category": "market",
+    "coordinates": [
+      -0.1655,
+      51.4285
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-brixton-village",
+    "name": "Brixton Village",
+    "category": "market",
+    "coordinates": [
+      -0.1125,
+      51.4615
+    ],
+    "rank": 1
+  },
+  {
+    "id": "market-peckham-rye-market",
+    "name": "Peckham Rye Market",
+    "category": "market",
+    "coordinates": [
+      -0.0685,
+      51.4705
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-lewisham-market",
+    "name": "Lewisham Market",
+    "category": "market",
+    "coordinates": [
+      -0.0125,
+      51.4625
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-woolwich-market",
+    "name": "Woolwich Market",
+    "category": "market",
+    "coordinates": [
+      0.0655,
+      51.4905
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-romford-market",
+    "name": "Romford Market",
+    "category": "market",
+    "coordinates": [
+      0.1825,
+      51.5785
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-kingston-market",
+    "name": "Kingston Market",
+    "category": "market",
+    "coordinates": [
+      -0.3065,
+      51.4095
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-kingston-ancient",
+    "name": "Kingston Ancient Market",
+    "category": "market",
+    "coordinates": [
+      -0.3065,
+      51.4085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-walthamstow-high-street",
+    "name": "Walthamstow High Street Market",
+    "category": "market",
+    "coordinates": [
+      -0.0205,
+      51.5835
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-dalston-ridley",
+    "name": "Dalston Kingsland Market",
+    "category": "market",
+    "coordinates": [
+      -0.0755,
+      51.5485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-old-spitalfields",
+    "name": "Old Spitalfields Market",
+    "category": "market",
+    "coordinates": [
+      -0.0755,
+      51.5195
+    ],
+    "rank": 1
+  },
+  {
+    "id": "market-boxpark-shoreditch",
+    "name": "Boxpark Shoreditch",
+    "category": "market",
+    "coordinates": [
+      -0.0785,
+      51.5235
+    ],
+    "rank": 2
+  },
+  {
+    "id": "market-seven-dials-market",
+    "name": "Seven Dials Market",
+    "category": "market",
+    "coordinates": [
+      -0.1255,
+      51.5145
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-parliament-hill",
+    "name": "Parliament Hill viewpoint",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.1605,
+      51.5597
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-primrose-hill",
+    "name": "Primrose Hill summit",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.1615,
+      51.5395
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-greenwich-observatory",
+    "name": "Greenwich Observatory viewpoint",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0005,
+      51.4775
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-one-tree-hill",
+    "name": "One Tree Hill (Honor Oak)",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0555,
+      51.4485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-crystal-palace-terrace",
+    "name": "Crystal Palace terrace view",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0755,
+      51.4225
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-alexandra-palace",
+    "name": "Alexandra Palace terrace",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.1305,
+      51.5945
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-kenwood-house",
+    "name": "Kenwood House south lawn",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.1675,
+      51.5715
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-richmond-park-king-henry",
+    "name": "King Henry's Mound",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.2955,
+      51.4455
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-wimbledon-windmill",
+    "name": "Wimbledon Windmill view",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.2325,
+      51.4375
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-horsenden-hill-top",
+    "name": "Horsenden Hill summit",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.3385,
+      51.5525
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-northala-mounds",
+    "name": "Northala Fields mounds",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.3685,
+      51.5425
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-tower-bridge-walkways",
+    "name": "Tower Bridge walkways",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0755,
+      51.5055
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-millennium-bridge",
+    "name": "Millennium Bridge midspan",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0985,
+      51.5095
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-waterloo-bridge",
+    "name": "Waterloo Bridge midspan",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.1165,
+      51.5085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-golden-gallery",
+    "name": "St Paul's Golden Gallery",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0985,
+      51.5135
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-monument",
+    "name": "The Monument viewing gallery",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0865,
+      51.5105
+    ],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-orbit",
+    "name": "ArcelorMittal Orbit view",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0135,
+      51.5385
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-cutty-sark-pier",
+    "name": "Cutty Sark riverside view",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0095,
+      51.4825
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-london-bridge-city",
+    "name": "London Bridge City pier view",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.0845,
+      51.5055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-battersea-power",
+    "name": "Battersea Power Station riverside",
+    "category": "viewpoint",
+    "coordinates": [
+      -0.1445,
+      51.4815
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-hampton-court",
+    "name": "Hampton Court Palace",
+    "category": "historic",
+    "coordinates": [
+      -0.3375,
+      51.4035
+    ],
+    "rank": 1
+  },
+  {
+    "id": "historic-kew-palace",
+    "name": "Kew Palace",
+    "category": "historic",
+    "coordinates": [
+      -0.2955,
+      51.4835
+    ],
+    "rank": 1
+  },
+  {
+    "id": "historic-eltham-courtyard",
+    "name": "Eltham Palace Great Hall",
+    "category": "historic",
+    "coordinates": [
+      0.0485,
+      51.4475
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-danson-house",
+    "name": "Danson House",
+    "category": "historic",
+    "coordinates": [
+      0.1185,
+      51.4525
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-charlton-house",
+    "name": "Charlton House",
+    "category": "historic",
+    "coordinates": [
+      0.0385,
+      51.4805
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-ranger-house",
+    "name": "Ranger's House",
+    "category": "historic",
+    "coordinates": [
+      -0.0025,
+      51.4755
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-queens-house",
+    "name": "Queen's House",
+    "category": "historic",
+    "coordinates": [
+      -0.0035,
+      51.4815
+    ],
+    "rank": 1
+  },
+  {
+    "id": "historic-old-royal-naval-college",
+    "name": "Old Royal Naval College",
+    "category": "historic",
+    "coordinates": [
+      -0.0055,
+      51.4835
+    ],
+    "rank": 1
+  },
+  {
+    "id": "historic-trinity-hospital",
+    "name": "Trinity Hospital (Greenwich)",
+    "category": "historic",
+    "coordinates": [
+      -0.0025,
+      51.4845
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-woolwich-arsenal",
+    "name": "Royal Arsenal Woolwich",
+    "category": "historic",
+    "coordinates": [
+      0.0705,
+      51.4935
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-thames-barrier",
+    "name": "Thames Barrier",
+    "category": "historic",
+    "coordinates": [
+      0.0365,
+      51.4975
+    ],
+    "rank": 1
+  },
+  {
+    "id": "historic-crossness-engines",
+    "name": "Crossness Pumping Station",
+    "category": "historic",
+    "coordinates": [
+      0.1455,
+      51.5085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-red-house-bexley",
+    "name": "Red House (Bexleyheath)",
+    "category": "historic",
+    "coordinates": [
+      0.1305,
+      51.4555
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-hall-place",
+    "name": "Hall Place",
+    "category": "historic",
+    "coordinates": [
+      0.1585,
+      51.4485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-lesnes-abbey",
+    "name": "Lesnes Abbey ruins",
+    "category": "historic",
+    "coordinates": [
+      0.1285,
+      51.4895
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-upminster-windmill",
+    "name": "Upminster Windmill",
+    "category": "historic",
+    "coordinates": [
+      0.2485,
+      51.5585
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-rainham-hall",
+    "name": "Rainham Hall",
+    "category": "historic",
+    "coordinates": [
+      0.1925,
+      51.5185
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-eastbury-manor",
+    "name": "Eastbury Manor House",
+    "category": "historic",
+    "coordinates": [
+      0.1085,
+      51.5325
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-valence-house",
+    "name": "Valence House Museum",
+    "category": "historic",
+    "coordinates": [
+      0.1285,
+      51.5585
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-bruce-castle",
+    "name": "Bruce Castle",
+    "category": "historic",
+    "coordinates": [
+      -0.0755,
+      51.5985
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-forty-hall",
+    "name": "Forty Hall",
+    "category": "historic",
+    "coordinates": [
+      -0.0685,
+      51.6685
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-myddelton-house",
+    "name": "Myddelton House Gardens",
+    "category": "historic",
+    "coordinates": [
+      -0.0485,
+      51.6755
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-capel-manor",
+    "name": "Capel Manor Gardens",
+    "category": "historic",
+    "coordinates": [
+      -0.0785,
+      51.6885
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-sutton-house",
+    "name": "Sutton House",
+    "category": "historic",
+    "coordinates": [
+      -0.0505,
+      51.5485
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-geffrye-almhouses",
+    "name": "Geffrye Almshouses",
+    "category": "historic",
+    "coordinates": [
+      -0.0755,
+      51.5315
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-wesley-chapel-house",
+    "name": "Wesley's House",
+    "category": "historic",
+    "coordinates": [
+      -0.0875,
+      51.5235
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-bunhill-fields-defoe",
+    "name": "Bunhill Fields (Defoe)",
+    "category": "historic",
+    "coordinates": [
+      -0.0885,
+      51.5235
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-london-mithraeum",
+    "name": "London Mithraeum",
+    "category": "historic",
+    "coordinates": [
+      -0.0905,
+      51.5125
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-roman-amphitheatre",
+    "name": "Guildhall Roman Amphitheatre",
+    "category": "historic",
+    "coordinates": [
+      -0.0925,
+      51.5155
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-billingsgate-roman",
+    "name": "Billingsgate Roman House",
+    "category": "historic",
+    "coordinates": [
+      -0.0835,
+      51.5095
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-jewel-tower",
+    "name": "Jewel Tower",
+    "category": "historic",
+    "coordinates": [
+      -0.1265,
+      51.4985
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-westminster-chapter",
+    "name": "Westminster Abbey Chapter House",
+    "category": "historic",
+    "coordinates": [
+      -0.1275,
+      51.4995
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-clarence-house",
+    "name": "Clarence House",
+    "category": "historic",
+    "coordinates": [
+      -0.1385,
+      51.5045
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-spencer-house",
+    "name": "Spencer House",
+    "category": "historic",
+    "coordinates": [
+      -0.1405,
+      51.5055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-lancaster-house",
+    "name": "Lancaster House",
+    "category": "historic",
+    "coordinates": [
+      -0.1395,
+      51.5045
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-apothecaries-hall",
+    "name": "Apothecaries' Hall",
+    "category": "historic",
+    "coordinates": [
+      -0.1025,
+      51.5125
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-stationers-hall",
+    "name": "Stationers' Hall",
+    "category": "historic",
+    "coordinates": [
+      -0.1015,
+      51.5145
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-dr-johnsons-house",
+    "name": "Dr Johnson's House",
+    "category": "historic",
+    "coordinates": [
+      -0.1085,
+      51.5155
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-ye-olde-cheshire",
+    "name": "Ye Olde Cheshire Cheese (site)",
+    "category": "historic",
+    "coordinates": [
+      -0.1075,
+      51.5145
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-temple-church-round",
+    "name": "Temple Church Round",
+    "category": "historic",
+    "coordinates": [
+      -0.1105,
+      51.5125
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-lincoln-inn-chapel",
+    "name": "Lincoln's Inn Chapel",
+    "category": "historic",
+    "coordinates": [
+      -0.1155,
+      51.5165
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-gray-inn",
+    "name": "Gray's Inn Gardens",
+    "category": "historic",
+    "coordinates": [
+      -0.1125,
+      51.5195
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-hunterian",
+    "name": "Hunterian Museum",
+    "category": "historic",
+    "coordinates": [
+      -0.1165,
+      51.5155
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-freemasons-hall",
+    "name": "Freemasons' Hall",
+    "category": "historic",
+    "coordinates": [
+      -0.1215,
+      51.5155
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-british-library",
+    "name": "British Library",
+    "category": "historic",
+    "coordinates": [
+      -0.1275,
+      51.5295
+    ],
+    "rank": 1
+  },
+  {
+    "id": "historic-st-pancras-chambers",
+    "name": "St Pancras Renaissance (chambers)",
+    "category": "historic",
+    "coordinates": [
+      -0.1265,
+      51.5305
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-king-cross-gasometers",
+    "name": "King's Cross Gasholders",
+    "category": "historic",
+    "coordinates": [
+      -0.1255,
+      51.5365
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-camden-roundhouse",
+    "name": "Roundhouse Camden",
+    "category": "historic",
+    "coordinates": [
+      -0.1515,
+      51.5435
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-abbey-mills",
+    "name": "Abbey Mills Pumping Station",
+    "category": "historic",
+    "coordinates": [
+      -0.0055,
+      51.5305
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-three-mills",
+    "name": "Three Mills",
+    "category": "historic",
+    "coordinates": [
+      -0.0075,
+      51.5275
+    ],
+    "rank": 2
+  },
+  {
+    "id": "historic-house-mill",
+    "name": "House Mill",
+    "category": "historic",
+    "coordinates": [
+      -0.0075,
+      51.5275
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-battersea-power-station",
+    "name": "Battersea Power Station",
+    "category": "sight",
+    "coordinates": [
+      -0.1445,
+      51.4815
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-chelsea-bridge",
+    "name": "Chelsea Bridge",
+    "category": "sight",
+    "coordinates": [
+      -0.1505,
+      51.4845
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-albert-bridge",
+    "name": "Albert Bridge",
+    "category": "sight",
+    "coordinates": [
+      -0.1665,
+      51.4825
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-battersea-park-peace",
+    "name": "Battersea Park Peace Pagoda",
+    "category": "sight",
+    "coordinates": [
+      -0.1555,
+      51.4795
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-london-heliport",
+    "name": "London Heliport riverside",
+    "category": "sight",
+    "coordinates": [
+      -0.1785,
+      51.4705
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-putney-bridge",
+    "name": "Putney Bridge",
+    "category": "sight",
+    "coordinates": [
+      -0.2135,
+      51.4665
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-hammersmith-bridge",
+    "name": "Hammersmith Bridge",
+    "category": "sight",
+    "coordinates": [
+      -0.2305,
+      51.4885
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-charing-cross-pier",
+    "name": "Charing Cross Pier",
+    "category": "sight",
+    "coordinates": [
+      -0.1225,
+      51.5075
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-festival-pier",
+    "name": "Festival Pier",
+    "category": "sight",
+    "coordinates": [
+      -0.1175,
+      51.5055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-blackfriars-pier",
+    "name": "Blackfriars Pier",
+    "category": "sight",
+    "coordinates": [
+      -0.1045,
+      51.5105
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-bankside-pier",
+    "name": "Bankside Pier",
+    "category": "sight",
+    "coordinates": [
+      -0.0965,
+      51.5085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-tower-millennium-pier",
+    "name": "Tower Millennium Pier",
+    "category": "sight",
+    "coordinates": [
+      -0.0755,
+      51.5055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-st-katharine-marina",
+    "name": "St Katharine Docks Marina",
+    "category": "sight",
+    "coordinates": [
+      -0.0715,
+      51.5065
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-canary-wharf-crossrail",
+    "name": "Canary Wharf Crossrail Place",
+    "category": "sight",
+    "coordinates": [
+      -0.0175,
+      51.5055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-greenwich-pier",
+    "name": "Greenwich Pier",
+    "category": "sight",
+    "coordinates": [
+      -0.0095,
+      51.4835
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-north-greenwich-pier",
+    "name": "North Greenwich Pier",
+    "category": "sight",
+    "coordinates": [
+      0.0045,
+      51.5025
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-woolwich-arsenal-pier",
+    "name": "Woolwich Arsenal Pier",
+    "category": "sight",
+    "coordinates": [
+      0.0685,
+      51.4945
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-emirates-air-line",
+    "name": "Emirates Air Line / IFS Cloud Cable Car",
+    "category": "sight",
+    "coordinates": [
+      0.0085,
+      51.5005
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-o2-peninsula",
+    "name": "The O2 Peninsula Walk",
+    "category": "sight",
+    "coordinates": [
+      0.0035,
+      51.5035
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-royal-observatory",
+    "name": "Royal Observatory Greenwich",
+    "category": "sight",
+    "coordinates": [
+      -0.0015,
+      51.4775
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-national-maritime",
+    "name": "National Maritime Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.0055,
+      51.4815
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-fan-museum",
+    "name": "Fan Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.0085,
+      51.4785
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-design-museum-kensington",
+    "name": "Design Museum Kensington",
+    "category": "sight",
+    "coordinates": [
+      -0.2005,
+      51.4985
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-natural-history-museum",
+    "name": "Natural History Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1765,
+      51.4965
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-vanda-museum",
+    "name": "Victoria and Albert Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1725,
+      51.4965
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-royal-albert-hall",
+    "name": "Royal Albert Hall",
+    "category": "sight",
+    "coordinates": [
+      -0.1775,
+      51.5005
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-kensington-palace",
+    "name": "Kensington Palace",
+    "category": "sight",
+    "coordinates": [
+      -0.1875,
+      51.5055
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-serpentine-gallery",
+    "name": "Serpentine Gallery",
+    "category": "sight",
+    "coordinates": [
+      -0.1755,
+      51.5045
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-chelsea-physic-gate",
+    "name": "Chelsea Physic Garden gate",
+    "category": "sight",
+    "coordinates": [
+      -0.1625,
+      51.4855
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-mi6-building",
+    "name": "SIS Building (Vauxhall)",
+    "category": "sight",
+    "coordinates": [
+      -0.1245,
+      51.4875
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-lambeth-palace",
+    "name": "Lambeth Palace",
+    "category": "sight",
+    "coordinates": [
+      -0.1205,
+      51.4955
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-shakespeare-globe",
+    "name": "Shakespeare's Globe",
+    "category": "sight",
+    "coordinates": [
+      -0.0975,
+      51.5085
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-golden-hind",
+    "name": "Golden Hinde",
+    "category": "sight",
+    "coordinates": [
+      -0.0905,
+      51.5065
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-borough-market-hall",
+    "name": "Borough Market Hall",
+    "category": "sight",
+    "coordinates": [
+      -0.0905,
+      51.5055
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-southwark-cathedral",
+    "name": "Southwark Cathedral",
+    "category": "sight",
+    "coordinates": [
+      -0.0895,
+      51.5065
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-city-hall-old",
+    "name": "City Hall (More London)",
+    "category": "sight",
+    "coordinates": [
+      -0.0785,
+      51.5045
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-hms-belfast",
+    "name": "HMS Belfast",
+    "category": "sight",
+    "coordinates": [
+      -0.0815,
+      51.5065
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-tower-of-london",
+    "name": "Tower of London",
+    "category": "sight",
+    "coordinates": [
+      -0.0755,
+      51.5085
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-tower-bridge",
+    "name": "Tower Bridge",
+    "category": "sight",
+    "coordinates": [
+      -0.0755,
+      51.5055
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-monument-to-fire",
+    "name": "The Monument",
+    "category": "sight",
+    "coordinates": [
+      -0.0865,
+      51.5105
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-lloyds-building",
+    "name": "Lloyd's Building",
+    "category": "sight",
+    "coordinates": [
+      -0.0825,
+      51.5125
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-30-st-mary-axe",
+    "name": "30 St Mary Axe (The Gherkin)",
+    "category": "sight",
+    "coordinates": [
+      -0.0805,
+      51.5145
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-122-leadenhall",
+    "name": "122 Leadenhall Street",
+    "category": "sight",
+    "coordinates": [
+      -0.0825,
+      51.5135
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-20-fenchurch",
+    "name": "20 Fenchurch Street (Walkie Talkie)",
+    "category": "sight",
+    "coordinates": [
+      -0.0835,
+      51.5115
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-barbican-centre",
+    "name": "Barbican Centre",
+    "category": "sight",
+    "coordinates": [
+      -0.0935,
+      51.5205
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-museum-of-london",
+    "name": "Museum of London (Smithfield)",
+    "category": "sight",
+    "coordinates": [
+      -0.1005,
+      51.5175
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-smithfield-market",
+    "name": "Smithfield Market",
+    "category": "sight",
+    "coordinates": [
+      -0.1015,
+      51.5185
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-st-pauls",
+    "name": "St Paul's Cathedral",
+    "category": "sight",
+    "coordinates": [
+      -0.0985,
+      51.5135
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-millennium-bridge",
+    "name": "Millennium Bridge",
+    "category": "sight",
+    "coordinates": [
+      -0.0985,
+      51.5095
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-oxoboxo",
+    "name": "OXO Tower Wharf",
+    "category": "sight",
+    "coordinates": [
+      -0.1075,
+      51.5085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-southbank-centre",
+    "name": "Southbank Centre",
+    "category": "sight",
+    "coordinates": [
+      -0.1165,
+      51.5065
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-national-theatre",
+    "name": "National Theatre",
+    "category": "sight",
+    "coordinates": [
+      -0.1145,
+      51.5075
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-county-hall",
+    "name": "County Hall",
+    "category": "sight",
+    "coordinates": [
+      -0.1195,
+      51.5015
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-westminster-bridge",
+    "name": "Westminster Bridge",
+    "category": "sight",
+    "coordinates": [
+      -0.1215,
+      51.5005
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-big-ben",
+    "name": "Elizabeth Tower (Big Ben)",
+    "category": "sight",
+    "coordinates": [
+      -0.1245,
+      51.5005
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-houses-of-parliament",
+    "name": "Houses of Parliament",
+    "category": "sight",
+    "coordinates": [
+      -0.1245,
+      51.4995
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-westminster-abbey",
+    "name": "Westminster Abbey",
+    "category": "sight",
+    "coordinates": [
+      -0.1275,
+      51.4995
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-downing-street",
+    "name": "Downing Street gate",
+    "category": "sight",
+    "coordinates": [
+      -0.1275,
+      51.5035
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-horse-guards",
+    "name": "Horse Guards Parade",
+    "category": "sight",
+    "coordinates": [
+      -0.1285,
+      51.5045
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-admiralty-arch",
+    "name": "Admiralty Arch",
+    "category": "sight",
+    "coordinates": [
+      -0.1285,
+      51.5065
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-victoria-memorial",
+    "name": "Victoria Memorial",
+    "category": "sight",
+    "coordinates": [
+      -0.1405,
+      51.5015
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-leicester-square",
+    "name": "Leicester Square",
+    "category": "sight",
+    "coordinates": [
+      -0.1305,
+      51.5105
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-seven-dials",
+    "name": "Seven Dials",
+    "category": "sight",
+    "coordinates": [
+      -0.1275,
+      51.5135
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-british-museum",
+    "name": "British Museum",
+    "category": "sight",
+    "coordinates": [
+      -0.1275,
+      51.5195
+    ],
+    "rank": 1
+  },
+  {
+    "id": "sight-soho-square",
+    "name": "Soho Square",
+    "category": "sight",
+    "coordinates": [
+      -0.1325,
+      51.5155
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-oxford-circus",
+    "name": "Oxford Circus",
+    "category": "sight",
+    "coordinates": [
+      -0.1415,
+      51.5155
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-selfridges",
+    "name": "Selfridges Oxford Street",
+    "category": "sight",
+    "coordinates": [
+      -0.1525,
+      51.5145
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-marble-arch",
+    "name": "Marble Arch",
+    "category": "sight",
+    "coordinates": [
+      -0.1585,
+      51.5135
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-speakers-corner",
+    "name": "Speakers' Corner",
+    "category": "sight",
+    "coordinates": [
+      -0.1605,
+      51.5125
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-hyde-park-corner",
+    "name": "Hyde Park Corner",
+    "category": "sight",
+    "coordinates": [
+      -0.1525,
+      51.5025
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-wellington-arch",
+    "name": "Wellington Arch",
+    "category": "sight",
+    "coordinates": [
+      -0.1505,
+      51.5025
+    ],
+    "rank": 2
+  },
+  {
+    "id": "sight-apsley-house",
+    "name": "Apsley House",
+    "category": "sight",
+    "coordinates": [
+      -0.1515,
+      51.5035
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-putney",
+    "name": "Putney Pier",
+    "category": "river",
+    "coordinates": [
+      -0.2135,
+      51.4665
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-wandsworth",
+    "name": "Wandsworth Riverside",
+    "category": "river",
+    "coordinates": [
+      -0.1925,
+      51.4655
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-chelsea-harbour",
+    "name": "Chelsea Harbour",
+    "category": "river",
+    "coordinates": [
+      -0.1825,
+      51.4755
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-millbank",
+    "name": "Millbank Embankment",
+    "category": "river",
+    "coordinates": [
+      -0.1265,
+      51.4905
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-vauxhall",
+    "name": "Vauxhall Embankment",
+    "category": "river",
+    "coordinates": [
+      -0.1245,
+      51.4865
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-limehouse",
+    "name": "Limehouse Reach",
+    "category": "river",
+    "coordinates": [
+      -0.0355,
+      51.5105
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-wapping",
+    "name": "Wapping Wall riverside",
+    "category": "river",
+    "coordinates": [
+      -0.0555,
+      51.5045
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-rotherhithe",
+    "name": "Rotherhithe riverside",
+    "category": "river",
+    "coordinates": [
+      -0.0525,
+      51.5005
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-deptford-creek",
+    "name": "Deptford Creek mouth",
+    "category": "river",
+    "coordinates": [
+      -0.0185,
+      51.4835
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-woolwich",
+    "name": "Woolwich Ferry riverside",
+    "category": "river",
+    "coordinates": [
+      0.0625,
+      51.4965
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-gallions-reach",
+    "name": "Gallions Reach",
+    "category": "river",
+    "coordinates": [
+      0.0785,
+      51.5085
+    ],
+    "rank": 2
+  },
+  {
+    "id": "river-barking-creek",
+    "name": "Barking Creek mouth",
+    "category": "river",
+    "coordinates": [
+      0.0985,
+      51.5185
+    ],
+    "rank": 2
+  }
+]

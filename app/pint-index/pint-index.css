@@ -1,0 +1,349 @@
+/* The London Pint Index (Wave S3.3). Self-contained: depends only on the
+   globally-loaded design tokens (--brass, --ink, --line, --panel…), so both the
+   light and dark themes track automatically. Mobile-first, comfortable at 390px;
+   the league table scrolls horizontally inside its own container rather than
+   pushing the page body sideways. Mirrors the borough/discover aesthetic. */
+
+.pintIndexPage {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px var(--page-gutter) 80px;
+  color: var(--ink);
+}
+
+.pintIndexHead {
+  margin: 32px 0 24px;
+}
+
+.pintIndexEyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.pintIndexTitle {
+  margin: 0 0 14px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pintIndexDek {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.pintIndexStamp {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* --- headline stat tiles -------------------------------------------------- */
+
+.pintIndexStats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pintIndexStat {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-raised, #fff);
+}
+
+.pintIndexStat dt {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.pintIndexStat dd {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.pintIndexStat dd small {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+/* --- section shell -------------------------------------------------------- */
+
+.pintIndexSection {
+  margin: 40px 0 0;
+}
+
+.pintIndexSectionTitle {
+  margin: 0 0 6px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pintIndexSectionDek {
+  margin: 0 0 16px;
+  max-width: 64ch;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* --- league table --------------------------------------------------------- */
+
+.pintIndexTableWrap {
+  overflow-x: auto;
+  touch-action: pan-y;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.pintIndexTable {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.pintIndexTable thead th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-raised);
+  white-space: nowrap;
+}
+
+.pintIndexTable th.pintIndexNum,
+.pintIndexTable td.pintIndexNum {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pintIndexTable tbody tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.pintIndexTable tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.pintIndexTable td,
+.pintIndexTable th[scope="row"] {
+  padding: 12px 14px;
+  vertical-align: middle;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.pintIndexRank {
+  width: 44px;
+  text-align: center;
+  color: var(--brass);
+  font-weight: 700;
+}
+
+.pintIndexBoroughLink {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pintIndexBoroughLink:hover {
+  color: var(--brass);
+  text-decoration: underline;
+}
+
+/* The column the table is ranked on: cheapest-first ranks on the average, the
+   dearest-end view ranks on the dearest pint. Weight only, and the selector
+   carries `td` so it outweighs `.pintIndexTable td` above, which had been
+   quietly winning and leaving this rule with nothing to say.
+
+   Weight rather than the page's brass on purpose: --brass is the coral
+   (#ff5a5f), which lands near 2.5:1 against the light table surface. Bold ink
+   marks the ranked column in both themes without spending contrast to do it. */
+.pintIndexTable td.pintIndexRanked {
+  font-weight: 700;
+}
+
+.pintIndexNoPrice {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+/* --- CSV download + methodology ------------------------------------------- */
+
+.pintIndexDownload {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel));
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.pintIndexDownload:hover {
+  background: color-mix(in srgb, var(--brass) 20%, var(--panel));
+}
+
+.pintIndexDownload:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.pintIndexProse p {
+  margin: 0 0 12px;
+  max-width: 64ch;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.pintIndexProse p:last-child {
+  margin-bottom: 0;
+}
+
+.pintIndexProse strong {
+  color: var(--ink);
+}
+
+.pintIndexNote {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--brass) 28%, var(--line));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pintIndexEmptyAction {
+  color: var(--brass);
+  font-weight: 700;
+  text-underline-offset: 2px;
+}
+
+/* --- borough index links -------------------------------------------------- */
+
+.pintIndexBoroughLinks {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pintIndexBoroughLinks a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pintIndexBoroughLinks a:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.pintIndexBoroughLinks a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* The edition you are already reading: same shape as its siblings, no link. */
+.pintIndexEditionCurrent {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 6px 12px;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel));
+  color: var(--brass);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pintIndexFootnote {
+  margin: 40px 0 0;
+  font-family: var(--font-garamond, var(--serif));
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.pintIndexFootnote a {
+  color: var(--brass);
+  font-style: normal;
+  text-decoration: none;
+}
+
+.pintIndexFootnote a:hover {
+  text-decoration: underline;
+}
+
+/* Screen-reader-only utility (table caption). */
+.pintIndexPage .srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .pintIndexPage {
+    padding: 20px var(--page-gutter)
+      calc(
+        var(--mobile-tab-clearance, 72px) + 48px + env(safe-area-inset-bottom, 0px)
+      );
+  }
+
+  .pintIndexStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

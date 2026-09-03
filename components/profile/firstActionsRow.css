@@ -1,0 +1,44 @@
+/* First-actions row: the genuine missing piece on a fresh owner's own
+   profile - three plain links to the map, the log flow, and a plan, placed
+   above the tabs so a fresh owner sees them before anything else. Tokens
+   only, per docs/DESIGN_SYSTEM.md. Pill geometry matches the identity-action
+   links in profile.css, but all three sit at equal weight - this is a set of
+   entry points, not a single call to action. */
+
+.firstActionsRow {
+  margin-top: var(--space-4);
+}
+
+.firstActionsKicker {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-2);
+}
+
+.firstActionsLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-2);
+}
+
+.firstActionsLink {
+  min-height: 44px;
+  padding: 10px 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+
+.firstActionsLink:hover {
+  border-color: var(--brass);
+}

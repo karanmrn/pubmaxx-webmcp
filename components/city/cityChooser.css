@@ -1,0 +1,665 @@
+/* City chooser — full-bleed night/brass picker. Scoped under .cityChooser.
+   Reuses landing tokens (brass, ink-deep, display face) without leaking. */
+
+.cityChooser {
+  --cc-gap: clamp(20px, 4vw, 36px);
+  position: relative;
+  color: var(--ink);
+  font-family: var(--font-body, var(--font-geist, Inter), ui-sans-serif, system-ui, sans-serif);
+  isolation: isolate;
+}
+
+.cityChooser *,
+.cityChooser *::before,
+.cityChooser *::after {
+  box-sizing: border-box;
+}
+
+.cityChooserSerif {
+  font-family: var(--font-display, var(--serif));
+  font-weight: 600;
+  font-optical-sizing: auto;
+}
+
+/* ── Page variant: full-bleed night field ─────────────────────────────── */
+.cityChooser--page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 6vw, 64px) clamp(20px, 5vw, 48px);
+  background:
+    radial-gradient(
+      ellipse at 18% 12%,
+      color-mix(in srgb, var(--brass) 22%, transparent),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 88% 78%,
+      color-mix(in srgb, var(--pint) 14%, transparent),
+      transparent 48%
+    ),
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--ink-deep) 92%, var(--brass) 8%) 0%,
+      var(--ink-deep) 48%,
+      color-mix(in srgb, var(--ink-deep) 88%, #1a2430 12%) 100%
+    );
+  color: var(--color-on-photo, #fdfaf2);
+}
+
+.cityChooser--page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--brass) 8%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--brass) 6%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  opacity: 0.55;
+}
+
+.cityChooser--section {
+  padding-block: clamp(56px, 9vw, 112px);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--ink-deep) 6%, transparent) 0%,
+      transparent 28%
+    ),
+    var(--paper, var(--panel));
+}
+
+.cityChooserInner {
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.cityChooserHead {
+  max-width: 34ch;
+  margin-bottom: var(--cc-gap);
+}
+
+.cityChooserBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cityChooserBrandMark {
+  width: 36px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent, #16122a);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brass) 28%, transparent);
+}
+
+.cityChooserBrandText {
+  font-family: var(--font-display, var(--serif));
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cityChooserEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  color: var(--brass);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.cityChooserEyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: currentcolor;
+  opacity: 0.65;
+}
+
+.cityChooserTitle {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.cityChooser--page .cityChooserTitle {
+  color: var(--color-on-photo, #fdfaf2);
+  text-shadow: 0 12px 36px color-mix(in srgb, var(--ink-deep) 55%, transparent);
+  animation: ccIn var(--duration-slow, 0.28s) var(--ease-out, ease) both;
+}
+
+.cityChooser--section .cityChooserTitle {
+  color: var(--ink);
+}
+
+.cityChooserLede {
+  margin: 0;
+  max-width: 42ch;
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  font-size: clamp(0.98rem, 1.8vw, 1.08rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.cityChooser--page .cityChooserLede {
+  color: color-mix(in srgb, var(--color-on-photo, #fdfaf2) 88%, transparent);
+  animation: ccIn var(--duration-slow, 0.28s) var(--ease-out, ease) 0.06s both;
+}
+
+.cityChooserSearch {
+  min-width: 0;
+  margin: 0 0 14px;
+  animation: ccIn var(--duration-slow, 0.28s) var(--ease-out, ease) 0.08s both;
+}
+
+.cityChooserSearchLabel,
+.cityChooserResultsLabel {
+  display: block;
+  margin: 0 0 7px;
+  color: var(--brass-bright, var(--brass));
+  font-size: var(--text-2xs);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.cityChooser--section .cityChooserSearchLabel,
+.cityChooser--section .cityChooserResultsLabel {
+  color: var(--brass);
+}
+
+.cityChooserSearchField {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  max-width: 620px;
+  padding-inline: 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 48%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel-raised, #1e1a30) 78%, transparent);
+  color: var(--brass-bright, var(--brass));
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--ink-deep) 18%, transparent);
+}
+
+.cityChooser--section .cityChooserSearchField {
+  border-color: color-mix(in srgb, var(--line) 65%, var(--brass) 35%);
+  background: var(--panel-raised);
+  color: var(--brass);
+}
+
+.cityChooserSearchField:focus-within {
+  border-color: var(--brass-bright, var(--brass));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--brass) 22%, transparent);
+}
+
+.cityChooserSearchInput {
+  min-height: 48px;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: 650 1rem/1.2 var(--font-body, var(--font-geist, Inter), sans-serif);
+}
+
+.cityChooserSearchInput::placeholder {
+  color: color-mix(in srgb, currentcolor 64%, transparent);
+  opacity: 1;
+}
+
+.cityChooser--section .cityChooserSearchInput::placeholder {
+  color: var(--input-placeholder);
+}
+
+.cityChooserSearchHelp {
+  margin: 7px 0 0;
+  max-width: 68ch;
+  color: color-mix(in srgb, var(--color-on-photo, #fdfaf2) 68%, transparent);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.cityChooser--section .cityChooserSearchHelp {
+  color: var(--ink-soft);
+}
+
+.cityChooserToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 var(--cc-gap);
+  animation: ccIn var(--duration-slow, 0.28s) var(--ease-out, ease) 0.1s both;
+}
+
+.cityChooserLocate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid color-mix(in srgb, var(--brass) 45%, transparent);
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--brass) 14%, transparent);
+  color: var(--brass-bright, var(--brass));
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background var(--duration-base, 0.15s) var(--ease-out, ease),
+    border-color var(--duration-base, 0.15s) var(--ease-out, ease),
+    color var(--duration-base, 0.15s) var(--ease-out, ease),
+    transform var(--duration-base, 0.15s) var(--ease-out, ease);
+}
+
+.cityChooser--section .cityChooserLocate {
+  color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+}
+
+.cityChooserLocate:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--brass) 22%, transparent);
+  border-color: var(--brass-bright, var(--brass));
+}
+
+.cityChooserLocate:focus-visible {
+  outline: 2px solid var(--brass-bright, var(--brass));
+  outline-offset: 3px;
+}
+
+.cityChooserLocate:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.cityChooserLocateStatus {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-on-photo, #fdfaf2) 72%, transparent);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.cityChooser--section .cityChooserLocateStatus {
+  color: var(--ink-soft);
+}
+
+.cityChooserLocateStatus[data-tone="error"] {
+  color: color-mix(in srgb, var(--brass-bright, var(--brass)) 85%, #fff);
+}
+
+.cityChooser--section .cityChooserLocateStatus[data-tone="error"] {
+  color: var(--brass);
+}
+
+.cityChooserNational {
+  margin: 0 0 var(--cc-gap);
+  animation: ccIn var(--duration-slow, 0.28s) var(--ease-out, ease) 0.12s both;
+}
+
+.cityChooserNationalLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: color-mix(in srgb, var(--color-on-photo, #fdfaf2) 88%, transparent);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--brass) 55%, transparent);
+  text-underline-offset: 3px;
+}
+
+.cityChooser--section .cityChooserNationalLink {
+  color: var(--ink);
+}
+
+.cityChooserNationalLink:hover,
+.cityChooserNationalLink:focus-visible {
+  color: var(--brass-bright, var(--brass));
+}
+
+.cityChooserSearchPanel {
+  min-width: 0;
+  margin: 0 0 var(--cc-gap);
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel-raised, #1e1a30) 48%, transparent);
+}
+
+.cityChooser--section .cityChooserSearchPanel {
+  border-color: color-mix(in srgb, var(--line) 78%, var(--brass) 22%);
+  background: color-mix(in srgb, var(--panel-raised) 94%, var(--brass) 6%);
+}
+
+.cityChooserResults {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cityChooserResult {
+  min-width: 0;
+}
+
+.cityChooserResultLink {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: start;
+  gap: 9px;
+  min-height: 64px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-on-photo, #fdfaf2) 15%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel-raised, #1e1a30) 65%, transparent);
+  color: inherit;
+  text-decoration: none;
+}
+
+.cityChooser--section .cityChooserResultLink {
+  border-color: var(--line);
+  background: var(--panel);
+}
+
+.cityChooserResultLink:hover,
+.cityChooserResultLink:focus-visible {
+  border-color: var(--brass-bright, var(--brass));
+  background: color-mix(in srgb, var(--brass) 14%, transparent);
+}
+
+.cityChooserResultLink:focus-visible {
+  outline: 2px solid var(--brass-bright, var(--brass));
+  outline-offset: 2px;
+}
+
+.cityChooserResultCopy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cityChooserResultTopline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cityChooserResultName {
+  overflow-wrap: anywhere;
+  font-family: var(--font-display, var(--serif));
+  font-size: 1rem;
+}
+
+.cityChooserResultContext {
+  color: color-mix(in srgb, var(--color-on-photo, #fdfaf2) 58%, transparent);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.cityChooser--section .cityChooserResultContext {
+  color: var(--ink-soft);
+}
+
+.cityChooserResultBadge {
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 18%, transparent);
+  color: var(--brass-bright, var(--brass));
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.cityChooser--section .cityChooserResultBadge {
+  color: var(--brass);
+}
+
+.cityChooserResultDescription,
+.cityChooserSearchStatus,
+.cityChooserSearchSource {
+  color: color-mix(in srgb, var(--color-on-photo, #fdfaf2) 72%, transparent);
+  font-size: 0.78rem;
+  line-height: 1.42;
+}
+
+.cityChooser--section .cityChooserResultDescription,
+.cityChooser--section .cityChooserSearchStatus,
+.cityChooser--section .cityChooserSearchSource {
+  color: var(--ink-soft);
+}
+
+.cityChooserSearchStatus {
+  margin: 0;
+}
+
+.cityChooserSearchSource {
+  margin: 10px 0 0;
+}
+
+.cityChooserSearchSource a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+/* ── City list (interaction containers, not marketing cards) ─────────── */
+.cityChooserList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cityChooserItem {
+  margin: 0;
+  animation: ccStagger var(--duration-slow, 0.28s) var(--ease-out, ease) both;
+  animation-delay: calc(0.12s + var(--cc-i, 0) * 0.045s);
+}
+
+.cityChooserLink {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  min-height: 72px;
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--color-on-photo, #fdfaf2) 16%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel-raised, #1e1a30) 28%, transparent);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--duration-base, 0.15s) var(--ease-out, ease),
+    background var(--duration-base, 0.15s) var(--ease-out, ease),
+    transform var(--duration-base, 0.15s) var(--ease-out, ease),
+    box-shadow var(--duration-base, 0.15s) var(--ease-out, ease);
+}
+
+.cityChooser--section .cityChooserLink {
+  border-color: color-mix(in srgb, var(--line) 78%, var(--brass) 22%);
+  background: color-mix(in srgb, var(--panel-raised) 92%, var(--brass) 8%);
+  color: var(--ink);
+}
+
+.cityChooserLink:hover,
+.cityChooserLink:focus-visible {
+  border-color: color-mix(in srgb, var(--brass-bright, var(--brass)) 70%, transparent);
+  background: color-mix(in srgb, var(--brass) 18%, transparent);
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--ink-deep) 35%, transparent);
+}
+
+.cityChooser--section .cityChooserLink:hover,
+.cityChooser--section .cityChooserLink:focus-visible {
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--brass) 14%, transparent);
+}
+
+.cityChooserLink:focus-visible {
+  outline: 2px solid var(--brass-bright, var(--brass));
+  outline-offset: 2px;
+}
+
+.cityChooserNameRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  min-width: 0;
+}
+
+.cityChooserName {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--font-display, var(--serif));
+  font-size: 1.22rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.cityChooserReleaseBadge {
+  flex: 0 0 auto;
+  padding: 3px 7px;
+  border: 1px solid color-mix(in srgb, var(--brass) 44%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 18%, transparent);
+  color: var(--brass-bright, var(--brass));
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.cityChooser--section .cityChooserReleaseBadge {
+  border-color: color-mix(in srgb, var(--brass) 44%, var(--line));
+  color: var(--brass);
+}
+
+.cityChooserTagline {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-on-photo, #fdfaf2) 72%, transparent);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.cityChooser--section .cityChooserTagline {
+  color: var(--ink-soft);
+}
+
+.cityChooserArrow {
+  display: none;
+}
+
+@keyframes ccIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ccStagger {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cityChooserLocate:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    .cityChooserLink:hover,
+    .cityChooserLink:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .cityChooserLink:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .cityChooserResults {
+    grid-template-columns: 1fr;
+  }
+
+  .cityChooserList {
+    grid-template-columns: 1fr;
+  }
+
+  .cityChooserLocate {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cityChooser *,
+  .cityChooser *::before,
+  .cityChooser *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .cityChooserItem,
+  .cityChooser--page .cityChooserTitle,
+  .cityChooser--page .cityChooserLede,
+  .cityChooserToolbar {
+    opacity: 1;
+    transform: none;
+  }
+}

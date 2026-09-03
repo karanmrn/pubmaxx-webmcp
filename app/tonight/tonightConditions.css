@@ -1,0 +1,37 @@
+/* Tonight Conditions strip — component-owned styles so any host (the Tonight
+   page, the feed rail, future desktop surfaces) gets the same rendering.
+   Moved out of tonight.css when the strip became multi-host (desktop rail). */
+
+.tonightConditions {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 18px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel-raised);
+}
+
+.tonightConditionsIcon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--brass);
+}
+
+.tonightConditionsCopy {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.tonightConditionsLead {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.tonightConditionsVenues {
+  color: var(--brass);
+  font-weight: 600;
+}

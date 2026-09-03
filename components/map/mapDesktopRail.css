@@ -1,0 +1,43 @@
+/* Desktop map rail (D3.1 / D3.2). Mounts the shared DesktopRail at the map's
+   top-right on wide viewports (>=1024), hosting Conditions + Area news. The map
+   is full-bleed, so the rail floats over it like the toolbar does.
+
+   Stacking policy vs the RIGHT venue drawer: the drawer owns the right edge when
+   open, so PubMap unmounts the rail while a venue is selected (detail-open) and
+   the always-on Conditions falls back to the toolbar chip. To avoid showing
+   Conditions twice while the rail is up, this file hides the toolbar chip at
+   >=1024 whenever the drawer is closed; when the drawer opens the rail is gone
+   (unmounted) and the chip returns. Below 1024 there is no rail and the toolbar
+   chip stays the conditions home, exactly as before. The LEFT planner drawer is
+   on the opposite edge, so the rail deliberately stays up while planning.
+
+   No MapLibre camera padding: the rail is a compact top-right overlay (the same
+   overlay model as the toolbar, and as the 376px venue drawer, which likewise
+   never repads the camera), so the map stays full-bleed and pannable and the
+   camera-fit specs are untouched. The rail is only mounted at >=1024 (JS), so it
+   needs no breakpoint of its own here. */
+
+.desktopRail.mapRail {
+  position: absolute;
+  top: calc(var(--map-top-clearance) + 60px); /* clears the floating toolbar row */
+  right: 16px;
+  width: 300px;
+  max-width: 30vw;
+  /* Below the drawers (--z-map-panel 500) and toolbar (--z-map-toolbar 560); the
+     rail is unmounted when a drawer opens, so it never needs to sit above one. */
+  z-index: var(--z-map-hover);
+}
+
+/* While the rail is up (drawer closed, >=1024) it carries Conditions, so hide
+   the toolbar's duplicate chip. When a venue drawer opens, `.detail-open` stops
+   matching and the chip returns as the always-on conditions fallback.
+   Known minor (non-blocking): this hides the chip from first paint, but the rail
+   that then carries Conditions only mounts after hydration — so at >=1024 there
+   is a brief first-paint window with no visible verdict. Harmless in practice:
+   ConditionsChip fetches its verdict async, so nothing renders until that lands
+   regardless of which host shows it. */
+@media (min-width: 1024px) {
+  .appShell:not(.detail-open) .mapToolbar .conditionsChip {
+    display: none;
+  }
+}

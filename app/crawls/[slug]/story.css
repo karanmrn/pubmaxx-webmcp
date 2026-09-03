@@ -1,0 +1,390 @@
+/* Durable Crawl Story poster (/crawls/[slug]). A collectible field-guide poster,
+   not a SaaS card: the route name in Georgia serif, numbered stops as stamps
+   running down a single brass dashed spine, a receipt-style round total at the
+   foot, and vibe tags as little brass stamps. All selectors are new + scoped to
+   this route; every value leans on the existing design tokens so the poster
+   inherits the "printed guidebook" theme. Mirrors app/crawls/crawls.css on
+   purpose (the anonymous poster) while adding the signature brass spine. */
+
+.storyShell {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 24px 16px 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.storyNav {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.storyNav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.storyNav a:hover {
+  color: var(--brass);
+}
+
+/* --- poster --------------------------------------------------------------- */
+
+.storyPoster {
+  width: 100%;
+  max-width: 640px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 16px);
+  padding: 32px 28px;
+  box-shadow: var(--shadow, 0 18px 48px rgba(0, 0, 0, 0.22));
+}
+
+.storyHead {
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 20px;
+}
+
+.storyEyebrow {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--brass);
+  font-weight: 700;
+}
+
+.storyTitle {
+  margin: 0;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 34px;
+  line-height: 1.12;
+}
+
+.storyCaption {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Author attribution — a quiet by-line under the title (story 35). */
+.storyAuthor {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.storyAuthorLink {
+  color: var(--brass);
+  text-decoration: none;
+  font-weight: 600;
+}
+.storyAuthorLink:hover {
+  text-decoration: underline;
+}
+
+/* Author-only controls (delete). Sits under the primary actions. */
+.storyOwnerControls {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Vibe tags as little brass stamps. */
+.storyTags {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.storyTag {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--brass);
+  color: var(--brass);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* --- stops: numbered stamps down a single brass dashed spine -------------- */
+
+.storyStops {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0 0;
+  position: relative;
+}
+
+/* The signature element: one continuous brass dashed line the numbered stamps
+   sit on, like a route drawn down a guidebook page. Sits behind the stamps. */
+.storyStops::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 15px;
+  width: 0;
+  border-left: 2px dashed var(--brass);
+  opacity: 0.55;
+}
+
+.storyStop {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+}
+
+.storyStop + .storyStop {
+  border-top: 1px dashed var(--line);
+}
+
+.storyStopNumber {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--brass);
+  color: var(--panel-raised);
+  font-family: var(--font-garamond, var(--serif));
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 0 0 4px var(--panel); /* punch the stamp out of the spine */
+}
+
+.storyStopBody {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-top: 3px;
+}
+
+.storyStopName {
+  display: inline-block;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.storyStopName:hover {
+  color: var(--brass);
+  text-decoration: underline;
+}
+
+.storyStopNote {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.storyStopPrice {
+  flex: 0 0 auto;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  padding-top: 4px;
+}
+
+/* --- receipt-style total -------------------------------------------------- */
+
+.storyReceipt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--brass);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+}
+
+.storyReceipt > span {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.storyReceipt small {
+  margin-top: 2px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+}
+
+.storyReceipt strong {
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 28px;
+  color: var(--brass);
+}
+
+/* --- actions -------------------------------------------------------------- */
+
+.storyActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.storyPrimaryBtn,
+.storySecondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm, 10px);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease, filter 0.15s ease, background 0.15s ease;
+}
+
+.storyPrimaryBtn {
+  background: var(--brass);
+  color: var(--panel-raised);
+  border: 1px solid var(--brass);
+}
+
+.storyPrimaryBtn:hover {
+  filter: brightness(1.05);
+}
+
+.storySecondaryBtn {
+  background: var(--panel-raised);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.storySecondaryBtn:hover {
+  border-color: var(--brass);
+}
+
+.storyPrimaryBtn:focus-visible,
+.storySecondaryBtn:focus-visible,
+.storyStopName:focus-visible,
+.storyNav a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* --- Chaos Score (issue #30) ------------------------------------------------
+   A small brass-bordered badge, same family as .storyReceipt but visually
+   distinct (rounded score "coin" + grade/line) so it reads as a fun aside,
+   never as another financial figure. Entirely optional/playful — no emoji,
+   copy stays dry per the rubric in lib/chaosScore.ts. */
+
+.storyChaos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 14px 18px;
+  border: 1px dashed var(--brass);
+  border-radius: 12px;
+  background: var(--panel-raised);
+}
+
+.storyChaosScore {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--brass);
+}
+
+.storyChaosScore small {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.storyChaosBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.storyChaosGrade {
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: var(--ink);
+}
+
+.storyChaosLine {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* Share strip — a quiet stamp row under the actions, above the footnote. */
+.storyShare {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+}
+
+.storyFootnote {
+  margin: 22px 0 0;
+  text-align: center;
+  font-family: var(--font-garamond, var(--serif));
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* --- responsive to 375px -------------------------------------------------- */
+
+@media (max-width: 520px) {
+  .storyShell {
+    padding: 18px 12px 40px;
+  }
+  .storyPoster {
+    padding: 24px 18px;
+  }
+  .storyTitle {
+    font-size: clamp(24px, 8vw, 27px);
+  }
+  .storyStops::before {
+    left: 14px;
+  }
+  /* Full-width stacked actions so both are comfortable thumb targets and the
+     "start this crawl" primary never wraps awkwardly beside the secondary. */
+  .storyPrimaryBtn,
+  .storySecondaryBtn {
+    flex: 1 1 100%;
+  }
+}
+
+/* Respect reduced-motion: the copy-link button is the only motion; keep the
+   transition instant so nothing eases for users who asked it not to. */
+@media (prefers-reduced-motion: reduce) {
+  .storyPrimaryBtn,
+  .storySecondaryBtn {
+    transition: none;
+  }
+}

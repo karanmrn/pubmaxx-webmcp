@@ -1,0 +1,53 @@
+/* Quest chips, small "next badge" progress stamps (IDEAS B2-lite).
+   Tokens only, per docs/DESIGN_SYSTEM.md: the label uses sentence case,
+   the count is set in the mono data face (stamped-ticket
+   numerals), the chip itself is a bordered pill like .vibeChip/.provChip. */
+
+.questChips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.questChipsKicker {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.questChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.questChipCount {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--brass);
+}
+
+.questChipWalked {
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+}
+
+.questChipEvent {
+  border-color: color-mix(in srgb, var(--river, var(--brass)) 35%, var(--line));
+  background: color-mix(in srgb, var(--river, var(--brass)) 6%, var(--panel-raised));
+}
+
+.questChipWindow {
+  font-weight: 500;
+  color: var(--muted, var(--ink-soft));
+}

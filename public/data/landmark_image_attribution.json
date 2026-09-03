@@ -1,0 +1,211 @@
+{
+  "observedAt": "2026-07-21",
+  "source": "Wikimedia Commons API (action=query&prop=imageinfo&iiprop=extmetadata)",
+  "note": "Author + licence + file-page link for each landmark Commons photo. Rendered as the compliant attribution line; do not fetch at render time.",
+  "files": {
+    "Elizabeth_Tower%2C_June_2022.jpg": {
+      "author": "Dave Bezaire",
+      "licenseShortName": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower,_June_2022.jpg"
+    },
+    "Westminster_Abbey%2C_Westminster.jpg": {
+      "author": "Antiquary",
+      "licenseShortName": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Westminster_Abbey,_Westminster.jpg"
+    },
+    "Nelson%27s_Column%2C_Trafalgar_Square%2C_London.JPG": {
+      "author": "Beata May",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Nelson%27s_Column,_Trafalgar_Square,_London.JPG"
+    },
+    "British_Museum_%28aerial%29.jpg": {
+      "author": "Luke Massey & the Greater London National Park City Initiative",
+      "licenseShortName": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:British_Museum_(aerial).jpg"
+    },
+    "Restaurante_The_Swan%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_113.jpg": {
+      "author": "Diego Delso",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Restaurante_The_Swan,_Londres,_Inglaterra,_2014-08-11,_DD_113.jpg"
+    },
+    "Barbican_Lakeside_on_a_summer_evening.jpg": {
+      "author": "Daniel Case",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Barbican_Lakeside_on_a_summer_evening.jpg"
+    },
+    "Camden_Lock_London.jpg": {
+      "author": "Oxyman",
+      "licenseShortName": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Camden_Lock_London.jpg"
+    },
+    "Royal_Albert_Hall%2C_London_-_Nov_2012.jpg": {
+      "author": "Diliff",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Royal_Albert_Hall,_London_-_Nov_2012.jpg"
+    },
+    "Natural_History_Museum_London_Jan_2006.jpg": {
+      "author": "Diliff",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Natural_History_Museum_London_Jan_2006.jpg"
+    },
+    "Battersea_Power_Station_from_the_river.jpg": {
+      "author": "Alberto Pascual",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Battersea_Power_Station_from_the_river.jpg"
+    },
+    "Tower_Bridge_at_Dawn.jpg": {
+      "author": "Fuzzypiggy",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_at_Dawn.jpg"
+    },
+    "St_Pauls_aerial_%28cropped%29.jpg": {
+      "author": "Mark Fosh",
+      "licenseShortName": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:St_Pauls_aerial_(cropped).jpg"
+    },
+    "Tower_of_London_from_the_Shard_%288515883950%29.jpg": {
+      "author": "[Duncan] from Nottingham, UK",
+      "licenseShortName": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tower_of_London_from_the_Shard_(8515883950).jpg"
+    },
+    "Northeast_View_of_the_Cutty_Sark_in_Greenwich.jpg": {
+      "author": "Ethan Doyle White",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Northeast_View_of_the_Cutty_Sark_in_Greenwich.jpg"
+    },
+    "London_2018_March_IMG_0663.jpg": {
+      "author": "Øyvind Holmstad",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:London_2018_March_IMG_0663.jpg"
+    },
+    "The_Monument_to_the_Great_Fire_of_London.JPG": {
+      "author": "Eluveitie",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Monument_to_the_Great_Fire_of_London.JPG"
+    },
+    "The_Shard_at_sunset_2017_%28cropped%29.jpg": {
+      "author": "Colin",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Shard_at_sunset_2017_(cropped).jpg"
+    },
+    "London-Eye-2009.JPG": {
+      "author": "Khamtran",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:London-Eye-2009.JPG"
+    },
+    "30_St_Mary_Axe%2C_%27Gherkin%27.JPG": {
+      "author": "Paste at English Wikipedia",
+      "licenseShortName": "Public domain",
+      "licenseUrl": "",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:30_St_Mary_Axe,_%27Gherkin%27.JPG"
+    },
+    "Buckingham_Palace_London_Morning_2020_01_%28cropped%29.jpg": {
+      "author": "Julian Herzog (Website)",
+      "licenseShortName": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Buckingham_Palace_London_Morning_2020_01_(cropped).jpg"
+    },
+    "Trafalgar_Square%2C_London_2_-_Jun_2009.jpg": {
+      "author": "Diliff",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Trafalgar_Square,_London_2_-_Jun_2009.jpg"
+    },
+    "Open_Happiness_Piccadilly_Circus_Blue-Pink_Hour_120917-1126-jikatu.jpg": {
+      "author": "Jimmy Baikovicius",
+      "licenseShortName": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Open_Happiness_Piccadilly_Circus_Blue-Pink_Hour_120917-1126-jikatu.jpg"
+    },
+    "Covent_Garden_Interior_May_2006_crop.jpg": {
+      "author": "Covent_Garden_Interior_May_2006.jpg: Diliff derivative work: SilkTork (talk)",
+      "licenseShortName": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Covent_Garden_Interior_May_2006_crop.jpg"
+    },
+    "Leadenhall_Market_In_London_-_Feb_2006_rotated.jpg": {
+      "author": "Diliff",
+      "licenseShortName": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Leadenhall_Market_In_London_-_Feb_2006_rotated.jpg"
+    },
+    "The_courtyard_of_Somerset_House%2C_Strand%2C_London_-_geograph.org.uk_-_1601172.jpg": {
+      "author": "Anthony O'Neil",
+      "licenseShortName": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_courtyard_of_Somerset_House,_Strand,_London_-_geograph.org.uk_-_1601172.jpg"
+    },
+    "Tate_Modern_-_Bankside_Power_Station.jpg": {
+      "author": "Acabashi",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Tate_Modern_-_Bankside_Power_Station.jpg"
+    },
+    "O2_Arena_%289499773307%29.jpg": {
+      "author": "Amanda Slater from Coventry, West Midlands, UK",
+      "licenseShortName": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:O2_Arena_(9499773307).jpg"
+    },
+    "London_November_2013-14a.jpg": {
+      "author": "Alvesgaspar",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:London_November_2013-14a.jpg"
+    },
+    "Royal_Naval_College_Greenwich_view_from_the_Thames.jpg": {
+      "author": "Dmitry Tonkonog",
+      "licenseShortName": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Royal_Naval_College_Greenwich_view_from_the_Thames.jpg"
+    },
+    "Kensington_Palace%2C_the_South_Front_-_geograph.org.uk_-_287402.jpg": {
+      "author": "Colin Smith",
+      "licenseShortName": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Kensington_Palace,_the_South_Front_-_geograph.org.uk_-_287402.jpg"
+    },
+    "Marble_Arch_%2829797251968%29.jpg": {
+      "author": "Wei-Te Wong from Taipei City, Taiwan, Republic of China",
+      "licenseShortName": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Marble_Arch_(29797251968).jpg"
+    },
+    "Hampton_Court_Palace%2C_West_Front_Richmond_upon_Thames_1193127_20230823_0050.jpg": {
+      "author": "Tilman2007",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Hampton_Court_Palace,_West_Front_Richmond_upon_Thames_1193127_20230823_0050.jpg"
+    },
+    "Little_Venice_in_March.jpg": {
+      "author": "Matthias v.d. Elbe",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Little_Venice_in_March.jpg"
+    },
+    "APalace_1.jpg": {
+      "author": "Jack Rose",
+      "licenseShortName": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:APalace_1.jpg"
+    }
+  }
+}

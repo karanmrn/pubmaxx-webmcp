@@ -1,0 +1,47 @@
+.boroughCoverage {
+  margin: 1.5rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink, #1a1410) 12%, transparent);
+}
+
+.boroughCoverageTitle {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.boroughCoverageDek {
+  margin: 0 0 0.85rem;
+  max-width: 42rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--ink, #1a1410) 72%, transparent);
+}
+
+.boroughCoverageList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.boroughCoverageRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+}
+
+.boroughCoverageCopy {
+  margin: 0;
+  flex: 1 1 16rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.boroughCoverageLink {
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}

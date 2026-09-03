@@ -1,0 +1,242 @@
+/* Zone pint index. Role-tokened per #328: a PRICED zone cell is a brass-plaque
+   price surface (price-plaque and accent-price tokens), a SELECTED cell is the quiet
+   --state-active-* "you are here" tint, and interaction feedback routes through
+   --accent-action — the loud coral is never a resting wash. Both themes via CSS
+   variables; 390×844 first (cells wrap), 44px touch targets, ≤250ms ease-out. */
+
+.zonePintIndex {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zonePintIndexRow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+}
+
+/* On narrow phones let the six cells wrap to two rows instead of squashing. */
+@media (max-width: 420px) {
+  .zonePintIndexRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.zonePintCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 44px;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--badge-border);
+  background: var(--badge-surface);
+  color: var(--badge-ink);
+  font: inherit;
+  text-align: center;
+  width: 100%;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+/* Priced zones ARE price data — they read as engraved brass plaques (amber),
+   never a coral price-alert. The number carries the meaning; the plaque is the
+   pub's own heritage metal. */
+.zonePintCell.isPriced {
+  border-color: var(--price-plaque-border);
+  background: var(--price-plaque-surface);
+  color: var(--accent-price-ink);
+  box-shadow: var(--price-plaque-shine);
+}
+
+/* Interactive price plaques share the zone filter's neutral resting border.
+   The active class below is the only border that says a fare zone is selected. */
+button.zonePintCell.isPriced:not(.isActive) {
+  border-color: color-mix(in srgb, var(--line) 70%, var(--accent-action) 30%);
+}
+
+.zonePintCell.isThin {
+  border-style: dashed;
+  opacity: 0.78;
+}
+
+button.zonePintCell {
+  cursor: pointer;
+}
+
+button.zonePintCell:hover,
+button.zonePintCell:focus-visible {
+  border-color: var(--accent-action);
+  color: var(--ink);
+}
+
+button.zonePintCell:focus-visible {
+  outline: 2px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+button.zonePintCell:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+/* Selected cell: the quiet active tint wins over the plaque — "you are here". */
+.zonePintCell.isActive {
+  border-color: var(--state-active-border);
+  background: var(--state-active-surface);
+  color: var(--state-active-ink);
+  box-shadow: none;
+}
+
+.zonePintCellZone {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.zonePintCellValue {
+  font-size: 0.98rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.isCompact .zonePintCellValue {
+  font-size: 0.9rem;
+}
+
+.zonePintCellHint {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  opacity: 0.72;
+}
+
+.zonePintIndexTax {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.isCompact .zonePintIndexTax {
+  font-size: 0.8rem;
+}
+
+.zonePintIndexMethod {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.isCompact .zonePintIndexMethod {
+  font-size: 0.7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zonePintCell {
+    transition: none;
+  }
+  button.zonePintCell:active {
+    transform: none;
+  }
+}
+
+/* ── De-box: the COMPACT strip is a price list, not a wall of plaques ─────────
+   Design judgement 2026-08-01, finding 2.4. Inside the map's zone picker the
+   six amber cells stacked as bordered boxes at the same weight as the seven
+   zone squares above them, so nothing ranked. Here they become plain rows:
+   the zone name on the left, the mono figure on the right, hairlines between.
+   Scoped to `.isCompact` so the /pint-index page keeps its plaques - there
+   the strip IS the content, not a control's footnote. */
+.zonePintIndex.isCompact .zonePintIndexRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.zonePintIndex.isCompact .zonePintIndexRow > li {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.zonePintIndex.isCompact .zonePintCell {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 6px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--ink-soft);
+  text-align: left;
+}
+
+.zonePintIndex.isCompact .zonePintCell.isPriced {
+  color: var(--ink-soft);
+}
+
+.zonePintIndex.isCompact .zonePintCell.isThin {
+  border-style: none;
+}
+
+.zonePintIndex.isCompact button.zonePintCell:hover,
+.zonePintIndex.isCompact button.zonePintCell:focus-visible {
+  background: color-mix(in srgb, var(--accent-action) 9%, transparent);
+  color: var(--ink);
+}
+
+.zonePintIndex.isCompact button.zonePintCell:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Selection is the fill. */
+.zonePintIndex.isCompact .zonePintCell.isActive {
+  background: var(--panel-raised);
+  color: var(--ink);
+}
+
+.zonePintIndex.isCompact .zonePintCellZone {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  opacity: 1;
+  text-transform: none;
+}
+
+/* The figure keeps the mono price idiom and the brass it earned as price data. */
+.zonePintIndex.isCompact .zonePintCellValue {
+  font-family: var(--font-data);
+  font-size: 0.95rem;
+  color: var(--accent-price-ink);
+}
+
+.zonePintIndex.isCompact .zonePintCell.isThin .zonePintCellValue {
+  color: var(--muted);
+}
+
+.zonePintIndex.isCompact .zonePintCellHint {
+  flex: 0 0 auto;
+}
+
+/* The compact strip's cells stack, so the six-across grid media rule is moot. */
+@media (max-width: 420px) {
+  .zonePintIndex.isCompact .zonePintIndexRow {
+    grid-template-columns: none;
+  }
+}

@@ -1,0 +1,477 @@
+/* Flagship "Historic Pubs" discovery surface (/historic).
+   Shares the app's visual language — light type, brass accents, raised panels —
+   as a filterable card index. Self-contained: depends only on the globally
+   loaded design tokens (paper, panel-raised, ink, line, brass, river, radius
+   and shadow scales from globals.css + theme.css). No hardcoded hex.
+   Mobile-first (390px), 44px tap targets, both themes, reduced-motion safe.
+   Bottom padding clears the mobile tab bar + safe-area (cf. tonight.css). */
+
+.historicPage {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 16px calc(96px + env(safe-area-inset-bottom, 0px));
+  color: var(--ink);
+}
+
+.historicHead {
+  margin: 8px 0 18px;
+}
+
+.historicEyebrow {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.historicTitle {
+  margin: 0 0 8px;
+  font-family: var(--font-display, var(--serif));
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.historicLede {
+  margin: 0;
+  max-width: 58ch;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.historicStatus {
+  margin: 24px 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* Filter + sort controls */
+.historicFilters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+  margin: 0 0 14px;
+}
+
+.historicField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.historicFieldLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.historicSelectWrap {
+  position: relative;
+}
+
+/* Chevron affordance, drawn from tokens so both themes track. */
+.historicSelectWrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: translateY(-70%) rotate(45deg);
+}
+
+.historicSelect {
+  min-height: 44px;
+  padding: 0 34px 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 44px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.16s ease;
+}
+
+.historicToggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.historicToggle {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+}
+
+.historicToggle[data-active="true"] {
+  border-color: color-mix(in srgb, var(--brass) 60%, var(--line));
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  color: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .historicSelect:hover,
+  .historicToggle:hover {
+    border-color: color-mix(in srgb, var(--brass) 45%, var(--line));
+  }
+  .historicToggle:hover {
+    color: var(--ink);
+  }
+}
+
+.historicSelect:focus-visible,
+.historicToggle:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.historicCount {
+  margin: 0 0 16px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Empty / thin state */
+.historicEmpty {
+  margin: 8px 0;
+  padding: 20px;
+  border: 1px solid color-mix(in srgb, var(--river) 26%, var(--line));
+  border-radius: var(--radius-lg, 18px);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.historicEmptyTitle {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.historicEmptyBody {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.historicInlineReset {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--brass);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.historicInlineReset:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.historicPagination {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+.historicPagination a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brass);
+  font-weight: 700;
+}
+
+.historicPagination > :last-child {
+  justify-self: end;
+}
+
+/* Card grid */
+.historicGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .historicGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .historicGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.historicCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 18px);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .historicCard:hover {
+    border-color: color-mix(in srgb, var(--brass) 45%, var(--line));
+    box-shadow: var(--shadow);
+  }
+}
+
+.historicCardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-height: 20px;
+}
+
+.historicEra {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, transparent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--brass);
+}
+
+.historicGrade {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--river) 14%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--river) 32%, transparent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--river);
+}
+
+.historicCardName {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.historicBorough {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.historicHook {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  overflow-wrap: break-word;
+}
+
+.historicProvenance {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-top: 2px;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.historicFactCount {
+  font-weight: 600;
+}
+
+.historicCite {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: var(--river);
+  text-decoration: none;
+}
+
+.historicCite:hover {
+  text-decoration: underline;
+}
+
+.historicCite:focus-visible {
+  outline: 2px solid var(--river);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.historicActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.historicMapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid color-mix(in srgb, var(--brass) 45%, var(--line));
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .historicMapLink:hover {
+    border-color: var(--brass);
+    background: color-mix(in srgb, var(--brass) 20%, var(--panel-raised));
+  }
+}
+
+.historicMapLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Entrance — a quiet staggered settle, suppressed under reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .historicCard {
+    animation: historicCardIn var(--duration-base, 0.24s) var(--ease-out, ease) both;
+  }
+  .historicCard:nth-child(2) { animation-delay: 30ms; }
+  .historicCard:nth-child(3) { animation-delay: 60ms; }
+  .historicCard:nth-child(4) { animation-delay: 90ms; }
+  .historicCard:nth-child(n + 5) { animation-delay: 120ms; }
+
+  @keyframes historicCardIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+/* "Oldest pubs by borough" cross-link rail (Wave S3.4). A server-rendered
+   region below the interactive list — plain <Link> hrefs so crawlers can walk
+   /historic → each borough's cited heritage section. Tokens only; both themes
+   track. Mirrors the historic card idiom (hairline borders, brass links). */
+.historicBoroughRegion {
+  max-width: 1080px;
+  margin: 8px auto 0;
+  padding: 24px 16px calc(64px + env(safe-area-inset-bottom, 0px));
+  color: var(--ink);
+}
+
+.historicBoroughTitle {
+  margin: 0 0 6px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.historicBoroughDek {
+  margin: 0 0 16px;
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.historicBoroughList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.historicBoroughCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.historicBoroughLink {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.historicBoroughLink:hover {
+  text-decoration: underline;
+}
+
+.historicBoroughLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.historicBoroughMeta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+@media (max-width: 560px) {
+  .historicBoroughList {
+    grid-template-columns: 1fr;
+  }
+}

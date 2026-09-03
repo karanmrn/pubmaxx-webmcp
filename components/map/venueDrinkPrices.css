@@ -1,0 +1,129 @@
+/* Prices by drink on the venue sheet. The lead row keeps the existing
+   community-price idiom (.contributorPrice.communityPriceRow, venuePriceSubmit
+   .css) so the freshest figure does not change shape when a pub gains a second
+   drink; the drinks under it are a quieter dated list. */
+.venueDrinkPrices {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.venueDrinkPricesList {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+/* A row is a drink, a figure and a day. The tag column is fixed so the figures
+   line up down the list; everything else wraps rather than truncating, because
+   every part of this row carries the meaning of the price beside it. */
+.venueDrinkPriceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: baseline;
+  gap: 4px 10px;
+  min-width: 0;
+  padding: 8px 0;
+  border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+
+.venueDrinkPriceTag {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.venueDrinkPriceFigure {
+  color: var(--ink);
+  font-family: var(--font-data);
+  font-size: 0.86rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.venueDrinkPriceStamp {
+  color: var(--brass);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Where the figure stands, on its own full-width line under it. Same quiet,
+   italic voice as the lead row's standing note, because it is the same caveat. */
+.venueDrinkPriceStanding {
+  grid-column: 1 / -1;
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.venueDrinkPriceRow .reportBtn,
+.venueDrinkPriceRow .communityPriceReported {
+  grid-column: 1 / -1;
+  justify-self: end;
+}
+
+.venueDrinkPricesEmpty {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  min-width: 0;
+  padding: 10px 0 2px;
+  border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+
+.venueDrinkPricesEmptyNote,
+.venueDrinkPricesInvite {
+  margin: 0;
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.venueDrinkPricesEmptyNote {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* The way into logging. Secondary weight: the primary action on this sheet is
+   still the composer below, and this button scrolls the reader to it. */
+.venueDrinkPricesLog {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  border-radius: var(--control-radius, 14px);
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised));
+  color: var(--brass);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.venueDrinkPricesLog:hover,
+.venueDrinkPricesLog:focus-visible {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+}
+
+.venueDrinkPricesLog:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}

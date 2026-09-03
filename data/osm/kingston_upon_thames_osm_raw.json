@@ -1,0 +1,2660 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-17T22:26:40Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 26040005,
+      "lat": 51.3860498,
+      "lon": -0.3238196,
+      "tags": {
+        "addr:city": "Thames Ditton",
+        "addr:housenumber": "15",
+        "addr:postcode": "KT7 0UX",
+        "addr:street": "Rushett Road",
+        "amenity": "pub",
+        "check_date": "2025-05-06",
+        "check_date:currency:XBT": "2025-05-06",
+        "cuisine": "pub",
+        "currency:GBP": "yes",
+        "currency:XBT": "yes",
+        "email": "hello@thelimpingfox.co.uk",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "The Limping Fox",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:lightning": "yes",
+        "payment:lightning_contactless": "no",
+        "payment:onchain": "no",
+        "phone": "+44 20 8224 2047",
+        "survey:date": "2025-04-11",
+        "website": "https://www.thelimpingfox.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 30483366,
+      "lat": 51.4195033,
+      "lon": -0.2875532,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "19",
+        "addr:postcode": "KT2 6AP",
+        "addr:street": "New Road",
+        "amenity": "pub",
+        "fhrs:id": "1385865",
+        "name": "The Park Tavern",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 30512931,
+      "lat": 51.4265543,
+      "lon": -0.2982274,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housename": "The Cardinal",
+        "addr:housenumber": "174",
+        "addr:postcode": "KT2 5QG",
+        "addr:street": "Tudor Drive",
+        "amenity": "pub",
+        "fhrs:id": "1385385",
+        "name": "The Cardinal",
+        "opening_hours": "Tu-Th 17:30-10:30, Fr 12:30-23:30, Sa 12:30-11:30, Su 12:30-21:00",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 32654858,
+      "lat": 51.3929194,
+      "lon": -0.3317479,
+      "tags": {
+        "addr:city": "Thames Ditton",
+        "addr:county": "Surrey",
+        "addr:postcode": "KT7 0QQ",
+        "addr:street": "Summer Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "contact:website": "https://www.greeneking.co.uk/pubs/surrey/ye-olde-swan",
+        "fhrs:id": "1778344",
+        "name": "Ye Olde Swan",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "wikidata": "Q26281363"
+      }
+    },
+    {
+      "type": "node",
+      "id": 134900011,
+      "lat": 51.3825845,
+      "lon": -0.3009294,
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "2",
+        "addr:postcode": "KT6 5BH",
+        "addr:street": "Hook Road",
+        "amenity": "pub",
+        "check_date": "2026-04-16",
+        "fhrs:id": "1385974",
+        "live_sport": "yes",
+        "microbrewery": "no",
+        "name": "The Maypole",
+        "outdoor_seating": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "source:addr": "FHRS Open Data",
+        "sport": "soccer;rugby_union"
+      }
+    },
+    {
+      "type": "node",
+      "id": 241473415,
+      "lat": 51.4093122,
+      "lon": -0.3064476,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "3",
+        "addr:postcode": "KT1 1JT",
+        "addr:street": "Market Place",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "check_date": "2026-03-18",
+        "fhrs:id": "1386272",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "live_sport": "yes",
+        "name": "The Druids Head",
+        "opening_hours": "Mo-Th 11:00-23:00; Fr 11:00-01:00; Sa 10:00-01:00; Su 10:00-23:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greeneking.co.uk/pubs/surrey/druids-head",
+        "wheelchair": "yes",
+        "wikidata": "Q16707728"
+      }
+    },
+    {
+      "type": "node",
+      "id": 255135764,
+      "lat": 51.3326883,
+      "lon": -0.2706674,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:housenumber": "134",
+        "addr:postcode": "KT19 8BT",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "check_date": "2026-01-04",
+        "name": "McCaffertys Bar",
+        "website": "https://epsom.mccaffertysbars.com",
+        "wikidata": "Q26508214"
+      }
+    },
+    {
+      "type": "node",
+      "id": 255135771,
+      "lat": 51.3320433,
+      "lon": -0.2710528,
+      "tags": {
+        "amenity": "pub",
+        "name": "Acorn 30",
+        "note": "Refurb/rebranded Sept 2012"
+      }
+    },
+    {
+      "type": "node",
+      "id": 255137548,
+      "lat": 51.3307962,
+      "lon": -0.263292,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "14",
+        "addr:postcode": "KT18 5DX",
+        "addr:street": "Heathcote Road",
+        "amenity": "pub",
+        "fhrs:id": "18001",
+        "name": "The Rising Sun",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 255139196,
+      "lat": 51.3243531,
+      "lon": -0.2683366,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:postcode": "KT18 7AS",
+        "addr:street": "Chalk Lane",
+        "amenity": "pub",
+        "brewery": "yes",
+        "name": "The Amato",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 258326867,
+      "lat": 51.4081708,
+      "lon": -0.28964,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:postcode": "KT1 3JB",
+        "addr:street": "Washington Road",
+        "amenity": "pub",
+        "fhrs:id": "653971",
+        "name": "The Bull & Bush",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266702613,
+      "lat": 51.363021,
+      "lon": -0.2478212,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:postcode": "KT17 2JA",
+        "addr:street": "The Broadway Stoneleigh",
+        "alt_name": "The Stoneleigh",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "fhrs:id": "23890",
+        "name": "The Station",
+        "source": "photo",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/surrey/station",
+        "wheelchair": "limited",
+        "wikidata": "Q21008706"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266890511,
+      "lat": 51.3764631,
+      "lon": -0.237058,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The North End Tavern",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greatukpubs.co.uk/north-end-tavern-worcester-park"
+      }
+    },
+    {
+      "type": "node",
+      "id": 293702008,
+      "lat": 51.393066,
+      "lon": -0.2956153,
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "22-26",
+        "addr:postcode": "KT5 8RA",
+        "addr:street": "Berrylands Road",
+        "amenity": "pub",
+        "check_date": "2026-02-09",
+        "contact:phone": "+44 20 8399 0200",
+        "contact:website": "https://www.bravebar.co.uk/",
+        "fhrs:id": "1386053",
+        "live_sport": "yes",
+        "name": "Brave New World",
+        "opening_hours": "Mo-We 12:00-23:00; Th-Sa 12:00-24:00; Su 12:00-22:30",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 307852339,
+      "lat": 51.3640598,
+      "lon": -0.2577208,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "272",
+        "addr:postcode": "KT19 0SH",
+        "addr:street": "Kingston Road",
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "contact:website": "https://www.emberinns.co.uk/nationalsearch/southeast/the-queen-adelaide-epsom",
+        "fhrs:id": "13660",
+        "name": "Queen Adelaide",
+        "source": "audio",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 314396579,
+      "lat": 51.3311789,
+      "lon": -0.2817364,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "84",
+        "addr:postcode": "KT18 7SD",
+        "addr:street": "Wheelers Lane",
+        "amenity": "pub",
+        "facebook": "jollycoopersepsom",
+        "fhrs:id": "972346",
+        "instagram": "jolly_coopers",
+        "microbrewery": "yes",
+        "name": "The Jolly Coopers",
+        "source:addr": "FHRS Open Data",
+        "twitter": "jolly_coopers",
+        "website": "https://jollycoopers.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 314407484,
+      "lat": 51.3475594,
+      "lon": -0.2497387,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "71",
+        "addr:postcode": "KT17 1RX",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "fhrs:id": "486952",
+        "name": "The Famous Green Man",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 317421622,
+      "lat": 51.3268564,
+      "lon": -0.327641,
+      "tags": {
+        "addr:city": "Leatherhead",
+        "addr:country": "GB",
+        "addr:postcode": "KT22 0DP",
+        "addr:street": "Leatherhead Road",
+        "amenity": "pub",
+        "fhrs:id": "361988",
+        "indoor_seating": "yes",
+        "name": "The Star",
+        "outdoor_seating": "garden",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 327426281,
+      "lat": 51.4103079,
+      "lon": -0.308042,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housename": "Bishop Out Of Residence",
+        "addr:housenumber": "2",
+        "addr:postcode": "KT1 1PY",
+        "addr:street": "Bishop's Hall",
+        "alt_name": "The Bishop out of Residence",
+        "amenity": "pub",
+        "contact:phone": "+44 20 8546 4965",
+        "contact:website": "http://thebishopkingston.co.uk",
+        "fhrs:id": "1386055",
+        "live_sport": "yes",
+        "name": "The Bishop",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 367883196,
+      "lat": 51.4185611,
+      "lon": -0.3013806,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "144",
+        "addr:postcode": "KT2 5HA",
+        "addr:street": "Richmond Road",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "check_date": "2026-06-25",
+        "description": "Pub & hotel",
+        "fhrs:id": "1385354",
+        "live_sport": "yes",
+        "name": "The Queens Head",
+        "opening_hours": "Mo-Fr 07:30-23:00; Sa 08:00-23:00; Su 08:00-22:00",
+        "operator": "Fuller’s",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+44 20 8237 8039",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.queensheadkingston.co.uk/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 387542138,
+      "lat": 51.3965778,
+      "lon": -0.3063333,
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "9",
+        "addr:postcode": "KT6 4BX",
+        "addr:street": "Grove Road",
+        "amenity": "pub",
+        "check_date": "2022-10-22",
+        "fhrs:id": "1386271",
+        "indoor_seating": "yes",
+        "name": "The Grove Tavern",
+        "outdoor_seating": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 387542814,
+      "lat": 51.3951523,
+      "lon": -0.3077357,
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "87",
+        "addr:postcode": "KT6 4AW",
+        "addr:street": "Maple Road",
+        "amenity": "pub",
+        "fhrs:id": "1386268",
+        "indoor_seating": "yes",
+        "name": "The Antelope",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 387542886,
+      "lat": 51.394756,
+      "lon": -0.3081181,
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "75",
+        "addr:postcode": "KT6 4AG",
+        "addr:street": "Maple Road",
+        "amenity": "pub",
+        "fhrs:id": "1386266",
+        "indoor_seating": "yes",
+        "name": "Gordon Bennett (closed)",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8390 7222",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 422887154,
+      "lat": 51.4081202,
+      "lon": -0.3076987,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "34",
+        "addr:postcode": "KT1 1HL",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "brewery": "yes",
+        "check_date": "2025-07-12",
+        "fhrs:id": "1385858",
+        "live_sport": "yes",
+        "name": "The Ram",
+        "opening_hours": "Mo-Th,Su 12:00-23:00; Fr-Sa 12:00-24:00",
+        "outdoor_seating": "yes",
+        "outdoor_seating:comfort": "weather_protection",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "smoking": "isolated",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "yes",
+        "website": "https://www.theramkingston.com/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 489280707,
+      "lat": 51.4163692,
+      "lon": -0.3012289,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "98",
+        "addr:postcode": "KT2 5EN",
+        "addr:street": "Richmond Road",
+        "amenity": "pub",
+        "fhrs:id": "1386664",
+        "name": "The Oak",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 521894618,
+      "lat": 51.370384,
+      "lon": -0.2497953,
+      "tags": {
+        "amenity": "pub",
+        "brewery": "various",
+        "name": "The Williow Tree",
+        "opening_hours": "Mo-Su 11:00-23:00",
+        "opening_hours:covid19": "closed",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 766996017,
+      "lat": 51.3830786,
+      "lon": -0.3207803,
+      "tags": {
+        "amenity": "pub",
+        "name": "British Legion"
+      }
+    },
+    {
+      "type": "node",
+      "id": 867528389,
+      "lat": 51.4106074,
+      "lon": -0.3016953,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "60",
+        "addr:postcode": "KT1 1NP",
+        "addr:street": "Clarence Street",
+        "amenity": "pub",
+        "check_date": "2022-12-14",
+        "fhrs:id": "1386109",
+        "live_sport": "yes",
+        "name": "Wheelwrights Arms",
+        "sport": "soccer",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.wheelieslive.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 867529169,
+      "lat": 51.4092146,
+      "lon": -0.3055864,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "3",
+        "addr:postcode": "KT1 1BQ",
+        "addr:street": "Eden Street",
+        "amenity": "pub",
+        "brand": "O'Neill's",
+        "brand:wikidata": "Q7071905",
+        "check_date": "2023-02-26",
+        "fhrs:id": "1386146",
+        "live_sport": "yes",
+        "name": "O'Neills",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.oneills.co.uk/national-search/south-east/kingston-upon-thames"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1030867315,
+      "lat": 51.4091783,
+      "lon": -0.3073967,
+      "tags": {
+        "amenity": "bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1044881306,
+      "lat": 51.3680366,
+      "lon": -0.3067387,
+      "tags": {
+        "addr:city": "Chessington",
+        "addr:housenumber": "312",
+        "addr:postcode": "KT9 1NY",
+        "addr:street": "Hook Road",
+        "amenity": "pub",
+        "check_date": "2024-04-01",
+        "contact:phone": "+44 20 8397 3227",
+        "contact:website": "https://www.luckyroverchessington.co.uk/",
+        "fhrs:id": "1735476",
+        "live_sport": "yes",
+        "name": "The Lucky Rover",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:00",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1403481400,
+      "lat": 51.3522409,
+      "lon": -0.2507794,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "34",
+        "addr:postcode": "KT17 2AA",
+        "addr:street": "Kingston Road",
+        "amenity": "pub",
+        "fhrs:id": "13651",
+        "name": "The Wheatsheaf",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1786418431,
+      "lat": 51.3988939,
+      "lon": -0.2550754,
+      "tags": {
+        "addr:city": "New Malden",
+        "addr:housenumber": "184",
+        "addr:postcode": "KT3 4ES",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "fhrs:id": "1386022",
+        "name": "The Watchman",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-watchman-new-malden",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/5447/menus",
+        "wikidata": "Q88916786"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1795493240,
+      "lat": 51.4043231,
+      "lon": -0.2572003,
+      "tags": {
+        "addr:city": "New Malden",
+        "addr:housenumber": "14",
+        "addr:postcode": "KT3 4QE",
+        "addr:street": "Coombe Road",
+        "amenity": "pub",
+        "fhrs:id": "1681318",
+        "name": "The Glasshouse",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2056003265,
+      "lat": 51.4034925,
+      "lon": -0.2570078,
+      "tags": {
+        "addr:city": "New Malden",
+        "addr:housenumber": "1",
+        "addr:postcode": "KT3 4DQ",
+        "addr:street": "High Street",
+        "amenity": "bar",
+        "brewery": "yes",
+        "check_date:opening_hours": "2026-01-01",
+        "contact:website": "https://www.hanjannewmalden.com/",
+        "fhrs:id": "1386034",
+        "name": "Hanjan",
+        "opening_hours": "Mo-Fr 15:00-01:30; Sa-Su12:00-01:30",
+        "opening_hours:kitchen": "Mo-Fr 17:00-23:30; Sa-Su12:00-23:30",
+        "opening_hours:url": "https://www.hanjannewmalden.com/information",
+        "source:addr": "FHRS Open Data",
+        "source:opening_hours": "website"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2404204569,
+      "lat": 51.3629446,
+      "lon": -0.2471426,
+      "tags": {
+        "amenity": "bar",
+        "name": "Masons"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2789274129,
+      "lat": 51.4100223,
+      "lon": -0.3082897,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:postcode": "KT1 1QN",
+        "addr:street": "Riverside Walk",
+        "amenity": "pub",
+        "fhrs:id": "1385981",
+        "name": "The Gazebo",
+        "operator": "Samuel Smith",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3282498381,
+      "lat": 51.4113298,
+      "lon": -0.3006922,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "153-157",
+        "addr:postcode": "KT1 1QT",
+        "addr:street": "Clarence Street",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "check_date": "2025-06-12",
+        "contact:phone": "+44 20 8547 3827",
+        "contact:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-kings-tun-kingston-upon-thames",
+        "dog": "no",
+        "fhrs:id": "1386112",
+        "name": "The Kings Tun",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "smoking": "outside",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/266/menus",
+        "wikidata": "Q88916767"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4700779517,
+      "lat": 51.3895578,
+      "lon": -0.333043,
+      "tags": {
+        "addr:city": "Thames Ditton",
+        "addr:country": "GB",
+        "addr:postcode": "KT7 0RY",
+        "addr:street": "High Street",
+        "amenity": "bar",
+        "cuisine": "fish_and_chips",
+        "currency:GBP": "yes",
+        "currency:XBT": "no",
+        "fhrs:id": "572770",
+        "internet_access": "wlan",
+        "name": "George and Dragon",
+        "opening_hours": "Mo-Su 10:30-00:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:lightning": "no",
+        "phone": "+44 20 8398 2206",
+        "website": "https://www.georgeanddragonthamesditton.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4928682125,
+      "lat": 51.3678236,
+      "lon": -0.3114189,
+      "tags": {
+        "amenity": "pub",
+        "name": "The Cricketers",
+        "name:en": "The Cricketers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5567081656,
+      "lat": 51.3709474,
+      "lon": -0.3055479,
+      "tags": {
+        "addr:city": "Chessington",
+        "addr:housenumber": "271",
+        "addr:postcode": "KT9 1EQ",
+        "addr:street": "Hook Road",
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "contact:website": "https://www.emberinns.co.uk/nationalsearch/london/the-north-star-chessington",
+        "fhrs:id": "1385935",
+        "name": "The North Star",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6187878854,
+      "lat": 51.3329849,
+      "lon": -0.2663093,
+      "tags": {
+        "amenity": "pub",
+        "name": "Comrades Club"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6306861252,
+      "lat": 51.3314403,
+      "lon": -0.2703974,
+      "tags": {
+        "amenity": "bar",
+        "name": "Eligo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10155383322,
+      "lat": 51.414309,
+      "lon": -0.3006312,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "46",
+        "addr:postcode": "KT2 5EE",
+        "addr:street": "Richmond Road",
+        "amenity": "pub",
+        "brewery": "various",
+        "cuisine": "burger",
+        "fhrs:id": "1385481",
+        "name": "The Grey Horse",
+        "opening_hours": "Su-Th 12:00-23:00; Fr-Sa 12:00-01:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8617 9860",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.grey-horse.co.uk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11019827413,
+      "lat": 51.3896258,
+      "lon": -0.29768,
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "117",
+        "addr:postcode": "KT6 6AL",
+        "addr:street": "Ewell Road",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "check_date": "2026-06-26",
+        "fhrs:id": "1532160",
+        "live_sport": "yes",
+        "name": "The Prince of Wales",
+        "opening_hours": "Mo-Tu 12:00-23:00; We-Th 12:00-23:30; Fr 12:00-23:59; Sa 00:00-00:30,12:00-23:59; Su 00:00-00:30,12:00-22:30",
+        "outdoor_seating": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.princeofwalessurbiton.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11100986305,
+      "lat": 51.4089514,
+      "lon": -0.3070214,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housename": "The Griffin Centre",
+        "addr:postcode": "KT1 1JT",
+        "addr:street": "Market Place",
+        "addr:unit": "7",
+        "amenity": "bar",
+        "fhrs:id": "1403675",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11163284605,
+      "lat": 51.4089249,
+      "lon": -0.3067821,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housename": "The Griffin Centre",
+        "addr:postcode": "KT1 1JT",
+        "addr:street": "Market Place",
+        "addr:unit": "7",
+        "amenity": "bar",
+        "fhrs:id": "1403675",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11952231689,
+      "lat": 51.4130392,
+      "lon": -0.3004908,
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "20",
+        "addr:postcode": "KT2 5EB",
+        "addr:street": "Richmond Road",
+        "amenity": "pub",
+        "check_date": "2024-06-02",
+        "fhrs:id": "1659086",
+        "live_sport": "yes",
+        "name": "Whelans",
+        "phone": "+44 20 8549 9845",
+        "source:addr": "FHRS Open Data",
+        "theme": "irish",
+        "website": "https://whelanspubs.co.uk/whelans-irish-traditional/whelans-kingston/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12732751720,
+      "lat": 51.3920371,
+      "lon": -0.3067248,
+      "tags": {
+        "amenity": "pub",
+        "brewery": "Guinness",
+        "check_date": "2025-07-06",
+        "cuisine": "pizza",
+        "email": "hello@elmtreesurbiton.co.uk",
+        "indoor_seating": "no",
+        "live_sport": "yes",
+        "name": "The Elm Tree",
+        "opening_hours": "Mo-Th 10:00-23:00; Fr-Sa 10:00-00:00; Su 10:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "smoking": "outside",
+        "sport": "soccer",
+        "website": "https://www.elmtreesurbiton.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12775906961,
+      "lat": 51.3921126,
+      "lon": -0.3319712,
+      "tags": {
+        "addr:city": "Thames Ditton",
+        "addr:housenumber": "85",
+        "addr:postcode": "KT7 0SF",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "brewery": "various",
+        "currency:GBP": "yes",
+        "currency:XBT": "no",
+        "name": "The Red Lion",
+        "official_name": "The Red Lion free house",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:lightning": "no",
+        "phone": "+44 20 8398 8662",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12873040978,
+      "lat": 51.3909741,
+      "lon": -0.322322,
+      "tags": {
+        "amenity": "pub",
+        "check_date": "2025-05-29",
+        "name": "The City Arms"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13042812714,
+      "lat": 51.4092162,
+      "lon": -0.3061009,
+      "tags": {
+        "amenity": "bar",
+        "check_date": "2025-08-02",
+        "name": "Ex Cellar Wine Café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13049119101,
+      "lat": 51.3405298,
+      "lon": -0.2712811,
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:housenumber": "7",
+        "addr:street": "Manor Green Road",
+        "amenity": "pub",
+        "brewery": "yes",
+        "name": "The Blenheim"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13537189301,
+      "lat": 51.4120179,
+      "lon": -0.3003576,
+      "tags": {
+        "amenity": "pub",
+        "name": "vacant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13537468904,
+      "lat": 51.4116178,
+      "lon": -0.3002209,
+      "tags": {
+        "amenity": "pub",
+        "name": "Bonnie Rogues"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13543635601,
+      "lat": 51.4084124,
+      "lon": -0.3084261,
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:street": "Ram Passage",
+        "amenity": "bar",
+        "name": "WeBrew",
+        "phone": "+44 1753 307377",
+        "website": "https://webrew.co.uk/venues/kingston/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 28016335,
+      "center": {
+        "lat": 51.3737576,
+        "lon": -0.2608122
+      },
+      "tags": {
+        "amenity": "pub",
+        "brewery": "yes;various",
+        "building": "yes",
+        "ref:GB:uprn": "100062371910"
+      }
+    },
+    {
+      "type": "way",
+      "id": 28114884,
+      "center": {
+        "lat": 51.3971462,
+        "lon": -0.3117493
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:postcode": "KT6 4HJ",
+        "addr:street": "Portsmouth Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1385946",
+        "name": "Hart's Boat Yard",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 87524436,
+      "center": {
+        "lat": 51.4106816,
+        "lon": -0.2982041
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "56",
+        "addr:postcode": "KT2 6QA",
+        "addr:street": "Old London Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1385863",
+        "indoor_seating": "yes",
+        "name": "The Fighting Cocks",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q60733399",
+        "wikipedia": "en:The Fighting Cocks"
+      }
+    },
+    {
+      "type": "way",
+      "id": 103362186,
+      "center": {
+        "lat": 51.409233,
+        "lon": -0.2979307
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housename": "The Albion",
+        "addr:housenumber": "45",
+        "addr:postcode": "KT1 2PY",
+        "addr:street": "Fairfield Road",
+        "amenity": "pub",
+        "brewery": "yes",
+        "building": "pub",
+        "camra": "yes",
+        "check_date:opening_hours": "2026-03-06",
+        "contact:email": "hello@thealbionkingston.com",
+        "contact:facebook": "https://www.facebook.com/Thealbionkt1/",
+        "contact:instagram": "https://www.instagram.com/thealbionkt1",
+        "contact:phone": "+44 20 8439 7787",
+        "contact:website": "https://www.thealbionkingston.com/",
+        "drink:beer": "yes",
+        "drink:cider": "yes",
+        "fhrs:id": "1385353",
+        "food": "yes",
+        "internet_access": "wlan",
+        "name": "The Albion",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-23:30; Su 12:00-22:30",
+        "opening_hours:kitchen": "Mo-Fr 12:00-15:00,17:00-21:00; Sa 12:00-22:00; Su 12:00-20:00",
+        "operator": "Big Smoke Inns Ltd.",
+        "operator:website": "https://www.bigsmokebrew.co.uk/",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "real_cider": "yes",
+        "ref:GB:uprn": "128006997;100021759437",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "source:opening_hours": "entrance"
+      }
+    },
+    {
+      "type": "way",
+      "id": 117285166,
+      "center": {
+        "lat": 51.4091912,
+        "lon": -0.2918407
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "53",
+        "addr:postcode": "KT1 3DS",
+        "addr:street": "Hawks Road",
+        "amenity": "pub",
+        "building": "residential",
+        "fhrs:id": "1744012",
+        "live_sport": "yes",
+        "name": "The Bricklayers Arms",
+        "ref:GB:uprn": "128008246;128008247",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123125907,
+      "center": {
+        "lat": 51.4019254,
+        "lon": -0.295013
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "104",
+        "addr:postcode": "KT1 3BB",
+        "addr:street": "Villiers Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-07-11",
+        "fhrs:id": "1385879",
+        "live_sport": "yes",
+        "name": "The Duke of Buckingham",
+        "opening_hours": "Mo-Fr 11:00-23:00; Sa 11:00-24:00; Su 12:00-22:30",
+        "ref:GB:uprn": "128051972;128051971;128051970;128019465;128019464;128051976;128051975;128051974;128051973;128051979;128051978;128051977",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123158045,
+      "center": {
+        "lat": 51.4032989,
+        "lon": -0.2994967
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:postcode": "KT1 2SF",
+        "amenity": "pub",
+        "building": "retail",
+        "live_sport": "yes",
+        "name": "The Spring Grove",
+        "real_ale": "yes",
+        "real_fire": "fireplace",
+        "ref:GB:uprn": "128055524;128001942;128001944;128001943;128050667;128050666;128050665;128050669;128050668"
+      }
+    },
+    {
+      "type": "way",
+      "id": 161764743,
+      "center": {
+        "lat": 51.3326575,
+        "lon": -0.2699295
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:county": "Surrey",
+        "addr:housenumber": "147–153",
+        "addr:postcode": "KT19 8EH",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "building": "yes",
+        "building:levels": "2",
+        "check_date": "2026-01-04",
+        "contact:phone": "+44 1372 737290",
+        "contact:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/surrey/the-assembly-rooms-epsom",
+        "dog": "no",
+        "fhrs:id": "5675",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "The Assembly Rooms",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "ref:GB:uprn": "100061357089",
+        "smoking": "outside",
+        "source": "receipt from visit",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "yes",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/174/menus",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 223308981,
+      "center": {
+        "lat": 51.4133291,
+        "lon": -0.2965116
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "49",
+        "addr:postcode": "KT2 6LQ",
+        "addr:street": "Canbury Park Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1386668",
+        "name": "The Canbury Arms",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.canburyarmskingston.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 223308982,
+      "center": {
+        "lat": 51.4129889,
+        "lon": -0.3114328
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housename": "Foresters Arms",
+        "addr:housenumber": "45",
+        "addr:postcode": "KT1 4DG",
+        "addr:street": "High Street",
+        "addr:suburb": "Hampton Wick",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1574768",
+        "name": "The Foresters Arms",
+        "source": "local_knowledge",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 231419598,
+      "center": {
+        "lat": 51.3766834,
+        "lon": -0.2686888
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Surbiton Raceway Clubhouse"
+      }
+    },
+    {
+      "type": "way",
+      "id": 256649827,
+      "center": {
+        "lat": 51.3927123,
+        "lon": -0.3048875
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "84",
+        "addr:postcode": "KT6 4NS",
+        "addr:street": "Victoria Road",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "yes",
+        "check_date": "2023-08-08",
+        "fhrs:id": "1385961",
+        "name": "The Surbiton Flyer",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref:GB:uprn": "128041429;128019374;128041428;128041425;128041424;128041427;128041426;100023063174;128041423;128041422;128019375",
+        "website": "https://www.surbitonflyer.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 274158269,
+      "center": {
+        "lat": 51.3980641,
+        "lon": -0.2805931
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:country": "GB",
+        "addr:housenumber": "107",
+        "addr:postcode": "KT5 8LS",
+        "addr:street": "Chiltern Drive",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2023-09-24",
+        "fhrs:id": "361192",
+        "name": "Berrylands",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-24:00; Su 12:00-22:30",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.theberrylands.co.uk/",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 274158273,
+      "center": {
+        "lat": 51.3513943,
+        "lon": -0.250286
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "1",
+        "addr:postcode": "KT17 2AY",
+        "addr:street": "London Road",
+        "addr:suburb": "Ewell",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "14067",
+        "name": "The Spring Tavern",
+        "phone": "+44 20 8786 0121",
+        "ref:GB:uprn": "200004009679",
+        "source": "survey-2012-05-06",
+        "website": "https://www.springtavern.co.uk",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 288700260,
+      "center": {
+        "lat": 51.3332213,
+        "lon": -0.2819542
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "1",
+        "addr:postcode": "KT18 7SR",
+        "addr:street": "Stamford Green Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "21223",
+        "name": "The Cricketers",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26508678"
+      }
+    },
+    {
+      "type": "way",
+      "id": 293872610,
+      "center": {
+        "lat": 51.4186279,
+        "lon": -0.3057297
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housename": "The Boaters Inn",
+        "addr:postcode": "KT2 5AU",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1386098",
+        "fixme:addr:1": "Canbury Gardens",
+        "live_sport": "yes",
+        "name": "Boaters Inn",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.boaterskingston.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 298834128,
+      "center": {
+        "lat": 51.4274308,
+        "lon": -0.3305859
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housenumber": "69",
+        "addr:postcode": "TW11 8HA",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "commercial",
+        "description": "Renamed from The Clock House in 2021",
+        "fhrs:id": "354096;1398897",
+        "garden": "yes",
+        "name": "The Castle Bar",
+        "old_name": "The Clock House",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 298834131,
+      "center": {
+        "lat": 51.4275552,
+        "lon": -0.328532
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housenumber": "123",
+        "addr:postcode": "TW11 8HG",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1574782",
+        "name": "The King's Head",
+        "operator": "The White Brasserie Company",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 298834141,
+      "center": {
+        "lat": 51.425384,
+        "lon": -0.3343201
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:postcode": "TW11 0AB",
+        "addr:street": "Park Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "2",
+        "name": "The Park Café-Bar-Restaurant"
+      }
+    },
+    {
+      "type": "way",
+      "id": 311571963,
+      "center": {
+        "lat": 51.4259993,
+        "lon": -0.3304516
+      },
+      "tags": {
+        "addr:housenumber": "38",
+        "addr:postcode": "TW11 9AS",
+        "addr:street": "Field Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "353424",
+        "food": "yes",
+        "name": "The Builders Arms",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 328572823,
+      "center": {
+        "lat": 51.3945104,
+        "lon": -0.2391344
+      },
+      "tags": {
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "The Earl Beatty",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.greeneking.co.uk/pubs/surrey/earl-beatty",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 334861808,
+      "center": {
+        "lat": 51.416255,
+        "lon": -0.2839862
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "57",
+        "addr:postcode": "KT2 7PX",
+        "addr:street": "Kingston Hill",
+        "amenity": "pub",
+        "brewery": "youngs",
+        "building": "yes",
+        "fhrs:id": "1385861",
+        "live_sport": "yes",
+        "name": "The Albert",
+        "phone": "+44 20 8546 7669",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.thealbertkingston.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 343914450,
+      "center": {
+        "lat": 51.4068436,
+        "lon": -0.2984541
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housename": "The Cocoanut",
+        "addr:housenumber": "16",
+        "addr:postcode": "KT1 2RF",
+        "addr:street": "Mill Street",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "yes",
+        "fhrs:id": "1386274",
+        "name": "The Cocoanut",
+        "ref:GB:uprn": "128013303",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "private",
+        "website": "https://www.cocoanut.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 364312014,
+      "center": {
+        "lat": 51.4117584,
+        "lon": -0.311684
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "1",
+        "addr:postcode": "KT1 4DA",
+        "addr:street": "High Street",
+        "addr:suburb": "Hampton Wick",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "yes",
+        "fhrs:id": "1574153",
+        "name": "White Hart",
+        "source": "local_knowledge",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.whiteharthoteluk.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 364312015,
+      "center": {
+        "lat": 51.4126114,
+        "lon": -0.3108085
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "22",
+        "addr:postcode": "KT1 4DB",
+        "addr:street": "High Street",
+        "addr:suburb": "Hampton Wick",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1574146",
+        "live_sport": "yes",
+        "name": "The Swan",
+        "ref:GB:uprn": "100022288069",
+        "source": "local_knowledge",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 441808906,
+      "center": {
+        "lat": 51.3936317,
+        "lon": -0.3037133
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:country": "GB",
+        "addr:housename": "The Coronation Hall",
+        "addr:housenumber": "7",
+        "addr:postcode": "KT6 4LQ",
+        "addr:street": "St. Mark's Hill",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "brewery": "Guinness",
+        "building": "commercial",
+        "building:levels": "2",
+        "check_date": "2025-11-24",
+        "dog": "no",
+        "fhrs:id": "1386321",
+        "food": "yes",
+        "handwashing:soap": "yes",
+        "internet_access": "wlan",
+        "name": "The Coronation Hall",
+        "opening_hours": "Mo,Th-Su 08:00-01:00; Tu-We 08:00-24:00",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:qr_code": "no",
+        "payment:visa": "yes",
+        "phone": "+44 20 8390 6164",
+        "real_ale": "yes",
+        "ref:GB:uprn": "100023064346",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:disposal": "flush",
+        "toilets:fee": "no",
+        "toilets:gender_segregated": "yes",
+        "toilets:hands_drying": "electric_hand_dryer",
+        "toilets:handwashing": "yes",
+        "toilets:paper_supplied": "yes",
+        "toilets:position": "seated;urinal",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-coronation-hall-surbiton",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/453/menus",
+        "wheelchair": "yes",
+        "wikidata": "Q41802339"
+      }
+    },
+    {
+      "type": "way",
+      "id": 441838245,
+      "center": {
+        "lat": 51.3921981,
+        "lon": -0.3071305
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "28",
+        "addr:postcode": "KT6 4JT",
+        "addr:street": "Victoria Road",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "3",
+        "check_date": "2026-06-17",
+        "contact:website": "https://www.thevictoriasurbiton.co.uk/",
+        "email": "victoria@youngs.co.uk",
+        "fhrs:id": "1385958",
+        "live_sport": "yes",
+        "name": "The Victoria",
+        "opening_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 12:00-23:00",
+        "operator": "Young's",
+        "phone": "+44 20 8399 3007",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 444073006,
+      "center": {
+        "lat": 51.3920141,
+        "lon": -0.3114144
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "73",
+        "addr:postcode": "KT6 5NF",
+        "addr:street": "Brighton Road",
+        "amenity": "pub",
+        "brewery": "yes",
+        "building": "yes",
+        "building:levels": "2",
+        "building:material": "brick",
+        "fhrs:id": "1385917",
+        "layer": "1",
+        "name": "The Lamb",
+        "opening_hours:covid19": "restricted",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "ref:GB:uprn": "128002149;100021784945",
+        "roof:levels": "1",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 445299211,
+      "center": {
+        "lat": 51.3920598,
+        "lon": -0.310459
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "58",
+        "addr:postcode": "KT6 5PL",
+        "addr:street": "Brighton Road",
+        "amenity": "pub",
+        "building": "retail",
+        "building:colour": "white",
+        "building:levels": "3",
+        "building:material": "plaster",
+        "check_date": "2023-08-11",
+        "fhrs:id": "1386070",
+        "live_sport": "yes",
+        "name": "The Black Lion",
+        "operator": "Young's",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "ref:GB:uprn": "100023064600;100021784936",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469041057,
+      "center": {
+        "lat": 51.328569,
+        "lon": -0.2713478
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "2",
+        "addr:postcode": "KT18 7LB",
+        "addr:street": "St Margaret Drive",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "28307",
+        "name": "The Haywain",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469077992,
+      "center": {
+        "lat": 51.3337325,
+        "lon": -0.2641366
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:county": "Surrey",
+        "addr:housenumber": "2",
+        "addr:postcode": "KT17 4NY",
+        "addr:street": "Church Street",
+        "amenity": "pub",
+        "building": "commercial",
+        "check_date": "2025-06-01",
+        "contact:website": "https://www.crafted-social.co.uk/faraday-epsom",
+        "fhrs:id": "711693;1775247",
+        "name": "The Faraday",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469119219,
+      "center": {
+        "lat": 51.3331902,
+        "lon": -0.2706414
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:housenumber": "4",
+        "addr:postcode": "KT18 7RG",
+        "addr:street": "West Street",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/themarquisofgranbyepsom",
+        "contact:instagram": "https://www.instagram.com/marquisepsom/",
+        "fhrs:id": "27701",
+        "name": "Marquis of Granby",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-00:00; Su 12:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1372 744278",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.themarquisofgranbyepsom.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q26508867"
+      }
+    },
+    {
+      "type": "way",
+      "id": 492147577,
+      "center": {
+        "lat": 51.4292416,
+        "lon": -0.3224211
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housename": "Anglers Hotel",
+        "addr:housenumber": "3",
+        "addr:postcode": "TW11 9NR",
+        "addr:street": "Broom Road",
+        "amenity": "pub",
+        "beer_garden": "yes",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "yes",
+        "check_date": "2026-06-16",
+        "contact:facebook": "https://www.facebook.com/AnglersTeddington",
+        "contact:phone": "+44 20 8977 7475",
+        "contact:website": "https://www.anglers-teddington.co.uk/",
+        "fhrs:id": "1575017",
+        "fhrs:local_authority_id": "2812",
+        "food": "yes",
+        "internet_access": "wlan",
+        "live_sport": "yes",
+        "name": "The Anglers",
+        "opening_hours": "Mo-Su 11:00-23:00; Fr-Sa 11:00-24:00",
+        "operator": "Fuller's",
+        "outdoor_seating": "yes",
+        "outdoor_seating:comfort": "bench",
+        "outdoor_seating:weather_protection": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "smoking": "separated",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 492147589,
+      "center": {
+        "lat": 51.4293512,
+        "lon": -0.3229016
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housenumber": "8",
+        "addr:postcode": "TW11 9NN",
+        "addr:street": "Ferry Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "check_date": "2026-06-16",
+        "fhrs:id": "353430",
+        "internet_access": "no",
+        "name": "The Tide End Cottage",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30",
+        "operator": "Greene King",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+44 20 8977 7762",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/middlesex/tide-end-cottage",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 517706767,
+      "center": {
+        "lat": 51.429402,
+        "lon": -0.2628264
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "university",
+        "name": "Hannafords Student Bar"
+      }
+    },
+    {
+      "type": "way",
+      "id": 627272034,
+      "center": {
+        "lat": 51.413504,
+        "lon": -0.2871732
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "204",
+        "addr:postcode": "KT2 6QP",
+        "addr:street": "London Road",
+        "amenity": "pub",
+        "building": "retail",
+        "building:material": "brick",
+        "fhrs:id": "1533729",
+        "name": "The Black Horse",
+        "old_name": "The Kingston Gate",
+        "outdoor_seating": "yes",
+        "roof:colour": "darkgrey",
+        "source:addr": "FHRS Open Data",
+        "website": "https://blackhorsekingston.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 657589239,
+      "center": {
+        "lat": 51.3624782,
+        "lon": -0.2890076
+      },
+      "tags": {
+        "addr:city": "Chessington",
+        "addr:country": "GB",
+        "addr:housenumber": "273",
+        "addr:postcode": "KT9 2BQ",
+        "addr:street": "Moor Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date:opening_hours": "2021-12-21",
+        "fhrs:id": "361532",
+        "live_sport": "yes",
+        "name": "William Bourne",
+        "opening_hours": "Su-Th 12:00-23:00, Fr,Sa 12:00-24:00",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "source": "survey-2012-05-06",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greatukpubs.co.uk/william-bourne-chessington"
+      }
+    },
+    {
+      "type": "way",
+      "id": 657589286,
+      "center": {
+        "lat": 51.3639538,
+        "lon": -0.2967507
+      },
+      "tags": {
+        "addr:city": "Chessington",
+        "addr:housenumber": "116",
+        "addr:postcode": "KT9 1HX",
+        "addr:street": "Moor Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1386276",
+        "name": "Chessington Oak",
+        "opening_hours": "Mo-Su 11:00-23:00",
+        "source": "survey-2012-05-06",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 659410327,
+      "center": {
+        "lat": 51.3334045,
+        "lon": -0.2575903
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "48",
+        "addr:postcode": "KT17 4DZ",
+        "addr:street": "Church Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "5046",
+        "name": "The Railway Guard",
+        "ref:GB:uprn": "10013955120;100062365391",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 659410328,
+      "center": {
+        "lat": 51.3341868,
+        "lon": -0.2582323
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "12",
+        "addr:postcode": "KT17 4EA",
+        "addr:street": "Pikes Hill",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "fhrs:id": "17254",
+        "name": "The Barley Mow",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.barley-mow-epsom.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 663131220,
+      "center": {
+        "lat": 51.3348074,
+        "lon": -0.2642853
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "5",
+        "addr:postcode": "KT17 1BB",
+        "addr:street": "East Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "6655",
+        "name": "The Rifleman",
+        "ref:GB:uprn": "100061354085",
+        "website": "http://therifleman.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 707077026,
+      "center": {
+        "lat": 51.4272134,
+        "lon": -0.3282199
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housenumber": "114-116",
+        "addr:postcode": "TW11 8JB",
+        "addr:street": "High Street",
+        "amenity": "bar",
+        "building": "retail",
+        "building:levels": "3",
+        "fhrs:id": "1575097",
+        "name": "One One Four",
+        "outdoor_seating": "yes",
+        "roof:levels": "1",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 707994822,
+      "center": {
+        "lat": 51.4270175,
+        "lon": -0.3318387
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housename": "The Teddington Arms",
+        "addr:housenumber": "38-40",
+        "addr:postcode": "TW11 8EW",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "retail",
+        "building:levels": "2",
+        "fhrs:id": "1574205",
+        "live_sport": "yes",
+        "name": "The Teddington Arms",
+        "roof:levels": "1",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/middlesex/teddington-arms"
+      }
+    },
+    {
+      "type": "way",
+      "id": 718214669,
+      "center": {
+        "lat": 51.436228,
+        "lon": -0.30508
+      },
+      "tags": {
+        "addr:city": "Richmond",
+        "addr:housenumber": "345",
+        "addr:postcode": "TW10 7DB",
+        "addr:street": "Petersham Road",
+        "addr:suburb": "Ham",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-07-17",
+        "fhrs:id": "1704039",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "The New Inn",
+        "opening_hours": "Mo,Su 12:00-21:00; Tu-Th 12:00-22:00; Fr-Sa 12:00-23:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website:menu": "https://www.thenewinnham.co.uk/#menu",
+        "wikidata": "Q26355850"
+      }
+    },
+    {
+      "type": "way",
+      "id": 723739293,
+      "center": {
+        "lat": 51.4178558,
+        "lon": -0.3182988
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housenumber": "27",
+        "addr:postcode": "TW11 9DN",
+        "addr:street": "Wick Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1574201",
+        "name": "The Lion",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.thelionteddington.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 766037869,
+      "center": {
+        "lat": 51.4412812,
+        "lon": -0.3329359
+      },
+      "tags": {
+        "addr:city": "Twickenham",
+        "addr:postcode": "TW1 4RB",
+        "addr:street": "Cross Deep",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "brown",
+        "building:levels": "2",
+        "building:material": "brick",
+        "fhrs:id": "353347",
+        "image": "https://archive.org/details/twickenham-2019-02-17/Twickenham%202019-02-17/DSCN8856.JPG",
+        "loc_name": "Pope's Grotto",
+        "name": "Alexander Pope Hotel",
+        "note": "not \"The Pope's Grotto\", as it belonged to Alexander",
+        "roof:colour": "grey",
+        "roof:levels": "1",
+        "source:addr": "FHRS Open Data",
+        "tourism": "hotel",
+        "wikidata": "Q23301490"
+      }
+    },
+    {
+      "type": "way",
+      "id": 791855489,
+      "center": {
+        "lat": 51.3921443,
+        "lon": -0.2673587
+      },
+      "tags": {
+        "addr:city": "New Malden",
+        "addr:housename": "The Sportsground",
+        "addr:postcode": "KT3 5DX",
+        "addr:street": "Thetford Road",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:website": "https://woodiesfreehouse.co.uk/",
+        "email": "woodies@slhuk.com",
+        "fhrs:id": "1386336",
+        "name": "Woodies Freehouse",
+        "opening_hours": "Mo-Sa 11:00-23:00; Su 12:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8949 5824",
+        "ref:GB:uprn": "128018554;128018555",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813133873,
+      "center": {
+        "lat": 51.4236852,
+        "lon": -0.3345952
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housenumber": "57",
+        "addr:postcode": "TW11 0AU",
+        "addr:street": "Park Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1574783",
+        "live_sport": "yes",
+        "name": "The Adelaide",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 850037484,
+      "center": {
+        "lat": 51.3852794,
+        "lon": -0.2948616
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housenumber": "261",
+        "addr:postcode": "KT6 7AA",
+        "addr:street": "Ewell Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2023-09-12",
+        "fhrs:id": "1385927",
+        "name": "The Royal Oak",
+        "payment:cash": "no",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 855624834,
+      "center": {
+        "lat": 51.3547046,
+        "lon": -0.2512614
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "78",
+        "addr:postcode": "KT17 2DU",
+        "addr:street": "Kingston Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "13652",
+        "name": "The Eight Bells",
+        "note": "location observed from a distance sadly",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 901272257,
+      "center": {
+        "lat": 51.3800772,
+        "lon": -0.2444446
+      },
+      "tags": {
+        "addr:city": "Worcester Park",
+        "addr:country": "GB",
+        "addr:housenumber": "181",
+        "addr:postcode": "KT4 8DR",
+        "addr:street": "Central Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "name": "The Brook",
+        "ref:GB:uprn": "5870007530;5870120922"
+      }
+    },
+    {
+      "type": "way",
+      "id": 904726457,
+      "center": {
+        "lat": 51.4075233,
+        "lon": -0.2583886
+      },
+      "tags": {
+        "addr:city": "New Malden",
+        "addr:housename": "The Royal Oak",
+        "addr:housenumber": "90",
+        "addr:postcode": "KT3 4RD",
+        "addr:street": "Coombe Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1385616",
+        "live_sport": "yes",
+        "name": "The Royal Oak",
+        "ref:GB:uprn": "100023060447;100021774826",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26670434"
+      }
+    },
+    {
+      "type": "way",
+      "id": 907797527,
+      "center": {
+        "lat": 51.3771123,
+        "lon": -0.2391622
+      },
+      "tags": {
+        "addr:city": "Worcester Park",
+        "addr:housenumber": "25",
+        "addr:postcode": "KT4 8EG",
+        "addr:street": "Central Road",
+        "amenity": "bar",
+        "building": "yes",
+        "name": "Rumours Bar"
+      }
+    },
+    {
+      "type": "way",
+      "id": 920239337,
+      "center": {
+        "lat": 51.432282,
+        "lon": -0.3066041
+      },
+      "tags": {
+        "addr:city": "Richmond",
+        "addr:postcode": "TW10 5LA",
+        "addr:street": "Upper Ham Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "354161",
+        "indoor_seating": "yes",
+        "name": "Hand & Flower",
+        "outdoor_seating": "yes",
+        "source:addr:postcode": "FHRS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 950051568,
+      "center": {
+        "lat": 51.4239847,
+        "lon": -0.3326444
+      },
+      "tags": {
+        "addr:city": "Teddington",
+        "addr:housename": "The Railway",
+        "addr:housenumber": "3",
+        "addr:postcode": "TW11 0BB",
+        "addr:street": "Victoria Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1575010",
+        "name": "The Railway",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 975112673,
+      "center": {
+        "lat": 51.3304521,
+        "lon": -0.2599984
+      },
+      "tags": {
+        "addr:city": "Epsom",
+        "addr:country": "GB",
+        "addr:housenumber": "24-26",
+        "addr:postcode": "KT17 4QB",
+        "addr:street": "Church Street",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "2",
+        "name": "Ye Olde Kings Head",
+        "ref:GB:uprn": "200004007590;10013955121"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1005518890,
+      "center": {
+        "lat": 51.3955901,
+        "lon": -0.3119889
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housename": "The Fox And Hounds",
+        "addr:housenumber": "60",
+        "addr:postcode": "KT6 4HS",
+        "addr:street": "Portsmouth Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1386294",
+        "live_sport": "yes",
+        "name": "Fox & Hounds",
+        "ref:GB:uprn": "128034903;128034904;128051994;128051993;100023673023;100021795638;128051997;128051996;128051995",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1221239101,
+      "center": {
+        "lat": 51.4137206,
+        "lon": -0.2889977
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "16",
+        "addr:postcode": "KT2 6PW",
+        "addr:street": "Clifton Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "#42636C",
+        "building:levels": "2",
+        "email": "norbiton@frontierpubs.co.uk",
+        "fhrs:id": "1385845",
+        "live_sport": "yes",
+        "name": "The Norbiton",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr 12:00-00:00; Sa 11:30-00:00; Su 12:00-22:30",
+        "phone": "+44 2085 498170",
+        "roof:colour": "#6C6C77",
+        "roof:shape": "hipped",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "website": "https://frontierpubs.co.uk/pub/the-norbiton/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1230545570,
+      "center": {
+        "lat": 51.3992746,
+        "lon": -0.3020443
+      },
+      "tags": {
+        "addr:city": "Surbiton",
+        "addr:housename": "The Waggon And Horses",
+        "addr:housenumber": "1",
+        "addr:postcode": "KT6 4TW",
+        "addr:street": "Surbiton Hill Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2022-11-15",
+        "email": "info@thewaggonsurbiton.co.uk",
+        "fhrs:id": "1385444",
+        "name": "Waggon & Horses",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 20 8390 0211",
+        "ref:GB:uprn": "100021754556;100021754557;100021754554;100021754555;100021754552;100021754553",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "website": "https://thewaggonsurbiton.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1232394923,
+      "center": {
+        "lat": 51.3929178,
+        "lon": -0.3318583
+      },
+      "tags": {
+        "addr:city": "Thames Ditton",
+        "addr:country": "GB",
+        "addr:postcode": "KT7 0QQ",
+        "addr:street": "Summer Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Ye Olde Swan",
+        "ref:GB:uprn": "10033320509;100062121622;10013119304"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1238331093,
+      "center": {
+        "lat": 51.4162637,
+        "lon": -0.2923748
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "47",
+        "addr:postcode": "KT2 6LN",
+        "addr:street": "Willoughby Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1386357",
+        "live_sport": "yes",
+        "name": "The Willoughby Arms",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1238338171,
+      "center": {
+        "lat": 51.4171012,
+        "lon": -0.2941632
+      },
+      "tags": {
+        "addr:city": "Kingston upon Thames",
+        "addr:country": "GB",
+        "addr:housenumber": "93",
+        "addr:postcode": "KT2 6HT",
+        "addr:street": "Elm Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1386153",
+        "name": "The Wych Elm",
+        "opening_hours": "We-Sa 12:00-23:00; Su 12:00-21:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "real_fire": "yes",
+        "smoking": "isolated",
+        "source:addr": "FHRS Open Data",
+        "website": "https://thewych.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1322622415,
+      "center": {
+        "lat": 51.3371207,
+        "lon": -0.3198022
+      },
+      "tags": {
+        "addr:city": "Chessington",
+        "addr:housenumber": "423",
+        "addr:postcode": "KT9 2NQ",
+        "addr:street": "Leatherhead Road",
+        "addr:suburb": "Malden Rushett",
+        "amenity": "pub",
+        "brand": "Vintage Inns",
+        "brand:wikidata": "Q87067899",
+        "building": "yes",
+        "check_date": "2024-08-20",
+        "check_date:opening_hours": "2024-08-20",
+        "contact:website": "https://www.vintageinn.co.uk/restaurants/london/theshyhorsechessington",
+        "fhrs:id": "361951",
+        "indoor_seating": "yes",
+        "name": "The Shy Horse",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30",
+        "outdoor_seating": "garden",
+        "payment:cash": "yes",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1323857834,
+      "center": {
+        "lat": 51.3826709,
+        "lon": -0.317015
+      },
+      "tags": {
+        "addr:housename": "The Plough and Harrow",
+        "addr:street": "Ditton Hill Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Plough and Harrow"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1376459373,
+      "center": {
+        "lat": 51.3867783,
+        "lon": -0.3292675
+      },
+      "tags": {
+        "addr:city": "Thames Ditton",
+        "addr:postcode": "KT7 0AU",
+        "addr:street": "Angel Road",
+        "amenity": "pub",
+        "check_date": "2024-11-27",
+        "fhrs:id": "1778368",
+        "fhrs:local_authority_id": "FR/201100204",
+        "name": "The Angel Inn",
+        "outdoor_seating": "yes"
+      }
+    }
+  ]
+}

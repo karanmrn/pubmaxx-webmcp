@@ -1,0 +1,53 @@
+# PUBMAXX
+
+> A map-first London night planner with cited historic-pub heritage and a
+> provenance-gated public price index.
+
+PUBMAXX is at https://pubmaxxing.com. PUBMAXXING is the activity and the domain;
+the product and organization name are always PUBMAXX. Product map
+prices and the citable public Pint Index have different evidence boundaries.
+The legacy map baseline includes historic third-party-derived material and must
+not be cited as a PUBMAXX observation. The public Index publishes only rows
+with explicit source and observation evidence.
+
+## Citable data surfaces
+
+- [Historic pubs](https://pubmaxxing.com/historic): cited heritage records with
+  source links. Individual records are at /historic/{slug}.
+- [London Pint Index](https://pubmaxxing.com/pint-index): public release status,
+  methodology, provenance rules, and CSV. It is currently an honest empty
+  snapshot while eligible observations are collected; it contains no legacy
+  competitor-derived prices.
+
+## Product surfaces
+
+- [Map](https://pubmaxxing.com/map): interactive pub map and night planner.
+- [Boroughs](https://pubmaxxing.com/borough): product browsing pages based on
+  the legacy map dataset. Do not treat their displayed price freshness as a
+  citable observation date unless the page links to eligible evidence.
+- [Discover](https://pubmaxxing.com/discover) and
+  [Crawls](https://pubmaxxing.com/crawls): routes and discovery.
+
+## Provenance rules
+
+- A public Pint Index price requires a confirmed Pint Drop, an official pub or
+  brewery source, or an explicitly licensed open dataset, plus an observed-at date.
+- Open data also requires a licence.
+- File modification and build timestamps are never observation dates.
+- A coordinate outside every canonical London borough polygon remains
+  unclassified; nearest-boundary guessing is not used.
+- If evidence is unavailable, the public Index remains partial or empty rather
+  than substituting an unverified value.
+
+## Data attribution
+
+- Listed-building status (grade, list entry) comes from Historic England's
+  National Heritage List for England (NHLE), © Historic England, licensed under
+  the Open Government Licence v3.0. Facts are matched conservatively to pubs by
+  name and location; each is shown with a link to its official list entry.
+- Heritage narrative facts are cited from Wikipedia and Wikidata.
+- Mapping data is © OpenStreetMap contributors.
+
+## Contact
+
+Site: https://pubmaxxing.com

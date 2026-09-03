@@ -1,0 +1,32 @@
+/* Material TfL disruption line (ticket 3.7). One calm line, no card chrome — it
+   docks inside whatever get-home / get-there panel hosts it. Amber-ledged so it
+   reads as "worth noticing" without alarm; role tokens only, so both themes
+   inherit. Silent by default (the component returns null), so this only ever
+   styles a line that genuinely matters. */
+.transportDisruption {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.transportDisruptionIcon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--amber, var(--brass));
+}
+
+.transportDisruptionCopy {
+  font-weight: 550;
+}
+
+.transportDisruptionProv {
+  color: var(--ink-soft);
+  font-weight: 450;
+  white-space: nowrap;
+}

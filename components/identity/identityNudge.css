@@ -1,0 +1,47 @@
+/* Identity nudge sheet. Inherits the shared auth-sheet look (auth.css) and only
+   adds the provider-button stack + spacing specific to this prompt. */
+
+.identityNudgeBackdrop {
+  /* Blocking account prompt must cover and inert primary phone chrome. */
+  z-index: calc(var(--z-tabbar) + 1);
+}
+
+.identityNudgeProviders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.identityNudgeProviders .authSignIn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* This sheet always has room for the full provider labels; never fall back to
+   the short "Google" / "Apple" labels the crowded nav needs. */
+.identityNudgeProviders .authSignInLabelShort {
+  display: none;
+}
+
+.identityNudgeProviders .authSignInLabelFull {
+  display: inline;
+}
+
+/* The nudge owns a phone-sized dialog, so every sign-in action keeps the
+   shared 44px touch floor even when the auth wall's container rules do not
+   apply to this host. */
+.identityNudgeDialog .authSignIn,
+.identityNudgeDialog .authMagicLinkCancel {
+  min-height: 44px;
+}
+
+.identityNudgeActions {
+  margin-top: 0.75rem;
+  justify-content: center;
+}
+
+.identityNudgeActions .claimNightSkip {
+  min-height: 44px;
+}

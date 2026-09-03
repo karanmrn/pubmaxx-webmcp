@@ -1,0 +1,78 @@
+/* Venue external CTAs — Book / Look at the menu / venue website.
+   Token-only; sits inside the venue sheet Overview + Menu hub. */
+
+.venueActionStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 4px;
+}
+
+.venueActionStrip__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm, 8px);
+  border: 1px solid var(--line);
+  background: var(--panel-raised, var(--panel));
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 650;
+  text-decoration: none;
+  /* These are <a> anchors, so the global button press-feedback doesn't reach
+     them, and adding [data-pressable]/.pressable would clobber this transition
+     shorthand (and out-specify it). So press feedback is baked in locally: the
+     transform is named alongside the colour transitions, with a gated :active
+     scale below — matching the global press feel without the cascade fight. */
+  transition:
+    border-color var(--duration-base, 180ms) ease-out,
+    background var(--duration-base, 180ms) ease-out,
+    color var(--duration-base, 180ms) ease-out,
+    transform var(--duration-press, 130ms) var(--ease-out-strong, ease-out);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .venueActionStrip__btn:active {
+    transform: scale(var(--press-scale, 0.97));
+    --shared-press-scale: 1;
+  }
+}
+
+.venueActionStrip__btn:hover {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised, var(--panel)));
+  color: var(--ink);
+}
+
+.venueActionStrip__btn--book {
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel));
+}
+
+.venueActionStrip__btn--menu {
+  border-color: color-mix(in srgb, var(--cat-beer, var(--brass)) 35%, var(--line));
+}
+
+.venueActionStrip__ext {
+  opacity: 0.55;
+  margin-left: 2px;
+}
+
+.venueActionStrip__btn--book[data-tier="search"] {
+  border-style: dashed;
+}
+
+@media (max-width: 640px) {
+  .venueActionStrip__btn {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venueActionStrip__btn {
+    transition: none;
+  }
+}

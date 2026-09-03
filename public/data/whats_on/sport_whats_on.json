@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-07-18T21:25:11.606Z",
+  "kind": "sport",
+  "sources": [
+    {
+      "label": "Greene King live-sport (FANZO)",
+      "url": "https://www.greeneking.co.uk/live-sport",
+      "firstParty": true,
+      "rowsEmitted": 0,
+      "notes": "Timed sport fixtures (kickoff times) are delivered via Greene King's FANZO partner behind gated booking links (/*book?sportId=, /*book?date=), which robots.txt disallows and which are not first-party data. No timed rows are emitted. Venue-level 'shows live sport' attributes live in sport_attributes.json."
+    }
+  ],
+  "rows": []
+}

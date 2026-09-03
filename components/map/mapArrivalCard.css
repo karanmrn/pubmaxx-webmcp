@@ -1,0 +1,117 @@
+.mapArrivalCard {
+  position: fixed;
+  z-index: calc(var(--z-tabbar, 30) + 2);
+  right: max(12px, env(safe-area-inset-right));
+  /* Float-stack member: mobileNav.css publishes this berth and the card's
+     height, so the map-edge column, the plan pill and the OSM credit can all
+     step clear of it (mobileMapShell.css) instead of being painted over. */
+  bottom: var(
+    --map-arrival-bottom,
+    calc(var(--tabbar-h, 64px) + env(safe-area-inset-bottom) + 12px)
+  );
+  left: max(12px, env(safe-area-inset-left));
+  display: grid;
+  gap: 10px;
+  padding: 14px 14px 12px;
+  border: 1px solid var(--hairline, var(--line));
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--panel-raised) 96%, transparent);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(14px) saturate(125%);
+}
+
+.mapArrivalCardEyebrow {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.mapArrivalCardTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.mapArrivalCardLead {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.mapArrivalCardActions {
+  display: grid;
+  gap: 8px;
+}
+
+.mapArrivalCardActions button {
+  min-height: 48px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.mapArrivalCardPrimary {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.mapArrivalCardSecondary {
+  border: 1px solid var(--hairline, var(--line));
+  background: transparent;
+  color: var(--ink);
+}
+
+.mapArrivalCardClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+}
+
+@media (min-width: 641px) {
+  .mapArrivalCard {
+    right: max(20px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+    left: auto;
+    width: min(360px, calc(100vw - 40px));
+  }
+
+  /* The desktop card parks in MapLibre's own bottom-right lane, and the ODbL
+     credit is attached to the MAP rather than to a source, so it may not be
+     covered. Same published height the phone berths read. */
+  body:has(.mapArrivalCard) .mapStage .maplibregl-ctrl-bottom-right {
+    bottom: calc(
+      var(--map-arrival-h, 256px) + max(20px, env(safe-area-inset-bottom)) + 12px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mapArrivalCard {
+    animation: map-arrival-card-arrive 160ms var(--ease-out, ease-out);
+  }
+}
+
+@keyframes map-arrival-card-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

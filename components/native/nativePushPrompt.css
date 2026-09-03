@@ -1,0 +1,103 @@
+/* Contextual native push pre-permission explainer — a small bottom sheet
+   shown once, at a high-intent plan moment, inside the Capacitor shell only.
+   Design rubric: one accent (--brass) owns the CTA; --panel-raised card,
+   --radius-lg, --shadow for lift; Inter body, sentence case. Motion animates
+   only transform/opacity, gated behind prefers-reduced-motion (base =
+   opacity-only fade; slide-up layered in under no-preference). */
+
+.nativePushPrompt {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-overlay-top);
+  display: flex;
+  justify-content: center;
+  padding: var(--space-4);
+  padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+  pointer-events: none;
+}
+
+.nativePushPrompt__card {
+  pointer-events: auto;
+  width: min(100%, 26rem);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  animation: nativePushPromptFadeIn var(--duration-slow) var(--ease-out-strong) both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nativePushPrompt__card {
+    animation-name: nativePushPromptSlideIn;
+  }
+}
+
+@keyframes nativePushPromptFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes nativePushPromptSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nativePushPrompt__title {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display, var(--serif));
+  font-weight: 600;
+  font-size: 1.0625rem;
+}
+
+.nativePushPrompt__body {
+  margin: 0 0 var(--space-4);
+  color: var(--ink-soft, var(--ink));
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.nativePushPrompt__error {
+  margin: calc(var(--space-2) * -1) 0 var(--space-3);
+  color: var(--accent-risk, #b3261e);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.nativePushPrompt__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+.nativePushPrompt__later,
+.nativePushPrompt__enable {
+  min-width: 64px;
+  min-height: 44px;
+  border: none;
+  border-radius: var(--radius-md, 0.75rem);
+  padding: var(--space-2) var(--space-4);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.nativePushPrompt__later {
+  background: transparent;
+  color: var(--ink);
+}
+
+.nativePushPrompt__enable {
+  background: var(--brass);
+  color: var(--ink-deep, #16122a);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nativePushPrompt__later:hover,
+  .nativePushPrompt__enable:hover {
+    filter: brightness(1.05);
+  }
+}

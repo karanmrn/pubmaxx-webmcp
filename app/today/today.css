@@ -1,0 +1,581 @@
+/* Morning brief (/today, Lane A). Shares the Tonight screen's visual language
+   (light type, brass accents, raised panels) as a single scannable column of
+   four cards. Role tokens only, so light and dark themes both inherit. Mobile
+   tab-bar clearance belongs to mobileNav.css, so this page owns content spacing
+   only. No em dashes in any copy this file drives. */
+
+.todayPage {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  /* Top inset clears the iOS status bar in the installed/native shells, where
+     viewport-fit=cover puts the page under the clock. env() is 0 in an ordinary
+     browser, so the web layout keeps its 12px. Bottom matches the tab bar +
+     home-indicator so the last card is never trapped under the bar (same seam
+     as /tonight and components/nav/mobileNav.css --tabbar-h). */
+  padding: calc(12px + env(safe-area-inset-top, 0px)) var(--page-gutter)
+    calc(var(--tabbar-h, 64px) + env(safe-area-inset-bottom, 0px) + 24px);
+  color: var(--ink);
+}
+
+/* ── The greeting ─────────────────────────────────────────────────────────
+   One personal line, one hero, one supporting fact. Display face and negative
+   tracking at hero size (letters read too far apart as they grow); the
+   salutation and the lede stay on the body face near zero tracking. */
+.todayHead {
+  margin: 4px 0 22px;
+}
+
+.todayEyebrow {
+  /* Sentence case, not a stamp: DESIGN.md reserves caps for bordered/filled
+     stamp chips, and a shouted "GOOD EVENING" is the opposite of personal. */
+  margin: 0 0 5px;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0.005em;
+  color: var(--ink-soft);
+}
+
+.todayTitle {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 6.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  font-optical-sizing: auto;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.todayLede {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 0.9rem;
+  line-height: var(--leading-normal, 1.5);
+  color: var(--ink-soft);
+}
+
+/* Card stack */
+.todayStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todayBriefColumn,
+.todayExploreColumn {
+  display: contents;
+}
+
+.todayCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel-raised);
+  /* Tighter, lower-contrast lift. The old 0 8px 20px read as a drop shadow
+     under every card; a card resting on paper casts a shorter one. */
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 4%, transparent),
+    0 6px 16px color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.todayCardHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.todayCardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  /* Optically centred against the eyebrow's cap height rather than its box. */
+  margin-top: 1px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  color: var(--brass);
+}
+
+.todayCardEyebrow {
+  margin: 0 0 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--muted, var(--ink-soft));
+}
+
+.todayCardTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.06rem;
+  font-weight: 650;
+  line-height: var(--leading-snug, 1.35);
+  letter-spacing: var(--tracking-tight, -0.01em);
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.todayCardBody {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: var(--leading-normal, 1.5);
+  color: var(--ink-soft);
+}
+
+.todayCardEmpty {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.todayStale {
+  display: flex;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  background: color-mix(in srgb, var(--brass) 9%, var(--panel-raised));
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.todayCardFootRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0;
+}
+
+.todayProvenance {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+}
+
+.todayProvenanceLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  vertical-align: middle;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .todayProvenanceLink:hover {
+    color: var(--brass);
+  }
+}
+
+.todayCardFootLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* A thumb-sized target without a thumb-sized box: the row keeps its visual
+     height and the extra reach comes from a negative-margin pad. */
+  min-height: 44px;
+  margin-block: -10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--state-active-ink);
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .todayCardFootLink:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Buttons */
+.todayButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  width: fit-content;
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 42%, var(--line));
+  border-radius: var(--control-radius, 14px);
+  background: color-mix(in srgb, var(--brass) 9%, var(--panel-raised));
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.todayButton:disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .todayButton:hover:not(:disabled) {
+    border-color: var(--brass);
+    background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  }
+}
+
+.todayButton:focus-visible,
+.todayTextButton:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: var(--control-radius, 14px);
+}
+
+.todayTextButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .todayTextButton:hover {
+    color: var(--brass);
+  }
+}
+
+.todaySrOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Get-there strip */
+.todayGetThere {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todayGetThereCopy {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.todayGetThereStatus {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+/* Tonight picks */
+.todayPicks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todayPick {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel-raised) 60%, transparent);
+  transition: border-color 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .todayPick:hover {
+    border-color: color-mix(in srgb, var(--brass) 50%, var(--line));
+  }
+}
+
+.todayPickLink {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 12px 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.todayPickArrow {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--brass);
+  opacity: 0.85;
+}
+
+.todayPickMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 14px;
+}
+
+.todayPickKind {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.todayPickPrice {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.todayPickTitle {
+  margin: 0;
+  padding-right: 20px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.todayPickPlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.todayPickSource {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  opacity: 0.85;
+}
+
+.todayPickCheapPint {
+  margin-top: 12px;
+}
+
+.todayPickCheapPintEyebrow {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+/* Chain-deal disclosure: "Same deal at 12 pubs". Honest, understated, so a
+   syndicated promotion reads as one deal at many pubs, not many picks. */
+.todayPickDigest {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel-raised);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* Provenance chip (matches the app's Sourced idiom). */
+.todayProvChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--state-active-ink);
+}
+
+/* Cheapest pints near you today */
+.todayPintList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todayPintRow {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel-raised) 60%, transparent);
+  transition: border-color 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .todayPintRow:hover {
+    border-color: color-mix(in srgb, var(--brass) 50%, var(--line));
+  }
+}
+
+.todayPintLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.todayPintName {
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.todayPintPrice {
+  flex: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A quiet pint (heritage-cited, quiet-hour). Same raised-row idiom as the picks
+   and pints lists; the cited heritage line carries the weight, so rows breathe
+   a little more. Both themes via role tokens. */
+/* Quiet-pint row styles live on TodayQuietPintCard's quietPintCard.css so
+   /tonight can host the same module without this page sheet. */
+
+/* Page foot */
+.todayFoot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  justify-content: center;
+  margin: 24px 0 0;
+}
+
+/* ── Touch feedback ───────────────────────────────────────────────────────
+   Every tappable row in the stack answers on press, not on release, and it
+   answers from touch alone (no :hover required). The scale dip comes from the
+   global .pressable floor in globals.css; these rules add the surface change
+   so the row itself reads as pressed, not just nudged. */
+.todayPickLink,
+.todayPintLink,
+.quietPintLink,
+.todayCardFootLink,
+.todayTextButton {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.todayPick,
+.todayPintRow,
+.quietPintRow {
+  transition:
+    border-color var(--duration-base, 0.15s) var(--ease-out),
+    background var(--duration-base, 0.15s) var(--ease-out);
+}
+
+.todayPick:has(:active),
+.todayPintRow:has(:active),
+.quietPintRow:has(:active) {
+  border-color: color-mix(in srgb, var(--brass) 50%, var(--line));
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised));
+}
+
+/* Entrance: a quiet staggered settle, suppressed under reduced-motion. The
+   delay is derived per position rather than listed per card, so the stack can
+   grow (it is now seven cards, not four) without the tail arriving unanimated
+   while its neighbours stagger. Capped at the sixth so a long stack never
+   makes the last card feel late. */
+@media (prefers-reduced-motion: no-preference) {
+  .todayCard {
+    animation: todayCardIn var(--duration-slow, 0.28s) var(--ease-out-strong) both;
+  }
+  .todayCard:nth-child(2) { animation-delay: 35ms; }
+  .todayCard:nth-child(3) { animation-delay: 70ms; }
+  .todayCard:nth-child(4) { animation-delay: 105ms; }
+  .todayCard:nth-child(5) { animation-delay: 140ms; }
+  .todayCard:nth-child(6) { animation-delay: 175ms; }
+  .todayCard:nth-child(n + 7) { animation-delay: 200ms; }
+
+  @keyframes todayCardIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.985); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* The greeting leads the stack in, one beat ahead of the first card. */
+  .todayHead {
+    animation: todayHeadIn var(--duration-slow, 0.28s) var(--ease-out-strong) both;
+  }
+
+  @keyframes todayHeadIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@media (min-width: 1024px) {
+  .todayPage {
+    max-width: var(--content-max-wide, 1240px);
+    padding-inline: var(--page-gutter);
+  }
+
+  .todayHead {
+    max-width: 760px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+
+  .todayTitle {
+    font-size: clamp(2.15rem, 3.2vw, 3.25rem);
+    max-width: 16ch;
+  }
+
+  .todayLede {
+    font-size: 1rem;
+  }
+
+  .todayStack {
+    display: grid;
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+    align-items: start;
+    gap: 24px;
+  }
+
+  .todayBriefColumn,
+  .todayExploreColumn {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 12px;
+  }
+
+  .todayFoot {
+    justify-content: flex-start;
+    margin-top: 32px;
+  }
+}

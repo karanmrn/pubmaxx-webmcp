@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: en-US
+reviews:
+  profile: chill
+  request_changes_workflow: false
+  high_level_summary: true
+  review_status: true
+  auto_review:
+    enabled: true
+    drafts: false
+  # path_filters: bare globs INCLUDE; prefix with ! to EXCLUDE (gitignore-style inverted).
+  path_filters:
+    - "!data/generated/**"
+    - "!public/data/**/*.json"
+    - "!package-lock.json"
+    - "!**/*.lock"
+  path_instructions:
+    - path: "app/api/**"
+      instructions: |
+        - Prefer auth-resolved handles (resolveMessageHandle / JWT-linked profile) before gateHandleAction; do not trust body/query handle alone when auth is present. Keep unlinked/demo paths working.
+        - Map durable store write failures to 503 (degraded dependency), not 400/500. Reserve 400 for validation.
+        - Avoid silent no-op filters — failed filters should error or be explicit.
+        - App Router outputFileTracingIncludes keys must use dynamic segments like `/api/venue/[id]`, not wildcards.
+    - path: "lib/**"
+      instructions: |
+        - Drink/brand matching must use word-boundary parity (not substring-only).
+        - Do not permanently cache failed reads as null without retry; cache successes only.
+        - Prefer shared ownership helpers (gateHandleAction) over ad-hoc handle checks.
+    - path: "scripts/**"
+      instructions: |
+        - Keep venue-grouping / drink-hint logic in lockstep with lib helpers; flag silent no-ops and brittle path assumptions.
+    - path: "components/**"
+      instructions: |
+        - Do not trust client-asserted handles for ownership; server routes must re-check.
+        - Prefer honest empty/thin-coverage UI over special-casing categories that hide status.

@@ -1,0 +1,80 @@
+/* The one navigation affordance (components/ui/surface-nav.tsx).
+   Leading = Back, trailing = Home, same box at every width and on every panel.
+
+   Quiet by rule (design judgement 2026-08-01, findings 2.4 and 2.16): no
+   border, no fill at rest. A bordered box with a coral hover ring made the way
+   out of the venue sheet louder than the pub's name. The accent is spent on the
+   focus ring alone, where it does a job nothing else can do. */
+
+.surfaceNavBack,
+.surfaceNavHome {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px is the tap floor this product measures against
+     (__tests__/mobileChromeFit.test.ts). Both controls take the same box on
+     every surface, so a reader's thumb learns one target. */
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text-muted, var(--muted));
+  cursor: pointer;
+}
+
+/* Both controls sit in the head's first row, whatever the host's markup order.
+   The title takes the middle cell before either control is parsed, so grid's
+   sparse auto-placement pushes a leading control that names only its COLUMN
+   onto a second row: the pub's name sat alone on one line with Back and Home
+   stranded under it. Naming the row keeps the head one row deep. */
+.surfaceNavBack {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.surfaceNavHome {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .surfaceNavBack:hover,
+  .surfaceNavHome:hover {
+    color: var(--color-text, var(--ink));
+    background: color-mix(in srgb, currentColor 10%, transparent);
+  }
+}
+
+.surfaceNavBack:focus-visible,
+.surfaceNavHome:focus-visible {
+  outline: 2px solid var(--color-accent, var(--brass));
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .surfaceNavBack,
+  .surfaceNavHome {
+    transition:
+      color var(--duration-base) var(--ease-out),
+      background-color var(--duration-base) var(--ease-out),
+      transform var(--duration-press) var(--ease-out);
+  }
+  /* Press feedback lands on pointer-down, not on release. */
+  .surfaceNavBack:active,
+  .surfaceNavHome:active {
+    transform: scale(0.97);
+    --shared-press-scale: 1;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .surfaceNavBack,
+  .surfaceNavHome {
+    color: var(--color-text, var(--ink));
+    border: 1px solid var(--color-border, var(--line));
+  }
+}

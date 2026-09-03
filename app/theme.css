@@ -1,0 +1,378 @@
+/* Dark theme: Direction B Night Out - deep ink, coral CTA, amber route energy,
+   pint neon go. No purple mesh/glow. See DESIGN.md + PRODUCT.md.
+   Overrides the same tokens :root sets in globals.css. Do NOT edit globals.css here. */
+
+html:not([data-theme="dark"]) {
+  color-scheme: light;
+}
+
+/* Crafted theme flip: ease the key surfaces' colours when data-theme changes,
+   so light↔dark reads as a fade rather than a hard cut. Scoped to colour-ish
+   properties on the main surfaces only (never `all`, never the map canvas).
+   Held behind no-preference so reduced-motion users get an instant swap. */
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .lp,
+  .lp .topbar,
+  .lp .chatMock,
+  .lp .dropSample,
+  .lp .statChip,
+  .lp .heroFigure,
+  .controlRail,
+  .routePanel,
+  .siteNav,
+  .landmarkCard,
+  .mapHeroCard,
+  .writerCard,
+  .admin-card {
+    transition:
+      background-color var(--duration-base, 0.18s) var(--ease-out, ease-out),
+      color var(--duration-base, 0.18s) var(--ease-out, ease-out),
+      border-color var(--duration-base, 0.18s) var(--ease-out, ease-out);
+  }
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Apple-neutral dark surfaces (owner decision, cycle-trust-tonight): kill the
+     M4 sage/green tint on DOM chrome and run a TRUE-NEUTRAL elevation ladder —
+     each surface step is a clear luminance lift over the one below (page 0a →
+     recessed panel 14 → raised card 20 → overlay/sheet 2b), so cards read as
+     lifted off the page the way Linear/x.com surfaces do, by luminance not hue.
+     dark-mode-v1: raised (1c→20) and overlay (24→2b) were nudged up so cards no
+     longer sit flush with the page; the border (see --hairline) does the rest.
+     Brass/amber is the ONLY vivid accent; every other accent is demoted below.
+     The map keeps its M4 dusk identity via the dedicated --map-* tokens
+     (sky/buildings/parks), which are untouched. --ink stays as-is on purpose:
+     the map reads it for label ink and it is already a neutral near-white.
+     --paper/--panel-raised/--line are also read by the map's readTokens() at
+     document.documentElement — see the --hairline note below for how the DOM
+     hairline is brightened without repainting the WebGL basemap. */
+  --ink: #eef3ef;
+  --ink-soft: #c9c9ce;
+  --muted: #9a9aa0;
+  --line: #2c2c30; /* KEEP: dark map roads read this at :root (readTokens) */
+  --line-soft: #242428; /* softest divider — sits between panel and hairline */
+  --paper: #0a0a0b;
+  --panel: #141416;
+  --panel-raised: #202024; /* raised cards — clear step up from panel (was #1c1c1f) */
+  --panel-overlay: #2b2b30; /* 4th step — menus / popovers / sheets (was #242427) */
+  --ink-deep: #060607; /* deepest well — neutral near-black (was cyan-ish #040606) */
+  --sheet-material: color-mix(in srgb, var(--panel-overlay) 82%, transparent);
+  --sheet-material-solid: var(--panel-overlay);
+  --sheet-material-border: color-mix(in srgb, var(--ink) 10%, transparent);
+  --sheet-material-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 1px 2px rgba(0, 0, 0, 0.46),
+    0 22px 58px rgba(0, 0, 0, 0.58);
+
+  /* Hairline (dark-mode-v1) — a DEDICATED divider token, tuned to x.com's
+     structural-edge contrast. Their reference is #2f3336 on #000 (~1.6:1); this
+     reproduces that RATIO against our warm near-blacks (~1.75:1 vs --paper,
+     ~1.5:1 vs a raised card), so card / nav / chip edges are unmistakably
+     present without going gray-on-gray. Warm-neutral (R≥G≥B), never coral, so
+     it reads as structure, not accent.
+       The map's readTokens() reads --line (for the dusk road tint) but never
+     --hairline, so --hairline is free to be this bright at :root. The
+     `html[data-theme="dark"] body` rule below then re-points --line at
+     --hairline for every DOM surface UNDER body — cards, nav, chips, and the
+     tonight/feed surfaces this lane can't edit all consume var(--line), so the
+     brighter edge flows in automatically. The WebGL map reads --line from
+     document.documentElement (ABOVE body), so its road tint stays #2c2c30 and
+     the basemap is untouched. One token, both goals. */
+  --hairline: #3b3a37;
+
+  /* Accent demotion: coral carries branded actions while amber stays a route
+     every other accent drops to a low-chroma tint so it can't bloom on
+     near-black while staying legible for its semantic job. */
+  --pint: #5fb389; /* cheap / positive — muted go-green (was neon #3dff9a) */
+  --amber: #f0a01a; /* mid price + route energy — FULL chroma, kept */
+  --brick: #d47a82; /* dear / destructive — muted rose-red (was #ff6b7a) */
+  /* One PUBMAXX identity in both modes: dark mode must not become a different
+     amber brand. Amber remains transport/price semantics, coral owns action. */
+  --brass: #ff5a5f;
+  --brass-bright: #ff7a55;
+  --night-amber: #f0a01a;
+  --river: #7aa6cc; /* info / by-water — muted steel blue (was #64b5ff) */
+  --river-bright: #9ac0da; /* muted light blue (was #7dd3fc) */
+  --spritz: #d8c48f; /* muted gold (was #ffd166) */
+  --neon: #78bd97; /* muted green (was #5cff99) */
+  --grape: #9b90c0; /* muted violet (was #a78bfa) — no purple mesh */
+  --pink: #cf8bb6; /* muted pink (was #ff7ac8) */
+  --color-on-accent: var(--ink-deep);
+
+  /* Accent role discipline (token-system-v2) — dark tuning. The role tokens
+     themselves are defined in globals.css as color-mix over the palette; most
+     track the dark palette automatically. The plaque needs a darker mix (the
+     price plate must read as lit metal on near-black, not a bright cream chip)
+     and the top-shine drops to a faint warm sheen. --amber stays full-chroma
+     in dark, so the brass-plaque identity survives the theme flip. */
+  --accent-price-ink: color-mix(in srgb, var(--amber) 80%, var(--ink));
+  --price-plaque-surface: color-mix(in srgb, var(--amber) 16%, var(--panel-raised));
+  --price-plaque-border: color-mix(in srgb, var(--amber) 42%, var(--line));
+  --price-plaque-shine: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  /* Structural edge (section / toolbar boundaries) — one clear step brighter
+     than --hairline, anchored on it so the two track together. */
+  --hairline-strong: color-mix(in srgb, var(--hairline) 58%, var(--ink-soft) 42%);
+
+  /* P1 chrome cleanup — Apple-neutral near-black DOM-chrome surfaces.
+     --paper/--panel/--panel-raised/--line above carry a deliberate sage/green
+     bias (the M4 "Night Out" street palette) that the map canvas reads
+     directly for its own paint (components/map/canvas/tokens.ts readTokens()
+     — ink/paper/panelRaised/line feed pin/label/route colour). Retinting
+     those shared tokens would silently repaint the map, which is out of
+     scope here (map keeps its M4 dusk identity). These --chrome-* tokens are
+     a SEPARATE, DOM-chrome-only neutral scale that a handful of non-map
+     containers opt into by locally reassigning --panel/--panel-raised/
+     --paper/--line to the --chrome-* values (see the three rules below) —
+     everything that doesn't opt in, including the map, is unchanged. */
+  --chrome-paper: #090909;
+  --chrome-panel: #121212;
+  --chrome-panel-raised: #181818;
+  --chrome-line: #2a2a2a;
+
+  /* M4 — dusk/night signature look. Deep indigo zenith fading to a warm brass
+     horizon band (setSky); warmed 3-D building massing (never full brass —
+     stays a desaturated warm gray so footprints read against inkDeep); park
+     tint deliberately NOT --pint (neon-go semantic) so foliage never collides
+     with the "cheap pint" UI colour. */
+  --map-sky-zenith: #141a3d;
+  --map-sky-horizon: var(--brass);
+  --map-building-emissive: #8f7d6b;
+  --map-park-tint: #3f5c38;
+  /* Crawl walk-route line — bright coral-ember so the route pops on the OLED
+     ink basemap (the dark-mode counterpart to the light dark-crimson). */
+  --route-line: #ff6b5c;
+
+  /* Apple-neutral elevation language (replaces amber street-light bloom): a
+     top-inset hairline catches light on the card's top edge, a 1px dark ring
+     contains it against near-black, and a soft NEUTRAL drop gives depth — all
+     achromatic, no amber glow. Token NAMES kept; consumers unchanged. */
+  --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.5), 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-sm: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.45), 0 6px 18px rgba(0, 0, 0, 0.5);
+  --shadow-inset-press: inset 0 1px 2px rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  --gradient-party: linear-gradient(135deg, var(--paper) 0%, var(--panel) 48%, var(--ink-deep) 100%);
+
+  /* Map chrome on night basemap — black lift, not lavender paper shadows.
+     Also set on .appShell below: that node redefines the same vars for light. */
+  --map-overlay-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+  --map-overlay-shadow-tight: 0 6px 14px rgba(0, 0, 0, 0.48);
+
+  /* Dark type: slightly stronger secondary contrast so body copy stays crisp
+     on charcoal (thin muted greys wash out under night contrast). */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+/* dark-mode-v1 hairline flow — re-point --line at the brighter --hairline for
+   every DOM surface under <body>. The map's readTokens() reads --line from
+   document.documentElement (the html node ABOVE body), so its dusk road tint
+   keeps the untouched #2c2c30; everything the DOM paints — card / nav / chip /
+   panel edges, including the tonight + feed surfaces this lane cannot edit —
+   inherits the visible hairline through the same var(--line) they already use.
+   This is the whole point of a token pass: structure flows in, no markup edits,
+   no basemap repaint. --line-soft (softest divider) is left as its own quieter
+   value on purpose. */
+html[data-theme="dark"] body {
+  --line: var(--hairline);
+}
+
+/* .appShell redefines --map-overlay-shadow* for the light map; override here so
+   floating map chrome keeps black night lift instead of lavender paper shadow. */
+html[data-theme="dark"] .appShell {
+  --map-overlay-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+  --map-overlay-shadow-tight: 0 6px 14px rgba(0, 0, 0, 0.48);
+}
+
+/* Map floating chrome: solid night panels so Home + Search read as twins over
+   the dark basemap (no frosted glass wash that fights cream land leftovers). */
+html[data-theme="dark"] .siteNavBarFloating,
+html[data-theme="dark"] .mapToolbar {
+  /* dark-mode-v1: neutral structural edge (was 30% coral — muddy on near-black).
+     Accent is reserved for hover/active; passive chrome stays neutral. */
+  border-color: var(--hairline);
+  background: var(--panel-raised);
+  box-shadow: var(--map-overlay-shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+html[data-theme="dark"] .mapFitLondonBtn,
+html[data-theme="dark"] .mapRecenterBtn,
+html[data-theme="dark"] .mapCompassBtn {
+  /* dark-mode-v1: resting edge neutral (was 45% coral); brass returns on hover. */
+  border-color: var(--hairline);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  box-shadow: var(--map-overlay-shadow-tight);
+}
+
+html[data-theme="dark"] .mapFitLondonBtn:hover,
+html[data-theme="dark"] .mapRecenterBtn:not(:disabled):hover,
+html[data-theme="dark"] .mapCompassBtn:hover {
+  background: color-mix(in srgb, var(--brass) 22%, var(--panel-raised));
+  color: var(--ink);
+  border-color: var(--brass);
+}
+
+html[data-theme="dark"] .mapRecenterBtn:disabled {
+  opacity: 0.42;
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+html[data-theme="dark"] .mappedRouteChip,
+html[data-theme="dark"] .bandOnboardingChip {
+  /* dark-mode-v1: neutral hairline edge (was 40% coral). */
+  border-color: var(--hairline);
+  background: var(--panel-raised);
+  box-shadow: var(--map-overlay-shadow);
+}
+
+html[data-theme="dark"] .mobileTabList {
+  border-color: var(--hairline); /* dark-mode-v1: was 25% coral */
+  background: var(--panel-raised);
+  box-shadow:
+    0 -6px 18px rgba(0, 0, 0, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Desktop nav pill: neutral structural edge in dark (globals gives it a 30%
+   coral-mixed border for the warm light look; on near-black that reads as a
+   muddy coral leak). The active link keeps its brass fill — that is the one
+   licensed accent moment. Light is untouched. */
+html[data-theme="dark"] .siteNav {
+  border-color: var(--hairline);
+}
+
+html[data-theme="dark"] .lpNav {
+  border-color: var(--hairline);
+  background: var(--panel-raised);
+  box-shadow: var(--map-overlay-shadow-tight);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Typography is theme-invariant. Dark mode changes contrast, never scale or
+   weight; this prevents the same viewport reading larger at night. */
+
+/* Theme toggle. Base = the inline/nav variant: a quiet brass-hover icon button
+   that reads cleanly in a nav in BOTH themes. `.floating` lifts it into the
+   raised top-right pill used on /map. */
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.themeToggle:hover {
+  color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+  border-color: color-mix(in srgb, var(--brass) 30%, transparent);
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Floating variant on /map — small raised pill, top-right. */
+.themeToggle.floating {
+  position: fixed;
+  /* Clear the notch/status bar on fixed chrome (dark-mode-v1 audit). */
+  top: max(16px, env(safe-area-inset-top, 0px));
+  right: 16px;
+  z-index: var(--z-float);
+  width: 44px;
+  height: 44px;
+  border-color: var(--line);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow);
+}
+
+.themeToggle.floating:hover {
+  color: var(--ink);
+  background: var(--panel-raised);
+  border-color: var(--brass);
+  transform: translateY(-1px);
+}
+
+/* Plan CTA keeps the locked coral gradient in both themes. Dark ink owns label
+   contrast; --night-amber remains a route and price signal. */
+html[data-theme="dark"] .planBtn {
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  box-shadow: var(--shadow-btn); /* D3: tighter, darker layered stack (dark tokens) */
+  color: var(--color-on-accent-strong);
+}
+
+html[data-theme="dark"] .planBtn:hover {
+  box-shadow: var(--shadow-btn-hover);
+}
+
+html[data-theme="dark"] .planBtn.active {
+  background: linear-gradient(135deg, var(--ink-deep), color-mix(in srgb, var(--ink-deep) 70%, var(--pint)));
+  color: var(--color-on-inverse);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   P1 dark-chrome cleanup (owner audit, cycle-trust-tonight)
+   ---------------------------------------------------------------------------
+   1) Nav active-pill: siteNav.css's per-route drink-category tint
+      (.siteNavLink.isActive[data-cat]) is correct product direction in LIGHT
+      (D1 pass) but several dark --cat-* values (e.g. --cat-wine #e07a97) read
+      as an off-brand pink/coral leak against the near-black dark shell, and
+      others (--cat-other) land as a dull off-brass tan — neither is the
+      single coral action accent the dark chrome owns. Pin every route's
+      active pill back to brass in dark only; light keeps its category tints.
+   2) Olive "dusk kitsch": the shared --paper/--panel/--panel-raised/--line
+      tokens carry the M4 sage/green bias the map itself needs (see the
+      --chrome-* token comment above). These three DOM-chrome surfaces read
+      those shared tokens for a plain background fill (no map paint involved),
+      so they picked up the same green cast by accident. Scope-override the
+      tokens locally on each container — CSS custom properties cascade to
+      every descendant that reads var(--panel-raised) etc., so this is a
+      three-rule fix rather than a chase through every consumer line. ═══════ */
+
+/* 1) Nav active pill - always coral in dark, regardless of data-cat. */
+html[data-theme="dark"] .siteNavLink.isActive[data-cat] {
+  background: var(--brass);
+  color: var(--color-on-accent);
+}
+
+/* 2a) "Start with a story" map onboarding modal. */
+html[data-theme="dark"] .mapOnboarding {
+  --panel: var(--chrome-panel);
+  --panel-raised: var(--chrome-panel-raised);
+  --line: var(--chrome-line);
+}
+
+/* 2b) Home city cards (CityChooser's embedded --section variant only — the
+   full-bleed --page /choose-city variant already sits on --ink-deep, which
+   is already near-neutral, so it's untouched). */
+html[data-theme="dark"] .cityChooser--section {
+  --panel: var(--chrome-panel);
+  --panel-raised: var(--chrome-panel-raised);
+  --paper: var(--chrome-paper);
+  --line: var(--chrome-line);
+}
+
+/* 2c) Feed — the diagonal category streaks + every card surface under it. */
+html[data-theme="dark"] .feedShell {
+  --panel: var(--chrome-panel);
+  --panel-raised: var(--chrome-panel-raised);
+  --paper: var(--chrome-paper);
+  --line: var(--chrome-line);
+}

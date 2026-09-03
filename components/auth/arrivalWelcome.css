@@ -1,0 +1,189 @@
+/* The arrival line. A floating, translucent strip that names the person and
+   retires itself. Token-driven, so it tracks both themes without a second
+   palette.
+
+   Layering: above ordinary page chrome, BELOW the tab bar and below every
+   modal. It is a greeting, not a gate, so nothing it does may cover a control
+   the reader needs. The strip itself takes no pointer events; only the dismiss
+   button does, so a tap that misses it lands on the page underneath. */
+
+.arrivalWelcome {
+  position: fixed;
+  z-index: calc(var(--z-modal, 1200) - 1);
+  /* BELOW the top bar, never over it. The greeting must not cover the wordmark,
+     the nav links or the theme control: a line that hides the way out is a gate
+     wearing a toast's clothes. --topbar-h is the app-shell bar height
+     (components/nav/siteNav.css). */
+  top: calc(
+    max(0.5rem, env(safe-area-inset-top)) + var(--topbar-h, 52px) + 0.5rem
+  );
+  left: max(0.75rem, env(safe-area-inset-left));
+  right: max(0.75rem, env(safe-area-inset-right));
+  margin-inline: auto;
+  width: fit-content;
+  max-width: min(24rem, calc(100vw - 1.5rem));
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--brass) 38%, var(--line));
+  border-radius: 999px;
+  /* Near-solid, not frosted-thin. This pill floats over arbitrary page copy,
+     and a light translucent surface over light content loses its own text: the
+     heading underneath read straight through the first version. The blur stays
+     for the fringe, so it still arrives as a material rather than a rectangle. */
+  background: color-mix(in srgb, var(--panel-raised) 97%, transparent);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--paper) 55%, transparent),
+    0 18px 46px color-mix(in srgb, var(--ink-deep) 30%, transparent);
+  pointer-events: none;
+
+  /* Enter: down from where the page came from, fast out of the gate. Never
+     from scale(0) - it arrives, it does not pop into being. */
+  animation: arrivalWelcomeIn 260ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Exit is quicker than the entrance: the person decided, the system answers. */
+.arrivalWelcome[data-leaving] {
+  animation: arrivalWelcomeOut 200ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.arrivalWelcomeLine {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Carrying the founders' door, the strip stops being a one-line pill: it grows
+   a second row and a softer radius, the greeting is allowed to wrap, and the
+   dismiss control moves to the corner. Only the door and the dismiss take
+   pointer events, so a tap that misses either still lands on the page. */
+.arrivalWelcome[data-founding] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  align-items: start;
+  gap: 0.5rem;
+  width: min(24rem, calc(100vw - 1.5rem));
+  padding: 0.75rem 0.75rem 0.85rem 0.95rem;
+  border-radius: 20px;
+  /* Opaque, not near-opaque. The one-line pill can afford a trace of the page
+     underneath; this variant is twice as tall and carries a link, and page
+     copy reading through a control is how a link stops looking like one. */
+  background: var(--panel-raised);
+}
+
+/* Every child is placed by hand. Left to auto-placement the door spans both
+   columns on row two and pushes the dismiss control down to a row of its own,
+   which reads as a stray button under the link rather than a corner close. */
+.arrivalWelcome[data-founding] .arrivalWelcomeLine {
+  grid-column: 1;
+  grid-row: 1;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.arrivalWelcome[data-founding] .arrivalWelcomeDismiss {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.arrivalWelcomeDoor {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  pointer-events: auto;
+}
+
+.arrivalWelcomeDoor > * {
+  width: 100%;
+}
+
+.arrivalWelcomeDismiss {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  /* Press feedback is the app-wide button scale owner (app/globals.css);
+     this control only owns its own colour change. */
+  transition: color 140ms ease;
+}
+
+.arrivalWelcomeDismiss:hover {
+  color: var(--ink);
+}
+
+@keyframes arrivalWelcomeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrivalWelcomeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Reduced motion keeps the greeting, drops the travel. */
+@media (prefers-reduced-motion: reduce) {
+  .arrivalWelcome {
+    animation: arrivalWelcomeFadeIn 180ms ease both;
+  }
+
+  .arrivalWelcome[data-leaving] {
+    animation: arrivalWelcomeFadeOut 160ms ease both;
+  }
+
+  .arrivalWelcomeDismiss {
+    transition: none;
+  }
+}
+
+@keyframes arrivalWelcomeFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes arrivalWelcomeFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Frostier, not transparent, when the reader asked for less translucency. */
+@media (prefers-reduced-transparency: reduce) {
+  .arrivalWelcome {
+    background: var(--panel-raised);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

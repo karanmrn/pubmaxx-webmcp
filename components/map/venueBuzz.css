@@ -1,0 +1,112 @@
+/* "Around the web" AI buzz block on the venue sheet Overview (task A3).
+   Same ambient language as .cityPlaceStrip: brass eyebrow, chip pills,
+   token-only colours. Static block — no transitions or animation, so it is
+   reduced-motion compliant by construction. 390px-first: everything wraps. */
+
+.venueBuzz {
+  margin: 12px 0 2px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 18%, var(--line));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel-raised) 94%, transparent);
+  color: var(--ink);
+}
+
+.venueBuzzHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-bottom: 6px;
+}
+
+.venueBuzzEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.venueBuzzSource {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+
+.venueBuzzSummary {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* Inline press citation: a real superscript that links to its mention. */
+.venueBuzzCite {
+  font-size: 0.7em;
+  line-height: 0;
+  font-weight: 600;
+  margin-left: 1px;
+}
+
+.venueBuzzCite a {
+  color: var(--brass);
+  text-decoration: none;
+  /* The glyph is a 6px superscript numeral, which is a miserable thumb target.
+     Padding grows the hit box; the matching negative margin (with the
+     line-height: 0 above) keeps the prose lines exactly where they were. An
+     inline citation cannot reach 44px without wrecking the paragraph, so this
+     is as far as it goes; the same source is also a full-size chip in the
+     mentions list below the summary. */
+  padding: 7px 5px;
+  margin: -7px -4px;
+}
+
+.venueBuzzCite a:hover,
+.venueBuzzCite a:focus-visible {
+  text-decoration: underline;
+}
+
+.venueBuzzMentions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.venueBuzzMention a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  /* These pills are the full-size way to reach a source (the inline superscript
+     citation above can never be thumb-sized), so they carry the 44px floor. */
+  min-height: 44px;
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.venueBuzzMention a:hover,
+.venueBuzzMention a:focus-visible {
+  text-decoration: underline;
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+}
+
+.venueBuzzNote {
+  display: block;
+  margin: 0;
+  font-size: 0.66rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}

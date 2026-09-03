@@ -1,0 +1,6218 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-09T22:43:45Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 1469470708,
+      "lat": 51.4755075,
+      "lon": -2.53302,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "80-82",
+        "addr:postcode": "BS16 3JP",
+        "addr:street": "Lodge Causeway",
+        "addr:suburb": "Fishponds",
+        "amenity": "pub",
+        "fhrs:id": "312051",
+        "name": "The Greyhound",
+        "website": "https://www.greyhoundfishponds.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1694620775,
+      "lat": 51.4565586,
+      "lon": -2.6132752,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:door": "Bar 100",
+        "addr:housename": "The Richmond Building",
+        "addr:housenumber": "105",
+        "addr:postcode": "BS8 1LN",
+        "addr:street": "Queen's Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "fhrs:id": "668156",
+        "level": "1",
+        "name": "The Balloon Bar",
+        "operator": "University Of Bristol Union",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4055662989,
+      "lat": 51.4579032,
+      "lon": -2.5936977,
+      "tags": {
+        "amenity": "pub",
+        "brand": "Brewers Fayre",
+        "brand:wikidata": "Q4962678",
+        "breakfast": "yes",
+        "check_date": "2025-02-01",
+        "cuisine": "british",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "name": "Brewers Fayre",
+        "outdoor_seating": "yes",
+        "toilets:wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4374496055,
+      "lat": 51.4615559,
+      "lon": -2.5374966,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "123",
+        "addr:postcode": "BS5 7LH",
+        "addr:street": "Clouds Hill Road",
+        "addr:suburb": "Saint George",
+        "amenity": "pub",
+        "contact:phone": "+44 117 955 6915",
+        "fhrs:id": "312566",
+        "name": "Mechanics Arm"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9597192842,
+      "lat": 51.4588842,
+      "lon": -2.6034942,
+      "tags": {
+        "addr:postcode": "BS8 1TQ",
+        "addr:street": "Tyndall Avenue",
+        "addr:suburb": "Tyndall's Park",
+        "amenity": "pub",
+        "name": "The Beckford",
+        "opening_hours": "Mo-Fr 12:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12596646599,
+      "lat": 51.4565351,
+      "lon": -2.5792263,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "16",
+        "addr:postcode": "BS2 0DF",
+        "addr:street": "West Street",
+        "addr:suburb": "St Philip's",
+        "amenity": "pub",
+        "lgbtq": "welcome",
+        "name": "The Ill Repute",
+        "source:addr": "FHRS Open Data",
+        "website": "https://illrepute.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12911012260,
+      "lat": 51.4424999,
+      "lon": -2.5972206,
+      "tags": {
+        "amenity": "pub",
+        "microbrewery": "yes",
+        "name": "On Point"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12919140489,
+      "lat": 51.4425963,
+      "lon": -2.5957153,
+      "tags": {
+        "addr:housename": "Regent House",
+        "addr:housenumber": "1",
+        "addr:parentstreet": "East Street",
+        "addr:postcode": "BS3 4HH",
+        "addr:street": "Imperial Arcade",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "craft": "brewery",
+        "fhrs:id": "1602900",
+        "name": "Alpha Bottle Shop & Tap",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12961242035,
+      "lat": 51.4497968,
+      "lon": -2.6014524,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housename": "Building 11",
+        "addr:postcode": "BS1 5TY",
+        "addr:street": "Explore Lane",
+        "addr:suburb": "City Centre",
+        "addr:unit": "4",
+        "amenity": "pub",
+        "brand": "Slug & Lettuce",
+        "brand:wikidata": "Q7542224",
+        "fhrs:id": "927087",
+        "name": "Slug & Lettuce",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.slugandlettuce.co.uk/bristol-harbourside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12961242037,
+      "lat": 51.4497586,
+      "lon": -2.6019633,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 5SZ",
+        "addr:street": "Millennium Promenade",
+        "addr:suburb": "City Centre",
+        "addr:unit": "2",
+        "amenity": "pub",
+        "name": "Lane7",
+        "nohousenumber": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://lane7.co.uk/bristol/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12973082090,
+      "lat": 51.4508142,
+      "lon": -2.5983887,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "U Shed",
+        "addr:postcode": "BS1 5UH",
+        "addr:street": "Canons Road",
+        "addr:suburb": "City Centre",
+        "alt_name": "Bristol's Sports Bars",
+        "amenity": "pub",
+        "check_date": "2026-04-24",
+        "fhrs:id": "874052",
+        "name": "bSb",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12973082093,
+      "lat": 51.4510984,
+      "lon": -2.5983467,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 5UH",
+        "addr:street": "Canons Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "contact:email": "bristol@mackenzies.co.uk",
+        "contact:phone": "+44 117 922 5496",
+        "contact:website": "http://www.mackenzies.co.uk/",
+        "fhrs:id": "311656",
+        "level:ref": "0",
+        "name": "Mackenzies Bar + Kitchen",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12973082099,
+      "lat": 51.4515487,
+      "lon": -2.5982659,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 5UH",
+        "addr:street": "Canons Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "The Stable",
+        "check_date": "2023-03-29",
+        "cuisine": "pie;pizza",
+        "fhrs:id": "1295901",
+        "level:ref": "0",
+        "name": "The Bristol Stable",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12973154704,
+      "lat": 51.4520986,
+      "lon": -2.5980994,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 5UH",
+        "addr:street": "Canons Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "check_date": "2025-10-22",
+        "check_date:opening_hours": "2025-10-22",
+        "contact:email": "thsbristol@gmail.com",
+        "contact:facebook": "https://www.facebook.com/no1harbourside",
+        "contact:phone": "+44 117 9291100",
+        "contact:website": "http://www.no1harbourside.co.uk/",
+        "cuisine": "oysters;tapas",
+        "fhrs:id": "310474",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "level:ref": "0",
+        "music": "live",
+        "name": "No.1 Harbourside",
+        "old_name": "The River",
+        "opening_hours": "Mo 16:30-22:00, Tu-Th 11:00-23:00, Fr 11:00-01:00, Sa 10:00-01:00, Su 10:00-22:00",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13004671917,
+      "lat": 51.4507352,
+      "lon": -2.5711726,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS2 0QD",
+        "addr:street": "Silverthorne Lane",
+        "addr:suburb": "St Philips",
+        "addr:unit": "Railway Arch 5",
+        "amenity": "pub",
+        "drink:cider": "yes",
+        "microbrewery": "yes",
+        "name": "The Cider Box",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.theciderbox.com/pages/bristols-cider-taproom"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13042314503,
+      "lat": 51.4507777,
+      "lon": -2.5822364,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 6DG",
+        "addr:street": "The Square",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "brewery": "various",
+        "dog": "no",
+        "fhrs:id": "386124",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:ssid": "_The Cloud",
+        "name": "The Knights Templar",
+        "opening_hours": "Mo-Sa 07:00-24:00; Su 08:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 930 8710",
+        "ref:vatin": "GB396331433",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:disposal": "flush",
+        "toilets:female": "yes",
+        "toilets:hands_drying": "electric_hand_dryer",
+        "toilets:handwashing": "yes",
+        "toilets:male": "yes",
+        "toilets:position": "seated;urinal",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/bristol/the-knights-templar-bristol",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/2703/menus",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13101183750,
+      "lat": 51.4543399,
+      "lon": -2.5942302,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "40",
+        "addr:postcode": "BS1 1HQ",
+        "addr:street": "Corn Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "Walkabout",
+        "brand:wikidata": "Q7962149",
+        "fhrs:id": "978518",
+        "name": "Walkabout",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.walkaboutbars.co.uk/bristol",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13114963984,
+      "lat": 51.4538423,
+      "lon": -2.5930806,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "7-9",
+        "addr:postcode": "BS1 1UE",
+        "addr:street": "Saint Nicholas Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "check_date": "2024-12-14",
+        "fhrs:id": "311977",
+        "music": "live",
+        "name": "The Mothers' Ruin",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13123384240,
+      "lat": 51.4484369,
+      "lon": -2.5840333,
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "City Point",
+        "addr:postcode": "BS1 6PL",
+        "addr:street": "Temple Gate",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "check_date": "2025-08-19",
+        "food": "yes",
+        "music": "yes",
+        "name": "The Sidings",
+        "real_ale": "yes",
+        "source": "survey",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13458009550,
+      "lat": 51.4596577,
+      "lon": -2.5468252,
+      "tags": {
+        "addr:housenumber": "280",
+        "addr:postcode": "BS5 8AH",
+        "addr:street": "Church Road",
+        "amenity": "pub",
+        "name": "The Pickled Parrot"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13731666801,
+      "lat": 51.4357751,
+      "lon": -2.5371669,
+      "tags": {
+        "addr:housenumber": "20",
+        "addr:postcode": "BS4 5QH",
+        "addr:street": "Bonville Road",
+        "amenity": "pub",
+        "check_date": "2026-04-16",
+        "check_date:opening_hours": "2026-04-16",
+        "contact:instagram": "hopunionbrewerytaproom",
+        "internet_access": "wlan",
+        "name": "Hop Union Taproom",
+        "opening_hours": "Th-Fr 16:00-21:00; Sa 13:00-21:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 957 2842",
+        "website": "https://hopunionbrewery.co.uk/pages/taproom"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13990760302,
+      "lat": 51.4594797,
+      "lon": -2.5507185,
+      "tags": {
+        "addr:housenumber": "190",
+        "addr:postcode": "BS5 8AE",
+        "addr:street": "Church Road",
+        "amenity": "pub",
+        "name": "The Red Church",
+        "website": "https://theredchurch.net/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 32452271,
+      "center": {
+        "lat": 51.4406015,
+        "lon": -2.606296
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "110",
+        "addr:postcode": "BS3 1HF",
+        "addr:street": "North Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312110",
+        "name": "The Masonic",
+        "ref:GB:uprn": "328294;271776;326563;122925",
+        "source": "Yahoo! imagery"
+      }
+    },
+    {
+      "type": "way",
+      "id": 69641575,
+      "center": {
+        "lat": 51.4645302,
+        "lon": -2.6115761
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Clifton Down Station",
+        "addr:housenumber": "41",
+        "addr:postcode": "BS8 2PN",
+        "addr:street": "Whiteladies Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "978419",
+        "food": "yes",
+        "name": "Steam",
+        "not:addr:postcode": "BS8 2PH",
+        "note": "this is the converted main building of Clifton Down railway station",
+        "old_name": "Roo Bar",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 83210378,
+      "center": {
+        "lat": 51.4474142,
+        "lon": -2.5890314
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 6PA",
+        "addr:street": "Cathay",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "check_date": "2024-10-27",
+        "fhrs:id": "584193",
+        "name": "The Ship Inn",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26570038"
+      }
+    },
+    {
+      "type": "way",
+      "id": 83537352,
+      "center": {
+        "lat": 51.4472382,
+        "lon": -2.6186476
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Nova Scotia Hotel",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 6XJ",
+        "addr:street": "Nova Scotia Place",
+        "addr:suburb": "Hotwells",
+        "amenity": "pub",
+        "building": "retail",
+        "check_date": "2025-10-26",
+        "fhrs:id": "1846926",
+        "indoor_seating": "yes",
+        "name": "Nova Scotia",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "no",
+        "wikidata": "Q7064099",
+        "wikipedia": "en:Nova Scotia, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 83543633,
+      "center": {
+        "lat": 51.4483158,
+        "lon": -2.6180825
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS8 4PZ",
+        "addr:street": "Merchants Road",
+        "addr:suburb": "Hotwells",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-05-11",
+        "fhrs:id": "312688",
+        "name": "The Pump House",
+        "ref:GB:uprn": "111777",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes",
+        "wikidata": "Q7259802"
+      }
+    },
+    {
+      "type": "way",
+      "id": 83823153,
+      "center": {
+        "lat": 51.4522417,
+        "lon": -2.5894533
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "The Wool Hall",
+        "addr:housenumber": "12",
+        "addr:postcode": "BS1 6JJ",
+        "addr:street": "Saint Thomas Street",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "architect": "Richard Shackleton Pope",
+        "building": "retail",
+        "building:levels": "3",
+        "contact:email": "info@thefleece.co.uk",
+        "contact:facebook": "http://www.facebook.com/fleecebristol",
+        "contact:myspace": "thefleecebristol",
+        "contact:phone": "+44 117 9450996",
+        "contact:twitter": "@FleeceBristol",
+        "contact:website": "http://www.thefleece.co.uk/",
+        "fhrs:id": "386218",
+        "listed_status": "Grade II",
+        "music": "live",
+        "name": "The Fleece",
+        "ref:GB:nhle": "1207794",
+        "ref:GB:uprn": "200829;107665",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q8033751",
+        "wikipedia": "en:Wool Hall, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 88426823,
+      "center": {
+        "lat": 51.4744842,
+        "lon": -2.5780554
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "The Farm Pub",
+        "addr:postcode": "BS2 9YL",
+        "addr:street": "Hopetoun Road",
+        "addr:suburb": "Saint Werburghs",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "farm@eventbars.com",
+        "fhrs:id": "1043753",
+        "food": "yes",
+        "name": "The Farm",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-24:00; Su 12:00-22:30",
+        "operator": "Event Bars Ltd",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 944 2384",
+        "ref:GB:uprn": "350827;55985",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 90375175,
+      "center": {
+        "lat": 51.439224,
+        "lon": -2.6349966
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS41 9LX",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2023-09-04",
+        "food": "yes",
+        "name": "The Ashton",
+        "old_name": "The Dovecote",
+        "source": "Bing Maps"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93114307,
+      "center": {
+        "lat": 51.4630489,
+        "lon": -2.5926832
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "53",
+        "addr:postcode": "BS2 8LT",
+        "addr:street": "Hillgrove Street North",
+        "addr:suburb": "Cotham",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312991",
+        "name": "Hillgrove Porter Stores",
+        "real_ale": "yes",
+        "real_cider": "yes",
+        "ref:GB:uprn": "346390;84123"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93160189,
+      "center": {
+        "lat": 51.46149,
+        "lon": -2.6024449
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "164",
+        "addr:postcode": "BS2 8DE",
+        "addr:street": "Saint Michael's Hill",
+        "addr:suburb": "Kingsdown",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312584",
+        "name": "The Highbury Vaults",
+        "opening_hours": "Mo-Sa 11:00-23:00; Su 12:00-22:00",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "88361"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93162999,
+      "center": {
+        "lat": 51.4625018,
+        "lon": -2.5911362
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "16-18",
+        "addr:postcode": "BS2 8JT",
+        "addr:street": "Hillgrove Street",
+        "addr:suburb": "Stokes Croft",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "312583",
+        "food": "yes",
+        "garden": "yes",
+        "name": "The Bell",
+        "opening_hours": "Mo-Tu 16:00-24:00; We-Th 14:00-24:00; Fr-Sa 14:00-01:00; Su 16:00-23:00",
+        "operator": "Butcombe Brewery",
+        "phone": "+44 117 909 6612",
+        "ref:GB:uprn": "350975;85680"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93476540,
+      "center": {
+        "lat": 51.4587967,
+        "lon": -2.6142169
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Pembroke Hall",
+        "addr:housenumber": "20",
+        "addr:postcode": "BS8 3BB",
+        "addr:street": "Pembroke Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "fhrs:id": "691050",
+        "garden": "yes",
+        "name": "Channings",
+        "ref:GB:uprn": "94697;351062",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/avon/channings-hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93491705,
+      "center": {
+        "lat": 51.4596495,
+        "lon": -2.6111027
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS8 2BH",
+        "addr:street": "Southleigh Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312925",
+        "name": "Victoria",
+        "ref:GB:uprn": "92862;353267",
+        "wikidata": "Q28913013",
+        "wikipedia": "en:The Victoria, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 94255693,
+      "center": {
+        "lat": 51.4670305,
+        "lon": -2.5827472
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "33",
+        "addr:postcode": "BS6 5LR",
+        "addr:street": "Brook Road",
+        "addr:suburb": "Montpelier",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1151594",
+        "name": "Star & Garter",
+        "ref:GB:uprn": "71963;350917",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 95462184,
+      "center": {
+        "lat": 51.4494272,
+        "lon": -2.6122559
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:place": "Mardyke Wharf",
+        "addr:postcode": "BS8 4RU",
+        "addr:street": "Hotwell Road",
+        "addr:suburb": "Hotwells",
+        "air_conditioning": "no",
+        "amenity": "pub",
+        "building": "ship",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "email": "gb@bristolbeerfactory.co.uk",
+        "facebook": "http://www.facebook.com/grainbarge",
+        "fhrs:id": "312005",
+        "food": "yes",
+        "historic": "ship",
+        "music": "live",
+        "name": "Grain Barge",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr 12:00-23:30; Su 12:00-22:00",
+        "operator": "Bristol Beer Factory",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+44 117 9299347",
+        "twitter": "GrainBarge",
+        "website": "https://grainbarge.com/",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 105564924,
+      "center": {
+        "lat": 51.4539654,
+        "lon": -2.6004192
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 5NA",
+        "addr:street": "Frogmore Street",
+        "addr:suburb": "City Centre",
+        "alt_name": "Skinner's Folly",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/thehatchet/",
+        "fhrs:id": "1378079",
+        "name": "The Hatchet Inn",
+        "ref:GB:uprn": "194600;354583",
+        "source:addr": "FHRS Open Data",
+        "start_date": "1606",
+        "wikidata": "Q5681113",
+        "wikipedia": "en:Hatchet Inn, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108399070,
+      "center": {
+        "lat": 51.456202,
+        "lon": -2.6130976
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "33",
+        "addr:postcode": "BS8 1AW",
+        "addr:street": "Gordon Road",
+        "addr:suburb": "Clifton",
+        "alt_name": "The Richmond",
+        "amenity": "pub",
+        "building": "yes",
+        "cuisine": "pizza",
+        "name": "Barrel House",
+        "old_name": "The Clifton Cow",
+        "old_name:en": "The White Rabbit",
+        "ref:GB:uprn": "360007;100403",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26571245"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108659939,
+      "center": {
+        "lat": 51.4646134,
+        "lon": -2.5896016
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "118",
+        "addr:postcode": "BS6 5RW",
+        "addr:street": "Cheltenham Road",
+        "addr:suburb": "Montpelier",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "385879",
+        "food": "yes",
+        "name": "The Pipe & Slippers",
+        "phone": "+44 117 9427711",
+        "website": "https://www.thepipeandslippers.com/",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108832771,
+      "center": {
+        "lat": 51.4638322,
+        "lon": -2.5900901
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "117-119",
+        "addr:postcode": "BS1 3RW",
+        "addr:street": "Stokes Croft",
+        "addr:suburb": "Saint Pauls",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:instagram": "thecroftbristol",
+        "fhrs:id": "767453",
+        "listed_status": "Grade II",
+        "music": "live",
+        "name": "The Croft",
+        "old_name": "The Crofters Rights",
+        "owner": "Music Venue Properties",
+        "owner:wikidata": "Q134611648",
+        "ref:GB:nhle": "1282098",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.thecroftbristol.co.uk",
+        "wikidata": "Q26571097"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108832789,
+      "center": {
+        "lat": 51.4621761,
+        "lon": -2.5905074
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "51",
+        "addr:postcode": "BS1 3QP",
+        "addr:street": "Stokes Croft",
+        "addr:suburb": "Stokes Croft",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/51stokescroft/",
+        "contact:phone": "+44 117 914 8048",
+        "contact:twitter": "@51stokescroft",
+        "contact:website": "http://51stokescroft.com/",
+        "cuisine": "pizza",
+        "fhrs:id": "409516",
+        "food": "yes",
+        "listed_status": "Grade II",
+        "music": "live",
+        "name": "No. 51",
+        "old_name": "The Junction",
+        "outdoor_seating": "yes",
+        "ref:GB:nhle": "1202604",
+        "wikidata": "Q26498197"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108841081,
+      "center": {
+        "lat": 51.4670434,
+        "lon": -2.5890913
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "5",
+        "addr:postcode": "BS6 5PT",
+        "addr:street": "Bath Buildings",
+        "addr:suburb": "Montpelier",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312667",
+        "image": "http://www.flickr.com/photos/brizzlebornandbred/2097962202/",
+        "name": "The Old England",
+        "opening_hours": "Mo-Th 17:00-24:00, Fr,Sa 12:00-01:00, Su 12:00-24:00",
+        "operator": "Event Bars Ltd",
+        "phone": "+44 117 924 1560",
+        "website": "http://www.eventbars.com/#/the-old-england/4536697086",
+        "wikidata": "Q26497655"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108841679,
+      "center": {
+        "lat": 51.4605057,
+        "lon": -2.5904096
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 3PR",
+        "addr:street": "North Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "info@fullmoonbristol.co.uk",
+        "fax": "+44 117 9245 017",
+        "fhrs:id": "385075",
+        "food": "yes",
+        "listed_status": "Grade II",
+        "name": "Full Moon",
+        "phone": "+44 117 9245 007",
+        "ref:GB:nhle": "1282188",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "no",
+        "tourism": "hostel",
+        "website": "https://www.fmbristol.co.uk/",
+        "wheelchair": "yes",
+        "wikidata": "Q26571174"
+      }
+    },
+    {
+      "type": "way",
+      "id": 109196970,
+      "center": {
+        "lat": 51.4611021,
+        "lon": -2.5989867
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "21-23",
+        "addr:postcode": "BS2 8HD",
+        "addr:street": "Alfred Place",
+        "addr:suburb": "Kingsdown",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/thegreenmanbristol/",
+        "contact:phone": "+44 117 925 8062",
+        "contact:twitter": "@greenmanbristol",
+        "contact:website": "http://www.dawkinsales.com/page31.html",
+        "fhrs:id": "748698",
+        "food": "yes",
+        "name": "The Green Man",
+        "operator": "Dawkins Taverns"
+      }
+    },
+    {
+      "type": "way",
+      "id": 110221491,
+      "center": {
+        "lat": 51.4617209,
+        "lon": -2.5967262
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "29-31",
+        "addr:postcode": "BS6 5UE",
+        "addr:street": "Kingsdown Parade",
+        "addr:suburb": "Cotham",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/TheKingsdownWineVaults/",
+        "contact:phone": "+44 117 329 2521",
+        "contact:website": "http://www.thekingsdownwinevaults.co.uk/",
+        "fhrs:id": "312623",
+        "internet_access": "wlan",
+        "music": "live",
+        "name": "The Kingsdown Vaults",
+        "opening_hours": "Mo-Th 17:00-24:00; Fr-Sa 12:00-01:00, Su 12:00-24:00",
+        "ref:GB:uprn": "341630;87565;341631"
+      }
+    },
+    {
+      "type": "way",
+      "id": 110593790,
+      "center": {
+        "lat": 51.4356808,
+        "lon": -2.5948183
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "315",
+        "addr:postcode": "BS3 5AZ",
+        "addr:street": "Saint Johns Lane",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "brand": "Hungry Horse",
+        "brand:wikidata": "Q5943510",
+        "building": "yes",
+        "check_date": "2024-11-17",
+        "fhrs:id": "312622",
+        "name": "The Brunel",
+        "ref:GB:uprn": "350316;132924;354574",
+        "source:outline": "Bing",
+        "website": "https://www.hungryhorse.co.uk/pubs/somerset/brunel/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 112717153,
+      "center": {
+        "lat": 51.458478,
+        "lon": -2.583121
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Wellington Buildings",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS2 9DB",
+        "addr:street": "Champion Square",
+        "addr:suburb": "St Paul's",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/Phoenix-Pub-197972150225641/",
+        "email": "info@phoenixbristol.com",
+        "fhrs:id": "310554",
+        "lgbtq": "primary",
+        "listed_status": "Grade II",
+        "name": "The Phoenix",
+        "outdoor_seating": "yes",
+        "ref:GB:nhle": "1219214",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.phoenixbristol.com/",
+        "wikidata": "Q26513775"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123960466,
+      "center": {
+        "lat": 51.4521742,
+        "lon": -2.5932132
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "45",
+        "addr:postcode": "BS1 4ER",
+        "addr:street": "King Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-05-13",
+        "contact:email": "info@TheOldDuke.com",
+        "contact:facebook": "https://www.facebook.com/The-Old-Duke-155036421182920/",
+        "contact:phone": "+44 117 927 7137",
+        "contact:twitter": "@olddukebristol",
+        "contact:website": "http://www.theoldduke.co.uk/",
+        "fhrs:id": "690996",
+        "name": "The Old Duke",
+        "opening_hours": "Su-Th 12:00-24:00; Sa-Su 12:00-01:00",
+        "real_ale": "yes",
+        "wheelchair": "no",
+        "wikidata": "Q7754838",
+        "wikipedia": "en:The Old Duke"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123960469,
+      "center": {
+        "lat": 51.4521668,
+        "lon": -2.5929108
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Riverside House",
+        "addr:housenumber": "13",
+        "addr:postcode": "BS1 4RR",
+        "addr:street": "Welsh Back",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-05-13",
+        "fhrs:id": "848484",
+        "name": "King Street Brew House",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123960471,
+      "center": {
+        "lat": 51.4516934,
+        "lon": -2.5944811
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "16",
+        "addr:postcode": "BS1 4EF",
+        "addr:street": "King Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "fhrs:id": "848527",
+        "heritage": "yes",
+        "name": "The Beer Emporium",
+        "real_ale": "yes",
+        "ref:GB:uprn": "299458",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q4552062"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123960477,
+      "center": {
+        "lat": 51.4518683,
+        "lon": -2.5931322
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "3-5",
+        "addr:postcode": "BS1 4ER",
+        "addr:street": "King Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1391101",
+        "food": "no",
+        "listed_status": "Grade II*",
+        "name": "The Llandoger Trow",
+        "payment:cash": "no",
+        "payment:coins": "no",
+        "payment:contactless": "recommended",
+        "ref:GB:nhle": "1202324",
+        "source:addr": "FHRS Open Data",
+        "start_date": "1664",
+        "wheelchair": "no",
+        "wikidata": "Q6305993",
+        "wikipedia": "en:Llandoger Trow"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123964802,
+      "center": {
+        "lat": 51.4518555,
+        "lon": -2.594999
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "31;32",
+        "addr:postcode": "BS1 4DZ",
+        "addr:street": "King Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "731398",
+        "heritage": "yes",
+        "name": "smallBAR",
+        "source": "Bing",
+        "wheelchair": "no",
+        "wikidata": "Q26580589;Q4635017",
+        "wikipedia": "en:32 King Street, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123975995,
+      "center": {
+        "lat": 51.4545934,
+        "lon": -2.5945083
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "43-45",
+        "addr:postcode": "BS1 1HT",
+        "addr:street": "Corn Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "building": "yes",
+        "building:levels": "2",
+        "check_date": "2025-11-04",
+        "fhrs:id": "312188",
+        "name": "The Commercial Rooms",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/bristol/the-commercial-rooms-bristol",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/183/menus",
+        "wikidata": "Q5152525",
+        "wikipedia": "en:Commercial Rooms, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123978852,
+      "center": {
+        "lat": 51.4577318,
+        "lon": -2.5931559
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 2LJ",
+        "addr:street": "Lewins Mead",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "fhrs:id": "312681",
+        "name": "The Bay Horse",
+        "ref:GB:uprn": "376861;351134;260538",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/avon/bay-horse",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123981317,
+      "center": {
+        "lat": 51.4584371,
+        "lon": -2.5935852
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 2LU",
+        "addr:street": "Lower Maudlin Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "2",
+        "fhrs:id": "1265807",
+        "name": "The White Hart",
+        "operator": "Greene King",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "351078;95727",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123981652,
+      "center": {
+        "lat": 51.4541262,
+        "lon": -2.5928304
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "10",
+        "addr:postcode": "BS1 1JH",
+        "addr:street": "All Saints Lane",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "check_date": "2024-12-14",
+        "name": "The Crown",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q7728222"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123982878,
+      "center": {
+        "lat": 51.4538742,
+        "lon": -2.5936441
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "20",
+        "addr:postcode": "BS1 1UB",
+        "addr:street": "Saint Nicholas Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "861981",
+        "name": "Boardroom",
+        "ref:GB:uprn": "105014",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 125782176,
+      "center": {
+        "lat": 51.4556958,
+        "lon": -2.5937729
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "49-50",
+        "addr:postcode": "BS1 2EP",
+        "addr:street": "Broad Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "3",
+        "check_date": "2025-05-27",
+        "fhrs:id": "312224",
+        "name": "Horts",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 125956104,
+      "center": {
+        "lat": 51.451625,
+        "lon": -2.5870146
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "78",
+        "addr:postcode": "BS1 6DR",
+        "addr:street": "Victoria Street",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "3",
+        "check_date": "2025-06-01",
+        "indoor_seating": "yes",
+        "name": "Ye Shakespeare",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "351164;108462",
+        "roof:levels": "1",
+        "wheelchair": "no",
+        "wikidata": "Q15276822",
+        "wikipedia": "en:Shakespeare Inn, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126129753,
+      "center": {
+        "lat": 51.4414388,
+        "lon": -2.5821433
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "75-78",
+        "addr:postcode": "BS3 4RY",
+        "addr:street": "St Lukes Road",
+        "addr:suburb": "Totterdown",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "2",
+        "check_date": "2025-08-08",
+        "fhrs:id": "1213971",
+        "name": "Star & Dove",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126449751,
+      "center": {
+        "lat": 51.4524269,
+        "lon": -2.5878502
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 6EN",
+        "addr:street": "Temple Street",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "building": "retail",
+        "check_date": "2024-12-14",
+        "fhrs:id": "386091",
+        "name": "The Cornubia",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26498210"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126484557,
+      "center": {
+        "lat": 51.4522422,
+        "lon": -2.5896986
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 6JG",
+        "addr:street": "Thomas Lane",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "brewery": "yes",
+        "building": "retail",
+        "building:levels": "3",
+        "fhrs:id": "386227",
+        "listed_status": "Grade II",
+        "name": "Seven Stars",
+        "ref:GB:nhle": "1202634",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes",
+        "wikidata": "Q7457469"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126489283,
+      "center": {
+        "lat": 51.4542618,
+        "lon": -2.5861846
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "16",
+        "addr:postcode": "BS2 0JF",
+        "addr:street": "Passage Street",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-12-14",
+        "fhrs:id": "312586",
+        "name": "The Bridge Inn",
+        "ref:GB:uprn": "351249;104475",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126492722,
+      "center": {
+        "lat": 51.451918,
+        "lon": -2.5872218
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "60",
+        "addr:postcode": "BS1 6DE",
+        "addr:street": "Victoria Street",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "3",
+        "listed_status": "Grade II",
+        "name": "The King's Head",
+        "opening_hours": "Tu-Th 12:00-23:00; Mo 16:00-23:00; Fr,Sa 12:00-24:00; Su 14:00-22:00",
+        "real_ale": "yes",
+        "ref:GB:nhle": "1291662",
+        "ref:GB:uprn": "108044;351163",
+        "source": "https://historicengland.org.uk/listing/the-list/list-entry/1291662",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "no",
+        "wikidata": "Q18160443"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126810622,
+      "center": {
+        "lat": 51.4424878,
+        "lon": -2.5743107
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "124",
+        "addr:postcode": "BS4 3ED",
+        "addr:street": "Bath Road",
+        "addr:suburb": "Totterdown",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "2",
+        "contact:facebook": "https://www.facebook.com/thunderbolt.bristol",
+        "contact:phone": "+44 117 373 8947",
+        "contact:website": "http://www.thethunderbolt.net/",
+        "email": "info@thethunderbolt.net",
+        "name": "The Thunderbolt",
+        "ref:GB:uprn": "348295;120165",
+        "roof:levels": "0",
+        "wifi": "no",
+        "wikidata": "Q26497664"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126832783,
+      "center": {
+        "lat": 51.4455543,
+        "lon": -2.5928671
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "3",
+        "addr:postcode": "BS3 1AA",
+        "addr:street": "Coronation Road",
+        "addr:suburb": "Southville",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-02-16",
+        "name": "The Little Grosvenor",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128134206,
+      "center": {
+        "lat": 51.4434739,
+        "lon": -2.5797441
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS3 4UD",
+        "addr:street": "Henry Street",
+        "addr:suburb": "Totterdown",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "2",
+        "check_date": "2025-08-08",
+        "fhrs:id": "1244585",
+        "name": "The Shakespeare",
+        "ref:GB:uprn": "351430;117380",
+        "roof:levels": "0",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128136913,
+      "center": {
+        "lat": 51.4432586,
+        "lon": -2.5944269
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS3 4HH",
+        "addr:street": "East Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-11-08",
+        "fhrs:id": "312557",
+        "name": "The Barley Mow",
+        "opening_hours": "Mo-Su 09:00-20:00",
+        "ref:GB:uprn": "351389;117691",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128136916,
+      "center": {
+        "lat": 51.4431436,
+        "lon": -2.5934443
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "27",
+        "addr:postcode": "BS3 4EA",
+        "addr:street": "Philip Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-10-19",
+        "name": "Apple Tree",
+        "opening_hours": "Mo-Su 12:00-22:30",
+        "ref:GB:uprn": "117818;349982",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128503868,
+      "center": {
+        "lat": 51.4495457,
+        "lon": -2.5895734
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 6NB",
+        "addr:street": "Portwall Lane",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "3",
+        "check_date": "2024-10-27",
+        "fhrs:id": "312710",
+        "name": "Portwall Tavern",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128615030,
+      "center": {
+        "lat": 51.4399866,
+        "lon": -2.6079406
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "139",
+        "addr:postcode": "BS3 1EZ",
+        "addr:street": "North Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "check_date": "2026-05-10",
+        "contact:email": "info@thespottedcowbristol.com",
+        "contact:phone": "+44 117 963 4433",
+        "fhrs:id": "312577",
+        "name": "The Spotted Cow",
+        "opening_hours": "Mo-We 12:00-00:00; Th-Fr 12:00-01:00; Sa 11:00-01:00; Su 11:00-00:00",
+        "website": "https://thespottedcowbristol.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128667270,
+      "center": {
+        "lat": 51.4479175,
+        "lon": -2.5938903
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 6TJ",
+        "addr:street": "Lower Guinea Street",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "brewery": "Butcombe Brewery",
+        "building": "yes",
+        "fhrs:id": "1043728",
+        "name": "The Ostrich Inn",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26497666"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128791842,
+      "center": {
+        "lat": 51.446749,
+        "lon": -2.5964054
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "The Louisiana",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS1 6UA",
+        "addr:street": "Bathurst Parade",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312098",
+        "name": "The Louisiana",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.thelouisiana.net/",
+        "wikidata": "Q26498253"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128801157,
+      "center": {
+        "lat": 51.442817,
+        "lon": -2.579982
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "60",
+        "addr:postcode": "BS3 4UB",
+        "addr:street": "Green Street",
+        "addr:suburb": "Totterdown",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "2",
+        "check_date": "2024-10-12",
+        "name": "New Found Out",
+        "roof:levels": "0",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 128801160,
+      "center": {
+        "lat": 51.4422115,
+        "lon": -2.5791663
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "120-122",
+        "addr:postcode": "BS3 4RL",
+        "addr:street": "Oxford Street",
+        "addr:suburb": "Totterdown",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "2",
+        "check_date": "2025-08-08",
+        "fhrs:id": "386254",
+        "name": "The Oxford",
+        "opening_hours": "Mo-Th 16:00-23:00; Fr 15:00-24:00; Sa 14:00-24:00; Su 14:00-22:30",
+        "ref:GB:uprn": "351426;119728",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 129151311,
+      "center": {
+        "lat": 51.4450472,
+        "lon": -2.5926544
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "5",
+        "addr:postcode": "BS3 4JA",
+        "addr:street": "Nelson Parade",
+        "addr:suburb": "Bedminster",
+        "alt_name": "The R W",
+        "alt_name2": "The Rope Walk Inn",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-09-13",
+        "contact:website": "http://www.rampubcompany.co.uk/visit-pubs/rope-walk",
+        "fhrs:id": "1087469",
+        "name": "The Dark Horse",
+        "ref:GB:uprn": "115118;351391",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 130406837,
+      "center": {
+        "lat": 51.446895,
+        "lon": -2.6159017
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Baltic Wharf Water Leisure Centre",
+        "addr:postcode": "BS1 6XG",
+        "addr:street": "Cumberland Road",
+        "addr:suburb": "Hotwells",
+        "amenity": "pub",
+        "brewery": "Butcombe Brewery",
+        "building": "yes",
+        "check_date": "2025-05-04",
+        "fhrs:id": "386237",
+        "name": "The Cottage Inn",
+        "ref:GB:uprn": "351172;275885",
+        "toilets:wheelchair": "no",
+        "website": "http://www.cottage-inn.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q136172732"
+      }
+    },
+    {
+      "type": "way",
+      "id": 158465442,
+      "center": {
+        "lat": 51.4704473,
+        "lon": -2.5933491
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "5",
+        "addr:postcode": "BS7 8AA",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "image": "http://www.flickr.com/photos/crabchick/2607439601/",
+        "name": "The Prince of Wales",
+        "opening_hours": "Su-Th 12:00-23:00; Fr,Sa 12:00-24:00",
+        "phone": "+44 117 924 5994",
+        "ref:GB:uprn": "337447;64084",
+        "website": "https://princeofwalesbristol.co.uk"
+      }
+    },
+    {
+      "type": "way",
+      "id": 158816704,
+      "center": {
+        "lat": 51.4688101,
+        "lon": -2.5931485
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "207",
+        "addr:postcode": "BS6 5QX",
+        "addr:street": "Cheltenham Road",
+        "addr:suburb": "Montpelier",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1292286",
+        "image": "http://www.flickr.com/photos/cennydd/3072210130/",
+        "name": "Cat and Wheel",
+        "operator": "Moles Brewery",
+        "phone": "+44 117 942 7862",
+        "ref:GB:uprn": "350889;67603",
+        "source:addr": "FHRS Open Data",
+        "website": "http://www.molesbrewery.com/site/?page_id=26"
+      }
+    },
+    {
+      "type": "way",
+      "id": 159641094,
+      "center": {
+        "lat": 51.4532721,
+        "lon": -2.6097578
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "38",
+        "addr:postcode": "BS8 1DR",
+        "addr:street": "Jacobs Wells Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/HopeAnchorBristol/",
+        "contact:twitter": "@TheHopeBristol",
+        "contact:website": "http://www.hopeandanchor.net/",
+        "fhrs:id": "1061679",
+        "name": "Hope & Anchor",
+        "real_ale": "yes",
+        "real_cider": "yes",
+        "ref:GB:uprn": "105258;351618",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 168520363,
+      "center": {
+        "lat": 51.4544224,
+        "lon": -2.5893886
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 6EU",
+        "addr:street": "Hawkins Lane",
+        "addr:suburb": "Finzels Reach",
+        "amenity": "pub",
+        "brewery": "various",
+        "building": "retail",
+        "check_date": "2026-03-04",
+        "check_date:diet:vegan": "2026-03-04",
+        "check_date:diet:vegetarian": "2026-03-04",
+        "check_date:smoking": "2026-03-04",
+        "craft": "brewery",
+        "cuisine": "pizza",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "layer": "1",
+        "name": "Left Handed Giant Brewpub",
+        "opening_hours": "Mo-Tu 16:00-24:00; We-Su 12:00-24:00",
+        "operator": "Left Handed Giant",
+        "outdoor_seating": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "ref:GB:uprn": "346261",
+        "smoking": "outside",
+        "website": "https://lefthandedgiant.com/pages/custom-pages/brewpub"
+      }
+    },
+    {
+      "type": "way",
+      "id": 175406743,
+      "center": {
+        "lat": 51.4560072,
+        "lon": -2.5965502
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS1 5BS",
+        "addr:street": "Christmas Steps",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/thechristmassteps",
+        "contact:phone": "+44 117 925 3077",
+        "contact:website": "http://www.thechristmassteps.com/",
+        "fhrs:id": "668239",
+        "name": "The Christmas Steps",
+        "wikidata": "Q26497730"
+      }
+    },
+    {
+      "type": "way",
+      "id": 179090975,
+      "center": {
+        "lat": 51.4563347,
+        "lon": -2.5979417
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "53",
+        "addr:postcode": "BS1 5BA",
+        "addr:street": "Colston Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "retail",
+        "email": "bristol@zerodegrees.co.uk",
+        "fhrs:id": "1918262",
+        "microbrewery": "yes",
+        "name": "Zero Degrees",
+        "opening_hours": "Mo-Sa 12:00-24:00; Su 12:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 925 2706",
+        "real_ale": "yes",
+        "website": "https://www.zerodegrees.co.uk/restaurants/bristol/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 180473633,
+      "center": {
+        "lat": 51.469714,
+        "lon": -2.6153171
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS8 2YB",
+        "addr:street": "Highland Square",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "commercial",
+        "check_date": "2025-05-03",
+        "name": "Coach & Horses",
+        "ref:GB:uprn": "65207;350870",
+        "website": "http://www.coachandhorses-bristol.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 186136734,
+      "center": {
+        "lat": 51.4699419,
+        "lon": -2.5653268
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "438",
+        "addr:postcode": "BS5 6NR",
+        "addr:street": "Stapleton Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "311979",
+        "listed_status": "Grade II",
+        "name": "The Black Swan",
+        "ref:GB:nhle": "1202595",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26498188"
+      }
+    },
+    {
+      "type": "way",
+      "id": 186146440,
+      "center": {
+        "lat": 51.4518939,
+        "lon": -2.5923286
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS1 4SB",
+        "addr:street": "Welsh Back",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "ship",
+        "contact:facebook": "https://www.facebook.com/people/The-Apple/100063497532362/",
+        "contact:instagram": "theappleciderboat",
+        "contact:twitter": "appleciderco",
+        "craft_cider": "yes",
+        "email": "info@applecider.co.uk",
+        "fhrs:id": "385970",
+        "historic": "ship",
+        "name": "The Apple",
+        "opening_hours": "Mo-Sa 12:00-24:00; Su,PH 12:00-22:30",
+        "outdoor_seating": "yes",
+        "phone": "+44 11 7925 3500",
+        "real_cider": "yes",
+        "ref:GB:uprn": "325566",
+        "source:addr": "FHRS Open Data",
+        "website": "https://applecider.co.uk/",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 186297195,
+      "center": {
+        "lat": 51.4576919,
+        "lon": -2.5984253
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "24",
+        "addr:postcode": "BS2 8DX",
+        "addr:street": "Saint Michaels Hill",
+        "addr:suburb": "Kingsdown",
+        "alt_name": "Ye olde Pubby Mcdrunkface",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312613",
+        "name": "The Open Arms",
+        "old_name": "Colston Arms",
+        "opening_hours": "Mo-Th 15:00-23:00, Fr,Sa 12:00-24:00, Su 12:00-21:00",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "97449;351080",
+        "source:addr": "FHRS Open Data",
+        "source:alt_name": "https://www.bbc.co.uk/news/uk-england-bristol-53240033",
+        "wikidata": "Q136677003"
+      }
+    },
+    {
+      "type": "way",
+      "id": 187065944,
+      "center": {
+        "lat": 51.4814717,
+        "lon": -2.5827337
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "112",
+        "addr:postcode": "BS7 9JR",
+        "addr:street": "Ashley Down Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "1608750",
+        "food": "yes",
+        "name": "Lazy Dog",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited",
+        "wheelchair:description": "The inside of the pub ground floor is level, but the ladies toilets are up a step. The garden is down some steps from the main bar, but is accessible via a side gate."
+      }
+    },
+    {
+      "type": "way",
+      "id": 190581336,
+      "center": {
+        "lat": 51.4625848,
+        "lon": -2.5979621
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "15",
+        "addr:postcode": "BS6 5TZ",
+        "addr:street": "Cotham Road South",
+        "addr:suburb": "Cotham",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-02-17",
+        "fhrs:id": "862000",
+        "name": "Cotham Porter Stores",
+        "operator": "Wickwar Brewing Company",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "way",
+      "id": 191296543,
+      "center": {
+        "lat": 51.4741291,
+        "lon": -2.6106377
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS6 7JS",
+        "addr:street": "Coldharbour Road",
+        "addr:suburb": "Westbury Park",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "yes",
+        "fhrs:id": "311342",
+        "name": "The Cambridge Arms",
+        "ref:GB:uprn": "56365;350828",
+        "website": "https://www.cambridgearms.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 191919844,
+      "center": {
+        "lat": 51.4563933,
+        "lon": -2.5796176
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2-4",
+        "addr:postcode": "BS2 0BH",
+        "addr:street": "West Street",
+        "addr:suburb": "St Philip's",
+        "alt_name": "Bristol Bear Bar",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312797",
+        "name": "BBB",
+        "ref:GB:uprn": "264934;264933;338634;338635;231545"
+      }
+    },
+    {
+      "type": "way",
+      "id": 191919849,
+      "center": {
+        "lat": 51.4570568,
+        "lon": -2.5787357
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "46",
+        "addr:postcode": "BS2 0DP",
+        "addr:street": "Gloucester Lane",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Old Castle Green",
+        "ref:GB:uprn": "98937;351089;358364;369875",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26482467"
+      }
+    },
+    {
+      "type": "way",
+      "id": 193848583,
+      "center": {
+        "lat": 51.4699139,
+        "lon": -2.6162168
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "23",
+        "addr:postcode": "BS8 2YF",
+        "addr:street": "High Street",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-05-25",
+        "fhrs:id": "312610",
+        "name": "Beaufort Arms",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 193994543,
+      "center": {
+        "lat": 51.4665677,
+        "lon": -2.5874303
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "21",
+        "addr:postcode": "BS6 5QB",
+        "addr:street": "York Road",
+        "addr:suburb": "Montpelier",
+        "alt_name": "Patsys Place",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312870",
+        "name": "The Beaufort",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 210830426,
+      "center": {
+        "lat": 51.4637525,
+        "lon": -2.5519055
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "277-279",
+        "addr:postcode": "BS5 7BH",
+        "addr:street": "Whitehall Road",
+        "addr:suburb": "Redfield",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312003",
+        "name": "The Kings Head",
+        "source": "Bing",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 223391125,
+      "center": {
+        "lat": 51.4547553,
+        "lon": -2.6105901
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "6",
+        "addr:postcode": "BS8 1BT",
+        "addr:street": "Lower Clifton Hill",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "enquiries@theeldonhouse.com",
+        "food": "yes",
+        "music": "yes",
+        "name": "The Eldon House",
+        "opening_hours": "Mo-We 16:00-23:30; Th 12:00-23:30; Fr,Sa 12:00-12:30; Su 12:00-23:00",
+        "operator": "Bath Ales",
+        "phone": "+44 117 922 1271",
+        "ref:GB:uprn": "103151",
+        "twitter": "theeldonhouse",
+        "website": "https://www.theeldonhouse.com/",
+        "wikidata": "Q26497979"
+      }
+    },
+    {
+      "type": "way",
+      "id": 224659452,
+      "center": {
+        "lat": 51.470075,
+        "lon": -2.6154544
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "3",
+        "addr:postcode": "BS8 2YE",
+        "addr:street": "York Street",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-05-03",
+        "fhrs:id": "938444",
+        "name": "Port of Call",
+        "phone": "+44 117 973 3600",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 225794185,
+      "center": {
+        "lat": 51.4700513,
+        "lon": -2.6151288
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "168",
+        "addr:postcode": "BS8 2XZ",
+        "addr:street": "Whiteladies Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "commercial",
+        "food": "yes",
+        "name": "King's Arms",
+        "old_name": "The Black Bear",
+        "ref:GB:uprn": "323451;64557",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 228155465,
+      "center": {
+        "lat": 51.4496588,
+        "lon": -2.6132618
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "126",
+        "addr:postcode": "BS8 4UB",
+        "addr:street": "Hotwell Road",
+        "addr:suburb": "Hotwells",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312080",
+        "image": "http://www.flickr.com/photos/go-easy-step-lightly-stay-free/2370019498/",
+        "name": "The Mardyke",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 229595305,
+      "center": {
+        "lat": 51.4436786,
+        "lon": -2.5938507
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "84",
+        "addr:postcode": "BS3 4HL",
+        "addr:street": "Bedminster Parade",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-11-08",
+        "fhrs:id": "1129673",
+        "name": "The White Hart",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.craftunionpubs.com/white-hart-bedminster-bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 245669055,
+      "center": {
+        "lat": 51.4510552,
+        "lon": -2.6076055
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "141",
+        "addr:postcode": "BS1 5UW",
+        "addr:street": "Saint Georges Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:instagram": "https://www.instagram.com/bagofnailsbristol/",
+        "facebook": "https://www.facebook.com/TheBagofCats/",
+        "fhrs:id": "385343",
+        "name": "The Bag of Nails",
+        "real_ale": "yes",
+        "ref:GB:uprn": "109257;351162",
+        "wheelchair": "no",
+        "wikidata": "Q136309886",
+        "wikimedia_commons": "Category:The Bag of Nails, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 248676467,
+      "center": {
+        "lat": 51.4510943,
+        "lon": -2.6049892
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "78",
+        "addr:postcode": "BS1 5UR",
+        "addr:street": "Saint Georges Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1224625",
+        "name": "The Three Tuns",
+        "real_ale": "yes",
+        "real_cider": "yes",
+        "ref:GB:uprn": "259405;346116;346115;346117",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 249195907,
+      "center": {
+        "lat": 51.4805401,
+        "lon": -2.6114312
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS9 4HP",
+        "addr:street": "Northumbria Drive",
+        "addr:suburb": "Henleaze",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "906760",
+        "loc_name": "Kebab & Calculator",
+        "name": "The Westbury Park Tavern",
+        "nohousenumber": "yes",
+        "old_name": "The Cock Of The North",
+        "ref:GB:uprn": "42676;350739"
+      }
+    },
+    {
+      "type": "way",
+      "id": 251089863,
+      "center": {
+        "lat": 51.4940213,
+        "lon": -2.6184853
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "24",
+        "addr:postcode": "BS9 3DZ",
+        "addr:street": "High Street",
+        "addr:suburb": "Westbury on Trym",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The White Horse",
+        "ref:GB:uprn": "201391;19627",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 251801271,
+      "center": {
+        "lat": 51.4923409,
+        "lon": -2.5830342
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "635",
+        "addr:postcode": "BS7 0BJ",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Horfield",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "984130",
+        "name": "Crafty Cow",
+        "ref:GB:uprn": "349132;23149",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 256114007,
+      "center": {
+        "lat": 51.4515763,
+        "lon": -2.5948376
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "19-20",
+        "addr:postcode": "BS1 4EF",
+        "addr:street": "King Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "check_date": "2026-04-20",
+        "fhrs:id": "386228",
+        "name": "King William Ale House",
+        "source:addr": "FHRS Open Data",
+        "start_date": "1670",
+        "wheelchair": "no",
+        "wikidata": "Q6412141",
+        "wikipedia": "en:King William Ale House"
+      }
+    },
+    {
+      "type": "way",
+      "id": 256114010,
+      "center": {
+        "lat": 51.451612,
+        "lon": -2.5946134
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "17-18",
+        "addr:postcode": "BS1 4EF",
+        "addr:street": "King Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "fhrs:id": "564317",
+        "loc_name": "The Volley",
+        "name": "The Famous Royal Navy Volunteer",
+        "ref:GB:uprn": "108346;267958",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "limited",
+        "wikidata": "Q4553541",
+        "wikipedia": "en:The Famous Royal Navy Volunteer"
+      }
+    },
+    {
+      "type": "way",
+      "id": 257176583,
+      "center": {
+        "lat": 51.4946067,
+        "lon": -2.581867
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS7 0PA",
+        "addr:street": "Filton Road",
+        "addr:suburb": "Horfield",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312309",
+        "food": "yes",
+        "name": "Inn on the Green",
+        "opening_hours": "Mo-Fr 12:00-23:00, Sa,Su 12:00-24:00",
+        "real_ale": "yes",
+        "real_cider": "yes",
+        "ref:GB:uprn": "298004;351564",
+        "wikidata": "Q135649561"
+      }
+    },
+    {
+      "type": "way",
+      "id": 257176584,
+      "center": {
+        "lat": 51.4888115,
+        "lon": -2.5852453
+      },
+      "tags": {
+        "accommodation": "yes",
+        "addr:city": "Bristol",
+        "addr:postcode": "BS7 8UR",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Horfield",
+        "amenity": "pub",
+        "building": "detached",
+        "fhrs:id": "312676",
+        "food": "yes",
+        "name": "The Wellington",
+        "nohousenumber": "yes",
+        "opening_hours": "Mo-Fr 08:00-23:00, Sa,Su 08:00-24:00",
+        "operator": "Bath Ales",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "ref:GB:uprn": "29912",
+        "wikidata": "Q111874193"
+      }
+    },
+    {
+      "type": "way",
+      "id": 260532401,
+      "center": {
+        "lat": 51.4443073,
+        "lon": -2.6002418
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "18",
+        "addr:postcode": "BS3 1DD",
+        "addr:street": "Dean Lane",
+        "addr:suburb": "Southville",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-06-25",
+        "check_date:opening_hours": "2026-06-25",
+        "fhrs:id": "1149311",
+        "name": "The Coronation",
+        "opening_hours": "Mo-Th 16:00-23:00; Fr 16:00-00:00; Sa 13:00-00:00; Su 12:00-23:00",
+        "phone": "+44 117 940 9044",
+        "ref:GB:uprn": "116039;351265",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.thecoronation-bristol.foodndrink.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 261464013,
+      "center": {
+        "lat": 51.4643885,
+        "lon": -2.6092961
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "115",
+        "addr:postcode": "BS8 2PB",
+        "addr:street": "Whiteladies Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-02-17",
+        "fhrs:id": "1426499",
+        "name": "The Whitmore Tap"
+      }
+    },
+    {
+      "type": "way",
+      "id": 261464014,
+      "center": {
+        "lat": 51.462891,
+        "lon": -2.6086978
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:county": "Bristol",
+        "addr:housenumber": "71-73",
+        "addr:postcode": "BS8 2NT",
+        "addr:street": "Whiteladies Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "building": "yes",
+        "contact:phone": "+44 117 946 9780",
+        "contact:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/bristol/the-w-g-grace-bristol",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "dog": "no",
+        "fhrs:id": "385428",
+        "food": "yes",
+        "name": "The W. G. Grace",
+        "note": "Has TV screens",
+        "opening_hours": "08:00-00:00",
+        "outdoor_seating": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "real_ale": "yes",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/6907/menus",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 261744728,
+      "center": {
+        "lat": 51.489693,
+        "lon": -2.6226473
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "84",
+        "addr:postcode": "BS9 3SP",
+        "addr:street": "Stoke Lane",
+        "addr:suburb": "Westbury on Trym",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312105",
+        "food": "yes",
+        "name": "The Prince of Wales",
+        "real_ale": "yes",
+        "ref:GB:uprn": "27834"
+      }
+    },
+    {
+      "type": "way",
+      "id": 261744743,
+      "center": {
+        "lat": 51.4894396,
+        "lon": -2.6228654
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "92",
+        "addr:postcode": "BS9 3SP",
+        "addr:street": "Stoke Lane",
+        "addr:suburb": "Westbury on Trym",
+        "alt_name": "The Mucky Duck",
+        "amenity": "pub",
+        "building": "yes",
+        "loc_name": "The Dirty Duck",
+        "name": "The Black Swan",
+        "real_ale": "yes",
+        "ref:GB:uprn": "350639;27793"
+      }
+    },
+    {
+      "type": "way",
+      "id": 261963331,
+      "center": {
+        "lat": 51.4868385,
+        "lon": -2.6424913
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "94",
+        "addr:postcode": "BS9 2DS",
+        "addr:street": "Shirehampton Road",
+        "addr:suburb": "Sea Mills",
+        "amenity": "pub",
+        "building": "pub",
+        "email": "themillhouse92@gmail.com",
+        "fhrs:id": "312079",
+        "name": "The Mill House",
+        "outdoor_seating": "yes",
+        "phone": "+441179682913",
+        "ref:GB:uprn": "210483;351649",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.themillhousebristol.co.uk"
+      }
+    },
+    {
+      "type": "way",
+      "id": 262464610,
+      "center": {
+        "lat": 51.4950406,
+        "lon": -2.6172151
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS9 3HN",
+        "addr:street": "Passage Road",
+        "addr:suburb": "Westbury on Trym",
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "building": "yes",
+        "contact:website": "https://www.emberinns.co.uk/nationalsearch/southwest/the-white-lion-bristol",
+        "fhrs:id": "312135",
+        "name": "White Lion",
+        "ref:GB:uprn": "351650;201393",
+        "wikidata": "Q26503590"
+      }
+    },
+    {
+      "type": "way",
+      "id": 262468357,
+      "center": {
+        "lat": 51.4937095,
+        "lon": -2.6148893
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "20",
+        "addr:postcode": "BS9 3EX",
+        "addr:street": "Chock Lane",
+        "addr:suburb": "Westbury on Trym",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Victoria",
+        "ref:GB:uprn": "20312;350554",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 262481010,
+      "center": {
+        "lat": 51.4910333,
+        "lon": -2.6167559
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "17",
+        "addr:postcode": "BS9 3AG",
+        "addr:street": "Westbury Hill",
+        "addr:suburb": "Westbury on Trym",
+        "alt_name": "POT at WOT",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:phone": "+44 117 9401233",
+        "contact:website": "http://www.post-office-tavern.co.uk/",
+        "fhrs:id": "312100",
+        "name": "Post Office Tavern",
+        "ref:GB:uprn": "25145;25144",
+        "wikidata": "Q130604019"
+      }
+    },
+    {
+      "type": "way",
+      "id": 262482368,
+      "center": {
+        "lat": 51.4927517,
+        "lon": -2.6158176
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS9 4AA",
+        "addr:street": "Waters Lane",
+        "addr:suburb": "Westbury on Trym",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312064",
+        "name": "The Mouse",
+        "ref:GB:uprn": "350633;23057"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263435248,
+      "center": {
+        "lat": 51.4726637,
+        "lon": -2.5910398
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "99",
+        "addr:postcode": "BS7 8AT",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:instagram": "https://www.instagram.com/thegrak_/",
+        "name": "Gloucester Road Ale House & Kitchen",
+        "opening_hours": "We-Sa 12:00-00:00; Su 12:00-23:00",
+        "ref:GB:uprn": "350837;59791"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263435250,
+      "center": {
+        "lat": 51.4720402,
+        "lon": -2.5917598
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "69-71",
+        "addr:postcode": "BS7 8AS",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-09-17",
+        "fhrs:id": "537271",
+        "name": "The Goblin's Tavern",
+        "old_name": "The Hobgoblin",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30",
+        "outdoor_seating": "yes",
+        "short_name": "The Hob"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263438174,
+      "center": {
+        "lat": 51.4605169,
+        "lon": -2.6015634
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "133",
+        "addr:postcode": "BS2 8BS",
+        "addr:street": "Saint Michaels Hill",
+        "addr:suburb": "Kingsdown",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1682323",
+        "name": "White Bear",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "91330;351052",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26498140"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263548006,
+      "center": {
+        "lat": 51.4694825,
+        "lon": -2.6139737
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "193",
+        "addr:postcode": "BS8 2SB",
+        "addr:street": "Whiteladies Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-05-25",
+        "fhrs:id": "594989",
+        "food": "yes",
+        "name": "Jersey Lily",
+        "ref:GB:uprn": "65791;350879",
+        "website": "http://www.wickwarbrewing.co.uk/index.php?option=com_content&view=article&id=13%3Ajersey-lily&catid=1%3Abristol&Itemid=3"
+      }
+    },
+    {
+      "type": "way",
+      "id": 264235168,
+      "center": {
+        "lat": 51.4813553,
+        "lon": -2.5875512
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "323",
+        "addr:postcode": "BS7 8PE",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Horfield",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "895635",
+        "name": "The Anchor",
+        "opening_hours": "Mo-Th 12:00-23:30; Fr,Sa 12:00-00:30; Su 12:00-23:00",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "phone": "+44 117 924 1769",
+        "ref:GB:uprn": "45016;350752",
+        "website": "https://www.crafted-social.co.uk/anchor-bristol",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 264380090,
+      "center": {
+        "lat": 51.4751983,
+        "lon": -2.5908434
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "197",
+        "addr:postcode": "BS7 8BG",
+        "addr:street": "Gloucester Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-09-17",
+        "fhrs:id": "748716",
+        "name": "The Grace",
+        "old_name": "Robin Hood's Retreat",
+        "opening_hours": "Mo-Su 12:00-24:00",
+        "phone": "+44 117 924 4334"
+      }
+    },
+    {
+      "type": "way",
+      "id": 264387934,
+      "center": {
+        "lat": 51.4716714,
+        "lon": -2.5926632
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "26-28",
+        "addr:postcode": "BS7 8AL",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-05-17",
+        "contact:email": "info@thegallimaufry.co.uk",
+        "contact:phone": "+44 117 942 7316",
+        "contact:twitter": "@thegallibristol",
+        "contact:website": "http://thegallimaufry.co.uk/",
+        "fhrs:id": "632770",
+        "music": "live",
+        "name": "The Gallimaufry",
+        "opening_hours": "Su-Th 11:00-24:00; Fr,Sa 11:00-01:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 942 7319",
+        "toilets:wheelchair": "no",
+        "website": "https://thegallimaufry.co.uk",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 264388822,
+      "center": {
+        "lat": 51.4697837,
+        "lon": -2.593789
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "225-229",
+        "addr:postcode": "BS6 5QP",
+        "addr:street": "Cheltenham Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "fhrs:id": "385903",
+        "name": "Bishops Tavern",
+        "opening_hours": "Su-We 11:00-23:00; Th-Sa 11:00-24:00",
+        "ref:GB:uprn": "218975;352844;65217;376868;342746",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.greeneking.co.uk/pubs/gloucestershire/bishops-tavern",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 264390890,
+      "center": {
+        "lat": 51.4640389,
+        "lon": -2.608351
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "31-35",
+        "addr:postcode": "BS6 6JY",
+        "addr:street": "Cotham Hill",
+        "addr:suburb": "Cotham",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-06-06",
+        "fhrs:id": "740602",
+        "name": "Brewhouse & Kitchen",
+        "ref:GB:uprn": "263472;81600"
+      }
+    },
+    {
+      "type": "way",
+      "id": 265348916,
+      "center": {
+        "lat": 51.4555564,
+        "lon": -2.5977024
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "41",
+        "addr:postcode": "BS1 5AP",
+        "addr:street": "Colston Street",
+        "addr:suburb": "City Centre",
+        "alt_name": "The Griffin",
+        "amenity": "pub",
+        "building": "yes",
+        "discount:camra_member": "yes",
+        "fhrs:id": "310736",
+        "name": "The Gryphon",
+        "real_ale": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 267330959,
+      "center": {
+        "lat": 51.4746747,
+        "lon": -2.5918609
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "96",
+        "addr:postcode": "BS7 8BN",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312082",
+        "name": "Bristol Flyer",
+        "opening_hours": "Su-Th 12:00-23:00; Fr 12:00-24:00; Sa 11:00-24:00",
+        "phone": "+44 117 944 1658",
+        "ref:GB:uprn": "350823;55426",
+        "website": "https://www.theflyerbristol.co.uk",
+        "wikidata": "Q132171082"
+      }
+    },
+    {
+      "type": "way",
+      "id": 267330971,
+      "center": {
+        "lat": 51.4743305,
+        "lon": -2.5918615
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "86-90",
+        "addr:postcode": "BS7 8BN",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312239",
+        "name": "Cider Press",
+        "opening_hours": "Su-Th 10:00-24:00; Fr,Sa 10:00-01:00",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "phone": "+44 117 989 2471",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.crafted-social.co.uk/cider-press-bristol",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 268161865,
+      "center": {
+        "lat": 51.4891865,
+        "lon": -2.6087126
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housename": "The Eastfield",
+        "addr:housenumber": "219",
+        "addr:postcode": "BS9 4NQ",
+        "addr:street": "Henleaze Road",
+        "addr:suburb": "Henleaze",
+        "amenity": "pub",
+        "building": "retail",
+        "name": "The Eastfield",
+        "old_name": "The Eastfield Inn",
+        "phone": "+44 117 239 1466",
+        "ref:GB:uprn": "353375;28015",
+        "website": "https://www.theeastfieldpub.co.uk"
+      }
+    },
+    {
+      "type": "way",
+      "id": 268178780,
+      "center": {
+        "lat": 51.4798959,
+        "lon": -2.5896399
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "244",
+        "addr:postcode": "BS7 8NZ",
+        "addr:street": "Gloucester Road",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/goldenlionbristol/",
+        "fhrs:id": "312611",
+        "image": "http://www.flickr.com/photos/waltjabsco/2041125148/",
+        "live_music": "yes",
+        "name": "Golden Lion",
+        "opening_hours": "Mo-Fr 14:00-24:00; Sa,Su 12:00-23:00",
+        "phone": "+44 117 924 6449",
+        "ref:GB:uprn": "46510;350760"
+      }
+    },
+    {
+      "type": "way",
+      "id": 268782684,
+      "center": {
+        "lat": 51.4787063,
+        "lon": -2.5899129
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "198",
+        "addr:postcode": "BS7 8NU",
+        "addr:street": "Gloucester Road",
+        "amenity": "pub",
+        "brewery": "yes",
+        "building": "yes",
+        "name": "Sidney & Eden",
+        "opening_date": "2018-11-17"
+      }
+    },
+    {
+      "type": "way",
+      "id": 269097613,
+      "center": {
+        "lat": 51.4557355,
+        "lon": -2.6052937
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "15-19",
+        "addr:postcode": "BS8 1QE",
+        "addr:street": "Queen's Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "building": "retail",
+        "building:levels": "2",
+        "fhrs:id": "310823",
+        "food": "yes",
+        "name": "The Berkeley",
+        "opening_hours": "Su-Th 08:00-24:00, Fr,Sa 08:00-01:00",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/bristol/the-berkeley-bristol",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/222/menus",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 270761135,
+      "center": {
+        "lat": 51.4540832,
+        "lon": -2.6179742
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "16",
+        "addr:postcode": "BS8 4HG",
+        "addr:street": "Regent Street",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date:opening_hours": "2023-02-19",
+        "fhrs:id": "1662956",
+        "name": "The Clifton",
+        "opening_hours:signed": "no",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 270761137,
+      "center": {
+        "lat": 51.4549746,
+        "lon": -2.6191946
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS8 4BP",
+        "addr:street": "Princess Victoria Street",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-12-15",
+        "email": "info@cliftonsausage.co.uk",
+        "fhrs:id": "748720",
+        "name": "The Quadrant",
+        "phone": "+44 117 9741025",
+        "ref:GB:uprn": "102686",
+        "source:addr": "FHRS Open Data",
+        "website": "http://www.quadrantbar.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 272145160,
+      "center": {
+        "lat": 51.4853037,
+        "lon": -2.5858417
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "447",
+        "addr:postcode": "BS7 8TZ",
+        "addr:street": "Gloucester Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "818344",
+        "name": "The Drapers Arms",
+        "opening_hours": "Mo-Th 17:00-21:30; Fr,Su 16:00-21:30; Sa 14:00-21:30",
+        "ref:GB:uprn": "36497;337623;337622"
+      }
+    },
+    {
+      "type": "way",
+      "id": 272161237,
+      "center": {
+        "lat": 51.483458,
+        "lon": -2.5866126
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "385",
+        "addr:postcode": "BS7 8TN",
+        "addr:street": "Gloucester Road",
+        "addr:suburb": "Horfield",
+        "amenity": "pub",
+        "building": "retail",
+        "email": "theroyaloakbristol@gmail.com",
+        "fhrs:id": "1563524",
+        "name": "The Royal Oak",
+        "opening_hours": "Su-Th 12:00-23:00; Fr,Sa 12:00-00:30",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 989 2522",
+        "ref:GB:uprn": "39627",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greatukpubs.co.uk/royal-oak-horfield",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 272704914,
+      "center": {
+        "lat": 51.4678517,
+        "lon": -2.6053152
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "22",
+        "addr:postcode": "BS6 6PF",
+        "addr:street": "Chandos Road",
+        "addr:suburb": "Redland",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1221325",
+        "name": "The Red Monkey",
+        "ref:GB:uprn": "69177;69175",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 272704928,
+      "center": {
+        "lat": 51.4672334,
+        "lon": -2.60706
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2b",
+        "addr:postcode": "BS6 6PE",
+        "addr:street": "Chandos Road",
+        "addr:suburb": "Redland",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Good Measure",
+        "ref:GB:uprn": "71029;341408",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 272949385,
+      "center": {
+        "lat": 51.4917118,
+        "lon": -2.5959176
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS9 4QY",
+        "addr:street": "Wellington Hill West",
+        "addr:suburb": "Henleaze",
+        "amenity": "pub",
+        "building": "retail",
+        "food": "yes",
+        "name": "The Beehive",
+        "outdoor_seating": "yes",
+        "real_ale": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 274701877,
+      "center": {
+        "lat": 51.4972509,
+        "lon": -2.5979424
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS10 5EL",
+        "addr:street": "Southmead Road",
+        "addr:suburb": "Southmead",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312738",
+        "name": "Bear & Rugged Staff",
+        "ref:GB:uprn": "183845;351174"
+      }
+    },
+    {
+      "type": "way",
+      "id": 275133722,
+      "center": {
+        "lat": 51.4711864,
+        "lon": -2.5763675
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "136",
+        "addr:postcode": "BS2 9YQ",
+        "addr:street": "Mina Road",
+        "addr:suburb": "Saint Werburghs",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-05-16",
+        "fhrs:id": "906765",
+        "name": "The Miner's Arms",
+        "note": "Drinks discounts before 8pm",
+        "real_ale": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 275376192,
+      "center": {
+        "lat": 51.4621344,
+        "lon": -2.6084562
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "57",
+        "addr:postcode": "BS8 2LY",
+        "addr:street": "Whiteladies Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-05-04",
+        "fhrs:id": "1265770",
+        "name": "Vittoria",
+        "phone": "+44 117 974 1842",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 277783069,
+      "center": {
+        "lat": 51.4553382,
+        "lon": -2.6029016
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "54-58",
+        "addr:postcode": "BS1 5LH",
+        "addr:street": "Park Row",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312071",
+        "name": "White Harte",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "units": "3",
+        "website": "https://www.crafted-social.co.uk/white-harte-bristol",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 277928408,
+      "center": {
+        "lat": 51.4545209,
+        "lon": -2.6207496
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "32",
+        "addr:postcode": "BS8 4BZ",
+        "addr:street": "Princess Victoria Street",
+        "addr:suburb": "Clifton Village",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:twitter": "BFringecafebar",
+        "email": "thebristol_fringe@yahoo.co.uk",
+        "fhrs:id": "1278267",
+        "music": "live",
+        "name": "The Bristol Fringe",
+        "opening_hours": "Mo-Fr 16:00-00:00; Sa-Su 15:00-00:00",
+        "phone": "+44 117 330 0900",
+        "source:addr": "FHRS Open Data",
+        "twitter": "BFringecafebar",
+        "website": "https://www.thebristolfringe.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 277928434,
+      "center": {
+        "lat": 51.4563985,
+        "lon": -2.6216309
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "66",
+        "addr:postcode": "BS8 4JG",
+        "addr:street": "The Mall",
+        "addr:suburb": "Clifton Village",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312118",
+        "food": "yes",
+        "name": "The Mall",
+        "outdoor_seating": "yes",
+        "website": "https://www.themallpubbristol.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 277928445,
+      "center": {
+        "lat": 51.4559861,
+        "lon": -2.6214627
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "50",
+        "addr:postcode": "BS8 4JG",
+        "addr:street": "The Mall",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "disused:amenity": "restaurant",
+        "fhrs:id": "1514108",
+        "name": "The Royal Oak",
+        "old_name": "Royal Oak",
+        "old_name2": "St Vincent's",
+        "website": "https://cliftonroyaloak.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 277928449,
+      "center": {
+        "lat": 51.4546518,
+        "lon": -2.6195561
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "11",
+        "addr:postcode": "BS8 4BX",
+        "addr:street": "Princess Victoria Street",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-12-15",
+        "fhrs:id": "1275134",
+        "name": "Somerset House",
+        "ref:GB:uprn": "351625;103503",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 277928456,
+      "center": {
+        "lat": 51.455599,
+        "lon": -2.6211697
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "38",
+        "addr:postcode": "BS8 4DS",
+        "addr:street": "The Mall",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "info@the-brunel.co.uk",
+        "fhrs:id": "312208",
+        "name": "The Brunel",
+        "old_name": "Brunel Wine Bar",
+        "phone": "+44 117 973 4443",
+        "website": "http://www.the-brunel.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 279440486,
+      "center": {
+        "lat": 51.4502665,
+        "lon": -2.619257
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "261",
+        "addr:postcode": "BS8 4SF",
+        "addr:street": "Hotwell Road",
+        "addr:suburb": "Hotwells",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1684641",
+        "name": "The Bear",
+        "ref:GB:uprn": "110441;338212",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26497938"
+      }
+    },
+    {
+      "type": "way",
+      "id": 279444017,
+      "center": {
+        "lat": 51.4497619,
+        "lon": -2.6184057
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "5",
+        "addr:postcode": "BS8 4PZ",
+        "addr:street": "Merchants Road",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "merchants@bathales.co.uk",
+        "fhrs:id": "312150",
+        "name": "Merchants Arms",
+        "operator": "Bath Ales",
+        "phone": "+44 117 904 0037",
+        "ref:GB:uprn": "346330;171863",
+        "website": "https://bathales.com/pubs/merchants-arms.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 279610644,
+      "center": {
+        "lat": 51.4533079,
+        "lon": -2.5773811
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "39",
+        "addr:postcode": "BS2 0LF",
+        "addr:street": "Barton Road",
+        "addr:suburb": "Saint Philips",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-08-19",
+        "fhrs:id": "480404",
+        "food": "yes",
+        "name": "Barley Mow",
+        "real_ale": "18",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 280997088,
+      "center": {
+        "lat": 51.4509201,
+        "lon": -2.6071969
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "127",
+        "addr:postcode": "BS1 5UW",
+        "addr:street": "Saint Georges Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312571",
+        "name": "Myrtle Tree",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 284531810,
+      "center": {
+        "lat": 51.4702876,
+        "lon": -2.6063602
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS6 6SS",
+        "addr:street": "Lower Redland Road",
+        "addr:suburb": "Redland",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "804302",
+        "name": "The Shakespeare",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 285586218,
+      "center": {
+        "lat": 51.4537237,
+        "lon": -2.5930953
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "59-63",
+        "addr:postcode": "BS1 1QZ",
+        "addr:street": "Baldwin Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "yes",
+        "fhrs:id": "312656",
+        "name": "The Old Fish Market",
+        "ref:GB:uprn": "346151;105283;225063",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.oldfishmarket.co.uk/",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 288563313,
+      "center": {
+        "lat": 51.4533364,
+        "lon": -2.5983908
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "14-16",
+        "addr:postcode": "BS1 4UT",
+        "addr:street": "St Augustine's Parade",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "fhrs:id": "310247",
+        "name": "The Drawbridge",
+        "old_name": "Horn & Trumpet",
+        "phone": "+44 1179298391",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/avon/drawbridge",
+        "wheelchair": "yes",
+        "wikidata": "Q26569312"
+      }
+    },
+    {
+      "type": "way",
+      "id": 288984336,
+      "center": {
+        "lat": 51.4415521,
+        "lon": -2.6017056
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "4-6",
+        "addr:postcode": "BS3 1HT",
+        "addr:street": "North Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "642822",
+        "name": "Steam Crane"
+      }
+    },
+    {
+      "type": "way",
+      "id": 288984337,
+      "center": {
+        "lat": 51.4394339,
+        "lon": -2.6020747
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "26",
+        "addr:postcode": "BS3 3LH",
+        "addr:street": "West Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-06-26",
+        "fhrs:id": "312617",
+        "name": "The Black Cat"
+      }
+    },
+    {
+      "type": "way",
+      "id": 288991433,
+      "center": {
+        "lat": 51.4407397,
+        "lon": -2.6106331
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "210",
+        "addr:postcode": "BS3 1JF",
+        "addr:street": "North Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "386014",
+        "name": "Hen & Chicken Pub",
+        "ref:GB:uprn": "351279;122485;363928;345747"
+      }
+    },
+    {
+      "type": "way",
+      "id": 289453746,
+      "center": {
+        "lat": 51.4528798,
+        "lon": -2.5988541
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "8",
+        "addr:postcode": "BS1 5DQ",
+        "addr:street": "Denmark Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "retail",
+        "check_date": "2025-06-08",
+        "fhrs:id": "480437",
+        "name": "Smoke & Mirrors",
+        "note": "8 Denmark Street City Centre Bristol BS1 5DQ",
+        "ref:GB:uprn": "351153;106667",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290600660,
+      "center": {
+        "lat": 51.4551635,
+        "lon": -2.5957305
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Quay Head",
+        "addr:postcode": "BS1 1EB",
+        "addr:street": "Colston Avenue",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "commercial",
+        "check_date": "2025-05-17",
+        "fhrs:id": "312672",
+        "name": "The White Lion",
+        "operator": "Wickwar Brewing Co.",
+        "phone": "+44 1179277744",
+        "ref:GB:uprn": "351142;353347;200076",
+        "website": "http://www.wickwarbrewing.co.uk/index.php?option=com_content&view=article&id=6&Itemid=9"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290998521,
+      "center": {
+        "lat": 51.4562377,
+        "lon": -2.5821565
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "29-30",
+        "addr:postcode": "BS2 0HB",
+        "addr:street": "Old Market Street",
+        "addr:suburb": "St Philip's",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "3",
+        "check_date": "2026-04-14",
+        "check_date:opening_hours": "2026-04-14",
+        "fhrs:id": "386081",
+        "listed_status": "Grade II",
+        "name": "Old Market Tavern",
+        "opening_hours": "Mo-We 15:00-23:00; Th 12:00-23:00; Fr 12:00-00:00; Sa 14:00-00:00; Su 14:00-23:00",
+        "payment:american_express": "no",
+        "ref:GB:nhle": "1202393",
+        "ref:GB:uprn": "351100;100687",
+        "wheelchair": "limited",
+        "wikidata": "Q26498009"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290998524,
+      "center": {
+        "lat": 51.4561098,
+        "lon": -2.5827266
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "23",
+        "addr:postcode": "BS2 0HB",
+        "addr:street": "Old Market Street",
+        "addr:suburb": "St Philip's",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "3",
+        "check_date": "2025-09-27",
+        "fhrs:id": "386229",
+        "indoor_seating": "yes",
+        "listed_status": "Grade II",
+        "name": "Punchbowl",
+        "outdoor_seating": "yes",
+        "ref:GB:nhle": "1282192",
+        "ref:GB:uprn": "351102;100695",
+        "wikidata": "Q26571178"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290998525,
+      "center": {
+        "lat": 51.4555537,
+        "lon": -2.5829172
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "74",
+        "addr:postcode": "BS2 0EJ",
+        "addr:street": "Old Market Street",
+        "addr:suburb": "Saint Philips",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-09-27",
+        "fhrs:id": "1037921",
+        "heritage": "2",
+        "heritage:inscription_date": "1959-01-08",
+        "heritage:operator": "Historic England",
+        "heritage:operator:wikidata": "Q19604421",
+        "heritage:website": "https://historicengland.org.uk/listing/the-list/list-entry/1207592",
+        "historic": "building",
+        "listed_status": "Grade II",
+        "name": "Stag & Hounds",
+        "ref:GB:nhle": "1207592",
+        "ref:GB:uprn": "351248;102039",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q7596750"
+      }
+    },
+    {
+      "type": "way",
+      "id": 291382795,
+      "center": {
+        "lat": 51.4587409,
+        "lon": -2.55812
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "145-147",
+        "addr:postcode": "BS5 9LA",
+        "addr:street": "Church Road",
+        "addr:suburb": "Redfield",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "610377",
+        "name": "The Old Stillage",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292003059,
+      "center": {
+        "lat": 51.4363045,
+        "lon": -2.6451215
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:district": "North Somerset",
+        "addr:housenumber": "172",
+        "addr:place": "Long Ashton",
+        "addr:postcode": "BS41 9LT",
+        "addr:street": "Long Ashton Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "186643",
+        "name": "The Angel Inn",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.theangel-longashton.co.uk/",
+        "wikidata": "Q26598349"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292008224,
+      "center": {
+        "lat": 51.462573,
+        "lon": -2.6148237
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "18-20",
+        "addr:postcode": "BS8 2HY",
+        "addr:street": "Alma Vale Road",
+        "addr:suburb": "Clifton",
+        "alt_name": "Alma Tavern",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-05-06",
+        "fhrs:id": "1003665",
+        "name": "The Alma",
+        "ref:GB:uprn": "351620;259823",
+        "website": "https://www.almatavernandtheatre.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292952877,
+      "center": {
+        "lat": 51.4479135,
+        "lon": -2.5266811
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS15 3AP",
+        "amenity": "pub",
+        "fhrs:id": "41538",
+        "name": "Swan Inn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 293788801,
+      "center": {
+        "lat": 51.4550335,
+        "lon": -2.6179176
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "The Albion",
+        "addr:postcode": "BS8 4AA",
+        "addr:street": "Boyces Avenue",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-12-15",
+        "contact:facebook": "https://www.facebook.com/TheAlbionClifton/",
+        "contact:phone": "+44 117 973 3522",
+        "contact:twitter": "@AlbionClifton",
+        "contact:website": "http://www.thealbionclifton.co.uk/",
+        "fhrs:id": "312669",
+        "food": "yes",
+        "name": "The Albion",
+        "ref:GB:uprn": "102683",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26497683"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294089884,
+      "center": {
+        "lat": 51.4933912,
+        "lon": -2.5210669
+      },
+      "tags": {
+        "addr:city": "Frenchay",
+        "addr:postcode": "BS16 1LZ",
+        "addr:street": "Frenchay Common",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "fhrs:id": "1059293",
+        "name": "White Lion",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30",
+        "ref:GB:uprn": "512579",
+        "website": "https://www.greeneking.co.uk/pubs/avon/white-lion"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294408178,
+      "center": {
+        "lat": 51.481232,
+        "lon": -2.5280249
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "800",
+        "addr:postcode": "BS16 3TE",
+        "addr:street": "Fishponds Road",
+        "addr:suburb": "Fishponds",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Snuffy Jack's Ale House",
+        "opening_hours": "Mo-Fr 17:00-22:00; Sa 12:00-23:00; Su 12:00-16:30",
+        "phone": "+44 117 965 5158",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294408199,
+      "center": {
+        "lat": 51.4806656,
+        "lon": -2.5286253
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS16 3TT",
+        "addr:street": "Fishponds Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "626496",
+        "name": "The Old Post Office",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.greatukpubs.co.uk/old-post-office-fishponds",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294410657,
+      "center": {
+        "lat": 51.4795285,
+        "lon": -2.5301777
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "748-756",
+        "addr:postcode": "BS16 3UA",
+        "addr:street": "Fishponds Road",
+        "addr:suburb": "Fishponds",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "building": "yes",
+        "dog": "no",
+        "fhrs:id": "312087",
+        "name": "The Van Dyck Forum",
+        "ref:GB:uprn": "249013",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/bristol/the-van-dyck-forum-bristol",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/559/menus",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 294418959,
+      "center": {
+        "lat": 51.4729026,
+        "lon": -2.552055
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "286",
+        "addr:postcode": "BS5 6PY",
+        "addr:street": "Fishponds Road",
+        "addr:suburb": "Eastville",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1064186",
+        "name": "Queens Head",
+        "ref:GB:uprn": "350838;376859;59843",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 298452540,
+      "center": {
+        "lat": 51.4556242,
+        "lon": -2.5973408
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "40",
+        "addr:postcode": "BS1 5AE",
+        "addr:street": "Colston Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "312332",
+        "name": "Sportsmans"
+      }
+    },
+    {
+      "type": "way",
+      "id": 298668749,
+      "center": {
+        "lat": 51.4570202,
+        "lon": -2.6092891
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS8 1JW",
+        "addr:street": "Park Place",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-06-15",
+        "fhrs:id": "313030",
+        "name": "Quinton House",
+        "ref:GB:uprn": "351619;299840",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 302511991,
+      "center": {
+        "lat": 51.4385244,
+        "lon": -2.6029063
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS3 3NU",
+        "addr:street": "West Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-06-26",
+        "fhrs:id": "312646",
+        "name": "Jolly Colliers",
+        "ref:GB:uprn": "128872;351383",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 302511998,
+      "center": {
+        "lat": 51.4424221,
+        "lon": -2.6000265
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "43",
+        "addr:postcode": "BS3 1BS",
+        "addr:street": "Dean Lane",
+        "addr:suburb": "Southville",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-06-19",
+        "fhrs:id": "938583",
+        "name": "The Dame",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 302512002,
+      "center": {
+        "lat": 51.4387389,
+        "lon": -2.5936782
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS3 4LE",
+        "addr:street": "Alfred Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-11-08",
+        "fhrs:id": "310330",
+        "name": "The Rising Sun"
+      }
+    },
+    {
+      "type": "way",
+      "id": 302512003,
+      "center": {
+        "lat": 51.4395474,
+        "lon": -2.5943822
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "14",
+        "addr:postcode": "BS3 4LU",
+        "addr:street": "Windmill Hill",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Windmill",
+        "ref:GB:uprn": "388091",
+        "website": "https://thewindmillbristol.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 305533861,
+      "center": {
+        "lat": 51.4684996,
+        "lon": -2.5207789
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "210-212",
+        "addr:postcode": "BS15 1LY",
+        "addr:street": "Charlton Road",
+        "addr:suburb": "Saint George",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1278289",
+        "name": "Warwick Arms",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 320893906,
+      "center": {
+        "lat": 51.4516567,
+        "lon": -2.5943005
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "13-15",
+        "addr:postcode": "BS1 4EF",
+        "addr:street": "King Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "fhrs:id": "731454",
+        "name": "Kongs",
+        "ref:GB:uprn": "108289;108362;356855;307845;307844",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "yes",
+        "wikidata": "Q4549965",
+        "wikipedia": "en:14 and 15 King Street, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 326149715,
+      "center": {
+        "lat": 51.4525464,
+        "lon": -2.6035164
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "17",
+        "addr:postcode": "BS1 5UU",
+        "addr:street": "Saint Georges Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "811024",
+        "name": "Lime Kiln",
+        "old_name": "Horse & Groom",
+        "ref:GB:uprn": "350558;42",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26275919"
+      }
+    },
+    {
+      "type": "way",
+      "id": 326353155,
+      "center": {
+        "lat": 51.4663148,
+        "lon": -2.5804653
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "155",
+        "addr:postcode": "BS6 5NX",
+        "addr:street": "Ashley Road",
+        "addr:suburb": "Montpelier",
+        "amenity": "pub",
+        "building": "residential",
+        "fhrs:id": "386221",
+        "name": "The Criterion",
+        "ref:GB:uprn": "350923;73907",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 328876623,
+      "center": {
+        "lat": 51.4552415,
+        "lon": -2.6226979
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "8",
+        "addr:postcode": "BS8 4AX",
+        "addr:street": "Sion Place",
+        "addr:suburb": "Clifton",
+        "alt_name": "The Cori Tap",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:email": "cider@thecoronationtap.com",
+        "contact:facebook": "https://www.facebook.com/TheCoronationTapOfficial/",
+        "contact:phone": "+44 117 973 9617",
+        "contact:twitter": "@CoriTapClifton",
+        "contact:website": "http://www.thecoronationtap.com/",
+        "fhrs:id": "310302",
+        "music": "live",
+        "name": "The Coronation Tap",
+        "opening_hours": "Mo-Fr 17:30-23:30; Sa-Su 19:00-23:30",
+        "real_ale": "yes",
+        "real_cider": "yes",
+        "ref:GB:uprn": "351623;175445",
+        "wikidata": "Q7727649"
+      }
+    },
+    {
+      "type": "way",
+      "id": 329050803,
+      "center": {
+        "lat": 51.4498528,
+        "lon": -2.5988486
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:county": "Bristol",
+        "addr:housename": "The Waterfront",
+        "addr:postcode": "BS1 5UH",
+        "addr:street": "Canon's Road",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "building": "yes",
+        "contact:phone": "+44 117 952 9950",
+        "contact:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/bristol/vshed-bristol",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "dog": "no",
+        "fhrs:id": "311598",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "name": "V-Shed",
+        "note": "Has TV screens",
+        "outdoor_seating": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "real_ale": "yes",
+        "ref:GB:uprn": "199282;325744",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:wheelchair": "yes",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/2473/menus",
+        "wheelchair": "yes",
+        "wikidata": "Q131609266"
+      }
+    },
+    {
+      "type": "way",
+      "id": 332967008,
+      "center": {
+        "lat": 51.4702737,
+        "lon": -2.5739554
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "40",
+        "addr:postcode": "BS2 9US",
+        "addr:street": "James Street",
+        "addr:suburb": "Saint Werburghs",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1244586",
+        "name": "The Victoria",
+        "ref:GB:uprn": "64121;350860",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 332983354,
+      "center": {
+        "lat": 51.4633625,
+        "lon": -2.5704988
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "199",
+        "addr:postcode": "BS5 0PA",
+        "addr:street": "Stapleton Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "fhrs:id": "312597",
+        "name": "Lebeqs Tavern",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 951 0556",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 352131212,
+      "center": {
+        "lat": 51.4999244,
+        "lon": -2.6116376
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS10 6AG",
+        "addr:street": "Greystoke Avenue",
+        "addr:suburb": "Southmead",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Union Arms",
+        "ref:GB:uprn": "350624;11417"
+      }
+    },
+    {
+      "type": "way",
+      "id": 353479558,
+      "center": {
+        "lat": 51.4688151,
+        "lon": -2.6091011
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "129",
+        "addr:postcode": "BS6 6JE",
+        "addr:street": "Hampton Road",
+        "addr:suburb": "Redland",
+        "alt_name": "The Clyde Arms",
+        "alt_name2": "The Clyde At Redland",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312572",
+        "name": "The Clyde",
+        "ref:GB:uprn": "257437;307089"
+      }
+    },
+    {
+      "type": "way",
+      "id": 353946723,
+      "center": {
+        "lat": 51.4576494,
+        "lon": -2.5820686
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "9",
+        "addr:postcode": "BS2 9DX",
+        "addr:street": "New Street",
+        "addr:suburb": "St Paul's",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "check_date": "2025-09-28",
+        "listed_status": "Grade II",
+        "name": "The Volunteer Tavern",
+        "opening_hours": "Su-Th 12:00-00:00; Fr-Sa 12:00-01:00",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:qr_code": "no",
+        "ref:GB:nhle": "1187337",
+        "smoking": "outside",
+        "toilets": "yes",
+        "toilets:menstrual_products": "limited",
+        "website": "https://www.volunteertavern.co.uk/",
+        "wikidata": "Q26482554"
+      }
+    },
+    {
+      "type": "way",
+      "id": 353950976,
+      "center": {
+        "lat": 51.4585855,
+        "lon": -2.5787384
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "17",
+        "addr:postcode": "BS2 0DY",
+        "addr:street": "Lawfords Gate",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "1779688",
+        "name": "The Crown Tavern",
+        "official_name": "Crown Tavern",
+        "ref:GB:uprn": "197922",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354395159,
+      "center": {
+        "lat": 51.4818152,
+        "lon": -2.5836162
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "94",
+        "addr:postcode": "BS7 9JR",
+        "addr:street": "Ashley Down Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1702011",
+        "name": "Foresters Arms",
+        "ref:GB:uprn": "43439;350742",
+        "source": "gps",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354395189,
+      "center": {
+        "lat": 51.4839249,
+        "lon": -2.5981015
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "138-140",
+        "addr:postcode": "BS6 7YQ",
+        "addr:street": "Kellaway Avenue",
+        "addr:suburb": "Henleaze",
+        "amenity": "pub",
+        "building": "yes",
+        "comment": "Breakfast Served: Monday - Saturday 9am - 3pm, Sunday 9am - 6pm Main Menu Served: Monday - Saturday 12pm - 3pm & 5pm - 9pm Sunday 9am - 6pm",
+        "fhrs:id": "708037",
+        "name": "The Gloucester Old Spot",
+        "old_name": "Kellaway Arms",
+        "opening_hours": "09:00+",
+        "phone": "+44 117 924 7693",
+        "ref:GB:uprn": "40003;350715",
+        "smoking": "outside",
+        "website": "https://theoldspotbristol.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354395240,
+      "center": {
+        "lat": 51.4662307,
+        "lon": -2.569183
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "262",
+        "addr:postcode": "BS5 0NP",
+        "addr:street": "Stapleton Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Three Blackbirds Pub",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354944117,
+      "center": {
+        "lat": 51.4641052,
+        "lon": -2.5629435
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS5 6AU",
+        "addr:street": "Chelsea Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Chelsea",
+        "ref:GB:uprn": "80633;323768"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354944118,
+      "center": {
+        "lat": 51.4677088,
+        "lon": -2.5611808
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "57",
+        "addr:postcode": "BS5 6DP",
+        "addr:street": "Bellevue Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Greenbank",
+        "ref:GB:uprn": "70203;350902",
+        "toilets:wheelchair": "no",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354944119,
+      "center": {
+        "lat": 51.4671146,
+        "lon": -2.5650109
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "51",
+        "addr:postcode": "BS5 6HX",
+        "addr:street": "Saint Marks Road",
+        "addr:suburb": "Easton",
+        "alt_name": "The Loaf",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Sugar Loaf",
+        "ref:GB:uprn": "71792;322686",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354957112,
+      "center": {
+        "lat": 51.4619299,
+        "lon": -2.5650718
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "199",
+        "addr:postcode": "BS5 0HQ",
+        "addr:street": "Easton Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "retail",
+        "building:levels": "2",
+        "fhrs:id": "312149",
+        "name": "Jolly Roger",
+        "ref:GB:uprn": "87270",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354957116,
+      "center": {
+        "lat": 51.4617372,
+        "lon": -2.5631877
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "223",
+        "addr:postcode": "BS5 0EG",
+        "addr:street": "Easton Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "fhrs:id": "312606",
+        "name": "The Plough",
+        "source:addr": "FHRS Open Data",
+        "twitter": "https://twitter.com/ThePloughEaston"
+      }
+    },
+    {
+      "type": "way",
+      "id": 354957117,
+      "center": {
+        "lat": 51.4618501,
+        "lon": -2.5665617
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "171",
+        "addr:postcode": "BS5 0ES",
+        "addr:street": "Easton Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-10-23",
+        "fhrs:id": "626485",
+        "name": "The Queens Head",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 361213649,
+      "center": {
+        "lat": 51.4496774,
+        "lon": -2.6212552
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "6",
+        "addr:postcode": "BS8 4QL",
+        "addr:street": "Dowry Place",
+        "addr:suburb": "Hotwells",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:website": "http://roseofdenmark.co.uk/",
+        "fhrs:id": "1073793",
+        "name": "Rose of Denmark",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26571183"
+      }
+    },
+    {
+      "type": "way",
+      "id": 361213650,
+      "center": {
+        "lat": 51.4504388,
+        "lon": -2.6131487
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "19",
+        "addr:postcode": "BS8 4TX",
+        "addr:street": "Church Lane",
+        "addr:suburb": "Clifton",
+        "alt_name": "The Lion Inn",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1796296",
+        "food": "yes",
+        "name": "The Lion",
+        "phone": "+44 117 926 8492",
+        "ref:GB:uprn": "110178;351638",
+        "website": "http://www.thelionclifton.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 362669731,
+      "center": {
+        "lat": 51.4473164,
+        "lon": -2.5928274
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "19",
+        "addr:postcode": "BS1 6SX",
+        "addr:street": "Guinea Street",
+        "addr:suburb": "Redcliffe",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "check_date:opening_hours": "2024-04-24",
+        "fhrs:id": "386225",
+        "name": "Golden Guinea",
+        "opening_hours:signed": "no",
+        "wikidata": "Q26502717"
+      }
+    },
+    {
+      "type": "way",
+      "id": 365012294,
+      "center": {
+        "lat": 51.4586131,
+        "lon": -2.5993616
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "56",
+        "addr:postcode": "BS2 8DX",
+        "addr:street": "Saint Michael's Hill",
+        "addr:suburb": "Kingsdown",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:email": "info@robinhoodbristol.co.uk",
+        "contact:facebook": "https://www.facebook.com/robinhoodbristol/",
+        "contact:phone": "+44 117 929 9719",
+        "contact:website": "http://www.robinhoodbristol.co.uk/",
+        "fhrs:id": "811055",
+        "food": "yes",
+        "name": "Robin Hood",
+        "ref:GB:uprn": "351259;171952",
+        "wikidata": "Q26482532"
+      }
+    },
+    {
+      "type": "way",
+      "id": 365612809,
+      "center": {
+        "lat": 51.4792572,
+        "lon": -2.5868426
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS7 9EQ",
+        "addr:street": "Nevil Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:phone": "+44 117 9427525",
+        "contact:website": "http://the-sportsman.co.uk/",
+        "fhrs:id": "1108892",
+        "internet_access": "wlan",
+        "name": "The Sportsman",
+        "ref:GB:uprn": "350786;47681"
+      }
+    },
+    {
+      "type": "way",
+      "id": 366223634,
+      "center": {
+        "lat": 51.4495835,
+        "lon": -2.5971025
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "68",
+        "addr:postcode": "BS1 4QD",
+        "addr:street": "Prince Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "pub",
+        "building:levels": "3",
+        "fhrs:id": "312654",
+        "food": "yes",
+        "name": "The Shakespeare",
+        "operator": "Greene King",
+        "real_ale": "yes",
+        "ref:GB:uprn": "351139;376864;111143",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/city-of-bristol/shakespeare",
+        "wheelchair": "no",
+        "wikidata": "Q7462808",
+        "wikipedia": "en:The Shakespeare, Bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 371019948,
+      "center": {
+        "lat": 51.4382099,
+        "lon": -2.5711009
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "228",
+        "addr:postcode": "BS4 2AX",
+        "addr:street": "Wells Road",
+        "addr:suburb": "Knowle",
+        "alt_name": "The George Inn",
+        "amenity": "pub",
+        "building": "retail",
+        "check_date": "2025-08-08",
+        "fhrs:id": "1292310",
+        "name": "The George",
+        "ref:GB:uprn": "128114;351452",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 373094438,
+      "center": {
+        "lat": 51.4532189,
+        "lon": -2.6251553
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS8 4LD",
+        "addr:street": "Sion Hill",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "White Lion Inn",
+        "wikidata": "Q26498059"
+      }
+    },
+    {
+      "type": "way",
+      "id": 376308057,
+      "center": {
+        "lat": 51.4347749,
+        "lon": -2.5621702
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS4 2LL",
+        "addr:street": "Leighton Road",
+        "addr:suburb": "Knowle",
+        "alt_name": "The Knowle Hotel",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-10-04",
+        "fhrs:id": "895670",
+        "name": "The Knowle",
+        "ref:GB:uprn": "135238;200859",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 377184276,
+      "center": {
+        "lat": 51.4425181,
+        "lon": -2.6176083
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "12-13",
+        "addr:postcode": "BS3 2EA",
+        "addr:street": "Ashton Road",
+        "addr:suburb": "Ashton Gate",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "2",
+        "fhrs:id": "312565",
+        "name": "Coopers Arms",
+        "ref:GB:uprn": "118675;351295",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 377184289,
+      "center": {
+        "lat": 51.4421585,
+        "lon": -2.6179467
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "21",
+        "addr:postcode": "BS3 2EA",
+        "addr:street": "Ashton Road",
+        "addr:suburb": "Ashton Gate",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "2",
+        "name": "The Rising Sun",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "350312;119361",
+        "website": "https://www.craftunionpubs.com/rising-sun-bristol"
+      }
+    },
+    {
+      "type": "way",
+      "id": 377204892,
+      "center": {
+        "lat": 51.4351848,
+        "lon": -2.6079257
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "206",
+        "addr:postcode": "BS3 3NB",
+        "addr:street": "West Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312602",
+        "name": "The Three Lions",
+        "ref:GB:uprn": "134233;351379"
+      }
+    },
+    {
+      "type": "way",
+      "id": 377388281,
+      "center": {
+        "lat": 51.4408088,
+        "lon": -2.6010428
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS3 1BH",
+        "addr:street": "Cannon Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1613967",
+        "name": "London Inn",
+        "wikidata": "Q136341048"
+      }
+    },
+    {
+      "type": "way",
+      "id": 377388297,
+      "center": {
+        "lat": 51.4412098,
+        "lon": -2.5984472
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "117",
+        "addr:postcode": "BS3 4EX",
+        "addr:street": "East Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-11-17",
+        "fhrs:id": "927078",
+        "name": "The Old Globe",
+        "ref:GB:uprn": "351387;121498",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 377394504,
+      "center": {
+        "lat": 51.4423592,
+        "lon": -2.5967018
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "48-54",
+        "addr:postcode": "BS3 4HD",
+        "addr:street": "East Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "microbrewery": "yes",
+        "name": "Thumps",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 378568955,
+      "center": {
+        "lat": 51.4457838,
+        "lon": -2.6112103
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "185-187",
+        "addr:postcode": "BS3 1RF",
+        "addr:street": "Coronation Road",
+        "addr:suburb": "Southville",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-02-02",
+        "fhrs:id": "386063",
+        "name": "The Avon Packet",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 378579406,
+      "center": {
+        "lat": 51.4360562,
+        "lon": -2.6112613
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "147",
+        "addr:postcode": "BS3 3HB",
+        "addr:street": "Luckwell Road",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Luckwell",
+        "ref:GB:uprn": "133648;351371"
+      }
+    },
+    {
+      "type": "way",
+      "id": 378764318,
+      "center": {
+        "lat": 51.434984,
+        "lon": -2.6194716
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS3 2PW",
+        "addr:street": "Ashton Drive",
+        "addr:suburb": "Ashton Gate",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312369",
+        "name": "The Robins",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "351299;134407",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398932880,
+      "center": {
+        "lat": 51.4857602,
+        "lon": -2.5499799
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "124",
+        "addr:postcode": "BS16 1DT",
+        "addr:street": "Park Road",
+        "addr:suburb": "Stapleton",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312569",
+        "name": "Masons Arms",
+        "ref:GB:uprn": "350667;35986",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398943788,
+      "center": {
+        "lat": 51.4877638,
+        "lon": -2.5201491
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS16 2PY",
+        "addr:street": "Gill Avenue",
+        "addr:suburb": "Fishponds",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1213980",
+        "name": "The Oldbury Court Inn",
+        "ref:GB:uprn": "355700;32798",
+        "source:addr": "FHRS Open Data",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398970993,
+      "center": {
+        "lat": 51.4818911,
+        "lon": -2.523161
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS16 5AA",
+        "addr:street": "Staple Hill Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "848480",
+        "name": "The All Inn",
+        "note": "Previously called The Cross Hands",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398988642,
+      "center": {
+        "lat": 51.4779487,
+        "lon": -2.5358327
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "641",
+        "addr:postcode": "BS16 3BA",
+        "addr:street": "Fishponds Road",
+        "amenity": "pub",
+        "building": "yes",
+        "facebook": "https://www.facebook.com/goldenlionbristol/",
+        "name": "Golden Lion",
+        "ref:GB:uprn": "350805;51129"
+      }
+    },
+    {
+      "type": "way",
+      "id": 401103443,
+      "center": {
+        "lat": 51.4628666,
+        "lon": -2.5573448
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "30",
+        "addr:postcode": "BS5 9AD",
+        "addr:street": "Devon Road",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312620",
+        "name": "Whitehall Tavern",
+        "ref:GB:uprn": "350970;85106",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 401118649,
+      "center": {
+        "lat": 51.4615845,
+        "lon": -2.5547515
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "206",
+        "addr:postcode": "BS5 9BP",
+        "addr:street": "Whitehall Road",
+        "addr:suburb": "Redfield",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1318549",
+        "name": "The Red Lion",
+        "ref:GB:uprn": "351043;88919",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 401310298,
+      "center": {
+        "lat": 51.4748911,
+        "lon": -2.5316028
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "120",
+        "addr:postcode": "BS16 3JP",
+        "addr:street": "Lodge Causeway",
+        "addr:suburb": "Fishponds",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1043726",
+        "name": "The Spotted Cow",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402271437,
+      "center": {
+        "lat": 51.4382564,
+        "lon": -2.5896937
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "66",
+        "addr:postcode": "BS3 4QW",
+        "addr:street": "Raymend Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-11-17",
+        "contact:email": "hello@thevictoriapark.co.uk",
+        "contact:facebook": "https://www.facebook.com/The-Victoria-Park-153079931391657/",
+        "contact:phone": "+44 117 330 6043",
+        "contact:twitter": "@TheVictoriaPark",
+        "contact:website": "http://www.thevictoriapark.co.uk/",
+        "name": "The Victoria Park",
+        "ref:GB:uprn": "247459;172995"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402535353,
+      "center": {
+        "lat": 51.421336,
+        "lon": -2.6084586
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS13 7QT",
+        "addr:street": "Saint Peters Rise",
+        "addr:suburb": "Bishopsworth",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1073815",
+        "name": "The Maytree",
+        "ref:GB:uprn": "351203;150626",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402545062,
+      "center": {
+        "lat": 51.4327379,
+        "lon": -2.6111125
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "70",
+        "addr:postcode": "BS13 7AD",
+        "addr:street": "Bedminster Down Road",
+        "addr:suburb": "Bedminster Down",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-06-26",
+        "fhrs:id": "310258",
+        "name": "The Miners Arms",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402792401,
+      "center": {
+        "lat": 51.4659505,
+        "lon": -2.5425859
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "533",
+        "addr:postcode": "BS5 7DA",
+        "addr:street": "Whitehall Road",
+        "addr:suburb": "Redfield",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "fhrs:id": "312644",
+        "name": "Wackum Inn",
+        "ref:GB:uprn": "75607;322726",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/avon/wackum-inn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402979476,
+      "center": {
+        "lat": 51.4594327,
+        "lon": -2.5523087
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "172-174",
+        "addr:postcode": "BS5 9HX",
+        "addr:street": "Church Road",
+        "addr:suburb": "Redfield",
+        "alt_name": "Black Horse",
+        "amenity": "pub",
+        "building": "yes",
+        "dog": "leashed",
+        "fhrs:id": "938518",
+        "name": "The Dark Horse",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402979495,
+      "center": {
+        "lat": 51.4595268,
+        "lon": -2.5510945
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "188",
+        "addr:postcode": "BS5 9HX",
+        "addr:street": "Church Road",
+        "addr:suburb": "Redfield",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1275158",
+        "name": "The Fire Engine",
+        "ref:GB:uprn": "93882;321103;321104",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402984389,
+      "center": {
+        "lat": 51.4592552,
+        "lon": -2.5538129
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "140a",
+        "addr:postcode": "BS5 9HN",
+        "addr:street": "Church Road",
+        "addr:suburb": "Redfield",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "312053",
+        "name": "The George & Dragon",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 403192934,
+      "center": {
+        "lat": 51.4556504,
+        "lon": -2.5825596
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "70",
+        "addr:postcode": "BS2 0EJ",
+        "addr:street": "Old Market Street",
+        "addr:suburb": "St Philip's",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-09-27",
+        "fhrs:id": "386235",
+        "indoor_seating": "yes",
+        "listed_status": "Grade II",
+        "name": "The Long Bar",
+        "old_name": "The Three Horse Shoes",
+        "outdoor_seating": "no",
+        "ref:GB:nhle": "1279658",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26568860"
+      }
+    },
+    {
+      "type": "way",
+      "id": 403192958,
+      "center": {
+        "lat": 51.4560618,
+        "lon": -2.5808823
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "53",
+        "addr:postcode": "BS2 0ER",
+        "addr:street": "Old Market Street",
+        "addr:suburb": "St Philip's",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2025-09-27",
+        "name": "The Elmers Arms",
+        "pub": "micropub",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 405395691,
+      "center": {
+        "lat": 51.450136,
+        "lon": -2.548614
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS4 4EG",
+        "addr:street": "Langton Court Road",
+        "addr:suburb": "Saint Annes",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Langton Court Hotel",
+        "ref:GB:uprn": "351496;110965",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 405875173,
+      "center": {
+        "lat": 51.4410106,
+        "lon": -2.5553295
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "8",
+        "addr:postcode": "BS4 3PE",
+        "addr:street": "Sandy Park Road",
+        "addr:suburb": "Brislington",
+        "alt_name": "The Sandringham Hotel",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-11-10",
+        "fhrs:id": "312728",
+        "name": "The Sandringham",
+        "ref:GB:uprn": "351486;205407",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 405934119,
+      "center": {
+        "lat": 51.4402615,
+        "lon": -2.5375207
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS4 4SA",
+        "addr:street": "Broomhill Road",
+        "addr:suburb": "Brislington",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312047",
+        "name": "The Good Intent",
+        "note": "https://www.bristol247.com/food-and-drink/pubs-and-bars/pub-of-the-week-the-good-intent/",
+        "ref:GB:uprn": "351510;198885",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 431512698,
+      "center": {
+        "lat": 51.4537875,
+        "lon": -2.5932577
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "13",
+        "addr:postcode": "BS1 1UE",
+        "addr:street": "Saint Nicholas Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/seamus.odonnells/",
+        "fhrs:id": "312578",
+        "name": "Seamus O'Donnell's",
+        "phone": "+44 1179 251283",
+        "ref:GB:uprn": "351131;105182",
+        "theme": "Gay",
+        "website": "http://www.seamusodonnellsbristol.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 439775363,
+      "center": {
+        "lat": 51.4793809,
+        "lon": -2.5865658
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS7 9EQ",
+        "addr:street": "Nevil Road",
+        "addr:suburb": "Bishopston",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:phone": "+44 117 9493931",
+        "contact:website": "http://the-annexe.co.uk/",
+        "fhrs:id": "1108892",
+        "name": "The Annexe Inn",
+        "ref:GB:uprn": "308827"
+      }
+    },
+    {
+      "type": "way",
+      "id": 444339045,
+      "center": {
+        "lat": 51.4474159,
+        "lon": -2.6095321
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "12",
+        "addr:postcode": "BS1 6XT",
+        "addr:street": "Hanover Place",
+        "addr:suburb": "Hotwells",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "check_date": "2025-10-26",
+        "fhrs:id": "312573",
+        "level": "0",
+        "name": "The Orchard Inn",
+        "source:addr": "FHRS Open Data",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 463071555,
+      "center": {
+        "lat": 51.4561631,
+        "lon": -2.5939172
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "8",
+        "addr:postcode": "BS1 2HR",
+        "addr:street": "John Street",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "818339",
+        "name": "The Bank",
+        "ref:GB:uprn": "308707;351133",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26276048"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469255563,
+      "center": {
+        "lat": 51.4412009,
+        "lon": -2.6008288
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "24",
+        "addr:postcode": "BS3 1BN",
+        "addr:street": "Cannon Street",
+        "addr:suburb": "Bedminster",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "building": "yes",
+        "fhrs:id": "310912",
+        "name": "The Robert Fitzharding",
+        "website": "https://www.jdwetherspoon.com/pubs/robert-fitzharding-bristol/",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/456/menus",
+        "wifi": "free"
+      }
+    },
+    {
+      "type": "way",
+      "id": 471983748,
+      "center": {
+        "lat": 51.4569128,
+        "lon": -2.5791038
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "23-25",
+        "addr:postcode": "BS2 0DF",
+        "addr:street": "West Street",
+        "addr:suburb": "St Philip's",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "811037",
+        "name": "The Old Market Assembly",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 473665496,
+      "center": {
+        "lat": 51.4674093,
+        "lon": -2.5865623
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "68",
+        "addr:postcode": "BS6 5EW",
+        "addr:street": "Richmond Road",
+        "addr:suburb": "Montpelier",
+        "amenity": "pub",
+        "building": "yes",
+        "food": "yes",
+        "garden": "yes",
+        "name": "The Cadbury",
+        "operator": "Event Bars Ltd",
+        "outdoor_seating": "yes",
+        "phone": "+44 117 924 7874",
+        "ref:GB:uprn": "70796;350908",
+        "website": "http://home.btconnect.com/theCadbury/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 486460787,
+      "center": {
+        "lat": 51.482606,
+        "lon": -2.5412709
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS16 1DB",
+        "addr:street": "Blackberry Hill",
+        "addr:suburb": "Stapleton",
+        "amenity": "pub",
+        "name": "The Old Tavern",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26497681"
+      }
+    },
+    {
+      "type": "way",
+      "id": 496424952,
+      "center": {
+        "lat": 51.4579393,
+        "lon": -2.5666505
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "166-168",
+        "addr:postcode": "BS5 0DN",
+        "addr:street": "Lawrence Hill",
+        "addr:suburb": "Lawrence Hill",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1108881",
+        "name": "The Packhorse",
+        "ref:GB:uprn": "97362",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 497243899,
+      "center": {
+        "lat": 51.4558768,
+        "lon": -2.528766
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "56",
+        "addr:postcode": "BS5 8LW",
+        "addr:street": "Nags Head Hill",
+        "addr:suburb": "Saint George",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1061776",
+        "name": "Horse & Jockey",
+        "ref:GB:uprn": "351125;101888",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 497243922,
+      "center": {
+        "lat": 51.45718,
+        "lon": -2.529665
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "1",
+        "addr:postcode": "BS5 8LN",
+        "addr:street": "Nags Head Hill",
+        "addr:suburb": "Saint George",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Lord Raglan",
+        "ref:GB:uprn": "99121;351090",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 497273614,
+      "center": {
+        "lat": 51.4521862,
+        "lon": -2.5237259
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "90",
+        "addr:postcode": "BS5 8QT",
+        "addr:street": "Bryants Hill",
+        "addr:suburb": "Saint George",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312052",
+        "name": "The Trooper",
+        "ref:GB:uprn": "108121;351545",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 545355381,
+      "center": {
+        "lat": 51.4672563,
+        "lon": -2.6031274
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "35-37",
+        "addr:postcode": "BS6 6NP",
+        "addr:street": "Stanley Road",
+        "addr:suburb": "Redland",
+        "amenity": "pub",
+        "building": "pub",
+        "email": "info@thekensingtonarms.co.uk",
+        "fhrs:id": "1014438",
+        "name": "The Kensington Arms",
+        "opening_hours": "Mo-Fr 12:00-23:00; Sa 10:00-00:00; Su 12:00-22:30",
+        "phone": "+44 117 944 6444",
+        "ref:GB:uprn": "70030",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.thekensingtonarms.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 562903712,
+      "center": {
+        "lat": 51.4591113,
+        "lon": -2.5793436
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "12",
+        "addr:postcode": "BS2 9EB",
+        "addr:street": "Little Ann Street",
+        "addr:suburb": "Easton",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "fhrs:id": "642814",
+        "name": "The Swan with Two Necks",
+        "ref:GB:uprn": "94546;351060",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 618572180,
+      "center": {
+        "lat": 51.467312,
+        "lon": -2.5755941
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS2 9RS",
+        "addr:street": "Jubilee Road",
+        "addr:suburb": "St Werburgh's",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312913",
+        "name": "The Duke of York",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 631336742,
+      "center": {
+        "lat": 51.4763213,
+        "lon": -2.5397927
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "539",
+        "addr:postcode": "BS16 3AF",
+        "addr:street": "Fishponds Road",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "312054",
+        "name": "The Star",
+        "ref:GB:uprn": "342755"
+      }
+    },
+    {
+      "type": "way",
+      "id": 640006894,
+      "center": {
+        "lat": 51.4443036,
+        "lon": -2.6132138
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "15",
+        "addr:postcode": "BS3 1SN",
+        "addr:street": "Leigh Street",
+        "addr:suburb": "Southville",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "748686",
+        "name": "The Ashville",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 641991577,
+      "center": {
+        "lat": 51.4635889,
+        "lon": -2.5918698
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:country": "GB",
+        "addr:housenumber": "41",
+        "addr:postcode": "BS2 8LX",
+        "addr:street": "Thomas Street North",
+        "addr:suburb": "Cotham",
+        "amenity": "pub",
+        "building": "yes",
+        "food": "yes",
+        "name": "The Hare on the Hill",
+        "operator": "Bath Ales",
+        "phone": "+44 117 908 1982",
+        "ref:GB:uprn": "81821",
+        "website": "https://bathales.com/pubs/hare-on-the-hill.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 645648628,
+      "center": {
+        "lat": 51.4529451,
+        "lon": -2.6238734
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housename": "Wellington Terrace",
+        "addr:housenumber": "3",
+        "addr:postcode": "BS8 4LE",
+        "addr:street": "Sion Hill",
+        "addr:suburb": "Clifton",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:facebook": "The-Portcullis-176194272425310",
+        "fhrs:id": "312632",
+        "internet_access": "wlan",
+        "name": "Portcullis",
+        "opening_hours": "Mo-Fr 16:00-11:00; Sa 12:00-11:00; Su 12:00-10:30",
+        "real_ale": "yes",
+        "website": "https://www.theportcullisclifton.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 672111319,
+      "center": {
+        "lat": 51.4494962,
+        "lon": -2.5934402
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "2",
+        "addr:postcode": "BS1 4QZ",
+        "addr:street": "The Grove",
+        "addr:suburb": "City Centre",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "509646",
+        "indoor_seating": "yes",
+        "name": "The Hole in the Wall",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "111229;351140",
+        "wheelchair": "yes",
+        "wikidata": "Q136341132"
+      }
+    },
+    {
+      "type": "way",
+      "id": 675544668,
+      "center": {
+        "lat": 51.4371668,
+        "lon": -2.5560675
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS4 3DS",
+        "addr:street": "Tramway Road",
+        "amenity": "pub",
+        "brand": "Hungry Horse",
+        "brand:wikidata": "Q5943510",
+        "building": "yes",
+        "check_date": "2024-10-26",
+        "contact:facebook": "https://www.facebook.com/Lodekka-Hungry-Horse-Brislington-124107887793102/",
+        "contact:phone": "+44 1179712975",
+        "contact:website": "http://www.hungryhorse.co.uk/locations/lodekka",
+        "cuisine": "regional",
+        "name": "Lodekka",
+        "opening_hours": "Mo-Su 11:00-23:00",
+        "operator": "Hungry Horse",
+        "ref:GB:uprn": "376889;360183;353016",
+        "source": "Bing",
+        "wikidata": "Q136026172"
+      }
+    },
+    {
+      "type": "way",
+      "id": 736661920,
+      "center": {
+        "lat": 51.4343676,
+        "lon": -2.5487814
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS4 4LF",
+        "addr:street": "Hollywood Road",
+        "addr:suburb": "Brislington",
+        "amenity": "pub",
+        "building": "retail",
+        "check_date": "2024-11-07",
+        "fhrs:id": "804316",
+        "name": "The Kings Arms",
+        "ref:GB:uprn": "351503;135903",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26571235"
+      }
+    },
+    {
+      "type": "way",
+      "id": 771983616,
+      "center": {
+        "lat": 51.4576011,
+        "lon": -2.5790594
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "25",
+        "addr:postcode": "BS2 0DP",
+        "addr:street": "Gloucester Lane",
+        "addr:suburb": "Easton",
+        "alt_name": "The Coach",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "fhrs:id": "312614",
+        "listed_status": "Grade II",
+        "name": "Coach & Horses",
+        "ref:GB:nhle": "1282271",
+        "ref:GB:uprn": "351085;97919",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26571241"
+      }
+    },
+    {
+      "type": "way",
+      "id": 951655329,
+      "center": {
+        "lat": 51.4406993,
+        "lon": -2.6215871
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "name": "The Guinness Bar"
+      }
+    },
+    {
+      "type": "way",
+      "id": 964703038,
+      "center": {
+        "lat": 51.47945,
+        "lon": -2.5323522
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "693",
+        "addr:postcode": "BS16 3UH",
+        "addr:street": "Fishponds Road",
+        "addr:suburb": "Fishponds",
+        "amenity": "pub",
+        "building": "commercial",
+        "name": "Fishponds Tap",
+        "ref:GB:uprn": "48169;350793",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.fishpondstap.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1011173159,
+      "center": {
+        "lat": 51.4620336,
+        "lon": -2.5234981
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS15 1BH",
+        "addr:street": "Two Mile Hill Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Rose and Crown",
+        "ref:GB:uprn": "351034;87752"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1088206528,
+      "center": {
+        "lat": 51.4352354,
+        "lon": -2.5482971
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:housenumber": "21",
+        "addr:postcode": "BS4 4LE",
+        "addr:street": "Hollywood Road",
+        "addr:suburb": "Brislington",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Pilgrim Inn",
+        "ref:GB:uprn": "174886;342665"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1137096800,
+      "center": {
+        "lat": 51.4791028,
+        "lon": -2.5301789
+      },
+      "tags": {
+        "addr:city": "Bristol",
+        "addr:postcode": "BS16 3SG",
+        "addr:street": "Station Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "312747",
+        "name": "The Railway Tavern",
+        "ref:GB:uprn": "48614;350795"
+      }
+    }
+  ]
+}

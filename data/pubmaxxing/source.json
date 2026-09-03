@@ -1,0 +1,6 @@
+{
+  "sourceRepo": "https://github.com/karanmrn/pubmaxxing",
+  "sourceCommit": "6eafc34",
+  "importedAt": "2026-07-07",
+  "notes": "Firecrawl handoff data for all-beverage prices, pub discovery, discount candidates, and history source seeds. This is a provenance-preserving seed, not yet normalized into the canonical live venue IDs."
+}

@@ -1,0 +1,40 @@
+/* "Read this page" — a large, calm, high-contrast tap target so it holds up
+   at the Ledger's big-text reading scale. Tokens from app/globals.css. */
+.ledgerReadButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--panel-raised);
+  border: 2px solid var(--brass);
+  border-radius: var(--radius-sm, 8px);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ledgerReadButton:hover {
+  background: var(--brass);
+  color: var(--color-on-accent, #fdfaf2);
+}
+
+.ledgerReadButton[aria-pressed="true"] {
+  background: var(--ink-deep);
+  color: var(--panel-raised);
+  border-color: var(--ink-deep);
+}
+
+.ledgerReadButton:focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ledgerReadButton {
+    transition: none;
+  }
+}

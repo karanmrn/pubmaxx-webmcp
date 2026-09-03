@@ -1,0 +1,212 @@
+{
+  "generatedAt": "2026-07-26T01:07:30.747Z",
+  "ukPubs": 38215,
+  "matchedTotal": 3039,
+  "uniqueToUk": 35176,
+  "byMatchType": {
+    "osm-id": 2358,
+    "name-distance": 681
+  },
+  "matchRadiusM": 150,
+  "sources": [
+    {
+      "source": "city:bath",
+      "entries": 68,
+      "matched": 67
+    },
+    {
+      "source": "city:bristol",
+      "entries": 269,
+      "matched": 269
+    },
+    {
+      "source": "city:cambridge",
+      "entries": 81,
+      "matched": 80
+    },
+    {
+      "source": "city:durham",
+      "entries": 31,
+      "matched": 31
+    },
+    {
+      "source": "city:glasgow",
+      "entries": 293,
+      "matched": 293
+    },
+    {
+      "source": "city:liverpool",
+      "entries": 406,
+      "matched": 404
+    },
+    {
+      "source": "city:manchester",
+      "entries": 544,
+      "matched": 543
+    },
+    {
+      "source": "city:oxford",
+      "entries": 97,
+      "matched": 97
+    },
+    {
+      "source": "curated-london-slim",
+      "entries": 1919,
+      "matched": 680
+    },
+    {
+      "source": "outer-london-osm-seed",
+      "entries": 722,
+      "matched": 575
+    }
+  ],
+  "samples": [
+    {
+      "osmId": "node/251829660",
+      "name": "The William Garland",
+      "source": "curated-london-slim",
+      "id": "venue-7l4pei",
+      "matchType": "name-distance",
+      "distanceM": 3
+    },
+    {
+      "osmId": "way/270582394",
+      "name": "Jack and Jill",
+      "source": "outer-london-osm-seed",
+      "id": "way/270582394",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/317421622",
+      "name": "The Star",
+      "source": "outer-london-osm-seed",
+      "id": "node/317421622",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/255137548",
+      "name": "The Rising Sun",
+      "source": "curated-london-slim",
+      "id": "venue-1kd5rio",
+      "matchType": "name-distance",
+      "distanceM": 0
+    },
+    {
+      "osmId": "node/314396579",
+      "name": "The Jolly Coopers",
+      "source": "curated-london-slim",
+      "id": "venue-uwqipn",
+      "matchType": "name-distance",
+      "distanceM": 2
+    },
+    {
+      "osmId": "way/659410327",
+      "name": "The Railway Guard",
+      "source": "curated-london-slim",
+      "id": "venue-1bgjxe4",
+      "matchType": "name-distance",
+      "distanceM": 3
+    },
+    {
+      "osmId": "node/454200832",
+      "name": "Kings Arms",
+      "source": "curated-london-slim",
+      "id": "venue-1k92g4d",
+      "matchType": "name-distance",
+      "distanceM": 5
+    },
+    {
+      "osmId": "way/1322622415",
+      "name": "The Shy Horse",
+      "source": "outer-london-osm-seed",
+      "id": "way/1322622415",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "way/154792747",
+      "name": "The California",
+      "source": "outer-london-osm-seed",
+      "id": "way/154792747",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/314407484",
+      "name": "The Famous Green Man",
+      "source": "curated-london-slim",
+      "id": "venue-1luuk13",
+      "matchType": "name-distance",
+      "distanceM": 5
+    },
+    {
+      "osmId": "way/855624834",
+      "name": "The Eight Bells",
+      "source": "curated-london-slim",
+      "id": "venue-12qgqym",
+      "matchType": "name-distance",
+      "distanceM": 2
+    },
+    {
+      "osmId": "node/36869280",
+      "name": "The Grumpy Mole",
+      "source": "outer-london-osm-seed",
+      "id": "node/36869280",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/36868088",
+      "name": "The Railway",
+      "source": "outer-london-osm-seed",
+      "id": "node/36868088",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/36989169",
+      "name": "The Harrow",
+      "source": "outer-london-osm-seed",
+      "id": "node/36989169",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "way/365268265",
+      "name": "Ye Olde Red Lion",
+      "source": "outer-london-osm-seed",
+      "id": "way/365268265",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/277834910",
+      "name": "The Old Bank",
+      "source": "outer-london-osm-seed",
+      "id": "node/277834910",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/1132744385",
+      "name": "The Whispering Moon",
+      "source": "outer-london-osm-seed",
+      "id": "node/1132744385",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/266880851",
+      "name": "The Prince of Wales",
+      "source": "outer-london-osm-seed",
+      "id": "node/266880851",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "node/277834913",
+      "name": "O'Neills",
+      "source": "outer-london-osm-seed",
+      "id": "node/277834913",
+      "matchType": "osm-id"
+    },
+    {
+      "osmId": "way/653145311",
+      "name": "The Star",
+      "source": "outer-london-osm-seed",
+      "id": "way/653145311",
+      "matchType": "osm-id"
+    }
+  ]
+}

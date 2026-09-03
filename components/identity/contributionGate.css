@@ -1,0 +1,125 @@
+.contributionGateBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-overlay-top, 1300) + 2);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--ink-deep) 62%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.contributionGate {
+  display: grid;
+  gap: 0.85rem;
+  width: min(28rem, 100%);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--ink-deep) 30%, transparent);
+}
+
+.contributionGate h2,
+.contributionGate p {
+  margin: 0;
+}
+
+.contributionGate h2 {
+  font-size: clamp(1.3rem, 6vw, 1.75rem);
+  line-height: 1.08;
+}
+
+.contributionGate > p:not(.contributionGateEyebrow, .contributionGateError) {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.contributionGateEyebrow {
+  color: var(--brass);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contributionGateField {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.contributionGateField input {
+  min-height: 46px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+}
+
+.contributionGatePrimary,
+.contributionGateClose {
+  min-height: 46px;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.85rem;
+  font: inherit;
+  font-weight: 780;
+  cursor: pointer;
+}
+
+.contributionGatePrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--brass);
+  background: var(--brass);
+  color: var(--color-on-accent);
+  text-decoration: none;
+}
+
+.contributionGateClose {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.contributionGatePrimary:disabled,
+.contributionGateClose:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.contributionGateError {
+  color: var(--brick);
+  font-size: 0.82rem;
+}
+
+.contributionGate button:focus-visible,
+.contributionGate input:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .contributionGateBackdrop {
+    align-items: end;
+    padding: 0;
+  }
+
+  .contributionGate {
+    width: 100%;
+    max-height: calc(100dvh - env(safe-area-inset-top, 0px));
+    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 1.2rem 1.2rem 0 0;
+  }
+}

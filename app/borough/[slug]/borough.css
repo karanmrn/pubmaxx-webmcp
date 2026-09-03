@@ -1,0 +1,708 @@
+/* Borough discovery pages (/borough and /borough/[slug]). Shared stylesheet:
+   the index and detail surfaces stay visually identical. Self-contained —
+   depends only on the globally-loaded design tokens (--brass, --ink, --line,
+   etc. from globals.css / theme.css) and the shared .siteNav, never on a
+   route-scoped stylesheet. Mirrors the discover/leaderboard aesthetic: price
+   stamps, hairline borders, Garamond/serif headings. Responsive to 375px. */
+
+.boroughPage {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+  color: var(--ink);
+}
+
+/* --- header --------------------------------------------------------------- */
+
+.boroughHead {
+  margin: 32px 0 28px;
+}
+
+.boroughEyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.boroughEyebrow a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.boroughEyebrow a:hover {
+  text-decoration: underline;
+}
+
+.boroughTitle {
+  margin: 0 0 14px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.boroughDek {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.boroughThinBanner {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  max-width: 52ch;
+  border: 1px solid color-mix(in srgb, var(--brass) 28%, var(--line));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.boroughMapLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 18px;
+}
+
+.boroughCrawlLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brass);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.boroughCrawlLinkSecondary {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.boroughCrawlLink:hover {
+  text-decoration: underline;
+}
+
+.boroughEmpty {
+  margin: 0;
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  background: var(--panel);
+  font-size: 15px;
+}
+
+.boroughEmpty a {
+  color: var(--brass);
+  text-decoration: underline;
+}
+
+.boroughNoPrice {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+/* --- detail: pubs table --------------------------------------------------- */
+
+.boroughTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.boroughTable thead th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-raised);
+}
+
+.boroughTable tbody tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.boroughTable tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.boroughTable td,
+.boroughTable th[scope="row"] {
+  padding: 12px 14px;
+  vertical-align: middle;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.boroughRankHead,
+.boroughRank {
+  width: 44px;
+  text-align: center;
+}
+
+.boroughRankNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--brass);
+}
+
+.boroughName {
+  text-align: left;
+}
+
+.boroughPub {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.boroughPub:hover {
+  color: var(--brass);
+  text-decoration: underline;
+}
+
+.boroughPint {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* Modest entry point into the Ledger (issue #25) — a small, quiet link, not a
+   second CTA competing with the pub name link above it. */
+.boroughLedgerLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.boroughLedgerLink:hover {
+  text-decoration: underline;
+}
+
+.boroughPriceHead {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.boroughPriceCell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* --- index: borough cards ------------------------------------------------- */
+
+.boroughGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.boroughCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.boroughCard:hover {
+  border-color: var(--brass);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--brass) 12%, transparent);
+}
+
+.boroughCardName {
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.boroughCardMeta {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.boroughCardPrice {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* Subtle heritage count on an index card — only rendered where a borough has
+   cited historic pubs (borough-heritage rollup, Wave H). Additive, never
+   restructures the card. */
+.boroughCardHistoric {
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--brass) 28%, transparent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--brass);
+}
+
+/* --- night-out chapter sections (story pubs / crawls) ---------------------- */
+
+.boroughSection {
+  margin: 32px 0 0;
+}
+
+.boroughSectionTitle {
+  margin: 0 0 6px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.boroughSectionDek {
+  margin: 0 0 14px;
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.boroughChipList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.boroughChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.boroughChip:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.boroughCrawlList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.boroughCrawlCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.boroughCrawlCard strong {
+  display: block;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 17px;
+  color: var(--ink);
+}
+
+.boroughCrawlCard p {
+  margin: 3px 0 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.boroughCrawlPlanLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  flex-shrink: 0;
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.boroughCrawlPlanLink:hover {
+  text-decoration: underline;
+}
+
+/* --- historic pubs (borough-heritage rollup, Wave H) ---------------------- */
+/* Reuses the /historic card idiom (era/grade chips, 2-line hook clamp) so the
+   two heritage surfaces read as one system. Tokens only; both themes track. */
+
+.boroughHeritageProvenance {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.boroughHeritageList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.boroughHeritageCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.boroughHeritageMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.boroughHeritageEra {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brass);
+}
+
+.boroughHeritageGrade {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--river) 14%, var(--panel-raised));
+  border: 1px solid color-mix(in srgb, var(--river) 32%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--river);
+}
+
+.boroughHeritageName {
+  margin: 0;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.boroughHeritageHook {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  overflow-wrap: break-word;
+}
+
+.boroughHeritageMapLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: auto;
+  color: var(--brass);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.boroughHeritageMapLink:hover {
+  text-decoration: underline;
+}
+
+.boroughHeritageFoot {
+  margin: 14px 0 0;
+}
+
+.boroughHeritageFoot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.boroughHeritageFoot a:hover {
+  text-decoration: underline;
+}
+
+/* --- footnote ------------------------------------------------------------- */
+
+.boroughFootnote {
+  margin: 28px 0 0;
+  font-family: var(--font-garamond, var(--serif));
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.boroughFootnote a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brass);
+  font-style: normal;
+  text-decoration: none;
+}
+
+.boroughFootnote a:hover {
+  text-decoration: underline;
+}
+
+/* --- focus ---------------------------------------------------------------- */
+
+.boroughPub:focus-visible,
+.boroughCard:focus-visible,
+.boroughCrawlLink:focus-visible,
+.boroughChip:focus-visible,
+.boroughCrawlPlanLink:focus-visible,
+.boroughEmpty a:focus-visible,
+.boroughEyebrow a:focus-visible,
+.boroughFootnote a:focus-visible,
+.boroughHeritageMapLink:focus-visible,
+.boroughHeritageFoot a:focus-visible,
+.boroughPassportFoot a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* --- borough passport slice ----------------------------------------------- */
+
+.boroughPassportGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.boroughPassportStat {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm, 8px);
+  background: var(--panel-raised, #fbf9f2);
+}
+
+.boroughPassportStat dt {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.boroughPassportStat dd {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.boroughPassportLoading .boroughPassportSkeleton {
+  display: block;
+  width: 56px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--line-soft, var(--line));
+}
+
+.boroughPassportLoading .boroughPassportSkeletonCopy {
+  width: min(100%, 360px);
+  height: 18px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .boroughPassportLoading .boroughPassportSkeleton {
+    background: linear-gradient(
+      100deg,
+      var(--line-soft, var(--line)) 30%,
+      color-mix(in srgb, var(--line) 55%, var(--panel-raised) 45%) 50%,
+      var(--line-soft, var(--line)) 70%
+    );
+    background-size: 220% 100%;
+    animation: boroughPassportShimmer 1.9s linear infinite;
+  }
+}
+
+@keyframes boroughPassportShimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+.boroughPassportFoot {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.boroughPassportFoot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brass);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.boroughPassportFoot a:hover {
+  text-decoration: underline;
+}
+
+/* Screen-reader-only utility (table caption). */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- responsive to 375px -------------------------------------------------- */
+
+@media (max-width: 560px) {
+  .boroughPage {
+    padding: 20px 14px 72px;
+  }
+
+  .boroughHead {
+    margin: 24px 0 22px;
+  }
+
+  .boroughTable td,
+  .boroughTable th[scope="row"],
+  .boroughTable thead th {
+    padding: 11px 10px;
+  }
+
+  .boroughGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .boroughCrawlCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .boroughPassportGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Motion (gated): the card lift only where motion is welcome. */
+@media (prefers-reduced-motion: no-preference) {
+  .boroughCard:hover {
+    transform: translateY(-2px);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease,
+      transform 0.18s ease;
+  }
+}
+
+/* --- CityMCP pint-price chip (A1) ------------------------------------------ */
+
+.boroughPintChip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 14px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.boroughPintChipLabel {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--brass);
+  color: var(--panel);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.boroughPintChipCompare {
+  color: var(--ink-soft);
+}

@@ -1,0 +1,401 @@
+.palExperience {
+  /* Pub Pal is part of PubMaxxing, not a purple microsite. These aliases keep
+     every Pal control on the same light/dark semantic palette as the app. */
+  --pal-night: var(--paper);
+  --pal-paper: var(--ink);
+  --pal-mist: var(--brass);
+  --pal-accent: var(--brass);
+  --pal-accent-strong: var(--brass-bright);
+  --pal-line: var(--line);
+  --pal-soft: var(--ink-soft);
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: calc(4.75rem + env(safe-area-inset-top)) clamp(1rem, 4vw, 4.5rem) calc(6rem + env(safe-area-inset-bottom));
+  background:
+    radial-gradient(circle at 76% 22%, color-mix(in srgb, var(--brass) 12%, transparent), transparent 31rem),
+    radial-gradient(circle at 18% 86%, color-mix(in srgb, var(--river) 10%, transparent), transparent 26rem),
+    var(--pal-night);
+  color: var(--pal-paper);
+  font-family: var(--font-body);
+}
+
+.palExperience *, .palExperience *::before, .palExperience *::after { box-sizing: border-box; }
+.palExperience button, .palExperience a, .palExperience input { font: inherit; }
+.palExperience button, .palExperience a { -webkit-tap-highlight-color: transparent; }
+.palExperience button:active, .palExperience a:active { transform: scale(.98); --shared-press-scale: 1; }
+.palExperience button:focus-visible, .palExperience a:focus-visible, .palExperience input:focus-visible { outline: 3px solid var(--pal-mist); outline-offset: 3px; }
+.palExperience h1, .palExperience h2 { margin: 0; font-family: var(--font-display); letter-spacing: -.052em; }
+.palExperience p { margin: 0; }
+
+.palTopbar {
+  position: relative;
+  z-index: 2;
+  max-width: 84rem;
+  min-height: 2.75rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  color: var(--pal-soft);
+  font-size: .78rem;
+}
+.palTopbar > :last-child { justify-self: end; }
+.palTopbar a, .palTopbar button, .palTopbar span { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .45rem; color: inherit; text-decoration: none; }
+.palTopbar button { border: 0; background: none; cursor: pointer; }
+
+.palEyebrow {
+  margin-bottom: .85rem !important;
+  color: var(--pal-accent);
+  font: 650 var(--text-2xs)/1 var(--font-data);
+  letter-spacing: .01em;
+}
+
+.palMeetingStage, .palHomeHero {
+  width: min(84rem, 100%);
+  min-height: calc(100dvh - 10rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(20rem, .96fr);
+  align-items: center;
+  gap: clamp(2rem, 7vw, 8rem);
+}
+.palMeetingPortrait, .palHomePortrait, .palOnboardingPreview { position: relative; display: grid; place-items: center; }
+.palMeetingPortrait::before, .palHomePortrait::before, .palOnboardingPreview::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--pal-accent) 12%, transparent);
+  filter: blur(4rem);
+}
+.palMeetingCopy, .palHomeCopy { position: relative; z-index: 1; max-width: 35rem; }
+.palMeetingCopy h1 { max-width: 11ch; font-size: clamp(3.2rem, 6vw, 6.7rem); line-height: .91; }
+.palHomeCopy h1 { font-size: clamp(4rem, 8vw, 8rem); line-height: .86; }
+.palMeetingCopy > p:not(.palEyebrow), .palHomeCopy > p:not(.palEyebrow) { max-width: 33rem; margin-top: 1.5rem; color: var(--pal-soft); font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.65; }
+.palMeetingActions { margin-top: 2rem; display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.palMeetingActions > a:not(.palPrimary) { min-height: 2.75rem; display: inline-flex; align-items: center; color: var(--pal-mist); text-underline-offset: .3rem; }
+
+.palPrimary {
+  width: fit-content;
+  min-height: 3.35rem;
+  padding: 0 1.3rem;
+  border: 1px solid color-mix(in srgb, var(--pal-accent) 72%, var(--pal-line)) !important;
+  border-radius: .9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  background: var(--pal-accent) !important;
+  /* Accent primary, but no off-system coloured glow: a restrained neutral drop
+     shadow keeps the CTA on house surfaces instead of a floating neon slab. */
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 24%, transparent), 0 .6rem 1.6rem color-mix(in srgb, var(--ink-deep) 22%, transparent);
+  color: var(--color-on-accent) !important;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+}
+.palPrimary:hover { background: var(--pal-accent-strong) !important; }
+.palPrimary:disabled { cursor: not-allowed; opacity: .42; }
+
+.palSpeech {
+  position: absolute;
+  z-index: 4;
+  right: 2%;
+  bottom: 7%;
+  width: min(17rem, 64%);
+  padding: .9rem 1rem;
+  border: 1px solid var(--pal-line);
+  border-radius: 1rem 1rem 1rem .3rem;
+  /* House surface: solid panel-raised + hairline, so the speech card reads on the
+     app's own surfaces instead of picking up the accent-tinted page wash. */
+  background: var(--panel-raised);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 10%, transparent), 0 1.25rem 3rem color-mix(in srgb, var(--ink-deep) 22%, transparent);
+  color: var(--pal-paper);
+  font-size: .86rem;
+  line-height: 1.45;
+}
+
+.palPortrait {
+  --signal: #e0a136;
+  position: relative;
+  width: min(42rem, 74vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  color: var(--signal);
+}
+.palPortrait-gin { --signal: #a5ffe1; }
+.palPortrait-rum { --signal: #d77a55; }
+.palPortrait-whisky { --signal: #d8984e; }
+.palPortrait-brandy { --signal: #d97568; }
+.palPortrait-vodka { --signal: #cbd2ff; }
+.palPortraitField { position: absolute; inset: 15%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--signal) 13%, transparent), transparent 65%); filter: blur(1.8rem); }
+.palPortraitOrbit { position: absolute; inset: 14%; border: 1px solid color-mix(in srgb, var(--signal) 25%, transparent); border-radius: 50%; }
+.palPortraitOrbitA { transform: rotateX(66deg) rotateZ(12deg); }
+.palPortraitOrbitB { inset: 24% 9%; transform: rotateY(68deg) rotateZ(-18deg); opacity: .55; }
+.palPortraitCore, .palPortraitEcho { position: absolute; width: 58%; aspect-ratio: 1; display: grid; place-items: center; }
+.palPortraitCore { border-radius: 44% 56% 49% 51%; background: linear-gradient(145deg, color-mix(in srgb, var(--signal) 14%, transparent), color-mix(in srgb, var(--ink-deep) 5%, transparent)); box-shadow: inset 0 0 3rem color-mix(in srgb, var(--signal) 13%, transparent); overflow: hidden; }
+.palPortraitCore::before { content: ""; position: absolute; inset: 7%; border-radius: inherit; border: 1px solid color-mix(in srgb, var(--signal) 33%, transparent); }
+.palLegacyIcon { width: 62%; height: 62%; filter: drop-shadow(0 0 .8rem color-mix(in srgb, var(--signal) 35%, transparent)); }
+/* The mascot is a PHOTOGRAPH on its own dark ground, so it has to reach the
+   core's edge and be clipped by it. Inset and contained, its four square sides
+   sat inside the blob mask and never met it, and because the picture's ground is
+   a different dark from the page's, all four read as straight seams across the
+   portrait. Filling the core makes the existing mask do the cutting. */
+.palPortraitMascot { width: 100%; height: 100%; display: block; }
+.palPortraitMascot img { width: 100%; height: 100%; object-fit: cover; filter: drop-shadow(0 .8rem 1.1rem color-mix(in srgb, var(--ink-deep) 30%, transparent)); }
+.palPortraitEcho { opacity: .13; filter: blur(.5px); transform: translate(.8rem, .25rem); }
+.palPortraitSignalMark { width: 54%; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 38% 62% 54% 46%; transform: rotate(24deg); }
+.palPortraitScan { position: absolute; inset: 0; background: repeating-linear-gradient(180deg, transparent 0 .42rem, color-mix(in srgb, var(--signal) 12%, transparent) .45rem .49rem); mix-blend-mode: screen; }
+.palPortraitAccessory { position: absolute; z-index: 3; bottom: 22%; left: 50%; transform: translateX(-50%); padding: .35rem .65rem; border: 1px solid color-mix(in srgb, var(--signal) 40%, transparent); border-radius: 2rem; background: color-mix(in srgb, var(--ink-deep) 82%, transparent); color: color-mix(in srgb, var(--signal) 70%, white); font: 650 .59rem/1 var(--font-data); letter-spacing: .08em; text-transform: uppercase; }
+.palPortrait-chrome .palPortraitCore { background: linear-gradient(135deg, rgba(251, 251, 254, .25), color-mix(in srgb, var(--signal) 10%, transparent) 46%, rgba(251, 251, 254, .06)); }
+.palPortrait-glass .palPortraitCore { background: linear-gradient(155deg, rgba(251, 251, 254, .12), transparent 42%, color-mix(in srgb, var(--signal) 18%, transparent)); backdrop-filter: blur(.35rem); }
+
+/* Original layered SVG rigs: silhouette, face, material, and signature prop
+   remain separate groups so emotional state motion never deforms the whole
+   character into a generic orb. */
+.palRig { width: 92%; height: 92%; overflow: visible; filter: drop-shadow(0 .8rem 1.1rem color-mix(in srgb, var(--ink-deep) 30%, transparent)); }
+.palRigShadow { fill: color-mix(in srgb, var(--ink-deep) 48%, transparent); filter: blur(5px); }
+.palRigBack { fill: color-mix(in srgb, var(--signal) 28%, var(--ink-deep)); stroke: color-mix(in srgb, var(--signal) 58%, white 8%); stroke-width: 2; }
+.palRigBody { fill: color-mix(in srgb, var(--signal) 17%, var(--ink-deep)); stroke: color-mix(in srgb, var(--signal) 52%, white 5%); stroke-width: 2; }
+.palRigHead { fill: color-mix(in srgb, var(--signal) 28%, var(--ink-deep)); stroke: color-mix(in srgb, var(--signal) 72%, white 8%); stroke-width: 2.2; stroke-linejoin: round; }
+.palRigHighlight { fill: color-mix(in srgb, white 20%, transparent); stroke: none; }
+.palRigEye { fill: color-mix(in srgb, var(--signal) 8%, var(--ink-deep)); stroke: color-mix(in srgb, var(--signal) 82%, white 10%); stroke-width: 2; transform-box: fill-box; transform-origin: center; }
+.palRigPupil { fill: color-mix(in srgb, white 90%, var(--signal)); filter: drop-shadow(0 0 5px var(--signal)); transform-box: fill-box; transform-origin: center; }
+.palRigMuzzle { fill: color-mix(in srgb, white 11%, transparent); stroke: color-mix(in srgb, var(--signal) 34%, transparent); stroke-width: 2; }
+.palRigNose { fill: color-mix(in srgb, var(--ink-deep) 82%, var(--signal)); }
+.palRigMouth { fill: none; stroke: color-mix(in srgb, white 72%, var(--signal)); stroke-width: 3; stroke-linecap: round; transform-box: fill-box; transform-origin: center; }
+.palRigBeak { fill: color-mix(in srgb, var(--signal) 24%, var(--ink-deep)); stroke: color-mix(in srgb, var(--signal) 66%, white 6%); stroke-width: 2; stroke-linejoin: round; transform-box: fill-box; transform-origin: left center; }
+.palRigProp { fill: color-mix(in srgb, var(--signal) 26%, var(--ink-deep)); stroke: color-mix(in srgb, var(--signal) 78%, white 12%); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 7px color-mix(in srgb, var(--signal) 55%, transparent)); }
+.palRigCompass, .palRigLens { fill: color-mix(in srgb, var(--panel-raised) 56%, transparent); }
+.palPortrait-chrome .palRigHead, .palPortrait-chrome .palRigBody { fill: color-mix(in srgb, white 22%, var(--signal)); }
+.palPortrait-glass .palRigHead, .palPortrait-glass .palRigBody { fill: color-mix(in srgb, var(--signal) 14%, transparent); }
+
+.palPortrait[data-pal-state="noticing"] .palRigHead { transform: translateY(-3px) rotate(-2deg); transform-origin: center; }
+.palPortrait[data-pal-state="listening"] .palRigProp { filter: drop-shadow(0 0 14px var(--signal)); }
+.palPortrait[data-pal-state="thinking"] .palRigPupilLeft { transform: translate(-4px, -2px); }
+.palPortrait[data-pal-state="thinking"] .palRigPupilRight { transform: translate(-4px, -2px); }
+.palPortrait[data-pal-state="sleeping"] .palRigEye { transform: scaleY(.12); }
+.palPortrait[data-pal-state="sleeping"] .palRigPupil { opacity: 0; }
+.palPortrait[data-pal-state="error"] .palPortraitScan { opacity: .85; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .palPortrait[data-pal-state="idle"] .palRigHead { animation: palRigIdle 4.8s var(--ease-in-out-strong) infinite; transform-origin: center; }
+  .palPortrait[data-pal-state="noticing"] .palRigBack { animation: palRigNotice 1.4s var(--ease-out-strong) infinite; transform-origin: center; }
+  .palPortrait[data-pal-state="listening"] .palPortraitOrbitB { animation: palRigListen 1.8s ease-in-out infinite; }
+  .palPortrait[data-pal-state="thinking"] .palPortraitOrbitA { animation-duration: 4.2s; }
+  .palPortrait[data-pal-state="speaking"] .palRigMouth, .palPortrait[data-pal-state="speaking"] .palRigBeak { animation: palRigSpeak .46s ease-in-out infinite alternate; }
+  .palPortrait[data-pal-state="celebrating"] .palRig { animation: palRigCelebrate .8s var(--ease-out-strong) infinite alternate; transform-origin: center bottom; }
+  .palPortrait[data-pal-state="sleeping"] .palRig { animation: palRigSleep 5s ease-in-out infinite; }
+  .palPortrait[data-pal-state="error"] .palRig { animation: palRigError .32s steps(2, end) 3; }
+}
+
+.palProgress { width: min(84rem, 100%); height: 1px; margin: .5rem auto 0; background: var(--pal-line); }
+.palProgress span { display: block; height: 100%; background: var(--pal-accent); transition: width .35s cubic-bezier(.16, 1, .3, 1); }
+.palOnboardingLayout { width: min(84rem, 100%); min-height: calc(100dvh - 10rem); margin: 0 auto; display: grid; grid-template-columns: minmax(20rem, .9fr) minmax(28rem, 1.1fr); align-items: center; gap: clamp(2rem, 7vw, 7rem); }
+.palOnboardingPreview { position: sticky; top: 5rem; }
+.palOnboardingPreview .palPortrait { width: min(36rem, 43vw); }
+.palOnboardingPanel { position: relative; z-index: 1; width: 100%; max-width: 44rem; padding: clamp(2rem, 4vw, 3.5rem) 0; }
+.palStep { animation: palStepIn .45s cubic-bezier(.16, 1, .3, 1) both; }
+.palStep h1 { max-width: 11ch; font-size: clamp(2.8rem, 5.2vw, 5.5rem); line-height: .92; }
+.palStep > p:not(.palEyebrow) { max-width: 35rem; margin-top: 1.25rem; color: var(--pal-soft); line-height: 1.6; }
+.palChoiceList, .palChoiceGrid { margin-top: 1.7rem; display: grid; gap: .65rem; }
+.palSpeciesGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.palChoiceGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.palChoiceGridThree { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.palChoice {
+  position: relative;
+  min-height: 4.75rem;
+  padding: .9rem 3rem .9rem 1rem;
+  border: 1px solid var(--pal-line);
+  border-radius: .9rem;
+  display: grid;
+  align-content: center;
+  gap: .25rem;
+  background: color-mix(in srgb, var(--panel-raised) 78%, transparent);
+  color: var(--pal-paper);
+  text-align: left;
+  cursor: pointer;
+}
+.palChoice:hover { border-color: var(--pal-accent); background: color-mix(in srgb, var(--pal-accent) 6%, var(--panel-raised)); }
+.palChoice.isSelected { border-color: var(--pal-accent); background: color-mix(in srgb, var(--pal-accent) 16%, var(--panel-raised)); box-shadow: inset 0 1px 0 color-mix(in srgb, white 8%, transparent); }
+.palChoice span { font-weight: 740; }
+.palChoice small { color: var(--pal-soft); font-size: .76rem; line-height: 1.4; }
+.palChoice svg { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); color: var(--pal-accent); }
+.palStep fieldset { margin: 1.5rem 0 0; padding: 0; border: 0; }
+.palStep legend, .palField > span, .palRangeLabel { margin-bottom: .65rem; color: var(--pal-soft); font-size: .76rem; font-weight: 720; }
+
+.palField { margin-top: 1.8rem; display: grid; gap: .55rem; }
+.palField input { width: 100%; min-height: 4.25rem; padding: 0 1rem; border: 1px solid var(--pal-line); border-radius: .9rem; background: var(--panel-raised); color: var(--pal-paper); font-family: var(--font-display); font-size: 1.4rem; font-weight: 650; }
+.palField input::placeholder { color: var(--muted); }
+.palField > small { color: var(--pal-soft); font-size: .76rem; }
+.palNameIdeas { margin-top: 1.15rem; display: grid; gap: .85rem; }
+.palNameIdeas > div { display: grid; grid-template-columns: 4.5rem 1fr; align-items: center; gap: .65rem; }
+.palNameIdeas > div > span { color: var(--pal-soft); font: 650 var(--text-2xs)/1 var(--font-data); letter-spacing: .01em; }
+.palNameIdeas > div > div { display: flex; gap: .45rem; overflow-x: auto; touch-action: pan-y; scrollbar-width: none; }
+.palNameIdeas button { min-width: 3.8rem; min-height: 2.75rem; padding: 0 .8rem; border: 1px solid var(--pal-line); border-radius: 999px; background: var(--panel-raised); color: var(--pal-paper); cursor: pointer; }
+.palNameIdeas button:hover { border-color: var(--pal-accent); background: color-mix(in srgb, var(--pal-accent) 8%, var(--panel-raised)); }
+
+.palRange { margin-top: 1.4rem; display: grid; grid-template-columns: 6.5rem 1fr; align-items: center; column-gap: 1rem; }
+.palRangeLabel { margin: 0; }
+.palRange input { width: 100%; accent-color: var(--pal-accent); }
+.palRangeEnds { grid-column: 2; display: flex; justify-content: space-between; color: var(--pal-soft); font-size: .68rem; }
+
+.palToggleRow { margin-top: 1.5rem; min-height: 5.25rem; padding: 1rem; border: 1px solid var(--pal-line); border-radius: .9rem; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: .9rem; background: var(--panel-raised); cursor: pointer; }
+.palToggleRow input { width: 1.35rem; height: 1.35rem; accent-color: var(--pal-accent); }
+.palToggleRow span { display: grid; gap: .25rem; }
+.palToggleRow strong { font-size: .88rem; }
+.palToggleRow small { color: var(--pal-soft); font-size: .76rem; line-height: 1.4; }
+.palPrivacyFacts, .palAccountGate { margin-top: 1rem; padding: 1rem; border-left: 2px solid var(--pal-accent); display: flex; align-items: flex-start; gap: .85rem; background: color-mix(in srgb, var(--pal-accent) 10%, var(--panel-raised)); color: var(--pal-soft); }
+.palPrivacyFacts svg, .palAccountGate > svg { flex: 0 0 auto; color: var(--pal-accent); }
+.palPrivacyFacts p, .palAccountGate p { line-height: 1.5; }
+.palAccountGate div { display: grid; gap: .6rem; }
+.palAccountGate a { color: var(--pal-paper); }
+.palReview { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+.palReview > div { min-height: 4.6rem; padding: .9rem 1rem; border: 1px solid var(--pal-line); border-radius: .9rem; display: grid; gap: .2rem; }
+.palReview span { color: var(--pal-soft); font-size: .7rem; }
+.palReview strong { text-transform: capitalize; }
+.palError { margin-top: 1rem !important; color: #ffadb9 !important; }
+
+.palOnboardingActions { margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.palOnboardingActions > button:not(.palPrimary) { min-height: 2.75rem; padding: 0; border: 0; background: transparent; color: var(--pal-soft); cursor: pointer; }
+
+.palHomeHero { min-height: 68dvh; }
+.palHomePortrait .palPortrait { width: min(38rem, 55vw); }
+.palHomeCopy .palPrimary { margin-top: 2rem; }
+.palControls { width: min(84rem, 100%); margin: 1rem auto 0; padding-top: 3.5rem; border-top: 1px solid var(--pal-line); display: grid; grid-template-columns: minmax(15rem, .72fr) minmax(24rem, 1.28fr); gap: 4rem; }
+.palControls h2 { font-size: clamp(2.2rem, 4vw, 4rem); line-height: .95; }
+.palControls > div:first-child > p:not(.palEyebrow) { max-width: 30rem; margin-top: 1rem; color: var(--pal-soft); line-height: 1.6; }
+.palControlGrid { display: grid; gap: .65rem; }
+.palControlGrid button, .palControlReadOnly { min-height: 5.1rem; padding: 1rem; border: 1px solid var(--pal-line); border-radius: .9rem; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: .9rem; background: var(--panel-raised); color: var(--pal-paper); text-align: left; }
+.palControlGrid button { cursor: pointer; }
+.palControlGrid button:hover { background: color-mix(in srgb, var(--pal-accent) 7%, var(--panel-raised)); }
+.palControlGrid svg { color: var(--pal-accent); }
+.palControlGrid span { display: grid; gap: .2rem; }
+.palControlGrid small { color: var(--pal-soft); }
+.palDanger { border-color: rgba(255, 116, 136, .45) !important; color: #ffb1bc !important; }
+.palUnlockSummary { padding: 1rem; border: 1px solid var(--pal-line); border-radius: .9rem; background: var(--panel-raised); }
+.palUnlockSummary ul { margin: .8rem 0 0; padding: 0; display: grid; gap: .45rem; list-style: none; }
+.palUnlockSummary li { display: flex; justify-content: space-between; color: var(--pal-soft); font-size: .78rem; opacity: .55; }
+.palUnlockSummary li.isUnlocked { color: var(--pal-paper); opacity: 1; }
+.palMasteryNext { margin-top: .45rem; color: var(--pal-soft); font-size: .78rem; line-height: 1.4; }
+.palMasteryTrack { margin-top: .55rem; height: .35rem; border-radius: 999px; background: color-mix(in srgb, var(--pal-line) 70%, transparent); overflow: hidden; }
+.palMasteryTrack span { display: block; height: 100%; border-radius: inherit; background: var(--pal-accent); }
+.palMemoryControls { width: min(84rem, 100%); margin: 4rem auto 0; padding-top: 3rem; border-top: 1px solid var(--pal-line); display: grid; gap: 1.2rem; }
+.palMemoryControls__header { display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+.palMemoryControls__header h2 { margin-top: .25rem; font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1; }
+.palMemoryControls__header p:not(.palEyebrow) { max-width: 40rem; margin-top: .75rem; color: var(--pal-soft); line-height: 1.55; }
+.palMemoryControls__header > button, .palMemoryList button { min-height: 44px; padding: .7rem .9rem; border: 1px solid var(--pal-line); border-radius: .75rem; display: inline-flex; align-items: center; justify-content: center; gap: .45rem; background: var(--panel-raised); color: var(--pal-paper); font: inherit; font-weight: 750; cursor: pointer; }
+.palMemoryControls button:disabled { cursor: not-allowed; opacity: .55; }
+.palMemoryList { display: grid; gap: .7rem; margin: 0; padding: 0; list-style: none; }
+.palMemoryList > li { display: grid; grid-template-columns: minmax(8rem, .35fr) minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--pal-line); border-radius: .9rem; background: var(--panel-raised); }
+.palMemoryList__meta { display: grid; gap: .25rem; }
+.palMemoryList__meta span { color: var(--pal-accent); font: 700 var(--text-2xs) var(--font-data); letter-spacing: .01em; }
+.palMemoryList__meta small { color: var(--pal-soft); text-transform: capitalize; }
+.palMemoryList > li > p { margin: 0; line-height: 1.5; }
+.palMemoryList__actions, .palMemoryList__edit > div { display: flex; flex-wrap: wrap; gap: .5rem; }
+.palMemoryList__actions .palDanger { border-color: rgba(255, 116, 136, .45); background: transparent; color: #ffb1bc; }
+.palMemoryList__edit { display: grid; gap: .6rem; }
+.palMemoryList__edit label { display: grid; gap: .35rem; color: var(--pal-soft); font-size: .78rem; font-weight: 700; }
+.palMemoryList__edit textarea { width: 100%; min-height: 5.5rem; padding: .75rem; border: 1px solid var(--pal-line); border-radius: .7rem; background: var(--pal-night); color: var(--pal-paper); font: inherit; resize: vertical; }
+.palMemoryList .palSecondary { background: transparent; color: var(--pal-paper); }
+.palMemoryEmpty { min-height: 6rem; padding: 1rem; border: 1px dashed var(--pal-line); border-radius: .9rem; display: flex; align-items: center; gap: .75rem; color: var(--pal-soft); }
+.palMemoryEmpty p { margin: 0; }
+.palVoice { margin-top: 1rem; padding: 1rem; border: 1px solid var(--pal-line); border-radius: .9rem; background: var(--panel-raised); }
+.palVoiceStatus, .palVoicePrivacy, .palVoiceError { color: var(--pal-soft); font-size: .76rem; line-height: 1.45; }
+.palVoiceActions { margin: .75rem 0; display: grid; gap: .6rem; }
+.palVoiceActions > button, .palVoiceActions label { min-height: 2.9rem; border: 1px solid var(--pal-line); border-radius: .75rem; display: flex; align-items: center; gap: .5rem; background: var(--panel-raised); color: var(--pal-paper); }
+.palVoiceActions > button { padding: 0 .85rem; cursor: pointer; }
+.palVoiceActions label { padding-left: .85rem; }
+.palVoiceActions input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: inherit; }
+.palVoiceActions label button { width: 2.8rem; align-self: stretch; border: 0; display: grid; place-items: center; background: transparent; color: inherit; cursor: pointer; }
+/* Voice off: one honest line plus the writing door, at the same 44px floor. */
+.palVoiceWriteLink { min-height: 2.9rem; padding: 0 .85rem; border: 1px solid var(--pal-line); border-radius: .75rem; display: flex; align-items: center; justify-content: center; gap: .5rem; background: var(--panel-raised); color: var(--pal-paper); text-decoration: none; }
+
+.palLoading { position: absolute; inset: calc(4.75rem + env(safe-area-inset-top)) clamp(1rem, 4vw, 4.5rem) calc(6rem + env(safe-area-inset-bottom)); display: grid; place-items: center; color: var(--pal-soft); }
+
+@keyframes palStepIn { from { opacity: 0; transform: translateY(1rem); } }
+@keyframes palBreathe { 50% { transform: translateY(-.45rem) scale(1.015); } }
+@keyframes palOrbit { to { transform: rotate(360deg); } }
+@keyframes palSignal { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
+@keyframes palLook { 0%, 36%, 100% { transform: translateX(0); } 42%, 58% { transform: translateX(-55%); } 64%, 82% { transform: translateX(35%); } }
+@keyframes palHeadTilt { 0%, 42%, 100% { translate: 0 0; rotate: 0deg; } 48%, 64% { translate: 0 -.15rem; rotate: -1.8deg; } 72%, 86% { rotate: 1.2deg; } }
+@keyframes palRigIdle { 50% { transform: translateY(-4px) rotate(1deg); } }
+@keyframes palRigNotice { 40% { transform: rotate(-3deg); } 70% { transform: rotate(3deg); } }
+@keyframes palRigListen { 50% { opacity: 1; scale: 1.06; } }
+@keyframes palRigSpeak { to { transform: scaleY(1.6); } }
+@keyframes palRigCelebrate { to { transform: translateY(-10px) rotate(3deg) scale(1.025); } }
+@keyframes palRigSleep { 50% { transform: translateY(4px) scale(.99); } }
+@keyframes palRigError { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .palPortraitCore { animation: palBreathe 4.8s ease-in-out infinite; }
+  .palPortraitOrbitA { animation: palOrbit 18s linear infinite; }
+  .palPortraitScan { animation: palSignal 5.5s linear infinite; }
+}
+
+@media (max-width: 760px) {
+  body:has(.palOnboarding) .mobileTabBar { display: none; }
+  /* House tab-bar + pill clearance: bind the bottom pad to the shared --tabbar-h
+     token (mobileNav.css) + the home-indicator inset + the re-open pill's
+     published footprint (--night-pill-clearance, 0px unless a pill is floating),
+     so the "Meet your Pub Pal" CTA always clears BOTH the tab bar and the pill
+     instead of hiding behind either. */
+  .palExperience { padding: calc(1rem + env(safe-area-inset-top)) 1rem calc(var(--tabbar-h, 64px) + env(safe-area-inset-bottom, 0px) + 3.25rem + var(--night-pill-clearance, 0px)); }
+  .palTopbar { grid-template-columns: 1fr auto; }
+  .palOnboarding .palTopbar { grid-template-columns: 1fr auto 1fr; }
+  .palMeetingStage, .palHomeHero, .palOnboardingLayout, .palControls { grid-template-columns: 1fr; }
+  .palMeetingStage { min-height: auto; align-content: start; gap: .5rem; }
+  .palMeetingPortrait, .palHomePortrait { min-height: 14rem; }
+  .palMeetingPortrait .palPortrait, .palHomePortrait .palPortrait { width: min(18rem, 72vw); }
+  .palMeetingPortrait .palSpeech, .palHomePortrait .palSpeech { right: 0; bottom: 1%; }
+  .palMeetingCopy { padding-bottom: 1.2rem; }
+  .palMeetingCopy h1 { font-size: clamp(2.8rem, 12.5vw, 4rem); }
+  .palMeetingCopy > p:not(.palEyebrow) { margin-top: 1rem; line-height: 1.5; }
+  .palMeetingActions { margin-top: 1.25rem; }
+  .palMeetingActions { display: grid; align-items: stretch; }
+  .palMeetingActions .palPrimary { width: 100%; }
+  .palMeetingActions > a:not(.palPrimary) { justify-content: center; }
+  .palOnboardingLayout { min-height: auto; display: block; }
+  .palOnboardingPreview { position: relative; top: auto; height: auto; min-height: 12rem; margin-top: .4rem; padding-bottom: .25rem; }
+  .palOnboardingPreview .palPortrait { width: min(16rem, 68vw); }
+  .palOnboardingPreview .palSpeech { position: relative; right: auto; bottom: auto; width: 100%; margin-top: -2.2rem; }
+  .palOnboardingPanel { padding: 1.25rem 0 .75rem; }
+  .palStep h1 { font-size: clamp(2.8rem, 13vw, 4.1rem); }
+  .palChoiceGridThree { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .palChoice { min-height: 4.4rem; }
+  .palSpeciesGrid { gap: .55rem; }
+  .palSpeciesGrid .palChoice { min-height: 4.85rem; padding-right: 2.5rem; }
+  .palRange { grid-template-columns: 5.2rem 1fr; }
+  .palReview { grid-template-columns: 1fr; }
+  .palOnboardingActions { position: relative; bottom: auto; z-index: 2; margin: 1.25rem -1rem 0; padding: .75rem 1rem; border-top: 1px solid var(--pal-line); background: color-mix(in srgb, var(--pal-night) 92%, transparent); backdrop-filter: blur(1.1rem); }
+  .palOnboardingActions > button:not(.palPrimary) { display: none; }
+  .palOnboardingActions .palPrimary { width: 100%; }
+  .palHomeHero { min-height: auto; padding-top: 1.5rem; }
+  .palHomeCopy h1 { font-size: clamp(4rem, 20vw, 6rem); }
+  .palHomeCopy .palPrimary { width: 100%; }
+  .palControls { margin-top: 4rem; padding-top: 2.5rem; gap: 1.5rem; }
+  .palMemoryControls { margin-top: 3rem; padding-top: 2.5rem; }
+  .palMemoryControls__header { align-items: stretch; flex-direction: column; }
+  .palMemoryControls__header > button { width: 100%; }
+  .palMemoryList > li { grid-template-columns: 1fr; }
+  .palMemoryList__actions button { flex: 1 1 8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palExperience *, .palExperience *::before, .palExperience *::after { animation: none !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .palSpeech, .palOnboardingActions { background: var(--panel-raised); backdrop-filter: none; }
+  .palPortrait-glass .palPortraitCore { background: var(--panel); backdrop-filter: none; }
+}
+
+@media (prefers-contrast: more) {
+  .palExperience { --pal-line: currentColor; --pal-soft: currentColor; }
+  .palChoice.isSelected, .palToggleRow, .palSpeech { border-color: var(--pal-paper); }
+}

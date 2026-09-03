@@ -1,0 +1,51 @@
+.nearModeSwitch {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--space-5, 20px);
+}
+
+.nearModeSwitchList.nearModeSwitchList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 100%;
+  min-height: 48px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-raised);
+  box-sizing: border-box;
+}
+
+.nearModeSwitchTab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-4, 16px);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nearModeSwitchTab[aria-checked="true"] {
+  background: var(--brass);
+  color: var(--color-on-accent);
+  box-shadow: none;
+}
+
+.nearModeSwitchTab:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nearModeSwitchTab {
+    transition: none;
+  }
+}

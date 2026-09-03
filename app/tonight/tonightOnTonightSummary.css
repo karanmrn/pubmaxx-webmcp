@@ -1,0 +1,119 @@
+/* Compact /tonight rail summary. Desktop-only: phones keep the optional mobile
+   secondary lanes or rely on the main list alone. */
+
+.tonightOnTonightSummary {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .tonightOnTonightSummary {
+    display: block;
+    margin: 0;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .tonightOnTonightSummaryHead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .tonightOnTonightSummaryHead h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: var(--text-md, 1.16rem);
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .tonightOnTonightSummaryCount {
+    color: var(--ink-soft);
+    font-size: 0.76rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .tonightOnTonightSummaryKinds {
+    margin: 0 0 10px;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  /* The quiet way down to the deals that are about to close. One row, only when
+     the rows really say so, and it carries a count rather than a claim. */
+  .tonightOnTonightSummaryEnding {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    margin: 0 0 10px;
+    color: var(--brass);
+    font-size: 0.82rem;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+  }
+
+  .tonightOnTonightSummaryEnding:hover {
+    text-decoration: underline;
+  }
+
+  .tonightOnTonightSummaryEnding:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .tonightOnTonightSummaryTitles {
+    list-style: none;
+    margin: 0 0 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--ink);
+    font-size: 0.84rem;
+    line-height: 1.4;
+  }
+
+  .tonightOnTonightSummaryTitles li {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tonightOnTonightSummaryNote {
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .tonightOnTonightSummaryLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    color: var(--brass);
+    font-size: 0.82rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .tonightOnTonightSummaryLink:hover {
+    text-decoration: underline;
+  }
+
+  .tonightOnTonightSummaryLink:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-26T07:13:02.882Z",
+  "updates": [
+    {
+      "venueKey": "bundobust|6, mill hill, leeds, ls1 5dq|53.79548|-1.54556",
+      "drinkName": "PYTHON Premium Lager",
+      "category": "beer",
+      "priceGbp": 6.5,
+      "servingSize": "pint",
+      "source": {
+        "label": "Bundobust - official site",
+        "url": "https://bundobust.com/wp-content/uploads/2026/04/Bundobust-Drinks-Menu-MARCH-2026-DIGITAL-1.pdf",
+        "licence": "All rights reserved - first-party publisher of its own pub menu; read-only, attributed price fact."
+      },
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "venueKey": "bundobust|6, mill hill, leeds, ls1 5dq|53.79548|-1.54556",
+      "drinkName": "CHACHA Chai Stout",
+      "category": "beer",
+      "priceGbp": 6.5,
+      "servingSize": "pint",
+      "source": {
+        "label": "Bundobust - official site",
+        "url": "https://bundobust.com/wp-content/uploads/2026/04/Bundobust-Drinks-Menu-MARCH-2026-DIGITAL-1.pdf",
+        "licence": "All rights reserved - first-party publisher of its own pub menu; read-only, attributed price fact."
+      },
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "venueKey": "bundobust|6, mill hill, leeds, ls1 5dq|53.79548|-1.54556",
+      "drinkName": "KOPRA DDH Pale Ale",
+      "category": "beer",
+      "priceGbp": 5.7,
+      "servingSize": "pint",
+      "source": {
+        "label": "Bundobust - official site",
+        "url": "https://bundobust.com/wp-content/uploads/2026/04/Bundobust-Drinks-Menu-MARCH-2026-DIGITAL-1.pdf",
+        "licence": "All rights reserved - first-party publisher of its own pub menu; read-only, attributed price fact."
+      },
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "venueKey": "bundobust|6, mill hill, leeds, ls1 5dq|53.79548|-1.54556",
+      "drinkName": "NIMBU PANI RADLER",
+      "category": "beer",
+      "priceGbp": 3.25,
+      "servingSize": "pint",
+      "source": {
+        "label": "Bundobust - official site",
+        "url": "https://bundobust.com/wp-content/uploads/2026/04/Bundobust-Drinks-Menu-MARCH-2026-DIGITAL-1.pdf",
+        "licence": "All rights reserved - first-party publisher of its own pub menu; read-only, attributed price fact."
+      },
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "venueKey": "bundobust|6, mill hill, leeds, ls1 5dq|53.79548|-1.54556",
+      "drinkName": "Rotating Cask Collaboration",
+      "category": "beer",
+      "priceGbp": 5,
+      "servingSize": "pint",
+      "source": {
+        "label": "Bundobust - official site",
+        "url": "https://bundobust.com/wp-content/uploads/2026/04/Bundobust-Drinks-Menu-MARCH-2026-DIGITAL-1.pdf",
+        "licence": "All rights reserved - first-party publisher of its own pub menu; read-only, attributed price fact."
+      },
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    },
+    {
+      "venueKey": "bundobust|6, mill hill, leeds, ls1 5dq|53.79548|-1.54556",
+      "drinkName": "ROSÉ CIDER Hibiscus & Ginger",
+      "category": "beer",
+      "priceGbp": 6.3,
+      "servingSize": "pint",
+      "source": {
+        "label": "Bundobust - official site",
+        "url": "https://bundobust.com/wp-content/uploads/2026/04/Bundobust-Drinks-Menu-MARCH-2026-DIGITAL-1.pdf",
+        "licence": "All rights reserved - first-party publisher of its own pub menu; read-only, attributed price fact."
+      },
+      "observedAt": "2026-07-26T07:12:24.229Z"
+    }
+  ]
+}

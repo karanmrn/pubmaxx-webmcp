@@ -1,0 +1,715 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-09T22:42:43Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 6534011052,
+      "lat": 54.7800448,
+      "lon": -1.5817644,
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housename": "North Platform, Railway Station",
+        "addr:postcode": "DH1 4RB",
+        "addr:street": "Station Approach",
+        "amenity": "pub",
+        "contact:facebook": "thewaitingroomdurham",
+        "dog": "yes",
+        "fhrs:id": "1889663",
+        "indoor_seating": "yes",
+        "name": "The Waiting Room",
+        "opening_hours": "Su-Th 10:00-21:00; Fr,Sa 10:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:visa": "yes",
+        "smoking": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7692938506,
+      "lat": 54.7782349,
+      "lon": -1.5757294,
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housename": "Walkergate Leisure",
+        "addr:postcode": "DH1 1SQ",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "brewery": "various",
+        "dog": "no",
+        "fhrs:id": "303231",
+        "food": "yes",
+        "layer": "1",
+        "lloyds_bar": "yes",
+        "name": "The Bishops' Mill",
+        "outdoor_seating": "yes",
+        "phone": "+44 191 370 8510",
+        "ref:vatin": "GB396331433",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/county-durham/the-bishops-mill-durham",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/5326/menus"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9213980844,
+      "lat": 54.7957178,
+      "lon": -1.5904118,
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "29b",
+        "addr:postcode": "DH1 5EE",
+        "addr:street": "Front Street",
+        "addr:suburb": "Framwellgate Moor",
+        "amenity": "pub",
+        "fhrs:id": "1181324",
+        "internet_access": "wlan",
+        "name": "Fram Ferment",
+        "operator": "Suzie",
+        "shop": "alcohol",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.framferment.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 81584694,
+      "center": {
+        "lat": 54.7787254,
+        "lon": -1.5668992
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "23",
+        "addr:postcode": "DH1 1QW",
+        "addr:street": "Gilesgate",
+        "amenity": "pub",
+        "animal": "yes",
+        "building": "amenity",
+        "fhrs:id": "1519759",
+        "name": "The Woodman Inn",
+        "source": "OS_OpenData_StreetView",
+        "wikimedia_commons": "File:The Woodman inn - geograph.org.uk - 1586844.jpg"
+      }
+    },
+    {
+      "type": "way",
+      "id": 82614342,
+      "center": {
+        "lat": 54.7720607,
+        "lon": -1.5704571
+      },
+      "tags": {
+        "accommodation": "yes",
+        "addr:city": "Durham",
+        "addr:housenumber": "86",
+        "addr:postcode": "DH1 3AS",
+        "addr:street": "Hallgarth Street",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "mwebstervictoria@gmail.com",
+        "fhrs:id": "715821",
+        "name": "The Victoria",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+44 191 386 5269",
+        "source:postcode": "FHRS data",
+        "website": "http://www.victoriainn-durhamcity.co.uk/",
+        "wikidata": "Q18162495",
+        "wikimedia_commons": "File:The Victoria Hallgarth Street - geograph.org.uk - 1630645.jpg",
+        "wikipedia": "en:The Victoria, Durham"
+      }
+    },
+    {
+      "type": "way",
+      "id": 95596445,
+      "center": {
+        "lat": 54.7778479,
+        "lon": -1.5738057
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "91A",
+        "addr:postcode": "DH1 1RG",
+        "addr:street": "Claypath",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1242923",
+        "name": "Drunken Duck",
+        "old_name": "The John Duck",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 104295690,
+      "center": {
+        "lat": 54.7756339,
+        "lon": -1.5743448
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "46",
+        "addr:postcode": "DH1 3NU",
+        "addr:street": "Saddler Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1523246",
+        "name": "The Library",
+        "note": "Name changed in 2014. Due to ambiguity it still gets referred as Varsity.",
+        "old_name": "Varsity",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.crafted-social.co.uk/library-durham"
+      }
+    },
+    {
+      "type": "way",
+      "id": 107710158,
+      "center": {
+        "lat": 54.7759356,
+        "lon": -1.5853309
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 4EG",
+        "addr:street": "Colpitts Terrace",
+        "amenity": "pub",
+        "brand": "Samuel Smith",
+        "brand:wikidata": "Q7412675",
+        "brewery": "Samuel Smith",
+        "building": "commercial",
+        "contact:facebook": "colpittshotel",
+        "fhrs:id": "1617264",
+        "internet_access": "no",
+        "name": "Colpitts Hotel",
+        "operator": "Samuel Smith",
+        "operator:wikidata": "Q7412675",
+        "outdoor_seating": "no",
+        "source:postcode": "FHRS data",
+        "wikidata": "Q26452894",
+        "wikimedia_commons": "File:The Colpitts Hotel, Durham - geograph.org.uk - 4788446.jpg"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108746158,
+      "center": {
+        "lat": 54.7761148,
+        "lon": -1.5812791
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "53",
+        "addr:postcode": "DH1 4PR",
+        "addr:street": "Crossgate",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1513104",
+        "name": "Angel Inn",
+        "ref:GB:uprn": "10014550850",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26597306"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108746240,
+      "center": {
+        "lat": 54.7757387,
+        "lon": -1.5815965
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "12",
+        "addr:postcode": "DH1 4PS",
+        "addr:street": "Crossgate",
+        "alt_name": "Ye Old Elm Tree",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1591449",
+        "flickr": "https://www.flickr.com/photos/16801915@N06/13017733585",
+        "food": "yes",
+        "name": "The Elm Tree",
+        "source:addr": "FHRS Open Data",
+        "source:postcode": "FHRS data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 108746348,
+      "center": {
+        "lat": 54.7761857,
+        "lon": -1.5808022
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "57/58",
+        "addr:postcode": "DH1 4PR",
+        "addr:street": "Crossgate",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1112562",
+        "name": "The Holy GrAle",
+        "old_name": "Dark Matter Cafe",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143920554,
+      "center": {
+        "lat": 54.7771353,
+        "lon": -1.5759591
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "27",
+        "addr:postcode": "DH1 3NJ",
+        "addr:street": "Market Place",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "amenity",
+        "fhrs:id": "303299",
+        "name": "Market Tavern",
+        "ref:GB:uprn": "10013260475",
+        "website": "https://www.greeneking-pubs.co.uk/pubs/durham/market-tavern/",
+        "wikidata": "Q26453833"
+      }
+    },
+    {
+      "type": "way",
+      "id": 246718645,
+      "center": {
+        "lat": 54.7628314,
+        "lon": -1.5538931
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 2LY",
+        "addr:street": "Low Road",
+        "addr:village": "Shincliffe",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "303297",
+        "food": "yes",
+        "image": "https://www.geograph.org.uk/photo/5165837",
+        "indoor_seating": "yes",
+        "name": "The Rose Tree",
+        "outdoor_seating": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.rosetreeinn.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 253513705,
+      "center": {
+        "lat": 54.7753841,
+        "lon": -1.5723807
+      },
+      "tags": {
+        "accommodation": "yes",
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 3AQ",
+        "amenity": "pub",
+        "building": "amenity",
+        "dog": "yes",
+        "fhrs:id": "1098894",
+        "name": "The City",
+        "website": "http://cityhoteldurham.co.uk/",
+        "wikidata": "Q26608656"
+      }
+    },
+    {
+      "type": "way",
+      "id": 253513706,
+      "center": {
+        "lat": 54.7760604,
+        "lon": -1.5790979
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "4",
+        "addr:postcode": "DH1 4PP",
+        "addr:street": "South Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1411197",
+        "flickr": "https://www.flickr.com/photos/50191609@N00/8515670929",
+        "name": "The Fighting Cocks"
+      }
+    },
+    {
+      "type": "way",
+      "id": 253513707,
+      "center": {
+        "lat": 54.775558,
+        "lon": -1.572598
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "86",
+        "addr:postcode": "DH1 3AQ",
+        "addr:street": "New Elvet",
+        "amenity": "pub",
+        "building": "yes",
+        "dog": "yes",
+        "fhrs:id": "594659",
+        "name": "Half Moon Inn",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "wikidata": "Q26414592",
+        "wikimedia_commons": "File:Half Moon Inn, Durham.jpg"
+      }
+    },
+    {
+      "type": "way",
+      "id": 253513708,
+      "center": {
+        "lat": 54.7758864,
+        "lon": -1.5724854
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 3AG",
+        "addr:street": "Elvet Bridge",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "303119",
+        "name": "The Swan & Three Cygnets",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 253513709,
+      "center": {
+        "lat": 54.7773249,
+        "lon": -1.580975
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "65",
+        "addr:postcode": "DH1 4SQ",
+        "addr:street": "North Road",
+        "alt_name": "The Waterhouse",
+        "amenity": "pub",
+        "brand": "Amber Taverns",
+        "brand:wikidata": "Q122829228",
+        "building": "yes",
+        "fhrs:id": "1631531",
+        "name": "The Water House",
+        "opening_hours": "Sa-We 09:00-24:00, Th,Fr 09:00-01:00",
+        "operator": "Amber Taverns",
+        "website": "https://ambertaverns.co.uk/pub/20961/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 253513712,
+      "center": {
+        "lat": 54.7768656,
+        "lon": -1.5796024
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "80-83",
+        "addr:postcode": "DH1 4SQ",
+        "addr:street": "North Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "303376",
+        "name": "The Three Bridges",
+        "old_name": "The William Hedley",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "200003216321",
+        "website": "https://www.greatukpubs.co.uk/three-bridges-durham",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 334673685,
+      "center": {
+        "lat": 54.777092,
+        "lon": -1.5799901
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "3",
+        "addr:postcode": "DH1 4RZ",
+        "addr:street": "Reform Place",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "510668",
+        "flickr": "https://www.flickr.com/photos/50191609@N00/8516785778",
+        "name": "The Head of Steam",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "200003219666",
+        "source:postcode": "FHRS data",
+        "website": "https://www.theheadofsteam.co.uk/bars/durham"
+      }
+    },
+    {
+      "type": "way",
+      "id": 334851641,
+      "center": {
+        "lat": 54.7829716,
+        "lon": -1.5856604
+      },
+      "tags": {
+        "accommodation": "yes",
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 4NQ",
+        "addr:street": "North Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "building:levels": "2",
+        "fhrs:id": "1648904",
+        "food": "yes",
+        "name": "The Cartologist",
+        "old_name": "The Garden House Inn",
+        "opening_hours": "Mo-Sa 12:00-23:00, Su 12:00-22:30",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "200003216263",
+        "roof:levels": "1",
+        "source:postcode": "FHRS data",
+        "website": "https://www.thecartologist.co.uk/",
+        "wikimedia_commons": "File:The Garden House Inn - geograph.org.uk - 3414000.jpg"
+      }
+    },
+    {
+      "type": "way",
+      "id": 419884866,
+      "center": {
+        "lat": 54.7667254,
+        "lon": -1.5927043
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 3QN",
+        "addr:street": "Darlington Road",
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "building": "yes",
+        "check_date": "2023-04-22",
+        "contact:website": "https://www.emberinns.co.uk/nationalsearch/northeast/the-duke-of-wellington-durham",
+        "fhrs:authority": "Durham",
+        "fhrs:id": "303088",
+        "fhrs:local_authority_id": "706",
+        "fhrs:rating": "4",
+        "name": "Duke of Wellington",
+        "operator": "Ember Inns",
+        "outdoor_seating": "yes",
+        "source:postcode": "CodePoint Open",
+        "wheelchair": "yes",
+        "wikimedia_commons": "File:Duke of Wellington - geograph.org.uk - 787829.jpg"
+      }
+    },
+    {
+      "type": "way",
+      "id": 433169889,
+      "center": {
+        "lat": 54.7665674,
+        "lon": -1.6000663
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 3RX",
+        "amenity": "pub",
+        "building": "yes",
+        "dog": "yes",
+        "fhrs:id": "303460",
+        "food": "yes",
+        "name": "Stonebridge Inn",
+        "outdoor_seating": "yes",
+        "source:postcode": "website",
+        "website": "https://www.thestonebridge.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 438874923,
+      "center": {
+        "lat": 54.778322,
+        "lon": -1.5834094
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housename": "The Station House",
+        "addr:postcode": "DH1 4SE",
+        "addr:street": "North Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "842659",
+        "indoor_seating": "yes",
+        "name": "The Station House",
+        "opening_hours": "Mo-Su",
+        "outdoor_seating": "no",
+        "smoking": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 574824692,
+      "center": {
+        "lat": 54.7759822,
+        "lon": -1.5750058
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "63",
+        "addr:postcode": "DH1 3NU",
+        "addr:street": "Saddler Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "480498",
+        "name": "The Shakespeare",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582016944,
+      "center": {
+        "lat": 54.7750948,
+        "lon": -1.5685586
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "37",
+        "addr:postcode": "DH1 3HN",
+        "addr:street": "Old Elvet",
+        "amenity": "pub",
+        "building": "amenity",
+        "fhrs:id": "687798",
+        "name": "The Dun Cow",
+        "source:postcode": "FHRS data",
+        "wikidata": "Q26414589"
+      }
+    },
+    {
+      "type": "way",
+      "id": 835892286,
+      "center": {
+        "lat": 54.7603201,
+        "lon": -1.5467709
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 2NU",
+        "addr:street": "High Street North",
+        "amenity": "pub",
+        "building": "commercial",
+        "fhrs:id": "1760060",
+        "fixme": "CAMRA suggests closed again",
+        "indoor_seating": "yes",
+        "name": "Seven Stars",
+        "outdoor_seating": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 943996774,
+      "center": {
+        "lat": 54.7788547,
+        "lon": -1.5559985
+      },
+      "tags": {
+        "accommodation": "yes",
+        "addr:city": "Durham",
+        "addr:housenumber": "2",
+        "addr:postcode": "DH1 2JR",
+        "addr:street": "Sherburn Road",
+        "amenity": "pub",
+        "building": "commercial",
+        "check_date": "2025-07-18",
+        "fhrs:id": "1930207",
+        "image": "https://www.geograph.org.uk/photo/4501969",
+        "name": "Queen's Head",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 943996775,
+      "center": {
+        "lat": 54.779117,
+        "lon": -1.5540048
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:country": "GB",
+        "addr:postcode": "DH1 2JT",
+        "amenity": "pub",
+        "building": "commercial",
+        "check_date": "2025-07-18",
+        "fhrs:id": "303463",
+        "image": "https://www.geograph.org.uk/photo/4501985",
+        "name": "The Shoes",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "10091173463;100110738453",
+        "source:postcode": "OS CodePoint Open"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997902119,
+      "center": {
+        "lat": 54.7954485,
+        "lon": -1.5904483
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:housenumber": "27",
+        "addr:postcode": "DH1 5EE",
+        "addr:street": "Front Street",
+        "addr:suburb": "Framwellgate Moor",
+        "amenity": "pub",
+        "building": "commercial",
+        "check_date": "2025-07-16",
+        "fhrs:id": "1751548",
+        "name": "Queens Head",
+        "old_name": "Tap & Spile",
+        "source:postcode": "FHRS data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 997925132,
+      "center": {
+        "lat": 54.7958825,
+        "lon": -1.5899406
+      },
+      "tags": {
+        "addr:city": "Durham",
+        "addr:postcode": "DH1 5BL",
+        "addr:street": "Front Street",
+        "amenity": "pub",
+        "building": "commercial",
+        "check_date": "2025-07-16",
+        "fhrs:id": "723608",
+        "name": "Marquis of Granby",
+        "ref:GB:uprn": "100110413708",
+        "source:postcode": "FHRS data",
+        "wikidata": "Q26453125"
+      }
+    }
+  ]
+}

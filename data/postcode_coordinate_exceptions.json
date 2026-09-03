@@ -1,0 +1,4 @@
+{
+  "$comment": "Verified exceptions to the postcode-coordinate gate. Each entry must exactly match appPriceId, pubName, normalized full postcode, latitude, and longitude, and must state a substantive reason. Validation rejects stale, partial, reasonless, duplicate, or no-longer-contradictory entries.",
+  "exceptions": []
+}

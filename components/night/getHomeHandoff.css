@@ -1,0 +1,48 @@
+/* Get-home handoff — quiet provider links, no promises. */
+
+.getHomeHandoff {
+  display: grid;
+  gap: 10px;
+  margin-block: 14px;
+}
+
+.getHomeHandoff__heading {
+  margin: 0;
+  color: var(--ink-soft, var(--muted));
+  font-size: var(--text-sm, 0.85rem);
+  line-height: var(--leading-snug, 1.35);
+}
+
+.getHomeHandoff__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.getHomeHandoff__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--line, #efcfc4);
+  border-radius: var(--radius, 10px);
+  background: var(--panel, #fffaf6);
+  color: var(--ink, #1c1412);
+  font-size: var(--text-sm, 0.85rem);
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.getHomeHandoff__link:hover {
+  border-color: color-mix(in srgb, var(--brass) 56%, var(--line));
+  background: color-mix(in srgb, var(--brass) 5%, var(--panel));
+}
+
+.getHomeHandoff__link:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brass) 60%, transparent);
+  outline-offset: 3px;
+}

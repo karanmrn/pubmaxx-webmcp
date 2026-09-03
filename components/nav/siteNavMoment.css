@@ -1,0 +1,71 @@
+/* Desktop Moment compose affordance (SiteNav action cluster).
+   The ≤640px shell reaches Moment through the bottom tab bar's raised centre
+   FAB (MobileTabBar). On desktop that FAB isn't present, so the top bar carries
+   its own Moment action here — an icon button that lives beside the ⌘K / bell /
+   messages island.
+
+   Discipline: quiet by default (reads as one of the ambient utility icons),
+   with the accent surfacing only on hover/focus. The mobile FAB is a filled
+   coral circle; up here it stays calmer — a muted icon that warms toward the
+   brass accent on interaction, so it never shouts over the primary link row.
+   Token-driven, so it flips light/dark for free like the rest of the bar. */
+
+.siteNavMoment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  /* 44px keyboard/touch target, matching the bell + theme toggle beside it. */
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition:
+    color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+/* Accent gated to real hover pointers so touch devices (which fall to the FAB
+   anyway) never get a sticky hover tint. Warms toward the brass accent — a
+   quiet nod to the coral FAB without the filled-circle weight. */
+@media (hover: hover) and (pointer: fine) {
+  .siteNavMoment:hover {
+    color: var(--brass);
+    border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+    background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+  }
+}
+
+.siteNavMoment:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  color: var(--brass);
+}
+
+/* Tactile press — same feel as the app-wide .pressable convention. */
+@media (prefers-reduced-motion: no-preference) {
+  .siteNavMoment:active {
+    transform: scale(var(--press-scale));
+    --shared-press-scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .siteNavMoment {
+    transition: none;
+  }
+}
+
+/* Phone: the bottom tab bar's raised centre FAB owns Moment compose, so the
+   top-bar affordance would be a duplicate. Hidden below the compact-bar
+   breakpoint, matching how the ⌘K hint drops away at the same width. */
+@media (max-width: 640px) {
+  .siteNavMoment {
+    display: none;
+  }
+}

@@ -1,0 +1,112 @@
+/* The drink lane picker. Same de-boxed idiom as the "Show me" control it sits
+   beside (design judgement 2026-08-01, finding 2.4): one hairline around the
+   GROUP, selection is the fill, no card around the section.
+
+   Eleven lanes will not fit one row at 320px, so the options wrap into a chip
+   set rather than scrolling: a lane behind a horizontal scroll is a lane nobody
+   finds, which is the defect this control exists to fix. */
+.drinkLanePicker {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+}
+
+.drinkLanePickerHead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: var(--brass);
+}
+
+/* Sentence case: uppercase is reserved for stamps (docs/DESIGN_SYSTEM.md). */
+.drinkLanePickerHead > span {
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+}
+
+.drinkLanePickerOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+  padding: 4px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md, 14px);
+}
+
+.drinkLanePickerOption {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: var(--control-radius, 12px);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.drinkLanePickerOption:hover,
+.drinkLanePickerOption:focus-visible {
+  color: var(--ink);
+}
+
+.drinkLanePickerOption:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+/* Selection is the fill, and the fill alone. Coral stays with the primary CTA
+   (DESIGN.md, The One Accent Rule); a drink chooser is not one. */
+.drinkLanePickerOption.isSelected {
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+}
+
+.drinkLanePickerNote,
+.drinkLanePickerStatus {
+  margin: 0;
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  /* A coverage line carries a drink name and a claim about the map. It wraps;
+     it never truncates (the phone-chrome rule for price captions). */
+  overflow-wrap: anywhere;
+}
+
+/* In a phone sheet the control has the full width and no toolbar around it, so
+   the chips can breathe. Geometry only: the vocabulary stays shared. */
+.drinkLanePicker--sheet .drinkLanePickerOptions {
+  gap: 6px;
+}
+
+.drinkLanePicker--sheet .drinkLanePickerOption {
+  padding: 7px 14px;
+  font-size: 0.82rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drinkLanePickerOption {
+    transition: none;
+  }
+}

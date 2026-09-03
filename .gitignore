@@ -1,0 +1,81 @@
+.next/
+.next-*/
+node_modules/
+# `out/` is the static-export build directory. It also matches every source
+# directory named `out`, so each one has to be un-ignored by hand or its files
+# never reach a commit.
+out/
+!app/out/
+!app/out/**
+!lib/out/
+!lib/out/**
+!components/out/
+!components/out/**
+dist/
+.env*
+!.env.example
+*.log
+tsconfig.tsbuildinfo
+scripts/__pycache__/
+.vercel
+.context/
+.firecrawl/
+.tavily/
+test-results/
+playwright-report/
+artifacts/
+/coverage/
+e2e/screenshots/
+.e2e/
+public/vendor/maplibre/
+data/generated/venue_detail_index.json
+data/generated/venue_details.jsonl
+public/data/wikidata_notable_pubs.json
+public/data/wikidata_notable_pubs.json.tmp
+data/editorial/poll-state.json
+data/osm/uk/**/.*.tmp
+
+# macOS Finder metadata + local co-dev scratch probes — never part of the app.
+.DS_Store
+scratch-*.mjs
+
+# Local agent / skill / MCP tooling — never part of the app, machine-specific
+.agents/*
+!.agents/skills/
+!.agents/skills/**
+.claude-flow/
+.cursor/*
+!.cursor/mcp.json
+# Cursor discovers project skills from .cursor/skills/ and .agents/skills/ only.
+# skills/ is the browsable mirror; .cursor/skills/ symlinks to it; .agents/skills/ holds
+# npx-skills project installs (Matt Pocock, Kenji, kunchenguid, last30days, …).
+!.cursor/skills/
+!.cursor/skills/**
+.claude/
+.mcp.json
+.playwright-mcp/
+skills-lock.json
+skill_disabled.md
+skill_del.md
+skill_in_pub.md
+skills_used_global.md
+.data/
+.firecrawl/
+
+# Wave J — commit Taste/Emil skills under skills/ (not machine .agents/)
+!skills/
+!skills/**
+.codex-worktrees/
+
+# clerk configuration (can include secrets)
+/.clerk/
+
+# UK venue Overpass working files: several hundred MB of raw responses that
+# rebuild from `npm run fetch:uk-venues`. The normalized packs beside them are
+# what a reader consumes and those ARE committed.
+data/osm/uk/raw_venues/
+
+# All-UK pub harvest working files (ODbL seed + Exa shards). The first 100
+# seed rows are the committed sample; the rest rebuild from the harvest CLI.
+data-harvest/*
+!data-harvest/uk_pubs_seed.sample.jsonl

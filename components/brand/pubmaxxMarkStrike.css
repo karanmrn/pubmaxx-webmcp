@@ -1,0 +1,104 @@
+/* The Strike — the Clink's signature draw-in. Contained to this family only.
+
+   Timeline (~420ms total):
+     • beam A (heavy/first)   0ms   → 180ms   stroke-dashoffset 1 → 0
+     • beam B (second)        120ms → 260ms   (140ms, overlapping A)
+     • ember pop              260ms → 420ms   scale 0 → 1.15 → 1.0 (160ms)
+
+   Only GPU-cheap properties animate: stroke-dashoffset on the mask beams (the
+   specified draw property) and transform/opacity on the ember. No layout, no
+   colour churn — the mark finishes byte-identical to the static PubmaxxMark. */
+
+.markStrike {
+  display: inline-block;
+  flex: none;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+/* The mask beams: thick round strokes retracted to a single dash so the offset
+   sweep paints them in. pathLength=1 normalises the dash maths across sizes. */
+.markStrike__beam {
+  fill: none;
+  stroke: #fff; /* white = reveal, inside the <mask> luminance space */
+  stroke-width: 22; /* wide enough to cover the ascending double-stroke band */
+  stroke-linecap: round;
+  stroke-dasharray: 1 1;
+}
+
+/* ── Playing (first reveal / mount) ──────────────────────────────────────── */
+.markStrike--play .markStrike__beam--a {
+  stroke-dashoffset: 1;
+  animation: markStrikeDraw 180ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms both;
+}
+.markStrike--play .markStrike__beam--b {
+  stroke-dashoffset: 1;
+  animation: markStrikeDraw 140ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both;
+}
+.markStrike--play .markStrike__ember {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  opacity: 0;
+  animation: markStrikeEmber 160ms cubic-bezier(0.34, 1.56, 0.64, 1) 260ms both;
+}
+
+@keyframes markStrikeDraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes markStrikeEmber {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── Still (frozen final state, no replay) ───────────────────────────────── */
+.markStrike--still .markStrike__beam {
+  stroke-dashoffset: 0;
+}
+.markStrike--still .markStrike__ember {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ── Reduced motion: no draw, no pop — a single 120ms fade, ember static ──── */
+@media (prefers-reduced-motion: reduce) {
+  .markStrike__beam {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .markStrike__ember {
+    transform: none;
+    opacity: 1;
+    animation: none;
+  }
+  .markStrike--play {
+    animation: markStrikeFade 120ms ease both;
+  }
+}
+
+@keyframes markStrikeFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

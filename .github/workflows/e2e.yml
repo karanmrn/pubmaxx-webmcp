@@ -1,0 +1,117 @@
+name: Browser tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e2e-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  law-pins:
+    name: Browser law pins
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run law-pinning journeys
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+          PUBMAX_E2E_KEYLESS: "1"
+          PW_SKIP_KEYLESS_WEBSERVER: "1"
+        run: >-
+          npx playwright test
+          e2e/smoke.spec.ts
+          e2e/admin-document-guard.spec.ts
+          e2e/account-switch-identity.spec.ts
+          e2e/plan-capability-recovery.spec.ts
+          e2e/plan-held-acceptance.spec.ts
+          e2e/map-surface-history.spec.ts
+          e2e/surface-back-and-home.spec.ts
+          e2e/mobile-map-chrome-fit.spec.ts
+          e2e/visit-reports.spec.ts
+          e2e/landing-find-my-pint.spec.ts
+          e2e/out-tab.spec.ts
+          --project=chromium
+          --workers=1
+
+  full-suite:
+    name: Full browser suite (${{ matrix.suite }}, ${{ matrix.shard }}/4)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [default, flag-on]
+        shard: [1, 2, 3, 4]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run full browser shard
+        if: matrix.suite == 'default'
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+          PUBMAX_E2E_KEYLESS: "1"
+        run: >-
+          npx playwright test
+          --project=chromium
+          --project=chromium-keyless
+          --project=chromium-gl
+          --project=chromium-sw-gl
+          --project=chromium-no-gl
+          --shard=${{ matrix.shard }}/4
+
+      - name: Run flag-on browser shard
+        if: matrix.suite == 'flag-on'
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+          PUBMAX_E2E_KEYLESS: "1"
+          PUBMAX_MAP_ROUTE_TRANSFER: "1"
+          PUBMAX_PAL_HANDOFF: "1"
+          PUBMAX_TONIGHT_GROUPING: "1"
+          PUBMAX_FRIEND_MEMBER_REHYDRATION_V2: "1"
+          PUBMAX_SOCIAL_FRIENDS_LAUNCH: "1"
+        run: >-
+          npx playwright test
+          --project=chromium-flag-on
+          --shard=${{ matrix.shard }}/4

@@ -1,0 +1,829 @@
+/* Shared app-wide top navigation (SiteNav).
+   Token-driven so it flips light/dark for free and reads over both the paper
+   pages and the dark map shell. Three density bands live here:
+     · Wide desktop: full link row plus utilities.
+     · Laptop/tablet: keep primary links, tighten spacing, and drop nonessential
+       utility chrome so the bar stays one row.
+     · Phone (≤640px): a compact bar, because MobileTabBar owns primary nav.
+   These use their OWN classes (siteNavBar / siteNavLinks / …) — independent of
+   the old .siteNav / .appNav globals, which may be cleaned up separately. */
+
+/* ── Shared top-bar FRAME tokens ─────────────────────────────────────────────
+   Owner report (iPhone screenshots): the mobile top bar visibly changed
+   size/shape page-to-page. The fix is ONE frame for every top bar (the
+   standard bar on Tonight/Feed/…, the floating map variant, and the landing
+   .lpNav) so navigating never makes the bar jump. Contents may differ per
+   surface; the FRAME (height, top offset, corner radius, horizontal padding,
+   shadow) is identical.
+
+   Chosen standard (measured all three first, best pick documented):
+     · --topbar-h      52px. The app-shell / map-chrome height. Map + standard
+                              bars already used it; landing tightened 58 to 52.
+     · --topbar-radius 14px. The map-chrome card radius. The map is the primary
+                              (map-first) surface, where this bar twins the search
+                              toolbar; adopting the rounded-card shape everywhere
+                              on mobile keeps that twin AND unifies the standard +
+                              landing bars (were 999px pills). Desktop bars keep
+                              their capsule (already consistent page-to-page).
+     · --topbar-pad-x  10px. Landing's value; standard/map were 8px.
+     · --topbar-inset  env(safe-area-inset-top)+10px. The floating top offset
+                              that clears the notch (the map's proven form). The
+                              in-flow standard bar keeps its own safe-area margin;
+                              landing keeps its max() literal, locked by
+                              landingChromeCss.test, resolving to the same ~10px.
+     · --topbar-shadow the tight map-overlay shadow. Landing drops its heavy
+                              0 16px 36px glass shadow on mobile to match.
+   Consumed with literal fallbacks at every use site so the landing route (which
+   does not load this file's stylesheet) still resolves to the same values. */
+:root {
+  --topbar-h: 52px;
+  --topbar-inset: calc(env(safe-area-inset-top, 0px) + 10px);
+  --topbar-radius: 14px;
+  --topbar-pad-x: 10px;
+  /* Shared MOBILE side inset — the viewport-relative left/right gap every top
+     bar leaves on ≤640px. 10px is not a new invention: the landing bar already
+     runs width:calc(100vw - 20px) (→10px each side) and the mobile map chrome
+     already pins left:10px/right:10px. The only outlier was the standard
+     in-flow bar, which inherited each page shell's --page-gutter (~22-32px) as
+     its side inset and so sat NARROWER page-to-page. Adopting the value the
+     other two already ship makes all four rects identical with the least
+     churn. Consumed with a 10px literal fallback so routes that don't load this
+     sheet still resolve the same. */
+  --topbar-side: 10px;
+  --topbar-shadow: var(--map-overlay-shadow-tight, 0 6px 16px rgba(0, 0, 0, 0.12));
+}
+
+.siteNavBar {
+  /* Installed-app displays (A2HS standalone, native shell): viewport-fit=cover
+     plus black-translucent extends the page under the iOS status bar, leaving
+     this bar's controls buried beneath the clock and untappable. The system
+     inset clears it; env() is 0 wherever the browser's own chrome owns that
+     zone, so ordinary web layouts are unchanged. The floating map variant
+     offsets itself (see .siteNavBarFloating) and is scoped out below. */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* min-width:0 lets the bar shrink inside any flex/grid host without forcing a
+     horizontal scrollbar; box-sizing keeps padding inside the 100% width. */
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 9px 14px;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, var(--brass) 18%);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--panel-raised) 96%, transparent), color-mix(in srgb, var(--surface-tint-river) 62%, transparent)),
+    color-mix(in srgb, var(--panel-raised) 90%, transparent);
+  box-shadow: 0 16px 36px rgba(44, 30, 62, 0.12), 0 5px 14px rgba(255, 90, 95, 0.05);
+  backdrop-filter: blur(14px) saturate(1.06);
+  -webkit-backdrop-filter: blur(14px) saturate(1.06);
+}
+
+.siteNavBar:not(.siteNavBarFloating) {
+  margin-top: env(safe-area-inset-top, 0px);
+}
+
+/* Content pages embed the bar inside a narrow reading column (~880px), which
+   cannot fit the full eight-label link row — labels used to ellipsize into
+   unreadable fragments at 1440px even with nothing else crowding them. On
+   desktop the bar now self-sizes: a centred pill up to the room the VIEWPORT
+   actually has, escaping the host column symmetrically via the auto-negative
+   margin pair below (still centred because every host column is itself
+   centred). The floating map variant and the ≤640px compact bar keep their
+   own geometry — this rule is scoped away from both. */
+/* Issue #215 — re-verified at 1440/1280/1180/1024/900px on /pubs, /feed,
+   /crawls, /borough, /discover: with the compact single-"Sign in" disclosure
+   above (auth.css .authUserNav hides the two full provider buttons in every
+   nav host) every link's scrollWidth already fits its clientWidth — 0 of the
+   9 labels ellipsis-clip at any of those widths. --site-nav-width keeps a
+   little extra headroom over that measured floor (1100px, up from 1080px) so
+   future label/utility additions don't reopen the clip. */
+@media (min-width: 641px) {
+  .siteNavBar:not(.siteNavBarFloating) {
+    --site-nav-width: min(1100px, 100vw - 48px);
+    width: var(--site-nav-width);
+    margin-inline: calc((100% - var(--site-nav-width)) / 2);
+  }
+}
+
+/* Map variant: the shell is overflow-hidden + full-bleed, so the bar floats
+   across the top. Centred pill on desktop; full-width compact bar on phone
+   so it matches the Search/Plan toolbar width and inset. */
+.siteNavBarFloating {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: var(--z-modal);
+  width: var(--desktop-map-surface-width);
+  max-width: none;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+/* ── Wordmark ──────────────────────────────────────────────────────────── */
+.siteNavBrand {
+  flex: 0 0 auto;
+  font-family: var(--font-display, ui-sans-serif, system-ui, sans-serif);
+  font-size: 1.02rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  /* 44px keyboard/touch target; the links beside it already set the bar height. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 2px;
+  border-radius: 6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .siteNavBrand:hover {
+    color: var(--river);
+  }
+}
+
+.siteNavBrandFull,
+.siteNavBrandMobile {
+  display: inline-flex;
+  align-items: center;
+}
+
+.siteNavBrandMobile {
+  display: none;
+  gap: 6px;
+}
+
+.siteNavBrand:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* ── Full link row (desktop) ───────────────────────────────────────────── */
+.siteNavLinks {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+/* Active state is the .siteNavLink.isActive pill fill only (owner design
+   feedback: no second gliding underline under the active link). */
+
+.siteNavItem {
+  display: flex;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.siteNavLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px target height. */
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  min-width: 44px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition:
+    color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out),
+    transform var(--duration-press) var(--ease-out-strong);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .siteNavLink:hover {
+    color: var(--ink);
+    background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  }
+}
+
+.siteNavLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+/* Tactile press — same feel as the app-wide .pressable convention (same
+   --press-scale token), kept self-contained here rather than adding the
+   .pressable class: that class's own `transition: transform …` rule would
+   otherwise compete with (and, on cascade order, silently lose to) this
+   file's own `transition` shorthand above, since the property isn't additive
+   across rules. */
+@media (prefers-reduced-motion: no-preference) {
+  .siteNavLink:active {
+    transform: scale(var(--press-scale));
+    --shared-press-scale: 1;
+  }
+}
+
+.siteNavLink.isActive {
+  color: var(--color-on-accent);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--brass) 22%, transparent);
+}
+
+/* ── Right-side actions (theme toggle + sign-in) ───────────────────────── */
+.siteNavActions {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* ── More overflow menu (Wave D2.2) ─────────────────────────────────────── */
+/* Secondary destinations only. Visible on desktop; forced off ≤640 so the
+   compact mobile bar stays byte-identical to pre-D2. */
+.siteNavMore {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.siteNavMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel-raised) 88%, var(--line) 12%);
+  color: var(--ink-soft);
+  font: 700 0.82rem/1 var(--font-body, system-ui, sans-serif);
+  cursor: pointer;
+  transition:
+    color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .siteNavMoreBtn:hover,
+  .siteNavMoreBtn.isOpen {
+    color: var(--ink);
+    border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+    background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  }
+}
+
+.siteNavMoreBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.siteNavMoreChevron {
+  flex: 0 0 auto;
+  opacity: 0.85;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.siteNavMoreBtn.isOpen .siteNavMoreChevron {
+  transform: rotate(180deg);
+}
+
+.siteNavMoreMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  min-width: 17.5rem;
+  max-width: calc(100vw - 16px);
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm, 0 7px 18px rgba(60, 30, 20, 0.09));
+}
+
+/* Portaled menu (body): escapes .siteNavBar backdrop-filter + pill radius
+   clipping that cut Historic/Pal off the absolute dropdown. top/right come
+   from the button's getBoundingClientRect in SiteNavMore.tsx. */
+.siteNavMoreMenuPortaled {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: var(--z-modal, 1200);
+  /* Never clipped by page columns (today/feed reading shells). */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.siteNavMoreItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  min-height: 52px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+button.siteNavMoreItem {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.siteNavMoreLabel {
+  font: 700 0.9rem/1.2 var(--font-body, system-ui, sans-serif);
+}
+
+.siteNavMoreDescription {
+  font: 500 0.75rem/1.35 var(--font-body, system-ui, sans-serif);
+  color: var(--ink-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .siteNavMoreItem:hover {
+    background: color-mix(in srgb, var(--brass) 10%, transparent);
+  }
+}
+
+.siteNavMoreItem:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+.siteNavMoreItem.isActive {
+  color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .siteNavMoreBtn,
+  .siteNavMoreChevron {
+    transition: none;
+  }
+}
+
+/* ── Command-palette affordance (feature N1) ───────────────────────────── */
+/* A quiet "⌘K" pill that opens the global palette. Token-styled so it reads in
+   both themes; sits alongside the bell/messages island but stays visually
+   secondary (muted until hover/focus). */
+.siteNavCmdk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel-raised) 88%, var(--line) 12%);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition:
+    color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .siteNavCmdk:hover {
+    color: var(--ink);
+    border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+    background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  }
+}
+
+.siteNavCmdk:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.siteNavCmdkKbd {
+  font-family: var(--font-data, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* Motion respect. */
+@media (prefers-reduced-motion: reduce) {
+  .siteNavCmdk {
+    transition: none;
+  }
+}
+
+/* ── Notification bell (story 34) ──────────────────────────────────────── */
+.siteNavBell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .siteNavBell:hover {
+    color: var(--ink);
+    background: color-mix(in srgb, var(--river) 12%, var(--panel-raised));
+  }
+}
+.siteNavBell:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+/* Unread count — a small brass badge pinned to the bell's top-right. Pops in
+   (never appears from scale(0) — see globals.css motion rules) and, since
+   NotificationBell/MessagesLink key this span on the unread count, the same
+   pop replays as a "bump" whenever the number changes while already visible. */
+.siteNavBellBadge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brass), var(--pink, var(--brass)));
+  color: var(--panel-raised);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  transform-origin: center;
+}
+
+@keyframes siteNavBadgePop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .siteNavBellBadge {
+    animation: siteNavBadgePop var(--duration-slow) var(--ease-spring) both;
+  }
+}
+
+@keyframes siteNavBadgeFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .siteNavBellBadge {
+    animation: siteNavBadgeFade var(--duration-fast) linear both;
+  }
+}
+
+/* Laptop/tablet density: keep navigation usable but avoid two-row pills that
+   collide with map/search chrome. Primary route links stay visible; ambient
+   utilities collapse away until phone bottom navigation takes over. */
+@media (max-width: 1180px) {
+  .siteNavBar {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .siteNavLink {
+    min-height: 44px;
+    padding: 0 9px;
+    font-size: 0.78rem;
+  }
+
+  .siteNavActions {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 900px) {
+  .siteNavBrand {
+    font-size: 0.94rem;
+  }
+
+  /* Densest band for the link row: the ⌘K hint is the most expendable item
+     (the shortcut + palette remain), so its width goes back to the labels. */
+  .siteNavCmdk {
+    display: none;
+  }
+
+  .siteNavLink {
+    padding: 0 7px;
+    font-size: 0.74rem;
+  }
+
+  .siteNavBell {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Mid-width discoverability valley (IA-4 / KB-2): from 641–900px the full link
+   row is up but the phone tab bar is not, yet the ⌘K pill above is hidden — so
+   there is no visible entry to the palette in that band. Restore it here (this
+   rule follows the max-width:900 hide, so it wins by source order at 641–900),
+   tightened to an icon-width pill so it reclaims minimal room from the links.
+   ≤640 stays hidden (the max-width:640 rule below still matches; this one does
+   not), keeping the phone bar unchanged. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .siteNavCmdk {
+    display: inline-flex;
+    min-width: 40px;
+    padding: 0 6px;
+  }
+}
+
+/* ── Mobile: the COMPACT bar (the overflow fix) ────────────────────────── */
+/* At ≤640px the bottom tab bar owns primary navigation, so the full link row is
+   removed entirely and only the wordmark + actions remain. With the links gone
+   the bar is trivially narrow and cannot overflow at 390px. */
+@media (max-width: 640px) {
+  .siteNavBar {
+    gap: 6px;
+    /* Shared frame: 14px rounded-card radius (was the base 999px pill), 52px
+       height, 10px horizontal padding, tight shadow. Identical to the map +
+       landing bars so the bar never changes shape page-to-page.
+       Vertical padding is 3px (was 4px): the bar's tallest child is a 44px
+       touch target and box-sizing is border-box with a 1px frame border, so
+       44 + 3 + 3 + 1 + 1 = 52px — the rendered height now EQUALS --topbar-h
+       instead of overshooting it to 54px (the token is truth). */
+    padding: 3px var(--topbar-pad-x, 10px);
+    min-height: var(--topbar-h, 52px);
+    border-radius: var(--topbar-radius, 14px);
+    background: var(--panel-raised);
+    box-shadow: var(--topbar-shadow, var(--map-overlay-shadow-tight, 0 6px 16px rgba(0, 0, 0, 0.12)));
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Uniform side inset for the IN-FLOW standard bar — land both edges exactly
+     --topbar-side (10px) from the viewport on EVERY page, so the pill is the
+     same rect the fixed landing + map bars occupy and never jumps shape.
+
+     The bar breaks out of its host column with symmetric negative margins;
+     width:auto lets those margins WIDEN it (a fixed width would only shift it).
+     The breakout distance must equal whatever gap the host puts between the
+     viewport edge and the bar's own containing block — but that gap is NOT
+     always --page-gutter. Standard shells (/feed, /tonight) pad by --page-gutter
+     (~22-32px), but others give the bar a differently-padded host: /moment and
+     /u (.profilePage) wrap it in a ZERO-padding shell, /activity pads 16px,
+     /messages 20px. Subtracting the fixed --page-gutter there overshot and
+     dragged the bar (and its wordmark) off the left edge — audit F2's clipped
+     "UBMAXX" and full-bleed bar.
+
+     (100vw - 100%) / 2 measures that real gap geometrically: for any centred,
+     symmetric host, 100% (the bar's containing-block inline size) already nets
+     out every ancestor's padding + centring, so this resolves to the exact
+     distance from the viewport edge to the bar's containing block — 0-gutter,
+     16px, or --page-gutter alike. Pulling back by it and adding --topbar-side
+     pins the left/right edges to 10px from the viewport everywhere. On the
+     standard --page-gutter shells this evaluates to the previous
+     (--topbar-side - --page-gutter), so their rect is unchanged.
+
+     Scoped away from the floating map variant, which owns its own inset below.
+     align-self:stretch is required because some shells (e.g. /feed) are flex
+     columns with align-items:center — without it width:auto would shrink-wrap
+     the bar there instead of filling; it is inert in a plain block host. */
+  .siteNavBar:not(.siteNavBarFloating) {
+    width: auto;
+    align-self: stretch;
+    margin-inline: calc(var(--topbar-side, 10px) - (100vw - 100%) / 2);
+  }
+
+  .siteNavLinks {
+    display: none;
+  }
+
+  /* On the map the floating bar spans the same inset as .mapToolbar — a clean
+     compact header twin, never a centred pill that could clip. */
+  .siteNavBarFloating {
+    /* Shared frame tokens: same top offset + radius the standard and landing
+       bars now use. Values are unchanged from before (env+10px / 14px); only
+       the source is now the one shared token so all three stay locked together. */
+    top: var(--topbar-inset, calc(10px + env(safe-area-inset-top, 0px)));
+    left: var(--map-chrome-inset, 10px);
+    right: var(--map-chrome-inset, 10px);
+    width: auto;
+    max-width: none;
+    transform: none;
+    border-radius: var(--topbar-radius, 14px);
+  }
+
+  /* Taste — header consistency: the wordmark is the plain PubmaxxWordmark on
+     every other surface (desktop bars, the map header, the landing bar), so the
+     mobile pill-box (border + panel fill + shadow + 13px radius) was the lone
+     outlier that made these pages read as different apps. Killed here: the mark
+     now sits bare, matching the canonical treatment. Tap target (44px) and the
+     compact type scale are kept. */
+  .siteNavBrand {
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2px;
+    border-radius: 6px;
+    color: var(--ink);
+    font-size: 0.72rem;
+    font-family: var(--font-display, system-ui, sans-serif);
+    font-weight: 800;
+    line-height: 1;
+    overflow: hidden;
+  }
+
+  .siteNavBrand .pubmaxxWordmark { line-height: 1; }
+
+  /* The actions cluster holds its shape — the brand is the only flexible part
+     of the compact bar, so the controls never compress or wrap. */
+  .siteNavActions {
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .siteNavBell {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .siteNavBar .themeToggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .siteNavBar .authUser {
+    display: none;
+  }
+
+  /* No hardware keyboard on phones — the bottom tab bar owns navigation, so the
+     ⌘K hint would only add noise. Hide it (the shortcut and provider remain). */
+  .siteNavCmdk {
+    display: none;
+  }
+
+  /* D2.2 More menu is desktop-only; keep the ≤640 compact bar identical. */
+  .siteNavMore {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .siteNavBarFloating {
+    gap: 3px;
+    padding-inline: 5px;
+  }
+
+  .siteNavBarFloating .siteNavBrand {
+    min-width: 90px;
+    padding-inline: 5px;
+  }
+
+  .siteNavBarFloating .siteNavActions {
+    gap: 2px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Design pass D1 — category tint + polish (CSS-only; append-only)
+   ---------------------------------------------------------------------------
+   Drink-scoped nav links can tint their active state toward the page's drink
+   category instead of plain brass, so the nav speaks the same colour language
+   as the rest of the app. This is OPT-IN and progressive: a link only tints if
+   the nav component sets `data-cat="<category>"` on it (and a matching
+   `--nav-cat` custom property, or the fallback below resolves the token). With
+   no data-cat, every link keeps the brass active state above — unchanged.
+
+   The label text is always present, so the category is never encoded by colour
+   alone (WCAG 1.4.1); the tint is decoration on an already-labelled control.
+   All --cat-* tokens carry AA light/dark/Legacy values, and the active fill
+   pairs them with --ink-deep text (a dark, near-constant ink) which clears AA
+   on every category hue in each theme. ═══════════════════════════════════ */
+
+/* Resolve the per-link category token from its data-cat, so the CSS never has
+   to hardcode which link is which colour. */
+.siteNavLink[data-cat="beer"] {
+  --nav-cat: var(--cat-beer);
+}
+.siteNavLink[data-cat="wine"] {
+  --nav-cat: var(--cat-wine);
+}
+.siteNavLink[data-cat="whisky"] {
+  --nav-cat: var(--cat-whisky);
+}
+.siteNavLink[data-cat="gin"] {
+  --nav-cat: var(--cat-gin);
+}
+.siteNavLink[data-cat="vodka"] {
+  --nav-cat: var(--cat-vodka);
+}
+.siteNavLink[data-cat="rum"] {
+  --nav-cat: var(--cat-rum);
+}
+.siteNavLink[data-cat="cocktail"] {
+  --nav-cat: var(--cat-cocktail);
+}
+.siteNavLink[data-cat="shot"] {
+  --nav-cat: var(--cat-shot);
+}
+.siteNavLink[data-cat="other"] {
+  --nav-cat: var(--cat-other);
+}
+
+/* Drink-scoped hover: warm toward the category rather than brass. */
+@media (hover: hover) and (pointer: fine) {
+  .siteNavLink[data-cat]:hover {
+    background: color-mix(in srgb, var(--nav-cat, var(--brass)) 14%, transparent);
+  }
+}
+
+/* Drink-scoped active: the category fill, with the theme-aware on-fill text
+   token (--cat-on-fill: cream in light/legacy-light, ink-deep in dark/
+   legacy-dark) so the pairing clears AA in EVERY theme×legacy combination —
+   the cat tokens are dark in light themes (cream text) and bright in dark
+   themes (ink text). Falls back to the brass active state if --nav-cat unset. */
+.siteNavLink.isActive[data-cat] {
+  background: var(--nav-cat, var(--brass));
+  color: var(--cat-on-fill, var(--ink-deep));
+}
+
+/* Subtle polish on the brass active state: a faint inner lift so the active pill
+   reads as pressed-in rather than a flat block. Constant across themes. */
+.siteNavLink.isActive {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 1px 2px rgba(24, 34, 26, 0.16);
+}
+
+/* Motion respect: drop the link hover/active transitions for reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  .siteNavLink {
+    transition: none;
+  }
+}
+
+/* ── Issue #215 / 0b audit F8 — keep the nav out of the route crossfade ────
+   globals.css (IDEAS B4) wraps every App-Router navigation in a whole-page
+   startViewTransition() crossfade: the browser snapshots the OLD page and
+   the NEW page into ::view-transition-old/new(root) and fades between them.
+   SiteNav is mounted per-page (not hoisted into a shared root layout), so
+   without its own view-transition-name it was swept into that root snapshot
+   pair like everything else — the outgoing bar's blurred/translucent pixels
+   briefly stacked under the incoming bar's for the ~150ms crossfade window.
+   Two overlapping backdrop-blurred pills read as a grey "ghost" smear right
+   over the icon cluster (bell/messages/theme/sign-in).
+
+   Naming the bar carves it into its own transition group, separate from
+   root; animation:none on that group's old/new pair makes the swap instant
+   (no fade), so the bar simply never visibly changes across a route
+   transition — the glitch is gone and the page-content crossfade the root
+   group still owns is untouched. Unconditional (not gated behind the
+   reduced-motion media query above) so the nav never ghosts either way. */
+.siteNavBar {
+  view-transition-name: site-nav-bar;
+}
+
+::view-transition-group(site-nav-bar) {
+  animation: none;
+}
+
+::view-transition-old(site-nav-bar),
+::view-transition-new(site-nav-bar) {
+  animation: none;
+  mix-blend-mode: normal;
+}

@@ -1,0 +1,1803 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "late-food-evidence-20260727-v3",
+  "generatedAt": "2026-07-27T12:00:00.000Z",
+  "coveragePolicy": "Only current official venue or operator pages with explicit service hours, address and operator-linked location evidence are eligible. Hours are snapshots, not live availability, and every option must be verified on the night.",
+  "areas": {
+    "clapham": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-clapham-honest-burgers-clapham",
+          "name": "Honest Burgers Clapham",
+          "area": "clapham",
+          "category": "restaurant",
+          "address": "75 Venn St, London SW4 0BD",
+          "coordinates": {
+            "lat": 51.4624861,
+            "lng": -0.1376976,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Sunday-Thursday 11:00-22:30; Friday-Saturday 11:00-23:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/clapham/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "victoria": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-victoria-franco-manca-victoria-nova",
+          "name": "Franco Manca Victoria Nova",
+          "area": "victoria",
+          "category": "pizza",
+          "address": "7 Sir Simon Milton Square, Victoria Street, London SW1E 5DJ",
+          "coordinates": {
+            "lat": 51.4973963,
+            "lng": -0.1431839,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Thursday 12:00-22:00; Friday-Saturday 12:00-23:00; Sunday 12:00-22:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "12:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "12:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Franco's OG Margherita",
+            "price": 13.95,
+            "sourceUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526P.pdf",
+            "observedAt": "2026-07-27"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Franco Manca",
+            "sourceUrl": "https://www.francomanca.co.uk/restaurants/victoria-nova/",
+            "anchorDocumentLink": {
+              "pageUrl": "https://www.francomanca.co.uk/restaurants/victoria-nova/",
+              "documentUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526P.pdf"
+            },
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, opening hours for every day, dine-in service, and a mapped address link."
+          }
+        }
+      ]
+    },
+    "piccadilly-soho": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-piccadilly-soho-balans-no-60",
+          "name": "Balans No.60",
+          "area": "piccadilly-soho",
+          "category": "restaurant",
+          "address": "60-62 Old Compton Street, London W1D 4UG",
+          "coordinates": {
+            "lat": 51.5127668,
+            "lng": -0.1325587,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Tuesday 09:00-22:30; Wednesday 09:00-23:30; Thursday-Saturday 09:00-04:30 the following day; Sunday 09:00-00:30 the following day.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "09:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "09:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "09:00",
+                "close": "23:30",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "09:00",
+                "close": "04:30",
+                "closesNextDay": true
+              }
+            ],
+            "friday": [
+              {
+                "open": "09:00",
+                "close": "04:30",
+                "closesNextDay": true
+              }
+            ],
+            "saturday": [
+              {
+                "open": "09:00",
+                "close": "04:30",
+                "closesNextDay": true
+              }
+            ],
+            "sunday": [
+              {
+                "open": "09:00",
+                "close": "00:30",
+                "closesNextDay": true
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Cheeseburger",
+            "price": 20,
+            "sourceUrl": "https://balans.co.uk/wp-content/uploads/2025/07/No.60-Overnight-1.pdf",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Balans Restaurants",
+            "sourceUrl": "https://balans.co.uk/locations/soho-no-60/",
+            "anchorDocumentLink": {
+              "pageUrl": "https://balans.co.uk/menus/soho-no-60/",
+              "documentUrl": "https://balans.co.uk/wp-content/uploads/2025/07/No.60-Overnight-1.pdf"
+            },
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, opening hours for every day, and an operator-linked mapped location.",
+            "supportingUrls": ["https://balans.co.uk/menus/soho-no-60/"]
+          }
+        }
+      ]
+    },
+    "canary-wharf": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-canary-wharf-franco-manca-canary-wharf",
+          "name": "Franco Manca Canary Wharf",
+          "area": "canary-wharf",
+          "category": "pizza",
+          "address": "Unit 35 Crossrail Station, Canary Wharf, London E14 5AR",
+          "coordinates": {
+            "lat": 51.5060582,
+            "lng": -0.0172408,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Thursday 12:00-22:00; Friday-Saturday 12:00-23:00; Sunday 12:00-22:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "12:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "12:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Franco's OG Margherita",
+            "price": 13.95,
+            "sourceUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526P.pdf",
+            "observedAt": "2026-07-27"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Franco Manca",
+            "sourceUrl": "https://www.francomanca.co.uk/restaurants/canary-wharf/",
+            "anchorDocumentLink": {
+              "pageUrl": "https://www.francomanca.co.uk/restaurants/canary-wharf/",
+              "documentUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526P.pdf"
+            },
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, opening hours for every day, dine-in service, and a mapped address link."
+          }
+        }
+      ]
+    },
+    "barnes": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-barnes-rick-stein-barnes",
+          "name": "Rick Stein Barnes",
+          "area": "barnes",
+          "category": "restaurant",
+          "address": "Tideway Yard, 125 Mortlake High St, London SW14 8SW",
+          "coordinates": {
+            "lat": 51.4706196,
+            "lng": -0.2566919,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Thursday 12:00-15:00 and 17:00-21:00; Friday 12:00-15:00 and 17:00-21:30; Saturday 12:00-21:30; Sunday 12:00-20:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "12:00",
+                "close": "15:00",
+                "closesNextDay": false
+              },
+              {
+                "open": "17:00",
+                "close": "21:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "12:00",
+                "close": "15:00",
+                "closesNextDay": false
+              },
+              {
+                "open": "17:00",
+                "close": "21:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "12:00",
+                "close": "15:00",
+                "closesNextDay": false
+              },
+              {
+                "open": "17:00",
+                "close": "21:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "12:00",
+                "close": "15:00",
+                "closesNextDay": false
+              },
+              {
+                "open": "17:00",
+                "close": "21:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "12:00",
+                "close": "15:00",
+                "closesNextDay": false
+              },
+              {
+                "open": "17:00",
+                "close": "21:30",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "12:00",
+                "close": "21:30",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "12:00",
+                "close": "20:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Fish & Chips",
+            "price": 22,
+            "sourceUrl": "https://rickstein.com/restaurants/rick-stein-barnes/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Rick Stein",
+            "sourceUrl": "https://rickstein.com/restaurants/rick-stein-barnes/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator restaurant page publishes daily service hours and its directions link supplies the mapped point; the operator return-booking page publishes the full street address.",
+            "supportingUrls": ["https://rickstein.com/return-booking-barnes/"]
+          }
+        }
+      ]
+    },
+    "chiswick": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-chiswick-honest-burgers-chiswick",
+          "name": "Honest Burgers Chiswick",
+          "area": "chiswick",
+          "category": "restaurant",
+          "address": "148 Chiswick High Rd, London W4 1PR",
+          "coordinates": {
+            "lat": 51.492916,
+            "lng": -0.254019,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:00-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/chiswick/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "shoreditch": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-shoreditch-honest-burgers-spitalfields",
+          "name": "Honest Burgers Spitalfields",
+          "area": "shoreditch",
+          "category": "restaurant",
+          "address": "12 Widegate St, London E1 7HP",
+          "coordinates": {
+            "lat": 51.518021,
+            "lng": -0.078045,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:00-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/spitalfields/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, describes the venue as a short walk from Shoreditch, and links its mapped location."
+          }
+        }
+      ]
+    },
+    "camden": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-camden-honest-burgers-camden",
+          "name": "Honest Burgers Camden",
+          "area": "camden",
+          "category": "restaurant",
+          "address": "Unit 34a Camden Lock Pl, London NW1 8AF",
+          "coordinates": {
+            "lat": 51.541559,
+            "lng": -0.1460928,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Sunday-Thursday 11:00-22:00; Friday-Saturday 11:00-23:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/camden/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "brixton": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-brixton-honest-burgers-brixton",
+          "name": "Honest Burgers Brixton",
+          "area": "brixton",
+          "category": "restaurant",
+          "address": "Unit 12, Brixton Village, London SW9 8PR",
+          "coordinates": {
+            "lat": 51.462331,
+            "lng": -0.112116,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Wednesday 11:00-22:30; Thursday-Saturday 11:00-23:00; Sunday 11:00-22:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/brixton/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "bermondsey-london-bridge": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-bermondsey-london-bridge-pizza-pilgrims-london-bridge",
+          "name": "Pizza Pilgrims London Bridge",
+          "area": "bermondsey-london-bridge",
+          "category": "pizza",
+          "address": "Unit SU48, Bermondsey Street, London SE1 9SP",
+          "coordinates": {
+            "lat": 51.5043307,
+            "lng": -0.0835769,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:30-22:30; Sunday 11:30-21:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:30",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:30",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:30",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:30",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:30",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:30",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:30",
+                "close": "21:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Margherita",
+            "price": 12.5,
+            "sourceUrl": "https://www.pizzapilgrims.co.uk/menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Pizza Pilgrims",
+            "sourceUrl": "https://www.pizzapilgrims.co.uk/pizzerias/london-bridge/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, opening hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "kings-cross": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-kings-cross-honest-burgers-king-s-cross",
+          "name": "Honest Burgers King's Cross",
+          "area": "kings-cross",
+          "category": "restaurant",
+          "address": "251 Pentonville Rd, London N1 9NG",
+          "coordinates": {
+            "lat": 51.530871,
+            "lng": -0.119003,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 10:30-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "10:30",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "10:30",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "10:30",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "10:30",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "10:30",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "10:30",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/kings-cross/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "islington": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-islington-franco-manca-islington",
+          "name": "Franco Manca Islington",
+          "area": "islington",
+          "category": "pizza",
+          "address": "72 Upper Street, Islington, London N1 0NY",
+          "coordinates": {
+            "lat": 51.536196,
+            "lng": -0.103887,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Tuesday 12:00-21:30; Wednesday-Thursday 12:00-22:00; Friday-Saturday 12:00-23:00; Sunday 12:00-21:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "12:00",
+                "close": "21:30",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "12:00",
+                "close": "21:30",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "12:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "12:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "12:00",
+                "close": "21:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Franco's OG Margherita",
+            "price": 13.5,
+            "sourceUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf",
+            "observedAt": "2026-07-27"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Franco Manca",
+            "sourceUrl": "https://www.francomanca.co.uk/restaurants/islington/",
+            "anchorDocumentLink": {
+              "pageUrl": "https://www.francomanca.co.uk/restaurants/islington/",
+              "documentUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf"
+            },
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the Upper Street address, opening hours for every day, dine-in service, and a mapped address link."
+          }
+        }
+      ]
+    },
+    "dalston": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-dalston-honest-burgers-dalston",
+          "name": "Honest Burgers Dalston",
+          "area": "dalston",
+          "category": "restaurant",
+          "address": "14-16 Bradbury St, London N16 8JN",
+          "coordinates": {
+            "lat": 51.5484953,
+            "lng": -0.0761896,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:00-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/dalston/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "peckham": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-peckham-honest-burgers-peckham",
+          "name": "Honest Burgers Peckham",
+          "area": "peckham",
+          "category": "restaurant",
+          "address": "12-16 Blenheim Grove, London SE15 4QL",
+          "coordinates": {
+            "lat": 51.469678,
+            "lng": -0.0692591,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:00-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/peckham/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "greenwich": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-greenwich-honest-burgers-greenwich",
+          "name": "Honest Burgers Greenwich",
+          "area": "greenwich",
+          "category": "restaurant",
+          "address": "8 Nelson Rd, London SE10 9JB",
+          "coordinates": {
+            "lat": 51.480991,
+            "lng": -0.0089133,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:00-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/greenwich/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "hammersmith": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-hammersmith-honest-burgers-hammersmith",
+          "name": "Honest Burgers Hammersmith",
+          "area": "hammersmith",
+          "category": "restaurant",
+          "address": "24 Fulham Palace Rd, London W6 9PH",
+          "coordinates": {
+            "lat": 51.491064,
+            "lng": -0.224078,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:00-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/hammersmith/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "balham": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-balham-franco-manca-balham",
+          "name": "Franco Manca Balham",
+          "area": "balham",
+          "category": "pizza",
+          "address": "53 Bedford Hill, London SW12 9EZ",
+          "coordinates": {
+            "lat": 51.4436188,
+            "lng": -0.1500045,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday 12:00-21:30; Tuesday-Wednesday 12:00-22:00; Thursday 12:00-22:30; Friday-Saturday 12:00-23:30; Sunday 12:00-22:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "12:00",
+                "close": "21:30",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "12:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "12:00",
+                "close": "23:30",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "12:00",
+                "close": "23:30",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Franco's OG Margherita",
+            "price": 13.5,
+            "sourceUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf",
+            "observedAt": "2026-07-27"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Franco Manca",
+            "sourceUrl": "https://www.francomanca.co.uk/restaurants/balham/",
+            "anchorDocumentLink": {
+              "pageUrl": "https://www.francomanca.co.uk/restaurants/balham/",
+              "documentUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf"
+            },
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, opening hours for every day, dine-in service, and a mapped address link."
+          }
+        }
+      ]
+    },
+    "marylebone": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-marylebone-honest-burgers-baker-street",
+          "name": "Honest Burgers Baker Street",
+          "area": "marylebone",
+          "category": "restaurant",
+          "address": "31 Paddington St, London W1U 4HD",
+          "coordinates": {
+            "lat": 51.5205451,
+            "lng": -0.1560302,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Saturday 11:00-23:00; Sunday 11:00-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "The Honest burger, large",
+            "price": 14.5,
+            "sourceUrl": "https://www.honestburgers.co.uk/menus/smash-and-grab-menu/",
+            "observedAt": "2026-07-16"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Honest Burgers",
+            "sourceUrl": "https://www.honestburgers.co.uk/locations/baker-st/",
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the Marylebone street address, lunch and dinner hours for every day, and an operator-linked mapped location."
+          }
+        }
+      ]
+    },
+    "richmond": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-richmond-franco-manca-richmond",
+          "name": "Franco Manca Richmond",
+          "area": "richmond",
+          "category": "pizza",
+          "address": "8 Red Lion Street, Richmond TW9 1RW",
+          "coordinates": {
+            "lat": 51.4594444,
+            "lng": -0.305,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Wednesday 12:00-22:00; Thursday 12:00-23:00; Friday 12:00-23:30; Saturday 11:30-23:30; Sunday 11:30-22:00.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "12:00",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "12:00",
+                "close": "23:00",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "12:00",
+                "close": "23:30",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:30",
+                "close": "23:30",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:30",
+                "close": "22:00",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Franco's OG Margherita",
+            "price": 13.5,
+            "sourceUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf",
+            "observedAt": "2026-07-27"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Franco Manca",
+            "sourceUrl": "https://www.francomanca.co.uk/restaurants/richmond/",
+            "anchorDocumentLink": {
+              "pageUrl": "https://www.francomanca.co.uk/restaurants/richmond/",
+              "documentUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf"
+            },
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, opening hours for every day, dine-in service, and a mapped address link."
+          }
+        }
+      ]
+    },
+    "putney": {
+      "status": "partial",
+      "reason": "One operator-backed option has passed review; this is not complete area coverage.",
+      "options": [
+        {
+          "id": "late-food-evidence-putney-franco-manca-putney",
+          "name": "Franco Manca Putney",
+          "area": "putney",
+          "category": "pizza",
+          "address": "28 Putney High Street, London SW15 1SQ",
+          "coordinates": {
+            "lat": 51.4652842,
+            "lng": -0.2146232,
+            "method": "operator_location_link"
+          },
+          "serviceHoursText": "Monday-Thursday 12:00-22:30; Friday 12:00-23:30; Saturday 11:30-23:30; Sunday 11:30-22:30.",
+          "weeklyHours": {
+            "monday": [
+              {
+                "open": "12:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "tuesday": [
+              {
+                "open": "12:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "wednesday": [
+              {
+                "open": "12:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "thursday": [
+              {
+                "open": "12:00",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ],
+            "friday": [
+              {
+                "open": "12:00",
+                "close": "23:30",
+                "closesNextDay": false
+              }
+            ],
+            "saturday": [
+              {
+                "open": "11:30",
+                "close": "23:30",
+                "closesNextDay": false
+              }
+            ],
+            "sunday": [
+              {
+                "open": "11:30",
+                "close": "22:30",
+                "closesNextDay": false
+              }
+            ]
+          },
+          "verifyOnNight": true,
+          "confidence": "high",
+          "anchor": {
+            "label": "Franco's OG Margherita",
+            "price": 13.5,
+            "sourceUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf",
+            "observedAt": "2026-07-27"
+          },
+          "source": {
+            "kind": "official_operator",
+            "publisher": "Franco Manca",
+            "sourceUrl": "https://www.francomanca.co.uk/restaurants/putney/",
+            "anchorDocumentLink": {
+              "pageUrl": "https://www.francomanca.co.uk/restaurants/putney/",
+              "documentUrl": "https://www.francomanca.co.uk/wp-content/uploads/2026/06/FM-MENU-L0526S.pdf"
+            },
+            "observedAt": "2026-07-16T22:30:00.000Z",
+            "reviewedAt": "2026-07-16T22:30:00.000Z",
+            "expiresAt": "2026-08-16T22:30:00.000Z",
+            "evidenceNote": "The operator page publishes the street address, opening hours for every day, dine-in service, and a mapped address link."
+          }
+        }
+      ]
+    }
+  }
+}

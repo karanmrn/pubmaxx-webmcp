@@ -1,0 +1,509 @@
+{
+  "source": "https://www.pint-prices.com",
+  "sitemap_url": "https://www.pint-prices.com/static/sitemap.xml",
+  "scraped_at": "2026-07-03T23:10:47+00:00",
+  "sitemap_url_count": 1223,
+  "borough_page_count": 32,
+  "pub_page_count": 932,
+  "borough_embedded_price_rows": 12395,
+  "borough_embedded_unique_pub_keys": 1178,
+  "borough_embedded_unique_pub_name_address": 1175,
+  "borough_leaderboard_price_rows": 3020,
+  "canonical_borough_price_rows": 3020,
+  "pub_page_price_rows": 2258,
+  "pub_page_unique_pub_urls": 932,
+  "pub_page_unique_pub_name_address": 931,
+  "boroughs": [
+    "Barnet",
+    "Bexley",
+    "Brent",
+    "Bromley",
+    "Camden",
+    "City of London",
+    "Croydon",
+    "Ealing",
+    "Enfield",
+    "Greenwich",
+    "Hackney",
+    "Hammersmith and Fulham",
+    "Haringey",
+    "Harrow",
+    "Havering",
+    "Hillingdon",
+    "Hounslow",
+    "Islington",
+    "Kensington and Chelsea",
+    "Kingston upon Thames",
+    "Lambeth",
+    "Lewisham",
+    "Merton",
+    "Newham",
+    "Redbridge",
+    "Richmond upon Thames",
+    "Southwark",
+    "Sutton",
+    "Tower Hamlets",
+    "Waltham Forest",
+    "Wandsworth",
+    "Westminster"
+  ],
+  "price_rows_by_borough": {
+    "Barnet": 11,
+    "Bexley": 42,
+    "Brent": 10,
+    "Bromley": 28,
+    "Camden": 343,
+    "City of London": 615,
+    "Croydon": 44,
+    "Ealing": 32,
+    "Enfield": 52,
+    "Greenwich": 3,
+    "Hackney": 56,
+    "Hammersmith and Fulham": 103,
+    "Haringey": 22,
+    "Harrow": 10,
+    "Havering": 3125,
+    "Hillingdon": 3125,
+    "Hounslow": 10,
+    "Islington": 166,
+    "Kensington and Chelsea": 169,
+    "Kingston upon Thames": 20,
+    "Lambeth": 101,
+    "Lewisham": 26,
+    "Merton": 35,
+    "Newham": 2,
+    "Redbridge": 3125,
+    "Richmond upon Thames": 32,
+    "Southwark": 538,
+    "Sutton": 11,
+    "Tower Hamlets": 35,
+    "Waltham Forest": 17,
+    "Wandsworth": 122,
+    "Westminster": 365
+  },
+  "canonical_price_rows_by_borough": {
+    "Barnet": 11,
+    "Bexley": 42,
+    "Brent": 10,
+    "Bromley": 28,
+    "Camden": 343,
+    "City of London": 615,
+    "Croydon": 44,
+    "Ealing": 32,
+    "Enfield": 52,
+    "Greenwich": 3,
+    "Hackney": 56,
+    "Hammersmith and Fulham": 103,
+    "Haringey": 22,
+    "Harrow": 10,
+    "Hounslow": 10,
+    "Islington": 166,
+    "Kensington and Chelsea": 169,
+    "Kingston upon Thames": 20,
+    "Lambeth": 101,
+    "Lewisham": 26,
+    "Merton": 35,
+    "Newham": 2,
+    "Richmond upon Thames": 32,
+    "Southwark": 538,
+    "Sutton": 11,
+    "Tower Hamlets": 35,
+    "Waltham Forest": 17,
+    "Wandsworth": 122,
+    "Westminster": 365
+  },
+  "unique_pubs_by_borough": {
+    "Barnet": 4,
+    "Bexley": 15,
+    "Brent": 1,
+    "Bromley": 10,
+    "Camden": 147,
+    "City of London": 187,
+    "Croydon": 18,
+    "Ealing": 19,
+    "Enfield": 8,
+    "Greenwich": 2,
+    "Hackney": 32,
+    "Hammersmith and Fulham": 37,
+    "Haringey": 6,
+    "Harrow": 1,
+    "Havering": 1174,
+    "Hillingdon": 1174,
+    "Hounslow": 1,
+    "Islington": 94,
+    "Kensington and Chelsea": 54,
+    "Kingston upon Thames": 2,
+    "Lambeth": 43,
+    "Lewisham": 8,
+    "Merton": 6,
+    "Newham": 1,
+    "Redbridge": 1174,
+    "Richmond upon Thames": 12,
+    "Southwark": 137,
+    "Sutton": 2,
+    "Tower Hamlets": 12,
+    "Waltham Forest": 8,
+    "Wandsworth": 40,
+    "Westminster": 132
+  },
+  "canonical_unique_pubs_by_borough": {
+    "Barnet": 4,
+    "Bexley": 15,
+    "Brent": 1,
+    "Bromley": 10,
+    "Camden": 153,
+    "City of London": 191,
+    "Croydon": 18,
+    "Ealing": 19,
+    "Enfield": 8,
+    "Greenwich": 2,
+    "Hackney": 33,
+    "Hammersmith and Fulham": 38,
+    "Haringey": 6,
+    "Harrow": 1,
+    "Hounslow": 1,
+    "Islington": 99,
+    "Kensington and Chelsea": 54,
+    "Kingston upon Thames": 2,
+    "Lambeth": 44,
+    "Lewisham": 8,
+    "Merton": 8,
+    "Newham": 1,
+    "Richmond upon Thames": 12,
+    "Southwark": 141,
+    "Sutton": 2,
+    "Tower Hamlets": 13,
+    "Waltham Forest": 8,
+    "Wandsworth": 42,
+    "Westminster": 134
+  },
+  "embedded_data_caveats": [
+    "Use borough_pint_prices.csv as the canonical borough extract.",
+    "borough_embedded_pint_prices.csv preserves the raw pubsData object from each borough page.",
+    "Havering, Hillingdon, and Redbridge exposed a large embedded pubsData object but no visible leaderboard rows at scrape time."
+  ],
+  "top_pub_page_price_counts": [
+    [
+      "J.J. Moon's - JD Wetherspoon",
+      40
+    ],
+    [
+      "The Moon Under Water - JD Wetherspoon",
+      30
+    ],
+    [
+      "The Moon on the Hill - JD Wetherspoon",
+      20
+    ],
+    [
+      "The Wibbas Down Inn - JD Wetherspoon",
+      14
+    ],
+    [
+      "The Hansom Cab",
+      14
+    ],
+    [
+      "The Kings Arms",
+      13
+    ],
+    [
+      "The Albion",
+      11
+    ],
+    [
+      "Rising Sun",
+      11
+    ],
+    [
+      "The Asparagus - JD Wetherspoon",
+      10
+    ],
+    [
+      "The Holland Tringham - JD Wetherspoon",
+      10
+    ],
+    [
+      "The London & Rye - JD Wetherspoon",
+      10
+    ],
+    [
+      "The Tichenham Inn - JD Wetherspoon",
+      10
+    ],
+    [
+      "The Plough & Harrow - JD Wetherspoon",
+      10
+    ],
+    [
+      "The Pear Tree",
+      10
+    ],
+    [
+      "The Rochester Castle - JD Wetherspoon",
+      10
+    ],
+    [
+      "The Fox on the Hill - JD Wetherspoon",
+      10
+    ],
+    [
+      "The Sir Julian Huxley - JD Wetherspoon",
+      10
+    ],
+    [
+      "The King's Tun - JD Wetherspoon",
+      10
+    ],
+    [
+      "The Moon & Stars - JD Wetherspoon",
+      10
+    ],
+    [
+      "The George - JD Wetherspoon",
+      10
+    ]
+  ],
+  "borough_metadata": [
+    {
+      "borough": "Barnet",
+      "borough_url": "https://www.pint-prices.com/borough-results/Barnet",
+      "pubs_in_embedded_data": 4,
+      "pint_rows_in_embedded_data": 11,
+      "leaderboard_rows": 11
+    },
+    {
+      "borough": "Bexley",
+      "borough_url": "https://www.pint-prices.com/borough-results/Bexley",
+      "pubs_in_embedded_data": 15,
+      "pint_rows_in_embedded_data": 42,
+      "leaderboard_rows": 42
+    },
+    {
+      "borough": "Brent",
+      "borough_url": "https://www.pint-prices.com/borough-results/Brent",
+      "pubs_in_embedded_data": 1,
+      "pint_rows_in_embedded_data": 10,
+      "leaderboard_rows": 10
+    },
+    {
+      "borough": "Bromley",
+      "borough_url": "https://www.pint-prices.com/borough-results/Bromley",
+      "pubs_in_embedded_data": 10,
+      "pint_rows_in_embedded_data": 28,
+      "leaderboard_rows": 28
+    },
+    {
+      "borough": "Camden",
+      "borough_url": "https://www.pint-prices.com/borough-results/Camden",
+      "pubs_in_embedded_data": 148,
+      "pint_rows_in_embedded_data": 343,
+      "leaderboard_rows": 343
+    },
+    {
+      "borough": "City of London",
+      "borough_url": "https://www.pint-prices.com/borough-results/City%20of%20London",
+      "pubs_in_embedded_data": 187,
+      "pint_rows_in_embedded_data": 615,
+      "leaderboard_rows": 615
+    },
+    {
+      "borough": "Croydon",
+      "borough_url": "https://www.pint-prices.com/borough-results/Croydon",
+      "pubs_in_embedded_data": 18,
+      "pint_rows_in_embedded_data": 44,
+      "leaderboard_rows": 44
+    },
+    {
+      "borough": "Ealing",
+      "borough_url": "https://www.pint-prices.com/borough-results/Ealing",
+      "pubs_in_embedded_data": 19,
+      "pint_rows_in_embedded_data": 32,
+      "leaderboard_rows": 32
+    },
+    {
+      "borough": "Enfield",
+      "borough_url": "https://www.pint-prices.com/borough-results/Enfield",
+      "pubs_in_embedded_data": 8,
+      "pint_rows_in_embedded_data": 52,
+      "leaderboard_rows": 52
+    },
+    {
+      "borough": "Greenwich",
+      "borough_url": "https://www.pint-prices.com/borough-results/Greenwich",
+      "pubs_in_embedded_data": 2,
+      "pint_rows_in_embedded_data": 3,
+      "leaderboard_rows": 3
+    },
+    {
+      "borough": "Hackney",
+      "borough_url": "https://www.pint-prices.com/borough-results/Hackney",
+      "pubs_in_embedded_data": 32,
+      "pint_rows_in_embedded_data": 56,
+      "leaderboard_rows": 56
+    },
+    {
+      "borough": "Hammersmith and Fulham",
+      "borough_url": "https://www.pint-prices.com/borough-results/Hammersmith%20and%20Fulham",
+      "pubs_in_embedded_data": 37,
+      "pint_rows_in_embedded_data": 103,
+      "leaderboard_rows": 103
+    },
+    {
+      "borough": "Haringey",
+      "borough_url": "https://www.pint-prices.com/borough-results/Haringey",
+      "pubs_in_embedded_data": 6,
+      "pint_rows_in_embedded_data": 22,
+      "leaderboard_rows": 22
+    },
+    {
+      "borough": "Harrow",
+      "borough_url": "https://www.pint-prices.com/borough-results/Harrow",
+      "pubs_in_embedded_data": 1,
+      "pint_rows_in_embedded_data": 10,
+      "leaderboard_rows": 10
+    },
+    {
+      "borough": "Havering",
+      "borough_url": "https://www.pint-prices.com/borough-results/Havering",
+      "pubs_in_embedded_data": 1178,
+      "pint_rows_in_embedded_data": 3125,
+      "leaderboard_rows": 0
+    },
+    {
+      "borough": "Hillingdon",
+      "borough_url": "https://www.pint-prices.com/borough-results/Hillingdon",
+      "pubs_in_embedded_data": 1178,
+      "pint_rows_in_embedded_data": 3125,
+      "leaderboard_rows": 0
+    },
+    {
+      "borough": "Hounslow",
+      "borough_url": "https://www.pint-prices.com/borough-results/Hounslow",
+      "pubs_in_embedded_data": 1,
+      "pint_rows_in_embedded_data": 10,
+      "leaderboard_rows": 10
+    },
+    {
+      "borough": "Islington",
+      "borough_url": "https://www.pint-prices.com/borough-results/Islington",
+      "pubs_in_embedded_data": 95,
+      "pint_rows_in_embedded_data": 166,
+      "leaderboard_rows": 166
+    },
+    {
+      "borough": "Kensington and Chelsea",
+      "borough_url": "https://www.pint-prices.com/borough-results/Kensington%20and%20Chelsea",
+      "pubs_in_embedded_data": 54,
+      "pint_rows_in_embedded_data": 169,
+      "leaderboard_rows": 169
+    },
+    {
+      "borough": "Kingston upon Thames",
+      "borough_url": "https://www.pint-prices.com/borough-results/Kingston%20upon%20Thames",
+      "pubs_in_embedded_data": 2,
+      "pint_rows_in_embedded_data": 20,
+      "leaderboard_rows": 20
+    },
+    {
+      "borough": "Lambeth",
+      "borough_url": "https://www.pint-prices.com/borough-results/Lambeth",
+      "pubs_in_embedded_data": 43,
+      "pint_rows_in_embedded_data": 101,
+      "leaderboard_rows": 101
+    },
+    {
+      "borough": "Lewisham",
+      "borough_url": "https://www.pint-prices.com/borough-results/Lewisham",
+      "pubs_in_embedded_data": 8,
+      "pint_rows_in_embedded_data": 26,
+      "leaderboard_rows": 26
+    },
+    {
+      "borough": "Merton",
+      "borough_url": "https://www.pint-prices.com/borough-results/Merton",
+      "pubs_in_embedded_data": 6,
+      "pint_rows_in_embedded_data": 35,
+      "leaderboard_rows": 35
+    },
+    {
+      "borough": "Newham",
+      "borough_url": "https://www.pint-prices.com/borough-results/Newham",
+      "pubs_in_embedded_data": 1,
+      "pint_rows_in_embedded_data": 2,
+      "leaderboard_rows": 2
+    },
+    {
+      "borough": "Redbridge",
+      "borough_url": "https://www.pint-prices.com/borough-results/Redbridge",
+      "pubs_in_embedded_data": 1178,
+      "pint_rows_in_embedded_data": 3125,
+      "leaderboard_rows": 0
+    },
+    {
+      "borough": "Richmond upon Thames",
+      "borough_url": "https://www.pint-prices.com/borough-results/Richmond%20upon%20Thames",
+      "pubs_in_embedded_data": 12,
+      "pint_rows_in_embedded_data": 32,
+      "leaderboard_rows": 32
+    },
+    {
+      "borough": "Southwark",
+      "borough_url": "https://www.pint-prices.com/borough-results/Southwark",
+      "pubs_in_embedded_data": 137,
+      "pint_rows_in_embedded_data": 538,
+      "leaderboard_rows": 538
+    },
+    {
+      "borough": "Sutton",
+      "borough_url": "https://www.pint-prices.com/borough-results/Sutton",
+      "pubs_in_embedded_data": 2,
+      "pint_rows_in_embedded_data": 11,
+      "leaderboard_rows": 11
+    },
+    {
+      "borough": "Tower Hamlets",
+      "borough_url": "https://www.pint-prices.com/borough-results/Tower%20Hamlets",
+      "pubs_in_embedded_data": 12,
+      "pint_rows_in_embedded_data": 35,
+      "leaderboard_rows": 35
+    },
+    {
+      "borough": "Waltham Forest",
+      "borough_url": "https://www.pint-prices.com/borough-results/Waltham%20Forest",
+      "pubs_in_embedded_data": 8,
+      "pint_rows_in_embedded_data": 17,
+      "leaderboard_rows": 17
+    },
+    {
+      "borough": "Wandsworth",
+      "borough_url": "https://www.pint-prices.com/borough-results/Wandsworth",
+      "pubs_in_embedded_data": 40,
+      "pint_rows_in_embedded_data": 122,
+      "leaderboard_rows": 122
+    },
+    {
+      "borough": "Westminster",
+      "borough_url": "https://www.pint-prices.com/borough-results/Westminster",
+      "pubs_in_embedded_data": 132,
+      "pint_rows_in_embedded_data": 365,
+      "leaderboard_rows": 365
+    }
+  ],
+  "errors": [],
+  "all_pint_prices_combined_rows": 5278,
+  "pint_prices_canonical_enriched_rows": 3020,
+  "pint_prices_builder_master_rows": 17673,
+  "pub_locations_map_rows": 1197,
+  "canonical_enriched_rows_missing_coordinates": 0,
+  "pint_prices_app_dataset_rows": 3085,
+  "pint_prices_app_dataset_columns": 51,
+  "app_dataset_rows_with_coordinates": 3085,
+  "app_dataset_clean_canonical_rows": 2088,
+  "app_dataset_rows_with_visible_borough": 2088,
+  "app_dataset_rows_with_pub_page": 2223,
+  "app_dataset_rows_raw_only": 318,
+  "app_dataset_visible_borough_source_rows_represented": 3005,
+  "app_dataset_raw_embedded_source_rows_represented": 12335,
+  "app_dataset_individual_pub_page_source_rows_represented": 2255
+}

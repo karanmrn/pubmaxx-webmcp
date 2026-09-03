@@ -1,0 +1,44 @@
+/* The founding mark: quiet pride, brass, no celebration.
+   Tokens only, per docs/DESIGN_SYSTEM.md. It sits beside a handle, so it is
+   deliberately quieter than the handle it follows: a hairline rule, a small
+   dot, and the mono data face on the number so it reads as a record rather
+   than a prize. Nothing here animates and nothing glows. */
+
+.foundingMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 3px 10px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brass) 9%, transparent);
+  color: var(--brass);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  /* A trust line never truncates: the number is the whole point of the mark. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.foundingMarkDot {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brass);
+}
+
+.foundingMarkLabel {
+  font-variant-numeric: tabular-nums;
+}
+
+/* On the wall a row already carries its number in the leading column, so the
+   mark there is the row's own quiet caption rather than a second pill. */
+.foundingMark.foundingMarkBare {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}

@@ -1,0 +1,363 @@
+/* Recap is 390-first in both themes. Shared plaque, elevation, and type roles
+   live in globals.css so recap cannot drift from the rest of the product. */
+
+/* ── Page shell ─────────────────────────────────────────────────────────── */
+.recapPage {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter) 96px;
+  color: var(--ink);
+}
+
+/* Staggered section entrance — each section reads --recap-step (0,1,2…) and
+   delays by ≤80ms per step. Restrained: a short rise + fade, once. */
+.recapHero,
+.recapSection,
+.recapFooter {
+  animation: recapRise 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--recap-step, 0) * 80ms);
+}
+@keyframes recapRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .recapHero,
+  .recapSection,
+  .recapFooter {
+    animation: none;
+  }
+}
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.recapHero {
+  position: relative;
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--hairline-strong);
+}
+/* The completed-night seal, stamped top-right of the recap card. */
+.recapHero__seal {
+  position: absolute;
+  top: 18px;
+  right: 0;
+}
+/* Reserve the stamp's corner so the eyebrow and title never run under it. */
+.recapHero__eyebrow,
+.recapHero__title {
+  padding-right: 76px;
+}
+.recapHero__eyebrow {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+.recapHero__title {
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+.recapHero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.recapStat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+.recapStat b {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+.recapStat--price {
+  align-self: center;
+}
+
+/* ── Section scaffold ───────────────────────────────────────────────────── */
+.recapSection {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.recapSection__title {
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+
+/* ── Route walk (map-free) — the storyStops connected-dots idiom ─────────── */
+.recapRoute {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 0;
+  position: relative;
+}
+.recapRoute::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 15px;
+  width: 0;
+  border-left: 2px dashed var(--accent-action);
+  opacity: 0.5;
+}
+.recapRoute__stop {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+}
+.recapRoute__stop + .recapRoute__stop {
+  border-top: 1px dashed var(--hairline);
+}
+.recapRoute__number {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-action);
+  color: var(--color-on-accent-strong);
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 14px;
+}
+.recapRoute__body {
+  min-width: 0;
+  padding-top: 3px;
+}
+.recapRoute__name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+.recapRoute__caption {
+  margin: 4px 0 0;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+/* ── Pints logged (plaque treatment) ────────────────────────────────────── */
+.recapPints {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.recapPint {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--state-active-surface);
+  border: 1px solid var(--state-active-border);
+  border-radius: var(--radius-md, 12px);
+}
+.recapPint__body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.recapPint__drink {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+.recapPint__note {
+  margin: 2px 0 0;
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+.recapPint__price {
+  flex: 0 0 auto;
+}
+
+/* ── Approved photos (public recap only) ────────────────────────────────── */
+.recapPhotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.recapPhoto {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.recapPhoto__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--hairline);
+  background: var(--state-active-surface);
+}
+.recapPhoto__caption {
+  margin: 0;
+}
+
+/* ── Ending + guardian ──────────────────────────────────────────────────── */
+.recapSection--ending {
+  display: grid;
+  gap: 14px;
+}
+.recapEnding__label,
+.recapGuardian__label {
+  display: block;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+.recapEnding__line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lg, 1.25rem);
+  color: var(--ink);
+}
+.recapGuardian {
+  padding: 14px 16px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--hairline-strong);
+}
+.recapGuardian--safe {
+  background: var(--price-plaque-surface);
+  border-color: var(--price-plaque-border);
+}
+.recapGuardian--risk {
+  background: color-mix(in srgb, var(--accent-action) 8%, var(--panel-raised));
+  border-color: color-mix(in srgb, var(--accent-action) 32%, var(--line));
+}
+.recapGuardian__line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+/* ── Footer: closing line + approval-gated share ────────────────────────── */
+.recapFooter {
+  padding: 28px 0 0;
+}
+.recapClosing {
+  margin: 0 0 20px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--text-lg, 1.2rem);
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.recapFooter__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+.recapFooter__plan {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Share affordance (RecapShareButton) ────────────────────────────────── */
+.recapShare {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.recapShare--gated {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.recapShare__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: var(--accent-action);
+  color: var(--color-on-accent-strong);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: background 140ms ease;
+}
+.recapShare__cta:hover {
+  background: var(--accent-action-strong);
+}
+.recapShare__btn {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline-strong);
+  background: transparent;
+  color: var(--ink);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+.recapShare__note {
+  margin: 0;
+  max-width: 44ch;
+}
+.recapShare__confirm {
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .recapShare__cta {
+    transition: background 140ms ease, transform 140ms ease;
+  }
+  .recapShare__cta:active {
+    transform: translateY(1px);
+  }
+}
+
+/* ── Empty ("not finished yet") state ───────────────────────────────────── */
+.recapPage--empty {
+  min-height: 60vh;
+}
+.recapEmpty {
+  padding: 48px 0;
+  display: grid;
+  gap: 14px;
+  max-width: 44ch;
+}
+.recapEmpty__eyebrow {
+  text-transform: uppercase;
+  margin: 0;
+}
+.recapEmpty__body {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.recapEmpty__back {
+  justify-self: start;
+  font-size: var(--text-sm);
+  color: var(--accent-action);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

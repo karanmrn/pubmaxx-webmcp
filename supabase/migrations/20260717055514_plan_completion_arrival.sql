@@ -1,0 +1,3 @@
+-- Production ledger marker. The initial arrival migration was applied through
+-- the managed migration API at this version. Its final, fresh-install-safe
+-- definition is consolidated in 20260717071841 after ending_selection exists.

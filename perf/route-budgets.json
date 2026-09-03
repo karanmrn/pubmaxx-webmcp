@@ -1,0 +1,99 @@
+{
+  "note": "Per-route performance ceilings. Read docs/PERFORMANCE_BUDGETS.md before changing a number: down is free, up is a decision. lcpMs is seeded from three production runs on 2026-09-01 over the real network rather than loopback. Those seed runs used 390x844 at DPR 3, while the enforced sweep uses Desktop Chrome at device pixel ratio 1 with the same CSS viewport, 4x CPU throttle, and third-party requests blocked, so a seed figure is indicative rather than a reproduction of CI's method. Medians measured: / 296, /pal 792, /map 1196, /today 720, /tonight 784, /out 900, /about 320, /pubs 372. The seeded ceilings are deliberately looser than those figures: / and /pal take the programme's 1500 ms target, and every other route takes 2500 ms, the Core Web Vitals good boundary, so no route may be worse than good. CI's own sweep is the oracle and the ratchet check banks the slack.",
+  "method": {
+    "browser": "Desktop Chrome",
+    "deviceScaleFactor": 1,
+    "warmupRuns": 1,
+    "measuredRuns": 3,
+    "aggregate": "median",
+    "cpuThrottleRate": 4,
+    "viewport": { "width": 390, "height": 844 },
+    "thirdPartyBlocked": true,
+    "futureDeviceMigration": "A later DPR-3 migration is possible, but it must re-seed every ceiling in one commit. playwright.config.ts already has iPhone 14 wiring; the cost is re-measurement, not plumbing.",
+    "countedUpTo": "route interactive: its readiness gate, no earlier than the window load event. A resource counts if it STARTED before that moment, so the post-paint background warmup is excluded by construction rather than by how fast the box is."
+  },
+  "routes": [
+    {
+      "path": "/",
+      "readySelector": "main",
+      "why": "The landing every shared link and every search result opens.",
+      "serverRenderMs": 150,
+      "jsDecodedKB": 1250,
+      "requests": 50,
+      "lcpMs": 1500
+    },
+    {
+      "path": "/pal",
+      "readySelector": ".palExperience",
+      "settledSelectorHidden": ".palLoading",
+      "why": "The front door's one primary action, so it is measured beside the landing that sends people to it. The 2026-09-01 seed sweep measured 1745 KB decoded, of which a single 603 KB chunk was the ElevenLabs conversation SDK, parsed before first paint for a control the reader may never reach and the deployment may not even have switched on. That chunk now loads when the availability probe says voice is on (components/pubpal/PubPalVoiceSession.tsx), so this ceiling ratchets to 1300 KB against an expected ~1142 KB. CI's sweep is the oracle; U8's ratchet check banks whatever slack is left.",
+      "serverRenderMs": 450,
+      "jsDecodedKB": 1300,
+      "requests": 60,
+      "lcpMs": 1500
+    },
+    {
+      "path": "/map",
+      "readySelector": ".mobileMapTopbar",
+      "settledSelectorHidden": ".mapLoading",
+      "why": "The product. Its data loads client side, so the document is a shell and must stay one. The final keyless cold-open measurement was 2877 KB eager JS decoded, down 823 KB from the 3700 KB baseline. Slim index, MapLibre, and pin-price paths remain eager, so the runtime ceiling stays 3400 KB and e2e/map-perf-budget.spec.ts owns the proof. The UK base-pub arrival lane now starts its manifest and viewport reads on the standard London opening; the latest production sweep measured 150-156 requests, so this deliberate ceiling records 160 until that lane is consolidated. 2026-09-01: a production cold open at 390x844 with storage cleared asked for 163 of London 244 slim cells before the route was interactive, because a placeholder opening viewport became world bounds and the ring around the settled viewport loaded on the caller own turn. The opening read is now bounded to the city view (244 cells to 34 against the shipped manifest) and the ring waits for idle, so this ceiling should come DOWN at the next CI sweep. Take it down to the measured figure plus headroom; never up.",
+      "serverRenderMs": 150,
+      "jsDecodedKB": 3400,
+      "requests": 160,
+      "lcpMs": 2500,
+      "pinReady": {
+        "path": "/map/london",
+        "targetMs": 4000,
+        "measuredMs": 3336,
+        "signal": "window.__pubmaxPaintedMapTapPoints().length > 0",
+        "viewport": { "width": 390, "height": 844 },
+        "note": "Cold first visit on phone; pinReadyMs from e2e/mobile-map-chrome-fit.spec.ts on a production build with one Chromium worker and the pin SLA enforced. Final run: 3336 ms. Local pub pins reveal from their painted source without waiting for remote basemap tiles; the basemap retains its independent recovery lane."
+      }
+    },
+    {
+      "path": "/today",
+      "readySelector": "main",
+      "why": "The morning brief, composed on the server from bundled data. Its server figure is the loosest here because it is the one route that really composes something.",
+      "serverRenderMs": 450,
+      "jsDecodedKB": 1300,
+      "requests": 52,
+      "lcpMs": 2500
+    },
+    {
+      "path": "/tonight",
+      "readySelector": "main",
+      "why": "The fastest route we have. It is the shape every other route is held against.",
+      "serverRenderMs": 150,
+      "jsDecodedKB": 1280,
+      "requests": 56,
+      "lcpMs": 2500
+    },
+    {
+      "path": "/out",
+      "readySelector": "main",
+      "why": "The Out tab shell. Composed from existing what's-on rows; no new API.",
+      "serverRenderMs": 150,
+      "jsDecodedKB": 1300,
+      "requests": 56,
+      "lcpMs": 2500
+    },
+    {
+      "path": "/about",
+      "readySelector": "main",
+      "why": "The page that states what the figures mean and where they come from, linked from every trust claim on the site. It composes nothing per request, so it is the floor a server-rendered page here should sit on. The 1900 KB ceiling was stale by 800 KB: the 2026-09-01 sweep measured 1081 KB decoded over 24 chunks with no MapLibre, no Convex, no voice SDK and no image cropper in any of them, so there was no accidental import to split, only slack to bank. The REQUEST ceiling is left where it is: a seed run counts requests against its own interactive moment on a different box and network, and this one counted 62 on / where CI is green at 50, so a request figure measured here is not comparable to the sweep's. Decoded bytes are.",
+      "serverRenderMs": 150,
+      "jsDecodedKB": 1200,
+      "requests": 70,
+      "lcpMs": 2500
+    },
+    {
+      "path": "/pubs",
+      "readySelector": ".pubsPage",
+      "why": "The one launch surface whose server render was not a shell: it re-parsed the 6.7 MB price dataset per request until the shared priced-venue index was reused. The ceiling is here so that read cannot come back unnoticed. Its JS ceiling was stale by 850 KB: the 2026-09-01 sweep measured 1092 KB decoded over 25 chunks, the same shared baseline /about carries, with none of the heavy libraries in any of them. Its request ceiling is left alone for the reason /about's is.",
+      "serverRenderMs": 150,
+      "jsDecodedKB": 1200,
+      "requests": 75,
+      "lcpMs": 2500
+    }
+  ]
+}

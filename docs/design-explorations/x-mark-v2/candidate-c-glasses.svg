@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Candidate C "Two Glasses": geometric X built from two tapered pint
+       silhouettes — wide mouth up, narrow base down. Overt clink read. -->
+  <polygon points="8,12 22,12 52,52 46,52" fill="#ff5a5f"/>
+  <polygon points="42,12 56,12 18,52 12,52" fill="#ff5a5f"/>
+</svg>

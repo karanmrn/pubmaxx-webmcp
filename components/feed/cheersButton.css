@@ -1,0 +1,234 @@
+/* A4 — the primary one-tap "Cheers" kudos button. Distinct from the tucked-away
+   .feedReactBtn chip row: this is DOMINANT and thumb-sized (≥44px tap target),
+   the first ack a viewer reaches for. Tokens (--brass, --ink, --paper,
+   --panel-raised, --line) are declared in globals.css so the surface inherits
+   the printed-guidebook palette in both themes. */
+
+.cheersBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* Thumb-sized: comfortably clears the 44px touch-target floor. */
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1.5px solid var(--brass);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--brass);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* clip the pressed-ink pulse to the pill */
+  transition:
+    transform 0.12s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.cheersBtn:hover {
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+}
+
+.cheersBtn:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.cheersBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Cheered "on" state — a firm brass fill so the acknowledgement reads at a glance
+   (not by colour alone: the glyph + text + fill all shift). */
+.cheersBtn.isCheered {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--paper);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--ink-deep, #0f1c16) 40%, transparent);
+}
+
+.cheersBtn.isCheered:hover {
+  background: color-mix(in srgb, var(--brass) 90%, var(--ink-deep, #0f1c16));
+}
+
+.cheersGlyph {
+  font-size: 1.05rem;
+  line-height: 1;
+  /* A tiny lift on cheer, so the glyph "pops" as the state flips. */
+  transition: transform 0.18s ease;
+}
+
+.cheersBtn.isCheered .cheersGlyph {
+  transform: scale(1.12) rotate(-6deg);
+}
+
+/* Wave L1 — a genuine tactile "pop" on tap, distinct from the sustained tilt
+   above: the glyph overshoots via --ease-spring (the one token reserved for
+   occasional overshoot, and a cheer is exactly that occasion) then hands back
+   to the regular cascade — the resting isCheered tilt or the neutral glyph,
+   whichever the tap landed on. Riding the SAME .isInking one-shot class the
+   ink bloom already uses (see below), so a fast double-tap can't stack two
+   pops: React bails out on the redundant setInking(true) while one is still
+   playing, the class never re-triggers, and the animation can't restart mid
+   flight — it just plays once and settles, never "abuse-annoying". */
+@keyframes cheersPop {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(-10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.cheersBtn.isInking .cheersGlyph {
+  animation: cheersPop 0.3s var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+
+.cheersText {
+  white-space: nowrap;
+}
+
+/* Count-up pill — tabular so the number doesn't jitter width as it bumps. */
+.cheersCount {
+  min-width: 1.2em;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 16%, transparent);
+  color: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.cheersBtn.isCheered .cheersCount {
+  background: color-mix(in srgb, var(--paper) 24%, transparent);
+}
+
+/* Pressed-ink pulse — a radial ink-stamp that blooms from centre on tap, echoing
+   the "pressed-ink signature" motif of the price stamp. One-shot: the .isInking
+   class is toggled off after ~420ms so it can re-fire on the next tap. */
+.cheersBtn.isInking::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 45%, transparent);
+  transform: scale(0);
+  animation: cheersInk 0.42s ease-out;
+  pointer-events: none;
+}
+
+@keyframes cheersInk {
+  0% {
+    transform: scale(0);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(24);
+    opacity: 0;
+  }
+}
+
+/* Respect prefers-reduced-motion: no bloom, no scale/rotate transitions — the
+   state still changes instantly (colour + fill), just without movement. */
+@media (prefers-reduced-motion: reduce) {
+  .cheersBtn,
+  .cheersGlyph {
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  }
+  .cheersBtn:active {
+    transform: none;
+  }
+  .cheersBtn.isCheered .cheersGlyph {
+    transform: none;
+  }
+  .cheersBtn.isInking::after {
+    animation: none;
+    content: none;
+  }
+  .cheersBtn.isInking .cheersGlyph {
+    animation: none;
+  }
+}
+
+/* On the 9:16 Spill card the button sits over the dark bottom scrim, where the
+   paper-toned panel fill would fight the photo. This variant reads on the scrim:
+   a translucent frosted pill that turns solid brass when cheered. Mount with
+   className="cheersBtnOnScrim". */
+.cheersBtnOnScrim {
+  background: color-mix(in srgb, var(--ink-deep, #0f1c16) 46%, transparent);
+  border-color: color-mix(in srgb, var(--brass-bright, #d3a44a) 70%, transparent);
+  color: #fff;
+  backdrop-filter: blur(2px);
+}
+
+.cheersBtnOnScrim:hover {
+  background: color-mix(in srgb, var(--ink-deep, #0f1c16) 62%, transparent);
+}
+
+.cheersBtnOnScrim.isCheered {
+  background: var(--brass-bright, #d3a44a);
+  border-color: var(--brass-bright, #d3a44a);
+  color: var(--ink-deep, #0f1c16);
+}
+
+.cheersBtnOnScrim .cheersCount {
+  background: color-mix(in srgb, #fff 22%, transparent);
+}
+
+.cheersBtnOnScrim.isCheered .cheersCount {
+  background: color-mix(in srgb, var(--ink-deep, #0f1c16) 20%, transparent);
+}
+
+/* ── E5: category-tinted Cheers (opt-in via .cheersBtnCat) ─────────────────
+   When a drop's category is a confident read, the CheersButton inherits
+   `--feed-cat` (set on the enclosing .feedCard) so the ACTIVE state blooms in
+   the drink family's colour instead of plain brass. Resting state stays brass
+   (reads as a button first); only the cheered affirmation carries the hue, with
+   glyph + fill still shifting (never colour alone). */
+.cheersBtnCat.isCheered {
+  background: var(--feed-cat, var(--brass));
+  border-color: var(--feed-cat, var(--brass));
+  color: var(--paper);
+}
+.cheersBtnCat.isCheered:hover {
+  background: color-mix(in srgb, var(--feed-cat, var(--brass)) 88%, var(--ink-deep, #0f1c16));
+}
+.cheersBtnCat.isInking::after {
+  background: color-mix(in srgb, var(--feed-cat, var(--brass)) 45%, transparent);
+}
+.cheersBtnOnScrim.cheersBtnCat.isCheered {
+  background: color-mix(in srgb, var(--feed-cat, var(--brass)) 82%, #ffffff);
+  border-color: color-mix(in srgb, var(--feed-cat, var(--brass)) 82%, #ffffff);
+  color: var(--ink-deep, #0f1c16);
+}
+
+/* ── U2: inline failure prompt ───────────────────────────────────────────────────
+   Shown for a few seconds when the toggle POST failed (anonymous store gating
+   answers 503, or the network dropped). Same quiet shape as .saveToListToast,
+   but on its own raised panel so it stays readable over the Spill card's dark
+   scrim as well as the plain receipt card. Warm brass on paper — honest, not
+   an error klaxon. */
+.cheersGatePrompt {
+  margin: 8px 0 0;
+  padding: 6px 12px;
+  max-width: 36ch;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-raised);
+  color: var(--brass);
+  font-size: 13px;
+  line-height: 1.4;
+}

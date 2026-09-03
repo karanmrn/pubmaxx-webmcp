@@ -1,0 +1,155 @@
+/* Operator rail (Wayfinder 3.5) — a quiet Ledger-footer affordance. Deliberately
+   understated: it should read as a small door for the landlord, never a banner. */
+
+.operatorRail {
+  margin: 1.5rem 0 0.5rem;
+}
+
+.operatorRailTrigger {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ledger-muted, #6b6257);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.operatorRailTrigger:hover {
+  color: var(--ledger-ink, #2b2620);
+}
+
+.operatorRailCard {
+  border: 1px solid var(--ledger-rule, rgba(0, 0, 0, 0.14));
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  max-width: 34rem;
+  background: var(--ledger-card, rgba(0, 0, 0, 0.02));
+}
+
+.operatorRailHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.operatorRailTitle {
+  font-weight: 650;
+  font-size: 1rem;
+  color: var(--ledger-ink, #2b2620);
+}
+
+.operatorRailClose {
+  appearance: none;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--ledger-muted, #6b6257);
+  cursor: pointer;
+  padding: 0 0.15rem;
+}
+
+.operatorRailBody {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ledger-muted, #6b6257);
+  margin: 0 0 0.75rem;
+}
+
+.operatorRailForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.operatorRailField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--ledger-muted, #6b6257);
+}
+
+.operatorRailField input,
+.operatorRailField select,
+.operatorRailField textarea {
+  font: inherit;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--ledger-rule, rgba(0, 0, 0, 0.18));
+  border-radius: 7px;
+  background: var(--ledger-bg, #fff);
+  color: var(--ledger-ink, #2b2620);
+}
+
+.operatorRailField textarea {
+  resize: vertical;
+  min-height: 3.5rem;
+}
+
+.operatorRailSubmit {
+  align-self: flex-start;
+  appearance: none;
+  border: 1px solid var(--ledger-ink, #2b2620);
+  border-radius: 8px;
+  background: var(--ledger-ink, #2b2620);
+  color: var(--ledger-bg, #fff);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+
+.operatorRailSubmit:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.operatorRailOk {
+  font-size: 0.88rem;
+  color: var(--ledger-ok, #2f6b3a);
+}
+
+.operatorRailError {
+  font-size: 0.88rem;
+  color: var(--ledger-error, #a3341f);
+}
+
+@media (prefers-color-scheme: dark) {
+  .operatorRailCard {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .operatorRailField input,
+  .operatorRailField select,
+  .operatorRailField textarea {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.25);
+    color: #ece6dc;
+  }
+  .operatorRailTrigger {
+    color: #b8ad9d;
+  }
+  .operatorRailTrigger:hover,
+  .operatorRailTitle {
+    color: #ece6dc;
+  }
+  .operatorRailSubmit {
+    border-color: #ece6dc;
+    background: #ece6dc;
+    color: #201c16;
+  }
+  .operatorRailOk {
+    color: #86c48f;
+  }
+  .operatorRailError {
+    color: #e5806c;
+  }
+}

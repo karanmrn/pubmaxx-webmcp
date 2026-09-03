@@ -1,0 +1,89 @@
+.contentDisclosure {
+  min-width: 0;
+}
+
+.contentDisclosure > summary {
+  list-style: none;
+}
+
+.contentDisclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.venueOverviewMore {
+  margin: 12px 0;
+  border-block: 1px solid var(--line);
+}
+
+.venueOverviewMore > summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.venueOverviewMore > summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.venueOverviewMore[open] > summary::after {
+  content: "−";
+}
+
+.venueOverviewMoreBody {
+  padding: 2px 0 14px;
+}
+
+.proseDisclosure {
+  margin: 0;
+}
+
+.proseDisclosure > summary {
+  min-height: 44px;
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.proseDisclosureText {
+  min-width: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.proseDisclosureMore,
+.proseDisclosureLess {
+  width: fit-content;
+  color: var(--state-active-ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.proseDisclosureLess,
+.proseDisclosure[open] .proseDisclosureMore {
+  display: none;
+}
+
+.proseDisclosure[open] .proseDisclosureText {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+}
+
+.proseDisclosure[open] .proseDisclosureLess {
+  display: inline;
+}

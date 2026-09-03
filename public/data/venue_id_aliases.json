@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "generatedBy": "scripts/canonicalize_venue_dataset.mjs",
+  "note": "duplicateVenueId -> canonicalVenueId. The same physical pub appeared twice across dataset lineages (e.g. Wetherspoons directory vs seed); those identities were collapsed into one venue. A stored reference to a merged id resolves to its canonical id via lib/venueAliases.ts — no id is ever deleted silently.",
+  "aliasCount": 91,
+  "aliases": {
+    "venue-11h1ycl": "venue-1g0tt6c",
+    "venue-ob350x": "venue-d7vcn6",
+    "venue-130gm9m": "venue-13nqwf3",
+    "venue-lqsslz": "venue-2k9hok",
+    "venue-1rca8ry": "venue-16ze6b1",
+    "venue-8u51dx": "venue-17hwv2n",
+    "venue-1x5xdqq": "venue-1dydno",
+    "venue-1oofxdb": "venue-15hi94a",
+    "venue-1ads6jm": "venue-gk759w",
+    "venue-lrknik": "venue-djy3xd",
+    "venue-vm2x07": "venue-snbr0l",
+    "venue-18bj60": "venue-t3ii33",
+    "venue-13yg8pf": "venue-phqazo",
+    "venue-1aul9g3": "venue-163qaii",
+    "venue-1jfltbe": "venue-164nra2",
+    "venue-acpje": "venue-1ykl8jq",
+    "venue-3xz47e": "venue-gvz1hf",
+    "venue-topz9e": "venue-1sst5t4",
+    "venue-10jw1vr": "venue-16ze6b1",
+    "venue-1gs68ga": "venue-16ze6b1",
+    "venue-41nyuw": "venue-1e6ogfb",
+    "venue-1eqf2e5": "venue-1pf9vt5",
+    "venue-bdasst": "venue-1dosq7b",
+    "venue-nxfoov": "venue-1dosq7b",
+    "venue-1j4rs86": "venue-64ymvx",
+    "venue-w42man": "venue-10jffb0",
+    "venue-157ewj0": "venue-1451o7c",
+    "venue-1echfld": "venue-1bckkxz",
+    "venue-xg4k2j": "venue-yl1a48",
+    "venue-vmted7": "venue-164nra2",
+    "venue-rhpttv": "venue-qky1h5",
+    "venue-1ffe6u": "venue-1qwm0di",
+    "venue-1pe2dsh": "venue-17m0t8h",
+    "venue-1wn2oun": "venue-17rj45g",
+    "venue-m07t50": "venue-1fde856",
+    "venue-x2i8ai": "venue-jfkv2h",
+    "venue-1m1dmc5": "venue-136xtuu",
+    "venue-1xx7zno": "venue-1jhq3s4",
+    "venue-thm3tm": "venue-1ros0mx",
+    "venue-oiqrsa": "venue-cee7f9",
+    "venue-1q5c8ff": "venue-gvz1hf",
+    "venue-19g8xwk": "venue-1tmuwrp",
+    "venue-1xrz3dn": "venue-1rzudoh",
+    "venue-14i11vw": "venue-3zgjrk",
+    "venue-e4t5m3": "venue-1pvqxca",
+    "venue-1mr5its": "venue-10mil9j",
+    "venue-1tfxg3g": "venue-myhgdk",
+    "venue-vm2exh": "venue-zottpx",
+    "venue-6kf8ts": "venue-dmli42",
+    "venue-1r5qszr": "venue-1bb3t97",
+    "venue-d4bi3v": "venue-2xghrm",
+    "venue-g5zwb8": "venue-2xghrm",
+    "venue-1r8zf1b": "venue-1hq7rkl",
+    "venue-7hax2l": "venue-1eqhj8d",
+    "venue-10ae8zp": "venue-vtgxk6",
+    "venue-j5fmw5": "venue-1dyrfr0",
+    "venue-8eceak": "venue-ndc1rt",
+    "venue-15g7bz0": "venue-1mc221y",
+    "venue-1b4y2r4": "venue-a31bnk",
+    "venue-owvpwc": "venue-1lisyr9",
+    "venue-edzuzk": "venue-1duinu2",
+    "venue-1la3fsq": "venue-lbm3ws",
+    "venue-6jhiht": "venue-1g1ttqf",
+    "venue-1ys6lb7": "venue-1ae0qgz",
+    "venue-1oizrwi": "venue-1ogexf4",
+    "venue-1l19dv5": "venue-11tttn4",
+    "venue-b8uey5": "venue-15v64k2",
+    "venue-np3kin": "venue-vey5le",
+    "venue-1uvkcpu": "venue-1gnw3uj",
+    "venue-1mloe4": "venue-1khnupq",
+    "venue-10zhewm": "venue-txfgkc",
+    "venue-rfu9p9": "venue-gdlj1b",
+    "venue-10n8xmn": "venue-194uq0b",
+    "venue-3nj2os": "venue-194uq0b",
+    "venue-bos6ly": "venue-1oz2l6e",
+    "venue-hq42d9": "venue-1beqe9l",
+    "venue-1qktspi": "venue-1beqe9l",
+    "venue-z8dc3b": "venue-ekvkuv",
+    "venue-1rtz3rm": "venue-1oolo7w",
+    "venue-16nkuhy": "venue-1oa8eys",
+    "venue-2hpyl9": "venue-12qgqym",
+    "venue-5vxlmk": "venue-qz6pcy",
+    "venue-1n5b2v8": "venue-1g5u0d8",
+    "venue-1uqwaup": "venue-oj2cg",
+    "venue-1cq1l8z": "venue-1hsf01d",
+    "venue-dy1d7d": "venue-1lpbgp3",
+    "venue-udq7rd": "venue-1dqfi1i",
+    "venue-4xt9gm": "venue-1l86ijg",
+    "venue-1m0bktp": "venue-1fabngq",
+    "venue-4rj5un": "venue-1y5lg8a",
+    "venue-1m7so6h": "venue-1ad37ry"
+  },
+  "clusters": [
+    {
+      "canonicalId": "venue-1g0tt6c",
+      "canonicalName": "The Red Lion",
+      "mergedFrom": [
+        {
+          "id": "venue-11h1ycl",
+          "name": "Red Lion",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-d7vcn6",
+      "canonicalName": "The Coronation Hall",
+      "mergedFrom": [
+        {
+          "id": "venue-ob350x",
+          "name": "The Coronation Hall - JD Wetherspoon",
+          "rows": 10
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-13nqwf3",
+      "canonicalName": "The Overdraft Tavern",
+      "mergedFrom": [
+        {
+          "id": "venue-130gm9m",
+          "name": "The Overdraft Tavern",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-2k9hok",
+      "canonicalName": "Canonbury Tavern",
+      "mergedFrom": [
+        {
+          "id": "venue-lqsslz",
+          "name": "The Canonbury",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-16ze6b1",
+      "canonicalName": "George (Southwark)",
+      "mergedFrom": [
+        {
+          "id": "venue-1rca8ry",
+          "name": "The George Inn",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-17hwv2n",
+      "canonicalName": "Seething Lane Tap: A BrewDog Pub",
+      "mergedFrom": [
+        {
+          "id": "venue-8u51dx",
+          "name": "Seething Lane Tap",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-1dydno",
+      "canonicalName": "The Old Hat Ealing",
+      "mergedFrom": [
+        {
+          "id": "venue-1x5xdqq",
+          "name": "The Old Hat",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-15hi94a",
+      "canonicalName": "The Blue Boat, Fulham Reach",
+      "mergedFrom": [
+        {
+          "id": "venue-1oofxdb",
+          "name": "The Blue Boat",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-gk759w",
+      "canonicalName": "Hand & Racquet (Wimbledon)",
+      "mergedFrom": [
+        {
+          "id": "venue-1ads6jm",
+          "name": "Hand and Racquet, Wimbledon",
+          "rows": 3
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-djy3xd",
+      "canonicalName": "Salt Quay",
+      "mergedFrom": [
+        {
+          "id": "venue-lrknik",
+          "name": "Salt quay rotherhithe",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-snbr0l",
+      "canonicalName": "The Orange Tree",
+      "mergedFrom": [
+        {
+          "id": "venue-vm2x07",
+          "name": "The Orange Tree Totteridge",
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "canonicalId": "venue-t3ii33",
+      "canonicalName": "The Owl & The Pussycat",
+      "mergedFrom": [
+        {
+          "id": "venue-18bj60",
+          "name": "Owl and Pussycat",
+          "rows": 1
+        }
+      ]
+    }
+  ]
+}

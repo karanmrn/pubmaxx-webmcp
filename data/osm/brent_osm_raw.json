@@ -1,0 +1,2778 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-17T22:26:40Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 451152,
+      "lat": 51.6008404,
+      "lon": -0.1946078,
+      "tags": {
+        "addr:city": "London",
+        "addr:housename": "King of Prussia",
+        "addr:housenumber": "363",
+        "addr:postcode": "N3 1DH",
+        "addr:street": "Regents Park Road",
+        "amenity": "pub",
+        "cuisine": "pizza;burger",
+        "diet:gluten_free": "yes",
+        "diet:meat": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "fhrs:id": "1854668",
+        "food": "yes",
+        "internet_access": "wlan",
+        "live_sport": "yes",
+        "name": "King of Prussia",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-24:00; Su 12:00-23:00",
+        "operator": "Mitchells & Butlers",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 20 81065270",
+        "smoking": "outside",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.thekingfinchley.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 451154,
+      "lat": 51.5995788,
+      "lon": -0.196028,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "319",
+        "addr:postcode": "N3 1DP",
+        "addr:street": "Regents Park Road",
+        "amenity": "pub",
+        "fhrs:id": "1814163",
+        "food": "yes",
+        "name": "The Catcher in the Rye",
+        "real_ale": "3",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 31472797,
+      "lat": 51.5556251,
+      "lon": -0.316774,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "789",
+        "addr:postcode": "HA0 2LP",
+        "addr:street": "Harrow Road",
+        "amenity": "pub",
+        "fhrs:id": "531827",
+        "live_sport": "yes",
+        "name": "The Swan",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 32544807,
+      "lat": 51.5503528,
+      "lon": -0.3392639,
+      "tags": {
+        "addr:housenumber": "1286",
+        "addr:street": "Greenford Road",
+        "amenity": "bar",
+        "name": "Ryan's Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 211260547,
+      "lat": 51.5816235,
+      "lon": -0.3378121,
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housenumber": "86",
+        "addr:postcode": "HA1 1JP",
+        "addr:street": "St Anns Road",
+        "ale": "no",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "brand:wikipedia": "en:Greene King",
+        "check_date": "2025-09-27",
+        "fhrs:id": "276908",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "Royal Oak",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "source:name": "survey",
+        "website": "https://www.greeneking-pubs.co.uk/pubs/middlesex/royal-oak/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250080453,
+      "lat": 51.5913275,
+      "lon": -0.2279046,
+      "tags": {
+        "amenity": "pub",
+        "indoor_seating": "yes",
+        "name": "The Greyhound",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250080603,
+      "lat": 51.5901278,
+      "lon": -0.226129,
+      "tags": {
+        "amenity": "pub",
+        "check_date": "2024-10-27",
+        "contact:facebook": "https://www.facebook.com/TheCladdaghRingIrishBar",
+        "email": "info@claddagh-ring.co.uk",
+        "food": "yes",
+        "live_sport": "yes",
+        "name": "Claddagh Ring",
+        "phone": "+44 20 8203 2600",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.claddagh-ring.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304132917,
+      "lat": 51.529606,
+      "lon": -0.249311,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The Fishermans Arms",
+        "opening_hours": "Mo-Sa 11:00-23:00; Su 12:00-22:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304145828,
+      "lat": 51.53439,
+      "lon": -0.260462,
+      "tags": {
+        "amenity": "pub",
+        "food": "yes",
+        "live_sport": "yes",
+        "name": "Grand Junction Arms",
+        "operator": "Young's",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304421987,
+      "lat": 51.5354797,
+      "lon": -0.2436931,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "127",
+        "addr:postcode": "NW10 4TR",
+        "addr:street": "High Street Harlesden",
+        "alt_name": "Angies",
+        "amenity": "pub",
+        "check_date": "2024-05-15",
+        "fhrs:id": "532058",
+        "fhrs:local_authority_id": "13077",
+        "level": "0",
+        "name": "Angie's",
+        "source:addr:postcode": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304464944,
+      "lat": 51.5401392,
+      "lon": -0.2535523,
+      "tags": {
+        "amenity": "pub",
+        "name": "Wishing Well",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304687745,
+      "lat": 51.5427082,
+      "lon": -0.2850591,
+      "tags": {
+        "amenity": "pub",
+        "name": "Heather Park",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304687769,
+      "lat": 51.5431182,
+      "lon": -0.2851586,
+      "tags": {
+        "amenity": "bar",
+        "name": "Lush"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304693169,
+      "lat": 51.541967,
+      "lon": -0.2975525,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housenumber": "3-4",
+        "addr:street": "Glenmore Parade",
+        "amenity": "bar",
+        "fhrs:id": "533820",
+        "name": "Panthers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 304744886,
+      "lat": 51.5574542,
+      "lon": -0.2895953,
+      "tags": {
+        "amenity": "pub",
+        "food": "yes",
+        "garden": "yes",
+        "name": "The Green Man",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "http://www.thegreenmanhotelatwembley.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 305271099,
+      "lat": 51.5516164,
+      "lon": -0.3109523,
+      "tags": {
+        "amenity": "pub",
+        "name": "The Fusilier",
+        "tourism": "motel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 305410614,
+      "lat": 51.5459657,
+      "lon": -0.2731942,
+      "tags": {
+        "amenity": "pub",
+        "food": "yes",
+        "name": "The Innisfree Free House",
+        "sky": "yes",
+        "sport": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 408124683,
+      "lat": 51.535697,
+      "lon": -0.1904489,
+      "tags": {
+        "addr:city": "London",
+        "addr:postcode": "NW6 5RP",
+        "addr:street": "Plaza Parade",
+        "amenity": "bar",
+        "contact:phone": "+44 20 7543 6000",
+        "name": "The Studio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 408561640,
+      "lat": 51.5480318,
+      "lon": -0.2235729,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "Angie's III",
+        "source": "estimate"
+      }
+    },
+    {
+      "type": "node",
+      "id": 410936555,
+      "lat": 51.5572254,
+      "lon": -0.2148383,
+      "tags": {
+        "amenity": "pub",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "Lucky 7",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 410949906,
+      "lat": 51.5559388,
+      "lon": -0.2145933,
+      "tags": {
+        "addr:city": "London",
+        "addr:street": "Cricklewood Broadway",
+        "amenity": "pub",
+        "name": "McGovern's",
+        "theme": "irish"
+      }
+    },
+    {
+      "type": "node",
+      "id": 411115264,
+      "lat": 51.5535658,
+      "lon": -0.2120334,
+      "tags": {
+        "addr:street": "Cricklewood Broadway",
+        "amenity": "pub",
+        "name": "The Windmill"
+      }
+    },
+    {
+      "type": "node",
+      "id": 411115268,
+      "lat": 51.5536653,
+      "lon": -0.2115593,
+      "tags": {
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:street": "Cricklewood Broadway",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "food": "yes",
+        "name": "The Beaten Docket",
+        "opening_hours:food": "11:00-23:00",
+        "real_ale": "Usual Wetherspoons variety",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-beaten-docket-cricklewood",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/35/menus",
+        "wikidata": "Q88916789"
+      }
+    },
+    {
+      "type": "node",
+      "id": 469765399,
+      "lat": 51.5697299,
+      "lon": -0.295177,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housename": "The Preston",
+        "addr:housenumber": "161",
+        "addr:postcode": "HA9 8NG",
+        "addr:street": "Carlton Avenue East",
+        "amenity": "bar",
+        "brewery": "various",
+        "min_age": "0",
+        "name": "The Preston",
+        "naptan:AtcoCode": "490004796W1",
+        "naptan:Bearing": "NW",
+        "naptan:CommonName": "Carlton Avenue East Preston Rd",
+        "naptan:Indicator": "Stop",
+        "naptan:verified": "no",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "physically_present": "no",
+        "shelter": "no",
+        "source": "naptan_import;survey;Bing 2012",
+        "survey:date": "2013-08-22"
+      }
+    },
+    {
+      "type": "node",
+      "id": 540414280,
+      "lat": 51.525204,
+      "lon": -0.3202214,
+      "tags": {
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "live_sport": "yes",
+        "name": "Duke of Kent",
+        "operator": "Fuller's",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.dukeofkent.co.uk/",
+        "wikidata": "Q16989158"
+      }
+    },
+    {
+      "type": "node",
+      "id": 548866030,
+      "lat": 51.5709117,
+      "lon": -0.2946193,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housename": "Baron",
+        "addr:housenumber": "210",
+        "addr:postcode": "HA9 8PB",
+        "addr:street": "Preston Road",
+        "amenity": "bar",
+        "brewery": "various",
+        "name": "Baron",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "phone": "+44 20 8385 2002",
+        "source": "survey;Bing 2012",
+        "source:addr:postcode": "FHRS Open Data",
+        "survey:date": "2014-12-23",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 630503145,
+      "lat": 51.5509213,
+      "lon": -0.1916885,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "283-285",
+        "addr:postcode": "NW6 1RD",
+        "addr:street": "West End Lane",
+        "amenity": "pub",
+        "check_date": "2025-12-11",
+        "name": "Alice House",
+        "phone": "+44 20 7431 8818",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 812151434,
+      "lat": 51.5667671,
+      "lon": -0.233309,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "341",
+        "addr:postcode": "NW2 7HS",
+        "addr:street": "Oxgate Lane",
+        "alt_name": "The Ox",
+        "amenity": "pub",
+        "contact:facebook": "https://www.facebook.com/Whelans-Neasden-948476528591424/",
+        "name": "Whelan's",
+        "old_name": "The Ox and Gate"
+      }
+    },
+    {
+      "type": "node",
+      "id": 896149763,
+      "lat": 51.54892,
+      "lon": -0.2415688,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "Tony's"
+      }
+    },
+    {
+      "type": "node",
+      "id": 899374404,
+      "lat": 51.5309996,
+      "lon": -0.195836,
+      "tags": {
+        "amenity": "pub",
+        "name": "Marian Bar",
+        "note": "Approximate location - it's inside the building somehow."
+      }
+    },
+    {
+      "type": "node",
+      "id": 915100777,
+      "lat": 51.5826203,
+      "lon": -0.3323063,
+      "tags": {
+        "amenity": "pub",
+        "check_date": "2026-02-20",
+        "food": "yes",
+        "live_sport": "yes",
+        "name": "The George",
+        "source": "unknown;Bing 2012",
+        "source:name": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 915100787,
+      "lat": 51.5793516,
+      "lon": -0.3341323,
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housename": "Lynwood House",
+        "addr:housenumber": "373-375",
+        "addr:postcode": "HA1 2AW",
+        "addr:street": "Station Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "check_date": "2025-03-01",
+        "fhrs:id": "1029505",
+        "indoor_seating": "yes",
+        "name": "The Moon on the Hill",
+        "operator": "J Weatherspoon",
+        "outdoor_seating": "yes",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-moon-on-the-hill-harrow",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/38/menus",
+        "wheelchair": "limited",
+        "wikidata": "Q88916744"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1320961201,
+      "lat": 51.6008185,
+      "lon": -0.3196329,
+      "tags": {
+        "amenity": "pub",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "The Belmont",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1324709953,
+      "lat": 51.5965783,
+      "lon": -0.2428256,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "2",
+        "addr:postcode": "NW9 5TW",
+        "addr:street": "Heritage Avenue",
+        "alt_name": "The Beaufort Pub & Dining",
+        "amenity": "pub",
+        "brand": "Young's",
+        "brand:wikidata": "Q8057802",
+        "fhrs:id": "757483",
+        "live_sport": "yes",
+        "name": "The Beaufort",
+        "operator": "Young's",
+        "website": "http://www.beaufortpubdining.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1489585778,
+      "lat": 51.5791104,
+      "lon": -0.3337461,
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:housenumber": "380",
+        "addr:postcode": "HA1 2DE",
+        "addr:street": "Station Road",
+        "air_conditioning": "yes",
+        "amenity": "bar",
+        "check_date": "2025-03-01",
+        "fhrs:id": "276316",
+        "indoor_seating": "yes",
+        "name": "Trinity",
+        "outdoor_seating": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1765203848,
+      "lat": 51.5332135,
+      "lon": -0.2956664,
+      "tags": {
+        "amenity": "pub",
+        "fhrs:id": "1032938",
+        "live_sport": "yes",
+        "name": "The Fox and Goose",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1993188851,
+      "lat": 51.5846669,
+      "lon": -0.2796475,
+      "tags": {
+        "amenity": "pub",
+        "name": "Hennessys"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1993188868,
+      "lat": 51.5847002,
+      "lon": -0.2794329,
+      "tags": {
+        "amenity": "bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2256219333,
+      "lat": 51.5620416,
+      "lon": -0.2824529,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "125",
+        "addr:postcode": "HA9 8HQ",
+        "addr:street": "Wembley Park Drive",
+        "amenity": "pub",
+        "fhrs:id": "532739",
+        "name": "Sports Bar",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2256219334,
+      "lat": 51.5620416,
+      "lon": -0.2826353,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "121",
+        "addr:postcode": "HA9 8HG",
+        "addr:street": "Wembley Park Drive",
+        "amenity": "pub",
+        "fhrs:id": "532737",
+        "live_sport": "yes",
+        "name": "The Wembley Tavern",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2294709596,
+      "lat": 51.5553515,
+      "lon": -0.3370624,
+      "tags": {
+        "addr:city": "Greenford",
+        "addr:county": "Middlesex",
+        "addr:housenumber": "1211",
+        "addr:postcode": "UB6 0HY",
+        "addr:street": "Greenford Road",
+        "amenity": "bar",
+        "cuisine": "irish",
+        "fhrs:id": "1033983",
+        "name": "Tiffty's Tavern Irish Bar",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2376273449,
+      "lat": 51.5605406,
+      "lon": -0.3293318,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housename": "Ember Inns",
+        "addr:housenumber": "1018",
+        "addr:postcode": "HA0 2QP",
+        "addr:street": "Harrow Road",
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "fhrs:id": "531847",
+        "food": "yes",
+        "name": "The Black Horse",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.emberinns.co.uk/nationalsearch/london/the-black-horse-wembley#/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2439812541,
+      "lat": 51.5728788,
+      "lon": -0.2944101,
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housenumber": "278",
+        "addr:postcode": "HA3 0QA",
+        "addr:street": "Preston Road",
+        "amenity": "pub",
+        "fhrs:id": "532486",
+        "name": "the fléadh",
+        "source": "survey;Bing 2012",
+        "source:addr": "FHRS Open Data",
+        "source:addr:postcode": "FHRS Open Data",
+        "survey:date": "2013-08-17"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2517463831,
+      "lat": 51.5701438,
+      "lon": -0.2944576,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housenumber": "182-184",
+        "addr:postcode": "HA9 8PA",
+        "addr:street": "Preston Road",
+        "amenity": "bar",
+        "cuisine": "indian",
+        "fhrs:id": "532452",
+        "name": "Club 182",
+        "phone": "+44 20 8908 6040",
+        "source": "survey;Bing 2012",
+        "source:addr": "FHRS Open Data",
+        "survey:date": "2013-08-17",
+        "website": "http://www.club-182.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3196094985,
+      "lat": 51.6020997,
+      "lon": -0.2448176,
+      "tags": {
+        "amenity": "pub",
+        "disused": "yes",
+        "name": "Hind and Hart"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3376484693,
+      "lat": 51.5339547,
+      "lon": -0.2419498,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "206",
+        "addr:street": "High Street Harlesden",
+        "amenity": "bar",
+        "check_date": "2024-05-15",
+        "cuisine": "tapas",
+        "level": "0",
+        "name": "Épara Poncha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4020316989,
+      "lat": 51.551175,
+      "lon": -0.1918711,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "295-297",
+        "addr:postcode": "NW6 1RD",
+        "addr:street": "West End Lane",
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "The Black Lion",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5417354028,
+      "lat": 51.5505625,
+      "lon": -0.1915921,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "273",
+        "addr:postcode": "NW6 1QS",
+        "addr:street": "West End Lane",
+        "amenity": "bar",
+        "cocktails": "yes",
+        "cuisine": "snack;pizza",
+        "diet:non-vegetarian": "yes",
+        "diet:vegetarian": "yes",
+        "name": "Bobby Fitzpatrick",
+        "opening_hours": "Mo-We 17:00-23:00; Th-Fr 16:00-01:00; Sa 12:00-01:00; Su 16:00-11:00",
+        "phone": "+4420 7433 1989",
+        "website": "https://bobbyf.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6019922913,
+      "lat": 51.5594154,
+      "lon": -0.2501576,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "249",
+        "addr:postcode": "NW10 1QG",
+        "addr:street": "Neasden Lane",
+        "amenity": "pub",
+        "fhrs:id": "532338",
+        "fhrs:local_authority_id": "17866",
+        "level": "0",
+        "name": "Tiffty Tom's",
+        "source": "survey;Bing aerial imagery",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6284663193,
+      "lat": 51.5846271,
+      "lon": -0.2800026,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "553",
+        "addr:postcode": "NW9 9EL",
+        "addr:street": "Kingsbury Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "fhrs:id": "532231",
+        "name": "J.J. Moon's",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.jdwetherspoon.com/pubs/j-j-moons-kingsbury/",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/27/menus",
+        "wikidata": "Q88916793"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7259912747,
+      "lat": 51.5248374,
+      "lon": -0.2118021,
+      "tags": {
+        "addr:housenumber": "48",
+        "addr:street": "Southern Row",
+        "amenity": "bar",
+        "name": "The Chilled Eskimo",
+        "phone": "+44 20 8960 1777"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7931302526,
+      "lat": 51.5892949,
+      "lon": -0.2814679,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "40",
+        "addr:postcode": "NW9 9QJ",
+        "addr:street": "Rose Bates Drive",
+        "amenity": "bar",
+        "brewery": "Veltins",
+        "name": "Jürgen's Lounge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8357416959,
+      "lat": 51.5902558,
+      "lon": -0.3327252,
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:housenumber": "32",
+        "addr:postcode": "HA3 5AA",
+        "addr:street": "Railway Approach",
+        "amenity": "bar",
+        "check_date": "2024-04-21",
+        "name": "Heat"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10112312066,
+      "lat": 51.6008844,
+      "lon": -0.3181673,
+      "tags": {
+        "amenity": "pub",
+        "check_date": "2025-07-22",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "Life of Reilly",
+        "outdoor_seating": "no",
+        "theme": "irish"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10174708287,
+      "lat": 51.5973669,
+      "lon": -0.3366841,
+      "tags": {
+        "amenity": "bar",
+        "check_date": "2025-09-10",
+        "indoor_seating": "yes",
+        "name": "Crystal Lounge",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10924079510,
+      "lat": 51.5871138,
+      "lon": -0.2514525,
+      "tags": {
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "189",
+        "addr:postcode": "NW9 6LP",
+        "addr:street": "Edgware Road",
+        "amenity": "pub",
+        "fhrs:id": "533881",
+        "live_sport": "yes",
+        "name": "Rossi's Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11510595169,
+      "lat": 51.5510177,
+      "lon": -0.2014191,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "32",
+        "addr:postcode": "NW6 1NR",
+        "addr:street": "Mill Lane",
+        "amenity": "bar",
+        "check_date:opening_hours": "2024-09-14",
+        "name": "The Mill",
+        "opening_hours:signed": "no",
+        "phone": "+44 2071 835475"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12023263602,
+      "lat": 51.5581683,
+      "lon": -0.2807653,
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housenumber": "4",
+        "addr:postcode": "HA9 0HP",
+        "addr:street": "Wembley Park Boulevard",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "check_date": "2024-10-27",
+        "check_date:opening_hours": "2024-10-27",
+        "contact:facebook": "https://www.facebook.com/WhiteHorseWembley",
+        "contact:instagram": "https://www.instagram.com/whitehorsewembley/",
+        "contact:tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g528820-d21326405-Reviews-The_White_Horse-Wembley_Greater_London_England.html",
+        "contact:twitter": "https://x.com/WhiteHorseHA9",
+        "email": "WhiteHorse.Wembley@fullers.co.uk",
+        "food": "yes",
+        "live_sport": "yes",
+        "name": "The White Horse",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30",
+        "phone": "+44 20 8237 8037",
+        "website": "https://www.whitehorsewembley.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12077358665,
+      "lat": 51.5292376,
+      "lon": -0.2917627,
+      "tags": {
+        "amenity": "bar",
+        "name": "Ashbourne Lounge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12077358666,
+      "lat": 51.529258,
+      "lon": -0.2916185,
+      "tags": {
+        "amenity": "pub",
+        "name": "Ashbourne Bar and Restaurant",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12229930329,
+      "lat": 51.5605361,
+      "lon": -0.2526835,
+      "tags": {
+        "amenity": "pub",
+        "live_sport": "yes",
+        "name": "Katie's Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12239597137,
+      "lat": 51.5474097,
+      "lon": -0.2278791,
+      "tags": {
+        "amenity": "bar",
+        "name": "Lula's"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12561097383,
+      "lat": 51.5283283,
+      "lon": -0.2011983,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "71",
+        "addr:street": "Fernhead Road",
+        "amenity": "bar",
+        "check_date": "2025-02-06",
+        "name": "Caramel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13667302001,
+      "lat": 51.5825484,
+      "lon": -0.2280084,
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "3",
+        "addr:postcode": "NW4 3UT",
+        "addr:street": "Vivian Avenue",
+        "amenity": "pub",
+        "check_date": "2026-03-21",
+        "check_date:opening_hours": "2026-03-21",
+        "level": "0",
+        "name": "The Bodhran",
+        "opening_hours": "Su-Th 12:00-00:00; Fr-Sa 12:00-01:00",
+        "phone": "+44 20 8201 5736",
+        "website": "https://www.thebodhranpub.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 61977971,
+      "center": {
+        "lat": 51.5392761,
+        "lon": -0.1954146
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "125",
+        "addr:postcode": "NW6 6JH",
+        "addr:street": "Kilburn High Road",
+        "amenity": "bar",
+        "building": "yes",
+        "building:levels": "6",
+        "check_date": "2024-12-09",
+        "name": "The Juniper",
+        "opening_hours": "Tu-Th,Sa-Su 12:00-23:00; Fr 12:00-01:00",
+        "ref:GB:uprn": "202227773;202079287;202149476;202227772;202230471"
+      }
+    },
+    {
+      "type": "way",
+      "id": 62270985,
+      "center": {
+        "lat": 51.5329873,
+        "lon": -0.3230719
+      },
+      "tags": {
+        "addr:city": "Greenford",
+        "addr:country": "GB",
+        "addr:postcode": "UB6 8TE",
+        "addr:street": "Western Avenue",
+        "addr:suburb": "Perivale",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "retail",
+        "fhrs:id": "916849",
+        "fhrs:local_authority_id": "CP00155",
+        "live_sport": "yes",
+        "name": "The Myllet Arms",
+        "old_name": "Myllet Arms",
+        "operator": "Greeneking",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greeneking.co.uk/pubs/middlesex/myllet-arms"
+      }
+    },
+    {
+      "type": "way",
+      "id": 65658313,
+      "center": {
+        "lat": 51.5364781,
+        "lon": -0.2049201
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "53",
+        "addr:postcode": "NW6 6RA",
+        "addr:street": "Lonsdale Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "brown",
+        "building:levels": "2",
+        "check_date": "2024-08-20",
+        "craft": "brewery",
+        "fhrs:authority": "Brent",
+        "fhrs:id": "1021645",
+        "fhrs:local_authority_id": "16059",
+        "live_sport": "yes",
+        "name": "Wolfpack",
+        "opening_hours": "Tu-Fr 17:00-23:00; Sa 13:00-00:00; Su 13:00-23:00",
+        "operator": "Wildman Project Ltd",
+        "product": "beer",
+        "ref:GB:uprn": "202073129",
+        "roof:colour": "black",
+        "roof:levels": "1",
+        "roof:orientation": "along",
+        "roof:shape": "gabled",
+        "source:addr": "FHRS Open Data",
+        "website": "https://wolfpackbars.com/queens-park-bar/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 70320037,
+      "center": {
+        "lat": 51.5348209,
+        "lon": -0.2045072
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "53-55",
+        "addr:postcode": "NW6 6NJ",
+        "addr:street": "Salusbury Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2024-10-31",
+        "contact:website": "https://www.thealicehouse.co.uk/",
+        "cuisine": "pub",
+        "name": "The Alice House",
+        "opening_hours": "Mo-Sa 09:30-24:00; Su 00:00-01:00,09:30-23:00",
+        "outdoor_seating": "no",
+        "payment:apple_pay": "yes",
+        "payment:cash": "no",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:google_pay": "yes",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 72773168,
+      "center": {
+        "lat": 51.5454486,
+        "lon": -0.2018307
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "328",
+        "addr:postcode": "NW6 2QN",
+        "addr:street": "Kilburn High Road",
+        "amenity": "bar",
+        "building": "yes",
+        "contact:email": "brondesage@aol.com",
+        "name": "Brondes Age",
+        "phone": "+44 20 7624 9010",
+        "ref:GB:uprn": "5075133",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "http://www.brondesage.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 75117566,
+      "center": {
+        "lat": 51.5455696,
+        "lon": -0.2025721
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "375",
+        "addr:postcode": "NW6 7QB",
+        "addr:street": "Kilburn High Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "brewery": "various",
+        "building": "yes",
+        "fhrs:id": "532172",
+        "internet_access": "wlan",
+        "live_sport": "yes",
+        "name": "North London Tavern",
+        "opening_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-00:00; Su 11:00-22:30",
+        "operator": "Greene King",
+        "phone": "+44 20 7625 6634",
+        "real_ale": "yes",
+        "ref:GB:uprn": "202149478;202079081",
+        "smoking": "outside",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.greeneking.co.uk/pubs/greater-london/north-london-tavern",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 75640208,
+      "center": {
+        "lat": 51.5455878,
+        "lon": -0.201976
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "332",
+        "addr:street": "Kilburn High Road",
+        "amenity": "bar",
+        "building": "yes",
+        "name": "Wingmans",
+        "website": "http://wingmans.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 76174399,
+      "center": {
+        "lat": 51.5347629,
+        "lon": -0.1939961
+      },
+      "tags": {
+        "addr:housenumber": "11a",
+        "addr:street": "Cambridge Gardens",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-06-08",
+        "live_sport": "yes",
+        "name": "The Prince of Wales",
+        "wikidata": "Q26349999"
+      }
+    },
+    {
+      "type": "way",
+      "id": 76844522,
+      "center": {
+        "lat": 51.5411002,
+        "lon": -0.2010976
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "70",
+        "addr:postcode": "NW6 7SX",
+        "addr:street": "Willesden Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "brown",
+        "building:levels": "3",
+        "check_date": "2025-02-09",
+        "live_sport": "yes",
+        "name": "Mc Glynn's Bar",
+        "ref:GB:uprn": "202011794;202011793;202209579;202031092;202152443;202031091;202031090",
+        "roof:colour": "black"
+      }
+    },
+    {
+      "type": "way",
+      "id": 80151497,
+      "center": {
+        "lat": 51.5695891,
+        "lon": -0.2953095
+      },
+      "tags": {
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "building": "yes",
+        "contact:website": "https://www.emberinns.co.uk/nationalsearch/london/the-preston-wembley",
+        "name": "The Preston",
+        "source": "OS_OpenData_StreetView",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 98535839,
+      "center": {
+        "lat": 51.5243607,
+        "lon": -0.1887059
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "55",
+        "addr:postcode": "W9 2JD",
+        "addr:street": "Shirland Road",
+        "air_conditioning": "yes",
+        "amenity": "pub",
+        "brewery": "various",
+        "building": "yes",
+        "building:levels": "4",
+        "check_date": "2026-05-29",
+        "microbrewery": "no",
+        "name": "The Hero",
+        "old_name": "The Hero of Maida",
+        "old_name:1": "The Truscott Arms",
+        "old_name:2": "idlewild",
+        "outdoor_seating": "yes",
+        "payment:apple_pay": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:google_pay": "yes",
+        "phone": "+44 20 3960 9109",
+        "ref:GB:uprn": "100023513094;10033619569;10033584796;10033619570;10033575643;10033575640;10033575645",
+        "smoking": "outside",
+        "source:postcode": "FSA Food Hygiene Ratings Database",
+        "toilets": "yes",
+        "website": "https://theheromaidavale.co.uk/",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 98612270,
+      "center": {
+        "lat": 51.5370482,
+        "lon": -0.1919539
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:postcode": "NW6 5UA",
+        "addr:street": "Kilburn High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2.5",
+        "live_sport": "yes",
+        "name": "The Old Bell",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "ref:GB:uprn": "5012288",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.greatukpubs.co.uk/old-bell-kilburn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 103106894,
+      "center": {
+        "lat": 51.5465393,
+        "lon": -0.1902185
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "190",
+        "addr:postcode": "NW6 3AY",
+        "addr:street": "Broadhurst Gardens",
+        "amenity": "bar",
+        "building": "yes",
+        "building:colour": "gray",
+        "building:levels": "3",
+        "name": "The Gallery",
+        "ref:GB:uprn": "5010114;5006226;5006227;5010030",
+        "roof:colour": "black",
+        "roof:orientation": "across",
+        "roof:shape": "hipped",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 103106895,
+      "center": {
+        "lat": 51.5465462,
+        "lon": -0.1901026
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "188",
+        "addr:postcode": "NW6 3AY",
+        "addr:street": "Broadhurst Gardens",
+        "amenity": "bar",
+        "building": "yes",
+        "building:colour": "gray",
+        "building:levels": "3",
+        "name": "The Gardens",
+        "ref:GB:uprn": "5055583;5115711;5115722;5115724",
+        "roof:colour": "black",
+        "roof:orientation": "across",
+        "roof:shape": "gabled",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 107044526,
+      "center": {
+        "lat": 51.535551,
+        "lon": -0.205512
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "50-52",
+        "addr:postcode": "NW6 6NN",
+        "addr:street": "Salusbury Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Salusbury"
+      }
+    },
+    {
+      "type": "way",
+      "id": 107710473,
+      "center": {
+        "lat": 51.5375437,
+        "lon": -0.1934264
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "77",
+        "addr:postcode": "NW6 6HY",
+        "addr:street": "Kilburn High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "1",
+        "check_date": "2025-02-20",
+        "name": "Kilburn Bridge",
+        "ref:GB:uprn": "202003188;202079329;202149475"
+      }
+    },
+    {
+      "type": "way",
+      "id": 107755382,
+      "center": {
+        "lat": 51.5384106,
+        "lon": -0.1912867
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "250",
+        "addr:postcode": "NW6 4BT",
+        "addr:street": "Belsize Road",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date": "2026-02-11",
+        "contact:email": "bookings@priorytavern.co.uk",
+        "contact:phone": "+44 20 7624 8044",
+        "contact:website": "https://priorytavern.co.uk/",
+        "name": "The Priory Tavern",
+        "opening_hours": "Tu-Th 17:00-23:00; Fr-Sa 14:00-00:00; Su 13:00-00:00",
+        "payment:apple_pay": "yes",
+        "payment:cash": "no",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:google_pay": "yes",
+        "ref:GB:uprn": "5116978;10091957529;10092046589;5087234"
+      }
+    },
+    {
+      "type": "way",
+      "id": 109187435,
+      "center": {
+        "lat": 51.5350536,
+        "lon": -0.1900541
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "1",
+        "addr:postcode": "NW6 5SE",
+        "addr:street": "Kilburn High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "Queens Arms",
+        "ref:GB:uprn": "100023113979;100022770130",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://queensarmskilburn.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 112528246,
+      "center": {
+        "lat": 51.5320252,
+        "lon": -0.1914591
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "33",
+        "addr:postcode": "NW6 5EU",
+        "addr:street": "Carlton Vale",
+        "alt_name": "The Carlton Tavern",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "hello@carltontavern.co.uk",
+        "name": "Carlton Tavern",
+        "phone": "+44 20 7625 4760",
+        "ref:GB:uprn": "100023114593",
+        "website": "https://carltontavern.co.uk/",
+        "wikidata": "Q19845020",
+        "wikipedia": "en:Carlton Tavern"
+      }
+    },
+    {
+      "type": "way",
+      "id": 121897859,
+      "center": {
+        "lat": 51.5408602,
+        "lon": -0.2048174
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "99-101",
+        "addr:postcode": "NW6 7SD",
+        "addr:street": "Willesden Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "check_date": "2024-08-27",
+        "contact:facebook": "kilburnarms",
+        "cuisine": "breakfast;burger;fish_and_chips",
+        "guest_house": "bed_and_breakfast",
+        "name": "The Kilburn Arms",
+        "opening_hours": "Su-Tu, Th 07:30-23:00; We, Fr-Sa 07:30-00:00",
+        "phone": "+44 20 3561 5854",
+        "ref:GB:uprn": "202030931;202190903;202149641",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123092742,
+      "center": {
+        "lat": 51.5407196,
+        "lon": -0.19623
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "164",
+        "addr:postcode": "NW6 4JD",
+        "addr:street": "Kilburn High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Coopers Arms",
+        "opening_hours": "Mo-Sa 10:00-23:00; Su 11:00-22:00",
+        "phone": "+44 20 7644 9951",
+        "ref:GB:uprn": "5013461",
+        "website": "https://www.coopersarmskilburn.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123372224,
+      "center": {
+        "lat": 51.5468723,
+        "lon": -0.2302432
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "117",
+        "addr:postcode": "NW10 2SL",
+        "addr:street": "High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2.5",
+        "name": "Flynn's",
+        "ref:GB:uprn": "202086648;202086649"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123702996,
+      "center": {
+        "lat": 51.5423157,
+        "lon": -0.1988336
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "229",
+        "addr:postcode": "NW6 7JG",
+        "addr:street": "Kilburn High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "grey",
+        "building:levels": "3",
+        "name": "The Fiddler",
+        "old_name": "Kingdom Bar",
+        "ref:GB:uprn": "202149552;202079194;202079193",
+        "roof:colour": "black"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143214350,
+      "center": {
+        "lat": 51.5727282,
+        "lon": -0.1959228
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "The Refectory",
+        "outdoor_seating": "yes",
+        "source": "Bing;survey",
+        "website": "https://refectorypub.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 149229416,
+      "center": {
+        "lat": 51.5796257,
+        "lon": -0.3325275
+      },
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housename": "Gayton Hall",
+        "addr:housenumber": "9",
+        "addr:postcode": "HA1 2DH",
+        "addr:street": "Gayton Road",
+        "amenity": "pub",
+        "building": "pub",
+        "check_date": "2025-07-27",
+        "fhrs:id": "276652",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "The Junction",
+        "outdoor_seating": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 172055438,
+      "center": {
+        "lat": 51.5437022,
+        "lon": -0.1998333
+      },
+      "tags": {
+        "accommodation": "yes",
+        "addr:city": "London",
+        "addr:housenumber": "274",
+        "addr:postcode": "NW6 2BY",
+        "addr:street": "Kilburn High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "cuisine": "indian",
+        "name": "The Black Lion",
+        "opening_hours": "Mo-Fr 16:00-00:00; Sa 12:00-00:00; Su 12:00-23:00",
+        "real_ale": "yes",
+        "real_fire": "fireplace",
+        "ref:GB:uprn": "5001231",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://blacklionkilburn.co.uk/",
+        "wikidata": "Q16707717",
+        "wikipedia": "en:Black Lion, Kilburn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 172055445,
+      "center": {
+        "lat": 51.5566168,
+        "lon": -0.2141546
+      },
+      "tags": {
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The Crown",
+        "outdoor_seating": "yes",
+        "wikidata": "Q27085857"
+      }
+    },
+    {
+      "type": "way",
+      "id": 199925624,
+      "center": {
+        "lat": 51.5932331,
+        "lon": -0.2554072
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "31",
+        "addr:postcode": "NW9 5DS",
+        "addr:street": "Colindale Avenue",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "fhrs:id": "758440",
+        "food": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "Chandos Arms",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "ref:GB:uprn": "200156511;200025648",
+        "source:addr": "FSA Food Hygiene Rating Scheme open data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 220273570,
+      "center": {
+        "lat": 51.5586926,
+        "lon": -0.3348143
+      },
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:housename": "Greenford Road",
+        "addr:housenumber": "138",
+        "addr:postcode": "HA1 3QL",
+        "addr:street": "Greenford Road",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:phone": "+44 20 8422 2575",
+        "contact:website": "http://www.risingsunhotels.com/",
+        "fhrs:id": "1041395",
+        "name": "Rising Sun Hotel & Restaurant",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 229533245,
+      "center": {
+        "lat": 51.5454222,
+        "lon": -0.2303539
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:postcode": "NW10 2BY",
+        "addr:street": "Chambers Lane",
+        "amenity": "pub",
+        "building": "pub",
+        "live_sport": "yes",
+        "name": "The Rising Sun",
+        "ref:GB:uprn": "202090720;202149439"
+      }
+    },
+    {
+      "type": "way",
+      "id": 239482111,
+      "center": {
+        "lat": 51.5462802,
+        "lon": -0.1908537
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "100",
+        "addr:postcode": "NW6 2LU",
+        "addr:street": "West End Lane",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "yes",
+        "building:colour": "white",
+        "building:levels": "3",
+        "live_sport": "yes",
+        "name": "The Railway",
+        "ref:GB:uprn": "5163974;5163975;5163976;5186083;5120592;5185326;5166484;5020199",
+        "website": "https://www.greeneking.co.uk/pubs/greater-london/railway-west-hampstead"
+      }
+    },
+    {
+      "type": "way",
+      "id": 242803702,
+      "center": {
+        "lat": 51.5929787,
+        "lon": -0.3343953
+      },
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:housenumber": "9",
+        "addr:postcode": "HA3 5AH",
+        "addr:street": "Masons Avenue",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "building:material": "brick",
+        "check_date": "2026-04-26",
+        "fhrs:id": "276413",
+        "indoor_seating": "yes",
+        "live_sport": "yes",
+        "name": "Barretts",
+        "old_name": "Railway Bar",
+        "outdoor_seating": "no",
+        "roof:levels": "1",
+        "roof:shape": "gabled",
+        "source": "Bing;photograph;survey",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 243002737,
+      "center": {
+        "lat": 51.5962604,
+        "lon": -0.3350674
+      },
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housenumber": "100",
+        "addr:postcode": "HA3 7AH",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "building": "apartments",
+        "building:levels": "2",
+        "check_date": "2026-04-25",
+        "fhrs:id": "816528",
+        "live_sport": "yes",
+        "name": "The Three Wishes",
+        "roof:levels": "1",
+        "source": "Bing;photograph",
+        "source:addr": "FHRS Open Data",
+        "theme": "irish"
+      }
+    },
+    {
+      "type": "way",
+      "id": 243983813,
+      "center": {
+        "lat": 51.5833557,
+        "lon": -0.3141481
+      },
+      "tags": {
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housenumber": "217",
+        "addr:postcode": "HA3 0HD",
+        "addr:street": "Kenton Road",
+        "amenity": "pub",
+        "building": "apartments",
+        "building:levels": "3",
+        "email": "info@fizzsportsbar.com",
+        "fhrs:id": "532108",
+        "name": "Fizz Sports Bar",
+        "phone": "+44 20 3638 9660",
+        "roof:shape": "flat",
+        "source": "Bing;photograph;survey",
+        "source:addr": "FHRS Open Data",
+        "source:addr:housenumber": "extrapolation",
+        "survey:date": "2016-01-03",
+        "website": "http://www.fizzsportsbar.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 247916345,
+      "center": {
+        "lat": 51.5538298,
+        "lon": -0.2911479
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "412",
+        "addr:postcode": "HA9 6AH",
+        "addr:street": "High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "531880",
+        "name": "Thirsty Eddie's",
+        "roof:colour": "#B2908D",
+        "source": "Bing;photograph",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 247983971,
+      "center": {
+        "lat": 51.5531832,
+        "lon": -0.2852256
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housenumber": "324",
+        "addr:postcode": "HA9 6LL",
+        "addr:street": "Harrow Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "building:material": "brick",
+        "cuisine": "indian",
+        "email": "info@thearchwembley.co.uk",
+        "live_sport": "yes",
+        "name": "The Arch",
+        "opening_hours": "Mo-Tu 16:00-23:00; We-Th 12:00-23:00; Fr-Sa 12:00-01:00; Su 12:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8127 1141",
+        "ref:GB:uprn": "202149576;202228055;202198272;202089589",
+        "source": "Bing;photograph",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://thearchwembley.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 247987203,
+      "center": {
+        "lat": 51.5528885,
+        "lon": -0.2858669
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "313",
+        "addr:postcode": "HA9 6BA",
+        "addr:street": "Harrow Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "description": "Irish pub",
+        "name": "Mannions",
+        "ref:GB:uprn": "202089607;202149466",
+        "roof:colour": "#AB8880",
+        "source": "Bing;photograph",
+        "source:addr:housenumber": "extrapolation"
+      }
+    },
+    {
+      "type": "way",
+      "id": 248749056,
+      "center": {
+        "lat": 51.5534432,
+        "lon": -0.2927492
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housenumber": "397",
+        "addr:postcode": "HA9 6AA",
+        "addr:street": "High Road",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "contact:website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/jj-moons-wembley",
+        "fhrs:id": "531875",
+        "food": "yes",
+        "level": "0",
+        "name": "J.J. Moon's",
+        "real_ale": "yes",
+        "source": "photograph",
+        "source:addr": "FHRS Open Data",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/5/menus",
+        "wheelchair": "limited",
+        "wikidata": "Q88965907"
+      }
+    },
+    {
+      "type": "way",
+      "id": 248749066,
+      "center": {
+        "lat": 51.5535237,
+        "lon": -0.2931227
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "397A",
+        "addr:postcode": "HA9 6AA",
+        "addr:street": "High Road Wembley",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "fhrs:id": "531876",
+        "name": "The Liquor Station",
+        "source": "Bing;photograph",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 256331320,
+      "center": {
+        "lat": 51.5322471,
+        "lon": -0.2178703
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "64-66",
+        "addr:postcode": "NW10 3JJ",
+        "addr:street": "Chamberlayne Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "white",
+        "building:levels": "3",
+        "check_date": "2024-09-13",
+        "contact:phone": "+44 20 8968 8142",
+        "contact:website": "http://www.thewhippetinn.com/",
+        "fhrs:id": "533114",
+        "fhrs:local_authority_id": "4458",
+        "name": "The Whippet Inn",
+        "roof:colour": "black",
+        "roof:shape": "gabled",
+        "source:addr:postcode": "FHRS Open Data",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 256915441,
+      "center": {
+        "lat": 51.5362605,
+        "lon": -0.244932
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "95",
+        "addr:postcode": "NW10 4TS",
+        "addr:street": "High Street Harlesden",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "3",
+        "building:material": "brick",
+        "fhrs:id": "532044",
+        "fhrs:local_authority_id": "13041",
+        "name": "Royal Oak",
+        "ref:GB:uprn": "202149471;202086051",
+        "roof:levels": "1",
+        "source:addr:postcode": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 258988477,
+      "center": {
+        "lat": 51.552233,
+        "lon": -0.2988037
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "576",
+        "addr:postcode": "HA0 2AA",
+        "addr:street": "High Road",
+        "amenity": "bar",
+        "area": "yes",
+        "check_date": "2025-04-27",
+        "description": "\"Bar, Restaurant, Club\"",
+        "fhrs:id": "531919",
+        "level": "0",
+        "name": "Masti",
+        "phone": "+44 20 8782 2252",
+        "source": "photograph",
+        "source:addr": "FHRS Open Data",
+        "website": "http://www.masti-wembley.com"
+      }
+    },
+    {
+      "type": "way",
+      "id": 260004242,
+      "center": {
+        "lat": 51.5523039,
+        "lon": -0.3005773
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "610-612",
+        "addr:postcode": "HA0 2AF",
+        "addr:street": "High Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "2",
+        "building:material": "brick",
+        "fhrs:id": "531921",
+        "food": "yes",
+        "name": "Flannery's Bar",
+        "roof:levels": "1",
+        "source": "Bing;photograph",
+        "source:addr": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 279649007,
+      "center": {
+        "lat": 51.570516,
+        "lon": -0.3077393
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housename": "The Windermere",
+        "addr:postcode": "HA9 8QT",
+        "addr:street": "Windermere Avenue",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "2",
+        "check_date": "2023-03-08",
+        "fhrs:id": "532780",
+        "fhrs:local_authority_id": "25575",
+        "he:inscription_date": "2003-05-15",
+        "heritage": "2",
+        "heritage:operator": "Historic England",
+        "heritage:website": "https://historicengland.org.uk/listing/the-list/list-entry/1350348",
+        "historic": "building",
+        "indoor_seating": "yes",
+        "listed_status": "Grade II",
+        "live_sport": "yes",
+        "name": "The Windermere",
+        "operator": "Courage",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "ref:GB:nhle": "1350348",
+        "roof:levels": "1",
+        "wikidata": "Q17066576",
+        "wikipedia": "en:Windermere, South Kenton"
+      }
+    },
+    {
+      "type": "way",
+      "id": 285817480,
+      "center": {
+        "lat": 51.5619691,
+        "lon": -0.302153
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:housename": "Norfolk Arms",
+        "addr:housenumber": "96",
+        "addr:postcode": "HA9 7LT",
+        "addr:street": "Llanover Road",
+        "amenity": "bar",
+        "fhrs:id": "532263",
+        "fixme": "Describes itself as \"bar and restaurant\". Is it a bar, pub or restaurant in OSM terms?",
+        "food": "yes",
+        "name": "Aroma Lounge",
+        "phone": "+44 20 8904 5432",
+        "source": "survey;Bing 2012",
+        "source:addr": "FHRS Open Data",
+        "survey:date": "2015-06-27"
+      }
+    },
+    {
+      "type": "way",
+      "id": 295706350,
+      "center": {
+        "lat": 51.6017477,
+        "lon": -0.193591
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "298",
+        "addr:postcode": "N3 1RJ",
+        "addr:street": "Nether Street",
+        "alt_name": "Ahir Lorenzo's Bar Restaurant",
+        "amenity": "bar",
+        "building": "yes",
+        "email": "info@ahir.co.uk",
+        "name": "Ahir Lorenzo's",
+        "opening_hours": "Mo-Th 11:00-24:00; Fr-Sa 11:00-02:00; Su 11:00-24:00",
+        "phone": "+44 20 8371 0531",
+        "phone:mobile": "+44 7990 487509",
+        "website": "https://ahir.co.uk"
+      }
+    },
+    {
+      "type": "way",
+      "id": 361341226,
+      "center": {
+        "lat": 51.5251065,
+        "lon": -0.2029469
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "518",
+        "addr:postcode": "W9 3QA",
+        "addr:street": "Harrow Road",
+        "amenity": "pub",
+        "building": "retail",
+        "building:colour": "white",
+        "building:levels": "3",
+        "check_date": "2025-05-10",
+        "name": "The Frankfort Arms",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "roof:colour": "black",
+        "website": "https://www.craftunionpubs.com/frankfort-arms-paddington"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436678592,
+      "center": {
+        "lat": 51.5773286,
+        "lon": -0.2391054
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "210",
+        "addr:postcode": "NW9 7EE",
+        "addr:street": "West Hendon Broadway",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "white",
+        "building:levels": "2",
+        "name": "O'Hanlons",
+        "ref:GB:uprn": "200124663;200124662;200124802",
+        "roof:colour": "black",
+        "roof:shape": "flat"
+      }
+    },
+    {
+      "type": "way",
+      "id": 439016355,
+      "center": {
+        "lat": 51.5340706,
+        "lon": -0.2186709
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "83",
+        "addr:postcode": "NW10 3ND",
+        "addr:street": "Chamberlayne Road",
+        "amenity": "pub",
+        "brewery": "yes",
+        "building": "yes",
+        "building:colour": "brown",
+        "building:levels": "3",
+        "building:material": "brick",
+        "check_date": "2024-12-05",
+        "fhrs:id": "533119",
+        "fhrs:local_authority_id": "4473",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "live_sport": "yes",
+        "name": "The Chamberlayne",
+        "payment:apple_pay": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:google_pay": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref:GB:uprn": "202004067;202118426;202118425;202118424;202211787;202147853;202015538",
+        "roof:colour": "black",
+        "smoking": "outside",
+        "source:addr:postcode": "FHRS Open Data",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "wheelchair": "designated"
+      }
+    },
+    {
+      "type": "way",
+      "id": 439037559,
+      "center": {
+        "lat": 51.5288525,
+        "lon": -0.2162893
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "19",
+        "addr:postcode": "W10 4AE",
+        "addr:street": "Kilburn Lane",
+        "alt_name": "Paradise",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "red",
+        "building:levels": "4",
+        "building:material": "brick",
+        "check_date": "2025-04-27",
+        "contact:website": "http://www.theparadise.co.uk/",
+        "name": "Paradise by way of Kensal Green",
+        "ref:GB:uprn": "202077350",
+        "roof:colour": "red",
+        "roof:shape": "hipped"
+      }
+    },
+    {
+      "type": "way",
+      "id": 460379480,
+      "center": {
+        "lat": 51.5348421,
+        "lon": -0.2199113
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "102",
+        "addr:postcode": "NW10 3JN",
+        "addr:street": "Chamberlayne Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "brown",
+        "building:levels": "3",
+        "fhrs:id": "533125",
+        "fhrs:local_authority_id": "4491",
+        "live_sport": "yes",
+        "name": "Maggie's Bar",
+        "ref:GB:uprn": "202190924;202211956;202017749;202118383;202118382;202118381",
+        "roof:colour": "black",
+        "roof:orientation": "across",
+        "roof:shape": "gabled",
+        "source:addr:postcode": "FHRS Open Data",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 467012110,
+      "center": {
+        "lat": 51.5286603,
+        "lon": -0.2165136
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "5",
+        "addr:postcode": "NW10 5LG",
+        "addr:street": "Regent Street",
+        "amenity": "pub",
+        "building": "yes",
+        "contact:website": "http://parlourkensal.com/",
+        "name": "Parlour Kensal",
+        "ref:GB:uprn": "202216285;202052538",
+        "toilets": "yes",
+        "toilets:access": "customers"
+      }
+    },
+    {
+      "type": "way",
+      "id": 473654293,
+      "center": {
+        "lat": 51.5463378,
+        "lon": -0.1913698
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "175",
+        "addr:postcode": "NW6 2LH",
+        "addr:street": "West End Lane",
+        "amenity": "bar",
+        "building": "yes",
+        "building:colour": "red",
+        "building:levels": "3",
+        "check_date": "2026-06-27",
+        "name": "ONE75",
+        "opening_hours": "Tu-We 17:30-01:00; Th 17:30-02:00; Fr-Sa 17:30-03:00; Su 16:00-00:00",
+        "outdoor_seating": "yes",
+        "roof:colour": "black",
+        "roof:orientation": "across",
+        "roof:shape": "gabled",
+        "website": "https://one75.bar/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 477964006,
+      "center": {
+        "lat": 51.5289095,
+        "lon": -0.2183454
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "786",
+        "addr:postcode": "NW10 5JX",
+        "addr:street": "Harrow Road",
+        "amenity": "pub",
+        "building": "yes",
+        "building:colour": "brown",
+        "building:levels": "3",
+        "check_date": "2025-07-24",
+        "indoor_seating": "yes",
+        "name": "William IV",
+        "outdoor_seating": "yes",
+        "ref:GB:uprn": "202149575;202090208;202212288",
+        "roof:colour": "black",
+        "roof:shape": "gabled",
+        "start_date": "1837"
+      }
+    },
+    {
+      "type": "way",
+      "id": 579402933,
+      "center": {
+        "lat": 51.5434539,
+        "lon": -0.1995097
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "264-266",
+        "addr:postcode": "NW6 2BY",
+        "addr:street": "Kilburn High Road",
+        "addr:suburb": "KIlburn",
+        "amenity": "pub",
+        "brewery": "guinness;heineken;cruzcampo",
+        "building": "yes",
+        "fhrs:id": "424951",
+        "fhrs:local_authority_id": "4163",
+        "live_sport": "yes",
+        "name": "Sir Colin Campbell",
+        "opening_hours": "Mo-Su 11:00-00:00",
+        "phone": "+44 20 3021 1831",
+        "ref:GB:uprn": "5083185;5118688",
+        "smoking": "outside",
+        "website": "https://www.sircc.pub"
+      }
+    },
+    {
+      "type": "way",
+      "id": 627999454,
+      "center": {
+        "lat": 51.5734134,
+        "lon": -0.2617569
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:postcode": "NW9 8SN",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "The George",
+        "ref:GB:uprn": "202149487;202114590"
+      }
+    },
+    {
+      "type": "way",
+      "id": 671115966,
+      "center": {
+        "lat": 51.5874484,
+        "lon": -0.2508585
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "10",
+        "addr:postcode": "NW9 6RR",
+        "addr:street": "Varley Parade",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "name": "The Moon Under Water",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/london/the-moon-under-water-colindale",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/30/menus",
+        "wikidata": "Q88916791"
+      }
+    },
+    {
+      "type": "way",
+      "id": 743269175,
+      "center": {
+        "lat": 51.5486848,
+        "lon": -0.2212645
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "88",
+        "addr:postcode": "NW2 4QY",
+        "addr:street": "Walm Lane",
+        "amenity": "bar",
+        "brewery": "various",
+        "building": "yes",
+        "building:levels": "3",
+        "building:material": "brick",
+        "check_date": "2025-03-01",
+        "cuisine": "burger",
+        "description": "Beer bar that sells burgers",
+        "diet:vegan": "yes",
+        "email": "willesden@beerandburgerstore.com",
+        "food": "yes",
+        "name": "Beer + Burger",
+        "opening_hours": "Mo-Th 16:00-23:00; Fr-Sa 12:00-23:00; Su 12:00-22:30",
+        "outdoor_seating": "no",
+        "phone": "+44 20 3019 7575",
+        "ref:GB:uprn": "202033781;202151016;202213993;202213994;202213995",
+        "roof:colour": "grey",
+        "takeaway": "yes",
+        "website": "https://www.beerandburgerstore.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 777761485,
+      "center": {
+        "lat": 51.5260958,
+        "lon": -0.2114382
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "265",
+        "addr:postcode": "W10 5DB",
+        "addr:street": "Kensal Road",
+        "amenity": "pub",
+        "building": "yes",
+        "name": "Frames",
+        "ref:GB:uprn": "217119271;217101438;217043052"
+      }
+    },
+    {
+      "type": "way",
+      "id": 806213988,
+      "center": {
+        "lat": 51.5649131,
+        "lon": -0.2772236
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "1-5",
+        "addr:postcode": "HA9 9AB",
+        "addr:street": "Bridge Road",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "pub",
+        "live_sport": "yes",
+        "name": "The Torch",
+        "ref:GB:uprn": "202229011;202127119;202149431;202127118",
+        "source:addr": "FHRS Open Data",
+        "website": "https://www.greeneking.co.uk/pubs/middlesex/torch"
+      }
+    },
+    {
+      "type": "way",
+      "id": 818883558,
+      "center": {
+        "lat": 51.5489485,
+        "lon": -0.3295411
+      },
+      "tags": {
+        "addr:city": "Greenford",
+        "addr:country": "GB",
+        "addr:postcode": "UB6 7QL",
+        "addr:street": "Horsenden Lane North",
+        "amenity": "pub",
+        "brand": "Hungry Horse",
+        "brand:wikidata": "Q5943510",
+        "fhrs:id": "1032910",
+        "landuse": "retail",
+        "name": "The Ballot Box",
+        "website": "https://www.hungryhorse.co.uk/pubs/middlesex/ballot-box/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 863760449,
+      "center": {
+        "lat": 51.5265311,
+        "lon": -0.312486
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:postcode": "W5 1QP",
+        "addr:street": "Pitshanger Lane",
+        "amenity": "pub",
+        "brand": "Village Inn",
+        "brand:wikidata": "Q7930659",
+        "brand:wikipedia": "en:Village Inn",
+        "building": "yes",
+        "live_sport": "yes",
+        "name": "Village Inn",
+        "ref:GB:uprn": "12115196;12190028;12086264;12190029"
+      }
+    },
+    {
+      "type": "way",
+      "id": 968208603,
+      "center": {
+        "lat": 51.5835405,
+        "lon": -0.2670913
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "125",
+        "addr:postcode": "NW9 8YG",
+        "addr:street": "Slough Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date:opening_hours": "2024-09-15",
+        "live_sport": "yes",
+        "name": "The Green Man",
+        "opening_hours:signed": "no",
+        "ref:GB:uprn": "202044415;202105796"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1191618802,
+      "center": {
+        "lat": 51.6032666,
+        "lon": -0.1914519
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housename": "51",
+        "addr:postcode": "N3 1XP",
+        "addr:street": "Ballards Lane",
+        "alt_name": "Joiners Arms",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "1535600",
+        "live_sport": "yes",
+        "name": "The Joiners",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "outdoor_seating": "yes",
+        "website": "https://www.crafted-social.co.uk/joiners-finchley"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1238928087,
+      "center": {
+        "lat": 51.5510363,
+        "lon": -0.2010547
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "40-42",
+        "addr:postcode": "NW6 1NR",
+        "addr:street": "Mill Lane",
+        "amenity": "pub",
+        "building": "yes",
+        "email": "info@thealliancenw6.com",
+        "live_sport": "yes",
+        "name": "The Alliance",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-21:00",
+        "phone": "+44 2077 942860",
+        "website": "https://locipubs.com/alliance/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1262916828,
+      "center": {
+        "lat": 51.604446,
+        "lon": -0.3273554
+      },
+      "tags": {
+        "amenity": "pub",
+        "brand": "Ember Inns",
+        "brand:wikidata": "Q116272278",
+        "building": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "Duck in the Pond",
+        "outdoor_seating": "yes",
+        "website": "https://www.emberinns.co.uk/nationalsearch/london/the-duck-in-the-pond-harrow#/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1311966735,
+      "center": {
+        "lat": 51.5352729,
+        "lon": -0.2265726
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "123",
+        "addr:postcode": "NW10 5HA",
+        "addr:street": "College Road",
+        "amenity": "pub",
+        "check_date": "2024-12-19",
+        "check_date:opening_hours": "2025-02-05",
+        "check_date:website": "2025-02-05",
+        "contact:phone": "+44 20 8960 0693",
+        "contact:website": "https://theislandnw10.com/",
+        "fhrs:id": "533356",
+        "fhrs:local_authority_id": "6179",
+        "name": "The Island",
+        "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:30"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1315886898,
+      "center": {
+        "lat": 51.5365849,
+        "lon": -0.2478768
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housenumber": "25",
+        "addr:postcode": "NW10 4NE",
+        "addr:street": "High Street Harlesden",
+        "amenity": "pub",
+        "building": "retail",
+        "building:colour": "white",
+        "building:material": "brick",
+        "fhrs:id": "532027",
+        "fhrs:local_authority_id": "12988",
+        "live_sport": "yes",
+        "name": "The Shawl",
+        "source:addr:postcode": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1316914002,
+      "center": {
+        "lat": 51.5359825,
+        "lon": -0.2441984
+      },
+      "tags": {
+        "addr:city": "London",
+        "addr:housename": "Green Man Public House",
+        "addr:housenumber": "109",
+        "addr:postcode": "NW10 4TS",
+        "addr:street": "High Street Harlesden",
+        "alt_name": "The Green Man Pub, Restaurant & Tapas Bar",
+        "amenity": "pub",
+        "cuisine": "portuguese;tapas",
+        "fhrs:id": "532051",
+        "fhrs:local_authority_id": "13059",
+        "food": "yes",
+        "name": "The Green Man",
+        "note:addr:housenumber": "There really do appear to be two buildings with an address of 109 High Street",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8965 6443",
+        "source:addr:postcode": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1386646559,
+      "center": {
+        "lat": 51.561281,
+        "lon": -0.2828308
+      },
+      "tags": {
+        "addr:city": "Wembley",
+        "addr:housenumber": "12-13",
+        "addr:postcode": "HA9 0RQ",
+        "addr:street": "Empire Way",
+        "amenity": "pub",
+        "building:part": "retail",
+        "name": "Blue Check"
+      }
+    }
+  ]
+}

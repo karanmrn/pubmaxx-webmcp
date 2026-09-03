@@ -1,0 +1,104 @@
+/* The Pint Index arrival strip. Mobile-first: at 390px the area chips are a
+   two-column grid with 44px tap targets and names that WRAP rather than
+   truncate, because a clipped borough name is a destination the reader cannot
+   identify. Depends only on the global design tokens, so both themes track. */
+
+.pintArrival {
+  margin: 32px 0 0;
+  padding: 20px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised, #fff));
+}
+
+.pintArrivalTitle {
+  margin: 0 0 8px;
+  font-family: var(--font-garamond, var(--serif));
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pintArrivalDek {
+  margin: 0 0 16px;
+  max-width: 58ch;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.pintArrivalAreas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pintArrivalArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-height: 56px;
+  height: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.pintArrivalArea:hover {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel));
+}
+
+.pintArrivalArea:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.pintArrivalAreaName {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.pintArrivalAreaMeta {
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
+}
+
+.pintArrivalSource {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  overflow-wrap: break-word;
+}
+
+.pintArrivalSource a {
+  color: var(--brass);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pintArrivalSource a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  .pintArrival {
+    padding: 16px;
+  }
+
+  .pintArrivalAreas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

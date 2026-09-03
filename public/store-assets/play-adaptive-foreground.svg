@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 108 108">
+  <!--
+    Play adaptive icon, foreground layer (issue #440, re-branded #520/#523): the
+    coral double-struck X on a transparent field, drawn on the 108dp adaptive
+    canvas. The mark is the canonical MARK_GEOMETRY X (two thin ascending strokes
+    + the thick descending stroke, filled polygons), matching the native
+    icon-foreground.png source. Launchers show only the central 72dp and guarantee
+    the central 66dp circle; at scale 0.9 the X's farthest stroke corner sits
+    ~29.3dp from centre, comfortably inside the 33dp safe radius. NO ember — the
+    static icon exports drop it. Keep this layer mark-only: the (white) background
+    layer carries the field, and the two shift independently under parallax. Coral
+    so the mark reads on the white background layer.
+  -->
+  <g transform="translate(54 54) scale(0.9) translate(-32 -32)">
+    <polygon points="42,10 47,10 13,54 8,54" fill="#ff5a5f"/>
+    <polygon points="51,10 56,10 22,54 17,54" fill="#ff5a5f"/>
+    <polygon points="9,10 21,10 55,54 43,54" fill="#ff5a5f"/>
+  </g>
+</svg>

@@ -1,0 +1,276 @@
+{
+  "schema": "pubmax-perf-baseline/v1",
+  "target": "prod",
+  "baseUrl": "https://pubmaxxing.com",
+  "generatedAt": "2026-07-24T13:08:31.300Z",
+  "method": {
+    "tool": "lighthouse",
+    "formFactor": "mobile",
+    "throttling": {
+      "cpuSlowdownMultiplier": 4,
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.56,
+      "uploadThroughputKbps": 675
+    },
+    "lighthouseRunsPerRoute": 3,
+    "transitionRunsPerTab": 5,
+    "transitionBudgetMs": 300
+  },
+  "lighthouse": {
+    "/": {
+      "url": "https://pubmaxxing.com/",
+      "runs": 3,
+      "okRuns": 3,
+      "median": {
+        "lcp": 1824,
+        "tbt": 274,
+        "cls": 0.004,
+        "tti": 5162,
+        "fcp": 1224,
+        "score": 91
+      },
+      "samples": [
+        {
+          "lcp": 1803.2155,
+          "tbt": 319,
+          "cls": 0.004103677359258293,
+          "tti": 5332.7155,
+          "fcp": 1294.2155,
+          "score": 91
+        },
+        {
+          "lcp": 1823.7725,
+          "tbt": 56.5,
+          "cls": 0.004103677359258293,
+          "tti": 5059.772500000001,
+          "fcp": 1223.7725,
+          "score": 98
+        },
+        {
+          "lcp": 2867.0085,
+          "tbt": 274,
+          "cls": 0.004103677359258293,
+          "tti": 5162.0085,
+          "fcp": 1142.0085,
+          "score": 89
+        }
+      ]
+    },
+    "/map": {
+      "url": "https://pubmaxxing.com/map",
+      "runs": 3,
+      "okRuns": 2,
+      "median": {
+        "lcp": 6814,
+        "tbt": 458,
+        "cls": 0,
+        "tti": 6814,
+        "fcp": 1339,
+        "score": 62
+      },
+      "samples": [
+        {
+          "lcp": 6997.78,
+          "tbt": 328,
+          "cls": 0,
+          "tti": 6997.78,
+          "fcp": 1597.7799999999997,
+          "score": 63
+        },
+        {
+          "lcp": 6630.6849999999995,
+          "tbt": 588,
+          "cls": 0,
+          "tti": 6630.6849999999995,
+          "fcp": 1080.685,
+          "score": 60
+        }
+      ]
+    },
+    "/today": {
+      "url": "https://pubmaxxing.com/today",
+      "runs": 3,
+      "okRuns": 3,
+      "median": {
+        "lcp": 1822,
+        "tbt": 513,
+        "cls": 0,
+        "tti": 3788,
+        "fcp": 1204,
+        "score": 86
+      },
+      "samples": [
+        {
+          "lcp": 2720.625,
+          "tbt": 535,
+          "cls": 0,
+          "tti": 3663.625,
+          "fcp": 1091.625,
+          "score": 83
+        },
+        {
+          "lcp": 1821.6005,
+          "tbt": 418,
+          "cls": 0,
+          "tti": 3878.1005000000005,
+          "fcp": 1238.6005,
+          "score": 88
+        },
+        {
+          "lcp": 1771.8525,
+          "tbt": 513,
+          "cls": 0,
+          "tti": 3787.8525,
+          "fcp": 1203.8525,
+          "score": 86
+        }
+      ]
+    },
+    "/tonight": {
+      "url": "https://pubmaxxing.com/tonight",
+      "runs": 3,
+      "okRuns": 3,
+      "median": {
+        "lcp": 1739,
+        "tbt": 96,
+        "cls": 0.007,
+        "tti": 3572,
+        "fcp": 1139,
+        "score": 99
+      },
+      "samples": [
+        {
+          "lcp": 1739.346,
+          "tbt": 130,
+          "cls": 0.05979798804971897,
+          "tti": 3571.8460000000005,
+          "fcp": 1139.346,
+          "score": 98
+        },
+        {
+          "lcp": 1764.2649999999999,
+          "tbt": 84.5,
+          "cls": 0.007025899690667441,
+          "tti": 3581.7650000000003,
+          "fcp": 1164.2649999999999,
+          "score": 99
+        },
+        {
+          "lcp": 1727.1975,
+          "tbt": 95.5,
+          "cls": 0,
+          "tti": 3544.6975,
+          "fcp": 1127.1975,
+          "score": 99
+        }
+      ]
+    },
+    "/plan": {
+      "url": "https://pubmaxxing.com/plan",
+      "runs": 3,
+      "okRuns": 3,
+      "median": {
+        "lcp": 2353,
+        "tbt": 142,
+        "cls": 0,
+        "tti": 3437,
+        "fcp": 1152,
+        "score": 97
+      },
+      "samples": [
+        {
+          "lcp": 2276.964,
+          "tbt": 142.5,
+          "cls": 0,
+          "tti": 3437.464,
+          "fcp": 1151.964,
+          "score": 97
+        },
+        {
+          "lcp": 3019.313,
+          "tbt": 141.5,
+          "cls": 0,
+          "tti": 3437.313,
+          "fcp": 1069.313,
+          "score": 93
+        },
+        {
+          "lcp": 2353.061,
+          "tbt": 110.5,
+          "cls": 0,
+          "tti": 3438.5610000000006,
+          "fcp": 1153.0610000000001,
+          "score": 97
+        }
+      ]
+    }
+  },
+  "transitions": {
+    "map": {
+      "label": "Map",
+      "from": "/today",
+      "targetPrefix": "/map",
+      "runs": 5,
+      "samplesMs": [
+        821,
+        357,
+        691,
+        1290,
+        491
+      ],
+      "medianMs": 691,
+      "budgetMs": 300,
+      "withinBudget": false
+    },
+    "tonight": {
+      "label": "Tonight",
+      "from": "/today",
+      "targetPrefix": "/tonight",
+      "runs": 5,
+      "samplesMs": [
+        541,
+        611,
+        549,
+        596,
+        1377
+      ],
+      "medianMs": 596,
+      "budgetMs": 300,
+      "withinBudget": false
+    },
+    "stories": {
+      "label": "Stories",
+      "from": "/today",
+      "targetPrefix": "/feed",
+      "runs": 5,
+      "samplesMs": [
+        686,
+        697,
+        866,
+        436,
+        359
+      ],
+      "medianMs": 686,
+      "budgetMs": 300,
+      "withinBudget": false
+    },
+    "you": {
+      "label": "You",
+      "from": "/today",
+      "targetPrefix": "/u",
+      "runs": 5,
+      "samplesMs": [
+        400,
+        634,
+        559,
+        1166,
+        486
+      ],
+      "medianMs": 559,
+      "budgetMs": 300,
+      "withinBudget": false
+    }
+  }
+}

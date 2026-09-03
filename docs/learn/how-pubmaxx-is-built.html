@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How PUBMAXX Is Built — a first-principles engineering curriculum</title>
+<style>
+  :root {
+    --paper: #f6f1e7;
+    --panel: #fffdf8;
+    --ink: #211d17;
+    --ink-soft: #4a4237;
+    --line: #ddd2be;
+    --brass: #8a6d1f;
+    --brass-bright: #b8902c;
+    --river: #2f6f7a;
+    --brick: #9c3b2e;
+    --pint: #3f7d3a;
+    --code-bg: #f0e9da;
+    --code-ink: #3a3222;
+    --callout-bg: #efe7d6;
+    --warn-bg: #f7ecd9;
+    --warn-line: #caa64e;
+    --maxw: 860px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14120e;
+      --panel: #1c1913;
+      --ink: #ece3d1;
+      --ink-soft: #b3a892;
+      --line: #322c22;
+      --brass: #d3ab52;
+      --brass-bright: #e6c477;
+      --river: #6fb8c4;
+      --brick: #e08a7c;
+      --pint: #8ac585;
+      --code-bg: #201c15;
+      --code-ink: #d9cfba;
+      --callout-bg: #221e16;
+      --warn-bg: #241d10;
+      --warn-line: #7a6023;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px 120px; }
+  header.masthead {
+    border-bottom: 2px solid var(--brass);
+    padding: 54px 0 30px;
+    margin-bottom: 8px;
+  }
+  header.masthead .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    color: var(--brass);
+    font-weight: 700;
+  }
+  h1 {
+    font: 700 40px/1.12 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    margin: 12px 0 10px;
+    letter-spacing: -0.01em;
+  }
+  header.masthead p.lede { font-size: 18px; color: var(--ink-soft); margin: 0; max-width: 62ch; }
+  h2 {
+    font: 700 27px/1.2 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    margin: 62px 0 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    letter-spacing: -0.01em;
+  }
+  h2 .num {
+    display: inline-block;
+    color: var(--brass);
+    font-size: 15px;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-family: -apple-system, sans-serif;
+    letter-spacing: 0.1em;
+  }
+  h3 {
+    font: 700 19px/1.3 -apple-system, sans-serif;
+    margin: 34px 0 4px;
+    color: var(--ink);
+  }
+  h4 { font: 700 15px/1.3 -apple-system, sans-serif; margin: 22px 0 2px; color: var(--brass); text-transform: uppercase; letter-spacing: 0.06em; }
+  p { margin: 12px 0; }
+  a { color: var(--river); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: var(--river); }
+  code {
+    font: 14px/1.5 "SF Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+    background: var(--code-bg);
+    color: var(--code-ink);
+    padding: 1px 5px;
+    border-radius: 4px;
+    word-break: break-word;
+  }
+  pre {
+    background: var(--code-bg);
+    color: var(--code-ink);
+    padding: 16px 18px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    font: 13px/1.55 "SF Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+    margin: 16px 0;
+  }
+  pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+  .path {
+    font: 12.5px/1.4 "SF Mono", ui-monospace, Menlo, monospace;
+    color: var(--brass);
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1px 6px;
+    white-space: nowrap;
+  }
+  ul, ol { padding-left: 24px; }
+  li { margin: 6px 0; }
+  blockquote {
+    margin: 16px 0;
+    padding: 4px 18px;
+    border-left: 3px solid var(--brass);
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .callout {
+    background: var(--callout-bg);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--river);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 20px 0;
+  }
+  .callout.staff {
+    border-left-color: var(--brass-bright);
+    background: var(--warn-bg);
+  }
+  .callout.correction {
+    border-left-color: var(--brick);
+  }
+  .callout .label {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: var(--brass);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .callout.correction .label { color: var(--brick); }
+  .callout.staff .label { color: var(--brass-bright); }
+  .principle {
+    font-size: 15px;
+    color: var(--ink-soft);
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 14px 0;
+  }
+  .principle b { color: var(--ink); }
+  table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 14.5px; }
+  th, td { border: 1px solid var(--line); padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--code-bg); font-weight: 700; }
+  figure { margin: 22px 0; }
+  figure svg { max-width: 100%; height: auto; display: block; }
+  figcaption { font-size: 13px; color: var(--ink-soft); margin-top: 6px; text-align: center; }
+  .toc {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 26px;
+    margin: 30px 0 10px;
+  }
+  .toc h2 { border: none; margin: 0 0 10px; padding: 0; font-size: 20px; }
+  .toc ol { counter-reset: ch; list-style: none; padding-left: 0; }
+  .toc ol li { counter-increment: ch; margin: 7px 0; padding-left: 34px; position: relative; }
+  .toc ol li::before {
+    content: counter(ch, decimal-leading-zero);
+    position: absolute; left: 0; top: 0;
+    color: var(--brass); font-weight: 700;
+    font: 13px/1.65 "SF Mono", monospace;
+  }
+  .ascii { white-space: pre; font: 12px/1.35 "SF Mono", ui-monospace, Menlo, monospace; }
+  .meta { color: var(--ink-soft); font-size: 14px; }
+  hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+  .pill { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.04em; padding:2px 8px; border-radius:99px; border:1px solid var(--line); color:var(--ink-soft); }
+  .footnote { font-size: 13.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="kicker">A first-principles engineering curriculum</div>
+  <h1>How PUBMAXX Is Built</h1>
+  <p class="lede">A working engineer's tour of one real product — from the request lifecycle up to staff-level judgement — where every principle is anchored to the exact file and decision in this repository that embodies it. Written for the owner, to grow toward staff / principal software, data, and AI engineering.</p>
+</header>
+
+<p class="meta">Read it in order the first time; after that, jump to whichever chapter you're touching. Each chapter follows the same spine: <b>the general principle → why it matters at scale → how PUBMAXX does it → the exact file paths → one staff-level question to ask yourself.</b> Every file path points at real code on the branch this was written from. Where the original brief for this document disagreed with the shipped code, I corrected the document to reality and flagged it in a red <span class="pill">reality check</span> box — because a curriculum that teaches a fiction is worse than none.</p>
+
+<div class="toc">
+  <h2>The ten chapters</h2>
+  <ol>
+    <li><a href="#ch1">First principles of a web product</a> — request lifecycle, SSR/CSR/static, and the render path of <code>/map</code>.</li>
+    <li><a href="#ch2">The data layer as a contract</a> — the dual-backend seam, RLS as defence-in-depth, and the migration-ledger discipline.</li>
+    <li><a href="#ch3">Data engineering</a> — deterministic pipelines, provenance-first data, and real data-quality war stories.</li>
+    <li><a href="#ch4">Performance engineering</a> — budgets as gates, two-stage payloads, and trusting nothing that hasn't painted.</li>
+    <li><a href="#ch5">Caching layers</a> — the service worker, the CDN, HTTP headers, and when <code>no-store</code> is the only honest answer.</li>
+    <li><a href="#ch6">API &amp; security fundamentals</a> — the locked error contract, durable rate limiting, and write-surface certification.</li>
+    <li><a href="#ch7">Distributed-systems thinking on serverless</a> — statelessness, delivery semantics, idempotency, durable claims.</li>
+    <li><a href="#ch8">Product &amp; AI engineering</a> — the agent-fleet development model this repo is built <em>with</em>, and verification as culture.</li>
+    <li><a href="#ch9">Mobile / native strategy</a> — PWA vs wrapper vs native, the remote-URL decision, and seams that keep the bundle clean.</li>
+    <li><a href="#ch10">What staff+ looks like</a> — the judgement calls in this repo, plus a real reading list per discipline.</li>
+  </ol>
+</div>
+
+<div class="callout">
+  <span class="label">The 60-second version of the product</span>
+  PUBMAXX is a price-aware, story-led London pub-crawl planner. Three layers ride on one living 3-D map: the <b>price</b> of every observed pint (colour-coded cheap→expensive), the <b>setting</b> (water, gardens, walkable shape), and the <b>story</b> (heritage, sourced editorial, and community "Pint Drops," each carrying a visible provenance badge). Stack: Next.js 16 (App Router) · React 19 · TypeScript · MapLibre GL + CARTO/OpenFreeMap basemaps · Supabase (Postgres + Storage + RLS) · OpenRouter (Claude) for the retrieval-grounded "Landlord" · Vitest + Playwright · deployed on Vercel. The whole thing runs <b>keyless</b> in local dev. Hold onto that last fact — it is not a convenience, it is the spine of the architecture, and you will see why in nearly every chapter.
+</div>
+
+<!-- ================= CHAPTER 1 ================= -->
+<h2 id="ch1"><span class="num">CH 01</span>First principles of a web product</h2>
+
+<div class="principle"><b>Principle.</b> Every web page is the output of a function that turns a <em>request</em> into <em>bytes</em>. The only real design question is <b>where and when that function runs</b>: on the server before the response is sent, in the browser after it arrives, or once at build time and cached forever. Everything else — frameworks, hooks, hydration — is machinery for choosing that answer per screen.</div>
+
+<h3>The request lifecycle, stripped to its bones</h3>
+<p>When a browser asks for <code>https://pubmaxxing.com/map</code>, a chain runs whether or not you designed it consciously: DNS resolves the host → a TCP+TLS handshake opens a connection → an HTTP <code>GET /map</code> travels to Vercel's edge → a function produces an HTML document → the browser parses it, discovers subresources (JS, CSS, fonts, data), fetches those, builds the DOM, runs the JavaScript, and only then <em>paints</em>. The user's felt experience is dominated by two moments in that chain: <b>Time To First Byte</b> (how long until the server starts answering) and <b>Largest Contentful Paint</b> (how long until the main thing is on screen). Almost every performance decision in this repo is an argument about moving work earlier or later in that chain.</p>
+
+<h3>SSR vs CSR vs static — the three places the render function can live</h3>
+<table>
+  <tr><th>Strategy</th><th>Where the HTML is built</th><th>Good for</th><th>Cost</th></tr>
+  <tr><td><b>Static (SSG/ISR)</b></td><td>Once, at build time; served from CDN</td><td>Content that's the same for everyone (marketing, docs)</td><td>Can't personalise per request; must rebuild to change</td></tr>
+  <tr><td><b>Server-rendered (SSR)</b></td><td>Per request, on the server</td><td>Personalised or fast-changing HTML that must be crawlable</td><td>TTFB includes server work; needs a running server</td></tr>
+  <tr><td><b>Client-rendered (CSR)</b></td><td>In the browser, after an near-empty shell loads</td><td>Highly interactive apps where the first paint can be a skeleton</td><td>Blank until JS loads &amp; runs; bad for SEO if not paired with SSR</td></tr>
+</table>
+<p>These are not tribes to join; they're tools to mix <em>per route</em>. The App Router's entire reason for existing is to let you pick per component: server components render on the server and ship zero JS; a <code>"use client"</code> boundary marks the sub-tree that also runs in the browser.</p>
+
+<h3>Why Next.js App Router here — and the one line that changed the whole rendering model</h3>
+<p>PUBMAXX is one Next.js 16 App Router app. But there is a subtle, load-bearing decision that overrides the usual "static by default" story. Open <span class="path">proxy.ts</span> (Next 16 renamed the old <code>middleware.ts</code> convention to <code>proxy.ts</code>). It builds a <b>per-request Content-Security-Policy with a fresh nonce</b> so that <code>script-src</code> can drop <code>'unsafe-inline'</code> — the single most valuable XSS mitigation you can make on a page that runs inline scripts. The comment spells out the trade-off honestly:</p>
+<pre><code>// TRADE-OFF (acknowledged): a per-request nonce forces DYNAMIC rendering for
+// every route — static generation / ISR / PPR are incompatible with nonce CSP
+// because a prebuilt shell can't know the request's nonce.</code></pre>
+<p>Read that twice. A <em>security</em> decision (nonce-based CSP) silently made a <em>rendering</em> decision (everything is dynamic, nothing is statically prebuilt). This is the essence of engineering at altitude: choices couple across layers, and the senior move is to see the coupling, price it, and write the price down in the code. The security headers that <em>don't</em> need per-request data — HSTS, <code>X-Content-Type-Options</code>, <code>X-Frame-Options</code>, <code>Permissions-Policy</code>, COOP, Referrer-Policy — stay in <span class="path">next.config.mjs</span> on <code>/:path*</code>; only the CSP moved to the proxy. Knowing <em>which</em> headers must be per-request and which can be static is exactly the kind of distinction that separates "it works" from "it works and I can defend every line."</p>
+
+<h3>The render path of <code>/map</code>, traced end to end</h3>
+<p>Now let's follow one real screen. The URL <code>/map</code> maps to <span class="path">app/map/page.tsx</span> — and it is only 55 lines. It is a <b>server component</b> whose main job is metadata:</p>
+<pre><code>export async function generateMetadata({ searchParams }: MapPageProps): Promise&lt;Metadata&gt; {
+  const sp = searchParams ? await searchParams : undefined;
+  const band = firstSearchParam(sp?.band);
+  const crawl = firstSearchParam(sp?.crawl);
+  const stopCount = stopCountFromPubsParam(firstSearchParam(sp?.pubs));
+  // ... builds OG title/description/image from the crawl encoded in the URL
+}</code></pre>
+<p>Two things here already teach a lot. First, <code>searchParams</code> is a <em>Promise</em> you <code>await</code> — in Next 16 the request inputs are async, which nudges you to treat the request as data that arrives, not a global you read. Second, the page derives its Open Graph card <em>from the crawl state in the URL</em>: share a link to a specific crawl and the preview image reflects that crawl. The URL is the source of truth for shareable state — a theme you'll meet again in Chapter 3.</p>
+<p>The visible page itself renders <span class="path">components/PubMaxingShell</span>, and the actual map is <span class="path">components/PubMapCanvas.tsx</span>, which begins with <code>"use client"</code>. That boundary is not incidental — <b>WebGL has no server story</b>. You cannot render a GPU canvas on a serverless function; the map <em>must</em> be constructed in the browser inside a mount effect. So the render path is: server builds the HTML shell + metadata (fast, crawlable, SEO-friendly) → the shell paints instantly → the client boundary hydrates → a single mount effect constructs the MapLibre map, reads CSS custom-property "tokens," and paints every pub as a GeoJSON layer on the GPU. The split is deliberate: the parts that benefit from the server (metadata, first paint, security headers) run on the server; the one part that <em>only</em> works in the browser (WebGL) is quarantined behind exactly one <code>"use client"</code> file.</p>
+
+<h3>Hydration: the seam where server HTML meets client JavaScript</h3>
+<p>There's a moment in the render path that quietly causes more bugs than any other: <b>hydration</b>, when React takes the server-rendered HTML and "adopts" it in the browser, attaching event listeners and reconciling its virtual DOM against the markup that's already there. The rule React enforces is unforgiving: <em>the first client render must produce exactly the HTML the server produced</em>, or you get a hydration mismatch (the infamous React #418) and React may throw away the server markup and re-render from scratch — a visible flash and a correctness hazard. This matters because the most natural thing to do — read <code>localStorage</code> or <code>window.matchMedia</code> during render to pick a theme — <em>breaks</em> hydration, because the server has no <code>localStorage</code> and can't know the user's theme, so server HTML and first client render disagree.</p>
+<p>PUBMAXX's theme system (<span class="path">app/layout.tsx</span> + <span class="path">components/ThemeToggle.tsx</span>) is a small masterclass in resolving this. Two cooperating pieces: (1) an <b>inline no-flash script</b> runs synchronously in <code>&lt;head&gt;</code>, before paint, reading <code>localStorage["pubmax-theme"]</code>/<code>prefers-color-scheme</code> and setting <code>html[data-theme]</code> — so the correct theme is applied <em>before</em> React even boots, with no flash; and (2) the toggle reads state via <code>useSyncExternalStore</code> with a <b>deterministic <code>"light"</code> server snapshot</b>, so server HTML and first client render agree (both "light"), and only <em>after</em> hydration does it re-read the real attribute. The <code>&lt;html suppressHydrationWarning&gt;</code> exists precisely because that inline script mutates <code>&lt;html&gt;</code> before hydration. The lesson generalizes to all SSR: <b>anything that differs between server and client must be applied outside React's render — either before it (an inline script) or after it (an effect) — never during it.</b></p>
+
+<figure>
+<div class="ascii">  GET /map ──▶ Vercel edge ──▶ proxy.ts (mint nonce, build CSP)
+                                   │
+                                   ▼
+                         app/map/page.tsx  (server component)
+                         • generateMetadata() reads ?band/?crawl/?pubs
+                         • renders &lt;PubMaxingShell/&gt; HTML  ── ships zero map JS
+                                   │  HTML streamed to browser (first paint = shell)
+                                   ▼
+                         hydration crosses the "use client" line
+                                   │
+                                   ▼
+                         PubMapCanvas.tsx  (browser only)
+                         • one mount effect builds MapLibre Map
+                         • readTokens() → buildScene() → GPU paints pins
+</div>
+<figcaption>The render path of <code>/map</code>: server does the shell &amp; metadata, the browser owns the WebGL.</figcaption>
+</figure>
+
+<h3>The map lifecycle: idempotency in a stateful browser component</h3>
+<p>One more lesson lives in how <span class="path">components/PubMapCanvas.tsx</span> is built, and it's a distributed-systems idea hiding in a UI file. The map is constructed <em>once</em> in a mount effect, and then its scene is rebuilt on <em>every</em> theme flip (a <code>MutationObserver</code> on <code>html[data-theme]</code> calls <code>setStyle(..., { diff: false })</code>, which re-fires <code>style.load</code>, which re-runs <code>buildScene</code>). That means <code>buildScene</code> must be safely re-runnable - <b>idempotent</b> - because it executes many times over the component's life. So every layer add goes through <code>addLayerOnce</code> (checks <code>getLayer</code> first; a bare <code>map.addLayer</code> on a live style throws "Layer with id X already exists" and aborts the whole scene half-built), and every source is guarded with <code>if (!map.getSource(...))</code>. Motivated animation checks <code>map.isStyleLoaded()</code> before touching any layer, because during a style swap the style is transiently null and <code>getLayer</code> on null throws.</p>
+<p>Notice the shape of this: it's the same reasoning as Chapter 7's idempotent writes, applied to a render function instead of a database. "This operation will run more times than you think, possibly concurrently with its own teardown, so it must tolerate re-entry and partial state." A theme toggle is a tiny, local event, but getting its lifecycle wrong crashes the map — so the guards are load-bearing, and the tests pin them. The transferable instinct: <b>whenever an operation can run more than once, design it to be safe to run any number of times, and don't rely on it running exactly once.</b> Exactly-once is as much a fiction in a browser event loop as it is across a network.</p>
+
+<h3>Why this matters at scale</h3>
+<p>At one user, all three strategies feel identical — everything is fast on localhost. The differences only appear under load and latency, which is exactly when they're expensive to fix. A route you casually made dynamic runs a function on <em>every</em> request; at a million requests that's a million function-invocations you pay for and wait on, versus a static asset the CDN serves for free from a city near the user. Conversely, a route you statically cached but which <em>needed</em> per-user data will leak one user's view to another — a correctness and privacy bug that a load test surfaces and a unit test never will. The reason to reason about render location <em>now</em>, at the start, is that it is nearly free to choose and painful to change: retrofitting SSR onto a CSR-only app, or peeling personalisation out of a statically-cached page, is among the more miserable migrations in web engineering. The App Router's per-component model exists precisely so this decision stays local and reversible instead of becoming an architecture you're married to.</p>
+<p>There's a second scale axis: the <b>JavaScript you ship</b> is downloaded, parsed, and executed on the user's device — and the slowest device in your user base, not yours. Server components matter here beyond SEO: a server component ships <em>zero</em> JavaScript for its own logic, so the more of your tree renders on the server, the less the user's phone has to chew through before it can respond to a tap. On a mobile-first product like this one, that is not a micro-optimisation; it is the difference between a mid-range Android feeling instant and feeling broken.</p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+For any screen I build: <em>what is the cheapest place this could render, and what is forcing it somewhere more expensive?</em> On <code>/map</code> the answer is "the nonce CSP and the WebGL canvas both force dynamic/client work, and I accept that because the security win and the interactivity are the product." If you can't name the forcing function, you're rendering somewhere expensive by accident.</div>
+
+<!-- ================= CHAPTER 2 ================= -->
+<h2 id="ch2"><span class="num">CH 02</span>The data layer as a contract</h2>
+
+<div class="principle"><b>Principle.</b> Your data layer is not "the database." It is the <em>contract</em> between your code and durable state — a seam you control. If that seam is a thin interface you own, you can swap what's behind it (Postgres, memory, a mock) without the callers noticing. If it's a framework's client sprinkled through every route, you've married the framework and the wedding is forever. <b>Seams beat frameworks.</b></div>
+
+<h3>The dual-backend store seam</h3>
+<p>The keyless-dev fact from the intro is enforced by one tiny function. Open <span class="path">lib/storeBackend.ts</span>:</p>
+<pre><code>/** Single seam: durable Supabase when env keys exist, process-memory otherwise. */
+export function selectStore&lt;T&gt;(memory: T, supabase: T): T {
+  return isSupabaseConfigured() ? supabase : memory;
+}</code></pre>
+<p>That is the whole idea. Every domain store — pint drops, plans, night memories, price confirms, and ~a dozen others being migrated onto this pattern — exposes an <em>interface</em>, then picks an implementation at call time: durable Supabase if the environment has keys, an in-process Map if it doesn't. The callers (route handlers) only ever talk to the interface. The result is the property that makes the whole product demoable on a laptop with no secrets: the same code runs, backed by memory instead of Postgres.</p>
+
+<h4>Fail-soft, not fail-silent</h4>
+<p>The subtle craft is in the same file's <code>runStoreOp</code> and <code>createSchemaMissWarner</code>. When a Supabase-backed store hits a <em>missing table</em> (a migration hasn't been applied, or the schema cache is stale), it invokes that operation's explicit schema-miss policy and warns exactly once per context per process, never silently:</p>
+<pre><code>console.warn(
+  `[${storeTag}] ${context} durable table missing — applying schema-miss policy (${migrationHint}):`,
+  errorMessage(err),
+);</code></pre>
+<p>And crucially, <code>runStoreOp</code> distinguishes a <em>schema miss</em> from <em>any other error</em>, while each operation decides the honest response. Local and Preview demos may use process memory while a migration is pending. The hardened area-demand, venue-operator, and visit-report write paths refuse that ephemeral fallback in deployed production and surface a 503; their reads may still degrade to an honest empty or cached state. This is the difference between <b>fail-soft</b> (a bounded read degradation) and <b>fail-silent</b> (a write pretends to succeed and loses data). Other dual-backend stores retain their documented policies until they receive the same explicit production audit.</p>
+
+<p>Two Postgres error codes are named constants here because they encode <em>intent</em>, not just failure: <code>23505</code> unique-violation is treated as the idempotent-success case for insert-if-absent writes, and <code>23503</code> foreign-key-violation means "the referenced row doesn't exist." Reading raw driver error codes and mapping them to domain meaning is a small thing that pays forever.</p>
+
+<div class="callout correction"><span class="label">Reality check</span>
+The brief described this as a "Supabase / Postgres / <b>Convex</b>" seam. On this branch the <code>selectStore</code> seam is strictly <b>Supabase vs process-memory</b> — there is no Convex branch in it. A <code>convex/</code> directory exists but is <b>dormant</b>: the locked decision (see <span class="path">fable-implement-prd.md</span>) is <em>"Convex: NOT migrating. Supabase is certified production… <code>convex/</code> stays dormant. Post-launch decision."</em> The seam is real; the third backend is not wired in.</div>
+
+<h3>Why this matters at scale</h3>
+<p>The value of a seam is not visible on the day you write it; it's visible on the day you have to change what's behind it. Consider the counterfactual: if every one of the ~60 write routes imported the Supabase client directly and called it inline, then "run this locally without secrets," "swap Supabase for a different Postgres host," "mock the store in a unit test," and "add a caching layer in front of writes" would each be a 60-file change with 60 chances to get one wrong. With the seam, each is a one-file change behind an interface the 60 callers never notice. This is the practical meaning of <b>dependency inversion</b>: the callers depend on an abstraction (the store interface) you own, not on a concrete library some vendor owns. Frameworks come and go — the seam is the part of your architecture that survives them.</p>
+<p>The fail-soft discipline scales for a different reason: <b>partial failure is the normal state of a large system, not the exception.</b> At one machine, "the database is down" is a binary you notice immediately. Across many serverless instances and a managed Postgres, you will routinely have <em>one</em> table's migration lagging a region, <em>one</em> instance with a stale schema cache, <em>one</em> transient connection blip — and the question is whether each of those degrades one read gracefully or takes down a whole page. <code>runStoreOp</code>'s per-context, warn-once, schema-miss-vs-real-error distinction is what turns "a table is briefly missing" from an outage into a logged, bounded, self-healing degradation. Systems that assume total success are brittle at scale; systems that make partial failure a first-class, per-operation decision are the ones that stay up.</p>
+
+<h3>RLS as defence-in-depth</h3>
+<p>The second half of the data contract lives in Postgres itself. PUBMAXX's ADR is blunt: <b>no client-side database access</b>. The browser never holds a Supabase anon key or talks to the database directly; every write goes through a server route that validates and rate-limits first, using a <em>service-role</em> admin client that only exists on the server (<span class="path">lib/supabase.ts</span>). So why bother with Row-Level Security at all, if nothing untrusted ever reaches the DB?</p>
+<p>Because <b>defence-in-depth</b> assumes the layer in front of you will someday fail. The migrations turn RLS on and write <em>deny-all-by-default</em> policies: <code>visit_reports</code> has RLS enabled with no write policy and a public SELECT scoped to <code>status = 'visible'</code>; <code>rate_limits</code> has RLS on with <em>no policies at all</em>, making it server-private even if a key leaked. Migration <span class="path">0023_rls_deny_anon_sensitive_reads.sql</span> exists solely to deny anonymous reads of sensitive tables. If a future bug ever exposed the anon key to the browser, RLS is the wall that still stands. You do not skip the seatbelt because you also have brakes.</p>
+<p>The mental model to carry away: <b>every security control has an implicit assumption, and defence-in-depth is the practice of not letting any single assumption be load-bearing alone.</b> "No client DB access" assumes the service-role key never leaks. RLS deny-all assumes an attacker might get a connection anyway. The Postgres <code>CHECK</code> constraints (price within £0–£20, valid status) assume the application-layer validation might be bypassed. Each layer is cheap and each covers the failure of the one above it, so the system stays safe even when — not if — one layer has a hole. When you review a security design, the sharp question is never "is this control correct?" but "what does this control assume, and what catches us when that assumption is false?" A design with an answer at every layer is robust; a design where one clever check is the only thing between an attacker and the data is one leak away from an incident.</p>
+
+<h3>The migration ledger as an append-only discipline</h3>
+<p>There are 50 files in <span class="path">supabase/migrations/</span>. Each is named <code>&lt;timestamp&gt;_&lt;NNNN&gt;_&lt;description&gt;.sql</code>. A migration is an <b>append-only, ordered, immutable</b> record: once a migration has run against production, its checksum is recorded in Postgres's <code>schema_migrations</code> table, and you can <em>never</em> edit or reorder it — you can only add a new one. This discipline is what lets a schema evolve safely across many machines and many contributors. It is also, precisely because it is unforgiving, where the interesting scars live.</p>
+
+<h4>War story #1 — the number collisions</h4>
+<p>Look closely at the ledger and you'll find <em>duplicate NNNN numbers</em>: two <code>0007</code>s (<code>function_search_path</code> and <code>pub_presence</code>), two <code>0013</code>/<code>0014</code>/<code>0015</code> pairs (<code>comment_replies</code>, <code>realtime_publication</code>, <code>index_cleanup</code>, each appearing under two different timestamps), two <code>0021</code>s. This is the signature of <b>parallel development</b>: several branches (in this repo, several <em>agent lanes</em> — see Chapter 8) each grabbed "the next number" independently, and when they merged, the numbers collided. The lesson is baked into the naming convention: the <code>&lt;timestamp&gt;</code> prefix is the <b>real</b> ordering key that Postgres and the Supabase CLI sort on; the <code>NNNN</code> is a <em>human label</em> that can and does collide. Later migrations quietly stopped using an NNNN at all (<code>20260717055514_plan_completion_arrival.sql</code>) — the timestamp is enough.</p>
+
+<h4>War story #2 — the "0039 collision" and why you rename the file, not the history</h4>
+<p>The brief pointed at "the 0039 collision story," and it is real: two lanes both minted an <code>0039</code> migration (a push-tokens table vs a pint-drop daily-dedupe), and the fix was to <em>renumber</em> one to <code>0040</code> rather than rewrite anything already applied. The deeper version of the same lesson is recorded in <span class="path">docs/MAIN_RECONCILIATION_2026-07-16.md</span>: the first production push exposed a mismatch where <em>production had recorded migrations 0022–0030 under different timestamps than the Git files carried</em>. The resolution is the important part:</p>
+<blockquote>"The files were renamed to the recorded versions; the production history table itself was not rewritten… no remote reset or destructive migration repair is allowed."</blockquote>
+<p>That is the whole discipline in one sentence. <b>Production's ledger is the ground truth; Git conforms to it, never the reverse.</b> You align the filenames to what production already ran (commits <code>e005f758</code>, <code>bbf55b52</code> — "align migration ledger with production") because rewriting an applied migration would desync every environment and there is no undo. When the map and the territory disagree, you fix the map.</p>
+
+<div class="callout correction"><span class="label">Reality check</span>
+Small correction to the brief's framing: on this branch the ledger's head is migration <b>0038</b> (<code>plan_ending_selection</code>) plus several timestamp-only migrations after it; there is no literal <code>0039</code> file present here (it was renumbered to 0040 on the branch that introduced it). The <em>collision as a class of problem</em> is genuine and recurring — I've documented the actual instances (0007, 0013–0015, 0021, and the 0039→0040 renumber) rather than a single tidy "0039" anecdote.</div>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>If two people (or two agents) did this exact task in parallel, what would collide, and does my convention make the collision loud or silent?</em> A timestamp prefix makes migration collisions loud and recoverable; an auto-incrementing integer makes them silent and corrupting. Pick the ordering key that fails loud.</div>
+
+<!-- ================= CHAPTER 3 ================= -->
+<h2 id="ch3"><span class="num">CH 03</span>Data engineering: determinism, provenance, and war stories</h2>
+
+<div class="principle"><b>Principle.</b> A data pipeline is a <em>function</em> from raw sources to shipped artifacts. If that function is deterministic — same input, byte-identical output — you can review its diffs, trust its rebuilds, and bisect its bugs. If it's non-deterministic, every rebuild is a small act of faith. Data engineering is the practice of making that function honest: deterministic in its transforms, and <b>provenance-preserving</b> in its content.</div>
+
+<h3>The pipeline: export → canonicalize → build:slim</h3>
+<p>The <code>scripts/</code> in <span class="path">package.json</span> form a clear chain:</p>
+<pre><code>"export:data":        "python3 scripts/export_app_dataset_json.py",
+"postexport:data":    "npm run canonicalize:venues",
+"canonicalize:venues":"node scripts/canonicalize_venue_dataset.mjs",
+"prebuild:slim":      "npm run canonicalize:venues",
+"build:slim":         "node scripts/build_slim_index.mjs",
+"validate-data":      "node scripts/validate-data.mjs",
+"prebuild":           "npm run build:slim && npm run build:pubmaxxing-seed"</code></pre>
+<p>Read it as a directed graph. <b>Export</b> (Python) pulls the raw source into a JSON dataset. Its <code>post</code> hook automatically runs <b>canonicalize</b>, which normalises and stabilises the venue records (this is where identity is pinned — see below). <b>build:slim</b> then produces the two artifact classes the runtime actually consumes: <code>public/data/venues_slim.json</code> — the tiny map-pin index shipped to every browser — and server-side detail files (<code>data/generated/venue_detail_index.json</code> + <code>venue_details.jsonl</code>) that back the lazy <code>/api/venue/[id]</code> route. Note the <code>prebuild</code> wiring: the artifacts are regenerated <em>before every production build</em>, so a deploy can never ship a stale index. And <code>validate-data</code> is part of <code>npm run verify</code>, the pre-push gate — bad data fails CI exactly like bad code.</p>
+
+<h4>The two-artifact split is a performance decision made in the data layer</h4>
+<p>Why split into "slim pins" and "server-side detail" at build time? Because the map needs ~1,200 tiny records to draw dots, but a venue's full detail (every price row, heritage, photos) is large and only needed when a user taps one pub. Shipping the whole dataset to draw dots would be wasteful; fetching detail per-tap keeps the initial payload small. This is <b>the same instinct as database normalization</b>, applied to shipped files: put the frequently-read, low-cardinality data in one place and the heavy detail behind a key. The split lives in <span class="path">scripts/build_slim_index.mjs</span> and is why the map's first paint is cheap.</p>
+
+<h3>Determinism: byte-identical rebuilds</h3>
+<p>The reason canonicalization is its own step is <b>determinism</b>. If you re-run the pipeline on the same source, the output must be byte-for-byte identical — otherwise every regeneration produces a noisy diff and you can't tell a real data change from reshuffled JSON key order. Determinism is achieved the boring, correct way: stable sort orders, fixed coordinate precision (lat/lng rounded to a fixed number of decimal places), normalised whitespace and casing, and stable identity keys so records don't move when the source reorders. The payoff is that <code>validate-data</code> can assert invariants and a reviewer can read a data diff and understand it. When you hear "deterministic build," this is the mechanical meaning: <em>remove every source of incidental variation until only intentional change survives.</em></p>
+
+<h4>Content-hashed identity — the keystone</h4>
+<p>A venue's id is <b>not</b> its position in an array. It is an <a href="#">FNV-1a hash</a> of its grouping key (<code>name | address | lat(5dp) | lng(5dp)</code>), base-36, prefixed <code>venue-</code> (<span class="path">lib/venues.ts</span>, <code>stableVenueIdFromKey</code>). This is content-addressing, and it's why the hand-curated crawls and seeded Pint Drops can hard-code ids like <code>venue-16pnwmm</code> (Prospect of Whitby) that survive the dataset being re-exported and reordered. Tests recompute these hashes from the live dataset, so if a canonicalization change ever shifts an id, CI fails loudly instead of the app silently 404-ing a curated stop. <em>Identity derived from content, pinned by tests</em> — that is how you make a dataset safe to build on.</p>
+
+<h3>The data as code: <code>validate-data</code> is a build gate</h3>
+<p>The move that elevates this from "we have some scripts" to "we do data engineering" is that <code>npm run validate-data</code> is part of <code>npm run verify</code> — the same pre-push gate that runs lint, typecheck, and tests. <span class="path">scripts/validate-data.mjs</span> asserts invariants about the shipped artifacts (schema shape, id stability, size budgets, no orphaned references), and if the data violates them the push is rejected exactly like a type error. This is the practice sometimes called "data contracts" or "data unit tests," and it's the reason a bad refresh can't silently reach production: the dataset is treated as a build input that must pass tests, not as a static file someone occasionally eyeballs. When you hear people say "treat your data like code," this file is the concrete meaning — versioned in git, regenerated deterministically, gated by assertions, reviewed as diffs.</p>
+
+<h3>Provenance-first data: the Pint Index evidence rules</h3>
+<p>PUBMAXX's product promise is "every pint has a story, and history and legend never blur." That promise is a <em>data</em> commitment before it is a UI one. The provenance model in <span class="path">lib/curation.ts</span> defines an origin enum — <code>sourced | contributor | anecdote | demo</code> — and a claim-kind enum for the badge the UI renders. Two rules make it real:</p>
+<ul>
+<li><b>Claims never flatten.</b> <code>buildVenueClaims</code> keeps a sourced editorial note and a note-only community drop as <em>separate entries</em>; a heritage note lacking a source is downgraded to <code>needs-source</code>, never merged into an authoritative-looking string. A <code>demo</code> seed becomes a display-only <code>baseline</code> claim, never a <code>contributor</code>/<code>anecdote</code> one that could masquerade as organic signal.</li>
+<li><b>Evidence sets provenance, not the client.</b> In <code>validatePintDrop</code>, a priced drop becomes <code>contributor</code>, a note-only drop becomes <code>anecdote</code> — the browser never gets to <em>declare</em> its own trust level. And <code>mergeVenueDrops</code> filters <code>provenance === "demo"</code> out <em>before</em> anything touches a price or the "has a story" flag, so seeded example content can never move a real metric.</li>
+</ul>
+<p>The London Pint Index — the headline "cheapest pint" figure — inherits this discipline: a price only counts toward an aggregate if it is a real observed price with acceptable provenance. The About-page statistics were explicitly narrowed (PR #276, CodeRabbit MAJOR fix) to count <em>only venues with accepted price observations</em>. That's the evidence rule in one sentence: <b>an aggregate is only as trustworthy as the weakest row you let into it, so don't let weak rows in.</b></p>
+
+<h3>War story: coordinate-drift dedupe</h3>
+<p>Real-world venue data has the same pub appearing twice with coordinates that drift by a few metres between sources — a naive exact-match dedupe misses them, and you ship two dots for one pub. The grouping key rounds coordinates to 5 decimal places, which collapses most drift, but that alone can also <em>over</em>-merge two genuinely distinct pubs that share a name and rounded location. The robust fix combines signals: proximity (a distance threshold) <em>and</em> name similarity, so "The Crown" 8 metres away merges but "The Crown" across the borough does not. The lesson is general: <b>deduplication is never a single equality check; it's a similarity function over multiple noisy signals with a deliberately chosen threshold.</b> Get the threshold wrong in one direction you split real duplicates; wrong in the other you merge distinct entities. The tests pin the behaviour so a threshold tweak can't silently regress it.</p>
+
+<h3>War story: the label-repair — trusting geometry over scraped labels</h3>
+<p>Scraped data lies in structured ways. Venue records arrived tagged with a borough <em>label</em> from the source, but those labels were frequently wrong — a pub's stated borough didn't match where its coordinates actually fell. The repair, implemented inside <span class="path">scripts/export_app_dataset_json.py</span>, does the epistemically correct thing: it <b>trusts the geometry over the label</b>. It takes the pub's real lat/lng, does a point-in-polygon test against the actual borough boundaries, and rewrites the borough to whatever the coordinates say — correcting hundreds of rows across many venues. The general principle is one of the most useful in all of data engineering: <b>when two fields disagree, trust the one that's harder to fake.</b> Coordinates come from a map; labels come from whoever typed them. Geometry wins.</p>
+
+<div class="callout correction"><span class="label">Reality check</span>
+The brief spoke of a standalone "label-repair" story and lane. To be precise: the borough-from-geometry repair is a <em>function inside the Python export script</em>, not a separate <code>scripts/label-repair.*</code> file, and it repairs the <b>borough</b> field specifically. The principle in the brief is exactly right; I've anchored it to where the code actually lives.</div>
+
+<h3>Why this matters at scale</h3>
+<p>Determinism is the property that makes a data pipeline <em>reviewable</em>, and reviewability is what lets a dataset grow past one person's head. When a rebuild is byte-identical, a pull request that changes the data shows a diff that a human can read: these three prices changed, this venue moved boroughs, nothing else. When a rebuild is non-deterministic — keys reorder, floats jitter in the last digit, a timestamp sneaks in — every regeneration produces thousands of phantom changes, the real change hides among them, and review collapses into "looks fine, merge it." At that point your data has no gate, and bad rows enter silently. This is why the canonicalize step is separate and mandatory before build: it is not cosmetic tidiness, it is what keeps the data auditable as it scales from one contributor to many.</p>
+<p>Provenance scales for the reason all trust systems do: <b>trust is expensive to earn and instant to lose, and it's lost at the weakest point.</b> A single fabricated "historic" badge on a pub that turns out to be a 2019 chain bar poisons the user's belief in <em>every</em> badge. The never-flatten rule and the demo-filtering rule are not fussiness; they are the mechanism that keeps one bad row from contaminating the aggregate and one seeded example from being mistaken for organic signal. As the community layer grows and more contributors add prices and notes, the provenance model is what lets the product accept messy real-world input <em>without</em> letting that mess move a headline number. The discipline compounds: a dataset that has never lied is one you can build features on; one that has lied once needs a caveat forever.</p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>Can I regenerate this artifact from source and get a byte-identical result — and if not, exactly which step introduced the variance?</em> If you can't answer, you don't have a pipeline, you have a ritual. And for every field you ship: <em>what is its provenance, and would I be comfortable if the badge next to it were shown to the user?</em></div>
+
+<!-- ================= CHAPTER 4 ================= -->
+<h2 id="ch4"><span class="num">CH 04</span>Performance engineering</h2>
+
+<div class="principle"><b>Principle.</b> Performance is not a vibe you optimise at the end; it is a <em>budget</em> you enforce continuously and a <em>perception</em> you design deliberately. A budget that isn't a CI gate is a wish. And the number that matters is not when your code <em>finished</em> — it's when the user's eyes saw the thing they came for.</div>
+
+<h3>Budgets as gates, measured where the user actually is</h3>
+<p>PUBMAXX's release performance targets live in <span class="path">e2e/gate-z-performance.spec.ts</span> as a Playwright test that runs at a <b>390×844 mobile viewport</b> — because the product is mobile-first, and measuring perf on a desktop CI machine would flatter you with numbers no user experiences. The budgets are concrete assertions:</p>
+<pre><code>expect(metrics.lcpMs).toBeLessThan(2_500);          // Largest Contentful Paint
+expect(metrics.cls).toBeLessThan(0.1);              // Cumulative Layout Shift
+expect(metrics.maxInteractionMs).toBeLessThan(200); // INP — interaction latency
+expect(metrics.firstPinsMs).toBeLessThan(1_500);    // pins visible on the map
+expect(metrics.warmNavigationMs).toBeLessThan(100); // cached tab-to-tab nav
+expect(metrics.routeReadinessMs).toBeLessThan(1_500);</code></pre>
+<p>These aren't guesses — <code>lcpMs</code>, <code>cls</code>, and <code>maxInteractionMs</code> are the three <b>Core Web Vitals</b> (LCP, CLS, INP), gathered live via <code>PerformanceObserver</code> inside the running page. The two custom metrics (<code>firstPinsMs</code>, <code>routeReadinessMs</code>) encode <em>product-specific</em> "the thing is usable" moments. That is the craft: standard vitals for comparability, custom marks for what your product actually promises.</p>
+
+<div class="callout correction"><span class="label">Reality check</span>
+The brief referenced an "<b>eager-KB</b> CI gate," "<b>Lighthouse</b> as a CI gate," and a specific "<b>5195KB→2212KB</b>" bundle-reduction story. I could not find those as shipped code: there is no <code>eager-KB</code> token, no Lighthouse step in CI, and no 5195/2212 figures in the repo (they appear only as narrative in a lane's PRD prose). What <em>is</em> real and enforced: (1) the Gate-Z Playwright budgets above; (2) a unit test asserting the shipped <b>slim index stays under its KB budget</b> (<span class="path">__tests__</span> around <code>venues_slim.json</code>); (3) the two-artifact payload split from Chapter 3. I've taught the mechanisms that actually gate this repo and noted the ones that don't exist so you're not chasing a phantom config.</div>
+
+<h3>Two-stage payloads: draw fast, hydrate detail lazily</h3>
+<p>The concrete payload strategy is the slim/detail split from Chapter 3, consumed at runtime as a two-stage load: the browser first pulls the small <code>venues_slim.json</code> pin index and paints dots almost immediately, then fetches heavy per-venue detail lazily via <code>/api/venue/[id]</code> only when a pub is tapped. Notice how <span class="path">next.config.mjs</span> even teaches Next's file-tracer to bundle the server-side detail files with exactly that dynamic route:</p>
+<pre><code>outputFileTracingIncludes: {
+  "/api/venue/[id]": ["./data/generated/venue_detail_index.json",
+                      "./data/generated/venue_details.jsonl"],
+},</code></pre>
+<p>This is <b>payload sharding by access pattern</b>: the common path (draw the map) is cheap and eager; the rare path (inspect one pub) pays its own cost on demand. The general move — "don't ship what most users won't look at; fetch it when they do" — is the single highest-leverage front-end performance decision, and it's made here in the data-artifact shape, not in a clever loader.</p>
+
+<h3>Perceived vs actual speed</h3>
+<p>Two mechanisms buy <em>felt</em> speed independent of raw milliseconds. First, <b>speculation rules</b>: the app emits a <code>speculationrules</code> script that prerenders likely next navigations — but deliberately at <code>"moderate"</code> eagerness (hover / pointerdown intent), never <code>"eager"</code>/<code>"immediate"</code> which would over-prerender and waste the user's data. There's a test (<span class="path">e2e/perceived-speed.spec.ts</span>) that <em>asserts</em> the eagerness is exactly <code>"moderate"</code> — a performance <em>restraint</em> encoded as a gate. Second, the App Router's <b>View Transitions</b> flag (<span class="path">next.config.mjs</span>, <code>experimental.viewTransition</code>) wraps route navigations in the browser's crossfade with zero per-element choreography, and degrades to an instant swap where unsupported and to no animation under <code>prefers-reduced-motion</code>. Both are pure progressive enhancement: they make it <em>feel</em> faster without a single new render path.</p>
+
+<h3>The first-frame watchdog: trust nothing that hasn't painted</h3>
+<p>Here is the sharpest performance-and-reliability lesson in the repo, and it's worth internalising deeply. A map can reach a state where the WebGL context is <b>granted</b>, MapLibre's <code>style.load</code> event <b>fires</b>, the scene is <b>built</b> — and yet <em>zero frames are ever painted</em>. The user stares at a permanent blank white rectangle while every signal your code checks says "success." This actually happened (it especially bites inside Instagram/TikTok in-app webviews). The naive checks all lie because they measure <em>readiness</em>, not <em>paint</em>.</p>
+<p>The fix (PR #297, in <span class="path">fable-implement-prd.md</span>'s ledger, implemented as a map first-frame watchdog) is to subscribe to MapLibre's <code>render</code> event and start a <b>10-second visible-tab timeout</b>: if no frame has actually rendered by then, tear down the optimism and show an honest <code>no-frame</code> fallback - a Retry button, a list of the cheapest pubs, and a link to <code>/pubs</code> - so the screen is <em>useful</em> even when the GPU never delivered. The sibling pin-reveal and tile-failure guards likewise turn a failed basemap stream into an honest Retry notice instead of leaving a silent flat canvas; <span class="path">lib/mapTileFailure.ts</span> owns that decision.</p>
+<blockquote>The principle: <b>trust nothing that hasn't painted.</b> "The promise resolved," "the event fired," "the state says ready" are all proxies for the only thing the user cares about — pixels on glass — and proxies can diverge from reality. A senior engineer instruments the <em>real</em> outcome and builds an escape hatch for when it doesn't happen.</blockquote>
+
+<h3>Why this matters at scale</h3>
+<p>Performance regresses the way a beach erodes: never in one dramatic event, always one grain at a time. Each PR adds "just a little" JavaScript, "one more" blocking fetch, "a small" layout shift — and none of them alone is worth blocking, so without a gate they all merge, and six months later the app is slow and no single commit is to blame. A budget encoded as a failing test converts that slow erosion into a discrete, attributable event: <em>this</em> PR pushed LCP over 2.5s, so <em>this</em> PR fixes it before merging. That is the entire reason the Gate-Z budgets are assertions and not a dashboard someone checks quarterly — a dashboard tells you that you're already slow; a gate stops you from getting slow. At scale, with many contributors (or many agents), the only performance discipline that survives is the one the build enforces.</p>
+<p>The perceived-vs-actual distinction scales into real money and real trust. Two apps with identical LCP can <em>feel</em> a second apart depending on whether the first paint is a meaningful skeleton or a blank white void, whether the next navigation was speculatively prerendered, whether a tap gets instant visual feedback. Users don't have stopwatches; they have impatience, and impatience is triggered by <em>uncertainty</em> — "is this broken or just slow?" — more than by absolute latency. The first-frame watchdog is the sharpest form of this: a blank white map isn't slow, it's <em>ambiguous</em>, and ambiguity is what makes a user close the tab. Converting ambiguity into an honest, useful fallback ("here are the cheapest pubs, tap Retry") is worth more than shaving 200ms off a number nobody sees. The scale lesson: <b>measure the vitals for comparability, but engineer the perception, because perception is what churns or retains a million users.</b></p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>What is the difference between "my code succeeded" and "the user got what they wanted," and am I measuring the second one?</em> If your success signal is an event or a resolved promise rather than an observed outcome, you have a blank-white-map bug waiting to happen.</div>
+
+<!-- ================= CHAPTER 5 ================= -->
+<h2 id="ch5"><span class="num">CH 05</span>Caching layers: the full waterfall</h2>
+
+<div class="principle"><b>Principle.</b> A cache is a bet that the past predicts the future. The skill is not "add caching" — it's choosing, <em>per asset class</em>, how long you're willing to be wrong, and where. The same app can correctly want cache-forever, revalidate-in-background, and never-cache behaviour on different responses. The mistake is applying one policy everywhere.</div>
+
+<h3>The waterfall, top to bottom</h3>
+<p>A request to PUBMAXX can be answered from four increasingly-distant places: the browser's <b>service-worker cache</b>, the browser's <b>HTTP cache</b>, Vercel's <b>CDN edge</b>, or the <b>origin</b> function. Each layer has its own policy, and they compose. The most instructive file in the whole repo for learning caching is <span class="path">public/sw.js</span>, because it states its philosophy in a comment before it writes a line of logic:</p>
+<pre><code>*  1. NEVER break a fresh deploy. Caches are keyed by a per-build VERSION...
+*  2. NEVER serve stale HTML for navigations. Navigations are network-first...
+*  3. NEVER cache API responses (GET or POST). Last-train times and pint
+*     prices must be live or absent — stale data here is a lie (honesty rule).</code></pre>
+
+<h3>One strategy per asset class</h3>
+<table>
+  <tr><th>Asset class</th><th>Strategy</th><th>Why</th></tr>
+  <tr><td>Static <code>/data/*.json</code> (pin index, dataset, POIs)</td><td><b>Cache-first + background revalidate</b></td><td>Effectively static between deploys; instant on repeat, quietly refreshed</td></tr>
+  <tr><td><code>/data/price_updates/*.json</code></td><td><b>Network-first</b> (fall back to cache)</td><td>A price refresh must not be trapped behind a stale SW cache</td></tr>
+  <tr><td>Map tiles + <code>/_next/static/*</code></td><td><b>Stale-while-revalidate</b>, FIFO-capped at 200 entries</td><td>Hashed/immutable-ish; unbounded growth over a long session must be trimmed</td></tr>
+  <tr><td>Navigations (HTML)</td><td><b>Network-first</b> → cached page → cached <code>/</code> → <code>/offline.html</code></td><td>Never serve stale HTML; degrade gracefully when the signal dies (pub cellars!)</td></tr>
+  <tr><td><code>/api/*</code> (GET or non-GET)</td><td><b>Never intercepted</b> (network-only)</td><td>Live-or-absent is the honesty rule; a stale train time is a lie</td></tr>
+</table>
+<p>Study why <em>price_updates</em> is the one <code>/data</code> exception: everything else under <code>/data</code> is cache-first because it changes only on deploy, but a price refresh can land <em>between</em> deploys, so it gets network-first. That single carve-out is the whole discipline in miniature — <b>the policy follows the data's actual change frequency, not the directory it happens to live in.</b></p>
+
+<h4>Cache versioning: how a deploy preserves a returning user's offline state</h4>
+<p>The service worker's caches are namespaced by a <b>per-build version</b>. Activation preserves usable offline entries and retires a superseded cache only when its contents are safely covered. Cache maintenance is best-effort and never shares the promise that delivers a successful network response. Normal write-safe updates still wait for existing tabs; immediate takeover is reserved for replacing the known cache-write-coupled policy. <a href="../../public/sw.js"><span class="path">public/sw.js</span></a> owns the exact migration rules, while <a href="../evidence/map-blank-basemap/README.md"><span class="path">docs/evidence/map-blank-basemap/README.md</span></a> records the storage-pressure reproduction and verification.</p>
+
+<h3>CDN &amp; HTTP headers: the year-long edge, the modest browser</h3>
+<p>The static dataset is ~6&nbsp;MB and lives at fixed, unhashed URLs, so it <em>can't</em> carry an <code>immutable</code> cache-buster. The header in <span class="path">next.config.mjs</span> threads that needle precisely:</p>
+<pre><code>source: "/data/:path*",
+"Cache-Control": "public, max-age=3600, s-maxage=31536000, stale-while-revalidate=604800"</code></pre>
+<p>Decode it: <code>s-maxage=31536000</code> lets Vercel's <b>edge</b> hold the file for a year (near-instant TTFB), which is safe because Vercel <em>purges the CDN automatically on every deploy</em>; <code>max-age=3600</code> keeps the <b>browser</b> copy to one hour so a returning client revalidates and picks up fresh data without a hard block; <code>stale-while-revalidate=604800</code> lets a stale-but-instant response serve while a fresh one is fetched in the background. Three numbers, three different tolerances for being wrong, one per cache layer. <em>That</em> is what "understanding HTTP caching" actually means.</p>
+
+<h3>When <code>no-store</code> is the only correct answer</h3>
+<p>Every API error in the repo sets <code>Cache-Control: no-store</code> by default — look at <span class="path">lib/apiError.ts</span>, where both <code>publicApiError</code> and <code>apiError</code> set it unless a caller overrides. Dynamic <code>/api/*</code> responses (prices, train times, plan state) are <em>never</em> cached, at any layer, because caching them would be caching a lie. The senior instinct: caching is a tool for data whose staleness is <em>tolerable and bounded</em>; for data where "wrong for even a minute" is a correctness bug, the right cache policy is <b>no cache</b>, and you should be able to say why out loud.</p>
+
+<h3>Why this matters at scale</h3>
+<p>Caching is the highest-leverage and most dangerous tool in the performance kit, and the danger grows with reach. A cache bug on one machine confuses one user; a cache bug at the CDN edge serves a stale or — far worse — <em>someone else's</em> response to thousands of users from a node they'll never think to look at. The classic catastrophe is caching a personalized or authenticated response at a shared layer: one user's "hello, Karan" gets stored under a URL and handed to everyone. This is precisely why the repo's rule "never cache <code>/api/*</code>" and the default <code>no-store</code> on every error response are stated so absolutely — at scale, the cost of accidentally caching one dynamic response is not a stale price, it's a privacy incident with a large blast radius. The per-asset-class discipline is what keeps the enormous win of edge caching (a year-long <code>s-maxage</code> on a 6MB dataset is a colossal TTFB and bandwidth saving) without opening the door to the enormous risk.</p>
+<p>Cache <em>invalidation</em> is famously one of the two hard problems in computing, and it gets harder with every layer you add, because a stale value can now be pinned in any of them. The two mechanisms this repo leans on — <b>per-deploy versioning</b> (the SW cache namespace, the CDN's automatic purge) and <b>deliberately short browser TTLs behind long edge TTLs</b> — are both answers to "how do I guarantee a way to bust every layer?" The senior habit is to never introduce a cache without simultaneously designing its escape hatch: a version key, a purge trigger, a revalidation window. A cache you can't invalidate on demand is a bug you've scheduled for a future deploy. At scale, "we can't clear that cache without a full redeploy and a prayer" is the sentence that turns a small content fix into a war room.</p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>For this exact response, how long am I willing to serve a wrong answer — and is that tolerance the same at the browser, the edge, and the service worker?</em> If you can't give three numbers with three reasons, you're caching by habit, not by design.</div>
+
+<!-- ================= CHAPTER 6 ================= -->
+<h2 id="ch6"><span class="num">CH 06</span>API &amp; security fundamentals</h2>
+
+<div class="principle"><b>Principle.</b> An API is a promise to strangers. The two hard parts are keeping the promise <em>stable</em> as it evolves (so you don't break clients) and keeping it <em>safe</em> from the ones who mean harm (so abuse doesn't sink you). Both are won by treating the boundary as a governed surface, not a pile of route handlers.</div>
+
+<h3>The locked, additive error contract</h3>
+<p>When an API returns errors, clients start depending on the <em>shape</em> of those errors — the field names, the codes. Change the shape and you break them silently. PUBMAXX's public error contract (<span class="path">lib/apiError.ts</span>) is a flat, versioned shape:</p>
+<pre><code>export type PublicApiError = {
+  error: string;      // human-readable message (back-compatible)
+  code: string;       // machine-readable code
+  retryable: boolean; // can the client safely retry?
+  details?: Record&lt;string, unknown&gt;;
+};</code></pre>
+<p>Two design choices make this a <em>contract</em> rather than a convention. First, it is <b>additive/locked</b>: the <code>compatibilityFields</code> option lets a route spread in legacy sibling fields, but "canonical error fields always win" — you may <em>add</em> to the envelope, never <em>reshape</em> it. Second, it coexists with a deliberately-separate <em>legacy</em> nested shape (<code>apiError</code> → <code>{ error: { code, message, status } }</code>) that older Heritage consumers still depend on, kept apart on purpose so the new contract can be clean without a risky migration. This is API evolution done right: <b>new surfaces get the good contract; old surfaces keep the one their clients already parse; a test enforces the boundary so no one accidentally blends them.</b></p>
+
+<h3>Rate limiting: durable buckets, per-IP and global</h3>
+<p>Rate limiting is where naive implementations quietly fail on serverless, and this repo learned it the hard way. The durable limiter lives in <span class="path">lib/supabase.ts</span> as <code>checkRateLimitDurable</code>, backed by an atomic Postgres <code>check_rate_limit</code> RPC (migration <span class="path">0003_rate_limits.sql</span>) — the <b>count-and-decide happens inside one database call</b> so two concurrent requests can't both read "1 left" and both proceed. The IP is only ever a <em>secondary</em> key and is always <code>sha256(salt : ip)</code> before it touches the table or a log, so the limiter never stores a raw address.</p>
+<p>The <b>write-surface certification</b> (see below) enumerates the boundary classes: a <em>durable rate limit</em> for public/keyless abuse, plus <em>account</em>, <em>capability</em>, <em>moderator</em>, and <em>confirmation</em> boundaries that compose. Paid-spend routes (the LLM concierge, narrated heritage) and Plan creation pass <code>{ failClosed: true }</code> — if the durable limiter is unavailable, they <b>reject</b> rather than let unmetered cost through.</p>
+
+<h4>Why in-memory dedup fails on serverless — the broadcast story</h4>
+<p>Here is the exact bug and fix, because it's a perfect teacher. A feature needed to send a "go-live" push broadcast <em>once</em> per night-signal snapshot. The first implementation deduped with an in-memory <code>Set</code>: "have I already sent this snapshot? check the Set." On a single long-lived server that's fine. On Vercel it is <b>broken by construction</b> — each serverless invocation may be a <em>fresh instance</em> with an empty Set, so N concurrent invocations each think they're first and the broadcast fires N times. The fix (PR #300, implemented by an Opus agent, caught in review — <span class="path">fable-implement-prd.md</span>) replaced the Set with a <b>durable at-most-once claim</b>: a budget-of-1 rate-limit claim keyed on the snapshot's <code>generatedAt</code>, held in the shared Postgres limiter. The <em>first</em> instance to claim it wins; every other instance's claim is denied; the broadcast fires exactly once regardless of how many instances race. <b>Statelessness means shared state must live somewhere shared</b> — Chapter 7 makes this its whole subject.</p>
+
+<h3>The forwarded-header spoofing lesson</h3>
+<p>Client IP on a serverless platform comes from the <code>x-forwarded-for</code> header — which is <em>client-suppliable</em>. If your rate limiter keys purely on it, an attacker rotates the header on every request and each looks like a new client, defeating per-IP limits entirely. This was flagged as a security finding on the Capacitor-foundation PR (#295) and fixed with a <b>global backstop bucket</b> (300/hour) layered <em>under</em> the per-IP limit, plus a regression test that fires <b>301 requests across 250 rotating IPs</b> and asserts the backstop still trips. The design lesson: on the current deploy target <code>x-forwarded-for</code> is safe because Vercel's edge normalises it, but you <em>never trust that alone</em> — you (a) keep IP a secondary signal, (b) hash it, and (c) put an IP-independent global ceiling behind it so header rotation hits a wall. Trust boundaries are assumptions; write the assumption down and backstop it.</p>
+
+<h3>Write-surface certification as a governance pattern</h3>
+<p>The most transferable idea in this chapter is in <span class="path">docs/WRITE_SURFACE_CERTIFICATION.md</span> plus its enforcing test <span class="path">__tests__/writeSurfaceCertification.test.ts</span>. The rule: <em>every</em> exported <code>POST/PUT/PATCH/DELETE</code> handler in <code>app/api</code> is treated as a reviewed, authority-bearing surface — even a POST that is semantically read-only. The test scans the whole API tree and <b>fails CI if a new mutating route appears without a declared authority/abuse boundary</b>, or if the inventory count changes unexpectedly. Adding "route 61" forces you to classify it (durable-limit? account? capability? moderator? confirmation?) or the build goes red.</p>
+<blockquote>This is governance-as-code. Instead of hoping every reviewer remembers to ask "did you rate-limit this write?", the question is asked <em>mechanically, every build, forever.</em> Security controls that depend on human vigilance decay; controls that fail the build endure. Turning a review checklist into a test is one of the highest-leverage moves a staff engineer makes.</blockquote>
+<p>The five boundary classes are worth memorizing as a general taxonomy for "who is allowed to do this write," because they compose and most real endpoints need more than one:</p>
+<table>
+  <tr><th>Boundary</th><th>Answers the question</th><th>Example surface</th></tr>
+  <tr><td><b>Durable rate limit</b></td><td>Is this keyless caller abusing us / burning provider cost?</td><td>Events, discovery proxies, Pint Drops, Plan creation</td></tr>
+  <tr><td><b>Account</b></td><td>Is this a signed-in owner of the thing?</td><td>Night Memories, Pub Pal, profiles</td></tr>
+  <tr><td><b>Capability</b></td><td>Does this caller possess a narrow, server-validated grant?</td><td>Plan actions, invites, completion</td></tr>
+  <tr><td><b>Moderator</b></td><td>Is this a staff operator?</td><td>Import notes, moderation</td></tr>
+  <tr><td><b>Confirmation</b></td><td>Has a one-use token been presented for this consequential act?</td><td>Night Story publication</td></tr>
+</table>
+<p>And the <b>failure posture</b> is defined per class, which is the part most systems forget: paid-spend and Plan creation <em>fail closed</em> (reject when the durable limiter is unavailable); public community writes fall back to a tightened degraded budget; account/moderator/capability routes reject missing authority <em>before</em> persistence, never after. Deciding, up front, whether each surface fails open or fails closed — and writing it into a certification doc plus a test — is what turns "we have auth" into "we have a defensible authorization model."</p>
+
+<h3>Why this matters at scale</h3>
+<p>An API contract is a liability that compounds with every client that adopts it. At one internal caller, you can change an error shape and fix the caller in the same PR. Once the shape is consumed by a mobile app in the App Store, a partner integration, and a cached SDK you don't control, that same "small" change breaks clients you can't even reach, and the breakage shows up as mysterious errors in someone else's crash logs weeks later. This is why the additive-only rule is non-negotiable at scale: <b>you can always add a field (old clients ignore it) but you can never rename or remove one (old clients depend on it).</b> Keeping the legacy nested Heritage envelope alive <em>alongside</em> the clean flat contract, rather than migrating everything to the new shape, is the mature choice — a slightly less elegant codebase in exchange for zero broken clients. Elegance that breaks a shipped consumer is not elegance, it's an incident.</p>
+<p>Abuse control scales super-linearly against you: as the product grows, so does the incentive to attack it, and a limiter that "works" in a load test can fail exactly when it's load-tested by an adversary. The serverless statelessness trap is the archetype — the in-memory dedup <code>Set</code> passed every local test and every code review that didn't think about instance topology, because on one machine it was correct. It was only wrong at the scale where multiple instances run concurrently, which is the only scale that matters in production. The general lesson is that <b>security and abuse-resistance are properties of the deployed topology, not of the code in isolation</b> — you cannot review them by reading a function; you have to reason about how many copies of it run and what they share. And because that reasoning is hard to hold in your head every time, the durable fix (state in Postgres) plus the governance gate (write-surface certification) plus the regression test (301 requests / 250 IPs) form a belt-and-suspenders that keeps the invariant true even after everyone who understood it has moved on.</p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>Which of my security invariants survive a tired reviewer at 2am?</em> Any invariant that lives only in a human's memory is already half-gone. The ones encoded as a failing test — the write-surface census, the CORS test, the eagerness assertion — are the ones you can actually rely on.</div>
+
+<!-- ================= CHAPTER 7 ================= -->
+<h2 id="ch7"><span class="num">CH 07</span>Distributed-systems thinking on serverless</h2>
+
+<div class="principle"><b>Principle.</b> "Serverless" doesn't remove distributed-systems problems — it hides the servers so you <em>forget</em> you have them. Every function invocation is a fresh, stateless, possibly-concurrent instance. The moment two of them can touch the same logical thing, you are doing distributed systems whether you meant to or not.</div>
+
+<h3>Instance statelessness is the whole game</h3>
+<p>The mental model that prevents most serverless bugs is one sentence: <b>a serverless function has no memory of any other invocation.</b> Anything you put in a module-level variable, a <code>Set</code>, a counter, a cache — is per-instance, ephemeral, and might be a blank slate on the very next request. This is why Chapter 6's in-memory dedup <code>Set</code> failed, and it's why the store seam (Chapter 2) treats process-memory strictly as a <em>dev</em> backend: on Vercel, "memory" isn't shared or durable, so production must reach Postgres for anything that must be seen by more than one request. The corollary the code lives by (<span class="path">teach.md</span>, "The rate limiter fails OPEN by design"): each cold start gets a fresh in-memory budget, so any correctness you need across instances must be pushed into shared durable state.</p>
+
+<h3>At-most-once vs at-least-once: choosing your poison</h3>
+<p>Distributed delivery gives you a choice with no free option:</p>
+<ul>
+<li><b>At-least-once</b>: retry until acknowledged. You never lose a message, but you might deliver it twice. Safe <em>if</em> the receiver is idempotent.</li>
+<li><b>At-most-once</b>: send it once, never retry. You never duplicate, but you might drop it on failure.</li>
+</ul>
+<p>The push-broadcast decision (Chapter 6) is an explicit <b>at-most-once</b> choice: a "go-live" notification fired twice is worse than one occasionally missed, so the durable budget-of-1 claim guarantees the broadcast happens <em>at most once</em> per snapshot. Exactly-once delivery is a myth across a network; what you actually build is at-least-once-plus-idempotency <em>or</em> at-most-once-plus-a-durable-claim. PUBMAXX picks the second for broadcasts and the first for user writes — and being able to say which you chose, and why, per surface, is the mark of someone who understands the terrain.</p>
+
+<h3>Idempotency &amp; durable claims: the pattern in Postgres</h3>
+<p>User-facing writes (creating a Plan, joining it, taking a stop action) take the <b>at-least-once-plus-idempotency</b> route, and the mechanism is worth reading in full. Migration <span class="path">0035_plan_write_idempotency.sql</span> implements atomic RPCs that combine a Postgres <em>advisory lock</em> with a stored idempotency key:</p>
+<pre><code>perform pg_advisory_xact_lock(hashtextextended('plan:create:' || p_idempotency_key_hash, 0));
+-- if a row already exists for this key AND the request hash matches → 'replayed'
+if existing_plan.creation_request_hash = p_request_hash and existing_plan.id = p_id
+  then return 'replayed'; end if;
+return 'conflict';   -- same key, DIFFERENT request → refuse
+-- ... otherwise insert and
+return 'created';</code></pre>
+<p>Trace the three outcomes: a client that retries the <em>same</em> create (same idempotency key, same request hash) gets <code>'replayed'</code> and the operation is a no-op — safe to retry forever. A client that reuses a key for a <em>different</em> request gets <code>'conflict'</code> — the key is being abused, refuse it. A genuinely new request gets <code>'created'</code>. The <code>pg_advisory_xact_lock</code> serialises concurrent attempts on the same key so two racing retries can't both insert. This is the canonical idempotent-write recipe — <b>a unique claim + a deterministic replay/conflict decision, made atomically in the database</b> — and it appears across the plan create/join/action RPCs precisely because network retries are inevitable and the UI must be able to resend without fear.</p>
+
+<figure>
+<div class="ascii">  two instances, same idempotency key, racing:
+
+   instance A ─┐                        ┌─ instance B
+               ▼                        ▼
+        pg_advisory_xact_lock('plan:create:KEY')   ← only one holds it at a time
+               │                        │
+      A wins lock, inserts        B waits ... acquires lock,
+      → 'created'                 sees A's row + matching hash
+               │                        │
+               ▼                        ▼
+        row committed once        → 'replayed'  (no second row)
+</div>
+<figcaption>Idempotency = a durable claim (the advisory lock + stored key) plus a replay/conflict decision. Retries are free; duplicates are impossible.</figcaption>
+</figure>
+
+<div class="callout correction"><span class="label">Reality check</span>
+The push-sender pipeline (PR #300) and its durable at-most-once claim are <b>documented and reviewed</b> in <span class="path">fable-implement-prd.md</span> but the sender code and <code>push-tokens</code> table are <em>not present on this branch</em> — they live on the Capacitor-foundation feature branches. The idempotency <em>pattern</em> I anchored above (the Plan RPCs in migration 0035) <b>is</b> on this branch and is the same durable-claim idea in its most inspectable form. I taught the pattern where you can actually read it.</div>
+
+<h3>Why this matters at scale</h3>
+<p>The cruel thing about concurrency bugs is that their probability scales with success. A race between two instances touching the same row has some small chance of firing per pair of concurrent requests; at ten users a day you may never see it, so it passes every test and every demo and ships with confidence. At ten thousand users a day the same code hits that race constantly, and now it's a duplicated charge, a double-sent notification, a lost write — a production incident that reproduces only under load and therefore only in front of customers. This is why you cannot defer concurrency thinking until "we have scale"; by the time the symptom appears, the bug is already deployed and the fix is a migration under fire. The disciplines in this chapter — push shared state into a durable store, make retryable writes idempotent, choose your delivery semantics explicitly — are cheap to apply before the first line and expensive to retrofit after the first incident.</p>
+<p>There's also an organizational scale point hiding here. Idempotency keys don't just protect against network retries; they protect against <em>the client behaving in ways you didn't coordinate</em> — a user double-tapping, a flaky connection auto-retrying, a mobile OS replaying a request after backgrounding the app. As the number of client platforms and network conditions grows, the set of ways a request can arrive twice grows with it, and you cannot enumerate them all. An idempotent write surface is the move that makes the whole class disappear at once: you stop asking "did this specific caller retry?" and start guaranteeing "a retry is always safe, whoever sends it and whyever." That is the difference between defending against known duplicate-causes one at a time and making duplicates structurally impossible — the latter is what survives contact with a real, messy, multi-platform userbase.</p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>If two copies of this function run at the same time and touch the same row, what happens?</em> If your answer is "that won't happen," you've found the bug. The senior answer is always one of: it's idempotent, it's behind a durable claim, or it's provably single-writer — and you can point at the line that makes it so.</div>
+
+<!-- ================= CHAPTER 8 ================= -->
+<h2 id="ch8"><span class="num">CH 08</span>Product &amp; AI engineering: the agent-fleet model</h2>
+
+<div class="principle"><b>Principle.</b> The way software gets built is itself an engineered system. When your "team" is a fleet of AI agents, the leverage is enormous and so is the failure mode: agents are confident, fast, and wrong in correlated ways. The counterweight is <em>process</em> — specs before code, isolation between workers, adversarial review, and verification that trusts observed truth over any agent's report.</div>
+
+<h3>This repo is built with a fleet — and it shows in the artifacts</h3>
+<p>PUBMAXX is developed by a coordinated set of AI agents, and the operating model is written down. From <span class="path">sol.md</span> and <span class="path">fable-implement-prd.md</span>: an <b>architect</b> role (Fable) plans, writes API contracts, reviews, and gates merges but <em>never merges its own work</em>; a <b>backend/feature</b> role (Sol) reviews and merges in the owner's environment; and <b>model-tiered subagents</b> do the implementation — "haiku=mechanical, sonnet=standard, opus=hard." Each PR in the ledger is tagged with the model that implemented it. That tiering is a cost/quality routing decision: don't spend a frontier model on a rename, don't hand a distributed-systems bug to a small one.</p>
+
+<h3>PRD → worktree lanes → adversarial review → e2e truth tables</h3>
+<p>The pipeline that keeps a fleet from producing correlated slop has four stages, each visible in the repo:</p>
+<ol>
+<li><b>PRD first.</b> The <code>docs/</code> folder is dozens of PRDs — a feature is <em>specified</em> before an agent touches code. Issue #252 ("The Local") <em>is</em> the spec; lanes build its waves "verbatim." A spec is the shared source of truth that stops parallel agents from diverging.</li>
+<li><b>Worktree lanes.</b> Each agent works in an isolated git worktree on its own branch (the "lanes" — map-lane, header-lane, push-senders, label-repair, and the ~40 others addressable in this very session). Isolation means one agent's half-finished work can't corrupt another's, and the merge is where conflicts surface <em>explicitly</em> — exactly the migration-collision discipline from Chapter 2, applied to all code.</li>
+<li><b>Adversarial review.</b> The architect reviews against the contract and <em>forces</em> fixes. The ledger records it plainly: on PR #295, "Architect review forced 5 fixes (rate limit, error envelope, webDir stub, AASA comment, write-surface certification as route 61)." On PR #300, "Fable review caught the original per-instance Set flaw" — the exact distributed-systems bug from Chapter 7, caught by review before it shipped. Review here is not a rubber stamp; it is an adversary looking for the specific ways this class of change goes wrong.</li>
+<li><b>e2e truth tables.</b> The final arbiter is a large Playwright suite (60+ specs in <span class="path">e2e/</span>) that drives a real browser against a real build. When a lane <em>claims</em> clean but reality disagrees, e2e is what says so.</li>
+</ol>
+
+<h3>Verification as culture: what "clean" claimed vs what e2e found</h3>
+<p>The single most important habit in this repo is <b>distrusting claimed success.</b> The ledger is full of moments where a lane reported green and end-to-end testing found otherwise. The canonical example: a service-worker cache was silently defeating a Playwright test that delayed map tiles — the test <em>passed</em> for the wrong reason (the SW served cached tiles, bypassing the delay), masking a real fallback path that was never actually exercised. The fix (PR #298) was <code>serviceWorkers: "block"</code> on the GL project so the scenario tests the thing it claims to test. Note the shape of that bug: <em>a green test that wasn't testing anything.</em> A culture that merely counts passing tests would never have caught it; a culture that asks "is this test actually exercising the failure it names?" did.</p>
+<p>The same instinct produced the first-frame watchdog (Chapter 4) and the "honest zeros" rule you see in the product copy — <code>/tonight</code> literally says "no invented nights; thin nights stay thin" rather than fabricate content to look fuller. <b>An engineering culture that will ship an honest zero is one you can trust with a hard yes.</b></p>
+
+<h3>Prompt orchestration is a systems problem</h3>
+<p>The AI features themselves are engineered with the same distrust. "The Landlord" (retrieval-grounded pub heritage) is bounded on every axis: <code>temperature: 0</code>, a token cap, a 10s <code>AbortController</code>, and — the load-bearing part — <code>sanitiseModelAnswer</code> <b>rejects the entire answer</b> if it cites a fact id outside the retrieved set. A phantom citation is treated as fabrication, and the system falls back to reading the known facts back verbatim or saying the honest line "…I won't make one up." This is prompt orchestration as a <em>systems</em> problem: the LLM is an untrusted component wrapped in validation, timeouts, and a grounded fallback, exactly as you'd wrap any unreliable dependency. The model is not the system; the <em>bounds around it</em> are the system.</p>
+
+<h3>Why this matters at scale</h3>
+<p>Agent fleets invert the classic bottleneck of software teams. For fifty years the constraint was <em>writing</em> the code; with a fleet, generation is nearly free and the constraint moves entirely to <b>verification and integration</b> — deciding what should exist, and confirming that what was produced actually works and actually fits. This is why the ratio of process to code in this repo looks inverted to anyone used to human teams: dozens of PRDs, a formal write-surface census, an architect that reviews but never merges, a 60-spec e2e suite. That apparatus is not overhead bolted onto the "real" work; at fleet scale it <em>is</em> the real work, because the code was the easy part. The teams that get leverage from AI are the ones that industrialize verification to match the new generation throughput; the teams that just point models at a repo and merge what looks plausible are manufacturing technical debt at machine speed.</p>
+<p>Correlated failure is the specific danger that makes this non-optional. Human teams fail in <em>uncorrelated</em> ways — two engineers rarely make the identical wrong assumption — so peer review catches a lot by diversity alone. Agents fail in <em>correlated</em> ways: the same blind spot (the in-memory <code>Set</code>, the green-test-that-tests-nothing, the confident hallucinated citation) recurs across lanes because they share training and priors. Diversity-based review doesn't save you; only <em>adversarial</em>, outcome-observing review does — a reviewer specifically hunting the known failure modes, and an e2e layer that observes real behavior rather than trusting reports. The scale lesson generalizes beyond AI: any time your generation capacity outruns your verification capacity, quality is bounded by verification, and the smart investment is there. The Landlord's bounds (temp 0, timeout, phantom-citation rejection, grounded fallback) are this same philosophy applied to the model <em>inside</em> the product — wrap the fast, confident, sometimes-wrong component in verification, whether that component is an LLM feature or an LLM building your features.</p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>When a worker (human, agent, or model) tells me it succeeded, what independent signal confirms it — and is that signal actually observing the outcome, or just re-reading the claim?</em> The whole apparatus of PRDs, isolated lanes, adversarial review, and driven e2e exists to answer that question mechanically instead of trusting a confident report.</div>
+
+<!-- ================= CHAPTER 9 ================= -->
+<h2 id="ch9"><span class="num">CH 09</span>Mobile / native strategy</h2>
+
+<div class="principle"><b>Principle.</b> "Should we build a native app?" is really three questions: what capabilities do we need that the web denies us, how much duplicated surface can we afford to maintain, and how do we keep the native shell from infecting the web bundle? The best answer is usually the <em>least</em> native thing that unlocks the capability you actually need.</div>
+
+<h3>The tradeoff space</h3>
+<table>
+  <tr><th>Approach</th><th>You get</th><th>You pay</th></tr>
+  <tr><td><b>PWA</b> (installable web)</td><td>One codebase, instant updates, offline via SW, add-to-home-screen</td><td>No App Store presence; limited push on iOS historically; no deep native APIs</td></tr>
+  <tr><td><b>Wrapper</b> (Capacitor/Cordova)</td><td>App Store presence + native push + camera, over your <em>existing</em> web app</td><td>A native shell to maintain; store review cycles; some seams to bridge</td></tr>
+  <tr><td><b>Full native</b> (Swift/Kotlin)</td><td>Best performance &amp; platform fidelity</td><td>A second (or third) full codebase; features ship 2–3× slower</td></tr>
+</table>
+
+<h3>The decision: PWA-first, then a remote-URL Capacitor wrap</h3>
+<p>PUBMAXX's locked distribution decision (<span class="path">fable-implement-prd.md</span>, "grilled with the owner"): <b>Capacitor wrap of the existing PWA + native push + real in-app camera. No static export — a remote-URL shell over pubmaxxing.com. Full native rebuild rejected.</b> Unpack the phrase "remote-URL shell": instead of bundling the web assets <em>into</em> the app binary (a static export), the Capacitor app is a thin native shell whose webview simply <b>loads the live pubmaxxing.com</b>. The consequence is the whole reason to do it this way: <em>web fixes ship instantly to native users without an App Store review</em>, because the native app is a window onto the same server everyone else hits. You get store presence and native push/camera for the ~1% of capabilities the web can't do, while keeping the 99% single-codebase, instant-update velocity of the web. That is the least-native thing that unlocks the needed capability — precisely the senior instinct.</p>
+<p>The order matters too and was argued explicitly: <b>mobile <em>web</em> excellence first, wrap second.</b> The owner directive — "users must love the site and beg for the app first" — treats the App Store as something you earn with a great mobile-web experience, not a checkbox you rush. Sequencing is strategy.</p>
+
+<h3>The <code>isNativeApp</code> seam keeps the web bundle clean</h3>
+<p>The risk with any wrapper is that native-only code leaks into the shared bundle — every web user downloads camera-bridge and push-registration code they'll never run. The defence is the same seam pattern as the data layer (Chapter 2): a single <code>isNativeApp</code> / native-platform detector behind which the native paths (<code>nativeCamera</code>, <code>nativePush</code>) hide, so the web build tree-shakes them away and the web bundle stays lean. One boundary, honestly labelled, quarantines an entire platform's concerns — just like the one <code>"use client"</code> line quarantines WebGL and the one <code>selectStore</code> quarantines the backend choice. <b>The recurring lesson of this whole codebase is that a good seam is worth more than a good framework.</b></p>
+
+<div class="callout correction"><span class="label">Reality check</span>
+On <em>this</em> branch, the Capacitor shell, the <code>ios/</code> scaffold, and the native seams (<code>lib/nativePlatform</code>, <code>nativeCamera</code>, <code>nativePush</code>) are <b>not present</b> — they live on the feature branches behind PR #295 and are documented in <span class="path">fable-implement-prd.md</span>. What <em>is</em> shipped here is the PWA foundation the wrap will sit on: the service worker (<span class="path">public/sw.js</span>), <span class="path">public/manifest.webmanifest</span>, add-to-home-screen, and the mobile-first shell (Map · Tonight · Moment · Stories · You). I've taught the decision and its rationale as the documented, owner-grilled plan it is — accurate, but not yet merged to this line.</div>
+
+<h3>Why this matters at scale</h3>
+<p>The dominant cost of a native strategy is not building it — it's <em>maintaining every copy of every feature, forever, in parallel.</em> A full native rebuild means that from that day on, every feature ships two or three times (web, iOS, Android), every bug is fixed two or three times, and the platforms drift because a fix lands on one before the others. That parallel tax is invisible in the first month and dominant by the second year; it is the single most common reason small teams slow to a crawl. The remote-URL wrap is a direct attack on that tax: because the native app loads the live site, features and fixes ship <em>once</em> and reach native users the moment they deploy — no rebuild, no App Store review latency in the critical path. You accept a thin native shell to maintain in exchange for keeping your feature velocity at web speed across all platforms. For a product that lives or dies on iterating fast, that trade is almost always correct until a specific capability or performance need forces otherwise.</p>
+<p>The seam matters at scale for a subtler reason: <b>a leaky platform boundary taxes the majority to serve the minority.</b> If native-only code (camera bridges, push registration, App Store receipt handling) isn't cleanly behind <code>isNativeApp</code>, it gets bundled into the web build that 99% of users load, so every web visitor downloads and parses code that can never run for them — a permanent, invisible weight on your most-trafficked surface to support your least-trafficked one. Clean seams keep the cost of a capability localized to the users who actually use it. This is the exact same principle as the two-artifact data split (don't ship venue detail to draw dots) and the <code>"use client"</code> boundary (don't ship WebGL to the server) — the codebase applies "make each user pay only for what they use" at the data layer, the render layer, and the platform layer alike. That repetition is not a coincidence; it's a house style, and recognizing a house style is how you learn to make decisions that fit a codebase instead of fighting it.</p>
+
+<div class="callout staff"><span class="label">Staff-level question to ask yourself</span>
+<em>What is the smallest amount of "native" that unlocks the one capability I actually can't get on the web — and what seam keeps that native code from taxing every web user?</em> If you're reaching for a full native rebuild, be sure the capability gap justifies a second codebase; usually a wrapper behind an <code>isNativeApp</code> seam is the honest answer.</div>
+
+<!-- ================= CHAPTER 10 ================= -->
+<h2 id="ch10"><span class="num">CH 10</span>What staff+ looks like</h2>
+
+<div class="principle"><b>Principle.</b> The gap between senior and staff is not more code or harder algorithms. It is <em>judgement</em>: knowing what not to build, telling the truth when the truth is a zero, correcting the premise of the task instead of executing a flawed one, and treating merge order and risk as first-class design. Staff engineers are paid for the decisions they <em>refuse</em> to make hastily.</div>
+
+<h3>Refusing scope: the things this repo deliberately does not build</h3>
+<p>Open <span class="path">docs/PRD_ENDGAME_TRUST_SOCIAL_ROADMAP_2026-07-07.md</span> and find the <b>Out of Scope</b> list: "Payments, bill splitting, or pub-owner dashboards. Taxi booking. Storing home addresses by default. Scraping competitor price/review sites. Encouraging alcohol volume, streaks, or speed drinking. Multi-city expansion before London is excellent." Every line is a <em>plausible, tempting</em> feature someone asked for, and every line is a deliberate no. Bill-splitting in particular is the classic scope trap — it sounds small, it's a payments-and-liability swamp, and it's off the core promise. Writing your non-goals down, with as much conviction as your goals, is a staff-level act: it protects focus, and it makes every future "can we just add…" a two-second decision instead of a meeting.</p>
+
+<h3>Honest zeros</h3>
+<p>The product will show you a zero rather than fake a number. <code>/tonight</code> ships the copy "no invented nights; thin nights stay thin." The Landlord says "I won't make one up" rather than hallucinate history. Demo seeds are tagged and filtered out before they can move a real metric. The store returns a 503 rather than pretend a write persisted. Every one of these is a choice to let the product look <em>less</em> impressive in exchange for being <em>trustworthy</em>. That trade — credibility over vanity — compounds; a product (and an engineer) known for honest zeros earns the benefit of the doubt on everything else.</p>
+
+<h3>Premise correction</h3>
+<p>This very document is an example. The brief asked me to teach an "eager-KB" gate, a "5195KB→2212KB" story, a Convex backend in the store seam, and a standalone "0039" migration — several of which don't match the shipped code. The staff move was <em>not</em> to invent plausible-sounding code to satisfy the prompt, nor to silently drop the mismatches, but to <b>correct the document to reality and flag exactly what I changed and why</b> (every red box in this guide). When the task's premise is wrong, executing it faithfully produces confident nonsense. Correcting the premise — respectfully, with evidence — is the higher form of doing the job. You saw the same instinct in the migration reconciliation ("production is ground truth; Git conforms to it") and in the fleet's review culture. Reality is the authority; the spec is a hypothesis about reality.</p>
+
+<h3>Merge order as risk management</h3>
+<p>Read the "Suggested merge order" in <span class="path">fable-implement-prd.md</span>: "#295 → #299 → #300 (stack)… #276, #296, #297, #298 independent, any order." That is not bureaucracy — it is <em>sequencing risk</em>. The stacked PRs must land in dependency order or they break; the independent ones are explicitly marked so they can parallelise safely. The whole <span class="path">docs/MAIN_RECONCILIATION_2026-07-16.md</span> exercise — twelve commits reconciled one by one, each marked "integrated" against the mobile line, with a release rule that "a Vercel READY state is not sufficient: both apex and www must be smoke-tested after aliasing" — is risk management dressed as a merge. Staff engineers think about <em>the order operations happen in</em> and <em>what must be verified between them</em>, because most production incidents are not bad code, they're good code applied in the wrong order or promoted without the last check.</p>
+
+<h3>Judgement in the small: the constant-time admin gate</h3>
+<p>Staff-level judgement isn't only visible in big roadmap decisions; it shows in twenty-line functions. The moderator token check (<span class="path">lib/adminAuth.ts</span> / the <code>safeTokenEqual</code> helper referenced in <span class="path">teach.md</span>) doesn't do <code>if (provided === expected)</code>. It sha256's both sides and compares with <code>timingSafeEqual</code>, because a naive string comparison returns faster when the first character is wrong than when the first ten match — a <b>timing side-channel</b> that lets an attacker recover a secret byte by byte by measuring response times. Almost no one exploits this on a small app; the reason to write it correctly anyway is that "almost no one" is not "no one," the correct version costs three extra lines, and a codebase that gets the twenty-line security details right is one you can trust on the two-thousand-line ones. Judgement is largely the accumulated habit of not cutting the corner that's cheap to cut and expensive to have cut.</p>
+
+<h3>A real reading list, per discipline</h3>
+<p>These are real books and papers, chosen to deepen the exact muscles this repo exercises. No filler.</p>
+
+<h4>Distributed systems &amp; data (Chapters 2, 6, 7)</h4>
+<ul>
+<li><b>Martin Kleppmann — <i>Designing Data-Intensive Applications</i></b> (2017). The single best book on the seam between your code and durable state: replication, idempotency, consistency, delivery semantics. Every idea in Chapter 7 is treated rigorously here.</li>
+<li><b>DeCandia et al. — "Dynamo: Amazon's Highly Available Key-value Store"</b> (SOSP 2007). The paper that made "eventual consistency" and quorum tradeoffs mainstream; read it for how a real system picks its poison.</li>
+<li><b>Nygard — <i>Release It!</i></b> (2nd ed., 2018). Stability patterns — circuit breakers, bulkheads, fail-fast, timeouts. The intellectual ancestor of this repo's fail-soft/fail-closed limiter decisions.</li>
+<li><b>Pat Helland — "Life beyond Distributed Transactions: an Apostate's Opinion"</b> (2007/2016). Why idempotency and durable claims replace the transaction you wish you had — exactly the migration-0035 pattern.</li>
+</ul>
+
+<h4>Web platform &amp; performance (Chapters 1, 4, 5)</h4>
+<ul>
+<li><b>Ilya Grigorik — <i>High Performance Browser Networking</i></b> (O'Reilly, free online). The request lifecycle from DNS to paint, in depth. Chapter 1's waterfall, rigorously.</li>
+<li><b>web.dev — Core Web Vitals &amp; the "Learn Performance" course</b> (Google, ongoing). The canonical, current source for LCP/CLS/INP — the exact metrics gated in <code>gate-z-performance.spec.ts</code>.</li>
+<li><b>Jake Archibald — "The offline cookbook"</b> and the <b>Cache-Control</b> chapters of MDN. The definitive treatment of service-worker strategies (cache-first / SWR / network-first) that <code>public/sw.js</code> implements line for line.</li>
+</ul>
+
+<h4>Security (Chapter 6)</h4>
+<ul>
+<li><b>OWASP — Application Security Verification Standard (ASVS)</b> and the <b>Cheat Sheet Series</b>. Turn "be secure" into a checklist you can encode as tests — the spirit of the write-surface certification.</li>
+<li><b>Michal Zalewski — <i>The Tangled Web</i></b> (2011). Still the clearest explanation of browser security models, CSP, and why <code>'unsafe-inline'</code> is the enemy the nonce in <code>proxy.ts</code> is fighting.</li>
+</ul>
+
+<h4>Data / AI engineering (Chapters 3, 8)</h4>
+<ul>
+<li><b>Kleppmann (again), plus Reis &amp; Housley — <i>Fundamentals of Data Engineering</i></b> (2022). The pipeline lifecycle, determinism, and data-quality thinking behind Chapter 3.</li>
+<li><b>Sculley et al. — "Hidden Technical Debt in Machine Learning Systems"</b> (NeurIPS 2015). Why the code around the model is the system — the framing behind Chapter 8's "bounds around the LLM are the system."</li>
+<li><b>Lewis et al. — "Retrieval-Augmented Generation…"</b> (2020). The grounding pattern The Landlord uses: retrieve first, then generate strictly over what you retrieved, and reject anything ungrounded.</li>
+</ul>
+
+<h4>Judgement &amp; craft (Chapter 10)</h4>
+<ul>
+<li><b>Will Larson — <i>Staff Engineer</i></b> (2021) and <b><i>An Elegant Puzzle</i></b>. The definitive modern texts on what the staff+ role actually is: scope, influence, and technical judgement over raw output.</li>
+<li><b>Fred Brooks — <i>The Mythical Man-Month</i></b> (1975/1995). Still correct about parallelism, communication cost, and why adding workers to a late project makes it later — read it against this repo's agent-fleet coordination.</li>
+<li><b>Kahneman — <i>Thinking, Fast and Slow</i></b> (2011). Because premise-correction and honest-zeros are, at bottom, about noticing when a confident fast answer (yours, a model's, a spec's) needs the slow one.</li>
+</ul>
+
+<div class="callout staff"><span class="label">The one habit under all of it</span>
+Across every chapter, the same move recurs: <b>find the seam, make the invariant a gate, prefer the honest answer, and correct the map to the territory.</b> Seams over frameworks. Tests over vigilance. Zeros over vanity. Reality over the spec. Do those four things consistently and the "staff-level questions" at the end of each chapter start answering themselves — which is, in the end, what staff-level actually feels like from the inside.</div>
+
+<hr>
+<h2 style="border-top:none;margin-top:24px">How to keep learning from this repo</h2>
+<p>A curriculum is only useful if it changes what you do next. Here is how to turn this codebase into an ongoing teacher rather than a one-time read:</p>
+<ul>
+<li><b>Read the comments as design docs.</b> The most valuable prose in this repo is not in <code>docs/</code> — it's the block comments in <span class="path">next.config.mjs</span>, <span class="path">proxy.ts</span>, <span class="path">public/sw.js</span>, and <span class="path">lib/storeBackend.ts</span>. Each explains a <em>trade-off</em>, not just a mechanism. When you write code, aspire to comments that a stranger could learn the reasoning from, because future-you is that stranger.</li>
+<li><b>Follow one request all the way down.</b> Pick a single action — submitting a Pint Drop — and trace it: the composer component → <code>usePintDrops</code> → <code>POST /api/pint-drops</code> → <code>validatePintDrop</code> → the rate-limit gate → <code>selectStore</code> → the Supabase insert + photo upload → the RLS policy on <code>visit_reports</code>. Following one thread through every layer teaches more than reading ten files in isolation, because it shows you the <em>seams</em> and how they compose.</li>
+<li><b>Read the tests to learn the invariants.</b> The <span class="path">__tests__/</span> and <span class="path">e2e/</span> directories are an executable specification of what must stay true: demo seeds don't move prices, <code>decodeCrawl</code> never throws, the write-surface census is exact, prerender eagerness is "moderate." When you want to know "what is this system actually promising," read what it refuses to let break.</li>
+<li><b>When something looks over-engineered, find the scar.</b> Nearly every guard, fallback, and belt-and-suspenders in this repo exists because something once went wrong — the blank map, the double broadcast, the migration collision, the spoofed header. Before you simplify a defensive-looking piece of code, find the war story that put it there. Chesterton's Fence is the whole game: don't remove the fence until you know why it was built.</li>
+<li><b>Practise premise-correction on yourself.</b> The next time a task, a ticket, or a model hands you a plan, ask "is the premise even right?" before executing. This document exists because that question was asked of its own brief. Making it a reflex — respectful, evidence-backed, and applied to your own confident first drafts too — is possibly the single highest-return habit in this entire guide.</li>
+</ul>
+<p>The through-line of all ten chapters is one disposition: <b>be honest with the machine and with the user about what is actually true.</b> Render where it's actually cheapest. Cache only what's actually safe to be stale. Show the zero when the answer is actually zero. Refuse the write when the store actually can't keep it. Correct the map when it actually disagrees with the territory. Everything technical in here — seams, budgets, idempotency, provenance, certification — is machinery in service of that one honesty. Build that way and the systems you make will be trustworthy, which is the only reputation, for a product or an engineer, that compounds.</p>
+
+<hr>
+<p class="footnote"><b>About this document.</b> Written from a read of the repository at branch <code>docs/how-pubmaxx-is-built</code>. Primary sources include <code>teach.md</code>, <code>sol.md</code>, <code>fable-implement-prd.md</code>, <code>docs/WRITE_SURFACE_CERTIFICATION.md</code>, <code>docs/MAIN_RECONCILIATION_2026-07-16.md</code>, <code>docs/SECURITY_POSTURE.md</code>, and the cited source files under <code>lib/</code>, <code>app/</code>, <code>public/</code>, <code>scripts/</code>, <code>supabase/migrations/</code>, and <code>e2e/</code>. Every red <span class="pill">reality check</span> box marks a place where the shipped code diverged from the original brief; in each case the document was corrected to the code, not the reverse — the same discipline the codebase applies to itself.</p>
+
+</div>
+</body>
+</html>

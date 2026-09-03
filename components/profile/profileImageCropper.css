@@ -1,0 +1,131 @@
+/* The crop step's own stylesheet, imported by ProfileImageCropper.tsx.
+   ONE component, ONE copy of its styling. Every host used to restate this whole
+   block under its own page prefix, so the profile editor and the message thread
+   held two hand-maintained copies of the same rules - including the details the
+   comments below call load-bearing - and a third host would have made three.
+
+   A host owns only the geometry that is genuinely its own: where the step sits
+   and how wide it may be (`.messageCropCard`, `.profilePage .profileCropStep-avatar`).
+   A host override must be MORE SPECIFIC than the rule it replaces rather than
+   merely later, because stylesheet order across imported files is not a contract. */
+
+.profileCropStep {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.profileCropFrame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--panel-raised);
+  /* The gesture belongs to the crop, so the browser must not read a drag as a
+     page scroll or a pinch as a page zoom. */
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.profileCropFrame:active {
+  cursor: grabbing;
+}
+
+.profileCropFrame:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.profileCropImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Natural size, then one transform: the arithmetic in
+     lib/profileImagePicker.ts treats the untransformed image as its own pixel
+     grid, so a stylesheet must not resize it first. */
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  transform-origin: 0 0;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* The base mask paints nothing: a rectangular target already shows exactly the
+   frame. Only a round slot dims outside its own shape, and that rule belongs to
+   the host that has one (the avatar, in profile.css). */
+.profileCropMask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.profileCropZoom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profileCropZoom label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.profileCropZoom input[type="range"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  accent-color: var(--brass);
+}
+
+/* One row at every width. The two buttons share it, so neither can grow wide
+   enough to drop the other onto a line of its own. */
+.profileCropActions {
+  display: flex;
+  gap: 10px;
+}
+
+.profileCropConfirm,
+.profileCropCancel {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--brass);
+}
+
+.profileCropConfirm {
+  background: var(--brass);
+  color: var(--paper);
+}
+
+.profileCropCancel {
+  background: transparent;
+  color: var(--ink-soft);
+  border-color: var(--line);
+}
+
+/* The failed state is a sentence and a way back, so its Cancel keeps its own
+   size rather than stretching across the row. */
+.profileCropStepFailed .profileCropCancel {
+  flex: 0 0 auto;
+}
+
+.profileCropConfirm:disabled,
+.profileCropCancel:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

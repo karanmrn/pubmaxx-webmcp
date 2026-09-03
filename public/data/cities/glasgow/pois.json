@@ -1,0 +1,170 @@
+[
+  {
+    "id": "subway-hillhead",
+    "name": "Hillhead Subway",
+    "category": "tube",
+    "coordinates": [-4.2934, 55.8759],
+    "rank": 1
+  },
+  {
+    "id": "subway-kelvinbridge",
+    "name": "Kelvinbridge Subway",
+    "category": "tube",
+    "coordinates": [-4.28, 55.8741],
+    "rank": 1
+  },
+  {
+    "id": "subway-st-georges-cross",
+    "name": "St George's Cross Subway",
+    "category": "tube",
+    "coordinates": [-4.2695, 55.871],
+    "rank": 2
+  },
+  {
+    "id": "subway-cowcaddens",
+    "name": "Cowcaddens Subway",
+    "category": "tube",
+    "coordinates": [-4.259, 55.8685],
+    "rank": 2
+  },
+  {
+    "id": "subway-buchanan-street",
+    "name": "Buchanan Street Subway",
+    "category": "tube",
+    "coordinates": [-4.2534, 55.8625],
+    "rank": 1
+  },
+  {
+    "id": "subway-st-enoch",
+    "name": "St Enoch Subway",
+    "category": "tube",
+    "coordinates": [-4.2555, 55.857],
+    "rank": 1
+  },
+  {
+    "id": "subway-bridge-street",
+    "name": "Bridge Street Subway",
+    "category": "tube",
+    "coordinates": [-4.2585, 55.8518],
+    "rank": 1
+  },
+  {
+    "id": "subway-west-street",
+    "name": "West Street Subway",
+    "category": "tube",
+    "coordinates": [-4.2655, 55.8495],
+    "rank": 2
+  },
+  {
+    "id": "subway-shields-road",
+    "name": "Shields Road Subway",
+    "category": "tube",
+    "coordinates": [-4.2755, 55.8505],
+    "rank": 2
+  },
+  {
+    "id": "subway-kinning-park",
+    "name": "Kinning Park Subway",
+    "category": "tube",
+    "coordinates": [-4.287, 55.85],
+    "rank": 2
+  },
+  {
+    "id": "subway-cessnock",
+    "name": "Cessnock Subway",
+    "category": "tube",
+    "coordinates": [-4.2955, 55.852],
+    "rank": 2
+  },
+  {
+    "id": "subway-ibrox",
+    "name": "Ibrox Subway",
+    "category": "tube",
+    "coordinates": [-4.3045, 55.8545],
+    "rank": 2
+  },
+  {
+    "id": "subway-govan",
+    "name": "Govan Subway",
+    "category": "tube",
+    "coordinates": [-4.3108, 55.8622],
+    "rank": 1
+  },
+  {
+    "id": "subway-partick",
+    "name": "Partick Subway",
+    "category": "tube",
+    "coordinates": [-4.309, 55.8697],
+    "rank": 1
+  },
+  {
+    "id": "subway-kelvinhall",
+    "name": "Kelvinhall Subway",
+    "category": "tube",
+    "coordinates": [-4.3005, 55.871],
+    "rank": 2
+  },
+  {
+    "id": "rail-glasgow-central",
+    "name": "Glasgow Central",
+    "category": "rail",
+    "coordinates": [-4.258, 55.859],
+    "rank": 1
+  },
+  {
+    "id": "rail-glasgow-queen-street",
+    "name": "Glasgow Queen Street",
+    "category": "rail",
+    "coordinates": [-4.2514, 55.8622],
+    "rank": 1
+  },
+  {
+    "id": "park-kelvingrove",
+    "name": "Kelvingrove Park",
+    "category": "park",
+    "coordinates": [-4.285, 55.8685],
+    "rank": 1
+  },
+  {
+    "id": "park-glasgow-green",
+    "name": "Glasgow Green",
+    "category": "park",
+    "coordinates": [-4.24, 55.85],
+    "rank": 1
+  },
+  {
+    "id": "park-botanic-gardens",
+    "name": "Glasgow Botanic Gardens",
+    "category": "garden",
+    "coordinates": [-4.2915, 55.8785],
+    "rank": 1
+  },
+  {
+    "id": "river-clyde-broomielaw",
+    "name": "River Clyde (Broomielaw)",
+    "category": "river",
+    "coordinates": [-4.26, 55.8565],
+    "rank": 1
+  },
+  {
+    "id": "sight-glasgow-cathedral",
+    "name": "Glasgow Cathedral",
+    "category": "historic",
+    "coordinates": [-4.2345, 55.863],
+    "rank": 1
+  },
+  {
+    "id": "sight-necropolis",
+    "name": "Glasgow Necropolis",
+    "category": "historic",
+    "coordinates": [-4.231, 55.8625],
+    "rank": 2
+  },
+  {
+    "id": "sight-kelvingrove-museum",
+    "name": "Kelvingrove Art Gallery and Museum",
+    "category": "sight",
+    "coordinates": [-4.2906, 55.8686],
+    "rank": 1
+  }
+]

@@ -1,0 +1,8 @@
+# Local verification and generated build output are not production inputs.
+/.next-*
+/coverage/
+/__tests__/
+/e2e/
+
+# Design evidence and handoff documents are kept in GitHub, not deployed.
+/docs/

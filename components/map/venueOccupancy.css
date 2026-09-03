@@ -1,0 +1,94 @@
+/* One-tap crowd report on the venue sheet. 44px taps, 16px type. */
+
+.venueOccupancy {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid color-mix(in srgb, var(--brass) 18%, var(--line));
+}
+
+.venueOccupancyQuestion {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.venueOccupancyReading {
+  margin: 6px 0 0;
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.venueOccupancyReading--empty {
+  color: var(--ink-soft);
+}
+
+/* The reading ticks every minute, so only the receipt is announced. */
+.venueOccupancy__srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.venueOccupancyTaps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.venueOccupancyTap {
+  flex: 1 1 0;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.venueOccupancyTap:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.venueOccupancySignIn {
+  margin: 8px 0 0;
+}
+
+.venueOccupancySignIn a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+.venueOccupancyError {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+.venueOccupancyFlag {
+  margin: 8px 0 0;
+}
+
+.venueOccupancyFlagged {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: var(--ink-soft);
+}

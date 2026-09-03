@@ -1,0 +1,306 @@
+.momentPage {
+  min-height: 100svh; /* fallback for browsers without dvh support */
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Suspense fallback skeleton — a minimal composer silhouette (eyebrow, title,
+   capture canvas, action row) so the first paint reads as "the composer is
+   loading" rather than a blank page. Static blocks (no shimmer) so there is no
+   reduced-motion concern. */
+.momentSkeleton {
+  display: grid;
+  gap: 16px;
+}
+
+.momentSkeleton > span {
+  display: block;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ink) 8%, var(--panel));
+}
+
+.momentSkeletonEyebrow {
+  width: 40%;
+  height: 14px;
+  border-radius: 999px;
+}
+
+.momentSkeletonTitle {
+  width: 70%;
+  height: 34px;
+}
+
+.momentSkeletonCanvas {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+}
+
+.momentSkeletonRow {
+  width: 100%;
+  height: 48px;
+}
+
+.momentMain {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 96px) 0 120px;
+}
+
+.momentIntro { max-width: var(--content-max); }
+.momentIntroRail { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.momentPrivacy {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-soft);
+  font: 700 12px/1 var(--font-body);
+}
+.momentCancel { min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 999px; color: var(--ink-soft); font-size: 13px; font-weight: 750; text-decoration: none; }
+.momentCancel:hover, .momentCancel:focus-visible { color: var(--ink); background: color-mix(in srgb, var(--brass) 8%, transparent); }
+.momentIntro h1 {
+  max-width: 9ch;
+  margin: 14px 0 0;
+  font: 700 clamp(44px, 8vw, 76px)/.96 var(--font-display);
+  letter-spacing: -.055em;
+}
+.momentIntro p { max-width: 580px; margin: 18px 0 0; color: var(--ink-soft); font-size: 17px; line-height: 1.55; }
+
+.momentIntent {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.momentIntentCurrent,
+.momentIntentLink {
+  min-height: 82px;
+  padding: 15px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.momentIntentCurrent { border-color: var(--brass); background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised)); }
+.momentIntentLink { background: var(--panel-raised); }
+.momentIntentLink:hover { border-color: var(--brass); }
+.momentIntent strong { display: block; font-size: 14px; }
+.momentIntent span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+.momentIntent svg { color: var(--brass); }
+
+.momentComposer { margin-top: 12px; padding: clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px; background: var(--panel-raised); }
+.momentMediaGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.momentMediaGrid1 { grid-template-columns: 1fr; }
+.momentMedia { position: relative; min-height: 220px; margin: 0; overflow: hidden; border-radius: 16px; background: var(--panel); }
+.momentMedia img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.momentMedia button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, white 24%, transparent);
+  border-radius: 50%;
+  background: rgba(11, 11, 13, .72);
+  color: #faf8f5;
+}
+.momentMediaActions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 7px;
+}
+.momentMediaActions button { position: static; width: 44px; min-width: 44px; padding: 0 10px; border-radius: 12px; font-size: 12px; font-weight: 800; }
+.momentMediaActions button:first-child { width: auto; color: var(--color-on-accent); background: var(--brass); border-color: var(--brass); }
+.momentMediaPicker {
+  min-height: 220px;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
+  /* Solid hairline + soft brass fill reads finished, not like an unfinished
+     dashed placeholder; the fill still marks it as a tappable drop zone. */
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--brass) 4%, var(--paper));
+  color: var(--ink-soft);
+  cursor: pointer;
+  text-align: center;
+}
+.momentMediaPicker:hover { border-color: color-mix(in srgb, var(--brass) 55%, var(--line)); background: color-mix(in srgb, var(--brass) 8%, var(--paper)); }
+.momentMediaPicker strong { color: var(--ink); font-size: 15px; }
+.momentMediaPicker span { color: var(--muted); font-size: 12px; max-width: 22ch; }
+.momentMediaPicker input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); }
+
+/* Desktop drag-drop affordance (D1.4). Phone keeps the quieter picker. */
+.momentMediaPickerDragOver {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 14%, var(--paper));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--brass) 40%, transparent);
+}
+
+.momentEditorBackdrop {
+  position: fixed;
+  z-index: 1400;
+  inset: 0;
+  display: grid;
+  align-items: end;
+  padding: 8px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  background: rgb(11 11 13 / 72%);
+}
+.momentEditorSheet {
+  width: 100%;
+  max-height: calc(100svh - 8px - max(8px, env(safe-area-inset-bottom)));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px 18px 10px 10px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 30%);
+}
+.momentEditorHeader {
+  min-height: 56px;
+  padding: 6px 8px 6px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.momentEditorHeader h2 { margin: 0; font: 700 22px/1.1 var(--font-display); letter-spacing: -.03em; }
+.momentEditorClose { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-raised); color: var(--ink); }
+.momentEditorTools { min-height: 44px; padding: 0 12px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 4px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; font-weight: 800; text-align: center; }
+.momentEditorTools span { min-width: 0; padding: 8px 4px; border-radius: 10px; }
+.momentEditorTools span[aria-current="step"] { background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised)); color: var(--ink); }
+.momentEditorCanvas { min-height: 0; overflow: auto; padding: 12px; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+.momentEditorCanvas .profileCropStep { width: min(100%, 480px); margin: 0 auto; }
+.momentDecorator { width: min(100%, 520px); margin: 0 auto; display: grid; gap: 12px; }
+.momentDecoratorPreview { display: block; width: 100%; height: auto; max-height: min(48svh, 560px); border: 1px solid var(--line); border-radius: 14px; background: var(--panel); object-fit: contain; }
+.momentDecoratorPreviewDraw { touch-action: none; cursor: crosshair; }
+.momentDecoratorFilters { margin: 0; padding: 10px; border: 1px solid var(--line); border-radius: 12px; }
+.momentDecoratorFilters legend { padding: 0 5px; color: var(--ink); font-size: 13px; font-weight: 800; }
+.momentDecoratorFilters > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.momentDecoratorFilters button,
+.momentDecoratorDraw button,
+.momentDecoratorActions button { min-width: 0; min-height: 44px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 11px; background: var(--panel-raised); color: var(--ink); font-size: 12px; font-weight: 800; }
+.momentDecoratorFilters button[aria-pressed="true"],
+.momentDecoratorDraw button[aria-pressed="true"],
+.momentDecoratorActions button:first-child { border-color: var(--brass); background: var(--brass); color: var(--color-on-accent); }
+.momentDecoratorText { display: grid; gap: 6px; color: var(--ink); font-size: 13px; font-weight: 800; }
+.momentDecoratorText input { min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 11px; background: var(--panel-raised); color: var(--ink); }
+.momentDecoratorDraw { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.momentDecoratorActions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.momentDecoratorFilters button:disabled,
+.momentDecoratorDraw button:disabled,
+.momentDecoratorActions button:disabled { opacity: .55; }
+.momentEditorLoading { position: fixed; z-index: 1400; inset: 0; display: grid; place-items: center; padding: 24px; background: rgb(11 11 13 / 72%); color: #faf8f5; font-size: 14px; font-weight: 800; }
+
+@media (min-width: 641px) {
+  .momentEditorBackdrop { align-items: center; padding: 24px; padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+  .momentEditorSheet { width: min(900px, 100%); max-height: calc(100svh - 24px - max(24px, env(safe-area-inset-bottom))); border-radius: 18px; }
+}
+
+@media (min-width: 641px) {
+  .momentMediaPicker {
+    min-height: 260px;
+    position: relative;
+  }
+  .momentMediaPicker span { max-width: 28ch; }
+}
+
+.momentAltText { margin-top: 18px; padding: 16px; border: 1px solid var(--line-soft); border-radius: 14px; background: color-mix(in srgb, var(--brass) 4%, var(--panel-raised)); display: grid; gap: 12px; }
+.momentAltText legend { padding: 0 6px; font: 700 14px/1.2 var(--font-body); color: var(--ink); }
+.momentAltText__hint { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.45; }
+.momentAltText__row { display: grid; gap: 6px; color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+.momentAltText__row textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 500 16px/1.45 var(--font-body);
+  resize: vertical;
+}
+.momentAltText__row textarea::placeholder { color: var(--muted); opacity: .86; }
+.momentAltText__row textarea:focus-visible { outline: 3px solid color-mix(in srgb, var(--brass) 55%, transparent); outline-offset: 2px; border-color: var(--brass); }
+
+.momentFields { margin-top: 22px; display: grid; gap: 16px; }
+.momentFields label { display: grid; gap: 7px; color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+.momentFields small { color: var(--muted); font-weight: 500; }
+.momentFields :is(input, textarea) {
+  width: 100%;
+  min-height: 48px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 500 16px/1.45 var(--font-body);
+}
+.momentFields textarea { resize: vertical; }
+.momentFields :is(input, textarea)::placeholder { color: var(--muted); opacity: .86; }
+.momentFields :is(input, textarea):focus-visible { outline: 3px solid color-mix(in srgb, var(--brass) 55%, transparent); outline-offset: 2px; border-color: var(--brass); }
+.momentFieldPair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.momentStatus { min-height: 44px; margin-top: 18px; display: flex; align-items: center; gap: 9px; color: var(--ink-soft); font-size: 13px; }
+.momentStatus svg { flex: 0 0 auto; color: var(--brass); }
+.momentSave {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font-size: 15px;
+  font-weight: 800;
+}
+.momentSave:disabled { cursor: not-allowed; opacity: .48; }
+.momentSave:not(:disabled):active { transform: scale(.985); --shared-press-scale: 1; }
+.momentSignIn { margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
+.momentSignIn p { margin: 0 0 12px; color: var(--ink-soft); font-size: 14px; }
+
+.momentSaved { margin-top: 16px; padding: 22px; border: 1px solid color-mix(in srgb, var(--brass) 36%, var(--line)); border-radius: 18px; background: color-mix(in srgb, var(--brass) 6%, var(--panel-raised)); }
+.momentSaved h2 { margin: 0; font: 700 24px/1.1 var(--font-display); }
+.momentSaved p { margin: 9px 0 0; color: var(--ink-soft); line-height: 1.5; }
+.momentSaved div { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 9px; }
+.momentSaved a { min-height: 44px; padding: 0 15px; display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); font-weight: 750; text-decoration: none; }
+.momentSaved a:first-child { border-color: var(--brass); background: var(--brass); color: var(--color-on-accent); }
+
+@media (max-width: 640px) {
+  .momentMain { width: min(100% - 24px, 760px); padding-top: 32px; }
+  .momentIntro h1 { font-size: 48px; line-height: .96; }
+  .momentIntro p { font-size: 16px; }
+  .momentIntent { grid-template-columns: 1fr; }
+  .momentComposer { padding: 12px; border-radius: 18px; }
+  .momentMediaGrid { grid-template-columns: 1fr 1fr; }
+  .momentMediaGrid1 { grid-template-columns: 1fr; }
+  .momentMedia, .momentMediaPicker { min-height: 220px; }
+  .momentMediaPicker { align-content: start; padding-top: 36px; }
+  .momentMediaGrid:not(.momentMediaGrid1) .momentMedia,
+  .momentMediaGrid:not(.momentMediaGrid1) .momentMediaPicker { min-height: 165px; }
+  .momentFieldPair { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .momentPage, .momentComposer, .momentIntentLink { background: var(--paper); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momentPage *, .momentPage *::before, .momentPage *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}

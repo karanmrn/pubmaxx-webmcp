@@ -1,0 +1,30 @@
+borough,price_rows,unique_pubs
+Barnet,11,4
+Bexley,42,15
+Brent,10,1
+Bromley,28,10
+Camden,343,153
+City of London,615,191
+Croydon,44,18
+Ealing,32,19
+Enfield,52,8
+Greenwich,3,2
+Hackney,56,33
+Hammersmith and Fulham,103,38
+Haringey,22,6
+Harrow,10,1
+Hounslow,10,1
+Islington,166,99
+Kensington and Chelsea,169,54
+Kingston upon Thames,20,2
+Lambeth,101,44
+Lewisham,26,8
+Merton,35,8
+Newham,2,1
+Richmond upon Thames,32,12
+Southwark,538,141
+Sutton,11,2
+Tower Hamlets,35,13
+Waltham Forest,17,8
+Wandsworth,122,42
+Westminster,365,134

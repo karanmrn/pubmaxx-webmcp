@@ -1,0 +1,195 @@
+/* Zone picker — matches the map's Drinks chip idiom. Role-tokened per #328:
+   the loud coral is licensed only as --accent-action (interaction feedback),
+   and a SELECTED chip reads as the quiet "you are here" --state-active-* tint,
+   never the CTA fill. Both themes via CSS variables. */
+
+.zonePicker {
+  position: relative;
+  display: inline-flex;
+}
+
+.zonePickerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--line) 78%, var(--accent-action) 22%);
+  background: color-mix(in srgb, var(--panel-raised) 90%, transparent);
+  color: var(--ink-soft);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.zonePickerBtn:hover,
+.zonePickerBtn:focus-visible {
+  border-color: var(--accent-action);
+  color: var(--ink);
+}
+
+.zonePickerBtn:focus-visible {
+  outline: 2px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+.zonePickerBtn:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+/* Selected: "you are here" whisper, not the CTA shout. */
+.zonePickerBtn.isActive {
+  border-color: var(--state-active-border);
+  background: var(--state-active-surface);
+  color: var(--state-active-ink);
+}
+
+.zonePickerPanel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  width: min(340px, calc(100vw - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid color-mix(in srgb, var(--accent-action) 24%, var(--line));
+  background: var(--panel-raised);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.zonePicker.isInline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Sentence case: uppercase is reserved for stamps (docs/DESIGN_SYSTEM.md). */
+.zonePickerInlineLabel {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.zoneChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.zoneChip {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--accent-action) 30%);
+  background: color-mix(in srgb, var(--panel-raised) 88%, transparent);
+  color: var(--ink-soft);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.zoneChip:hover,
+.zoneChip:focus-visible {
+  border-color: var(--accent-action);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent-action) 10%, var(--panel-raised));
+}
+
+.zoneChip:focus-visible {
+  outline: 2px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+.zoneChip:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+/* Selected chip: quiet active tint, reserving the loud fill for the Plan CTA. */
+.zoneChip.isOn {
+  border-color: var(--state-active-border);
+  background: var(--state-active-surface);
+  color: var(--state-active-ink);
+}
+
+/* ── De-box: the MAP picker's zones are one segmented control ────────────────
+   Design judgement 2026-08-01, finding 2.4. Seven bordered squares read as
+   seven separate things; seven fare zones are ONE choice. Inside the picker
+   the group wears a single edge, the segments are divided by interior
+   hairlines, and selection is carried by the fill. Scoped to `.zonePicker` on
+   purpose: the /pubs gallery reuses the base chip idiom above and is not in
+   this lane's scope. */
+.zonePicker .zoneChips {
+  flex-wrap: nowrap;
+  gap: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+}
+
+.zonePicker .zoneChip {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0 6px;
+  border: 0;
+  border-left: 1px solid var(--line-soft);
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.zonePicker .zoneChip:first-child {
+  border-left: 0;
+}
+
+.zonePicker .zoneChip:hover,
+.zonePicker .zoneChip:focus-visible {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent-action) 9%, transparent);
+}
+
+.zonePicker .zoneChip:focus-visible {
+  outline-offset: -2px;
+}
+
+.zonePicker .zoneChip.isOn {
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zonePickerBtn,
+  .zoneChip {
+    transition: none;
+  }
+  .zonePickerBtn:active,
+  .zoneChip:active {
+    transform: none;
+  }
+}

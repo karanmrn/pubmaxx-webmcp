@@ -1,0 +1,120 @@
+/* De-box (design judgement 2026-08-01, finding 2.4): borders are for inputs,
+   fills are for selection, hairlines are for structure. This section is none of
+   those - it is a heading with a control under it, so the card around it goes
+   and the spacing does the grouping. */
+.mapExperienceLens {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+}
+
+.mapExperienceLensHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+
+/* Sentence case: uppercase is reserved for stamps (docs/DESIGN_SYSTEM.md). */
+.mapExperienceLensHead > span {
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+}
+
+.mapExperienceLensHead > small {
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+/* One segmented control: ONE shared hairline around the group, never three
+   boxes. Selection is the fill; an unselected segment carries no edge at all. */
+.mapExperienceLensOptions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  min-width: 0;
+  padding: 4px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md, 14px);
+}
+
+.mapExperienceLensOption {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: var(--control-radius, 12px);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.mapExperienceLensOption span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.mapExperienceLensOption:hover,
+.mapExperienceLensOption:focus-visible {
+  color: var(--ink);
+}
+
+.mapExperienceLensOption:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+/* Selection is the fill, and the fill alone. Coral stays with the primary CTA
+   (DESIGN.md, The One Accent Rule); a view chooser is not one. */
+.mapExperienceLensOption.isSelected {
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+}
+
+.mapExperienceLensSummary {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 420px) {
+  .mapExperienceLensHead {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .mapExperienceLensHead > small {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapExperienceLensOption {
+    transition: none;
+  }
+}

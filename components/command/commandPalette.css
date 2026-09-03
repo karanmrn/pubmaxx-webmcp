@@ -1,0 +1,177 @@
+/* Global ⌘K command palette (feature N1). Token-driven so it flips light/dark
+   for free and reads over both paper pages and the dark map shell. No hard-coded
+   colours — every value resolves to a variable from globals.css / theme.css.
+   Sits above every other overlay (--z-overlay-top) since it's summoned from
+   anywhere, including on top of the map chrome. */
+
+.cmdkBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay-top);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* Slightly below centre so the panel sits in the eye-line, not dead-centre. */
+  padding: max(12vh, var(--space-12)) var(--space-4) var(--space-4);
+  background: color-mix(in srgb, var(--ink-deep) 46%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cmdkPanel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 560px;
+  max-height: min(64vh, 520px);
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid color-mix(in srgb, var(--line) 78%, var(--brass) 22%);
+  border-radius: var(--radius-lg);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cmdkBackdrop {
+    animation: cmdk-fade var(--duration-fast) var(--ease-out) both;
+  }
+  .cmdkPanel {
+    animation: cmdk-pop var(--duration-slow) var(--ease-out-strong) both;
+  }
+}
+
+@keyframes cmdk-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Never appears from scale(0) — starts near full size + a small lift, matching
+   the app-wide entrance-motion convention. */
+@keyframes cmdk-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Search input ─────────────────────────────────────────────────────────── */
+.cmdkInputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.cmdkInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-body, inherit);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.cmdkInput::placeholder {
+  color: var(--muted);
+}
+
+.cmdkEscHint {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--panel-raised) 84%, var(--line) 16%);
+  color: var(--muted);
+  font-family: var(--font-data, monospace);
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+/* ── Results list ─────────────────────────────────────────────────────────── */
+.cmdkList {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  padding: var(--space-2);
+  overflow-y: auto;
+  list-style: none;
+  overscroll-behavior: contain;
+}
+
+.cmdkGroupChunk {
+  list-style: none;
+}
+
+.cmdkGroupHeader {
+  padding: var(--space-3) var(--space-3) var(--space-1);
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cmdkRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.cmdkRow.isActive {
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.cmdkRowLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cmdkRowHint {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-family: var(--font-data, monospace);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.cmdkEmpty {
+  padding: var(--space-6) var(--space-3);
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+  list-style: none;
+}
+
+/* ── Mobile: full-width sheet-ish panel, still centred but roomier ─────────── */
+@media (max-width: 640px) {
+  .cmdkBackdrop {
+    padding: max(8vh, var(--space-8)) var(--space-3) var(--space-3);
+  }
+  .cmdkPanel {
+    max-width: none;
+    max-height: min(72vh, 560px);
+  }
+}

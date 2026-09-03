@@ -1,0 +1,351 @@
+/* Moderator console. Uses the app's theme tokens (globals.css :root, swapped
+   per light/dark) so it inherits both palettes for free. */
+
+.admin {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  color: var(--ink);
+}
+
+.adminNav {
+  margin-bottom: 1.25rem;
+}
+
+.admin h1 {
+  font-size: 1.35rem;
+  margin: 0 0 0.25rem;
+}
+
+.admin p.admin-sub {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.admin-section {
+  margin: 2.5rem 0 0.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line, rgba(0, 0, 0, 0.1));
+  font-size: 1.4rem;
+}
+
+.adminMapCallout {
+  display: inline-flex;
+  margin: 0 0 1.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.admin-bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.admin-bar input {
+  flex: 1 1 220px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+}
+
+.admin-bar input:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+  border-color: var(--brass);
+}
+
+.admin-btn {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.admin-btn:hover {
+  filter: brightness(1.05);
+}
+
+.admin-btn:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.admin-msg {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+}
+.admin-msg[role="alert"] {
+  border-color: var(--brick);
+  color: var(--brick);
+}
+
+.admin-empty {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--muted);
+}
+
+.admin-empty strong {
+  color: var(--ink);
+}
+
+.admin-empty a {
+  color: var(--brass);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.admin-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  padding: 1rem 1.1rem;
+}
+
+.admin-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-handle {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.admin-venue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-venue-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.admin-price {
+  color: var(--pint);
+  font-weight: 600;
+}
+
+.admin-note {
+  color: var(--ink-soft);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.admin-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.admin-report {
+  color: var(--brick);
+  font-weight: 600;
+}
+
+.admin-photos {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.admin-photos img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.admin-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-restore {
+  border-color: var(--pint);
+  background: var(--pint);
+}
+
+.admin-keep {
+  border-color: var(--brick);
+  background: var(--brick);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.admin-tab {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-tab.active {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.admin-import-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 520px;
+}
+
+.admin-field {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.admin-field input,
+.admin-field textarea,
+.admin-field select {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+.admin-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.admin-field input:focus-visible,
+.admin-field textarea:focus-visible,
+.admin-field select:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+  border-color: var(--brass);
+}
+
+.admin-import-queue-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+.admin-import-queue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-inline-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.admin-inline-check input {
+  width: auto;
+}
+
+.admin-import-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.admin-import-item {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+}
+
+.admin-import-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.admin-import-status {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-import-status-queued {
+  color: var(--brass);
+}
+
+.admin-import-status-dismissed {
+  color: var(--muted);
+}
+
+.admin-import-body {
+  margin: 0 0 0.4rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.admin-import-venue {
+  margin: 0 0 0.65rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}

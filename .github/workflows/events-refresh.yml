@@ -1,0 +1,60 @@
+name: What's-On events refresh
+
+# Official-API events refresh for the Tonight page (Ticketmaster Discovery +
+# Skiddle). Runs scripts/whatson/eventsRefresh.mjs, which fetches ONLY the two
+# self-service, ToS-clean discovery APIs audited in
+# docs/EVENT_SOURCES_RESEARCH_2026-07-18.md, normalises them into the B1
+# WhatsOnRow contract, matches venues conservatively, and opens a PR for human
+# review. It NEVER pushes to a protected branch and NEVER scrapes aggregators.
+#
+# Daily 04:00 UTC. TICKETMASTER_API_KEY is a repo secret. SKIDDLE_API_KEY is not
+# provisioned yet and the Skiddle lane stays not-configured.
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: whats-on-events-london
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Build generated venue details
+        run: npm run build:slim
+
+      # The refresh VALIDATES the file it wrote before it branches, commits or
+      # opens the PR (runEventsRefresh runs validate-data itself, and refuses
+      # to publish when the gate rejects a row). So a bad refresh fails here
+      # with nothing pushed, rather than going red with the data already on the
+      # remote. `--with-common` makes this command the single owner of the
+      # polite Common crawl on this path; the local scheduler owns it as its
+      # own lane instead.
+      - name: Refresh events, validate, then open review PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          SKIDDLE_API_KEY: ${{ secrets.SKIDDLE_API_KEY }}
+        run: npm run refresh:events -- --with-common --open-pr

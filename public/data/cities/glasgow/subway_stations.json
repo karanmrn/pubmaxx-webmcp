@@ -1,0 +1,111 @@
+{
+  "attribution": "Station names and approximate entrance coordinates compiled from publicly known SPT Subway / OpenStreetMap knowledge. Not an official SPT feed. Typical last-service times are conservative static approximations (~23:00 typical close; Fri/Sat often similar) — always check live boards before you leave.",
+  "source": "static-seed-v1",
+  "stations": [
+    {
+      "id": "subway:hillhead",
+      "name": "Hillhead",
+      "lat": 55.8759,
+      "lng": -4.2934,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:kelvinbridge",
+      "name": "Kelvinbridge",
+      "lat": 55.8742,
+      "lng": -4.2795,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:st-georges-cross",
+      "name": "St George's Cross",
+      "lat": 55.871,
+      "lng": -4.2695,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:cowcaddens",
+      "name": "Cowcaddens",
+      "lat": 55.8685,
+      "lng": -4.259,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:buchanan-street",
+      "name": "Buchanan Street",
+      "lat": 55.8625,
+      "lng": -4.253,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:st-enoch",
+      "name": "St Enoch",
+      "lat": 55.857,
+      "lng": -4.2555,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:bridge-street",
+      "name": "Bridge Street",
+      "lat": 55.8525,
+      "lng": -4.2585,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:west-street",
+      "name": "West Street",
+      "lat": 55.8495,
+      "lng": -4.2655,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:shields-road",
+      "name": "Shields Road",
+      "lat": 55.8498,
+      "lng": -4.2755,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:kinning-park",
+      "name": "Kinning Park",
+      "lat": 55.8505,
+      "lng": -4.287,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:cessnock",
+      "name": "Cessnock",
+      "lat": 55.852,
+      "lng": -4.2945,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:ibrox",
+      "name": "Ibrox",
+      "lat": 55.8545,
+      "lng": -4.3045,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:govan",
+      "name": "Govan",
+      "lat": 55.862,
+      "lng": -4.3105,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:partick",
+      "name": "Partick",
+      "lat": 55.8698,
+      "lng": -4.309,
+      "lines": ["Outer Circle", "Inner Circle"]
+    },
+    {
+      "id": "subway:kelvinhall",
+      "name": "Kelvinhall",
+      "lat": 55.871,
+      "lng": -4.3005,
+      "lines": ["Outer Circle", "Inner Circle"]
+    }
+  ]
+}

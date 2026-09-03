@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PUBMAXX night crawl · Option A - Card stack</title>
+<style>
+  /* ── House tokens, dark (B Night Out), coral accent per U7 brief ──────────
+     Values mirror docs/DESIGN_SYSTEM.md dark column. Bungee display face is
+     QUARANTINED, so caps display type is mimicked with a letter-spaced system
+     stack (--font-display). No external requests anywhere in this file. */
+  :root {
+    --paper: #070b0a;
+    --panel: #0e1613;
+    --panel-raised: #141c19;
+    --panel-hi: #1a2420;
+    --ink: #eef3ef;
+    --ink-soft: #c5d0c9;
+    --muted: #8fa399;
+    --line: #24302b;
+    --line-soft: #1a2420;
+    --coral: #ff5a5f;        /* --brass candle coral */
+    --coral-bright: #ff7a55; /* --brass-bright */
+    --pint: #3dff9a;         /* neon go / positive */
+    --amber: #f0a01a;        /* caution */
+    --brick: #ff6b7a;        /* destructive / skip */
+    --radius: 14px;
+    --radius-lg: 22px;
+    --font-display: "SF Pro Display", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-data: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 26px 16px;
+    background: #050708;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255, 90, 95, 0.05), transparent 70%);
+    font-family: var(--font-ui);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .caption {
+    max-width: 390px;
+    margin: 0 auto 16px;
+    color: #6c7b74;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .caption b { color: #9fb0a8; font-weight: 600; }
+
+  /* ── Phone frame 390 x 844 ─────────────────────────────────────────────── */
+  .phone {
+    position: relative;
+    width: 390px;
+    height: 844px;
+    border-radius: 46px;
+    padding: 12px;
+    background: linear-gradient(160deg, #1c2620, #0a0f0d);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+  .screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 36px;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 60% at 50% -10%, rgba(255, 90, 95, 0.08), transparent 60%),
+      var(--paper);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Status strip (device chrome + night-mode vitals) ──────────────────── */
+  .statusbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px 6px;
+    font-family: var(--font-data);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .vitals { display: flex; align-items: center; gap: 10px; }
+  .vitals .weak { color: var(--muted); letter-spacing: 1px; }
+  .batt {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: var(--amber);
+  }
+  .batt .cell {
+    width: 22px; height: 11px; border-radius: 3px;
+    border: 1.5px solid var(--amber); position: relative; padding: 1.5px;
+  }
+  .batt .cell::after {
+    content: ""; position: absolute; right: -3px; top: 3px;
+    width: 2px; height: 5px; border-radius: 1px; background: var(--amber);
+  }
+  .batt .fill { display: block; width: 15%; height: 100%; border-radius: 1px; background: var(--amber); }
+
+  /* ── Header: which crawl, where you are ────────────────────────────────── */
+  .head { padding: 8px 22px 4px; }
+  .kicker {
+    font-family: var(--font-display);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--coral);
+  }
+  .progress { display: flex; align-items: center; gap: 7px; margin-top: 10px; }
+  .pip { height: 6px; border-radius: 3px; flex: 1; background: var(--line); }
+  .pip.done { background: var(--pint); }
+  .pip.now { background: var(--coral); box-shadow: 0 0 14px rgba(255, 90, 95, 0.6); }
+  .stopcount {
+    margin-top: 8px; font-family: var(--font-data); font-size: 12px;
+    letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase;
+  }
+
+  /* ── Card stack ────────────────────────────────────────────────────────── */
+  .stack {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px 4px;
+  }
+
+  /* Small done card */
+  .card {
+    border-radius: var(--radius);
+    background: var(--panel-raised);
+    border: 1px solid var(--line);
+    padding: 14px 16px;
+  }
+  .card.done {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--panel);
+    padding: 12px 16px;
+  }
+  .tick {
+    width: 30px; height: 30px; flex: none; border-radius: 50%;
+    background: rgba(61, 255, 154, 0.14);
+    color: var(--pint);
+    display: grid; place-items: center; font-size: 16px; font-weight: 800;
+  }
+  .done .name { font-size: 15px; font-weight: 600; color: var(--ink-soft); }
+  .done .meta { font-family: var(--font-data); font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .done .idx { margin-left: auto; font-family: var(--font-data); font-size: 12px; color: var(--muted); }
+
+  /* HERO - next stop, the star of the glance */
+  .hero {
+    flex: 1;
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(130% 90% at 50% 0%, rgba(255, 90, 95, 0.16), transparent 62%),
+      linear-gradient(180deg, #1c1614, var(--panel-raised));
+    border: 1px solid rgba(255, 90, 95, 0.32);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+  }
+  .hero .eyebrow {
+    font-family: var(--font-display);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--coral);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    margin-top: 6px;
+    font-size: 34px; line-height: 1.02; font-weight: 800;
+    letter-spacing: 0.01em; text-transform: uppercase; color: var(--ink);
+  }
+  .distline {
+    display: flex; align-items: baseline; gap: 14px; margin-top: 14px;
+    font-family: var(--font-data);
+  }
+  .distline .big { font-size: 30px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+  .distline .unit { font-size: 14px; color: var(--muted); }
+  .distline .dot { color: var(--line); font-size: 18px; }
+
+  /* Crew row - who is where */
+  .crew { margin-top: 16px; }
+  .crew .lbl {
+    font-family: var(--font-data); font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+  }
+  .crewrow { display: flex; flex-wrap: wrap; gap: 8px; }
+  .who {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 6px 12px 6px 6px; border-radius: 999px;
+    background: var(--panel-hi); border: 1px solid var(--line);
+    font-size: 13px; font-weight: 600; color: var(--ink-soft);
+  }
+  .ava {
+    width: 24px; height: 24px; border-radius: 50%; flex: none;
+    display: grid; place-items: center; font-size: 11px; font-weight: 800;
+    color: #06110b;
+  }
+  .who .state { font-family: var(--font-data); font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
+  .who.here .ava { background: var(--pint); }
+  .who.here .state { color: var(--pint); }
+  .who.late .ava { background: var(--amber); }
+  .who.late .state { color: var(--amber); }
+  .who.ahead .ava { background: var(--coral); }
+  .who.ahead .state { color: var(--coral); }
+
+  .spacer { flex: 1; }
+
+  /* Primary action pair */
+  .actions { display: flex; gap: 12px; margin-top: 18px; }
+  .btn {
+    flex: 1; min-height: 76px; border: 0; border-radius: 18px;
+    font-family: var(--font-display); font-size: 17px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 3px; cursor: pointer; transition: transform 0.12s ease;
+  }
+  .btn small { font-family: var(--font-data); font-size: 10px; font-weight: 600; letter-spacing: 0.06em; opacity: 0.8; text-transform: none; }
+  .btn:active { transform: scale(0.97); }
+  .btn.arrive { background: var(--coral); color: #22090a; box-shadow: 0 12px 30px rgba(255, 90, 95, 0.4); }
+  .btn.skip { background: transparent; color: var(--brick); border: 1.5px solid rgba(255, 107, 122, 0.5); }
+
+  /* ── Get-home escape hatch - always visible, pinned ────────────────────── */
+  .escape {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 64px; margin: 8px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+    border-radius: 16px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-family: var(--font-display); font-size: 15px; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+  }
+  .escape .ico { font-size: 18px; }
+  .escape:active { background: var(--panel-hi); }
+</style>
+</head>
+<body>
+  <p class="caption">
+    <b>Option A - Card stack glance screen.</b> One vertical stack, ranked by urgency:
+    what is done shrinks, the next stop owns the screen, get-home is always the last thing your thumb finds.
+  </p>
+
+  <div class="phone">
+    <div class="screen">
+
+      <div class="statusbar">
+        <span>22:47</span>
+        <span class="vitals">
+          <span class="weak">&middot; &middot;</span>
+          <span class="batt"><span class="cell"><span class="fill"></span></span>15%</span>
+        </span>
+      </div>
+
+      <div class="head">
+        <div class="kicker">Saturday bender</div>
+        <div class="progress">
+          <span class="pip done"></span>
+          <span class="pip now"></span>
+          <span class="pip"></span>
+        </div>
+        <div class="stopcount">Stop 2 of 3 &middot; on the lash</div>
+      </div>
+
+      <div class="stack">
+
+        <div class="card done">
+          <span class="tick">&check;</span>
+          <div>
+            <div class="name">The Southampton Arms</div>
+            <div class="meta">Arrived 21:58 &middot; 4 pints in</div>
+          </div>
+          <span class="idx">01</span>
+        </div>
+
+        <div class="hero">
+          <div class="eyebrow">Next up &middot; head here</div>
+          <h1>The Bull<br>&amp; Last</h1>
+          <div class="distline">
+            <span class="big">4</span><span class="unit">min walk</span>
+            <span class="dot">&bull;</span>
+            <span class="big">300</span><span class="unit">m</span>
+          </div>
+
+          <div class="crew">
+            <div class="lbl">Who is where</div>
+            <div class="crewrow">
+              <span class="who ahead"><span class="ava">P</span>Priya <span class="state">there</span></span>
+              <span class="who here"><span class="ava">S</span>Sam <span class="state">with you</span></span>
+              <span class="who late"><span class="ava">J</span>Jo <span class="state">lagging</span></span>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="actions">
+            <button class="btn arrive">We are here<small>check in stop 2</small></button>
+            <button class="btn skip">Skip it<small>jump to stop 3</small></button>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="escape"><span class="ico">&#9166;</span> Get me home</button>
+
+    </div>
+  </div>
+</body>
+</html>

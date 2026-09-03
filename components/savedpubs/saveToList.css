@@ -1,0 +1,98 @@
+/* Save-to-list control with custom lists (story 33). Uses the app tokens; the
+   chips mirror the vibe-tag stamp idiom used elsewhere. */
+
+.saveToListToggle {
+  /* Thumb-sized on a phone: this opens the whole save-to-list panel, and at
+     30px tall it was the smallest hit target on the venue sheet. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.saveToListToggle:hover {
+  border-color: var(--brass);
+}
+
+.saveToList {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.saveToListChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.saveToListChip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 12px;
+  cursor: pointer;
+}
+.saveToListChip:hover:not(:disabled) {
+  border-color: var(--brass);
+  color: var(--ink);
+}
+.saveToListChip:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.saveToListNew {
+  display: flex;
+  gap: 6px;
+}
+.saveToListNew input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 13px;
+}
+.saveToListCreate {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--brass);
+  color: var(--panel-raised);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.saveToListCreate:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.saveToListToast {
+  margin: 0;
+  font-size: 13px;
+  color: var(--brass);
+}
+
+.saveToListClose {
+  justify-self: start;
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}

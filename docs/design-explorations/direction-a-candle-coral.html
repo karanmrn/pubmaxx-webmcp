@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PubMax · Direction A — Candle Coral</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #fff1e6;
+      --paper-deep: #ffe4d4;
+      --panel: #fffaf6;
+      --ink: #1c1412;
+      --ink-soft: #4a3632;
+      --muted: #7a5c55;
+      --line: #efcfc4;
+      --coral: #ff5a5f;
+      --coral-deep: #e84348;
+      --coral-soft: #ffecec;
+      --pint: #2d8a58;
+      --amber: #c47a28;
+      --map-land: #f3ddd0;
+      --map-water: #d9ebe8;
+      --map-road: #e8cbb8;
+      --route: #ff5a5f;
+      --radius: 10px;
+      --font-display: Fraunces, Georgia, serif;
+      --font-ui: Sora, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: var(--font-ui);
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 20% 0%, #ffd8c4 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 100%, #ffc9b8 0%, transparent 45%),
+        #e8d5c8;
+    }
+
+    .stage {
+      width: 1440px;
+      height: 900px;
+      max-width: 100%;
+      background: var(--paper);
+      border: 1px solid #e0b8a8;
+      border-radius: 14px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 72px 1fr;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 30px 80px rgba(60, 30, 20, 0.18);
+      position: relative;
+      animation: stage-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* —— Top chrome —— */
+    .top {
+      display: grid;
+      grid-template-columns: auto auto 1fr auto auto;
+      align-items: center;
+      gap: 18px;
+      padding: 0 22px;
+      background: linear-gradient(180deg, #fff8f2 0%, var(--paper) 100%);
+      border-bottom: 1px solid var(--line);
+      z-index: 3;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .brand span { color: var(--coral); }
+
+    .city {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+
+    .city svg { opacity: 0.7; }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 420px;
+      width: 100%;
+      justify-self: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .search strong { color: var(--ink-soft); font-weight: 500; }
+
+    .cta {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      color: #fffaf6;
+      background: var(--coral);
+      padding: 12px 22px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(255, 90, 95, 0.35);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      background: var(--coral-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(255, 90, 95, 0.42);
+    }
+
+    .back {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back:hover { color: var(--ink); }
+
+    /* —— Main —— */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      min-height: 0;
+      position: relative;
+    }
+
+    .map {
+      position: relative;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(255, 200, 160, 0.45), transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(255, 120, 110, 0.12), transparent 45%),
+        var(--map-land);
+      overflow: hidden;
+    }
+
+    .map-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-label {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      z-index: 2;
+      max-width: 340px;
+      animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+    }
+
+    .map-label h1 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      text-wrap: balance;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .map-label p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+      max-width: 34ch;
+    }
+
+    .pin {
+      transform-origin: center bottom;
+      animation: pin-pop 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .pin:nth-child(1) { animation-delay: 0.35s; }
+    .pin:nth-child(2) { animation-delay: 0.45s; }
+    .pin:nth-child(3) { animation-delay: 0.55s; }
+    .pin:nth-child(4) { animation-delay: 0.65s; }
+
+    .pin-active circle:first-child {
+      animation: pulse 2.2s ease-out infinite;
+    }
+
+    .route-line {
+      stroke-dasharray: 520;
+      stroke-dashoffset: 520;
+      animation: draw 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+    }
+
+    .price {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      fill: #fffaf6;
+    }
+
+    /* —— Sheet —— */
+    .sheet {
+      background: var(--panel);
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      animation: slide 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    .sheet-head {
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sheet-kicker {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 6px;
+    }
+
+    .sheet-head h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .friends {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff6f0, var(--panel));
+    }
+
+    .avatars { display: flex; }
+
+    .av {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--panel);
+      margin-left: -8px;
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .av:first-child { margin-left: 0; }
+    .av-1 { background: #c45a4a; }
+    .av-2 { background: #3d6b5c; }
+    .av-3 { background: #b07a28; }
+    .av-4 { background: var(--coral); }
+
+    .invite {
+      margin-left: auto;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--coral-deep);
+      background: var(--coral-soft);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: var(--font-ui);
+    }
+
+    .stops {
+      list-style: none;
+      padding: 10px 12px 18px;
+      overflow: auto;
+      flex: 1;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 36px 1fr auto;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 12px;
+      border-radius: var(--radius);
+      transition: background 0.2s ease;
+    }
+
+    .stop + .stop { margin-top: 2px; }
+
+    .stop.is-active {
+      background: var(--coral-soft);
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--paper-deep);
+      color: var(--ink-soft);
+      margin-top: 2px;
+    }
+
+    .stop.is-active .num {
+      background: var(--coral);
+      color: #fff;
+    }
+
+    .stop h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+
+    .stop p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .stamp {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 8px;
+      border-radius: 4px;
+      background: #1c1412;
+      color: #fff8f2;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stamp.mid { background: var(--amber); color: #1c1412; }
+    .stamp.cheap { background: var(--pint); color: #fff; }
+
+    .sheet-foot {
+      padding: 14px 22px 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .sheet-foot strong { color: var(--ink); font-weight: 600; }
+
+    @keyframes stage-in {
+      from { opacity: 0; transform: translateY(16px) scale(0.985); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes slide {
+      from { opacity: 0; transform: translateX(24px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes pin-pop {
+      from { opacity: 0; transform: scale(0.4); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse {
+      0% { opacity: 0.55; r: 18; }
+      100% { opacity: 0; r: 36; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .route-line { stroke-dashoffset: 0; }
+    }
+
+    @media (max-width: 1480px) {
+      body { padding: 12px; place-items: start center; }
+      .stage {
+        width: 100%;
+        height: auto;
+        min-height: min(900px, 100vh);
+        aspect-ratio: 1440 / 900;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .stage { aspect-ratio: auto; height: auto; }
+      .main { grid-template-columns: 1fr; }
+      .map { min-height: 420px; }
+      .sheet { border-left: none; border-top: 1px solid var(--line); }
+      .top { grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 10px; padding: 12px; height: auto; }
+      .search { grid-column: 1 / -1; max-width: none; justify-self: stretch; }
+      .brand { font-size: 1.2rem; }
+      .map-label h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage" role="img" aria-label="Desktop mockup: Candle Coral color direction for PubMax planner">
+    <header class="top">
+      <div class="brand">PUBMAX<span>XING</span></div>
+      <div class="city" aria-label="City: London">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        London
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div class="search" role="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span>Search pubs · <strong>Borough → London Bridge</strong></span>
+      </div>
+      <button class="cta" type="button">Plan tonight</button>
+      <a class="back" href="index.html">Gallery</a>
+    </header>
+
+    <div class="main">
+      <section class="map" aria-label="Map of tonight's crawl">
+        <svg class="map-svg" viewBox="0 0 1060 828" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <!-- Water / Thames -->
+          <path d="M-20 520 C 180 480, 280 560, 420 540 C 580 515, 700 470, 820 500 C 940 530, 1020 490, 1100 510 L 1100 900 L -20 900 Z" fill="var(--map-water)" opacity="0.9"/>
+          <path d="M-20 500 C 160 470, 300 545, 450 525 C 620 500, 740 455, 860 485" fill="none" stroke="#b7d4d0" stroke-width="18" stroke-linecap="round" opacity="0.5"/>
+          <!-- Parks -->
+          <ellipse cx="180" cy="220" rx="120" ry="70" fill="#e5d2bc" opacity="0.7"/>
+          <ellipse cx="780" cy="200" rx="90" ry="55" fill="#e5d2bc" opacity="0.55"/>
+          <!-- Roads -->
+          <g stroke="var(--map-road)" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.85">
+            <path d="M80 180 C 220 200, 300 280, 360 360"/>
+            <path d="M200 80 C 260 200, 400 260, 520 300"/>
+            <path d="M480 120 C 520 240, 560 320, 620 420"/>
+            <path d="M700 90 C 680 220, 640 340, 700 460"/>
+            <path d="M120 420 C 280 400, 420 440, 580 480 C 720 515, 860 470, 980 420"/>
+            <path d="M340 620 C 460 560, 600 540, 760 560"/>
+          </g>
+          <!-- Route -->
+          <path class="route-line" d="M280 280 C 340 320, 380 360, 420 390 C 470 430, 530 455, 590 470 C 660 488, 720 500, 780 455" fill="none" stroke="var(--route)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Pins -->
+          <g class="pin pin-active" transform="translate(280 280)">
+            <circle cx="0" cy="0" r="18" fill="var(--coral)" opacity="0.35"/>
+            <circle cx="0" cy="0" r="16" fill="var(--coral)"/>
+            <text class="price" x="0" y="4" text-anchor="middle">£5.2</text>
+          </g>
+          <g class="pin" transform="translate(420 390)">
+            <circle cx="0" cy="0" r="15" fill="#1c1412"/>
+            <text class="price" x="0" y="4" text-anchor="middle">£6.4</text>
+          </g>
+          <g class="pin" transform="translate(590 470)">
+            <circle cx="0" cy="0" r="15" fill="var(--pint)"/>
+            <text class="price" x="0" y="4" text-anchor="middle">£4.8</text>
+          </g>
+          <g class="pin" transform="translate(780 455)">
+            <circle cx="0" cy="0" r="15" fill="var(--amber)"/>
+            <text class="price" x="0" y="4" text-anchor="middle" fill="#1c1412">£7.1</text>
+          </g>
+        </svg>
+
+        <div class="map-label">
+          <h1>Four stops. One warm route.</h1>
+          <p>Candle-lit paper with coral as the only loud signal — Plan tonight stays unmistakable.</p>
+        </div>
+      </section>
+
+      <aside class="sheet" aria-label="Crawl stop list">
+        <div class="sheet-head">
+          <div class="sheet-kicker">Tonight · Plan</div>
+          <h2>Borough crawl</h2>
+          <p class="meta">4 stops · ~2.1 mi · first pint 7:30</p>
+        </div>
+
+        <div class="friends">
+          <div class="avatars" aria-label="Friends on this plan">
+            <div class="av av-1">KM</div>
+            <div class="av av-2">AL</div>
+            <div class="av av-3">RJ</div>
+            <div class="av av-4">+</div>
+          </div>
+          <button class="invite" type="button">Invite friends</button>
+        </div>
+
+        <ol class="stops">
+          <li class="stop is-active">
+            <span class="num">1</span>
+            <div>
+              <h3>The George</h3>
+              <p>Borough High St · 7:30</p>
+            </div>
+            <span class="stamp cheap">£5.20</span>
+          </li>
+          <li class="stop">
+            <span class="num">2</span>
+            <div>
+              <h3>Market Porter</h3>
+              <p>Stoney St · 8:20</p>
+            </div>
+            <span class="stamp mid">£6.40</span>
+          </li>
+          <li class="stop">
+            <span class="num">3</span>
+            <div>
+              <h3>The Rake</h3>
+              <p>Winchester Walk · 9:10</p>
+            </div>
+            <span class="stamp cheap">£4.80</span>
+          </li>
+          <li class="stop">
+            <span class="num">4</span>
+            <div>
+              <h3>Shipwrights Arms</h3>
+              <p>Tooley St · 10:00</p>
+            </div>
+            <span class="stamp">£7.10</span>
+          </li>
+        </ol>
+
+        <div class="sheet-foot">
+          <span>Avg pint <strong>£5.88</strong></span>
+          <span>Walk between · <strong>12–15 min</strong></span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

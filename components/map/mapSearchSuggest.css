@@ -1,0 +1,257 @@
+/* Map search suggestions popup — the as-you-type panel under the map's search
+   input (components/map/MapSearchSuggest.tsx). Both themes via the role tokens
+   the house SearchField already uses; reduced-motion drops the reveal. Rows are
+   44px tap targets; the panel contains its own overscroll so a fling never
+   drags the map underneath. */
+
+.mapSearchSuggest {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* The phone overlay variant. Its host is a fixed-width chrome stack, so the
+   field and the panel take the host's width and never their content's: a row
+   of long pub names would otherwise size the panel to max-content and push the
+   whole stack, distance column first, past the right edge of the screen. */
+.mapSearchSuggest--overlay {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.mapSearchSuggest--overlay .mapSearchSuggestPanel {
+  max-width: 100%;
+}
+
+/* At phone width one line cannot hold a name, a kind, a borough, a price and a
+   distance. The distance never shrinks, so bounding the panel starved the
+   price to a few pixels and it drew on top of the borough, while the name
+   ellipsed to nothing. Give the name its own line and let the figures share
+   the next. Nothing is abbreviated away: a row is read on its own, so the
+   distance keeps the words that say what it is measured from. */
+.mapSearchSuggest--overlay .mapSearchSuggestRow {
+  flex-wrap: wrap;
+  row-gap: 2px;
+  padding-block: 8px;
+}
+
+.mapSearchSuggest--overlay .mapSearchSuggestRowMain {
+  flex: 1 1 100%;
+}
+
+.mapSearchSuggest--overlay .mapSearchSuggestMeta {
+  flex: 1 1 100%;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.mapSearchSuggest--overlay .mapSearchSuggestPrice {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+  max-width: none;
+}
+
+.mapSearchSuggest--toolbar {
+  width: min(388px, 34vw);
+  min-width: 260px;
+  gap: 0;
+}
+
+.mapSearchSuggest--toolbar > label {
+  min-height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  padding-inline: 10px;
+}
+
+.mapSearchSuggest--toolbar input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  font-size: 0.85rem;
+}
+
+.mapSearchSuggest--toolbar .mapSearchSuggestPanel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  width: min(420px, calc(100vw - 32px));
+  z-index: calc(var(--z-map-toolbar) + 1);
+}
+
+.mapSearchSuggestPanel {
+  border: 1px solid var(--color-border, var(--line));
+  border-radius: var(--radius, 12px);
+  background: var(--color-surface-raised, var(--panel-raised));
+  box-shadow: var(--shadow-md, 0 12px 30px rgba(0, 0, 0, 0.18));
+  overflow: hidden;
+  animation: mapSearchSuggestIn 140ms ease;
+}
+
+@keyframes mapSearchSuggestIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mapSearchSuggestScroll {
+  max-height: min(52vh, 420px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mapSearchSuggestGroup {
+  padding: 4px 0 6px;
+}
+
+.mapSearchSuggestGroup + .mapSearchSuggestGroup {
+  border-top: 1px solid var(--color-border-soft, var(--line-soft, var(--line)));
+}
+
+.mapSearchSuggestGroupHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 14px 4px;
+  font-size: 0.68rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted, var(--muted));
+}
+
+.mapSearchSuggestOrigin {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+  font-size: 0.66rem;
+  opacity: 0.85;
+}
+
+.mapSearchSuggestRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 6px 14px;
+  cursor: pointer;
+  color: var(--color-text, var(--ink));
+  transition: background-color 120ms ease;
+}
+
+.mapSearchSuggestRow.isActive,
+.mapSearchSuggestRow:hover {
+  background: var(--state-active-surface, color-mix(in srgb, var(--color-accent, var(--brass)) 12%, transparent));
+}
+
+/* The quiet labels (type, borough) drop under the name when the name needs the
+   line. The name never gives up its width to them. */
+.mapSearchSuggestRowMain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 7px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mapSearchSuggestRowIcon {
+  flex: none;
+  color: var(--color-text-muted, var(--muted));
+}
+
+/* The name is the row. It wraps to a second line rather than losing its end to
+   an ellipsis: "King's ..." and "Shore..." are not places a reader can pick. */
+.mapSearchSuggestRowName {
+  min-width: 0;
+  font-size: 0.94rem;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.mapSearchSuggestBorough {
+  flex: none;
+  font-size: 0.72rem;
+  color: var(--color-text-muted, var(--muted));
+}
+
+/* The price and the distance keep their width. A wrapping name asks for more
+   room than a truncated one did, and a shrinking meta cell squeezed the price
+   to nothing, so "£6.80" painted over the borough beside it. A figure a reader
+   trusts may never be cut or overlapped: the name wraps instead. */
+.mapSearchSuggestMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+
+.mapSearchSuggestPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 180px;
+  min-width: 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--color-text, var(--ink));
+}
+
+.mapSearchSuggestPrice > span,
+.mapSearchSuggestPriceProvenance {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.mapSearchSuggestPriceProvenance {
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--color-text-muted, var(--muted));
+}
+
+.mapSearchSuggestDistance {
+  flex: none;
+  font-size: 0.74rem;
+  color: var(--color-text-muted, var(--muted));
+  white-space: nowrap;
+}
+
+.mapSearchSuggestEmpty {
+  display: grid;
+  gap: 4px;
+  min-height: 72px;
+  border-top: 1px solid var(--color-border-soft, var(--line-soft, var(--line)));
+  padding: 14px;
+  color: var(--color-text-soft, var(--ink-soft, var(--ink)));
+}
+
+.mapSearchSuggestEmptyTitle,
+.mapSearchSuggestEmptyHint {
+  margin: 0;
+}
+
+.mapSearchSuggestEmptyTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text, var(--ink));
+}
+
+.mapSearchSuggestEmptyHint {
+  max-width: 38ch;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapSearchSuggestPanel { animation: none; }
+  .mapSearchSuggestRow { transition: none; }
+}

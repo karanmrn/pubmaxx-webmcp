@@ -1,0 +1,136 @@
+/* Discover beer-garden weather nudge. This card only mounts
+   when lib/gardenWeather approves. Token-driven so both
+   themes work; entrance animation is gated on prefers-reduced-motion. The
+   column layout stays comfortable at 390px (no fixed widths, names ellipsise). */
+
+.gardenTonightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.gardenTonightKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.gardenTonightHeadline {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.gardenTonightDek {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.gardenTonightList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.gardenTonightPub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-raised);
+}
+
+.gardenTonightPubBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.gardenTonightPubName {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gardenTonightPubMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+}
+
+.gardenTonightPubArea {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gardenTonightPubRating,
+.gardenTonightPubPrice {
+  font-weight: 700;
+}
+
+.gardenTonightPubLink {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gardenTonightPubLink:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Entrance: mounts only after the weather + places fetches resolve, so a
+   quiet settle matches the other lanes; skipped under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .gardenTonightCard {
+    animation: gardenTonightIn var(--duration-slow, 0.28s) var(--ease-out-strong) both;
+  }
+
+  @keyframes gardenTonightIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

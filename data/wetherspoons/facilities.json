@@ -1,0 +1,114 @@
+[
+  {
+    "id": 22,
+    "name": "Train station"
+  },
+  {
+    "id": 23,
+    "name": "Wi-Fi"
+  },
+  {
+    "id": 25,
+    "name": "Sky Sports"
+  },
+  {
+    "id": 35,
+    "name": "TV screens"
+  },
+  {
+    "id": 50,
+    "name": "Airport Pub"
+  },
+  {
+    "id": 51,
+    "name": "Airport Pub Land Side"
+  },
+  {
+    "id": 52,
+    "name": "Airport Pub Air Side"
+  },
+  {
+    "id": 53,
+    "name": "Accommodation"
+  },
+  {
+    "id": 55,
+    "name": "Changing places"
+  },
+  {
+    "id": 56,
+    "name": "Licensed outside area"
+  },
+  {
+    "id": 57,
+    "name": "Wetherspoon app"
+  },
+  {
+    "id": 59,
+    "name": "Projector and screen"
+  },
+  {
+    "id": 60,
+    "name": "Racing TV"
+  },
+  {
+    "id": 61,
+    "name": "Room hire"
+  },
+  {
+    "id": 63,
+    "name": "Baby change"
+  },
+  {
+    "id": 64,
+    "name": "Bike storage"
+  },
+  {
+    "id": 65,
+    "name": "Electric vehicle charging"
+  },
+  {
+    "id": 66,
+    "name": "Meeting facilities"
+  },
+  {
+    "id": 67,
+    "name": "Service station"
+  },
+  {
+    "id": 68,
+    "name": "Step-free access"
+  },
+  {
+    "id": 69,
+    "name": "TNT Sports"
+  },
+  {
+    "id": 246,
+    "name": "Music"
+  },
+  {
+    "id": 269,
+    "name": "order-and-pay"
+  },
+  {
+    "id": 272,
+    "name": "Lift"
+  },
+  {
+    "id": 273,
+    "name": "Broadcasts Live News"
+  },
+  {
+    "id": 274,
+    "name": "Children welcome"
+  },
+  {
+    "id": 276,
+    "name": "Airport after security"
+  },
+  {
+    "id": 280,
+    "name": "Train station nearby"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run validate-data && npm run build",
+  "framework": "nextjs",
+  "regions": ["lhr1"],
+  "crons": [
+    { "path": "/api/cron/refresh-weather", "schedule": "0 */6 * * *" },
+    { "path": "/api/cron/refresh-whats-on", "schedule": "30 5 * * *" },
+    { "path": "/api/cron/refresh-night-signals", "schedule": "15 5 * * *" },
+    { "path": "/api/cron/freshness-audit", "schedule": "30 6 * * *" },
+    { "path": "/api/cron/moderate-social-posts", "schedule": "*/10 * * * *" },
+    { "path": "/api/cron/reconcile-price-trust", "schedule": "*/10 * * * *" },
+    { "path": "/api/cron/purge-social-media", "schedule": "20 4 * * *" },
+    { "path": "/api/cron/moderate-social-interactions", "schedule": "*/10 * * * *" },
+    { "path": "/api/cron/enrich-city-pubs", "schedule": "15 3 * * *" },
+    { "path": "/api/cron/step-out-nudge", "schedule": "0 16 * * 4" },
+    { "path": "/api/cron/cheap-pint-ping", "schedule": "0 16,17 * * 1-5" },
+    { "path": "/api/cron/harvest-refresh", "schedule": "0 5 * * 1" }
+  ]
+}

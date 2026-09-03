@@ -1,0 +1,181 @@
+/* Shared RoundStarter — full card on /crawls; denser when .compact (Plan drawer). */
+
+.roundStarter {
+  width: 100%;
+  max-width: 760px;
+  margin: 8px auto 0;
+  padding: 24px;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--color-surface, var(--panel, var(--paper)));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.roundStarterBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--state-active-ink);
+  font-weight: 700;
+}
+
+.roundStarterTitle {
+  margin: 0;
+  font-size: 22px;
+}
+
+.roundStarterBlurb {
+  margin: 0;
+  color: var(--muted, var(--ink-soft));
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.roundStarterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.roundStarterRow input {
+  flex: 1 1 160px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--paper, var(--panel-raised));
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.roundStarterRow input:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.roundStarterError {
+  margin: 0;
+  color: #a4331f;
+  font-size: 13px;
+}
+
+/* Primary CTA inside RoundStarter (works on map without importing crawls.css). */
+.roundStarter .crawlPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--brass);
+  color: var(--color-on-accent);
+  border: 1px solid var(--brass);
+}
+
+.roundStarter .crawlPrimaryBtn:hover {
+  filter: brightness(1.05);
+}
+
+.roundStarter .crawlPrimaryBtn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.roundStarter .crawlPrimaryBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.roundStarterHelper {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--muted, var(--ink-soft));
+}
+
+/* Compact — Plan drawer */
+.roundStarter.compact {
+  max-width: none;
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  gap: 6px;
+  border-radius: 12px;
+}
+
+.roundStarter.compact .roundStarterBadge {
+  font-size: 11px;
+}
+
+.roundStarter.compact .roundStarterTitle {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.roundStarter.compact .roundStarterBlurb {
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.roundStarter.compact .roundStarterRow {
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.roundStarter.compact .roundStarterRow input {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.roundStarter.compact .roundStarterRow .crawlPrimaryBtn {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  min-height: 36px;
+}
+
+.roundStarter.compact .roundStarterError {
+  font-size: 0.75rem;
+}
+
+/* Stay-on-map success (Plan drawer after Start Round) */
+.roundStarterSuccess {
+  gap: 8px;
+}
+
+.roundStarterCode {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--brass);
+  line-height: 1.2;
+}
+
+.roundStarter.compact .roundStarterCode {
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+}
+
+.roundStarterBoardLink {
+  text-decoration: none;
+  background: transparent !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+
+.roundStarterBoardLink:hover {
+  border-color: var(--brass) !important;
+  color: var(--brass) !important;
+  filter: none;
+}

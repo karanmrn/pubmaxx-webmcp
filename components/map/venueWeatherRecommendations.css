@@ -1,0 +1,317 @@
+/* Authored weather Recommendations on the venue sheet. Visual language mirrors
+   the community price card: compact chips, one calm form, 44px controls, and a
+   receipt in the same place the action happened. Weather uses the river accent;
+   the brass action remains the shared contribution affordance. */
+
+.venueWeatherRecommendations {
+  min-width: 0;
+  margin-top: 16px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--river) 24%, var(--line));
+  border-radius: var(--radius-lg, 18px);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--river) 7%, var(--panel-raised)),
+      var(--panel-raised) 72%
+    );
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--panel-raised) 80%, transparent);
+}
+
+.weatherRecHead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--river);
+}
+
+.weatherRecHead h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display, var(--serif));
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.weatherRecLoading,
+.weatherRecAvailability,
+.weatherRecEmpty,
+.weatherRecPrompt,
+.weatherRecHonesty {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+/* A sentence, deliberately not a card: an unrecommended pub is a plain fact,
+   not a state worth a panel. */
+.weatherRecEmpty {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: 650;
+}
+
+.weatherRecAvailability {
+  padding-left: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--river) 58%, var(--line));
+}
+
+.weatherRecListTitle {
+  margin: 13px 0 7px;
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.weatherRecList {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+}
+
+.weatherRecOpinion {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid color-mix(in srgb, var(--river) 18%, var(--line));
+  border-radius: var(--radius-md, 10px);
+  background: color-mix(in srgb, var(--river) 5%, var(--panel-raised));
+}
+
+.weatherRecAttribution {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.weatherRecAttribution a {
+  color: var(--river);
+  font-weight: 800;
+  text-underline-offset: 2px;
+}
+
+.weatherRecOpinion blockquote {
+  margin: 7px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.weatherRecOpinion blockquote p {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.weatherRecDate {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.weatherRecForm {
+  min-width: 0;
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.weatherRecPrompt {
+  margin-top: 0;
+  font-weight: 650;
+}
+
+.weatherRecConditions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  min-width: 0;
+  margin: 10px 0 12px;
+}
+
+.weatherRecCondition {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.weatherRecCondition input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.weatherRecCondition span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.weatherRecCondition:last-child {
+  grid-column: 1 / -1;
+}
+
+.weatherRecConditionOn {
+  border-color: var(--river);
+  background: color-mix(in srgb, var(--river) 88%, var(--panel-raised));
+  color: var(--color-on-accent, #fff);
+}
+
+.weatherRecCondition:active,
+.weatherRecSubmit:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.weatherRecCondition:has(input:focus-visible),
+.weatherRecSubmit:focus-visible,
+.weatherRecAttribution a:focus-visible {
+  outline: 2px solid var(--river-bright);
+  outline-offset: 2px;
+}
+
+.weatherRecField {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+  margin-top: 10px;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.weatherRecField input,
+.weatherRecField textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 10px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.weatherRecField input {
+  min-height: 48px;
+  padding: 0 12px;
+}
+
+.weatherRecField textarea {
+  min-height: 84px;
+  padding: 11px 12px;
+  resize: vertical;
+}
+
+.weatherRecField input::placeholder,
+.weatherRecField textarea::placeholder {
+  color: var(--input-placeholder);
+  font-weight: 550;
+}
+
+.weatherRecField input:focus,
+.weatherRecField textarea:focus {
+  border-color: var(--river);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--river) 18%, transparent);
+}
+
+.weatherRecSubmit {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 11px;
+  padding: 9px 16px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill, 999px);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent, #fff);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brass) 22%, transparent);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.weatherRecSubmit:disabled {
+  opacity: 0.45;
+  box-shadow: none;
+  cursor: default;
+}
+
+.weatherRecError {
+  margin: 9px 0 0;
+  color: var(--brick);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.weatherRecSaved {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  margin: 10px 0 0;
+  padding: 9px 11px;
+  overflow-wrap: anywhere;
+  border: 1px solid color-mix(in srgb, var(--pint) 38%, var(--line));
+  border-radius: var(--radius-md, 10px);
+  background: color-mix(in srgb, var(--pint) 9%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.weatherRecSaved svg {
+  flex: 0 0 auto;
+  color: var(--pint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weatherRecCondition,
+  .weatherRecSubmit,
+  .weatherRecField input,
+  .weatherRecField textarea {
+    transition: none;
+  }
+
+  .weatherRecCondition:active,
+  .weatherRecSubmit:active {
+    transform: none;
+  }
+}

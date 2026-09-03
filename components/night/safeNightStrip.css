@@ -1,0 +1,143 @@
+/* U21a / U5 — safe night strip. Calm register: soft ink, brass accent, never alarm. */
+.nightSafe {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 6%, transparent);
+}
+
+.nightSafe__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.nightSafe__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.nightSafe__chevron {
+  flex: 0 0 auto;
+  color: var(--ink-soft);
+  transition: transform 160ms ease;
+}
+
+.nightSafe__chevron[data-open] {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nightSafe__chevron {
+    transition: none;
+  }
+}
+
+.nightSafe__body {
+  display: grid;
+  gap: 7px;
+}
+
+.nightSafe__line {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.nightSafe__tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  vertical-align: middle;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nightSafe__tel:hover {
+  text-decoration: underline;
+}
+
+.nightSafe__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  vertical-align: middle;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.nightSafe__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.nightSafe__share {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--brass);
+  color: var(--color-on-accent-strong);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nightSafe__share:active {
+  transform: translateY(1px);
+}
+
+.nightSafe__hide {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nightSafe__note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 360px) {
+  .nightSafe__actions > * {
+    width: 100%;
+  }
+}

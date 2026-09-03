@@ -1,0 +1,286 @@
+{
+  "attribution": "Station names and approximate entrance coordinates compiled from publicly known Metrolink / OpenStreetMap knowledge. Not an official TfGM feed. Typical last-service times are conservative static approximations — always check live boards before you leave.",
+  "source": "static-seed-v1",
+  "stations": [
+    {
+      "id": "metrolink:piccadilly",
+      "name": "Piccadilly",
+      "lat": 53.4774,
+      "lng": -2.2309,
+      "lines": ["Ashton", "Airport", "East Didsbury", "Bury"]
+    },
+    {
+      "id": "metrolink:victoria",
+      "name": "Victoria",
+      "lat": 53.4875,
+      "lng": -2.2426,
+      "lines": ["Bury", "Rochdale", "East Didsbury", "Airport"]
+    },
+    {
+      "id": "metrolink:deansgate-castlefield",
+      "name": "Deansgate-Castlefield",
+      "lat": 53.4745,
+      "lng": -2.2503,
+      "lines": ["Altrincham", "Eccles", "MediaCityUK", "Airport", "East Didsbury"]
+    },
+    {
+      "id": "metrolink:st-peters-square",
+      "name": "St Peter's Square",
+      "lat": 53.4781,
+      "lng": -2.2435,
+      "lines": ["Altrincham", "Eccles", "MediaCityUK", "Airport", "East Didsbury", "Bury", "Rochdale", "Ashton"]
+    },
+    {
+      "id": "metrolink:market-street",
+      "name": "Market Street",
+      "lat": 53.4819,
+      "lng": -2.2387,
+      "lines": ["Bury", "Rochdale", "East Didsbury", "Airport", "Altrincham"]
+    },
+    {
+      "id": "metrolink:shudehill",
+      "name": "Shudehill",
+      "lat": 53.4853,
+      "lng": -2.2394,
+      "lines": ["Bury", "Rochdale", "East Didsbury", "Airport"]
+    },
+    {
+      "id": "metrolink:exchange-square",
+      "name": "Exchange Square",
+      "lat": 53.4844,
+      "lng": -2.2428,
+      "lines": ["Bury", "Rochdale"]
+    },
+    {
+      "id": "metrolink:cornbrook",
+      "name": "Cornbrook",
+      "lat": 53.4698,
+      "lng": -2.2675,
+      "lines": ["Altrincham", "Eccles", "MediaCityUK", "Airport", "Trafford Centre"]
+    },
+    {
+      "id": "metrolink:trafford-centre",
+      "name": "The Trafford Centre",
+      "lat": 53.4676,
+      "lng": -2.3481,
+      "lines": ["Trafford Centre"]
+    },
+    {
+      "id": "metrolink:mediacityuk",
+      "name": "MediaCityUK",
+      "lat": 53.4721,
+      "lng": -2.2974,
+      "lines": ["MediaCityUK", "Eccles"]
+    },
+    {
+      "id": "metrolink:etihad-campus",
+      "name": "Etihad Campus",
+      "lat": 53.4855,
+      "lng": -2.1922,
+      "lines": ["Ashton"]
+    },
+    {
+      "id": "metrolink:old-trafford",
+      "name": "Old Trafford",
+      "lat": 53.4616,
+      "lng": -2.2851,
+      "lines": ["Altrincham"]
+    },
+    {
+      "id": "metrolink:altrincham",
+      "name": "Altrincham",
+      "lat": 53.3876,
+      "lng": -2.3474,
+      "lines": ["Altrincham"]
+    },
+    {
+      "id": "metrolink:bury",
+      "name": "Bury",
+      "lat": 53.5934,
+      "lng": -2.2969,
+      "lines": ["Bury"]
+    },
+    {
+      "id": "metrolink:rochdale-town-centre",
+      "name": "Rochdale Town Centre",
+      "lat": 53.6173,
+      "lng": -2.1552,
+      "lines": ["Rochdale"]
+    },
+    {
+      "id": "metrolink:eccles",
+      "name": "Eccles",
+      "lat": 53.4831,
+      "lng": -2.3346,
+      "lines": ["Eccles"]
+    },
+    {
+      "id": "metrolink:ashton-under-lyne",
+      "name": "Ashton-under-Lyne",
+      "lat": 53.4905,
+      "lng": -2.0981,
+      "lines": ["Ashton"]
+    },
+    {
+      "id": "metrolink:east-didsbury",
+      "name": "East Didsbury",
+      "lat": 53.4092,
+      "lng": -2.2221,
+      "lines": ["East Didsbury"]
+    },
+    {
+      "id": "metrolink:manchester-airport",
+      "name": "Manchester Airport",
+      "lat": 53.3654,
+      "lng": -2.2722,
+      "lines": ["Airport"]
+    },
+    {
+      "id": "metrolink:piccadilly-gardens",
+      "name": "Piccadilly Gardens",
+      "lat": 53.4803,
+      "lng": -2.2371,
+      "lines": ["Ashton", "Eccles", "MediaCityUK", "Airport", "Bury", "Rochdale", "Altrincham", "East Didsbury"]
+    },
+    {
+      "id": "metrolink:new-islington",
+      "name": "New Islington",
+      "lat": 53.4829,
+      "lng": -2.2198,
+      "lines": ["Ashton"]
+    },
+    {
+      "id": "metrolink:holt-town",
+      "name": "Holt Town",
+      "lat": 53.4836,
+      "lng": -2.2134,
+      "lines": ["Ashton"]
+    },
+    {
+      "id": "metrolink:velopark",
+      "name": "Velopark",
+      "lat": 53.4824,
+      "lng": -2.1931,
+      "lines": ["Ashton"]
+    },
+    {
+      "id": "metrolink:salford-quays",
+      "name": "Salford Quays",
+      "lat": 53.4704,
+      "lng": -2.2841,
+      "lines": ["Eccles", "MediaCityUK"]
+    },
+    {
+      "id": "metrolink:anchorage",
+      "name": "Anchorage",
+      "lat": 53.4742,
+      "lng": -2.2861,
+      "lines": ["Eccles"]
+    },
+    {
+      "id": "metrolink:harbour-city",
+      "name": "Harbour City",
+      "lat": 53.4741,
+      "lng": -2.2908,
+      "lines": ["Eccles"]
+    },
+    {
+      "id": "metrolink:broadway",
+      "name": "Broadway",
+      "lat": 53.4749,
+      "lng": -2.2948,
+      "lines": ["Eccles"]
+    },
+    {
+      "id": "metrolink:pomona",
+      "name": "Pomona",
+      "lat": 53.4654,
+      "lng": -2.2781,
+      "lines": ["Eccles", "Trafford Centre"]
+    },
+    {
+      "id": "metrolink:trafford-bar",
+      "name": "Trafford Bar",
+      "lat": 53.4617,
+      "lng": -2.2774,
+      "lines": ["Altrincham", "Airport", "East Didsbury"]
+    },
+    {
+      "id": "metrolink:firswood",
+      "name": "Firswood",
+      "lat": 53.4512,
+      "lng": -2.2778,
+      "lines": ["Airport", "East Didsbury"]
+    },
+    {
+      "id": "metrolink:chorlton",
+      "name": "Chorlton",
+      "lat": 53.4428,
+      "lng": -2.2734,
+      "lines": ["Airport", "East Didsbury"]
+    },
+    {
+      "id": "metrolink:withington",
+      "name": "Withington",
+      "lat": 53.4291,
+      "lng": -2.2491,
+      "lines": ["East Didsbury"]
+    },
+    {
+      "id": "metrolink:west-didsbury",
+      "name": "West Didsbury",
+      "lat": 53.4241,
+      "lng": -2.2364,
+      "lines": ["East Didsbury"]
+    },
+    {
+      "id": "metrolink:queens-road",
+      "name": "Queens Road",
+      "lat": 53.5016,
+      "lng": -2.2268,
+      "lines": ["Bury"]
+    },
+    {
+      "id": "metrolink:crumpsall",
+      "name": "Crumpsall",
+      "lat": 53.5172,
+      "lng": -2.2411,
+      "lines": ["Bury"]
+    },
+    {
+      "id": "metrolink:prestwich",
+      "name": "Prestwich",
+      "lat": 53.5334,
+      "lng": -2.2841,
+      "lines": ["Bury"]
+    },
+    {
+      "id": "metrolink:whitefield",
+      "name": "Whitefield",
+      "lat": 53.5501,
+      "lng": -2.2964,
+      "lines": ["Bury"]
+    },
+    {
+      "id": "metrolink:failsworth",
+      "name": "Failsworth",
+      "lat": 53.5104,
+      "lng": -2.1638,
+      "lines": ["Rochdale"]
+    },
+    {
+      "id": "metrolink:oldham-mumps",
+      "name": "Oldham Mumps",
+      "lat": 53.5424,
+      "lng": -2.1034,
+      "lines": ["Rochdale"]
+    },
+    {
+      "id": "metrolink:shaw-and-crompton",
+      "name": "Shaw and Crompton",
+      "lat": 53.5762,
+      "lng": -2.0931,
+      "lines": ["Rochdale"]
+    }
+  ]
+}

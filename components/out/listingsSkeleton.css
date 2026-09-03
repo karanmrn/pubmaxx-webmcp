@@ -1,0 +1,76 @@
+.listingsSkeleton {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 8px;
+  padding: 4px 0;
+}
+
+.listingsSkeletonLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.listingsSkeletonCard {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel, var(--paper));
+}
+
+.listingsSkeletonTitle,
+.listingsSkeletonMeta {
+  display: block;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--line-soft) 70%, transparent),
+    color-mix(in srgb, var(--brass) 12%, var(--panel)),
+    color-mix(in srgb, var(--line-soft) 70%, transparent)
+  );
+  background-size: 200% 100%;
+  animation: listingsSkeletonShimmer 1.6s var(--ease-in-out-strong, ease-in-out) infinite;
+}
+
+.listingsSkeletonTitle {
+  width: 58%;
+  height: 18px;
+}
+
+.listingsSkeletonMeta {
+  width: 42%;
+  height: 12px;
+}
+
+.listingsSkeletonCard:nth-child(3) .listingsSkeletonTitle {
+  width: 70%;
+}
+
+.listingsSkeletonCard:nth-child(4) .listingsSkeletonTitle {
+  width: 48%;
+}
+
+@keyframes listingsSkeletonShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listingsSkeletonTitle,
+  .listingsSkeletonMeta {
+    animation: none;
+    background: color-mix(in srgb, var(--line-soft) 70%, transparent);
+  }
+}

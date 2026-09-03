@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Candidate A "The Cross": letterform X, thick backslash + thin forward slash
+       (X Corp weight logic), flat-cut terminals, no ornament. Coral variant. -->
+  <polygon points="9,12 21,12 55,52 43,52" fill="#ff5a5f"/>
+  <polygon points="45,12 53,12 19,52 11,52" fill="#ff5a5f"/>
+</svg>

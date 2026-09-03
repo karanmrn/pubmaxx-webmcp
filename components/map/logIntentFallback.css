@@ -1,0 +1,136 @@
+/* Wave K0 — Drop log-intent nearby picker.
+   Token-driven overlay (replaces inline LOG_INTENT_* styles in PubMap). */
+
+.logIntentFallback {
+  position: absolute;
+  left: max(16px, env(safe-area-inset-left));
+  right: max(16px, env(safe-area-inset-right));
+  /* Sit on the shared FAB row so the panel clears the mobile tab bar. */
+  bottom: var(--map-bottom-fab-row, calc(var(--mobile-tab-clearance, 72px) + 18px));
+  z-index: var(--z-map-onboard-chip);
+  display: grid;
+  gap: 10px;
+  max-width: 440px;
+  margin-inline: auto;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 42%, var(--line));
+  border-radius: var(--radius-sm, 10px);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+
+.logIntentHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* D4 — the desktop panel's own way out. It also clears `log=1`, so the picker
+   stays shut instead of rearming on the next close. */
+.logIntentClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin: -10px -8px -10px 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.logIntentClose:hover,
+.logIntentClose:focus-visible {
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+  color: var(--ink);
+  outline: none;
+}
+
+.logIntentFallback strong {
+  display: block;
+  font-family: var(--font-display, var(--serif));
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.logIntentFallback .description {
+  margin: 6px 0 0;
+  color: var(--ink-soft, var(--muted));
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.logIntentNearbyList {
+  display: grid;
+  gap: 6px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logIntentNearbyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.logIntentNearbyBtn:hover,
+.logIntentNearbyBtn:focus-visible {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel));
+  outline: none;
+}
+
+.logIntentNearbyMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.logIntentNearbyDist {
+  color: var(--brass);
+  font-weight: 700;
+}
+
+.logIntentActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .logIntentFallback {
+    /* --map-bottom-fab-row is set on .appShell at this breakpoint. */
+    padding: 12px;
+  }
+}

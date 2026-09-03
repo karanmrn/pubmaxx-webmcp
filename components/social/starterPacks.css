@@ -1,0 +1,149 @@
+/* Loaded with StarterPacks so mounts outside /social still style. */
+.starterPacks {
+  margin-top: var(--space-4);
+  padding: var(--space-4) 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.starterPacks--compact {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+}
+
+.starterPacks__title {
+  margin: 0;
+  font-size: var(--text-lg, 1.15rem);
+  font-weight: 750;
+}
+
+.starterPacks__grid {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .starterPacks__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.starterPacks__card {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 10px);
+  background: var(--panel-raised);
+}
+
+.starterPacks__packTitle {
+  margin: 0;
+  font-size: var(--text-base, 1rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.starterPacks__faces {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-width: 0;
+}
+
+.starterPacks__face {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  /* The ring is the card's own background, so the pull has to clear both rings
+     (2px each) before the faces read as a stack rather than a spaced row. */
+  margin-inline-start: -12px;
+  border: 2px solid var(--panel-raised);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 750;
+  overflow: hidden;
+}
+
+.starterPacks__face:first-child {
+  margin-inline-start: 0;
+}
+
+.starterPacks__face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.starterPacks__count,
+.starterPacks__summary {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--muted, var(--ink-soft));
+}
+
+.starterPacks__follow {
+  justify-self: start;
+  min-height: 44px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 10px);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.starterPacks__follow:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Press feedback comes from the one shared owner in globals.css. */
+
+.starterPacks__results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+  font-size: var(--text-xs);
+}
+
+.starterPacks__result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.starterPacks__result a {
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+
+.starterPacks__outcome {
+  color: var(--muted, var(--ink-soft));
+  white-space: nowrap;
+}
+
+.starterPacks__outcome--problem {
+  color: var(--color-negative, var(--brick));
+}
+
+.starterPacks__problem {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-negative, var(--brick));
+}

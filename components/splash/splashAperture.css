@@ -1,0 +1,85 @@
+/* Aperture splash (PIECE 3 of feat(landing): hero scroll cinema with
+   aperture splash). #pubmax-splash is always in the DOM (first child of
+   <body>) so there is zero layout shift either way - CLS stays 0 whether
+   the splash plays or not. It only animates under html[data-splash="on"],
+   set pre-paint by public/splash-init.js; every other load keeps the
+   display: none default below and costs nothing.
+
+   Sequence, on a 700ms hard ceiling (mirrors motionDuration.splashCeiling
+   in lib/motionVocabulary.ts):
+     0ms    - mark appears, near-black backdrop full opacity (the hold).
+     180ms  - hold ends (motionDuration.splashHold); the mark starts
+              scaling ~24x and fading while the backdrop fades with it, so
+              the coral X opens like a camera aperture into whatever has
+              already painted underneath - the hero cinema's dark-start
+              frame (see components/landing/heroCinema.css), continuing the
+              same shot rather than cutting to it.
+     700ms  - both animations finish (fill: forwards); the overlay is fully
+              transparent and inert (pointer-events: none throughout). */
+
+:root {
+  --duration-splash-ceiling: 700ms; /* mirrors motionDuration.splashCeiling in lib/motionVocabulary.ts */
+  --duration-splash-hold: 180ms; /* mirrors motionDuration.splashHold in lib/motionVocabulary.ts */
+  --ease-splash-aperture: cubic-bezier(0.16, 1, 0.3, 1); /* mirrors motionEase.splashAperture in lib/motionVocabulary.ts */
+}
+
+#pubmax-splash {
+  display: none;
+}
+
+html[data-splash="on"] #pubmax-splash {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-splash);
+  background: var(--ink-deep);
+  pointer-events: none;
+  will-change: opacity;
+  animation: pubmaxSplashBackdrop var(--duration-splash-ceiling) var(--ease-splash-aperture) forwards;
+}
+
+html[data-splash="on"] .pubmaxSplashMark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: pubmaxSplashAperture calc(var(--duration-splash-ceiling) - var(--duration-splash-hold))
+    var(--ease-splash-aperture) var(--duration-splash-hold) forwards;
+}
+
+@keyframes pubmaxSplashBackdrop {
+  0% {
+    opacity: 1;
+  }
+  25.71% {
+    /* hold ends at 180ms of the 700ms ceiling (180 / 700 = 25.71%) */
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pubmaxSplashAperture {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(24);
+    opacity: 0;
+  }
+}
+
+/* Defence in depth: splash-init.js already skips setting data-splash under
+   reduced motion, so this never fires in practice - kept in sync with the
+   same house pattern as the compound gate in heroCinema.css. */
+@media (prefers-reduced-motion: reduce) {
+  html[data-splash="on"] #pubmax-splash {
+    display: none;
+  }
+}

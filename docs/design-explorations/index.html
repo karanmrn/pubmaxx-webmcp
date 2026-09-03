@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PubMax · Color direction gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1f1c;
+      --muted: #5a635c;
+      --line: #d5ddd6;
+      --paper: #f7faf8;
+      --panel: #ffffff;
+      --a: #e8454a;
+      --b: #f0a01a;
+      --c-river: #2f6f8f;
+      --c-pint: #2f8f5b;
+      --c-brass: #b8892a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Outfit, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, rgba(47, 111, 143, 0.08), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 0%, rgba(232, 69, 74, 0.07), transparent 50%),
+        linear-gradient(180deg, #eef3f0 0%, var(--paper) 40%, #e8efe9 100%);
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 56px 0 80px;
+    }
+
+    header {
+      max-width: 640px;
+      margin-bottom: 48px;
+      animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .mark {
+      font-family: Fraunces, serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: Fraunces, serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+      margin-bottom: 14px;
+    }
+
+    .lede {
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 960px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    a.card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+      animation: rise 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    a.card:nth-child(1) { animation-delay: 0.08s; }
+    a.card:nth-child(2) { animation-delay: 0.16s; }
+    a.card:nth-child(3) { animation-delay: 0.24s; }
+
+    a.card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(26, 31, 28, 0.08);
+    }
+
+    .swatch {
+      height: 148px;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .swatch-a {
+      background:
+        linear-gradient(135deg, #fff3ea 0%, #ffe8dc 45%, #ffd0c8 100%);
+    }
+    .swatch-a::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px auto;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--a);
+      box-shadow: 0 0 0 8px rgba(232, 69, 74, 0.18);
+    }
+
+    .swatch-b {
+      background:
+        radial-gradient(circle at 70% 30%, rgba(240, 160, 26, 0.35), transparent 45%),
+        linear-gradient(160deg, #0b1210 0%, #15201c 55%, #1a2a22 100%);
+    }
+    .swatch-b::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px auto;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f0a01a, #3dff9a);
+    }
+
+    .swatch-c {
+      background:
+        linear-gradient(120deg, #e8f2f4 0%, #e6f3ea 50%, #f5efd8 100%);
+    }
+    .swatch-c::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px auto;
+      display: flex;
+      width: 72px;
+      height: 28px;
+      border-radius: 999px;
+      background:
+        linear-gradient(90deg,
+          var(--c-river) 0 33%,
+          var(--c-pint) 33% 66%,
+          var(--c-brass) 66% 100%);
+    }
+
+    .body {
+      padding: 22px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .dir {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .body h2 {
+      font-family: Fraunces, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .body p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f3f7f4;
+    }
+
+    .chip-a { border-color: #f5b4b6; background: #fff0f0; color: #b12d32; }
+    .chip-b1 { border-color: #3a3a32; background: #121816; color: #f0a01a; }
+    .chip-b2 { border-color: #1e4a36; background: #0f1c16; color: #3dff9a; }
+    .chip-c1 { border-color: #a8c8d6; background: #e8f3f7; color: var(--c-river); }
+    .chip-c2 { border-color: #a8d4bc; background: #e8f6ee; color: var(--c-pint); }
+    .chip-c3 { border-color: #e0c98a; background: #f8f1dc; color: #8a6820; }
+
+    .go {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    a.card:hover .go { text-decoration: underline; text-underline-offset: 3px; }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    footer a { color: var(--ink); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="mark">PUBMAXXING · design explorations</p>
+      <h1>Three color directions, one desktop layout</h1>
+      <p class="lede">
+        Map-first pub crawl planner comps at ~1440px. Same hierarchy — brand, map, Plan tonight, stops &amp; friends — retinted to find a more intuitive, colorful system without generic AI purple or cream tropes.
+      </p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="direction-a-candle-coral.html">
+        <div class="swatch swatch-a" aria-hidden="true"></div>
+        <div class="body">
+          <span class="dir">Direction A</span>
+          <h2>Candle Coral</h2>
+          <p>Refined current: warmer candle-lit paper, stronger coral hierarchy, and a clearer Plan CTA — warmth through accent and light, not sand-by-default.</p>
+          <div class="chips">
+            <span class="chip chip-a">#ff5a5f coral</span>
+            <span class="chip">candle paper</span>
+          </div>
+          <span class="go">Open mockup →</span>
+        </div>
+      </a>
+
+      <a class="card" href="direction-b-night-out.html">
+        <div class="swatch swatch-b" aria-hidden="true"></div>
+        <div class="body">
+          <span class="dir">Direction B</span>
+          <h2>Night Out</h2>
+          <p>Nightlife energy on a deep ink base — amber routes, neon pint pins, high-contrast map chrome. Saturday energy without purple glow.</p>
+          <div class="chips">
+            <span class="chip chip-b1">amber</span>
+            <span class="chip chip-b2">pint neon</span>
+          </div>
+          <span class="go">Open mockup →</span>
+        </div>
+      </a>
+
+      <a class="card" href="direction-c-field-guide.html">
+        <div class="swatch swatch-c" aria-hidden="true"></div>
+        <div class="body">
+          <span class="dir">Direction C</span>
+          <h2>Field Guide</h2>
+          <p>Colorful guidebook system: river blue, pint green, and brass amber with named jobs — playful pins, structured chrome.</p>
+          <div class="chips">
+            <span class="chip chip-c1">river</span>
+            <span class="chip chip-c2">pint</span>
+            <span class="chip chip-c3">brass</span>
+          </div>
+          <span class="go">Open mockup →</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      See <a href="README.md">README.md</a> for what each direction teaches and how it maps to Impeccable colorize, Taste dials, Refactoring UI palettes, and the Layers Plan / Stop / Venue / Friend model.
+    </footer>
+  </div>
+</body>
+</html>

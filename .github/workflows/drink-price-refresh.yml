@@ -1,0 +1,53 @@
+name: Drink price refresh
+
+# Weekly permissible-source DRINK price refresh (E2 of docs/PRD_ALL_DRINKS.md).
+# Runs scripts/refresh_drink_prices.mjs, which reads ONLY the first-party
+# chain/venue / open-data sources allowlisted in data/price_sources.json
+# (drinkSources, permissible: true only), validates + writes a versioned
+# public/data/drink_price_updates/prices_YYYYMMDD.json, and opens a PR for
+# human review. It NEVER pushes to a protected branch and NEVER scrapes
+# competitor price/review sites (governance hard rule).
+#
+# Today this is a safe no-op: the only allowlisted source (Wetherspoons) has a
+# STUBBED fetcher (fetchFromDrinkSource returns []) until a real parser is
+# implemented against a confirmed-permissible robots.txt/ToS + a stable
+# per-pub parse target. See data/price_sources.json drinkSources[].notes.
+on:
+  schedule:
+    # 07:30 UTC every Monday (offset from the pint price retrieval cron, which
+    # now runs on the Vercel plane at 07:00. See docs/CRON_PLANE_RUNBOOK.md).
+    - cron: "30 7 * * 1"
+  # Allow a manual run from the Actions tab.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "pubmax-price-bot"
+          git config user.email "price-bot@users.noreply.github.com"
+
+      - name: Run drink price refresh + open PR
+        env:
+          # `gh` uses this token to open the review PR.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/refresh_drink_prices.mjs --open-pr
+
+      - name: Validate bundled data
+        # Guard: the refresh must never ship data that fails the app's own
+        # validation (schema, attribution, future-observedAt).
+        run: npm run validate-data

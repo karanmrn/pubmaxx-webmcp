@@ -1,0 +1,142 @@
+[
+  {
+    "id": "rail-oxford",
+    "name": "Oxford station",
+    "category": "rail",
+    "coordinates": [-1.2701, 51.7535],
+    "rank": 1
+  },
+  {
+    "id": "bus-gloucester-green",
+    "name": "Gloucester Green bus station",
+    "category": "bus",
+    "coordinates": [-1.2625, 51.7538],
+    "rank": 1
+  },
+  {
+    "id": "sight-radcliffe-camera",
+    "name": "Radcliffe Camera",
+    "category": "historic",
+    "coordinates": [-1.254, 51.7534],
+    "rank": 1
+  },
+  {
+    "id": "sight-bodleian",
+    "name": "Bodleian Library",
+    "category": "historic",
+    "coordinates": [-1.2547, 51.754],
+    "rank": 1
+  },
+  {
+    "id": "sight-christ-church",
+    "name": "Christ Church",
+    "category": "historic",
+    "coordinates": [-1.2558, 51.7502],
+    "rank": 1
+  },
+  {
+    "id": "sight-magdalen-college",
+    "name": "Magdalen College",
+    "category": "historic",
+    "coordinates": [-1.2468, 51.752],
+    "rank": 1
+  },
+  {
+    "id": "sight-balliol-college",
+    "name": "Balliol College",
+    "category": "historic",
+    "coordinates": [-1.2578, 51.7545],
+    "rank": 2
+  },
+  {
+    "id": "sight-trinity-college",
+    "name": "Trinity College",
+    "category": "historic",
+    "coordinates": [-1.2565, 51.7552],
+    "rank": 2
+  },
+  {
+    "id": "sight-ashmolean",
+    "name": "Ashmolean Museum",
+    "category": "sight",
+    "coordinates": [-1.2601, 51.7554],
+    "rank": 1
+  },
+  {
+    "id": "sight-carfax-tower",
+    "name": "Carfax Tower",
+    "category": "historic",
+    "coordinates": [-1.2577, 51.7518],
+    "rank": 1
+  },
+  {
+    "id": "market-covered-market",
+    "name": "Covered Market",
+    "category": "market",
+    "coordinates": [-1.2565, 51.7523],
+    "rank": 1
+  },
+  {
+    "id": "park-university-parks",
+    "name": "University Parks",
+    "category": "park",
+    "coordinates": [-1.2525, 51.7595],
+    "rank": 1
+  },
+  {
+    "id": "park-christ-church-meadow",
+    "name": "Christ Church Meadow",
+    "category": "park",
+    "coordinates": [-1.2525, 51.7475],
+    "rank": 1
+  },
+  {
+    "id": "park-port-meadow",
+    "name": "Port Meadow",
+    "category": "park",
+    "coordinates": [-1.28, 51.765],
+    "rank": 2
+  },
+  {
+    "id": "park-south-park",
+    "name": "South Park",
+    "category": "park",
+    "coordinates": [-1.235, 51.7485],
+    "rank": 2
+  },
+  {
+    "id": "river-folly-bridge",
+    "name": "Folly Bridge",
+    "category": "river",
+    "coordinates": [-1.2565, 51.7465],
+    "rank": 1
+  },
+  {
+    "id": "river-magdalen-bridge",
+    "name": "Magdalen Bridge",
+    "category": "river",
+    "coordinates": [-1.2455, 51.751],
+    "rank": 1
+  },
+  {
+    "id": "river-osney",
+    "name": "Osney Bridge",
+    "category": "river",
+    "coordinates": [-1.2745, 51.7515],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-st-marys-tower",
+    "name": "University Church of St Mary the Virgin",
+    "category": "viewpoint",
+    "coordinates": [-1.2538, 51.7526],
+    "rank": 1
+  },
+  {
+    "id": "sight-pitt-rivers",
+    "name": "Pitt Rivers Museum",
+    "category": "sight",
+    "coordinates": [-1.2555, 51.7588],
+    "rank": 2
+  }
+]

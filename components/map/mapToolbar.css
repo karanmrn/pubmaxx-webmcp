@@ -1,0 +1,697 @@
+/* Compact map toolbar — map-first on phones; drink filters opt-in. */
+
+.appShell {
+  /* Fallback only. The toolbar publishes its own rendered height on .appShell
+     (MapToolbar's ResizeObserver), because the block grows when the reader
+     opens the experience lens or the drink panel, and the banners docked under
+     it may not float over the map on a stale constant. */
+  --map-toolbar-resting-height: 155px;
+  --desktop-map-surface-width: min(1240px, calc(100vw - 32px));
+}
+
+.mapToolbar {
+  width: var(--desktop-map-surface-width);
+  max-width: none;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  border-radius: 16px;
+  border-color: var(--line);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--brass) 7%, var(--panel-raised)),
+      color-mix(in srgb, var(--panel-raised) 92%, transparent)
+    ),
+    color-mix(in srgb, var(--panel-raised) 90%, transparent);
+}
+
+.mapToolbarRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.mapToolbarDesktopExtras .favoritePintPicker {
+  flex-wrap: nowrap !important;
+}
+
+.mapToolbarDesktopExtras .favoritePintControl {
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.mapToolbarSearch {
+  position: relative;
+  min-width: 0;
+  padding: 0;
+}
+
+.mapToolbarSearchStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  box-sizing: border-box;
+  padding: 4px 2px 4px 8px;
+  border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.mapToolbarSearchStatusCopy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: baseline;
+  min-width: 0;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.mapToolbarSearchQuery {
+  display: inline-block;
+  flex: 0 1 20ch;
+  max-width: min(20ch, 45%);
+  min-width: 4ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mapToolbarSearchQualifier {
+  min-width: 0;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.mapToolbarSearchRecovery {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--brass) 58%, var(--line));
+  border-radius: var(--control-radius, 14px);
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mapToolbarSearchRecovery:hover,
+.mapToolbarSearchRecovery:focus-visible {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.mapToolbarSearchRecovery:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Wave J declutter — Drinks is secondary/outline; Plan an outing stays primary.
+   "Show me" shares that idiom: it opens the experience-lens panel, which is
+   closed at rest (design judgement 2026-08-01, finding 2.15). */
+.mapToolbarLensBtn,
+.mapToolbarDrinkLaneBtn,
+.mapToolbarDrinksBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--line) 78%, var(--brass) 22%);
+  border-radius: var(--control-radius, 14px);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  box-shadow: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.mapToolbarLensBtn.isActive,
+.mapToolbarDrinkLaneBtn.isActive,
+.mapToolbarDrinksBtn.isActive {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  background: color-mix(in srgb, var(--brass) 8%, transparent);
+  color: var(--ink-soft);
+  box-shadow: none;
+}
+
+.planBtnShort {
+  display: none;
+}
+
+.mapToolbarDrinks {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  /* The toolbar wraps its flex items on mobile (globals.css). Without a full-
+     width basis this panel is content-sized, so the nowrap chip row below
+     inflates it to its full unwrapped width and overflow-x never engages —
+     the strip then reads as "can't scroll" at 390px. Bound it to the toolbar. */
+  flex: 1 1 100%;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.mapToolbarDrinks.isOpen {
+  display: flex;
+}
+
+.mapToolbarDrinksLens {
+  display: none;
+}
+
+.drinkShapeChips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 0 2px 2px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
+  max-width: 100%;
+  /* The lane keeps horizontal swipes local while pan-y lets diagonal swipes
+     continue into page scrolling instead of fighting the map behind it. */
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+  /* Nine chips overflow at 320–390px. Edge-fade marks the strip as a
+     deliberate lane (same idiom as TonightNearbyLane / category showcase),
+     not a clipped row. Soften scroll landing so a chip is not parked under
+     the mask. */
+  scroll-padding-inline: 14px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 16px,
+    #000 calc(100% - 16px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 16px,
+    #000 calc(100% - 16px),
+    transparent
+  );
+}
+
+.drinkShapeChips::-webkit-scrollbar {
+  display: none;
+}
+
+/* The mobile filter sheet lays chips in a 3×3 grid (mobileMapShell.css). A
+   horizontal scroll mask would ghost the outer columns for no reason. */
+.mobileMapFilters .drinkShapeChips {
+  -webkit-mask-image: none;
+  mask-image: none;
+  scroll-padding-inline: 0;
+}
+
+/* De-box (design judgement 2026-08-01, finding 2.4): a drink category is a
+   glyph and a label, not a container. No border at rest; selection is the fill.
+   Nine chips in one strip; boxes would rank nothing against each other. */
+.drinkShapeChip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 34px;
+  padding: 3px 9px 3px 6px;
+  border-radius: var(--control-radius, 14px);
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .drinkShapeChip {
+    transition:
+      background var(--duration-base) var(--ease-out),
+      color var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      transform var(--duration-fast) var(--ease-out);
+  }
+}
+
+.drinkShapeChip:active {
+  transform: scale(0.96);
+  --shared-press-scale: 1;
+}
+
+.drinkShapeChip:hover,
+.drinkShapeChip:focus-visible {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--brass) 9%, transparent);
+}
+
+.drinkShapeChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+/* Selection is panel-raised + ink, with a brass underline as the quiet cue.
+   Coral fill belongs to the primary CTA and the selected pin ring
+   (DESIGN.md, The One Accent Rule), never to a filter chip. */
+.drinkShapeChip.isOn {
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-weight: 800;
+  box-shadow:
+    var(--shadow-sm),
+    inset 0 -2px 0 color-mix(in srgb, var(--brass) 42%, transparent);
+}
+
+/* Night toolbar is already --panel-raised (theme.css). Lift the selected chip
+   one luminance step and keep the brass underline so coffee / AF / soft stay
+   readable against charcoal rather than vanishing into the chrome. */
+html[data-theme="dark"] .drinkShapeChip.isOn {
+  background: color-mix(in srgb, var(--ink) 8%, var(--panel-raised));
+  color: var(--ink);
+  box-shadow:
+    var(--shadow-sm),
+    inset 0 -2px 0 color-mix(in srgb, var(--brass) 52%, transparent);
+}
+
+html[data-theme="dark"] .drinkShapeChip {
+  color: var(--ink-soft);
+}
+
+.drinkShapeChip > svg {
+  flex: 0 0 auto;
+  /* DrinkGlyph paints --cat-* inline. Never inherit the label colour, or the
+     outing glyphs flatten to monochrome while beer/wine stay in colour. */
+  opacity: 1;
+}
+
+.drinkShapeChipLabel {
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] .drinkShapeChipLabel {
+  color: inherit;
+}
+
+/* Progressive disclosure: the subtype row only mounts once a category is
+   picked, so the resting toolbar keeps exactly one strip. Both strips scroll
+   horizontally on their own, so neither can widen the toolbar at 390px. */
+.drinkShapeChipsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.drinkSubtypeChips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 0 2px 2px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
+  max-width: 100%;
+  /* Same gesture contract as the category strip: diagonal swipes continue
+     into page scrolling while the lane keeps its horizontal movement local. */
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 14px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 16px,
+    #000 calc(100% - 16px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 16px,
+    #000 calc(100% - 16px),
+    transparent
+  );
+}
+
+.mobileMapFilters .drinkSubtypeChips {
+  -webkit-mask-image: none;
+  mask-image: none;
+  scroll-padding-inline: 0;
+}
+
+.drinkSubtypeChips::-webkit-scrollbar {
+  display: none;
+}
+
+.drinkSubtypeChip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in srgb, var(--line) 60%, var(--brass) 40%);
+  background: color-mix(in srgb, var(--panel-raised) 70%, transparent);
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.drinkSubtypeChip:active {
+  transform: scale(0.96);
+  --shared-press-scale: 1;
+}
+
+.drinkSubtypeChip:hover,
+.drinkSubtypeChip:focus-visible {
+  border-color: var(--brass);
+  color: var(--ink);
+}
+
+.drinkSubtypeChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.drinkSubtypeChip.isOn {
+  border-style: solid;
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 22%, var(--panel-raised));
+  color: var(--ink);
+}
+
+/* Top shelf cuts across families, so it reads as a distinct affordance
+   rather than one more subtype in the same row. */
+.drinkSubtypeChip.isTopShelf {
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+}
+
+.drinkSubtypeChip.isTopShelf.isOn {
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+}
+
+/* An open venue drawer is its own map-chrome state (D3). The drawer owns the
+   right edge from 1024px up, so the bar keeps the map lane that is left and
+   drops the accessory controls that no longer fit in it — the same policy the
+   narrow band below already applies for the same reason.
+
+   Both halves of the defect came from ignoring that lane. The bar is centred on
+   the whole stage, so its right half ran UNDER the sheet and printed a ghost row
+   through it. And the toolbar chip that mapDesktopRail.css restores when the
+   rail unmounts (`:not(.detail-open)`) arrived in a nowrap row that was already
+   full: the search cell shrank, its 260px child kept its own width, and the
+   search input painted straight through the drink select's box. So the search
+   cell must be allowed to shrink to nothing here, and the weather verdict —
+   whose only reason to sit in the bar is to stand in for the unmounted rail —
+   has no home while the sheet is open rather than a home it does not fit. */
+@media (min-width: 1024px) {
+  /* Hug the controls that are left and re-centre on the free lane, so the bar
+     can neither reach the drawer nor stand half empty beside it. */
+  .appShell.detail-open .mapToolbar {
+    width: fit-content;
+    max-width: calc(100% - var(--desktop-venue-drawer-width) - 32px);
+    left: 50%;
+    transform: translateX(calc(-50% - (var(--desktop-venue-drawer-width) / 2)));
+  }
+
+  .appShell.detail-open .mapToolbar .mapToolbarDesktopExtras,
+  .appShell.detail-open .mapToolbar .conditionsChip,
+  .appShell.detail-open .mapToolbar .zonePicker {
+    display: none;
+  }
+
+  /* The search field may shrink with its own cell. Its resting 260px floor and
+     the input's 168px floor are what turned an overflowing row into controls
+     drawn on top of each other. */
+  .appShell.detail-open .mapToolbarSearch .mapSearchSuggest--toolbar {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .appShell.detail-open .mapToolbarSearch input {
+    min-width: 0;
+  }
+}
+
+/* Mirror the right-drawer free-lane geometry on the left. The planner owns its
+   measured desktop lane, so the toolbar hugs remaining controls to its right;
+   duplicated rail controls yield and search may shrink without painting under
+   the drawer. */
+@media (min-width: 1024px) {
+  .appShell.planning-open .mapToolbar {
+    width: fit-content;
+    max-width: calc(100% - var(--desktop-planner-rail-width) - 32px);
+    left: 50%;
+    transform: translateX(calc(-50% + (var(--desktop-planner-rail-width) / 2)));
+  }
+
+  .appShell.planning-open .mapToolbar .mapToolbarDesktopExtras,
+  .appShell.planning-open .mapToolbar .conditionsChip,
+  .appShell.planning-open .mapToolbar .zonePicker {
+    display: none;
+  }
+
+  .appShell.planning-open .mapToolbarSearch .mapSearchSuggest--toolbar {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .appShell.planning-open .mapToolbarSearch input {
+    min-width: 0;
+  }
+}
+
+/* Tablet and narrow desktop are their own map-chrome state. At this width the
+   full desktop accessory row cannot coexist with search, Plan, and city. Keep
+   those primary controls, let search take the remaining lane, and reserve a
+   real gap below the independently-positioned Tonight Arc. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .appShell {
+    --map-top-clearance: calc(171px + env(safe-area-inset-top, 0px));
+    --map-overlay-top: calc(var(--map-top-clearance) + 58px);
+    --map-toolbar-resting-height: 155px;
+  }
+
+  .mapToolbar {
+    width: calc(100vw - 32px);
+    max-width: none;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .mapToolbarRow {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .mapToolbarSearch {
+    flex: 1 1 8rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .mapToolbarSearch input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .mapToolbarDesktopExtras,
+  .mapToolbar > .mapToolbarRow > .conditionsChip,
+  .mapToolbar > .mapToolbarRow > .zonePicker {
+    display: none;
+  }
+
+  .planBtn {
+    flex: 0 0 auto;
+    padding-inline: 11px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mapToolbar {
+    /* Visible so CitySwitcher dropdown can escape; clip only the search field. */
+    overflow: visible;
+    /* Match .siteNavBarFloating padding/radius so the two chrome cards read as twins. */
+    padding: 2px 7px;
+    gap: 0;
+    min-height: 40px;
+    border-radius: var(--map-chrome-radius, 14px);
+    box-sizing: border-box;
+  }
+
+  .mapToolbarRow {
+    width: 100%;
+    gap: 4px;
+    min-height: 44px;
+  }
+
+  .mapToolbarSearch {
+    min-width: 0;
+    flex: 1 1 auto;
+    min-height: 44px;
+    padding: 2px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .mapToolbarSearchStatus {
+    padding-left: 4px;
+    padding-right: 0;
+  }
+
+  .mapToolbarSearch input {
+    min-width: 0;
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.74rem;
+  }
+
+  .mapToolbarLensBtn,
+  .mapToolbarDrinkLaneBtn,
+  .mapToolbarDrinksBtn {
+    min-height: 44px;
+    height: 44px;
+    padding: 0 10px;
+    font-size: 0.75rem;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+
+  /* Desktop drink lens stays in the expand panel on phones. */
+  .mapToolbarDesktopExtras {
+    display: none;
+  }
+
+  .planBtn {
+    /* Primary CTA on the map — WCAG 44px touch target at phone widths. */
+    min-height: 44px;
+    height: 44px;
+    min-width: 4.25rem;
+    padding: 0 12px;
+    font-size: 0.78rem;
+    font-weight: 900;
+    line-height: 1;
+    flex: 0 0 auto;
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--brass) 28%, transparent);
+    box-sizing: border-box;
+  }
+
+  .planBtnFull {
+    display: none;
+  }
+
+  .planBtnShort {
+    display: inline;
+  }
+
+  .mapToolbarDrinksLens {
+    display: block;
+  }
+
+  .drinkShapeChip {
+    min-height: 44px;
+    padding: 4px 10px 4px 8px;
+  }
+
+  /* Refinement chips stay a secondary control but still clear the 36px
+     comfortable-touch floor; the 44px primary row above carries the WCAG
+     target for the category choice itself. */
+  .drinkSubtypeChip {
+    min-height: 36px;
+    padding: 4px 12px;
+    font-size: 0.72rem;
+  }
+
+  /* Sheet / onboarding / detail collision. Planner peek/half leave the
+     toolbar/legend visible so the map stays usable; sheet-full (venue or
+     planner at full) and detail-open still clear them. */
+  .appShell.sheet-full .mapToolbar,
+  .appShell.detail-open .mapToolbar {
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform var(--duration-base) var(--ease-out),
+      opacity var(--duration-base) var(--ease-out);
+  }
+
+  .appShell.sheet-full .mapLegend,
+  .appShell.onboarding-open .mapLegend {
+    transform: translateY(120%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform var(--duration-base) var(--ease-out),
+      opacity var(--duration-base) var(--ease-out);
+  }
+
+  .appShell.onboarding-open .mapToolbar {
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mapToolbar,
+  .mapLegend {
+    transition:
+      transform var(--duration-base) var(--ease-out),
+      opacity var(--duration-base) var(--ease-out);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drinkShapeChip,
+  .appShell.sheet-full .mapToolbar,
+  .appShell.sheet-full .mapLegend,
+  .appShell.detail-open .mapToolbar,
+  .appShell.onboarding-open .mapToolbar,
+  .appShell.onboarding-open .mapLegend,
+  .mapToolbar,
+  .mapLegend {
+    transition: none;
+  }
+}

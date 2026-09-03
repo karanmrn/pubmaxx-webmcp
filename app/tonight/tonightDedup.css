@@ -1,0 +1,122 @@
+/* Tonight de-dup expander (decision #11). The grouped card's "Same deal at N
+   pubs" disclosure and its alternate-venue list. Additive and token-only (both
+   themes inherit), and deliberately self-contained — it touches none of
+   tonight.css's layout or rail rules. */
+
+.tonightRowMore {
+  margin: 8px 0 0;
+}
+
+/* The disclosure toggle wears the quiet metadata-pill idiom (same family as the
+   Today "Same deal at 12 pubs" chip), never the loud accent. */
+.tonightRowMoreToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  min-height: 36px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none; /* drop the native disclosure triangle */
+}
+.tonightRowMoreToggle::-webkit-details-marker {
+  display: none;
+}
+.tonightRowMoreToggle:hover {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+}
+.tonightRowMoreToggle:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.tonightRowMoreChevron {
+  transition: transform 160ms var(--ease-out, ease);
+}
+.tonightRowMore[open] .tonightRowMoreChevron {
+  transform: rotate(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tonightRowMoreChevron {
+    transition: none;
+  }
+}
+
+.tonightRowMoreList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tonightRowMoreItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.tonightRowMoreLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 40px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm, 8px);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+a.tonightRowMoreLink:hover {
+  background: var(--panel-raised);
+}
+a.tonightRowMoreLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.tonightRowMorePlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.tonightRowMorePlace svg {
+  color: var(--ink-soft);
+  flex: none;
+}
+
+.tonightRowMoreWalk {
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tonightRowMoreAccept {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--state-active-border);
+  border-radius: var(--control-radius, 14px);
+  background: var(--state-active-surface);
+  color: var(--state-active-ink);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.tonightRowMoreAccept:focus-visible {
+  outline: 2px solid var(--accent-action);
+  outline-offset: 2px;
+}

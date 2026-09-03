@@ -1,0 +1,68 @@
+# Effective RLS session tests against real PostgreSQL 16 and PostgREST 14.
+#
+# The main `npm run ci` gate skips these tests loudly when local database
+# binaries are absent. This job is configured for push and pull-request proof,
+# but local proof remains required when GitHub cannot allocate a runner.
+name: RLS session tests
+
+on:
+  push:
+    branches: [main, "fm/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rls-session-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  rls-session:
+    name: Effective RLS (Postgres 16 + PostgREST 14)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install PostgreSQL 16 and PostgREST 14
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-16
+          # GITHUB_PATH reaches later steps only, so export it here too or the
+          # version checks at the end of this step run without the binaries.
+          echo "/usr/lib/postgresql/16/bin" >> "$GITHUB_PATH"
+          export PATH="/usr/lib/postgresql/16/bin:$PATH"
+          curl --fail --location --silent --show-error \
+            --output "$RUNNER_TEMP/postgrest.tar.xz" \
+            https://github.com/PostgREST/postgrest/releases/download/v14.16/postgrest-v14.16-linux-static-x86-64.tar.xz
+          echo "36b8ae140f188cfcd6003494805bf35a41e895f88c12be9183d60f91782145c6  $RUNNER_TEMP/postgrest.tar.xz" \
+            | sha256sum --check
+          tar --extract --xz --file "$RUNNER_TEMP/postgrest.tar.xz" --directory "$RUNNER_TEMP"
+          chmod +x "$RUNNER_TEMP/postgrest"
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+          export PATH="$RUNNER_TEMP:$PATH"
+          initdb --version
+          postgres --version
+          psql --version
+          "$RUNNER_TEMP/postgrest" --version
+
+      - name: Run effective RLS session tests
+        run: npm run test:rls
+        env:
+          # Fail the job if any test is unexpectedly skipped (binaries present).
+          # Vitest still reports intentional skips only when binaries are missing;
+          # with postgresql-16 on PATH they must all run and pass.
+          CI: true

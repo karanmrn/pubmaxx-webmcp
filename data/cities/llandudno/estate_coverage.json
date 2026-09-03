@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "city": "llandudno",
+  "observedAt": "2026-08-11T12:41:43Z",
+  "scope": {
+    "postcodes": ["LL30", "LL31"],
+    "bbox": [53.25, -3.87, 53.35, -3.69]
+  },
+  "estates": [
+    {
+      "id": "wetherspoon",
+      "label": "J D Wetherspoon",
+      "venues": [
+        {
+          "cityVenueId": "venue-lla-g00u76",
+          "name": "The Palladium",
+          "address": "7 Gloddaeth Street, Llandudno, Conwy, LL30 2DD",
+          "postcode": "LL30 2DD",
+          "latitude": 53.325173,
+          "longitude": -3.832359,
+          "menuUrl": "https://www.jdwetherspoon.com/pub-menus/the-palladium-llandudno/",
+          "source": {
+            "label": "J D Wetherspoon official pub page",
+            "url": "https://www.jdwetherspoon.com/pubs/the-palladium-llandudno/",
+            "licence": "first-party public website; read-only attributed use only"
+          },
+          "observedAt": "2026-08-11T12:41:43Z",
+          "prices": [],
+          "priceCheck": {
+            "status": "not-published-on-web",
+            "observedAt": "2026-08-11T12:41:43Z",
+            "source": {
+              "label": "J D Wetherspoon official menu page",
+              "url": "https://www.jdwetherspoon.com/pub-menus/the-palladium-llandudno/",
+              "licence": "first-party public website; read-only attributed use only"
+            },
+            "note": "The page directs customers to the app for pricing. The linked table-menu PDF has no named per-pub pint price."
+          }
+        }
+      ],
+      "priceUpdates": []
+    },
+    {
+      "id": "greene-king",
+      "label": "Greene King",
+      "venues": [],
+      "priceUpdates": [],
+      "coverageCheck": {
+        "status": "no-venues-in-scope",
+        "observedAt": "2026-08-11T12:41:43Z",
+        "source": {
+          "label": "Greene King official venue finder",
+          "url": "https://www.greeneking.co.uk/api/venuefinder/search?latitude=53.325&longitude=-3.832&radius=5000&page=1&pageSize=100&configurationId=%7BFFD09159-F483-4C70-AFDE-5A4ADC735002%7D&contextId=4f36773d-cf03-4814-af78-e34b1e8e34e7&path=pubs-near-me%2Frestaurants&includeBrandsFacets=true",
+          "licence": "first-party public website; read-only attributed use only"
+        },
+        "note": "The first 100 venues returned by the official finder contained no venue inside the Llandudno pack bounds."
+      }
+    },
+    {
+      "id": "mitchells-butlers",
+      "label": "Mitchells & Butlers",
+      "venues": [],
+      "priceUpdates": [],
+      "coverageCheck": {
+        "status": "no-venues-in-scope",
+        "observedAt": "2026-08-11T12:41:43Z",
+        "source": {
+          "label": "Mitchells & Butlers official pub finder",
+          "url": "https://www.mbplc.com/find-a-pub/",
+          "licence": "first-party public website; read-only attributed use only"
+        },
+        "note": "The Llandudno pack has no Mitchells & Butlers operator or venue."
+      }
+    }
+  ],
+  "priceUpdates": [],
+  "notes": [
+    "Estate coverage is recorded separately from the OSM-derived slim pack.",
+    "No estimated or interpolated prices are included."
+  ]
+}

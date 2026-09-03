@@ -1,0 +1,79 @@
+.ukPlaceArrival {
+  position: absolute;
+  z-index: var(--z-map-toolbar);
+  top: calc(var(--map-top-clearance, 0px) + 62px);
+  left: 50%;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) 44px;
+  align-items: start;
+  gap: 9px;
+  min-width: 0;
+  width: min(460px, calc(100vw - 24px));
+  padding: 10px 8px 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 48%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  color: var(--ink);
+  box-shadow: var(--shadow-float);
+  backdrop-filter: blur(14px);
+  transform: translateX(-50%);
+}
+
+.ukPlaceArrivalIcon {
+  margin-top: 4px;
+  color: var(--brass);
+}
+
+.ukPlaceArrivalCopy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.ukPlaceArrivalCopy strong {
+  color: var(--ink);
+  font-family: var(--font-display, var(--serif));
+  font-size: 0.94rem;
+}
+
+.ukPlaceArrivalCopy span {
+  color: var(--ink-soft);
+}
+
+.ukPlaceArrivalDismiss {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.ukPlaceArrivalDismiss:hover,
+.ukPlaceArrivalDismiss:focus-visible {
+  background: color-mix(in srgb, var(--brass) 14%, transparent);
+  color: var(--ink);
+}
+
+.ukPlaceArrivalDismiss:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .ukPlaceArrival {
+    position: fixed;
+    top: calc(var(--mobile-map-top) + var(--mobile-map-bar-h) + 172px);
+    right: var(--mobile-map-corner-lane, 68px);
+    left: 12px;
+    width: auto;
+    transform: none;
+  }
+}

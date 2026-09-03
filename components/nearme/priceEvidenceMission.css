@@ -1,0 +1,63 @@
+.pemSlot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card, 12px);
+  background: var(--paper);
+}
+
+.pemHead {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.pemHeading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.pemActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pemOpen,
+.pemSkip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pemOpen {
+  border: 1px solid transparent;
+  background: var(--brass);
+  color: var(--color-on-accent);
+}
+
+.pemSkip {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.pemSlot .venuePriceSubmit {
+  margin-top: var(--space-1);
+}

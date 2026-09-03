@@ -1,0 +1,53 @@
+/* Venue award badge — an engraved brass plaque. Reuses the price-plaque role
+   tokens from components/zones/zonePintIndex.css (#328): a priced/awarded honour
+   is the pub's own heritage metal (amber brass), never a loud coral alert. The
+   accolade text carries the meaning; the plaque is the frame. Theme-aware via
+   the shared tokens; 44px touch target; calm ease-out on hover. */
+
+.venueAwardPlaque {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm, 8px);
+  border: 1px solid var(--price-plaque-border);
+  background: var(--price-plaque-surface);
+  color: var(--accent-price-ink);
+  box-shadow: var(--price-plaque-shine);
+  text-decoration: none;
+  transition:
+    transform var(--duration-fast, 120ms) var(--ease-out, ease-out),
+    box-shadow var(--duration-base, 200ms) var(--ease-out, ease-out);
+}
+
+.venueAwardPlaque:hover {
+  transform: translateY(-1px);
+}
+
+.venueAwardIcon {
+  flex: 0 0 auto;
+  color: var(--brass, var(--accent-price-ink));
+}
+
+.venueAwardText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.venueAwardTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  color: var(--accent-price-ink);
+}
+
+.venueAwardSource {
+  font-size: 0.72rem;
+  color: var(--accent-price-ink);
+  opacity: 0.8;
+}

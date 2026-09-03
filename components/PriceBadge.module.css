@@ -1,0 +1,17 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-inline-size: 4.45rem;
+  min-block-size: 1.75rem;
+  padding: 0.28rem 0.55rem;
+  font-family: var(--font-data, var(--font-body));
+  font-size: 0.84rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: right;
+  white-space: nowrap;
+}

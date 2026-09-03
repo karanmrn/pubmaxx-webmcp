@@ -1,0 +1,79 @@
+{
+  "$comment": "Allowlist of PERMISSIBLE first-party / open price sources for the scheduled refresh (scripts/refresh_prices.mjs). GOVERNANCE HARD RULE: only pub/brewery OFFICIAL sites and open-data feeds may appear here. NEVER add a competitor price-aggregator or any site whose terms forbid automated access. Every source must be a first-party publisher of its own prices, or an open-licensed dataset. The refresh script reads this file and (in a real run) fetches ONLY these URLs; it will refuse any URL not listed here.",
+  "version": 1,
+  "$discoveryProvidersComment": "Discovery providers can locate and extract candidate official publisher pages but are NEVER price provenance. Every emitted fact must cite the official pub or chain URL, and all aggregator or review-site results must be rejected.",
+  "discoveryProviders": [
+    {
+      "id": "tavily-official-page-discovery",
+      "label": "Tavily Search API",
+      "url": "https://api.tavily.com/search",
+      "kind": "discovery-only",
+      "permissible": true,
+      "notes": "scripts/enrich_city_pubs_tavily.mjs uses bounded searches restricted to OSM-declared official pub domains. Tavily never appears in emitted source fields. Undeclared domains are never promoted to official provenance. Wetherspoons, Greene King, and Mitchells & Butlers are delegated to existing chain harvesters."
+    }
+  ],
+  "sources": [
+    {
+      "id": "example-brewery-official",
+      "label": "Example Brewery — official taproom page",
+      "kind": "first-party-official",
+      "url": "https://www.example-brewery.co.uk/taproom",
+      "note": "PLACEHOLDER. Replace with a real brewery/pub official menu page you have permission to read. First-party publisher of their own pint prices."
+    },
+    {
+      "id": "example-open-data",
+      "label": "Example open-data pub dataset",
+      "kind": "open-data",
+      "url": "https://data.example.gov.uk/pub-prices",
+      "note": "PLACEHOLDER. Replace with a real open-licensed dataset (e.g. a council/OS/ONS open feed). Must carry an open licence permitting reuse."
+    }
+  ],
+  "$drinkSourcesComment": "Allowlist of PERMISSIBLE first-party / open DRINK-menu price sources for scripts/refresh_drink_prices.mjs (E2 of docs/PRD_ALL_DRINKS.md). Same hard rule as `sources` above: a chain publishing ITS OWN pub menus (e.g. Wetherspoons' own site/app for its own pubs) is first-party and permissible. Competitor price aggregators, review sites (Vivino, Untappd, etc.) or any site whose ToS/robots.txt forbids automated access are NEVER permissible, no exceptions. `kind` must be one of first-party-chain | first-party-venue | open-data. Every entry must be `permissible: true` AND documented with a `licence` string; the refresh script refuses any source that is missing either.",
+  "drinkSources": [
+    {
+      "id": "greene-king-official",
+      "label": "Greene King — official per-pub menus",
+      "url": "https://www.greeneking.co.uk/pubs-near-me/london-pubs",
+      "kind": "first-party-chain",
+      "licence": "All rights reserved — first-party publisher of its own pub menus/prices; read-only, attributed use only.",
+      "permissible": true,
+      "notes": "REAL FETCHER (Firecrawl) — scripts/firecrawl_greene_king_prices.mjs scrapes https://www.greeneking.co.uk/pubs/greater-london/{slug}/menu via Firecrawl CLI (JS-rendered). Parses wine/spirits/cocktails from default menu view; beer/lager tabs may need firecrawl interact on a later wave. URL list: .firecrawl/gk-london-menu-urls.txt (~118 Greater London menus). Rows stamped with source+observedAt+licence; unmatched venues dropped (never guessed)."
+    },
+    {
+      "id": "mbplc-nicholsons-official",
+      "label": "Nicholson's — official per-pub drinks menus",
+      "url": "https://www.nicholsonspubs.co.uk/restaurants/london",
+      "kind": "first-party-chain",
+      "licence": "All rights reserved — first-party publisher of its own pub menus/prices; read-only, attributed use only.",
+      "permissible": true,
+      "notes": "REAL FETCHER (Firecrawl) — scripts/firecrawl_mbplc_prices.mjs scrapes https://www.nicholsonspubs.co.uk/restaurants/london/{slug}/drinks via Firecrawl CLI (JS-rendered). Parses beer/spirits/cocktails/wine with bare-decimal prices. Merges into drink_price_updates alongside Greene King. URL list: data/nicholsons_london_drink_urls.txt (~43 London pubs). Cask ale pint prices often absent (ask at bar)."
+    },
+    {
+      "id": "wetherspoons-official",
+      "label": "J D Wetherspoon — official site (per-pub menus)",
+      "url": "https://www.jdwetherspoon.com/pubs",
+      "kind": "first-party-chain",
+      "licence": "All rights reserved — first-party publisher of its own pub menus/prices; read-only, attributed use only. No republishing of the source's own copy, only the price fact + observedAt + link back.",
+      "permissible": true,
+      "notes": "REAL FETCHER LANDED (Wave 3) — see scripts/refresh_drink_prices.mjs fetchWetherspoons() + lib/wetherspoons.ts. Robots-gated (2026-07-07: robots.txt permissive, Disallow: empty for *, Crawl-delay: 10 honoured), project User-Agent, on-disk per-run cache, exponential backoff on 429/5xx, ~300-request/run budget. Parse target: per-pub menu pages at https://www.jdwetherspoon.com/pub-menus/{slug}/ (824 pages via pub-menus-sitemap.xml; slug = name+locality). PROBE FINDING (honest): these first-party WEB pages carry pub IDENTITY + a link to a chain-wide menu PDF, but NO per-drink PRICES — the WP REST pub-menus post type has acf:[]; the only menu artifact is a single MENU_*.pdf that is a vector-graphics poster (no extractable text/prices); live pub-varying prices exist ONLY inside the native Order & Pay mobile app (private backend, out of scope for the first-party WEBSITE TOS; we do not reverse app APIs). => Against today's real payloads this source contributes ZERO priced rows, reported honestly. Retained below for history:  ORIGINAL STUB NOTE — see scripts/refresh_drink_prices.mjs fetchFromDrinkSource(). Wetherspoons publishes a per-pub menu (food + drinks with prices) on jdwetherspoon.com, and this chain is the flagship first-party permissible source named in the PRD. Before any real fetch/parse ships: (1) fetch and read https://www.jdwetherspoon.com/robots.txt and confirm the specific per-pub menu paths are not disallowed; (2) read the site's Terms of Use for any automated-access restriction and honour it (rate-limit, identify a contact UA, no login-walled pages); (3) pick a STABLE parse target — a single per-pub menu URL pattern whose markup/JSON is unlikely to change release-to-release — and pin a fixture/snapshot test to detect silent breakage; (4) never scrape at a rate that could be mistaken for abuse (cache aggressively, refresh at most daily, back off on non-200s); (5) stamp every row with this source's licence + url + an accurate observedAt, and drop (do not guess) any row that can't be attributed to a specific pub."
+    },
+    {
+      "id": "youngs-official",
+      "label": "Young's — official site (pub microsites + garden guides)",
+      "url": "https://www.youngs.co.uk/best-pub-gardens",
+      "kind": "first-party-chain",
+      "licence": "All rights reserved — first-party publisher of its own pub sites/menus; read-only, attributed use only. No republishing of the source's own copy, only the price fact + observedAt + link back when a priced first-party page exists.",
+      "permissible": true,
+      "notes": "Scrape targets: youngs.co.uk regional best-pub-gardens pages and per-pub microsites linked from them (see data/london_chains/youngs/). Merge via scripts/merge_london_chain_scrapes.mjs into venue_menu_enrichment.json (menuUrl = pub website). Do NOT invent drink prices — only emit drink_price_updates when a first-party page carries extractable £ prices. Eating Europe and other third-party guides are NEVER permissible price sources."
+    },
+    {
+      "id": "nicholsons-official",
+      "label": "Nicholson's — official site (London restaurant menus)",
+      "url": "https://www.nicholsonspubs.co.uk/restaurants/london",
+      "kind": "first-party-chain",
+      "licence": "All rights reserved — first-party publisher of its own pub menus; read-only, attributed use only. No republishing of the source's own copy, only the price fact + observedAt + link back when a priced first-party page exists.",
+      "permissible": true,
+      "notes": "Scrape targets: nicholsonspubs.co.uk/restaurants/london/{slug}/foodmenu (+ /drinks, /bookings). URL list in data/london_chains/nicholsons/london_pub_urls.json. Merge via scripts/merge_london_chain_scrapes.mjs. PROBE: current foodmenu scrapes are image hubs without extractable £ text — enrichment links only until a reliable priced payload appears. Never invent prices."
+    }
+  ]
+}

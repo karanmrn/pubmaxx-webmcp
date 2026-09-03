@@ -1,0 +1,443 @@
+/* The Ledger (issue #25): a large-text, high-contrast, calm field-guide
+   logbook — Boomer/Gen-X reading surface for a pub's story. Reuses existing
+   design tokens (app/globals.css: --paper, --panel-raised, --ink, --brass,
+   --serif, --line) — this is NOT a new design system, just a generous,
+   ruled-ledger arrangement of the same palette.
+
+   Type scale is deliberately large: body copy never drops below 1.2rem, so
+   the page stays comfortably readable at 200% browser zoom without any
+   layout collapsing (single centred column, no fixed-width overflow traps). */
+
+.ledgerPage {
+  min-height: 100dvh;
+  padding: clamp(24px, 5vw, 64px) 20px 96px;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.ledgerHead {
+  border-bottom: 3px double var(--line);
+  padding-bottom: 28px;
+  margin-bottom: 36px;
+}
+
+.ledgerHomeLink {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.ledgerHomeLink:hover {
+  color: var(--brass);
+}
+
+.ledgerEyebrow {
+  margin: 0 0 10px;
+  color: var(--brass);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.ledgerTitle {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.ledgerAddress {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+}
+
+.ledgerHeadActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.ledgerMapLink,
+.ledgerPrimaryLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--panel-raised);
+  background: var(--ink-deep);
+  border: 1px solid var(--ink-deep);
+  border-radius: var(--radius-sm, 8px);
+}
+
+.ledgerMapLink:hover,
+.ledgerPrimaryLink:hover {
+  background: color-mix(in srgb, var(--ink-deep) 88%, var(--brass));
+}
+
+.ledgerSection {
+  margin-bottom: 44px;
+}
+
+.ledgerSectionTitle {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  color: var(--ink);
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── The pub's story (heritage / claims) ─────────────────────────────────── */
+.ledgerClaimList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ledgerClaim {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.ledgerClaim:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ledgerClaimBody {
+  margin: 10px 0 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.ledgerClaimEra {
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Provenance chips — kept visually distinct per kind, never blurred together. */
+.ledgerProvenance {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid currentcolor;
+}
+
+.ledgerProvenance--sourced {
+  color: var(--river);
+}
+
+.ledgerProvenance--contributor {
+  color: var(--pint);
+}
+
+.ledgerProvenance--anecdote {
+  color: var(--brass);
+}
+
+.ledgerProvenance--needs-source {
+  color: var(--amber);
+}
+
+.ledgerProvenance--baseline,
+.ledgerProvenance--demo {
+  color: var(--muted);
+}
+
+/* ── Logbook entries — ruled ledger lines, newest first ──────────────────── */
+.ledgerEntries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ledgerEntry {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ledgerEntry:first-child {
+  padding-top: 0;
+}
+
+.ledgerEntry:last-child {
+  border-bottom: none;
+}
+
+.ledgerEntryMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.ledgerEntryDate {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+}
+
+.ledgerEntryNote {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.ledgerEntryPrice {
+  margin: 10px 0 0;
+  font-family: var(--font-data);
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.ledgerEntryPriceLabel {
+  letter-spacing: 0.01em;
+  font-size: 0.85rem;
+}
+
+.ledgerEntryPriceValue {
+  font-weight: 700;
+  color: var(--brass);
+}
+
+.ledgerEmptyEntries {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+}
+
+/* ── Lane wayfinding — one quiet line explaining Public vs Legacy ─────────── */
+.ledgerLaneNote {
+  margin: 0 0 28px;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ── The Family Table (issue #27) ────────────────────────────────────────── */
+/* Deliberately warmer than the logbook above it: a cream/brass-tinted panel,
+   not just another ruled list — this is the "kept for the family" surface,
+   it should feel like a different, gentler room. */
+.ledgerFamilySection {
+  padding: clamp(20px, 4vw, 32px);
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  border: 1px solid var(--brass);
+  border-radius: var(--radius, 12px);
+}
+
+.ledgerFamilyHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ledgerFamilySection .ledgerSectionTitle {
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+}
+
+.ledgerFamilyIntro {
+  margin: -8px 0 20px;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.ledgerFamilyEntries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ledgerFamilyEntry {
+  padding: 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm, 8px);
+}
+
+.ledgerFamilyEntryMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.ledgerFamilyEntryDate {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.ledgerFamilyEntryHandle {
+  font-weight: 700;
+  color: var(--brass);
+}
+
+/* The note is the prominent line — heirloom notes read like a diary, not a
+   database row. Larger than the public logbook's note for emphasis. */
+.ledgerFamilyEntryNote {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.ledgerFamilyEntryPrice {
+  margin: 10px 0 0;
+  font-family: var(--font-data);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+.ledgerFamilyEntryFoot {
+  margin-top: 14px;
+}
+
+.ledgerFamilyEmpty {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.ledgerFootnote {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.ledgerFootnote a {
+  color: var(--brass);
+  font-weight: 700;
+}
+
+/* ── Empty / not-found state ─────────────────────────────────────────────── */
+.ledgerPage--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ledgerEmptyCard {
+  max-width: 480px;
+  text-align: center;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 12px);
+  box-shadow: var(--shadow);
+  padding: clamp(28px, 6vw, 44px);
+}
+
+.ledgerEmptyTitle {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  margin: 10px 0 14px;
+}
+
+.ledgerEmptyBody {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+}
+
+/* Ensure comfortable reading at 200% browser zoom: single column, generous
+   line length cap already set by max-width above, no fixed-height clipping
+   anywhere in this file. */
+@media (max-width: 480px) {
+  .ledgerHeadActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ledgerMapLink,
+  .ledgerReadButton,
+  .familyShareButton {
+    width: 100%;
+  }
+
+  .ledgerFamilyHead {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Listed-building brass plaque (Historic England NHLE). The one heritage fact
+   that reads as engraved metal — reuses the #328 --price-plaque-* tokens so the
+   listed status carries the same brass idiom as a price plaque, never a coral
+   alert. The whole plaque is the citation link (OGL attribution). */
+.ledgerListedPlaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--price-plaque-border);
+  border-radius: var(--radius-sm);
+  background: var(--price-plaque-surface);
+  box-shadow: var(--price-plaque-shine);
+  text-decoration: none;
+  color: var(--accent-price-ink);
+}
+
+.ledgerListedFact {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.ledgerListedSource {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.ledgerListedPlaque:hover .ledgerListedSource {
+  opacity: 1;
+}

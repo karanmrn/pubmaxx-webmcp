@@ -1,0 +1,257 @@
+/* The venue Menu (PRD E1) — drinks grouped by category, rendered inside the
+   Menu tab of .venueInspector. Scoped to .drinkMenu only; reuses the shared app
+   tokens (--brass, --ink, --ink-soft, --line, --panel-raised, --font-data,
+   --radius-sm). Menu prices use the shared stable PriceBadge, not stamp tilt.
+   Each category section pulls its accent from the inline `--cat-accent` custom
+   property set by DrinkMenu.tsx (value from lib/categoryColors.ts — E5's
+   canonical palette). Candle-lit field-guide feel, one accent per family. */
+
+.drinkMenu {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.drinkMenuBack {
+  align-self: flex-start;
+  margin: 0 0 4px;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  color: var(--brass);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .drinkMenuBack:hover {
+    color: var(--ink);
+  }
+}
+
+/* ── Category section ──────────────────────────────────────────────────────── */
+.drinkCategory {
+  /* Fallback so a missing --cat-accent never renders a transparent rule. */
+  --cat-accent: var(--brass);
+}
+
+.drinkCategoryTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  /* A soft category-tinted wash behind the header + a brighter underline gives
+     each drink family its own colour identity while the label itself stays
+     --ink (AA on the panel). The wash is ~10% so it reads as a warm band, not a
+     fill; the underline carries the saturated colour. Colour is never the only
+     cue — the dot glyph + the label text repeat the identity (WCAG 1.4.1). */
+  padding: 5px 8px 6px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  border-bottom: 2px solid var(--cat-accent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--cat-accent) 12%, transparent) 0%,
+    color-mix(in srgb, var(--cat-accent) 4%, transparent) 100%
+  );
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* Legacy Mode / forced-colors: drop the tint wash so the header is plain,
+   high-contrast text over the panel — the underline + dot still identify the
+   family. */
+html[data-legacy="1"] .drinkCategoryTitle {
+  background: none;
+}
+
+@media (forced-colors: active) {
+  .drinkCategoryTitle {
+    background: none;
+  }
+}
+
+.drinkCategoryDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cat-accent);
+  flex: 0 0 auto;
+}
+
+/* Colour-driven category glyph (E5) — the family's mark in the accent hue on a
+   soft tinted disc, leading its section header. inheritColor drives the glyph
+   off currentColor, set here to the category accent. Decorative — the visible
+   label carries the meaning (never icon/colour alone, WCAG 1.4.1). */
+.drinkCategoryGlyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: var(--cat-accent, var(--brass));
+  background: color-mix(in srgb, var(--cat-accent, var(--brass)) 14%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--cat-accent, var(--brass)) 42%, transparent);
+}
+
+/* ── Drink rows ────────────────────────────────────────────────────────────── */
+.drinkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* A quiet ledger rhythm — hairline between rows instead of a bare stack, the
+   same "cheap pint leaderboard" density language as Discover's tables. Not a
+   hover target: nothing here is clickable, so no hover/press affordance. */
+.drinkRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 2px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent);
+}
+
+.drinkRow:first-child {
+  padding-top: 0;
+}
+
+.drinkRow:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.drinkRowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.drinkName {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.drinkMeta {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+.drinkServing {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  opacity: 0.85;
+}
+
+.drinkLowNoChip {
+  width: fit-content;
+  margin-top: 3px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--pint) 45%, var(--line));
+  background: color-mix(in srgb, var(--pint) 9%, transparent);
+  color: var(--ink);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.drinkRowSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  flex: 0 0 auto;
+}
+
+.drinkPrice {
+  min-inline-size: 4.2rem;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* ── Provenance chip ───────────────────────────────────────────────────────── */
+.drinkProvChip {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* A seeded demo pour is ALWAYS visibly distinct — never mistaken for a real
+   first-party price. Muted, dashed, so it reads as "example". */
+.drinkProvChip.demo {
+  border-style: dashed;
+  color: var(--ink-soft);
+  opacity: 0.9;
+}
+
+.drinkProvChip.sourced {
+  border-color: var(--cat-accent, var(--brass));
+  color: var(--ink);
+}
+
+.drinkObservationAge {
+  max-inline-size: 9rem;
+  color: var(--ink-soft);
+  font-family: var(--font-data, monospace);
+  font-size: 0.68rem;
+  line-height: 1.25;
+  text-align: end;
+  white-space: normal;
+}
+
+/* ── Footnote ──────────────────────────────────────────────────────────────── */
+.drinkMenuFootnote {
+  margin: 4px 0 0;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* ── Empty state ───────────────────────────────────────────────────────────── */
+.drinkMenuEmpty {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drinkMenuEmptyTitle {
+  margin: 0;
+  font-family: var(--font-display, var(--font-body));
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.drinkMenuEmptyBody {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}

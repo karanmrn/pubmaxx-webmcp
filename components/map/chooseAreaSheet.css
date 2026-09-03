@@ -1,0 +1,124 @@
+.chooseAreaSheet {
+  display: grid;
+  gap: 14px;
+}
+
+.chooseAreaSearch {
+  display: grid;
+  gap: 6px;
+}
+
+.chooseAreaSearch input {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--hairline, var(--line));
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.chooseAreaSectionTitle {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chooseAreaList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+
+.chooseAreaRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.chooseAreaRow:hover,
+.chooseAreaRow:focus-visible {
+  border-color: var(--hairline, var(--line));
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
+}
+
+.chooseAreaRowName {
+  font-size: 0.95rem;
+}
+
+.chooseAreaRowMeta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.chooseAreaNote {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.chooseAreaDesktop {
+  position: fixed;
+  z-index: 1001;
+  top: 50%;
+  left: 50%;
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(70vh, 640px);
+  overflow: auto;
+  padding: 16px;
+  border: 1px solid var(--hairline, var(--line));
+  border-radius: var(--radius-md);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-md);
+  transform: translate(-50%, -50%);
+}
+
+.chooseAreaDesktopHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.chooseAreaDesktopClose {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.chooseAreaDesktopClose:hover,
+.chooseAreaDesktopClose:focus-visible {
+  color: var(--ink);
+}
+
+.chooseAreaDesktopScrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  border: 0;
+  background: color-mix(in srgb, var(--ink) 28%, transparent);
+}

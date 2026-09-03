@@ -1,0 +1,95 @@
+/* CityMCP London "Around now" strip on the venue sheet Overview.
+   Matches the venueSheet action-strip language: soft brass eyebrow, chip
+   pills, no hard borders — reads as ambient context, not a headline. */
+
+.cityPlaceStrip {
+  margin: 12px 0 2px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 24%, var(--line));
+  border-radius: 14px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--panel-raised) 96%, transparent),
+      color-mix(in srgb, var(--surface-tint-lager) 46%, transparent)
+    ),
+    color-mix(in srgb, var(--panel-raised) 92%, transparent);
+  color: var(--ink);
+}
+
+.cityPlaceStripHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cityPlaceStripEyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.cityPlaceStripSource {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+
+.cityPlaceStripChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cityPlaceStripChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.cityPlaceStripChip small {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-left: 2px;
+}
+
+.cityPlaceStripChip[data-kind="rating"] {
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+}
+
+.cityPlaceStripChip[data-kind="open"] {
+  border-color: color-mix(in srgb, #2f9e44 45%, var(--line));
+  color: color-mix(in srgb, #1c7d32 70%, var(--ink));
+}
+
+.cityPlaceStripChip[data-kind="closed"] {
+  border-color: color-mix(in srgb, #d33 40%, var(--line));
+  color: color-mix(in srgb, #a11d1d 65%, var(--ink));
+}
+
+.cityPlaceStripChip a {
+  color: inherit;
+  text-decoration: none;
+}
+.cityPlaceStripChip a:hover {
+  text-decoration: underline;
+}
+
+.cityPlaceStripSrc {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink-soft);
+  margin-left: 2px;
+}

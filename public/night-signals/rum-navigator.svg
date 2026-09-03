@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 940" fill="none">
+  <defs><linearGradient id="r" x1="230" y1="100" x2="620" y2="810"><stop stop-color="#FFD8C5" stop-opacity=".28"/><stop offset=".44" stop-color="#E0714A" stop-opacity=".18"/><stop offset="1" stop-color="#050315" stop-opacity="0"/></linearGradient><filter id="blur"><feGaussianBlur stdDeviation="13"/></filter></defs>
+  <path d="M170 440c93-93 58-209 143-294 83-83 231-42 286 70 52 106-17 209 30 321 35 83-31 182-133 182-121 0-186-84-265-61-89 26-140-137-61-218Z" fill="#E0714A" fill-opacity=".06" filter="url(#blur)"/>
+  <path d="M300 157c75-64 205-29 261 68 49 84 28 238-16 341-36 84-99 129-174 111-80-19-129-100-147-207-21-125-2-247 76-313Z" fill="url(#r)" stroke="#F6A285" stroke-opacity=".48"/>
+  <path d="M262 234c85 35 184-44 286 22M238 292c105 25 206-37 334 33M230 357c109 4 223-22 356 58M238 430c102-19 221-4 331 74M257 510c91-28 190-2 275 81" stroke="#E0714A" stroke-opacity=".17"/>
+  <path d="M317 346c32-24 68-25 99-3m53-8c30-20 61-16 87 8M332 372c21 11 47 10 68-3m83-4c19 10 43 10 61-1M438 360l-18 121 40 9M378 543c40 20 83 16 116-10" stroke="#FFF0EA" stroke-opacity=".64" stroke-width="3" stroke-linecap="round"/>
+  <path d="M252 229c61-124 260-144 332 20-62-45-121-23-181-9-50 12-100 12-151-11Z" fill="#050315" fill-opacity=".74" stroke="#E0714A" stroke-opacity=".28"/>
+  <path d="M108 718c61-72 158-65 229 18l90 105-234 50-83-79c-29-28-30-61-2-94Z" fill="url(#r)" stroke="#E0714A" stroke-opacity=".4"/><path d="M160 688c31-27 67-18 98 17l79 91" stroke="#F2A184" stroke-opacity=".42" stroke-width="19" stroke-linecap="round"/>
+  <g transform="rotate(-5 286 681)"><path d="M220 582h145l-10 217c-2 31-21 48-62 48-40 0-60-17-63-48l-10-217Z" fill="#E0714A" fill-opacity=".08" stroke="#FFE6DA" stroke-opacity=".68" stroke-width="2"/><path d="M230 687h125l-7 105c-2 23-18 34-55 34-36 0-53-11-55-34l-8-105Z" fill="#B8552D" fill-opacity=".68"/><path d="M232 676c35 11 80 11 121 0" stroke="#FFD0BD" stroke-opacity=".65"/></g>
+  <path d="M630 201c70 78-62 107 14 187 60 62-49 105 13 173" stroke="#E0714A" stroke-opacity=".34" stroke-width="11" stroke-linecap="round" filter="url(#blur)"/><path d="M648 185c63 72-53 116 5 180 57 64-44 110 15 182" stroke="#F7A17F" stroke-opacity=".46" stroke-width="2"/>
+</svg>

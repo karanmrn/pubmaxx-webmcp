@@ -1,0 +1,102 @@
+/* The national yardstick block on the Pint Index. Shared tokens only (--ink,
+   --ink-soft, --muted, --line, --panel, --panel-raised, --radius), so it themes
+   with the rest of the page.
+
+   Deliberately NOT brass. Brass is this page's colour for figures we hold the
+   evidence for: the average column, the rank, the CSV button. These figures are
+   other people's, so they read in plain ink on a plain panel. The difference is
+   the point, not a styling accident. */
+
+.nationalPint {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.nationalPintList {
+  margin: 0;
+  padding: 0;
+}
+
+.nationalPintRow {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nationalPintRow:last-child {
+  border-bottom: 0;
+}
+
+.nationalPintMeasure {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nationalPintValue {
+  margin: 0;
+}
+
+.nationalPintLine {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  /* A price is a number to be compared, so the figures line up. */
+  font-variant-numeric: tabular-nums;
+  /* A price caption never truncates: it wraps (see the phone-chrome rule). */
+  overflow-wrap: anywhere;
+}
+
+/* One sentence, one line. The pair stacks on a phone and sits inline on a wider
+   column, and neither ever leaves a lone date hanging. */
+.nationalPintClause {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nationalPintThen {
+  color: var(--ink-soft);
+}
+
+.nationalPintNow {
+  color: var(--ink);
+}
+
+.nationalPintMovement {
+  margin: 3px 0 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.nationalPintSource {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.nationalPintSource a {
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.nationalPintSource a:hover {
+  color: var(--ink);
+}
+
+.nationalPintSource a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

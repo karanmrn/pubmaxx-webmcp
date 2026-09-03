@@ -1,0 +1,189 @@
+/* Venue Menu hub — 2-column visual tiles (alcohol-first). */
+
+.menuHub {
+  display: grid;
+  gap: 12px;
+}
+
+.menuHub__head {
+  display: grid;
+  gap: 4px;
+}
+
+.menuHub__title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 650;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.menuHub__lede {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--ink-soft, var(--muted));
+}
+
+.menuHub__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.menuHub__item--primary {
+  grid-column: 1 / -1;
+}
+
+.menuHub__tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: 132px;
+  padding: 0;
+  border: 1px solid var(--line-soft, var(--line));
+  border-radius: var(--radius, 12px);
+  background: var(--panel-raised, var(--panel));
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    border-color var(--duration-base, 180ms) ease-out,
+    transform var(--duration-base, 180ms) ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .menuHub__tile:hover {
+    border-color: color-mix(in srgb, var(--brass) 50%, var(--line));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .menuHub__tile:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.menuHub__item--primary .menuHub__tile {
+  min-height: 148px;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding-right: 14px;
+}
+
+.menuHub__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, currentcolor 16%, transparent) 0%,
+      color-mix(in srgb, var(--panel) 70%, transparent) 70%
+    );
+}
+
+.menuHub__item--primary .menuHub__media {
+  width: 96px;
+  min-height: 148px;
+  flex: 0 0 auto;
+}
+
+.menuHub__media--drinks {
+  color: var(--cat-beer);
+}
+
+.menuHub__media--food {
+  color: var(--brass);
+  min-height: 88px;
+}
+
+.menuHub__media--photo {
+  padding: 0;
+  background: var(--panel-sunken, var(--panel));
+}
+
+.menuHub__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 88px;
+  object-fit: cover;
+}
+
+.menuHub__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px 12px;
+  min-width: 0;
+}
+
+.menuHub__item--primary .menuHub__meta {
+  padding: 12px 0;
+  flex: 1;
+}
+
+.menuHub__label {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.menuHub__hint {
+  font-size: 0.78rem;
+  color: var(--ink-soft, var(--muted));
+}
+
+.menuHub__ext {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.55;
+  color: var(--ink-soft, var(--muted));
+}
+
+.menuHubEmpty {
+  padding: 16px 4px 8px;
+}
+
+.menuHubEmptyTitle {
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.menuHubEmptyAction {
+  min-height: 44px;
+  margin-top: 6px;
+  padding: 9px 16px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--brass);
+  color: var(--color-on-accent-strong);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menuHubEmptyAction:active {
+  transform: scale(0.98);
+  --shared-press-scale: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menuHub__tile {
+    transition: none;
+  }
+}

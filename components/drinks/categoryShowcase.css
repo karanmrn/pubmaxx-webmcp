@@ -1,0 +1,339 @@
+/* CategoryShowcase (Epic E5) — owned by the E5 identity pass. Reads only E5 +
+   base tokens; no literal palette hexes. `.textured-panel` (the paper/linen
+   utility) lives in the appended section of app/globals.css. */
+
+.catShowcase {
+  border: 1px solid var(--color-border, var(--line));
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: var(--space-5, 20px);
+  box-shadow: var(--shadow-sm, var(--shadow));
+}
+
+.catShowcase__title {
+  margin: 0 0 var(--space-4, 16px);
+  font-family: var(--serif);
+  font-size: var(--text-md);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight, -0.01em);
+  color: var(--ink);
+}
+
+.catShowcase__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: var(--space-3, 12px);
+}
+
+.catShowcase__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  padding: var(--space-2, 8px) var(--space-3, 12px);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+}
+
+/* The swatch: a soft tinted disc carrying the category colour, with the glyph
+   drawn in the same hue (currentcolor). `color` is set inline per category. */
+.catShowcase__swatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: var(--radius-pill);
+  /* very light wash of the category colour behind the line-art glyph */
+  background: color-mix(in srgb, currentcolor 14%, transparent);
+  border: 1.5px solid color-mix(in srgb, currentcolor 45%, transparent);
+}
+
+.catShowcase__labelWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.catShowcase__label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* ── Explore mode ("Explore by drink" grid) ────────────────────────────────
+   Each item becomes a tappable, category-tinted card. The card frame reads the
+   category token via `--cat` (set inline per item) so the tint, border and hover
+   all speak the drink's colour — additively over the paper base, glyph + label
+   always present (never colour alone).
+
+   Rendered as a horizontal LANE, not a wrapping grid: scroll-snap + momentum
+   scrolling + an edge-fade mask hint "more →" the same way TonightNearbyLane
+   and the editorial lane do. A fixed-width `catShowcase__item` gives the row a
+   steady rhythm instead of the cards stretching to fill leftover space. */
+.catShowcase--explore .catShowcase__grid {
+  display: flex;
+  gap: var(--space-3, 12px);
+  overflow-x: auto;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2px 2px 6px;
+  margin: 0 -2px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20px,
+    black calc(100% - 20px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20px,
+    black calc(100% - 20px),
+    transparent
+  );
+}
+
+.catShowcase--explore .catShowcase__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.catShowcase--explore .catShowcase__item {
+  flex: 0 0 180px;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.catShowcase__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  min-height: 64px;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--cat, var(--brass)) 34%, var(--line-soft));
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cat, var(--brass)) 12%, var(--panel-raised)) 0%,
+      var(--panel-raised) 72%
+    );
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.catShowcase__item--active .catShowcase__link {
+  border-color: color-mix(in srgb, var(--cat, var(--brass)) 72%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--cat, var(--brass)) 28%, transparent);
+}
+
+/* Hover only on devices that actually hover — a finger tap must never leave a
+   card looking "stuck" in its hover state. */
+@media (hover: hover) and (pointer: fine) {
+  .catShowcase__link:hover {
+    border-color: color-mix(in srgb, var(--cat, var(--brass)) 62%, transparent);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--cat, var(--brass)) 16%, transparent);
+  }
+}
+
+.catShowcase__link:focus-visible {
+  outline: 2px solid var(--cat, var(--brass));
+  outline-offset: 2px;
+}
+
+.catShowcase--explore .catShowcase__label {
+  color: var(--ink);
+  font-size: var(--text-md, 1rem);
+}
+
+.catShowcase__hint {
+  font-size: var(--text-xs, 0.72rem);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.discoverLowNoBadge {
+  font-family: var(--font-data, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+/* ── Glyph motion (E5's signature element) ─────────────────────────────────
+   The drink glyph is the one truly bespoke asset on this page, so it carries
+   the showcase's motion identity: a soft spring pop-in on arrival, and a
+   playful lean on hover — both reduced-motion-safe, hover gated to real
+   pointers so touch never leaves a glyph mid-tilt. */
+.catShowcase__swatch {
+  transform-origin: 50% 55%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .catShowcase__swatch {
+    transition: transform var(--duration-base) var(--ease-out-strong);
+  }
+
+  .catShowcase--explore .catShowcase__item {
+    animation: catShowcaseIn var(--duration-slow) var(--ease-spring) both;
+  }
+
+  .catShowcase--explore .catShowcase__item:nth-child(2) {
+    animation-delay: 40ms;
+  }
+
+  .catShowcase--explore .catShowcase__item:nth-child(3) {
+    animation-delay: 80ms;
+  }
+
+  .catShowcase--explore .catShowcase__item:nth-child(4) {
+    animation-delay: 120ms;
+  }
+
+  .catShowcase--explore .catShowcase__item:nth-child(5) {
+    animation-delay: 160ms;
+  }
+
+  .catShowcase--explore .catShowcase__item:nth-child(n + 6) {
+    animation-delay: 200ms;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .catShowcase__link:hover {
+    transform: translateY(-2px);
+  }
+
+  .catShowcase__link:hover .catShowcase__swatch {
+    transform: scale(1.08) rotate(-4deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes catShowcaseIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* ── D6 · desktop fixes for the explore lane ───────────────────────────────
+   (a) Reveal bug: the entrance above uses `animation-fill-mode: both`, which
+   parks every card at the from-frame (opacity: 0) through its stagger delay —
+   and on this rail (flex children of a masked overflow-x scroller) the browser
+   can drop the animation entirely at wide viewports, leaving cards stuck
+   invisible. Wide viewports show most of the lane at once anyway, so cards are
+   simply default-visible there; the entrance remains for narrower viewports
+   and stays reduced-motion-gated exactly as before.
+   (b) Affordances: the lane clipped cards mid-tile with zero pointer
+   affordance. ≥1024px only, a wrapper (`.catShowcase__rail`, added by
+   CategoryShowcase.tsx in explore mode) positions 44px prev/next buttons over
+   a widened edge fade; the buttons disable at either end (state in the
+   component). Below 1024px they are display:none — native touch scrolling on
+   mobile is untouched. */
+.catShowcase__rail {
+  position: relative;
+}
+
+.catShowcase__arrow {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .catShowcase--explore .catShowcase__item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Widen the fade so the clipped card reads as an intentional "more here"
+     cue (and so it sits under the 44px arrows), not an accident. */
+  .catShowcase--explore .catShowcase__grid {
+    /* Reserve the fade/arrow lanes as real scroll gutters. Without this the
+       first card began 17px into a 44px fade and its swatch sat under Prev,
+       leaving the Discover replacement badge visible only as "ee". */
+    padding: 2px 46px 6px;
+    scroll-padding-inline: 46px;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 44px,
+      black calc(100% - 44px),
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 44px,
+      black calc(100% - 44px),
+      transparent
+    );
+  }
+
+  .catShowcase__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    transform: translateY(-50%);
+    border-radius: var(--radius-pill, 999px);
+    border: 1px solid var(--line);
+    background: var(--panel-raised);
+    color: var(--ink);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm, var(--shadow));
+  }
+
+  .catShowcase__arrow--prev {
+    left: -10px;
+  }
+
+  .catShowcase__arrow--next {
+    right: -10px;
+  }
+
+  .catShowcase__arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    box-shadow: none;
+  }
+}
+
+.catShowcase__arrow:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .catShowcase__arrow:not(:disabled):hover {
+    border-color: color-mix(in srgb, var(--brass) 62%, var(--line));
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--brass) 14%, transparent);
+  }
+}

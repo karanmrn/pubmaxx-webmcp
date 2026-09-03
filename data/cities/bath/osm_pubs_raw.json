@@ -1,0 +1,1465 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-09T22:43:45Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 1035900172,
+      "lat": 51.3796326,
+      "lon": -2.3268124,
+      "tags": {
+        "addr:housename": "The SU",
+        "addr:place": "University of Bath",
+        "addr:postcode": "BA2 7AY",
+        "amenity": "pub",
+        "brewery": "yes",
+        "check_date": "2023-11-21",
+        "fhrs:id": "204739",
+        "internet_access": "yes",
+        "level": "3",
+        "name": "The Plug",
+        "opening_hours": "Mo-Tu 08:00-23:00; We 08:00-21:00; Th 08:00-00:00; Fr 08:00-23:00; Sa 12:00-21:00; Su 12:00-23:00",
+        "payment:cash": "no",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "smoking": "no",
+        "toilets": "yes",
+        "website": "https://www.thesubath.com/bars/plugandtub/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1730488618,
+      "lat": 51.3780319,
+      "lon": -2.3567126,
+      "tags": {
+        "amenity": "pub",
+        "fhrs:id:note": "Part of Royal Hotel",
+        "name": "The Sports Bar",
+        "website": "https://www.royalhotelbath.co.uk/",
+        "wheelchair": "yes",
+        "wikidata": "Q26688927"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13887038201,
+      "lat": 51.3843254,
+      "lon": -2.3601984,
+      "tags": {
+        "addr:housenumber": "2",
+        "addr:postcode": "BA1 5BR",
+        "addr:street": "Saracen Street",
+        "amenity": "pub",
+        "email": "pigandfiddle@butcombepubs.com",
+        "internet_access": "wlan",
+        "name": "The Pig & Fiddle",
+        "opening_hours": "Mo-Tu 08:00-22:00; We-Sa 08:00-23:00; Su 08:00-21:00",
+        "phone": "+441225 330190",
+        "website": "https://butcombe.com/pig-and-fiddle/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 39694079,
+      "center": {
+        "lat": 51.3971311,
+        "lon": -2.3224444
+      },
+      "tags": {
+        "addr:city": "Bathampton",
+        "addr:postcode": "BA2 6TR",
+        "addr:street": "Mill Lane",
+        "amenity": "pub",
+        "brand": "Chef & Brewer",
+        "brand:wikidata": "Q5089491",
+        "cuisine": "regional",
+        "fhrs:id": "633683",
+        "food": "yes",
+        "name": "The George",
+        "opening_hours": "Mo-Sa 11:00-23:00; Su 12:00-22:30",
+        "phone": "+44 1225 425079",
+        "website": "https://www.chefandbrewer.com/pubs/somerset/george-inn",
+        "wikidata": "Q26598962"
+      }
+    },
+    {
+      "type": "way",
+      "id": 45087252,
+      "center": {
+        "lat": 51.3824296,
+        "lon": -2.3934986
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "103",
+        "addr:postcode": "BA1 3EN",
+        "addr:street": "Locksbrook Road",
+        "amenity": "pub",
+        "fhrs:id": "1683919",
+        "name": "The Locksbrook Inn",
+        "website": "https://thelocksbrookinn.com/",
+        "wikidata": "Q26673846"
+      }
+    },
+    {
+      "type": "way",
+      "id": 47200513,
+      "center": {
+        "lat": 51.3773549,
+        "lon": -2.3892442
+      },
+      "tags": {
+        "addr:housenumber": "42",
+        "addr:postcode": "BA2 1EF",
+        "addr:street": "Shophouse Road",
+        "amenity": "pub",
+        "fhrs:id": "1693801",
+        "name": "The White Horse",
+        "website": "https://www.whitehorsetwerton.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q99591864"
+      }
+    },
+    {
+      "type": "way",
+      "id": 49369744,
+      "center": {
+        "lat": 51.3856424,
+        "lon": -2.3886571
+      },
+      "tags": {
+        "addr:housenumber": "21",
+        "addr:postcode": "BA1 3PW",
+        "addr:street": "Newbridge Hill",
+        "amenity": "pub",
+        "fhrs:id": "205343",
+        "name": "New Crown Inn",
+        "website": "https://www.thenewcrowninn.co.uk/",
+        "wikidata": "Q99591742"
+      }
+    },
+    {
+      "type": "way",
+      "id": 49378395,
+      "center": {
+        "lat": 51.3849968,
+        "lon": -2.3756795
+      },
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:postcode": "BA1 3AR",
+        "addr:street": "Upper Bristol Road",
+        "addr:terrace": "Albion Buildings",
+        "amenity": "pub",
+        "brewery": "Bath Ales",
+        "fhrs:id": "1843454",
+        "food": "yes",
+        "name": "The Hop Pole",
+        "operator": "Bath Ales",
+        "real_ale": "draught",
+        "website": "https://bathales.com/pubs/hop.html",
+        "wikidata": "Q26673224"
+      }
+    },
+    {
+      "type": "way",
+      "id": 49380463,
+      "center": {
+        "lat": 51.3853877,
+        "lon": -2.3780308
+      },
+      "tags": {
+        "addr:postcode": "BA1 3AT",
+        "amenity": "pub",
+        "fhrs:id": "520708",
+        "name": "Victoria Pub and Kitchen",
+        "toilets:wheelchair": "no",
+        "website": "https://www.victoriabath.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q99591745"
+      }
+    },
+    {
+      "type": "way",
+      "id": 49779969,
+      "center": {
+        "lat": 51.3883006,
+        "lon": -2.3698661
+      },
+      "tags": {
+        "addr:postcode": "BA1 2LY",
+        "amenity": "pub",
+        "fhrs:id": "1736441",
+        "name": "The Marlborough Tavern",
+        "website": "https://www.marlborough-tavern.com/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Low step",
+        "wikidata": "Q26688962"
+      }
+    },
+    {
+      "type": "way",
+      "id": 55466903,
+      "center": {
+        "lat": 51.3807671,
+        "lon": -2.3580838
+      },
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:postcode": "BA1 1LJ",
+        "addr:street": "Terrace Walk",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "building": "pub",
+        "fhrs:id": "579121",
+        "name": "The Huntsman",
+        "opening_hours": "Mo-Sa 10:00-23:00; Su 10:00-22:30",
+        "phone": "+44 1225 482900",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.huntsmanbathpub.co.uk/",
+        "wheelchair": "yes",
+        "wikidata": "Q17532467"
+      }
+    },
+    {
+      "type": "way",
+      "id": 60660934,
+      "center": {
+        "lat": 51.3837401,
+        "lon": -2.3624916
+      },
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:postcode": "BA1 2JW",
+        "addr:street": "Old King Street",
+        "amenity": "pub",
+        "brand": "Hall & Woodhouse",
+        "brand:wikidata": "Q5642555",
+        "building": "retail",
+        "fhrs:id": "204594",
+        "name": "Hall & Woodhouse",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.hall-woodhousebath.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q99591418"
+      }
+    },
+    {
+      "type": "way",
+      "id": 74530685,
+      "center": {
+        "lat": 51.3878052,
+        "lon": -2.3601857
+      },
+      "tags": {
+        "addr:postcode": "BA1 5NA",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "205755",
+        "name": "The Star Inn",
+        "real_ale": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.abbeyinnsbath.co.uk/#the-star-inn-bath",
+        "wheelchair": "no",
+        "wikidata": "Q26674501"
+      }
+    },
+    {
+      "type": "way",
+      "id": 74536030,
+      "center": {
+        "lat": 51.3874665,
+        "lon": -2.3594499
+      },
+      "tags": {
+        "addr:postcode": "BA1 5BW",
+        "addr:street": "Walcot Street",
+        "amenity": "pub",
+        "fhrs:id": "850183",
+        "name": "The Bell",
+        "real_ale": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.thebellinnbath.co.uk/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Ramp is available from bar for step at front.",
+        "wikidata": "Q26674547"
+      }
+    },
+    {
+      "type": "way",
+      "id": 89868028,
+      "center": {
+        "lat": 51.3809429,
+        "lon": -2.357975
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "1",
+        "addr:postcode": "BA1 1NG",
+        "addr:street": "York Street",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "688891",
+        "name": "The Ale House",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited",
+        "wikidata": "Q26674647"
+      }
+    },
+    {
+      "type": "way",
+      "id": 92222991,
+      "center": {
+        "lat": 51.3848799,
+        "lon": -2.3612798
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housename": "The Old Post Office",
+        "addr:housenumber": "2",
+        "addr:postcode": "BA1 2EB",
+        "addr:street": "George Street",
+        "addr:terrace": "York Buildings",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "https://en.wikipedia.org/wiki/Wetherspoons",
+        "building": "retail",
+        "dog": "no",
+        "fhrs:id": "1920676",
+        "name": "The Old Post Office",
+        "outdoor_seating": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.jdwetherspoon.com/pubs/the-old-post-office-bath/",
+        "wheelchair": "yes",
+        "wheelchair:description": "All lower floor is accessinle. stairs for upper floor"
+      }
+    },
+    {
+      "type": "way",
+      "id": 92223956,
+      "center": {
+        "lat": 51.3843368,
+        "lon": -2.3599631
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "2",
+        "addr:postcode": "BA1 5BR",
+        "addr:street": "Saracen Street",
+        "amenity": "pub",
+        "brewery": "yes",
+        "fhrs:id": "244519",
+        "name": "The Pig & Fiddle",
+        "operator": "Butcombe Brewery",
+        "toilets:wheelchair": "no",
+        "website": "http://www.pigandfiddle.butcombe.com/",
+        "wheelchair": "no",
+        "wikidata": "Q99591854"
+      }
+    },
+    {
+      "type": "way",
+      "id": 92228107,
+      "center": {
+        "lat": 51.3838525,
+        "lon": -2.3598897
+      },
+      "tags": {
+        "addr:housenumber": "42",
+        "addr:postcode": "BA1 5LP",
+        "addr:street": "Broad Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "pub",
+        "fhrs:id": "205302",
+        "name": "Saracen's Head Tavern",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.greeneking.co.uk/pubs/somerset/saracens-head",
+        "wheelchair": "yes",
+        "wheelchair:description": "toilet access only via Walcot street entrance due to internal step",
+        "wikidata": "Q26674044"
+      }
+    },
+    {
+      "type": "way",
+      "id": 93284715,
+      "center": {
+        "lat": 51.3819705,
+        "lon": -2.381585
+      },
+      "tags": {
+        "addr:postcode": "BA2 3BW",
+        "addr:street": "Lower Bristol Road",
+        "amenity": "pub",
+        "camra": "yes",
+        "fhrs:id": "359654",
+        "name": "The Royal Oak",
+        "opening_hours": "Mo-Fr 16:00-23:00; Sa 12:00-23:00; Su 16:00-23:00",
+        "source:addr": "FSA Food Hygiene Ratings Database",
+        "website": "https://www.theroyaloak-bath.co.uk/",
+        "wheelchair": "no",
+        "wikidata": "Q99593451"
+      }
+    },
+    {
+      "type": "way",
+      "id": 94708808,
+      "center": {
+        "lat": 51.3819776,
+        "lon": -2.3627811
+      },
+      "tags": {
+        "addr:housenumber": "7-8",
+        "addr:postcode": "BA1 1ET",
+        "addr:street": "St Johns Place",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "204429",
+        "name": "Garricks Head",
+        "source": "Bing",
+        "website": "http://www.garricksheadpub.com/",
+        "wheelchair": "no",
+        "wikidata": "Q99591722"
+      }
+    },
+    {
+      "type": "way",
+      "id": 94821391,
+      "center": {
+        "lat": 51.3815041,
+        "lon": -2.3623755
+      },
+      "tags": {
+        "addr:housenumber": "21",
+        "addr:postcode": "BA1 1EP",
+        "addr:street": "Westgate Street",
+        "amenity": "pub",
+        "building": "pub",
+        "facebook": "https://www.facebook.com/FlansBath",
+        "fhrs:id": "204358",
+        "name": "Flan O'Briens",
+        "toilets:wheelchair": "no",
+        "twitter": "https://twitter.com/FlanOBriens",
+        "wheelchair": "no",
+        "wikidata": "Q26688929"
+      }
+    },
+    {
+      "type": "way",
+      "id": 97228692,
+      "center": {
+        "lat": 51.3810792,
+        "lon": -2.3654042
+      },
+      "tags": {
+        "addr:housenumber": "14",
+        "addr:postcode": "BA1 2BX",
+        "addr:street": "James Street West",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "624015",
+        "microbrewery": "yes",
+        "name": "Bath Brew House",
+        "real_ale": "yes",
+        "real_cider": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://thebathbrewhouse.com/",
+        "wheelchair": "limited",
+        "wikidata": "Q99591735"
+      }
+    },
+    {
+      "type": "way",
+      "id": 118047219,
+      "center": {
+        "lat": 51.387472,
+        "lon": -2.365026
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "50",
+        "addr:postcode": "BA1 2QA",
+        "addr:street": "Rivers Street",
+        "amenity": "pub",
+        "brewery": "various;guinness",
+        "building": "yes",
+        "fhrs:id": "1377137",
+        "name": "The Chequers",
+        "opening_hours": "Mo-Sa 15:00-23:00",
+        "smoking": "outside",
+        "toilets:wheelchair": "no",
+        "website": "https://www.thechequersbath.com/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 120075514,
+      "center": {
+        "lat": 51.3906377,
+        "lon": -2.3558917
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "36",
+        "addr:postcode": "BA1 5NN",
+        "addr:street": "Thomas Street",
+        "amenity": "pub",
+        "building": "pub",
+        "facebook": "https://www.facebook.com/profile.php?id=61587306683257",
+        "fhrs:id": "1913156",
+        "name": "Wiilliam's Table",
+        "smoking": "outside",
+        "wheelchair": "yes",
+        "wikidata": "Q26674365"
+      }
+    },
+    {
+      "type": "way",
+      "id": 120522508,
+      "center": {
+        "lat": 51.382382,
+        "lon": -2.3624135
+      },
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:postcode": "BA1 1HQ",
+        "addr:street": "Barton Street",
+        "amenity": "pub",
+        "building": "yes",
+        "fhrs:id": "939211",
+        "name": "The Canon",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.crafted-social.co.uk/canon-bath",
+        "wheelchair": "no",
+        "wikidata": "Q99592693"
+      }
+    },
+    {
+      "type": "way",
+      "id": 120543182,
+      "center": {
+        "lat": 51.3813144,
+        "lon": -2.3616858
+      },
+      "tags": {
+        "addr:housenumber": "14",
+        "addr:postcode": "BA1 1EQ",
+        "addr:street": "Westgate Street",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "1171674",
+        "indoor_seating": "yes",
+        "name": "The Grapes",
+        "outdoor_seating": "yes",
+        "website": "https://thegrapesbath.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q99591727"
+      }
+    },
+    {
+      "type": "way",
+      "id": 120543184,
+      "center": {
+        "lat": 51.3834222,
+        "lon": -2.3620604
+      },
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:postcode": "BA1 2JL",
+        "addr:street": "John Street",
+        "amenity": "pub",
+        "brewery": "Bath Ales",
+        "building": "retail",
+        "fhrs:id": "204152",
+        "food": "yes",
+        "name": "The Salamander",
+        "operator": "Bath Ales",
+        "real_ale": "draught",
+        "website": "https://www.bathales.com/pid/the-salamander/",
+        "wikidata": "Q99591762"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122107012,
+      "center": {
+        "lat": 51.383366,
+        "lon": -2.3602225
+      },
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:postcode": "BA1 2JZ",
+        "addr:street": "Green Street",
+        "amenity": "pub",
+        "building": "pub",
+        "facebook": "https://www.facebook.com/OldGreenTree/",
+        "fhrs:id": "204514",
+        "name": "The Old Green Tree",
+        "real_ale": "yes",
+        "ref:GB:uprn": "100121171379",
+        "wheelchair": "no",
+        "wikidata": "Q26675104"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122109223,
+      "center": {
+        "lat": 51.3828466,
+        "lon": -2.3603391
+      },
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:postcode": "BA1 1BH",
+        "addr:street": "New Bond Street Place",
+        "amenity": "pub",
+        "building": "pub",
+        "check_date:opening_hours": "2024-03-30",
+        "facebook": "https://www.facebook.com/TheVolunteerRiflemansArms",
+        "fhrs:id": "205134",
+        "name": "The Volunteer Rifleman's Arms",
+        "opening_hours": "Mo-Su 12:00-16:00",
+        "wheelchair": "no",
+        "wikidata": "Q99591857"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122112232,
+      "center": {
+        "lat": 51.382267,
+        "lon": -2.3639255
+      },
+      "tags": {
+        "addr:housename": "The Griffin Inn",
+        "addr:postcode": "BA1 2AP",
+        "addr:street": "Monmouth Street",
+        "amenity": "pub",
+        "brewery": "yes",
+        "building": "yes",
+        "fhrs:id": "1604776",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "The Griffin Inn",
+        "opening_hours": "Mo-Tu off; We-Th 15:00-23:00; Fr 15:00-24:00; Sa 11:00-24:00; Su 11:00-21:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 1225 420919",
+        "smoking": "outside",
+        "toilets:wheelchair": "no",
+        "website": "https://thegriffinbath.co.uk/",
+        "wheelchair": "no",
+        "wikidata": "Q26673508"
+      }
+    },
+    {
+      "type": "way",
+      "id": 122523617,
+      "center": {
+        "lat": 51.381587,
+        "lon": -2.3608278
+      },
+      "tags": {
+        "addr:housenumber": "38",
+        "addr:postcode": "BA1 1EL",
+        "addr:street": "Westgate Street",
+        "amenity": "pub",
+        "brand": "Greene King",
+        "brand:wikidata": "Q5564162",
+        "building": "pub",
+        "fhrs:id": "205458",
+        "name": "The West Gate",
+        "toilets:wheelchair": "yes",
+        "twitter": "@thewestgatepub",
+        "website": "https://www.greeneking-pubs.co.uk/pubs/somerset/west-gate/",
+        "wheelchair": "yes",
+        "wikidata": "Q99591863"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123072405,
+      "center": {
+        "lat": 51.379972,
+        "lon": -2.3614814
+      },
+      "tags": {
+        "addr:housenumber": "47",
+        "addr:postcode": "BA1 1UQ",
+        "addr:street": "Saint James's Parade",
+        "amenity": "pub",
+        "building": "pub",
+        "check_date:opening_hours": "2024-02-03",
+        "fhrs:id": "1019084",
+        "name": "Black Fox",
+        "opening_hours:signed": "no",
+        "website": "https://www.blackfoxbath.com/",
+        "wheelchair": "no",
+        "wheelchair:description": "Single step up to door approx 8 inches, with narrow door.",
+        "wikidata": "Q99591732"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123072490,
+      "center": {
+        "lat": 51.3799973,
+        "lon": -2.3604983
+      },
+      "tags": {
+        "addr:housenumber": "15",
+        "addr:postcode": "BA1 1QU",
+        "addr:street": "https://www.greatukpubs.co.uk/lamb-and-lion-bath",
+        "amenity": "pub",
+        "check_date:opening_hours": "2024-02-24",
+        "fhrs:id": "205483",
+        "name": "The Lamb and Lion",
+        "opening_hours:signed": "no",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.greatukpubs.co.uk/lamb-and-lion-bath",
+        "wheelchair": "yes",
+        "wheelchair:description": "Ramp available right hand side of building",
+        "wikidata": "Q99592929"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123133524,
+      "center": {
+        "lat": 51.3882919,
+        "lon": -2.3679005
+      },
+      "tags": {
+        "addr:housenumber": "10",
+        "addr:postcode": "BA1 2TW",
+        "addr:street": "St James's Street",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "3",
+        "fhrs:id": "1320755",
+        "name": "St James Wine Vaults",
+        "website": "https://www.stjameswinevaults.co.uk/",
+        "wheelchair": "no",
+        "wheelchair:description": "2 Steps",
+        "wikidata": "Q26673899"
+      }
+    },
+    {
+      "type": "way",
+      "id": 123743543,
+      "center": {
+        "lat": 51.3805126,
+        "lon": -2.3625659
+      },
+      "tags": {
+        "addr:housenumber": "11-12",
+        "addr:postcode": "BA1 1EB",
+        "addr:street": "Westgate Buildings",
+        "amenity": "pub",
+        "fhrs:id": "359666",
+        "name": "The Cork",
+        "toilets:wheelchair": "yes",
+        "website": "https://thecork.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q99591766"
+      }
+    },
+    {
+      "type": "way",
+      "id": 124200514,
+      "center": {
+        "lat": 51.3960219,
+        "lon": -2.3623182
+      },
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:postcode": "BA1 5PZ",
+        "addr:street": "Richmond Place",
+        "amenity": "pub",
+        "fhrs:id": "1798711",
+        "name": "The Richmond Arms",
+        "website": "https://www.therichmondbath.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 127649575,
+      "center": {
+        "lat": 51.3971134,
+        "lon": -2.3546897
+      },
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:postcode": "BA1 6JN",
+        "addr:street": "Fairfield Park Road",
+        "amenity": "pub",
+        "disused:fhrs:id": "1273413",
+        "facebook": "https://www.facebook.com/fairfieldarmsbath/",
+        "name": "Fairfield Arms",
+        "wikidata": "Q99591719"
+      }
+    },
+    {
+      "type": "way",
+      "id": 127791460,
+      "center": {
+        "lat": 51.3814037,
+        "lon": -2.3745976
+      },
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:postcode": "BA2 3EH",
+        "addr:street": "Victoria Buildings",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date:opening_hours": "2024-02-26",
+        "fhrs:id": "205078",
+        "membership": "private",
+        "name": "Twerton Liberal Club",
+        "opening_hours:signed": "no",
+        "source:geometry": "Bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 127791686,
+      "center": {
+        "lat": 51.3816627,
+        "lon": -2.3767563
+      },
+      "tags": {
+        "addr:postcode": "BA2 3EH",
+        "amenity": "pub",
+        "building": "pub",
+        "disused:fhrs:id": "771090",
+        "disused:website": "https://www.thebelvoircastle.co.uk/",
+        "instagram": "https://www.instagram.com/belvoircastle.bath/",
+        "name": "The Belvoir Castle",
+        "wikidata": "Q99591701"
+      }
+    },
+    {
+      "type": "way",
+      "id": 157291252,
+      "center": {
+        "lat": 51.3742174,
+        "lon": -2.3769064
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "73",
+        "addr:postcode": "BA2 3NZ",
+        "addr:street": "Third Avenue",
+        "amenity": "pub",
+        "building": "yes",
+        "check_date:opening_hours": "2025-08-28",
+        "fhrs:id": "1762818",
+        "name": "The Moorfields Inn",
+        "opening_hours": "Mo-Fr 08:00-23:00; Sa 09:00-23:00; Su 09:00-22:30",
+        "opening_hours:signed": "no",
+        "ref:GB:uprn": "10001130597",
+        "website": "https://www.thebathpubcompany.com/",
+        "wikidata": "Q99591738"
+      }
+    },
+    {
+      "type": "way",
+      "id": 164652693,
+      "center": {
+        "lat": 51.3709194,
+        "lon": -2.386123
+      },
+      "tags": {
+        "addr:housenumber": "128",
+        "addr:postcode": "BA2 2JP",
+        "addr:street": "Coronation Avenue",
+        "amenity": "pub",
+        "disused:fhrs:id": "205708",
+        "facebook": "https://www.facebook.com/Trowbridge1929",
+        "name": "Trowbridge House",
+        "opening_hours": "Su-Th 12:00-23:00; Fr,Sa 12:00-24:00",
+        "wikidata": "Q99593196"
+      }
+    },
+    {
+      "type": "way",
+      "id": 171254679,
+      "center": {
+        "lat": 51.3861554,
+        "lon": -2.3617864
+      },
+      "tags": {
+        "addr:housenumber": "17",
+        "addr:postcode": "BA1 2QU",
+        "addr:street": "Alfred Street",
+        "amenity": "pub",
+        "building": "pub",
+        "building:levels": "5",
+        "fhrs:id": "998582",
+        "name": "The Assembly Inn",
+        "toilets:wheelchair": "no",
+        "website": "https://www.abbeyinnsbath.co.uk/#the-assembly-inn-bath",
+        "wheelchair": "no",
+        "wikidata": "Q99591693"
+      }
+    },
+    {
+      "type": "way",
+      "id": 172280456,
+      "center": {
+        "lat": 51.3794728,
+        "lon": -2.3514866
+      },
+      "tags": {
+        "addr:housenumber": "8-10",
+        "addr:postcode": "BA2 4HN",
+        "addr:street": "Summerlays Place",
+        "amenity": "pub",
+        "disused:fhrs:id": "956911",
+        "name": "The Royal Oak",
+        "website": "http://www.royaloak-bath.co.uk/",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 182152732,
+      "center": {
+        "lat": 51.385835,
+        "lon": -2.3526878
+      },
+      "tags": {
+        "addr:postcode": "BA2 6ND",
+        "amenity": "pub",
+        "fhrs:id": "205067",
+        "name": "The Pulteney Arms",
+        "toilets:wheelchair": "no",
+        "website": "https://www.thepulteneyarms.co.uk/",
+        "wheelchair": "no",
+        "wikidata": "Q26674085"
+      }
+    },
+    {
+      "type": "way",
+      "id": 197919643,
+      "center": {
+        "lat": 51.3831061,
+        "lon": -2.3619737
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "6-7",
+        "addr:postcode": "BA1 1HE",
+        "addr:street": "Queen Street",
+        "amenity": "pub",
+        "building": "pub",
+        "cuisine": "pie",
+        "email": "enquiries@theravenofbath.co.uk",
+        "fhrs:id": "204892",
+        "food": "yes",
+        "name": "The Raven",
+        "opening_hours": "Mo-Th 8:00-23:00; Fr-Sa 8:00-00:00; Su 8:00-22:30",
+        "outdoor_seating": "yes",
+        "real_ale": "yes",
+        "smoking": "no",
+        "toilets": "yes",
+        "website": "https://www.theravenofbath.co.uk/",
+        "wheelchair": "no",
+        "wikidata": "Q26673630"
+      }
+    },
+    {
+      "type": "way",
+      "id": 201405528,
+      "center": {
+        "lat": 51.3738742,
+        "lon": -2.3670712
+      },
+      "tags": {
+        "addr:housenumber": "8-10",
+        "addr:postcode": "BA2 3AQ",
+        "addr:street": "Wellsway",
+        "amenity": "pub",
+        "check_date:opening_hours": "2024-03-03",
+        "fhrs:id": "1456127",
+        "name": "The Bear",
+        "opening_hours:signed": "no",
+        "operator": "Zazu’s Kitchen",
+        "outdoor_seating": "yes",
+        "website": "https://www.bearbath.co.uk/",
+        "wheelchair": "limited",
+        "wikidata": "Q99591696"
+      }
+    },
+    {
+      "type": "way",
+      "id": 204025219,
+      "center": {
+        "lat": 51.3808533,
+        "lon": -2.3636576
+      },
+      "tags": {
+        "addr:housenumber": "49",
+        "addr:postcode": "BA1 2DA",
+        "addr:street": "James Street West",
+        "amenity": "pub",
+        "building": "retail",
+        "fhrs:id": "1664744",
+        "name": "The Trinity",
+        "website": "https://www.abbeyinnsbath.co.uk/#the-trinity-inn-bath",
+        "wheelchair": "limited",
+        "wikidata": "Q99591852"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292180285,
+      "center": {
+        "lat": 51.3975963,
+        "lon": -2.3453684
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:country": "GB",
+        "addr:postcode": "BA1 6SD",
+        "addr:street": "Saint Saviour's Road",
+        "addr:suburb": "Larkhall",
+        "amenity": "pub",
+        "fhrs:id": "1801627",
+        "name": "The Larkhall Inn",
+        "opening_hours": "Mo-Su 12:00-23:00",
+        "wikidata": "Q26673927"
+      }
+    },
+    {
+      "type": "way",
+      "id": 292182540,
+      "center": {
+        "lat": 51.3990405,
+        "lon": -2.3445464
+      },
+      "tags": {
+        "addr:housenumber": "6-8",
+        "addr:postcode": "BA1 6SJ",
+        "addr:street": "Brougham Place",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1793095",
+        "name": "The Rose & Crown",
+        "website": "https://www.roseandcrownlarkhall.co.uk/",
+        "wikidata": "Q99591754"
+      }
+    },
+    {
+      "type": "way",
+      "id": 309945564,
+      "center": {
+        "lat": 51.368811,
+        "lon": -2.365692
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "139",
+        "addr:postcode": "BA2 4RY",
+        "addr:street": "Wellsway",
+        "amenity": "pub",
+        "fhrs:id": "1899162",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "The Devonshire Arms",
+        "website": "http://www.devonshire-arms-bath.co.uk/",
+        "wikidata": "Q99592893"
+      }
+    },
+    {
+      "type": "way",
+      "id": 313558322,
+      "center": {
+        "lat": 51.3786832,
+        "lon": -2.368416
+      },
+      "tags": {
+        "addr:housenumber": "44-45",
+        "addr:postcode": "BA2 3BD",
+        "addr:street": "Lower Bristol Road",
+        "amenity": "pub",
+        "check_date:opening_hours": "2025-10-07",
+        "fhrs:id": "1870933",
+        "indoor_seating": "yes",
+        "name": "Nowhere",
+        "opening_hours:signed": "no",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 314226393,
+      "center": {
+        "lat": 51.3857981,
+        "lon": -2.3612453
+      },
+      "tags": {
+        "addr:housenumber": "13",
+        "addr:postcode": "BA1 5DX",
+        "addr:street": "Lansdown Road",
+        "addr:terrace": "Fountain Buildings",
+        "amenity": "pub",
+        "building": "pub",
+        "facebook": "https://www.facebook.com/Mandalyns-147554845280455/",
+        "fhrs:id": "204786",
+        "name": "Mandalyn's",
+        "website": "https://www.mandalyns.co.uk/",
+        "wikidata": "Q26674627"
+      }
+    },
+    {
+      "type": "way",
+      "id": 373546324,
+      "center": {
+        "lat": 51.3826887,
+        "lon": -2.3605652
+      },
+      "tags": {
+        "addr:housenumber": "13-14",
+        "addr:postcode": "BA1 1RH",
+        "addr:street": "Upper Borough Walls",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1500578",
+        "name": "Sam Wellers",
+        "website": "http://www.samwellersph.co.uk/",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 373546338,
+      "center": {
+        "lat": 51.3823807,
+        "lon": -2.3597018
+      },
+      "tags": {
+        "addr:housenumber": "17",
+        "addr:postcode": "BA1 5AR",
+        "addr:street": "Northumberland Place",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "205162",
+        "name": "Coeur De Lion",
+        "toilets:wheelchair": "no",
+        "website": "https://www.abbeyinnsbath.co.uk/#coeur-de-lion-pub-bath",
+        "wheelchair": "limited",
+        "wheelchair:description": "1 step ~10cm. Small inside.",
+        "wikidata": "Q99592696"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398947218,
+      "center": {
+        "lat": 51.3766668,
+        "lon": -2.3544922
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "20",
+        "addr:postcode": "BA2 4LD",
+        "addr:substreet": "Claverton Buildings",
+        "addr:suburb": "Widcombe",
+        "amenity": "pub",
+        "building": "pub",
+        "fhrs:id": "1639322",
+        "name": "The Ram",
+        "wheelchair": "no",
+        "wikidata": "Q99591750"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398954073,
+      "center": {
+        "lat": 51.3867963,
+        "lon": -2.3522948
+      },
+      "tags": {
+        "addr:postcode": "BA2 6NZ",
+        "addr:street": "Bathwick Street",
+        "amenity": "pub",
+        "facebook": "https://www.facebook.com/Barleymowbathwick",
+        "fhrs:id": "205645",
+        "name": "The Barley Mow",
+        "wheelchair": "limited",
+        "wheelchair:description": "1 step about 6 inches high at front door. Back gates have step free access to beer garden and then 1 low step to back door",
+        "wikidata": "Q99591694"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398959637,
+      "center": {
+        "lat": 51.3831945,
+        "lon": -2.356801
+      },
+      "tags": {
+        "addr:housenumber": "9",
+        "addr:postcode": "BA2 4BQ",
+        "addr:street": "Argyle Street",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "fhrs:id": "520706",
+        "indoor_seating": "yes",
+        "name": "The Boater",
+        "outdoor_seating": "yes",
+        "website": "https://www.boaterbath.co.uk/",
+        "wheelchair": "no",
+        "wikidata": "Q99591703"
+      }
+    },
+    {
+      "type": "way",
+      "id": 398986729,
+      "center": {
+        "lat": 51.3763194,
+        "lon": -2.3540925
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "10",
+        "addr:postcode": "BA2 4JT",
+        "addr:street": "Claverton Street",
+        "addr:substreet": "Widcombe Parade",
+        "amenity": "pub",
+        "building": "pub",
+        "disused:fhrs:id": "1793089",
+        "facebook": "https://www.facebook.com/RingOBellsBath/",
+        "name": "The Ring o' Bells",
+        "toilets:wheelchair": "no",
+        "website": "https://ringobellsbath.com/",
+        "wheelchair": "no",
+        "wikidata": "Q99593027"
+      }
+    },
+    {
+      "type": "way",
+      "id": 399314058,
+      "center": {
+        "lat": 51.3943354,
+        "lon": -2.3880731
+      },
+      "tags": {
+        "addr:postcode": "BA1 4BP",
+        "amenity": "pub",
+        "fhrs:id": "1857618",
+        "name": "The Old Crown",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "website": "https://theoldcrownweston.pub/",
+        "wikidata": "Q26674033"
+      }
+    },
+    {
+      "type": "way",
+      "id": 399319955,
+      "center": {
+        "lat": 51.3804911,
+        "lon": -2.3592267
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:postcode": "BA1 1NW",
+        "amenity": "pub",
+        "brand": "Fuller's",
+        "brand:wikidata": "Q5253950",
+        "fhrs:id": "556181",
+        "name": "Crystal Palace",
+        "real_ale": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.crystalpalacepub.co.uk/",
+        "wheelchair": "yes",
+        "wheelchair:description": "Has accessible toilet but used as storage area for TV, rendering it inaccessible",
+        "wikidata": "Q26673173"
+      }
+    },
+    {
+      "type": "way",
+      "id": 400043040,
+      "center": {
+        "lat": 51.3798362,
+        "lon": -2.3932069
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "131",
+        "addr:postcode": "BA2 1DA",
+        "addr:street": "High Street",
+        "amenity": "pub",
+        "fhrs:id": "1002179",
+        "name": "The Old Crown",
+        "operator": "Stonegate",
+        "operator:wikidata": "Q7619176",
+        "website": "https://www.craftunionpubs.com/old-crown-twerton",
+        "wikidata": "Q26674867"
+      }
+    },
+    {
+      "type": "way",
+      "id": 400878106,
+      "center": {
+        "lat": 51.3808084,
+        "lon": -2.3815944
+      },
+      "tags": {
+        "addr:postcode": "BA2 3RR",
+        "amenity": "pub",
+        "building": "pub",
+        "check_date:opening_hours": "2024-01-17",
+        "fhrs:id": "666603",
+        "name": "The Charmbury Arms",
+        "opening_hours": "Mo-Th 16:00-22:00; Fr-Su 12:00-22:00",
+        "opening_hours:signed": "no",
+        "wheelchair": "yes",
+        "wikidata": "Q99591710"
+      }
+    },
+    {
+      "type": "way",
+      "id": 400878299,
+      "center": {
+        "lat": 51.377766,
+        "lon": -2.3791703
+      },
+      "tags": {
+        "addr:housenumber": "24",
+        "addr:postcode": "BA2 3PW",
+        "addr:street": "Moorland Road",
+        "amenity": "pub",
+        "check_date:opening_hours": "2025-08-28",
+        "fhrs:id": "205245",
+        "name": "The Livingstone",
+        "opening_hours": "Mo-Th 13:00-23:00; Fr,Sa 12:00-23:00; Su 12:00-22:30",
+        "ref:GB:uprn": "100120047868",
+        "wikidata": "Q99592931"
+      }
+    },
+    {
+      "type": "way",
+      "id": 475043801,
+      "center": {
+        "lat": 51.3808171,
+        "lon": -2.3880346
+      },
+      "tags": {
+        "addr:postcode": "BA2 1ES",
+        "amenity": "pub",
+        "check_date:opening_hours": "2024-03-07",
+        "facebook": "https://www.facebook.com/TheGoldenFleece",
+        "fhrs:id": "847567",
+        "name": "The Golden Fleece",
+        "opening_hours:signed": "no",
+        "wikidata": "Q99591725"
+      }
+    },
+    {
+      "type": "way",
+      "id": 491614315,
+      "center": {
+        "lat": 51.3950414,
+        "lon": -2.3527881
+      },
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:postcode": "BA1 6EH",
+        "addr:street": "Camden Road",
+        "addr:terrace": "Claremont Terrace",
+        "amenity": "pub",
+        "fhrs:id": "1857620",
+        "name": "The Claremont",
+        "website": "https://theclaremont.pub/",
+        "wikidata": "Q99591753"
+      }
+    },
+    {
+      "type": "way",
+      "id": 497782828,
+      "center": {
+        "lat": 51.3622713,
+        "lon": -2.3453278
+      },
+      "tags": {
+        "addr:postcode": "BA2 5DH",
+        "amenity": "pub",
+        "fhrs:id": "205223",
+        "name": "The Hadley Arms",
+        "wikidata": "Q26674744"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015286255,
+      "center": {
+        "lat": 51.38986,
+        "lon": -2.3572296
+      },
+      "tags": {
+        "addr:city": "Bath",
+        "addr:housenumber": "11",
+        "addr:postcode": "BA1 5DG",
+        "addr:street": "Cleveland Place",
+        "addr:terrace": "Cleveland Place West",
+        "amenity": "pub",
+        "fhrs:id": "1762838",
+        "name": "The Curfew",
+        "real_ale": "yes",
+        "website": "https://www.thecurfewbath.co.uk/about-us/our-bar/",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1203903192,
+      "center": {
+        "lat": 51.3808293,
+        "lon": -2.3645607
+      },
+      "tags": {
+        "addr:country": "GB",
+        "addr:housenumber": "5-10",
+        "addr:postcode": "BA1 2BX",
+        "addr:street": "James Street West",
+        "amenity": "pub",
+        "brand": "Wetherspoon",
+        "brand:wikidata": "Q6109362",
+        "brand:wikipedia": "en:Wetherspoons",
+        "building:part": "yes",
+        "dog": "no",
+        "fhrs:id": "204258",
+        "internet_access": "yes",
+        "internet_access:fee": "no",
+        "level": "0",
+        "name": "The King Of Wessex",
+        "real_ale": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.jdwetherspoon.com/pubs/all-pubs/england/somerset/the-king-of-wessex-bath",
+        "website:menu": "https://order.jdwetherspoon.com/venue/jdw/2609/menus",
+        "wheelchair": "yes",
+        "wikidata": "Q99550477"
+      }
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "summary": {
+    "generatedAt": "2026-07-18T10:59:43.523Z",
+    "totalOsmUnpriced": 302,
+    "withWebsite": 48,
+    "chainsSkipped": 19,
+    "independentsSwept": 1,
+    "requestsUsed": 2,
+    "priced": 0,
+    "independentsEvaluated": 29
+  },
+  "log": [
+    {
+      "borough": "Soho",
+      "pub": "The Argyll Arms",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/theargyllarmsoxfordcircuslondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Camden",
+      "pub": "The Cambridge",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thecambridgecambridgecircuslondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Soho",
+      "pub": "The Clachan",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/theclachankinglystreetlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Covent Garden",
+      "pub": "The Flying Horse",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/theflyinghorseoxfordstreetlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Tower Hamlets",
+      "pub": "The Henry Addington",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thehenryaddingtoncanarywharflondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Royal Borough of Greenwich",
+      "pub": "The Observatory",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/theobservatory",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "City of London",
+      "pub": "The Old Bell Tavern",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/theoldbelltavernfleetstreetlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Covent Garden",
+      "pub": "The Porcupine",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/theporcupineleicestersquarelondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Hammersmith and Fulham",
+      "pub": "The Swan",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/theswanhammersmithlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Soho",
+      "pub": "The Three Greyhounds",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thethreegreyhoundssoholondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Covent Garden",
+      "pub": "The Wellington",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thewellingtonstrandlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Covent Garden",
+      "pub": "The White Lion",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitelioncoventgardenlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Covent Garden",
+      "pub": "The Marquis of Granby",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbyrathbonestreetlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Millbank",
+      "pub": "The Marquis of Granby",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/themarquisofgranbywestminsterlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Camden",
+      "pub": "The Sir Christopher Hatton",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thesirchristopherhattonhattongardenlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Soho",
+      "pub": "The Crown",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thecrownbrewerstreetlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "London",
+      "pub": "Doggett's Coat and Badge",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/doggettscoatandbadgesouthbanklondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "London",
+      "pub": "The Bear and Staff",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thebearandstaffleicestersquarelondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "London",
+      "pub": "The White Horse",
+      "website": "https://www.nicholsonspubs.co.uk/restaurants/london/thewhitehorsecarnabystreetlondon",
+      "host": "nicholsonspubs.co.uk",
+      "result": "no-price-published",
+      "reason": "chain: Mitchells & Butlers (prices in app only)"
+    },
+    {
+      "borough": "Ealing",
+      "pub": "The Grange",
+      "website": "https://www.grangeealing.co.uk",
+      "host": "grangeealing.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Hammersmith and Fulham",
+      "pub": "The Old Ship",
+      "website": "https://www.oldshiphammersmith.co.uk",
+      "host": "oldshiphammersmith.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hammersmith and Fulham",
+      "pub": "The Waterside",
+      "website": "https://www.watersideimperialwharf.co.uk",
+      "host": "watersideimperialwharf.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Royal Borough of Greenwich",
+      "pub": "The Depot",
+      "website": "https://www.thedepotpub.co.uk",
+      "host": "thedepotpub.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Camden",
+      "pub": "The Roebuck",
+      "website": "https://www.roebuckhampstead.com",
+      "host": "roebuckhampstead.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Camden",
+      "pub": "Lion & Unicorn",
+      "website": "https://www.thelionandunicornnw5.co.uk",
+      "host": "thelionandunicornnw5.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Newham",
+      "pub": "The Cow",
+      "website": "https://www.thecowwestfield.co.uk",
+      "host": "thecowwestfield.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Tower Hamlets",
+      "pub": "The Grocer",
+      "website": "https://www.thegrocerspitalfields.co.uk",
+      "host": "thegrocerspitalfields.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 2
+    },
+    {
+      "borough": "Royal Borough of Kensington and Chelsea",
+      "pub": "The Bunch of Grapes",
+      "website": "https://www.bunchofgrapesborough.co.uk",
+      "host": "bunchofgrapesborough.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Mayfair",
+      "pub": "The Windmill",
+      "website": "https://www.windmillmayfair.co.uk",
+      "host": "windmillmayfair.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Victoria",
+      "pub": "The Phoenix",
+      "website": "https://www.thephoenixinvictoria.co.uk",
+      "host": "thephoenixinvictoria.co.uk",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.thephoenixinvictoria.co.uk/food-drink/",
+      "observedAt": "2026-07-18T07:59:30.695Z",
+      "requests": 2,
+      "reason": "manual-QA drop: \"Young's ale & treacle soda bread\" is a FOOD item (bread), not a draught pint",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Young's ale & treacle soda bread",
+          "priceGbp": 4
+        }
+      ]
+    },
+    {
+      "borough": "Southwark",
+      "pub": "The Woolpack",
+      "website": "https://www.woolpackbar.com",
+      "host": "woolpackbar.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Wandsworth",
+      "pub": "The Waterfront",
+      "website": "https://www.thewaterfrontlondon.co.uk",
+      "host": "thewaterfrontlondon.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Richmond upon Thames",
+      "pub": "The White Cross",
+      "website": "https://www.thewhitecrossrichmond.com",
+      "host": "thewhitecrossrichmond.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Mortlake",
+      "pub": "The White Hart",
+      "website": "https://www.whitehartbarnes.co.uk",
+      "host": "whitehartbarnes.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Wandsworth",
+      "pub": "The County Arms",
+      "website": "https://www.countyarms.co.uk",
+      "host": "countyarms.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Wandsworth",
+      "pub": "The Devonshire",
+      "website": "https://www.devonshirebalham.co.uk",
+      "host": "devonshirebalham.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Wandsworth",
+      "pub": "The King's Arms",
+      "website": "https://www.kingsarmswandsworth.co.uk/home",
+      "host": "kingsarmswandsworth.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "Redbridge",
+      "pub": "The Nightingale",
+      "website": "https://www.thenightingalebalham.co.uk",
+      "host": "thenightingalebalham.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hounslow",
+      "pub": "The Coach & Horses",
+      "website": "https://www.coachandhorsesisleworth.co.uk",
+      "host": "coachandhorsesisleworth.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Plumstead",
+      "pub": "The Dial Arch",
+      "website": "https://www.dialarch.com",
+      "host": "dialarch.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Plumstead",
+      "pub": "The Guardhouse",
+      "website": "https://www.theguardhousewoolwich.co.uk",
+      "host": "theguardhousewoolwich.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "Hackney",
+      "pub": "The Princess of Wales",
+      "website": "https://www.princessofwalesclapton.co.uk",
+      "host": "princessofwalesclapton.co.uk",
+      "result": "no-price-published",
+      "reason": "no draught pint pricing on site",
+      "requests": 1
+    },
+    {
+      "borough": "City of London",
+      "pub": "The Lamb Tavern",
+      "website": "https://www.lambtavernleadenhall.com",
+      "host": "lambtavernleadenhall.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "Wandsworth",
+      "pub": "The Ship",
+      "website": "https://www.theship.co.uk",
+      "host": "theship.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 1
+    },
+    {
+      "borough": "London",
+      "pub": "Richard the First",
+      "website": "https://www.richardthefirst.co.uk",
+      "host": "richardthefirst.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "London",
+      "pub": "The Owl & The Pussycat",
+      "website": "https://www.owlandpussycatshoreditch.com",
+      "host": "owlandpussycatshoreditch.com",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "London",
+      "pub": "The Crown Tavern",
+      "website": "https://www.thecrownlee.co.uk",
+      "host": "thecrownlee.co.uk",
+      "result": "no-price-published",
+      "reason": "draught listed but no extractable/verbatim pint price",
+      "requests": 2
+    },
+    {
+      "borough": "London",
+      "pub": "The Coach & Horses",
+      "website": "https://www.coachhotelkew.co.uk",
+      "host": "coachhotelkew.co.uk",
+      "result": "no-price-published",
+      "sourceUrl": "https://www.coachhotelkew.co.uk/food-drink/",
+      "observedAt": "2026-07-18T10:59:43.523Z",
+      "requests": 2,
+      "reason": "manual-QA drop: \"Berry Hugo 0.0%\"/\"Amalfi Spritz 0.0%\" are non-alcoholic spritz cocktails, not draught pints",
+      "rawExtractionDropped": [
+        {
+          "drinkName": "Berry Hugo 0.0%",
+          "priceGbp": 8.5
+        },
+        {
+          "drinkName": "Amalfi Spritz 0.0%",
+          "priceGbp": 9.5
+        }
+      ]
+    }
+  ]
+}

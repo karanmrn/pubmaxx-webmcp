@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-07-18T21:25:03.316Z",
+  "kind": "music",
+  "region": "greater-london",
+  "sources": [
+    {
+      "label": "Skehan's — Live Music",
+      "url": "https://skehans.com/whats-on/",
+      "firstParty": true,
+      "notes": "Skehan's own weekly live-music programme (checked 2026-07-12): Monday Jam Sessions 20:30, Tuesday Trad Session 19:00, Wednesday South London Jam 20:00, The Big Saturday Night Gig 21:00, Sunday Night Folk Sessions 19:00. Friday alternates Karaoke/Rock'n'Roll — not included (ambiguous which runs on a given week)."
+    },
+    {
+      "label": "The Ivy House — What's On",
+      "url": "https://www.ivyhousenunhead.com/whats-on",
+      "firstParty": true,
+      "notes": "The Ivy House's own 'Jazz + Roasts Sundays' — recurring Sunday 16:00 live jazz session, checked 2026-07-12."
+    },
+    {
+      "label": "The Spice of Life — Events",
+      "url": "https://www.spiceoflifesoho.com/events/",
+      "firstParty": true,
+      "notes": "The venue's own events page (checked 2026-07-12): 'Dove Jones Connection Blues & Jazz Jam Party … Every Monday Doors at 7pm' and 'Jazz Notes Jazz Jam … Every Sunday Doors at 1pm'."
+    },
+    {
+      "label": "Ain't Nothin' But — What's On",
+      "url": "https://www.aintnothinbut.co.uk/whatson",
+      "firstParty": true,
+      "notes": "The venue's own site (checked 2026-07-12): jams 'Sunday afternoons and Monday nights'; the Monday Blues Jam's own What's-On listing states 8pm-1am. Sunday jam has no published start time, so only Monday is emitted."
+    },
+    {
+      "label": "Troubadour — Sunday Jazz",
+      "url": "https://www.troubadourlondon.com/sunday-jazz",
+      "firstParty": true,
+      "notes": "The venue's own Sunday Jazz page (checked 2026-07-12): weekly residency, doors 7:30pm, artists 8pm-10:30pm."
+    }
+  ],
+  "rows": [
+    {"id":"music-aintnothinbut-monday-bluesjam","placeName":"Ain't Nothin' But","kind":"music","startsAt":"2026-07-20T20:00:00+01:00","title":"Monday Night Blues Jam","detail":"The Soho blues bar's famous Monday night Blues Jam, 8pm-1am — bring your instrument and sign up on the night.","source":{"label":"Ain't Nothin' But — What's On","url":"https://www.aintnothinbut.co.uk/whatson"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-ivyhouse-sunday-jazz","placeName":"The Ivy House","kind":"music","startsAt":"2026-07-19T16:00:00+01:00","title":"Jazz + Roasts Sundays","detail":"Live jazz band on the community pub's stage, paired with Sunday roasts. Free entry; booking recommended for food.","source":{"label":"The Ivy House — What's On","url":"https://www.ivyhousenunhead.com/whats-on"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-skehans-monday-jam","placeName":"Skehan's","kind":"music","startsAt":"2026-07-20T20:30:00+01:00","title":"Monday Jam Sessions","detail":"An inclusive jam session open to all patrons — bring your own instrument and join in, or just come to listen.","source":{"label":"Skehan's — Live Music","url":"https://skehans.com/whats-on/"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-skehans-saturday-gig","placeName":"Skehan's","kind":"music","startsAt":"2026-07-25T21:00:00+01:00","title":"The Big Saturday Night Gig","detail":"Live music from Skehan's regular roster of musicians, into the night.","source":{"label":"Skehan's — Live Music","url":"https://skehans.com/whats-on/"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-skehans-sunday-folk","placeName":"Skehan's","kind":"music","startsAt":"2026-07-19T19:00:00+01:00","title":"Sunday Night Folk Sessions","detail":"Live folk music session.","source":{"label":"Skehan's — Live Music","url":"https://skehans.com/whats-on/"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-skehans-tuesday-trad","placeName":"Skehan's","kind":"music","startsAt":"2026-07-21T19:00:00+01:00","title":"Irish/English Trad Session","detail":"Traditional Irish and English music session, alternating performers every Tuesday.","source":{"label":"Skehan's — Live Music","url":"https://skehans.com/whats-on/"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-skehans-wednesday-jam","placeName":"Skehan's","kind":"music","startsAt":"2026-07-22T20:00:00+01:00","title":"South London Jam","detail":"An eclectic mix of musicians getting together for a live jam.","source":{"label":"Skehan's — Live Music","url":"https://skehans.com/whats-on/"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-spiceoflife-monday-jam","placeName":"The Spice of Life","kind":"music","startsAt":"2026-07-20T19:00:00+01:00","title":"Dove Jones Connection Blues & Jazz Jam Party","detail":"Weekly blues and jazz jam residency on the Spice of Life stage. Doors 7pm, per the venue's own events page.","source":{"label":"The Spice of Life — Events","url":"https://www.spiceoflifesoho.com/events/"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-spiceoflife-sunday-jazzjam","placeName":"The Spice of Life","kind":"music","startsAt":"2026-07-19T13:00:00+01:00","title":"Jazz Notes Jazz Jam","detail":"Weekly Sunday-afternoon jazz jam — instrumentalists and singers welcome to join on the day. Doors 1pm, per the venue's own events page.","source":{"label":"The Spice of Life — Events","url":"https://www.spiceoflifesoho.com/events/"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"},
+    {"id":"music-troubadour-sunday-jazz","placeName":"Troubadour","kind":"music","startsAt":"2026-07-19T20:00:00+01:00","title":"Jazz Sundays","detail":"Longstanding weekly jazz residency directed by Sebastiaan de Krom. Doors and table reservations 7:30pm; artists play 8pm-10:30pm. Booking recommended.","source":{"label":"Troubadour — Sunday Jazz","url":"https://www.troubadourlondon.com/sunday-jazz"},"observedAt":"2026-07-18T21:25:03.316Z","confidence":"listed"}
+  ]
+}

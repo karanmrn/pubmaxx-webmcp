@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "mode": "cli",
+  "startedAt": "2026-08-10T08:43:37.191Z",
+  "finishedAt": "2026-08-10T08:51:59.463Z",
+  "budget": {
+    "limit": 220,
+    "spent": 116,
+    "remaining": 104
+  },
+  "sources": [
+    {
+      "sourceId": "wetherspoon-food-drink",
+      "label": "J D Wetherspoon - Food & drink",
+      "url": "https://www.jdwetherspoon.com/food-drink/",
+      "kind": "chain-deals",
+      "firstParty": true,
+      "status": "harvested",
+      "statedItems": 5,
+      "rowsEmitted": 480,
+      "drops": []
+    },
+    {
+      "sourceId": "greene-king-deals",
+      "label": "Greene King - Deals",
+      "url": "https://www.greeneking.co.uk/deals",
+      "kind": "chain-deals",
+      "firstParty": true,
+      "status": "harvested",
+      "statedItems": 1,
+      "rowsEmitted": 0,
+      "drops": [
+        {
+          "reason": "no-stated-window",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "sourceId": "fullers-whats-on",
+      "label": "Fuller's - What's on",
+      "url": "https://www.fullers.co.uk/event-finder",
+      "kind": "chain-deals",
+      "firstParty": true,
+      "status": "empty",
+      "statedItems": 0,
+      "rowsEmitted": 0,
+      "drops": [],
+      "evidence": "Page was read and stated no deal day with both a weekday and a window."
+    },
+    {
+      "sourceId": "youngs-offers",
+      "label": "Young's - On Tap",
+      "url": "https://www.youngs.co.uk/on-tap-app",
+      "kind": "chain-deals",
+      "firstParty": true,
+      "status": "empty",
+      "statedItems": 0,
+      "rowsEmitted": 0,
+      "drops": [],
+      "evidence": "Page was read and stated no deal day with both a weekday and a window."
+    },
+    {
+      "sourceId": "mitchells-butlers-brands",
+      "label": "Mitchells & Butlers pub brands",
+      "url": "https://www.mbplc.com/",
+      "kind": "chain-deals",
+      "firstParty": true,
+      "status": "skipped",
+      "statedItems": 0,
+      "rowsEmitted": 0,
+      "drops": [],
+      "skipReason": "robots-unreadable",
+      "evidence": "Nicholson's, All Bar One, O'Neill's, Castle, Ember Inns, Sizzling Pubs, Toby Carvery and Browns all answer /robots.txt with a challenge page rather than a rules file, so no permission can be read. The two estate sites that do answer (harvester.co.uk, millerandcarter.co.uk) carry `User-agent: CloudflareBrowserRenderingCrawler / Disallow: /`, which is the headless-renderer class this harvest uses."
+    },
+    {
+      "sourceId": "skiddle-listings",
+      "label": "Skiddle",
+      "url": "https://www.skiddle.com/whats-on/London/",
+      "kind": "venue-events",
+      "firstParty": false,
+      "status": "skipped",
+      "statedItems": 0,
+      "rowsEmitted": 0,
+      "drops": [],
+      "skipReason": "terms-forbid-commercial-use",
+      "evidence": "Skiddle's own terms make the events data non-commercial without written approval from dev@skiddle.com; PUBMAXX is commercial. robots.txt would permit the listing path, but the narrower rule binds. Recorded the same way in docs/EVENT_SOURCES_RESEARCH_2026-07-18.md."
+    },
+    {
+      "sourceId": "dice-listings",
+      "label": "DICE",
+      "url": "https://dice.fm/browse/london",
+      "kind": "venue-events",
+      "firstParty": false,
+      "status": "skipped",
+      "statedItems": 0,
+      "rowsEmitted": 0,
+      "drops": [],
+      "skipReason": "robots-disallowed",
+      "evidence": "robots.txt names `User-agent: CloudflareBrowserRenderingCrawler / Disallow: /` alongside the AI crawlers, and sets `Content-Signal: ai-train=no,use=reference`. The generic `Allow: /` does not survive the narrower rule."
+    },
+    {
+      "sourceId": "wegottickets-listings",
+      "label": "WeGotTickets",
+      "url": "https://www.wegottickets.com/searchresults/all/London",
+      "kind": "venue-events",
+      "firstParty": false,
+      "status": "skipped",
+      "statedItems": 0,
+      "rowsEmitted": 0,
+      "drops": [],
+      "skipReason": "robots-disallowed",
+      "evidence": "robots.txt permits the search page but disallows /af/, which is where every event on it links. An event we may not open is an event we may not date, price or attribute."
+    },
+    {
+      "sourceId": "venue-own-pages",
+      "label": "Venues' own what's-on pages",
+      "url": "https://www.pubmaxxing.com/",
+      "kind": "venue-events",
+      "firstParty": true,
+      "status": "empty",
+      "statedItems": 0,
+      "rowsEmitted": 0,
+      "drops": [
+        {
+          "reason": "robots-unreadable",
+          "count": 14
+        },
+        {
+          "reason": "no-date",
+          "count": 11
+        },
+        {
+          "reason": "no-whats-on-page-published",
+          "count": 9
+        },
+        {
+          "reason": "robots-disallowed",
+          "count": 2
+        },
+        {
+          "reason": "venue-site-unreadable",
+          "count": 1
+        }
+      ],
+      "evidence": "Read 23 venue site(s); 14 published a what's-on page, and none of those listings stated a kind, a date and a time together."
+    },
+    {
+      "sourceId": "operator-pages",
+      "label": "Operator pages for venues missing a website",
+      "url": "https://www.pubmaxxing.com/",
+      "kind": "pub-facts",
+      "firstParty": true,
+      "status": "harvested",
+      "statedItems": 14,
+      "rowsEmitted": 14,
+      "drops": [
+        {
+          "reason": "no-operator-page",
+          "count": 16
+        },
+        {
+          "reason": "search-failed:http-error",
+          "count": 6
+        },
+        {
+          "reason": "robots-unreadable",
+          "count": 4
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "harvested": 3,
+    "empty": 3,
+    "skipped": 4,
+    "failed": 0,
+    "statedItems": 20,
+    "rowsEmitted": 494
+  }
+}

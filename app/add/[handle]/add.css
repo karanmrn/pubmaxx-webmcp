@@ -1,0 +1,237 @@
+/* Share-link confirm-follow surface (Social Loop v1). Mobile-first, role-tokened.
+   D1.5: wide viewports centre a dialog-style panel; Esc dismiss lives on
+   AddPageShell (app/add only — ConfirmFollow stays untouched). */
+
+.addShell {
+  min-height: 100dvh;
+  background: var(--paper);
+  padding-bottom: var(--mobile-tab-clearance, 96px);
+}
+
+/* Host for the confirm card. Phone: full-width stack under the nav.
+   ≥1024: vertically + horizontally centred panel on the paper. */
+.addDialogHost {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: calc(100dvh - 88px);
+  padding: 0;
+}
+
+.addDialogPanel {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.addDialogEscHint {
+  display: none;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.confirmFollow {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px var(--page-gutter);
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .addShell {
+    /* Clear mobile tab pad on desktop; tab bar is display:none ≥641. */
+    padding-bottom: 48px;
+  }
+
+  .addDialogHost {
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100dvh - 96px);
+    padding: 24px var(--page-gutter);
+  }
+
+  .addDialogPanel {
+    max-width: 480px;
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--panel-raised);
+    box-shadow: var(--shadow-sm, 0 7px 18px rgba(60, 30, 20, 0.09));
+  }
+
+  .confirmFollow {
+    max-width: none;
+    margin: 0;
+    padding: 36px 32px 28px;
+  }
+
+  .addDialogEscHint {
+    display: block;
+  }
+}
+
+/* 1440 class monitors: keep the dialog a fixed reading measure, dead centre. */
+@media (min-width: 1280px) {
+  .addDialogHost {
+    min-height: calc(100dvh - 112px);
+  }
+
+  .addDialogPanel {
+    width: min(480px, 100%);
+  }
+}
+
+.confirmFollowEyebrow {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.confirmFollowTitle {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.confirmFollowBody {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft, var(--muted));
+}
+
+.confirmFollowUrl {
+  display: block;
+  padding: 12px 14px;
+  border: 1px dashed var(--feed-border);
+  border-radius: var(--radius, 8px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.confirmFollowError {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--brick, #9c3d2e);
+}
+
+.confirmFollowAvatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.confirmFollowPrimary {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--brass);
+  color: var(--color-on-accent, #fff);
+  font: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.confirmFollowPrimary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.confirmFollowPrimary:focus-visible,
+.confirmFollowGhost:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.confirmFollowGhost {
+  align-self: center;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+/* The @handle under a display name, and the second door under the primary one.
+   Both stay 44px-tall targets at 360/390/430. */
+.confirmFollowMeta {
+  margin: -6px 0 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.confirmFollowSecondary {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--line, var(--feed-border));
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.confirmFollowSecondary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.confirmFollowNext {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.confirmFollowNext li {
+  display: flex;
+}
+
+.confirmFollowNext .confirmFollowPrimary,
+.confirmFollowNext .confirmFollowSecondary {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "rail-temple-meads",
+    "name": "Bristol Temple Meads",
+    "category": "rail",
+    "coordinates": [-2.5801, 51.4491],
+    "rank": 1
+  },
+  {
+    "id": "rail-bedminster",
+    "name": "Bedminster station",
+    "category": "rail",
+    "coordinates": [-2.6025, 51.4415],
+    "rank": 2
+  },
+  {
+    "id": "bus-marlborough-street",
+    "name": "Marlborough Street bus station",
+    "category": "bus",
+    "coordinates": [-2.5935, 51.4585],
+    "rank": 1
+  },
+  {
+    "id": "sight-clifton-suspension-bridge",
+    "name": "Clifton Suspension Bridge",
+    "category": "historic",
+    "coordinates": [-2.6278, 51.4549],
+    "rank": 1
+  },
+  {
+    "id": "sight-ss-great-britain",
+    "name": "SS Great Britain",
+    "category": "historic",
+    "coordinates": [-2.6085, 51.4492],
+    "rank": 1
+  },
+  {
+    "id": "sight-bristol-cathedral",
+    "name": "Bristol Cathedral",
+    "category": "historic",
+    "coordinates": [-2.6007, 51.4515],
+    "rank": 1
+  },
+  {
+    "id": "sight-st-mary-redcliffe",
+    "name": "St Mary Redcliffe",
+    "category": "historic",
+    "coordinates": [-2.5902, 51.4484],
+    "rank": 1
+  },
+  {
+    "id": "sight-cabot-tower",
+    "name": "Cabot Tower",
+    "category": "historic",
+    "coordinates": [-2.6065, 51.4545],
+    "rank": 2
+  },
+  {
+    "id": "sight-m-shed",
+    "name": "M Shed",
+    "category": "sight",
+    "coordinates": [-2.5988, 51.4478],
+    "rank": 1
+  },
+  {
+    "id": "sight-watershed",
+    "name": "Watershed",
+    "category": "sight",
+    "coordinates": [-2.5982, 51.4512],
+    "rank": 2
+  },
+  {
+    "id": "market-st-nicholas",
+    "name": "St Nicholas Market",
+    "category": "market",
+    "coordinates": [-2.5938, 51.4542],
+    "rank": 1
+  },
+  {
+    "id": "park-brandon-hill",
+    "name": "Brandon Hill",
+    "category": "park",
+    "coordinates": [-2.606, 51.454],
+    "rank": 1
+  },
+  {
+    "id": "park-queen-square",
+    "name": "Queen Square",
+    "category": "park",
+    "coordinates": [-2.5945, 51.4505],
+    "rank": 1
+  },
+  {
+    "id": "park-castle-park",
+    "name": "Castle Park",
+    "category": "park",
+    "coordinates": [-2.5895, 51.455],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-observatory",
+    "name": "Clifton Observatory",
+    "category": "viewpoint",
+    "coordinates": [-2.6215, 51.4565],
+    "rank": 1
+  },
+  {
+    "id": "river-floating-harbour",
+    "name": "Floating Harbour",
+    "category": "river",
+    "coordinates": [-2.598, 51.4505],
+    "rank": 1
+  },
+  {
+    "id": "garden-botanic",
+    "name": "University of Bristol Botanic Garden",
+    "category": "garden",
+    "coordinates": [-2.6255, 51.4765],
+    "rank": 2
+  },
+  {
+    "id": "sight-arnolfini",
+    "name": "Arnolfini",
+    "category": "sight",
+    "coordinates": [-2.5975, 51.449],
+    "rank": 2
+  },
+  {
+    "id": "sight-bristol-museum",
+    "name": "Bristol Museum & Art Gallery",
+    "category": "sight",
+    "coordinates": [-2.605, 51.4562],
+    "rank": 2
+  },
+  {
+    "id": "historic-christmas-steps",
+    "name": "Christmas Steps",
+    "category": "historic",
+    "coordinates": [-2.5965, 51.456],
+    "rank": 2
+  }
+]

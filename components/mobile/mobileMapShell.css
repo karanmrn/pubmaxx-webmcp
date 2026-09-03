@@ -1,0 +1,985 @@
+@media (min-width: 641px) {
+  .mobileMapChrome,
+  .mobileMapUtilityCorner,
+  .mobilePlanActivation,
+  .mobileSheetPortal { display: none; }
+}
+
+@media (max-width: 640px) {
+  :root {
+    /* Top offset for the mobile map chrome. Adopts the shared --topbar-inset
+       (env(safe-area) + 10px) so the map's top bar sits at the SAME top offset
+       as the standard + landing bars (was +8px, which sat 2px higher than the
+       rest and made the bar jump on nav to/from /map). */
+    --mobile-map-top: var(--topbar-inset, calc(env(safe-area-inset-top, 0px) + 10px));
+    --mobile-map-bar-h: 52px;
+    /* The whole phone map chrome is ONE bar (finding 2.3), so its resting
+       height is the bar's own bottom edge. Every surface that used to clear a
+       three-row stack reads this instead of a hand-copied 118px. */
+    --mobile-map-chrome-h: calc(var(--mobile-map-top) + var(--mobile-map-bar-h));
+    /* The floating stack's own base (mobileNav.css owns it), so the map's
+       bottom band and the create action above it cannot drift apart. */
+    --mobile-map-dock-clearance: var(--float-stack-base);
+    /* The map-edge controls (TfL at the top, Near me at the thumb) are fixed
+       to the right map edge. Publish their footprint as a LANE so any
+       full-width overlay in the same band stops short of it instead of
+       sliding under a 44px button that would swallow its taps. */
+    --mobile-map-corner-inset: max(12px, env(safe-area-inset-right));
+    --mobile-map-corner-btn: 44px;
+    --mobile-map-corner-lane: calc(
+      var(--mobile-map-corner-inset) + var(--mobile-map-corner-btn) + 12px
+    );
+    --mobile-map-stack-left: 12px;
+    --mobile-map-stack-right: 12px;
+  }
+
+  .mobileMapChrome {
+    position: fixed;
+    top: var(--mobile-map-top);
+    left: var(--mobile-map-stack-left);
+    right: var(--mobile-map-stack-right);
+    z-index: var(--z-map-toolbar);
+    display: grid;
+    /* Every row is bounded by the stack, never by its own content. A grid item
+       defaults to min-width:auto, so one wide row (the search panel) grew the
+       implicit column and dragged the top bar off-screen with it. */
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    pointer-events: none;
+  }
+
+  /* The coordinator is the only mobile map chrome owner. Desktop keeps the
+     mature controls while mobile removes their independently-positioned rows.
+     CitySuggestBanner and CityStatusBanner are two of those rows, and the
+     phone map drops both on purpose (they have no phone form yet, and the
+     phone map keeps space for the one coordinator bar instead). The real
+     gate is `ambientBannerLane` in components/PubMap.tsx: it is false on a
+     mobile viewport, so neither banner ever mounts. This display: none rule
+     is only a backstop for that JS gate. */
+  .appShell > .siteNavBarFloating,
+  .appShell .mapStage > .mapToolbar,
+  .appShell .mapStage > .citySuggestBanner,
+  .appShell .mapStage > .cityStatusStack,
+  .appShell .mapStage > .cityStatusBanner,
+  .appShell .mapStage > .cityStatusSignalSheet,
+  .appShell .mapStage > .mapConciergeAsk,
+  .appShell .mapStage > .tonightLane,
+  .appShell .mapStage .mapLayersControl,
+  /* The camera stack's city-fit + recenter chips are re-homed into the mobile
+     top bar, so hide those two — but NOT the whole stack: the compass is the
+     only "back to north" recovery once the map is rotated (#367), and the
+     coordinator provides no replacement for it. */
+  .appShell .mapStage .mapCameraControls .mapFitLondonBtn,
+  .appShell .mapStage .mapCameraControls .mapRecenterBtn {
+    display: none !important;
+  }
+
+  /* Keep one compass. App compass owns the city-attitude toggle; native zoom
+     stays hidden on phone. */
+  .appShell .mapStage .mapCameraControls {
+    display: grid;
+    top: calc(var(--mobile-map-chrome-h) + 66px);
+    right: 10px;
+  }
+
+  .appShell .mapStage .mapCameraControls .mapCompassBtn {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  /* Native zoom group remains in same right lane when MapLibre creates it. */
+  .appShell .mapStage .maplibregl-ctrl-top-right {
+    top: calc(var(--mobile-map-chrome-h) + 66px);
+    right: 10px;
+  }
+
+  .appShell .mapStage .maplibregl-ctrl-bottom-right {
+    /* MapLibre's compact info control sits above the 48px plan action. Opening
+       the full credit uses this same lane, so licence text never paints through
+       the action beneath it. */
+    bottom: calc(var(--mobile-map-dock-clearance) + 68px);
+  }
+
+  body:has(.analyticsConsentPrompt) .appShell .mapStage .maplibregl-ctrl-bottom-right {
+    /* Keep the expandable OSM credit above the honest first-visit disclosure.
+       e2e/ui-consistency-layout.spec.ts owns the rendered collision proof. */
+    bottom: calc(var(--mobile-map-dock-clearance) + 206px);
+  }
+
+  /* The first-visit arrival card owns the same lane and is taller than the
+     consent card, so it takes its own published berth. Ordered after the
+     consent rule at equal specificity: whichever of the two is on screen, the
+     credit clears the taller one. */
+  body:has(.mapArrivalCard) .appShell .mapStage .maplibregl-ctrl-bottom-right {
+    bottom: calc(var(--float-stack-top-map-arrival) + var(--float-stack-gap));
+  }
+
+  /* First-session map keeps the top bar and First visit card. The card owns
+     the arrival choice before map actions become available. */
+  body:has(.mapArrivalCard) .mobileMapUtilityCorner,
+  body:has(.mapArrivalCard) .mobileMapChipRow,
+  body:has(.mapArrivalCard) .mobilePlanActivation,
+  body:has(.mapArrivalCard) .mobileMapTonightChip,
+  body:has(.mapArrivalCard) .appShell .mapStage .mapCameraControls,
+  body:has(.mapArrivalCard) .appShell .mapStage .maplibregl-ctrl-top-right {
+    display: none;
+  }
+
+  .appShell .mapStage .maplibregl-ctrl-attrib.maplibregl-compact {
+    box-sizing: border-box;
+    max-width: calc(100vw - 24px);
+  }
+
+  .appShell .mapStage .maplibregl-ctrl-attrib-inner {
+    max-width: 100%;
+    overflow-wrap: normal;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  /* COLLAPSED, the credit is one control and it takes this lane's own shape:
+     a 44px circle on the raised surface, exactly like the compass below it.
+     MapLibre ships it as a 24x20 white sliver, so a button raised to the tap
+     floor overflowed its own container and read as a white blob. */
+  .appShell .mapStage
+    .maplibregl-ctrl-attrib.maplibregl-compact:not(.maplibregl-compact-show) {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 1px solid var(--ink-soft);
+    border-radius: 50%;
+    background: var(--color-surface-raised);
+    box-shadow: var(--map-overlay-shadow-tight);
+  }
+
+  .appShell .mapStage .maplibregl-ctrl-attrib-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    box-sizing: border-box;
+    /* The glyph is a 24px background SVG and MapLibre never constrains its
+       repeat, because its own button is 24px too. Raising the button to the
+       44px tap floor therefore TILED it 2 x 2, and four stacked info glyphs on
+       a white blob read as a rendering defect rather than a control. */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+
+  /* Portal sheets sit outside .appShell. Hide map-owned controls while one is
+     open so the compass cannot paint over or intercept sheet content. */
+  body:has(.mobileSheetPortal) .appShell .mapStage .maplibregl-ctrl-top-right {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* MapLibre's own square group read as a bare dark box parked under the round
+     TfL chip, and it sat over cluster pins looking like debris rather than a
+     control. Every other floater in this lane is a 44px circle, so the compass
+     takes the same shape and the same surface. */
+  .appShell .mapStage .maplibregl-ctrl-top-right .maplibregl-ctrl-group {
+    margin: 0;
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+    border: 1px solid var(--ink-soft);
+    border-radius: 50%;
+    background: var(--color-surface-raised);
+    box-shadow: var(--map-overlay-shadow-tight);
+  }
+
+  .appShell .mapStage .maplibregl-ctrl-zoom-in,
+  .appShell .mapStage .maplibregl-ctrl-zoom-out {
+    display: none;
+  }
+
+  .appShell .mapStage .maplibregl-ctrl-compass {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink-soft);
+  }
+
+  .mobileMapTopbar {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    min-height: var(--mobile-map-bar-h);
+    display: grid;
+    /* Five slots: wordmark, area, search, filters, more. The wordmark is
+       content-sized so it can never be cut mid-word, and the place name takes
+       what is left. Measured at 390x844x3, a sixth 44px control left "King's
+       Cross" 54px of a 72px name — a map that names where you are and then
+       cuts the name is worse than one that never claimed it. The 360px rule
+       below is what three controls plus a whole name cost on the narrowest
+       phone. */
+    grid-template-columns: auto minmax(0, 1fr) 44px 44px 44px;
+    align-items: center;
+    gap: 2px;
+    /* Vertical padding 3px (was 4px): 44px control row + 3+3 padding + 1+1
+       border box-sizes to exactly 52px (--mobile-map-bar-h / --topbar-h), so
+       the rendered height matches the standard + landing bars instead of
+       overshooting to 54px. Radius adopts the shared --topbar-radius (14px, was
+       --radius-lg 18px) so all four bars share one corner too. */
+    padding: 3px 5px 3px 12px;
+    /* PASSIVE CHROME IS NEUTRAL. This bar used to copy SiteNav's brass-mix
+       border and river-tinted gradient, so on one phone map screen the bottom
+       tab bar drew a neutral --hairline edge and the top bar drew a coral-brown
+       one with a blue wash behind it. app/theme.css states the rule in a
+       comment on the sibling bars ("Accent is reserved for hover/active; passive
+       chrome stays neutral") and that rule never reached this selector, because
+       it targets .siteNavBarFloating / .mapToolbar and the phone map bar is
+       neither. --hairline is the DOM divider in BOTH themes, so one declaration
+       answers light and dark. Geometry (padding, radius, 52px height) is
+       unchanged; only the surface. */
+    border: 1px solid var(--hairline);
+    border-radius: var(--topbar-radius, 14px);
+    background: color-mix(in srgb, var(--panel-raised) 90%, transparent);
+    /* Tight topbar shadow (landing mobile / SiteNav frame), not the desktop
+       glass drop — that one carries a purple cast this map bar must not wear. */
+    box-shadow: var(--topbar-shadow, var(--map-overlay-shadow-tight, 0 6px 16px rgba(0, 0, 0, 0.12)));
+    backdrop-filter: blur(14px) saturate(1.06);
+    -webkit-backdrop-filter: blur(14px) saturate(1.06);
+    pointer-events: auto;
+  }
+
+  .mobileMapTopbar.mobileMapTopbarLimited {
+    /* The base-pub arrival still renders brand, area, and Search. Keep its
+       three children in explicit tracks so the implicit column cannot push
+       Search outside the viewport while the first-visit card owns the map. */
+    grid-template-columns: minmax(64px, 1fr) minmax(0, 1fr) 44px;
+  }
+
+  /* The wordmark is a real link home, so it gets a real hit target: the text is
+     14px tall, the tappable box is the full 44px bar row. */
+  .mobileMapBrand { display: inline-flex; align-items: center; min-width: 0; min-height: 44px; color: var(--color-text); font-size: .7rem; white-space: nowrap; text-decoration: none; }
+
+  /* 320px is the narrowest phone this app is measured on, and three controls
+     plus a readable place name is what it holds. The wordmark yields its
+     column there: a truncated place name would leave the map claiming a name
+     nobody can read, and the reader is already inside the app. */
+  @media (max-width: 360px) {
+    .mobileMapTopbar { grid-template-columns: minmax(0, 1fr) 44px 44px 44px; }
+    .mobileMapTopbar.mobileMapTopbarLimited { grid-template-columns: minmax(0, 1fr) 44px; }
+    .mobileMapBrand { display: none; }
+  }
+  .mobileMapBrand .pubmaxxWordmark { max-width: 100%; font-size: inherit; }
+  .citySwitcher--mobile { width: 100%; min-width: 0; }
+  .citySwitcher--mobile .citySwitcherTrigger { display: flex; width: 100%; min-width: 0; max-width: 100%; border: 0; background: transparent; color: var(--color-text-soft); padding-inline: 6px; }
+  .citySwitcher--mobile .citySwitcherTrigger:hover,
+  .citySwitcher--mobile .citySwitcherTrigger:focus-visible,
+  .citySwitcher--mobile.isOpen .citySwitcherTrigger { border: 0; background: var(--state-active-surface); color: var(--color-text); }
+  .citySwitcher--mobile .citySwitcherLabelFull { display: inline; min-width: 0; max-width: 100%; font-size: .72rem; }
+  .citySwitcher--mobile .citySwitcherLabelShort { display: none; }
+  .mobileMapTopbar > button { border: 0; background: transparent; }
+  .mobileMapPalButton { color: var(--color-accent); }
+  .mobilePalAvatar { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--color-accent) 58%, var(--color-border)); border-radius: 50%; background: radial-gradient(circle at 38% 30%, color-mix(in srgb, white 20%, transparent), transparent 34%), color-mix(in srgb, var(--color-accent) 13%, var(--color-surface)); overflow: hidden; }
+  .mobilePalAvatar svg { width: 31px; height: 31px; overflow: visible; fill: color-mix(in srgb, var(--color-accent) 88%, white 6%); stroke: color-mix(in srgb, var(--color-accent) 70%, var(--color-text)); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+  .mobilePalAvatarHead { fill: color-mix(in srgb, var(--color-accent) 23%, var(--color-surface)); }
+  .mobilePalAvatarBack { fill: color-mix(in srgb, var(--color-accent) 32%, var(--color-surface)); }
+  .mobilePalAvatarMuzzle { fill: color-mix(in srgb, white 14%, transparent); }
+
+  .mobileMapSearchRow {
+    pointer-events: auto;
+    min-width: 0;
+    padding: 8px;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-raised);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* #395 R1 — active-search chip. A restored session (or a typed query) filters
+     the map to one pin with no visible cause; this dismissible chip makes that
+     filter honest and one-tap clearable. Quiet neutral idiom so it doesn't add
+     to the accent budget; the whole chip is the clear target (44px). */
+  .mobileMapQueryRow {
+    display: flex;
+    pointer-events: auto;
+  }
+  .mobileMapQueryChip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 6px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--control-radius, 14px);
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--ink-deep) 12%, transparent);
+    font: inherit;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+  .mobileMapQueryChip:active { transform: scale(.98); --shared-press-scale: 1; }
+  .mobileMapQueryChipText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mobileMapQueryChipDismiss {
+    display: inline-flex;
+    color: var(--color-text-soft);
+  }
+
+  /* ONE docked lane under the one bar, shared by the drink chip and the P5
+     What's On cold-start chip, so the phone chrome stays a bar plus a single
+     44px row however many chips it earns. It stops short of the published
+     map-edge lane, and keeps the 44px tap floor. */
+  .mobileMapChipRow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    pointer-events: auto;
+    /* Chrome already insets by --mobile-map-stack-right; reserve the rest of
+       the corner lane so TfL cannot steal the chips' right-edge taps. */
+    padding-right: calc(
+      var(--mobile-map-corner-lane) - var(--mobile-map-stack-right)
+    );
+  }
+
+  /* The drink the map is under. It never scrolls away and it never truncates
+     to a fragment: a lane label is the name of the prices on the pins, so it
+     shrinks its own padding before it gives up a letter. */
+  .mobileMapDrinkChip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex: 0 1 auto;
+    min-width: 0;
+    min-height: 44px;
+    padding: 6px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--control-radius, 14px);
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--ink-deep) 12%, transparent);
+    font: inherit;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    transition: transform 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+  }
+  .mobileMapDrinkChip:active { transform: scale(.98); --shared-press-scale: 1; }
+  .mobileMapDrinkChip.isActive {
+    border-color: color-mix(in srgb, var(--brass, #c8a24a) 45%, var(--color-border));
+    background: color-mix(in srgb, var(--brass, #c8a24a) 14%, var(--color-surface-raised));
+  }
+  .mobileMapDrinkChipLabel {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mobileMapTonightChip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex: 0 1 auto;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 6px 14px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, var(--amber, #d3a44a) 20%);
+    border-radius: var(--control-radius, 14px);
+    background: color-mix(in srgb, var(--color-surface-raised) 94%, var(--amber, #d3a44a) 6%);
+    color: var(--color-text);
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--ink-deep) 12%, transparent);
+    font: inherit;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    transition: transform 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+  }
+  .mobileMapTonightChip:active { transform: scale(.98); --shared-press-scale: 1; }
+  .mobileMapTonightChip.isActive {
+    border-color: color-mix(in srgb, var(--amber, #d3a44a) 45%, var(--color-border));
+    background: color-mix(in srgb, var(--amber, #d3a44a) 16%, var(--color-surface-raised));
+  }
+  .mobileMapTonightChipLabel {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mobileMapTonightChipCount {
+    min-width: 1.2rem;
+    height: 1.2rem;
+    display: grid;
+    place-items: center;
+    padding: 0 5px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--line) 70%, var(--amber, #d3a44a) 30%);
+    background: var(--panel-raised);
+    color: var(--ink);
+    font-family: var(--font-data);
+    font-size: 0.62rem;
+  }
+
+  /* The refinement count on the Filters control. The button's accessible name
+     already names the active refinements, so this is a decorative mark. */
+  .mobileMapFiltersButton { position: relative; }
+  .mobileMapTopbarBadge {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    min-width: 1.05rem;
+    height: 1.05rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--panel-raised);
+    color: var(--ink);
+    font-family: var(--font-data);
+    font-size: .62rem;
+  }
+
+  /* The map edge owns the two controls the bar cannot hold: TfL at the top,
+     Near me at the thumb. Both keep clear of the chrome, the plan pill, and
+     the right map edge, in the one published corner lane. */
+  .mobileMapUtilityCorner {
+    position: fixed;
+    right: var(--mobile-map-corner-inset);
+    top: calc(var(--mobile-map-chrome-h) + 12px);
+    /* Stack member: mobileNav.css publishes this berth and the Near me FAB's
+       height, so the create action can sit clear of it. */
+    bottom: var(--map-corner-bottom);
+    z-index: var(--z-map-toolbar);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+    pointer-events: none;
+  }
+
+  /* Near me is the map's one primary action, so it leads on weight, not on the
+     accent: coral belongs to the landing CTA, the selected pin ring and the
+     active tab glyph alone (design judgement 2026-08-01, finding 2.1). */
+  .mobileMapLocateFab {
+    position: relative;
+    flex: 0 0 auto;
+    /* The TfL button above stretches to the lane so its status suffix has
+       room; this one is a circle, so it aligns to the edge instead. */
+    align-self: flex-end;
+    display: grid;
+    place-items: center;
+    width: var(--map-corner-locate-size);
+    height: var(--map-corner-locate-size);
+    border: 1px solid var(--ink-soft);
+    border-radius: 50%;
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--ink-deep) 18%, transparent);
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  /* The first-visit analytics disclosure owns the same bottom lane, so the
+     map-edge column steps above it rather than putting a 52px FAB on top of a
+     consent choice. Same offset the OSM credit already uses. */
+  body:has(.analyticsConsentPrompt) .mobileMapUtilityCorner {
+    bottom: var(--map-corner-bottom-consent);
+  }
+  /* When the Pub Pal pill is on screen it parks above the plan pill; lift the
+     map-edge column so Near me never paints underneath it. */
+  body:has(.palSummon) .mobileMapUtilityCorner {
+    bottom: calc(var(--float-stack-top-pal) + var(--float-stack-gap));
+  }
+  /* Same deal for the first-visit arrival card, which is full width and taller
+     still: the Near me FAB may not paint over the card whose own primary
+     action is Use my location. */
+  body:has(.mapArrivalCard) .mobileMapUtilityCorner {
+    bottom: calc(var(--float-stack-top-map-arrival) + var(--float-stack-gap));
+  }
+
+  .mobileMapLocateFab[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); }
+  .mobileMapLocateFab:disabled { cursor: wait; opacity: .72; }
+  .mobileMapLocateFab:active { transform: scale(.97); --shared-press-scale: 1; }
+  .mobileMapLocateFab:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .mobileMapUtilityCorner > button {
+    position: relative;
+    min-width: var(--mobile-map-corner-btn);
+    min-height: 44px;
+    pointer-events: auto;
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--ink-deep) 12%, transparent);
+  }
+  /* The status suffix ("OK", "?") rides inside the pill rather than spilling
+     past its edge: the icon size is a floor here, not a fixed width. */
+  .mobileMapUtilityCorner > .mobileMapTflButton {
+    width: auto;
+    padding-inline: 7px;
+  }
+  .mobileMapCornerSuffix { font-size: .62rem; font-weight: 700; margin-left: 2px; }
+  .mobileMapCornerBadge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 1.15rem;
+    height: 1.15rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--panel-raised);
+    color: var(--ink);
+    font-family: var(--font-data);
+    font-size: .64rem;
+  }
+
+  /* Near me could not place the reader, and the phone now says so. The chip
+     alone reads "Try near me": no reason, no way on. This card names the reason
+     and hands over the area picker.
+
+     It is a fixed sibling of the chrome, not a second row inside it, so the
+     one bar keeps its own height. It docks 8px under the bar, on the same
+     left/right boundary as every other stacked surface. */
+  .mobileMapNearMeAlert {
+    position: fixed;
+    top: calc(var(--mobile-map-chrome-h) + 8px);
+    left: var(--mobile-map-stack-left);
+    right: var(--mobile-map-stack-right);
+    z-index: var(--z-map-toolbar);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) 44px;
+    align-items: start;
+    gap: 8px;
+    box-sizing: border-box;
+    padding: 10px 8px 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--control-radius, 14px);
+    background: var(--color-surface-raised);
+    box-shadow: var(--shadow-sm);
+    pointer-events: auto;
+  }
+  .mobileMapNearMeAlert > svg { margin-top: 3px; color: var(--color-text-soft); }
+  /* A reason is read whole or not at all, so it wraps and never ellipses. */
+  .mobileMapNearMeAlertText {
+    margin: 0;
+    align-self: center;
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  .mobileMapNearMeAlertArea {
+    grid-column: 2 / -1;
+    justify-self: start;
+    min-height: 44px;
+    padding-inline: 14px;
+    border: 1px solid var(--ink-soft);
+    border-radius: var(--control-radius, 14px);
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .mobileMapNearMeAlertDismiss {
+    grid-row: 1;
+    grid-column: 3;
+    display: grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin: -8px 0 0;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-text-soft);
+    cursor: pointer;
+  }
+  .mobileMapNearMeAlertArea:focus-visible,
+  .mobileMapNearMeAlertDismiss:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .mobilePlanActivation {
+    position: fixed;
+    left: var(--mobile-map-stack-left);
+    right: var(--mobile-map-stack-right);
+    z-index: var(--z-map-toolbar);
+    min-width: 0;
+    max-width: none;
+    /* Stack member: mobileNav.css publishes this height and berth. */
+    min-height: var(--plan-activation-h);
+    bottom: var(--plan-activation-bottom);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 6px 18px;
+    /* Accent diet (#395 R3): demoted to the quiet neutral chip idiom (border +
+       surface + ink, same as Tonight/Filters) so "Near me" is the single loud
+       action on the map. The bottom-nav Moment button keeps its own accent —
+       that belongs to the nav's system, not this pill. */
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--ink-deep) 18%, transparent);
+    font: inherit;
+    transform: none;
+  }
+  .mobilePlanActivation:active { transform: scale(.98); --shared-press-scale: 1; }
+  .mobilePlanActivation > span { display: grid; text-align: left; line-height: 1.05; }
+  .mobilePlanActivation strong { font-size: var(--text-sm); font-weight: 800; white-space: nowrap; }
+  .mobilePlanActivation small { margin-top: 3px; font-size: .66rem; font-weight: 700; opacity: .78; }
+  .mobilePlanActivation.isActive { background: var(--color-surface-raised); color: var(--color-accent); }
+  .mobilePlanActivation:disabled { cursor: wait; opacity: .72; }
+
+  /* Stop above the primary tab bar so bottom-nav taps are never swallowed by
+     the scrim or sheet body (QA H02). --z-tabbar still lifts the bar when a
+     modal shares the band; this clip is what makes hit-testing honest. */
+  .mobileSheetPortal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+    z-index: var(--z-overlay-top);
+  }
+  .mobileSheetScrim { position: absolute; inset: 0; width: 100%; border: 0; background: color-mix(in srgb, var(--ink-deep) 32%, transparent); }
+
+  /* ── Bottom-sheet box model (systemic rebuild) ──────────────────────────────
+     The sheet is a bottom-anchored flex column — header (auto) / body (flex-1,
+     scrolls) / footer (auto) — whose CONTAINER height is content-driven and
+     capped by --sheet-cap. `height:auto; max-height:<cap>` does the void-killing
+     natively: short content hugs (box = header+body+footer natural height); tall
+     content caps at --sheet-cap and the body (the only shrinkable child) scrolls
+     while header/footer stay pinned. The box's visible bottom edge is the
+     viewport bottom within the portal (bottom:0) — the portal itself stops above
+     the primary tab bar (see .mobileSheetPortal), so NO --mobile-map-dock-clearance
+     is reserved inside the sheet (that phantom band was the five-patch void).
+     The only reserved bottom space is the safe-area inset,
+     carried on the last element (footer for venue, body for the others). */
+  /* The sheet takes focus on open so assistive technology lands inside it, but
+     it is a container, not a control, so it never draws a focus ring of its
+     own. The controls inside keep theirs. */
+  .mobileSharedSheet.mapDrawer:focus,
+  .mobileSharedSheet.mapDrawer:focus-visible {
+    outline: none;
+  }
+
+  .mobileSharedSheet.mapDrawer {
+    --sheet-cap: 55dvh;
+    display: flex;
+    flex-direction: column;
+    /* Absolute inside the clipped .mobileSheetPortal — fixed would escape to the
+       viewport bottom and swallow primary-tab taps (QA H02). */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: var(--sheet-cap);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border: 1px solid var(--sheet-material-border);
+    background: var(--sheet-material);
+    box-shadow: var(--sheet-material-shadow);
+    /* Prefix first, standard last: the minifier keeps only the LAST of the
+       pair, so the other order shipped this sheet with a dead `-webkit-` alias
+       and no blur at all (see the same note on `.mapDrawer` in globals.css). */
+    -webkit-backdrop-filter: blur(20px) saturate(1.08);
+    backdrop-filter: blur(20px) saturate(1.08);
+    overflow: hidden;
+    contain: layout paint;
+    /* Override the legacy .mapDrawer bottom-sheet transform (globals.css @768:
+       translateY(100% + tab-clearance)). This box is positioned by bottom:0 +
+       max-height, never a transform — without this, a contextual portal (which
+       isn't .left/.right, so the legacy `.open` transform reset never matches it)
+       would inherit the off-screen translate. */
+    transform: none;
+    will-change: auto;
+  }
+  .mobileSharedSheet.open.sheet-peek:not(.sheet-dragging) { --sheet-cap: 22dvh; }
+  .mobileSharedSheet.open.sheet-half:not(.sheet-dragging) { --sheet-cap: 55dvh; }
+  .mobileSharedSheet.open.sheet-full:not(.sheet-dragging) { --sheet-cap: 92dvh; }
+  /* JS owns both 1:1 tracking and spring travel. No CSS transition competes
+     with an interrupted gesture. Promote only while presentation value moves. */
+  .mobileSharedSheet.sheet-dragging,
+  .mobileSharedSheet.sheet-settling { will-change: max-height; }
+  .mobileSharedSheetHeader { position: relative; flex: 0 0 auto; min-height: 64px; display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; padding: 10px 12px 4px; touch-action: none; }
+  .mobileSharedSheetHeader h2 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 5.5vw, 1.5rem);
+    font-weight: 720;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  .mobileSharedSheetDetent { position: absolute; top: 0; left: 50%; z-index: 1; width: 52px; height: 44px; border: 0; background: transparent; transform: translateX(-50%); }
+  .mobileSharedSheetDetent:active { --shared-press-scale: 1; }
+  .mobileSharedSheetGrab { position: absolute; top: 7px; left: 50%; width: 44px; height: 5px; border-radius: 999px; background: color-mix(in srgb, var(--color-text-muted) 55%, transparent); transform: translateX(-50%); }
+  .mobileSharedSheetDetent:active .mobileSharedSheetGrab,
+  .mobileSharedSheet.sheet-dragging .mobileSharedSheetGrab { background: color-mix(in srgb, var(--color-accent) 68%, var(--color-border)); }
+  .mobileSharedSheetDetent:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -6px; border-radius: var(--radius); }
+  /* The sheet's way out is SurfaceNav now (components/ui/surfaceNav.css), which
+     places itself in this grid and owns its own quiet resting state and focus
+     ring. The bespoke close button that used to sit here is gone. */
+  .mobileSharedSheetBody {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    /* No footer (contextual + planner): the body is the last element, so its end
+       reserves the safe-area inset and NOTHING more — the last content pixel sits
+       exactly the safe-area above the sheet's visible bottom edge (no dock band).
+       The 8px top keeps a hair below the header/grabber. */
+    padding: 8px 16px env(safe-area-inset-bottom, 0px);
+  }
+  /* Venue (right): the footer owns the bottom edge + safe-area, so the body only
+     needs a small gutter separating its content from the command bar (this gutter
+     is between content and footer, not the sheet's bottom edge). */
+  .mobileSharedSheet.right .mobileSharedSheetBody {
+    padding-bottom: 8px;
+  }
+  /* Footer slot — a real flex child OUTSIDE the scroll body. The venue command
+     bar (VenueStickyBar) portals into this via SheetFooterContext, so it rides
+     1:1 with the sheet on drag/snap (in flow, no fixed positioning) and is
+     always visible above a scrolling body. Empty for contextual/planner sheets,
+     where it collapses to nothing. */
+  .mobileSharedSheetFooter { flex: 0 0 auto; }
+  .mobileSharedSheetFooter:empty { display: none; }
+
+  .mobileMapFilters { display: grid; gap: 18px; }
+  /* Saved only — same checkbox field as the desktop ControlRail. Empty note
+     sits under the toggle when the device has nothing saved yet. */
+  .mobileMapSavedOnlyEmpty { display: grid; gap: 10px; padding: 4px 0 0; }
+  .mobileMapSavedOnlyEmpty p {
+    margin: 0;
+    color: var(--color-text-soft);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+  }
+  .mobilePlannerIntent { display: grid; gap: 14px; margin: 0 0 18px; padding: 14px; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+  .mobilePlannerIntentHeading { display: flex; align-items: flex-start; gap: 10px; color: var(--color-accent); }
+  .mobilePlannerIntentHeading > div { display: grid; gap: 3px; color: var(--color-text); }
+  .mobilePlannerIntentHeading h3, .mobilePlannerIntentHeading p { margin: 0; }
+  .mobilePlannerIntentHeading h3 { font-size: var(--text-lg); }
+  .mobilePlannerIntentHeading p { color: var(--color-text-soft); font-size: var(--text-sm); }
+  .mobilePlannerIntentInput { display: grid; gap: 6px; }
+  .mobilePlannerIntentInput > label, .mobilePlannerIntentGrid label { display: grid; gap: 5px; color: var(--color-text-soft); font-size: var(--text-xs); font-weight: 800; }
+  .mobilePlannerIntentInput > div { display: grid; grid-template-columns: minmax(0, 1fr) 44px; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface-raised); }
+  .mobilePlannerIntentInput input { min-width: 0; min-height: 48px; padding: 0 12px; border: 0; background: transparent; color: var(--color-text); font: inherit; outline: none; }
+  .mobilePlannerIntentInput small { color: var(--color-text-muted); }
+  .mobilePlannerIntentGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .mobilePlannerIntentGrid input, .mobilePlannerIntentGrid select { min-width: 0; min-height: 44px; padding: 0 10px; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface-raised); color: var(--color-text); font: inherit; }
+  .mobilePlannerIntentChips { display: flex; gap: 6px; overflow-x: auto; touch-action: pan-y; scrollbar-width: none; }
+  .mobilePlannerIntentChips::-webkit-scrollbar { display: none; }
+  .mobilePlannerIntentChips > button[aria-pressed="true"] { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 13%, var(--color-surface)); color: var(--color-accent); }
+  .mobilePlannerIntentError { margin: 0; color: var(--color-danger); font-size: var(--text-sm); }
+  .mobilePlannerIntentPending { display: inline-flex; align-items: center; gap: 8px; }
+  .mobilePlannerConfidence { display: flex; align-items: flex-start; gap: 9px; padding: 10px; border-radius: var(--radius); background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface-raised)); color: var(--color-accent); }
+  .mobilePlannerConfidence > div { display: grid; gap: 3px; color: var(--color-text); }
+  .mobilePlannerConfidence span, .mobilePlannerConfidence small { color: var(--color-text-soft); font-size: var(--text-xs); line-height: 1.35; }
+  .mobilePlannerResult { display: grid; gap: 9px; }
+  .mobilePlannerRouteTotal { margin: 0; color: var(--color-text-soft); font-size: var(--text-xs); }
+  .mobilePlannerNextStep { margin: 0; color: var(--color-text); font-size: var(--text-xs); line-height: 1.4; font-weight: 600; }
+  .mobilePlannerEndings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .mobilePlannerEndings > div { min-width: 0; padding: 8px; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface-raised); }
+  .mobilePlannerEndings > div[data-recommended="true"] { border-color: color-mix(in srgb, var(--color-accent) 55%, var(--color-border)); }
+  .mobilePlannerEndings span { display: grid; gap: 2px; }
+  .mobilePlannerEndings strong { color: var(--color-text); font-size: var(--text-xs); }
+  .mobilePlannerEndings small { color: var(--color-accent); font-size: 0.625rem; font-weight: 800; }
+  .mobilePlannerEndings p { margin: 5px 0 0; color: var(--color-text-soft); font-size: 0.625rem; line-height: 1.3; overflow-wrap: anywhere; }
+  .mobileMapFilters .drinkShapeChips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .mobileMapFilters .drinkShapeChip { min-height: 52px; width: 100%; justify-content: center; }
+  /* Refinement chips stay a wrapping strip in the sheet — a second 3-col grid
+     would read as a peer of the category choice rather than a child of it. */
+  .mobileMapFilters .drinkSubtypeChips { flex-wrap: wrap; overflow-x: visible; }
+  .mobileMapFilters .drinkSubtypeChip { min-height: 44px; }
+  /* These two keep their edge on purpose: each wraps a <select>, and under the
+     de-box rule a border is what an INPUT gets (finding 2.4). They are the only
+     two borders the sheet is meant to have. */
+  .mobileMapFilters .favoritePintPicker { display: grid !important; grid-template-columns: 1fr; }
+  .mobileMapFilters .favoritePintControl { min-height: 44px; width: 100%; justify-content: space-between; }
+  /* De-box: a trigger that opens a picker is not an input, so no box. */
+  .mobileMapFilters .personaLensTrigger { min-height: 44px; width: 100%; justify-content: flex-start; border: 0; border-radius: var(--radius); background: transparent; color: var(--color-text-soft); }
+  .mobileMapFilters .personaLensTrigger:hover { border: 0; background: color-mix(in srgb, var(--color-accent) 9%, transparent); color: var(--color-text); }
+  .mobileMapFilters .personaLensTrigger.isActive { border: 0; background: var(--color-surface-raised); color: var(--color-text); font-weight: 800; }
+  /* De-box (design judgement 2026-08-01, finding 2.4): four price caps are ONE
+     choice, so they are one segmented control - a single edge round the group,
+     interior hairlines, and the fill carries the selection. */
+  .mobilePriceChoices { display: grid; gap: 0; margin: 0; padding: 0; border: 0; }
+  .mobilePriceChoices legend { margin-bottom: 6px; color: var(--color-text); font-size: var(--text-sm); font-weight: 800; }
+  .mobilePriceChoicesGroup { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: hidden; border: 1px solid var(--color-border-soft); border-radius: var(--radius); }
+  .mobilePriceChoices button { min-height: 44px; border: 0; border-inline-start: 1px solid var(--color-border-soft); border-radius: 0; background: transparent; color: var(--color-text-muted); font: inherit; font-size: var(--text-sm); font-weight: 700; }
+  .mobilePriceChoices button:first-of-type { border-inline-start: 0; }
+  .mobilePriceChoices button.isActive { background: var(--color-surface-raised); color: var(--color-text); font-weight: 800; }
+
+  .mobileSheetPortal .tonightLane,
+  .mobileSheetPortal .mapLayersControl,
+  .mobileSheetPortal .mapLayersPanel {
+    position: static;
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    transform: none;
+  }
+  .mobileSheetPortal .tonightLane { inset: auto; box-shadow: none; }
+  .mobileSheetPortal .mapLayersPanel { border: 0; padding: 0; background: transparent; box-shadow: none; }
+  .mobileSheetPortal .logIntentFallback { position: static; inset: auto; width: 100%; max-width: none; margin: 0; box-shadow: none; }
+  .mobileLayersPanel { display: grid; gap: 16px; }
+  .mobileMapControlTabs > [role="tab"] {
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    padding-inline: 8px;
+  }
+  .mobileLayerShortcuts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .mobileLayerShortcuts button { min-height: 48px; justify-content: flex-start; gap: 10px; }
+  .mobileLayersTheme { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
+  .mobileLayersTheme > div { min-width: 0; display: grid; gap: 3px; }
+  .mobileLayersTheme small { color: var(--color-text-muted); line-height: 1.35; }
+  .mobileLayersTheme .themeToggle { flex: 0 0 44px; width: 44px; height: 44px; }
+
+  .mobileTflGroups { display: grid; gap: 16px; }
+  .mobileTflGroups section { min-width: 0; padding: 14px; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
+  .mobileTflGroups h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: var(--text-md); }
+  .mobileTflGroups ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .mobileTflGroups li { min-width: 0; display: grid; gap: 3px; padding-block: 8px; border-top: 1px solid var(--color-border); overflow-wrap: anywhere; }
+  .mobileTflGroups li:first-child { border-top: 0; }
+  .mobileTflGroups p { margin: 0; color: var(--color-text-soft); }
+  .mobileTflGroups span { color: var(--color-text-muted); font-size: var(--text-xs); }
+  .mobileSheetEmpty, .mobileSheetSkeleton { min-height: 180px; display: grid; place-items: center; align-content: center; gap: 8px; text-align: center; }
+  .mobileSheetEmpty p { margin: 0; color: var(--color-text-soft); }
+
+  .mobilePalSummon { min-height: 260px; display: grid; place-items: center; align-content: center; gap: 10px; text-align: center; }
+  .mobilePalSummon picture { display: block; line-height: 0; }
+  .mobilePalSummon img { display: block; border-radius: 50%; }
+  .mobilePalSummon h3, .mobilePalSummon p { margin: 0; }
+  .mobilePalSummon p { max-width: 32ch; color: var(--color-text-soft); }
+  .mobilePalSummon a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: var(--radius); background: var(--color-accent); color: var(--color-on-accent); font-weight: 800; text-decoration: none; }
+  .mobilePalSummon small { display: flex; align-items: center; gap: 6px; max-width: 34ch; color: var(--color-text-muted); }
+
+  .mobileVenuePeekSummary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: center; gap: 10px; margin-bottom: 14px; padding: 12px 0; border: 1px solid var(--sheet-material-border); border-inline: 0; border-radius: 0; background: transparent; }
+  .mobileVenuePeekSummary > span { min-width: 0; display: grid; gap: 2px; }
+  .mobileVenuePeekSummary strong { white-space: nowrap; font-family: var(--font-data); font-size: var(--text-md); }
+  /* "Near me" is one phrase. A narrow peek column must not break it mid-word. */
+  .mobileVenuePeekSummary .mobileVenuePeekNearMe { white-space: nowrap; }
+  /* Never ellipsis the caption. This line is what the number above it MEANS
+     ("current recorded price"), and at 390px the nowrap+ellipsis cut it to
+     "current recorded pri…" - a price with its own label truncated reads as a
+     price you cannot check. It wraps to a second line instead. */
+  .mobileVenuePeekSummary small { color: var(--color-text-muted); font-size: .68rem; line-height: 1.25; white-space: normal; overflow-wrap: break-word; }
+  .mobileVenuePeekSummary button { min-height: 44px; padding: 0 12px; border: 0; border-radius: var(--radius); background: var(--color-accent); color: var(--color-on-accent-strong); font: inherit; font-size: var(--text-sm); font-weight: 800; }
+  /* Empty-price cell doubles as the drop CTA: a quiet accent-tinted button that
+     keeps the price column's stacked look but reads as tappable. */
+  /* Three cells, ONE idiom. "No price yet." used to sit in a bordered, tinted
+     mono box beside a plain "Near me / Turn on location for walk times" cell and a filled CTA -
+     three visual languages in one row, and the box shouted loudest about the
+     thing the pub does NOT have (design judgement 2026-08-01, finding 2.16).
+     It now reads exactly like its neighbour cell; the coral stays on the
+     "Be the first" line, which is the invitation. */
+  .mobileVenuePeekSummary .mobileVenuePeekDrop { min-width: 0; display: grid; gap: 2px; justify-items: start; align-content: center; min-height: 44px; padding: 6px 0; text-align: left; border: 0; border-radius: var(--radius); background: transparent; color: inherit; font: inherit; }
+  .mobileVenuePeekSummary .mobileVenuePeekDrop strong { white-space: normal; font-size: var(--text-base); line-height: 1.05; }
+  .mobileVenuePeekSummary .mobileVenuePeekDrop small { color: var(--color-accent); font-weight: 700; }
+}
+
+/* The peek summary is a MOBILE-only strip (styled solely inside the 640px
+   query above). PubMap renders it unconditionally, so on desktop it appeared
+   as one collapsed unstyled text run above the drawer (owner audit, The Black
+   Friar). Hide it wherever its styles do not apply. */
+@media (min-width: 641px) {
+  .mobileVenuePeekSummary { display: none; }
+}
+
+@media (max-width: 640px) and (prefers-reduced-motion: no-preference) {
+  .mobileSharedSheetGrab {
+    transition:
+      transform var(--duration-press) var(--ease-out-strong),
+      background-color var(--duration-press) var(--ease-out);
+  }
+  .mobileSharedSheetDetent:active .mobileSharedSheetGrab,
+  .mobileSharedSheet.sheet-dragging .mobileSharedSheetGrab {
+    transform: translateX(-50%) scaleX(.78);
+  }
+}
+
+@media (max-width: 640px) and (prefers-reduced-transparency: reduce) {
+  .mobileMapTopbar, .mobilePlanActivation.isActive {
+    background: var(--panel-raised);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .mobileSharedSheet.mapDrawer {
+    background: var(--sheet-material-solid);
+    /* Prefix first, standard last: the opt-out only reaches the browser if the
+       standard property is the survivor. */
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (max-width: 640px) and (prefers-contrast: more) {
+  .mobileMapTopbar, .mobileMapLocateFab, .mobileMapNearMeAlert, .mobileSharedSheet.mapDrawer { border-width: 2px; }
+  .mobileSharedSheet.mapDrawer {
+    background: var(--sheet-material-solid);
+    /* Prefix first, standard last: the opt-out only reaches the browser if the
+       standard property is the survivor. */
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .mobilePlanActivation:active, .mobileMapLocateFab:active { transform: none; }
+}
+
+.mobileMapFilterToggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.mobileMapFilterToggle input {
+  margin-top: 0.2rem;
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  flex: 0 0 auto;
+}
+.mobileMapFilterToggle span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.mobileMapFilterToggle strong {
+  font-weight: 650;
+}
+.mobileMapFilterToggle small {
+  opacity: 0.78;
+  line-height: 1.35;
+}

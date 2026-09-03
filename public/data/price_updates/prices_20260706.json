@@ -1,0 +1,6 @@
+{
+  "$comment": "EXAMPLE price-update file. Shipped EMPTY on purpose: real prices may only be added from verified PERMISSIBLE first-party sources (see data/price_sources.json), and none could be verified without web access at authoring time. Presenting an unverified price as live would violate governance ('never present stale as live'). The refresh script (scripts/refresh_prices.mjs) writes real files of this exact shape. Schema is documented in the sibling README.md.",
+  "version": 1,
+  "generatedAt": "2026-07-06T00:00:00.000Z",
+  "updates": []
+}

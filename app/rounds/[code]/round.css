@@ -1,0 +1,995 @@
+/* The Round — a group crawl that builds itself live. All selectors are new +
+   scoped to this page; values lean on the shared design-system tokens (brass
+   accent, cream paper, serif headings) so the Round inherits the guidebook theme. */
+
+.roundShell {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 24px var(--page-gutter) 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.roundShell .siteNav {
+  width: 100%;
+  max-width: 640px;
+}
+
+.roundLoading {
+  color: var(--muted);
+  margin-top: 48px;
+}
+
+.roundBoard {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* --- header: title + big shareable code ------------------------------------ */
+
+.roundHead {
+  text-align: center;
+  padding: 28px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.roundEyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.roundTitle {
+  margin: 0 0 16px;
+  font-family: var(--font-display, serif);
+  font-size: clamp(26px, 6vw, 38px);
+  line-height: 1.1;
+}
+
+.roundCodeRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.roundCodeLabel {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.roundCode {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  /* The core share action — a comfortable one-hand tap target (≥44px). */
+  min-height: 44px;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: clamp(28px, 8vw, 44px);
+  font-weight: 800;
+  letter-spacing: 6px;
+  /* Primary ink, not --ink-deep (#040606) — the latter is near-black in dark
+     and vanished against the near-black share card. --ink is high-contrast in
+     both themes. */
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.12s ease, color 0.12s ease;
+}
+
+.roundCode:hover {
+  color: var(--brass);
+}
+
+.roundCode:active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.roundCopyFeedback {
+  min-height: 18px;
+  color: var(--brass);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.roundStatus {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* --- the buying rotation and latest round --------------------------------- */
+
+.roundMoneyGlance {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--price-plaque-border);
+  border-radius: var(--radius-md);
+  background: var(--price-plaque-border);
+  box-shadow: var(--price-plaque-shine);
+  text-align: left;
+}
+
+.roundMoneyCell {
+  min-width: 0;
+  min-height: 118px;
+  padding: 15px;
+  background: var(--price-plaque-surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.roundMoneyCell strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-size: clamp(20px, 5.5vw, 30px);
+  line-height: 1.05;
+}
+
+.roundMoneyTurn strong {
+  font-family: var(--font-display, serif);
+}
+
+.roundMoneyLatest > strong:not(.roundMoneyEmpty) {
+  color: var(--accent-price-ink);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-variant-numeric: tabular-nums;
+}
+
+.roundMoneyCell small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.roundMoneyLabel {
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.roundMoneyEmpty {
+  max-width: 14ch;
+  font-size: 15px !important;
+  line-height: 1.25 !important;
+}
+
+/* --- putting a round on the beer mat -------------------------------------- */
+
+.roundRecordOpen {
+  align-self: stretch;
+}
+
+.roundSpendPanel,
+.roundSpendHistory {
+  min-width: 0;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+}
+
+.roundSpendPanel {
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.roundSpendForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.roundSpendHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.roundSpendHead .roundSectionTitle {
+  margin-bottom: 4px;
+}
+
+.roundSpendIntro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.roundIconBtn {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.roundIconBtn:hover {
+  border-color: var(--ink-soft);
+  color: var(--ink);
+}
+
+.roundSpendGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.roundField select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 34px 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.roundField select:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.roundSpendModes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel);
+}
+
+.roundSpendModes button {
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.roundSpendModes button.isActive {
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+}
+
+.roundTotalField {
+  gap: 8px;
+}
+
+.roundMoneyInput {
+  min-width: 0;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--price-plaque-border);
+  border-radius: var(--radius-md);
+  background: var(--price-plaque-surface);
+  color: var(--accent-price-ink);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.roundMoneyInput:focus-within {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.roundMoneyInput > span {
+  padding-left: 16px;
+}
+
+.roundMoneyInput input {
+  min-width: 0;
+  width: 100%;
+  min-height: 56px;
+  padding: 10px 14px 10px 4px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.roundMoneyInput input::placeholder {
+  color: color-mix(in srgb, var(--accent-price-ink) 42%, transparent);
+}
+
+.roundItems {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.roundKnownDrink {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 10px;
+}
+
+.roundKnownDrinkNote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.roundManualDrink {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(100px, 0.8fr) minmax(86px, 0.6fr);
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.roundManualDrink input {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+}
+
+.roundAddDrinkBtn {
+  grid-column: 1 / -1;
+}
+
+.roundDraftItems,
+.roundSpendItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roundDraftItems {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.roundDraftItems > li {
+  min-width: 0;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 8px 6px 12px;
+}
+
+.roundDraftItems > li + li {
+  border-top: 1px solid var(--line-soft);
+}
+
+.roundDraftItems > li > span:first-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.roundDraftItems strong,
+.roundDraftItems small {
+  overflow-wrap: anywhere;
+}
+
+.roundDraftItems small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.roundDraftItemPrice {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-price-ink);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-weight: 750;
+}
+
+.roundPriceTrust {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.roundKeepBtn {
+  width: 100%;
+}
+
+/* --- immutable diary rows -------------------------------------------------- */
+
+.roundSpendHistory {
+  padding: 18px;
+}
+
+.roundSpendHistory > ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.roundSpendCard {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.roundSpendSummary {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.roundSpendSummary > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.roundSpendSummary > div > strong,
+.roundSpendSummary > div > span {
+  overflow-wrap: anywhere;
+}
+
+.roundSpendSummary > div > span {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.roundSpendTotal {
+  flex: 0 0 auto;
+  color: var(--accent-price-ink);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.roundSpendStamp {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.roundSpendItems {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.roundSpendItems li {
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.roundSpendItems li span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.roundSpendItems li strong {
+  flex: 0 0 auto;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.roundSpendCard .roundPriceTrust {
+  margin-top: 8px;
+}
+
+/* --- section headings ------------------------------------------------------ */
+
+.roundSectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+/* --- who's out ------------------------------------------------------------- */
+
+.roundMemberList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.roundMemberChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: 14px;
+}
+
+.roundMemberChip a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.roundMemberChip a:hover {
+  color: var(--brass);
+}
+
+.roundHostTag {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 700;
+}
+
+/* --- "your crew is here" — group presence at the current stop (B6) ---------- */
+/* Candle-lit: a warm brass ember, not a hard green "online" dot. The claim is
+   self-shared + ephemeral, so the language stays soft and never overstated. */
+
+.roundCrewHere {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brass) 8%, var(--color-surface));
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* The ember: a small brass dot with a soft candle-glow halo. Reused inline in
+   member rows and in the banner. */
+.roundHereDot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--brass) 22%, transparent),
+    0 0 8px 1px color-mix(in srgb, var(--brass) 45%, transparent);
+  animation: roundHerePulse 2.6s ease-in-out infinite;
+}
+
+/* A member row for someone here-now warms subtly to match the ember. */
+.roundMemberChipHere {
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--color-surface));
+}
+
+@keyframes roundHerePulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--brass) 22%, transparent),
+      0 0 8px 1px color-mix(in srgb, var(--brass) 45%, transparent);
+  }
+  50% {
+    opacity: 0.72;
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--brass) 14%, transparent),
+      0 0 5px 1px color-mix(in srgb, var(--brass) 28%, transparent);
+  }
+}
+
+/* Honour reduced-motion: the ember stays lit, just doesn't breathe. */
+@media (prefers-reduced-motion: reduce) {
+  .roundHereDot {
+    animation: none;
+  }
+}
+
+/* --- the self-building route ----------------------------------------------- */
+
+.roundStops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roundStop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.roundStopNumber {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.roundStopBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.roundStopBody strong {
+  font-size: 16px;
+}
+
+.roundStopBy {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.roundStopBy a {
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.roundStopBy a:hover {
+  text-decoration: underline;
+}
+
+.roundLegs {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.roundLegs ul {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roundLegTotal {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* --- join form / add stop -------------------------------------------------- */
+
+.roundForm,
+.roundAdd {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.roundField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.roundField input,
+.roundSearch {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.roundField input:focus-visible,
+.roundSearch:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.roundAddHint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.roundSearchResults {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.roundSearchResults li + li {
+  border-top: 1px solid var(--line-soft);
+}
+
+.roundSearchResults button {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--ink);
+}
+
+.roundSearchResults button:hover {
+  background: var(--paper);
+}
+
+.roundSearchResults button:active {
+  transform: scale(0.99);
+  --shared-press-scale: 1;
+}
+
+.roundSearchResults button span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Honest search feedback — "Finding pubs…" while the index loads, then a
+   grounded miss instead of a silent blank when nothing matches. */
+.roundSearchHint {
+  margin: 0;
+  padding: 10px 4px 2px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* --- buttons --------------------------------------------------------------- */
+
+.roundPrimaryBtn,
+.roundSecondaryBtn,
+.roundCloseBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  /* ≥44px one-hand tap target (12px + 15px line-box + 12px ≈ 44px). */
+  min-height: 44px;
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+/* One-hand press feedback, matching the app's scale(.97-.99) idiom. Disabled
+   buttons don't dip. */
+.roundPrimaryBtn:not(:disabled):active,
+.roundSecondaryBtn:not(:disabled):active,
+.roundCloseBtn:not(:disabled):active {
+  transform: scale(0.97);
+  --shared-press-scale: 1;
+}
+
+.roundPrimaryBtn {
+  background: var(--brass);
+  color: var(--color-on-accent);
+}
+
+.roundPrimaryBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.roundSecondaryBtn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.roundSecondaryBtn {
+  background: none;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.roundSecondaryBtn:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.roundCloseBtn {
+  align-self: center;
+  background: none;
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.roundCloseBtn:hover {
+  border-color: var(--ink-soft);
+  color: var(--ink-soft);
+}
+
+/* --- call-the-Round confirm (two-tap, irreversible) ------------------------ */
+
+.roundCloseConfirm {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 360px;
+  text-align: center;
+}
+
+.roundCloseConfirmText {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.roundCloseConfirmRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* The armed "yes, call it" button reads as the consequential one. */
+.roundCloseBtnArmed {
+  border-color: color-mix(in srgb, var(--color-negative) 55%, var(--line));
+  color: var(--color-negative);
+}
+
+.roundCloseBtnArmed:hover {
+  border-color: var(--color-negative);
+  color: var(--color-negative);
+}
+
+.roundError {
+  margin: 0;
+  color: var(--color-negative);
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .roundShell {
+    padding-top: 14px;
+    gap: 16px;
+  }
+
+  .roundBoard {
+    gap: 20px;
+  }
+
+  .roundHead {
+    padding: 22px 14px;
+  }
+
+  .roundMoneyCell {
+    min-height: 112px;
+    padding: 13px 11px;
+  }
+
+  .roundSpendPanel {
+    padding: 16px;
+  }
+
+  .roundSpendGrid,
+  .roundManualDrink {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .roundKnownDrink {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .roundKnownDrink .roundSecondaryBtn {
+    width: 100%;
+  }
+
+  .roundSpendSummary {
+    gap: 10px;
+  }
+}
+
+/* Respect reduced-motion: keep the color/hover feedback, drop the scale dip. */
+@media (prefers-reduced-motion: reduce) {
+  .roundCode,
+  .roundPrimaryBtn,
+  .roundSecondaryBtn,
+  .roundCloseBtn,
+  .roundSearchResults button {
+    transition: color 0.12s ease, border-color 0.12s ease;
+  }
+
+  .roundCode:active,
+  .roundPrimaryBtn:not(:disabled):active,
+  .roundSecondaryBtn:not(:disabled):active,
+  .roundCloseBtn:not(:disabled):active,
+  .roundSearchResults button:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,724 @@
+/* "What's it tonight?" - the fast community price-submission card on the venue
+   sheet. Scoped to .venuePriceEntryPanel only; reuses the shared app tokens
+   (--brass, --brass-bright, --ink, --ink-soft, --line, --panel, --panel-raised,
+   --pint, --font-data, --radius-sm, --radius-pill) so it inherits Candle Coral
+   by day and Night Out by night without forking a single hex. Mobile-first:
+   every target clears 44px at 390px wide, and nothing here needs a hover. */
+
+/* The community price row in the venue price block. Reuses .contributorPrice
+   (app/globals.css) for layout and only re-tints it, so tonight's logged price
+   reads as the freshest line without becoming a different component. */
+.contributorPrice.communityPriceRow {
+  border-color: color-mix(in srgb, var(--brass) 34%, var(--line));
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+}
+
+.contributorPrice.communityPriceRow strong {
+  color: var(--brass);
+}
+
+/* The dated half of the stamp - sits inline with the price, not on its own
+   line like the longer provenance note beneath it. */
+.contributorPrice.communityPriceRow .communityPriceStamp {
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* Where a shown-but-not-yet-trusted price stands: "awaiting confirmation", or
+   aged past the 30-day window. Full-width beneath the stamp (inheriting
+   .contributorPrice small's flex-basis), sentence case, and deliberately NOT
+   brass - it is a caveat about the figure above, not a second claim, so it
+   sits at the same quiet weight as the provenance note below it while staying
+   a step more legible than muted. */
+.contributorPrice.communityPriceRow .communityPriceStanding {
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* The complaint affordance. Deliberately the quietest thing in the row: it
+   must be findable by someone who thinks a price is wrong, and invisible to
+   everyone else - it sits on its own line, right-aligned, below the provenance
+   note, at the same pill weight as the Pint Drop report button (.reportBtn in
+   globals.css, shared on purpose so the two never drift). */
+.contributorPrice.communityPriceRow .reportBtn {
+  margin-left: auto;
+}
+
+/* The acknowledgement that replaces it. Same footprint, no takedown promise -
+   the price is still on the row above, because a flag is not a moderation
+   decision. */
+.contributorPrice.communityPriceRow .communityPriceReported {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.venuePriceEntryPanel {
+  scroll-margin-top: 12px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 22%, var(--line));
+  border-radius: var(--radius-lg, 18px);
+  background: color-mix(in srgb, var(--brass) 5%, var(--panel-raised));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--panel-raised) 80%, transparent);
+}
+
+.venuePriceEntryPanel > .venueCommunitySignals:first-child {
+  margin-top: 0;
+  border-top: 0;
+}
+
+.vpsubHead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--brass);
+}
+
+.vpsubTitle {
+  margin: 0;
+  font-family: var(--font-display, var(--serif));
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--ink);
+}
+
+.vpsubLockedDrink {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.vpsubHeldDrink {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--ink-soft, var(--ink));
+}
+
+/* ── Drink category ───────────────────────────────────────────────────────── */
+/* The five categories do not fit one 390px row, so the row WRAPS - same rule
+   the quick-price chips below already use, so the card reads as one chip
+   language rather than two. The earlier single scrolling row hid the last chip
+   ("Other") behind a permanent trailing mask fade: the fade was static, so
+   scrolling to the end still left the label veiled and clipped, and a
+   scroll-position-aware mask has no cross-browser form (Safari lacks
+   scroll-driven timelines). A wrapped row costs one line of height and can
+   never clip a target. */
+.vpsubCats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 11px 0 12px;
+}
+
+.vpsubCat {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.vpsubCat:active {
+  transform: scale(0.96);
+  --shared-press-scale: 1;
+}
+
+.vpsubCatOn {
+  border-color: var(--brass);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent, #fff);
+  font-weight: 700;
+}
+
+/* ── Price entry ──────────────────────────────────────────────────────────── */
+.vpsubEntry {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.vpsubField {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 2px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 10px);
+  background: var(--panel-raised);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.vpsubField:focus-within {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brass) 18%, transparent);
+}
+
+/* The mono data face leaves an exaggerated decimal gap at this size on mobile
+   ("£4. 20"), the same defect venuePriceStory.css documents for its own large
+   prices. Use the app text face with tabular numerals so the figure still
+   aligns column-wise without the gap. */
+.vpsubCurrency {
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "kern" 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink-soft);
+}
+
+.vpsubInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 2px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  /* Matches .vpsubCurrency: text face, tabular numerals, no mono decimal gap.
+     16px+ keeps iOS from zooming the viewport on focus. */
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "kern" 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.vpsubInput:focus {
+  outline: none;
+}
+
+.vpsubInput::placeholder {
+  color: var(--input-placeholder);
+  font-weight: 600;
+}
+
+.vpsubLog {
+  flex: 0 0 auto;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill, 999px);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent, #fff);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brass) 24%, transparent);
+  transition:
+    transform 160ms cubic-bezier(0.34, 1.4, 0.64, 1),
+    opacity 160ms ease;
+}
+
+.vpsubLog:active {
+  transform: scale(0.96);
+  --shared-press-scale: 1;
+}
+
+.vpsubLog:disabled {
+  border-color: var(--line);
+  background: var(--panel-raised);
+  color: var(--muted);
+  opacity: 1;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* ── Quick-tap prices ─────────────────────────────────────────────────────── */
+.vpsubQuick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.vpsubQuickChip {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px dashed color-mix(in srgb, var(--ink-soft) 34%, var(--line));
+  border-radius: var(--radius-pill, 999px);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "kern" 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.vpsubQuickChip:active {
+  transform: scale(0.94);
+  --shared-press-scale: 1;
+}
+
+.vpsubQuickChip:hover {
+  border-style: solid;
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.vpsubPhotoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.vpsubPhotoInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+}
+
+.vpsubPhotoBtn,
+.vpsubPhotoClear {
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.vpsubPhotoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid color-mix(in srgb, var(--brass) 28%, var(--line));
+  background: color-mix(in srgb, var(--brass) 6%, var(--panel));
+  color: var(--ink);
+}
+
+.vpsubPhotoBtn:active {
+  --shared-press-scale: 1;
+  transform: scale(0.98);
+}
+
+.vpsubPhotoBtn:disabled,
+.vpsubPhotoClear:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.vpsubPhotoClear {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Feedback ─────────────────────────────────────────────────────────────── */
+.vpsubError {
+  margin: 10px 0 0;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--brick);
+}
+
+.vpsubNote {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* The restamp: the price you just put on the map, wearing its own dated badge.
+   It scales in so the change reads as something YOU caused. */
+.vpsubStamp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--pint) 40%, var(--line));
+  border-radius: var(--radius-md, 10px);
+  background: color-mix(in srgb, var(--pint) 10%, var(--panel-raised));
+  animation: vpsubStampIn 320ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.vpsubStampTick {
+  flex: 0 0 auto;
+  color: var(--pint);
+}
+
+.vpsubStampPrice {
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "kern" 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* The provisional half of the receipt: the dot the map is now drawing, at the
+   same colour, so "look at your pin" is a comparison and not a promise. */
+.vpsubStampHint {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.vpsubImpactRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+}
+
+.vpsubImpactRow .vpsubStampHint {
+  flex: 1 1 210px;
+}
+
+.vpsubImpactLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--accent-action);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-underline-offset: 3px;
+  touch-action: manipulation;
+}
+
+.vpsubImpactLink:focus-visible {
+  outline: 3px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+.vpsubStampDot {
+  flex: 0 0 auto;
+  /* Sits on the FIRST line like a bullet - centring it against a three-line
+     paragraph parks the dot beside the middle of the sentence, which reads as
+     decoration rather than as the mark being named. */
+  align-self: flex-start;
+  margin-top: 4px;
+  width: 9px;
+  height: 9px;
+  border: 1.4px solid var(--panel-raised);
+  border-radius: 50%;
+  background: var(--river-bright);
+}
+
+.vpsubStampMeta {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ── What drinkers noticed ─────────────────────────────────────────────────
+   One disclosure inside the existing contribution card, not four more boxes.
+   Closed, it costs one 44px row and still keeps access unknown visible. */
+.venueCommunitySignals {
+  margin-top: 12px;
+  border-top: 1px solid color-mix(in srgb, var(--brass) 18%, var(--line));
+}
+
+.vpsigSummary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding-top: 7px;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.vpsigSummary::-webkit-details-marker {
+  display: none;
+}
+
+.vpsigSummaryTitle {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.vpsigSummaryTitle svg {
+  flex: 0 0 auto;
+  color: var(--brass);
+}
+
+.vpsigAccessSummary {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.vpsigSummaryChevron {
+  color: var(--ink-soft);
+  transition: transform 160ms ease;
+}
+
+.venueCommunitySignals[open] .vpsigSummaryChevron {
+  transform: rotate(180deg);
+}
+
+.vpsigBody {
+  padding: 2px 0 4px;
+}
+
+.vpsigIntro,
+.vpsigCharacterNote,
+.vpsigError,
+.vpsigSaved,
+.vpsigSignIn {
+  margin: 5px 0 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+/* One grid for every row, so the label column is the widest LABEL rather than a
+   guessed width: at 390px "CHARACTER" measures 72px, and the 62px column it
+   used to sit in pushed it through the 8px gutter into its own value. Rows are
+   display: contents so all five share that measured column and stay aligned. */
+.vpsigReadout {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 8px;
+  row-gap: 0;
+  margin: 9px 0 0;
+}
+
+.vpsigReadoutRow {
+  display: contents;
+}
+
+.vpsigReadoutRow dt,
+.vpsigReadoutRow dd {
+  padding: 6px 0;
+  border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.vpsigReadoutRow dt {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.vpsigReadoutRow dd {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.vpsigReadoutRow dd span,
+.vpsigReadoutRow dd small {
+  display: block;
+}
+
+.vpsigReadoutRow dd small {
+  margin-top: 1px;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+}
+
+.vpsigForm {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.vpsigFormTitle {
+  margin: 0 0 7px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.vpsigQuestions,
+.vpsigAccessTargets,
+.vpsigOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.vpsigAccessTargets,
+.vpsigOptions {
+  margin-top: 7px;
+}
+
+.vpsigAccessTargets[hidden] {
+  display: none;
+}
+
+.vpsigQuestion,
+.vpsigOption {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+}
+
+.vpsigQuestion {
+  flex: 1 1 calc(50% - 3px);
+  min-height: 44px;
+}
+
+.vpsigOption {
+  flex: 1 1 auto;
+  min-height: 44px;
+}
+
+.vpsigQuestion input,
+.vpsigOption input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.vpsigQuestion span,
+.vpsigOption span {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.vpsigQuestion input:focus-visible + span,
+.vpsigOption input:focus-visible + span {
+  outline: 3px solid color-mix(in srgb, var(--brass) 24%, transparent);
+  outline-offset: 2px;
+}
+
+.vpsigQuestion input:checked + span,
+.vpsigOption input:checked + span {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.vpsigSubmit {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 9px;
+  padding: 8px 14px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill, 999px);
+  background: transparent;
+  color: var(--brass);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.vpsigSubmit:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.vpsigError {
+  color: var(--brick);
+  font-weight: 700;
+}
+
+.vpsigSaved {
+  color: var(--pint);
+  font-weight: 700;
+}
+
+@keyframes vpsubStampIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vpsubStamp {
+    animation: none;
+  }
+
+  .vpsubCat,
+  .vpsubLog,
+  .vpsubQuickChip {
+    transition: none;
+  }
+
+  .vpsigSummaryChevron {
+    transition: none;
+  }
+
+  .vpsubCat:active,
+  .vpsubLog:active,
+  .vpsubQuickChip:active {
+    transform: none;
+  }
+}

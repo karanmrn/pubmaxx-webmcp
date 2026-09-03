@@ -1,0 +1,10 @@
+/* One muted compare line under the Overview price block. Deliberately quiet:
+   it sits beside a figure, so it borrows the sheet's small provenance tone
+   rather than competing with the price badge. */
+
+.venueAreaPriceCompare {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--muted);
+}

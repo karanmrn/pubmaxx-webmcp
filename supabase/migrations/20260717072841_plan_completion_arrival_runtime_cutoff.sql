@@ -1,0 +1,2 @@
+-- Production ledger marker. The temporal cutoff is already included in the
+-- consolidated 20260717071841 function definitions for fresh installations.

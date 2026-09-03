@@ -1,0 +1,35 @@
+/* "Share with family" — same large, calm tap-target language as the Ledger's
+   "Read this page" button (readLedgerButton.css), so the two controls read as
+   one family of actions rather than two different button systems. */
+.familyShareButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--panel-raised);
+  border: 2px solid var(--brass);
+  border-radius: var(--radius-sm, 8px);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.familyShareButton:hover {
+  background: var(--brass);
+  color: var(--color-on-accent, #fdfaf2);
+}
+
+.familyShareButton:focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .familyShareButton {
+    transition: none;
+  }
+}

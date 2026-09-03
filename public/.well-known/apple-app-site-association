@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID.com.pubmaxx.app"],
+        "components": [
+          { "/": "/plan/*", "comment": "Shared plan deep links open in the app" },
+          { "/": "/rounds/*", "comment": "Round invites open in the app" },
+          { "/": "/p/*", "comment": "Pub detail pages open in the app" },
+          { "/": "/auth/callback", "comment": "Sign-in returns to the app" }
+        ]
+      }
+    ]
+  }
+}

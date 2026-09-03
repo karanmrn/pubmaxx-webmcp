@@ -1,0 +1,160 @@
+{
+  "attribution": "Station names and approximate entrance coordinates compiled from publicly known Merseyrail / OpenStreetMap knowledge. Not an official Merseytravel feed. Typical last-service times are conservative static approximations — always check live boards before you leave.",
+  "source": "static-seed-v1",
+  "stations": [
+    {
+      "id": "merseyrail:lime-street",
+      "name": "Liverpool Lime Street (underground)",
+      "lat": 53.4075,
+      "lng": -2.9778,
+      "lines": ["Northern", "Wirral"]
+    },
+    {
+      "id": "merseyrail:central",
+      "name": "Liverpool Central",
+      "lat": 53.4046,
+      "lng": -2.9802,
+      "lines": ["Northern", "Wirral"]
+    },
+    {
+      "id": "merseyrail:james-street",
+      "name": "James Street",
+      "lat": 53.4047,
+      "lng": -2.9918,
+      "lines": ["Wirral"]
+    },
+    {
+      "id": "merseyrail:moorfields",
+      "name": "Moorfields",
+      "lat": 53.4086,
+      "lng": -2.9895,
+      "lines": ["Northern", "Wirral"]
+    },
+    {
+      "id": "merseyrail:sandhills",
+      "name": "Sandhills",
+      "lat": 53.4301,
+      "lng": -2.9917,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:kirkdale",
+      "name": "Kirkdale",
+      "lat": 53.4408,
+      "lng": -2.9845,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:walton",
+      "name": "Walton",
+      "lat": 53.4565,
+      "lng": -2.9658,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:rice-lane",
+      "name": "Rice Lane",
+      "lat": 53.4578,
+      "lng": -2.9625,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:bootle-oriel-road",
+      "name": "Bootle Oriel Road",
+      "lat": 53.4468,
+      "lng": -2.9945,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:bootle-new-strand",
+      "name": "Bootle New Strand",
+      "lat": 53.4535,
+      "lng": -2.9948,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:hamilton-square",
+      "name": "Hamilton Square",
+      "lat": 53.3947,
+      "lng": -3.0142,
+      "lines": ["Wirral"]
+    },
+    {
+      "id": "merseyrail:conway-park",
+      "name": "Conway Park",
+      "lat": 53.3935,
+      "lng": -3.0225,
+      "lines": ["Wirral"]
+    },
+    {
+      "id": "merseyrail:birkenhead-central",
+      "name": "Birkenhead Central",
+      "lat": 53.3885,
+      "lng": -3.0205,
+      "lines": ["Wirral"]
+    },
+    {
+      "id": "merseyrail:birkenhead-park",
+      "name": "Birkenhead Park",
+      "lat": 53.3975,
+      "lng": -3.0395,
+      "lines": ["Wirral"]
+    },
+    {
+      "id": "merseyrail:brunswick",
+      "name": "Brunswick",
+      "lat": 53.3835,
+      "lng": -2.9765,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:st-michaels",
+      "name": "St Michaels",
+      "lat": 53.3755,
+      "lng": -2.9495,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:aigburth",
+      "name": "Aigburth",
+      "lat": 53.3645,
+      "lng": -2.9275,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:bank-hall",
+      "name": "Bank Hall",
+      "lat": 53.4375,
+      "lng": -2.9875,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:liverpool-south-parkway",
+      "name": "Liverpool South Parkway",
+      "lat": 53.3578,
+      "lng": -2.8895,
+      "lines": ["Northern"]
+    },
+    {
+      "id": "merseyrail:birkenhead-north",
+      "name": "Birkenhead North",
+      "lat": 53.4045,
+      "lng": -3.0575,
+      "lines": ["Wirral"]
+    },
+    {
+      "id": "merseyrail:new-brighton",
+      "name": "New Brighton",
+      "lat": 53.4375,
+      "lng": -3.0495,
+      "lines": ["Wirral"]
+    },
+    {
+      "id": "merseyrail:west-kirby",
+      "name": "West Kirby",
+      "lat": 53.3735,
+      "lng": -3.1845,
+      "lines": ["Wirral"]
+    }
+  ]
+}

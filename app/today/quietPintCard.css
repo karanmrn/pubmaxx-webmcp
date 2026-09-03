@@ -1,0 +1,225 @@
+/* Styles for TodayQuietPintCard — owned by the component so /tonight can host
+   the same module without importing the whole /today page sheet. Class names
+   stay on the todayCard / quietPint idiom so /today keeps a single visual
+   language. Role tokens only. */
+
+.todayCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel-raised);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 4%, transparent),
+    0 6px 16px color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.todayCardHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.todayCardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  margin-top: 1px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel-raised));
+  color: var(--brass);
+}
+
+.todayCardEyebrow {
+  margin: 0 0 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--muted, var(--ink-soft));
+}
+
+.todayCardTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.06rem;
+  font-weight: 650;
+  line-height: var(--leading-snug, 1.35);
+  letter-spacing: var(--tracking-tight, -0.01em);
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.todayCardFootRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0;
+}
+
+.todayProvenance {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+}
+
+.todayTextButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.todayTextButton:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: var(--control-radius, 14px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .todayTextButton:hover {
+    color: var(--brass);
+  }
+}
+
+.todayProvChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--state-active-ink);
+}
+
+.quietPintList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quietPintRow {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel-raised) 60%, transparent);
+  transition:
+    border-color var(--duration-base, 0.15s) var(--ease-out),
+    background var(--duration-base, 0.15s) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quietPintRow:hover {
+    border-color: color-mix(in srgb, var(--brass) 50%, var(--line));
+  }
+}
+
+.quietPintRow:has(:active) {
+  border-color: color-mix(in srgb, var(--brass) 50%, var(--line));
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised));
+}
+
+.quietPintLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 12px 14px 8px;
+  color: inherit;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quietPintTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.quietPintName {
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.quietPintPrice {
+  flex: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.quietPintHeritage {
+  padding: 0 14px 8px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  overflow-wrap: break-word;
+}
+
+.quietPintFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 0 14px 12px;
+}
+
+.quietPintGrade,
+.quietPintEra {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel-raised);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.quietPintQuiet {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+}
+
+.quietPintSource {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quietPintSource:hover {
+    color: var(--brass);
+  }
+}

@@ -1,0 +1,137 @@
+.landmarkChapterPage {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.landmarkChapterHead {
+  margin-bottom: 20px;
+}
+
+.landmarkChapterEyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  margin: 0 0 6px;
+}
+
+.landmarkChapterTitle {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+
+.landmarkChapterPhoto {
+  margin: 0 0 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, var(--brass) 20%);
+}
+
+.landmarkChapterPhoto img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.landmarkChapterPhoto figcaption {
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  background: color-mix(in srgb, var(--panel-raised) 92%, transparent);
+}
+
+.landmarkChapterPhoto figcaption a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 1.5px;
+}
+
+.landmarkChapterHistory {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+
+.landmarkChapterSource {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.landmarkChapterActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 24px;
+}
+
+.landmarkChapterBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brass) 40%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.landmarkChapterBtnPrimary {
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent, #fdfaf2);
+  border-color: transparent;
+}
+
+.landmarkChapterSectionTitle {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+}
+
+.landmarkChapterPubList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.landmarkChapterPubList a {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+}
+
+.landmarkChapterPubDist {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.landmarkChapterFoot {
+  margin-top: 28px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}

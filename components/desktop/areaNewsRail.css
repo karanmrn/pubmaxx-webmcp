@@ -1,0 +1,61 @@
+/* "New round here" rail block. Quiet card: panel surface, soft ink, source
+   links in brass on hover. Lives only on wide viewports (hosts gate it), but
+   carries no width assumptions of its own. Both themes via tokens. */
+
+.areaNewsRail {
+  padding: 14px 16px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+/* Same sentence as the shared block's eyebrow, so it keeps sentence case here
+   too. Caps made one heading shout on the desktop rail while the phone read
+   plainly, for one string. */
+.areaNewsRailTitle {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.areaNewsRailEmpty {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.areaNewsRailList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.areaNewsRailItemTitle {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.areaNewsRailItemMeta {
+  margin: 2px 0 0;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+}
+
+.areaNewsRailItemMeta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 200ms var(--ease-out);
+}
+
+.areaNewsRailItemMeta a:hover,
+.areaNewsRailItemMeta a:focus-visible {
+  color: var(--brass);
+}

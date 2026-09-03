@@ -1,0 +1,5913 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* ────────────────────────────────────────────────────────────────────────
+   PUBMAXXING token scale — see DESIGN.md + docs/DESIGN_SYSTEM.md.
+   Light default = neutral paper with a focused coral action colour.
+   Dark overrides preserve the same semantic identity in app/theme.css.
+
+   Every token name below that already existed keeps working unchanged (35+
+   components and the map's readTokens() read these directly). New tokens are
+   additive layers — semantic roles, type/spacing/motion scales — never a
+   fork of the existing system.
+   ──────────────────────────────────────────────────────────────────────── */
+:root {
+  /* — Colour: neutral editorial paper + coral actions. */
+  --ink: #17171a;
+  --ink-soft: #3f3f46;
+  --muted: #666670; /* color-v2: nudged darker + de-warmed to a disciplined neutral — clears AA (≥4.5:1) on EVERY light surface incl. the recessed panel (~4.6:1); was #6b6b73 which dipped ~4.4:1 on the deepened well. DOM-only (map never reads --muted). */
+  --line: #dedcdf; /* KEEP at :root: the LIGHT map reads --line here (readTokens at documentElement) for its road tint — the accepted light basemap. The DOM divider is the neutral --hairline, flowed in via the body remap below (mirrors #500's html-vs-body split). */
+  --line-soft: #ece9eb;
+  /* ── Light elevation ladder (color-v2) ────────────────────────────────────
+     Page/card/overlay whites were near-identical (paper #faf8f5 → card #fffdf9
+     → overlay #fff, ~2–5 luminance apart — cards didn't lift). This defines a
+     visible-but-subtle four-step warm ladder mirroring dark's discipline from
+     #500 (each step a clear luminance move): recessed well < page < card <
+     overlay. --paper and --panel-raised are read by the LIGHT map at
+     documentElement, so their DOM values are set in the body remap below
+     (keeping these :root values as the map's accepted basemap inputs); --panel
+     and --panel-overlay are DOM-only and carry the ladder directly here. */
+  --paper: #faf8f5; /* KEEP at :root for the light map (--map-sky-horizon reads it). DOM page = #f8f2ec via body remap. */
+  --panel: #eee7df; /* recessed well — floor of the ladder, one clear step below the page (DOM-only, not map-read) */
+  --panel-raised: #fffdf9; /* KEEP at :root for the light map (donut rings). DOM card = #fdf9f4 via body remap — candle-warm near-white, never pure #fff. */
+  --panel-overlay: #ffffff; /* overlay/popover/sheet — top of the ladder, pure white + shadow (DOM-only, not map-read) */
+  --ink-deep: #0b0b0d;
+  /* Sheet material is one composited surface, not a stack of opaque cards.
+     Values derive from the locked neutral ladder; no new brand colour. */
+  --sheet-material: color-mix(in srgb, var(--panel-overlay) 88%, transparent);
+  --sheet-material-solid: var(--panel-overlay);
+  --sheet-material-border: color-mix(in srgb, var(--ink) 14%, transparent);
+  --sheet-material-shadow:
+    inset 0 1px 0 color-mix(in srgb, #ffffff 58%, transparent),
+    0 1px 2px color-mix(in srgb, var(--ink-deep) 12%, transparent),
+    0 20px 56px color-mix(in srgb, var(--ink-deep) 22%, transparent);
+
+  --pint: #18a76d; /* cheap pint / positive — Field Guide semantic */
+  --amber: #f2a71b; /* mid price / lager-gold */
+  /* Light --brick was byte-identical to --brass, so on the surface whose whole
+     argument is price, "this pint is dear" and "press this" were one colour.
+     Dark already separates them (#d47a82 against a #ff5a5f brass); light now
+     holds the same relationship from the other side — deeper and less
+     saturated, because a light basemap needs the dear band to sit BELOW the
+     paper rather than glow off it. Clears AA on every step of the light
+     elevation ladder (5.6:1 on --paper, 4.8:1 on the recessed well), so the
+     same token still carries destructive text. Read by the map at
+     documentElement (mapColor.css price buckets, mapKey.css legend swatch);
+     __tests__/mapPinBandContrast.test.ts holds the two tokens apart. */
+  --brick: #b8323c; /* expensive / destructive (price job, not Plan CTA) */
+  --brass: #ff5a5f; /* Plan CTA primary — Candle Coral (legacy name kept) */
+  /* LOGIN PRIMARY ONLY. The one place a coral fill carries a WHITE label - the
+     /login primary and the magic-link button - because --brass under white is
+     below AA and those two controls are the front door. It is not a second
+     site-wide primary: the landing hero CTA and the map's sanctioned coral
+     marks stay on --brass with dark ink (--color-on-accent), pinned by
+     __tests__/landingFindMyPintHierarchy.test.ts and mapCoralEconomy.test.ts.
+     Do not repoint another surface at it without deciding the coral economy
+     first. One value for both themes, so the ratio cannot drift with the
+     theme; the hover mix darkens toward --ink-deep for the same reason
+     (__tests__/loginPage.test.ts holds both states to 4.5:1). */
+  --brass-accessible: #d63d42; /* deepened coral: white (--color-on-photo) passes AA */
+  --brass-bright: #ff7a55; /* louder warm hover for Plan hierarchy */
+  --river: #2864d8; /* tube blue / by-water + heritage — Field Guide semantic */
+  --river-bright: #29b6f6;
+  --spritz: #ffb000;
+  --neon: #31d158;
+  --grape: #7c3aed;
+  --pink: #ff4fa3;
+  /* Dark-only accent alias (overridden in theme.css); defined here so
+     components can reference var(--night-amber) safely in both themes. */
+  --night-amber: var(--brass);
+
+  /* M4 map-only tokens — dusk/night signature look + light-theme hierarchy.
+     Overridden for dark in theme.css. Never read raw hex in map code; always
+     through readTokens()/BasemapTasteTokens. */
+  --map-sky-zenith: var(--river-bright); /* light: unchanged pale-sky look */
+  --map-sky-horizon: var(--paper); /* light: unchanged soft horizon fade */
+  --map-building-emissive: var(--amber); /* light: existing amber-tinted massing */
+  --map-park-tint: #7ea052; /* light: olive-sage foliage, distinct from --pint teal */
+  /* Crawl walk-route line — a deepened, legible cousin of coral (--brass) that
+     reads as dark red over the pale Positron paper. Overridden bright in dark. */
+  --route-line: #8b1a2b;
+
+  /* — Colour, semantic roles: alias the palette above by job, not hue, so new
+       components reach for "what this means" rather than re-picking a raw
+       colour. These are pure aliases — change the palette above, everything
+       here (and everything built on it) follows. */
+  --color-accent: var(--brass); /* Plan CTA accent - coral in both themes */
+  --color-accent-strong: var(--brass-bright);
+  --color-positive: var(--pint); /* cheap pint */
+  --color-caution: var(--amber); /* mid price */
+  --color-negative: var(--brick); /* expensive / destructive */
+  --color-info: var(--river); /* heritage / by-water */
+  --color-info-strong: var(--river-bright);
+  --color-surface: var(--paper); /* page base */
+  --color-surface-panel: var(--panel); /* recessed panel */
+  --color-surface-raised: var(--panel-raised); /* cards, inputs */
+  --color-surface-overlay: var(--panel-overlay); /* 4th elevation step: popovers, floating panels */
+  --color-surface-inverse: var(--ink-deep); /* brand-mark / stamp-dark chrome */
+  --color-text: var(--ink);
+  --color-text-soft: var(--ink-soft);
+  --color-text-muted: var(--muted);
+  --input-placeholder: var(--muted);
+  --color-border: var(--line);
+  --color-border-soft: var(--line-soft);
+
+  /* ── Accent role discipline (token-system-v2) ─────────────────────────────
+     The taste audit found one accent — coral (--brass) — doing every job at
+     once: CTA, price, active pill, link, badge, count. When one colour means
+     everything it means nothing, and the UI reads as generic. These role
+     tokens SPLIT those jobs so each has its own voice, and they are pure
+     additive aliases over the palette above (change the palette, these
+     follow). Migrating a consumer is a one-line swap from a raw hue to the
+     role it actually plays — breadth without per-component rewrites.
+
+       --accent-action  → the ONE loud accent. CTAs / Plan only.
+       --accent-price   → the pub's brass-plaque heritage. Prices, not coral.
+       --state-active-* → "you are here", quieter than a CTA.
+       --badge-*        → neutral-strong. Counts + metadata, not accent.
+       --hairline*      → one divider vocabulary. */
+
+  /* Primary action - coral in both themes. This is the only place the
+     loud accent is licensed to appear at full strength. */
+  --accent-action: var(--brass);
+  --accent-action-strong: var(--brass-bright);
+
+  /* Price — lager-gold / brass, the pub's own heritage metal. Prices read as
+     engraved brass plaques (see .price-plaque), never coral price-alerts.
+     Amber is full-chroma in both themes, so this role is theme-stable. */
+  --accent-price: var(--amber);
+  --accent-price-ink: color-mix(in srgb, var(--amber) 52%, var(--ink));
+  --price-plaque-surface: color-mix(in srgb, var(--amber) 11%, var(--panel-raised));
+  --price-plaque-border: color-mix(in srgb, var(--amber) 46%, var(--line));
+  --price-plaque-shine: inset 0 1px 0 color-mix(in srgb, #ffffff 42%, transparent);
+
+  /* Active / selected — a low-chroma accent tint + accent hairline. "You are
+     here" should whisper; only the CTA fill shouts. */
+  --state-active-surface: color-mix(in srgb, var(--brass) 9%, var(--panel-raised));
+  --state-active-border: color-mix(in srgb, var(--brass) 36%, var(--line));
+  --state-active-ink: color-mix(in srgb, var(--brass) 52%, var(--ink));
+
+  /* Badge / count — neutral-strong. Counts, tallies and metadata pills read as
+     confident ink chrome, not as an accent competing with the CTA. */
+  --badge-surface: color-mix(in srgb, var(--ink) 6%, var(--panel-raised));
+  --badge-border: color-mix(in srgb, var(--ink) 15%, var(--line));
+  --badge-ink: var(--ink-soft);
+
+  /* Hairline system (signature) — one divider vocabulary across the app so
+     edges read as a deliberate system, not per-component guesses.
+       --hairline         standard divider / card edge
+       --hairline-strong  structural edge (section / toolbar boundaries) */
+  /* color-v2: light gets its OWN dedicated neutral hairline (was `var(--line)`,
+     which carried a faint purple cast AND was the map's road-tint value). This
+     de-tints the divider to a disciplined cool-neutral gray and calibrates it to
+     x.com's light structural-edge reference (#eff3f4 on white ≈ 1.12:1): #e2e0e3
+     lands ~1.16:1 on the page and ~1.23:1 on a card — present but calm. The body
+     remap below points DOM --line at this, so cards/nav/chips inherit the neutral
+     edge while the map keeps #dedcdf at documentElement (basemap untouched). */
+  --hairline: #e2e0e3;
+  --hairline-strong: color-mix(in srgb, var(--hairline) 68%, var(--ink-soft) 32%);
+
+  /* Contrast text: for content sitting on an accent fill or gradient
+     (buttons, chips, photo captions), not a page surface. Brass is the same
+     coral in both themes, and cream on that coral measured 2.9:1 (July and
+     August audits), so text on brass is the fixed dark ink in both themes —
+     DESIGN.md's "fixed dark label ink for AA contrast". Inverse, strong-accent
+     and photo fills keep their own fixed text colours. */
+  --color-on-accent: var(--color-on-accent-strong); /* dark ink on regular brass */
+  --color-on-inverse: #fdfaf2; /* cream text on solid ink-deep */
+  --color-on-accent-strong: #16122a; /* dark text on coral or bright accent */
+  --color-on-photo: #ffffff; /* white text on a photo-scrim overlay */
+
+  /* — Type: display + body + data trio (wired via next/font in app/layout.tsx).
+       Each var falls back to a system stack so the tokens degrade gracefully
+       if a font fails to load. Display is Space Grotesk — a modern geometric
+       grotesque with a big x-height (see docs/DESIGN_SYSTEM.md). --serif is
+       kept as a legacy alias so every component that already reads var(--serif)
+       picks up the new display face for free (the name is historical — it is a
+       sans now, not a serif — but renaming ~40 call-sites buys nothing). */
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --serif: var(--font-display);
+
+  /* — Type scale: a deliberate step system (~1.22 ratio) rather than ad-hoc
+       rem values. Existing components keep their own literal sizes (unchanged
+       per-component); new work should reach for these.
+       --text-2xs is defined ONCE here (0.68rem). The only redefinition is the
+       scoped html[data-legacy="1"] a11y bump below — never a second root value. */
+  --text-2xs: 0.68rem;
+  --text-xs: 0.76rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-md: 1.16rem;
+  --text-lg: 1.42rem;
+  --text-xl: 1.74rem;
+  --text-2xl: 2.13rem;
+  --text-3xl: 2.6rem;
+  --leading-tight: 1.12;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --tracking-tight: -0.01em;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.08em;
+
+  /* — Page gutter: the single horizontal breathing room every page shell puts
+       between its body text/headings and the screen edge. One token so no page
+       can drift back to a cramped ad-hoc value, and so notch-edge devices get
+       extra room automatically.
+         · clamp(22px, 5vw, 32px): at a 390px phone → 22px (comfortably off the
+           glass even under the big hero letters, not wasteful); grows to 32px on
+           wide phones/tablets, capped so desktop max-width containers are
+           unaffected.
+         · max(…, env(safe-area-inset-*)): on notch/rounded-corner devices the
+           gutter never dips below the safe-area inset, so landscape + curved
+           glass never clip text. Falls back to 0px where env() is unsupported,
+           leaving the clamp() in charge. */
+  --page-gutter: max(clamp(22px, 5vw, 32px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+
+  /* — Content width: two shared max-widths so the reading column stops changing
+       from route to route (desktop audit found six competing values: today 640,
+       feed 620, crawls 640/760, moment 650, landing 1240, profile ~1280).
+         --content-max       reading column — prose/cards/single-column routes.
+                             640px matches the dominant pattern (today, crawls,
+                             moment, ≈feed): adopt on /tonight, /feed, crawl and
+                             moment pages, profile's text column.
+         --content-max-wide  wide page compositions that intentionally run
+                             wider: landing page, profile shell, /near,
+                             /we-are-out, and any hero/gallery grid.
+       Per-page CSS adopts these tokens as each surface receives its intended
+       composition; existing literal paddings remain untouched. New work should
+       reach for these instead of a literal. */
+  --content-max: 640px;
+  --content-max-wide: 1240px;
+
+  /* — Spacing scale: 4px base, used for new work; existing literal paddings
+       are untouched. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* — Radius: D6 commits to the crisp/engineered register — --radius 10→8,
+       --radius-sm 7→6 (Resy 4px / Linear 2px precision over the mushy middle).
+       --radius-lg 18px (sheets/drawers) and --radius-pill (CTAs) hold their
+       geometry: pills keep the Citymapper "Go" confidence, sheets stay soft. */
+  --radius: 8px;
+  --radius-sm: 6px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  /* — Control radius (owner ruling 2026-07-23): the text-button / CTA / control-
+       chip family moves off the pill and onto the top bar's 14px rectangle card
+       language (--topbar-radius, siteNav.css) — "more rectangular like the top
+       menu bar, more elegant". Icon dots (close X, FAB, avatar), tab-group chips,
+       the bottom tab bar and descriptive label/status pills keep their geometry;
+       this token only re-bases text buttons/CTAs/control chips. Consumed as
+       var(--control-radius, 14px) so routes that don't load this sheet still land
+       on the same value. */
+  --control-radius: 14px;
+
+  /* — Shadow: --shadow kept as the default (paper-lift in light, overridden to
+       a deeper candle-glow in theme.css dark). --shadow-inset-* power the
+       pressed-ink utility below and are shared by both themes. */
+  --shadow: 0 18px 45px rgba(60, 30, 20, 0.11), 0 8px 18px rgba(255, 90, 95, 0.07);
+  --shadow-sm: 0 7px 18px rgba(60, 30, 20, 0.09);
+  --shadow-float: var(--shadow); /* chrome floating over the map (arc chips, arrival banner); follows the theme.css dark --shadow override */
+  --shadow-inset-press: inset 0 1px 2px rgba(22, 18, 42, 0.28), inset 0 -1px 0 rgba(255, 255, 255, 0.55);
+
+  /* — Motion: durations + easings, all consumed behind prefers-reduced-motion
+       guards (existing guards in this file and theme.css are unchanged; new
+       animation should reach for these instead of inlining numbers). */
+  --duration-fast: 0.12s;
+  --duration-base: 0.15s;
+  --duration-slow: 0.28s;
+  --duration-ambient: 1.4s;
+  --duration-pal-gaze: 6.5s;
+  --duration-pal-idle: 7.2s;
+  --duration-press: 0.13s; /* button press-in / release */
+  --ease-standard: ease;
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Stronger, more intentional curves (Emil Kowalski / Apple fluid-motion).
+     The built-in-style --ease-out above is deliberately kept for gentle colour
+     fades; reach for these for entrances, on-screen movement, and sheets so the
+     motion has punch instead of feeling like a default transition. */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1); /* entrances / UI feedback — starts fast */
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1); /* on-screen morph / reposition */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1); /* iOS-like sheet / drawer travel */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* subtle overshoot — momentum entrances only */
+  --ease-weighted: cubic-bezier(0.22, 1, 0.36, 1); /* damped physical settle (cinema house curve) — mirrors motionEase.weighted in lib/motionVocabulary.ts */
+  --duration-cinema-settle: 480ms; /* hero-cinema state-change settle — mirrors motionDuration.cinemaSettle in lib/motionVocabulary.ts; never for the scroll-scrubbed transform */
+  --duration-lift: 0.18s; /* hover lift / colour transitions (landing buttons, hero pins) */
+  --duration-entrance: 640ms; /* staggered element entrance (landing hero pins) */
+  /* Ambient atmosphere presence (landing orbit drift / scanline breathe):
+     slow decorative loops, always gated on prefers-reduced-motion. */
+  --duration-drift: 22s;
+  --duration-drift-slow: 28s;
+  --duration-breathe: 7s;
+  --press-scale: 0.97; /* default pressed scale — subtle, "the UI heard you" */
+  --press-scale-firm: 0.94; /* small icon buttons can press a touch firmer */
+
+  /* — Pressed-ink / bar-mat tactility: one shared token set for the price
+     stamp, provenance chips, and vibe tags (see .ink-stamp below). Kept
+       deliberately restrained — brass is the only accent colour it uses. */
+  --ink-stamp-border: 1.5px solid var(--brass);
+  --ink-stamp-radius: 6px;
+  --ink-stamp-tilt: -1.5deg;
+  --ink-stamp-shadow: var(--shadow-inset-press);
+
+  /* — Z-index scale: one semantic ladder so stacking is reasoned about by ROLE.
+       Each token keeps the exact numeric value already in use, so adopting it is
+       a behaviour-preserving 1:1 swap (no stacking-order change). New chrome
+       should reach for the nearest role token instead of picking a fresh magic
+       number. Migrated from ~25 scattered literals — see
+       docs/CODE_HEALTH_REMEDIATION.md. */
+  --z-float: 50;             /* floating page controls: theme/legacy toggle, landing topbar */
+  --z-backdrop: 80;          /* auth claim-night full-screen backdrop */
+  --z-map-base: 450;         /* lowest map overlay: mapLegend, mapHeroCard */
+  --z-map-poi: 455;          /* POI category toggles */
+  --z-map-controls: 456;     /* placeStoriesControl, bandPicker */
+  --z-map-cards: 460;        /* poiLabelCard, landmarkCard */
+  --z-map-hover: 470;        /* venueHoverCard + map price/layers FABs */
+  --z-map-panel: 500;        /* routePanel, mapDrawer */
+  --z-map-suggest: 512;      /* citySuggestBanner — below cityStatusBanner, as on main */
+  --z-map-ask: 514;          /* mapConciergeAsk pill — above the Tonight lane (512), below cityStatusBanner */
+  --z-map-banner: 515;       /* cityStatusBanner */
+  --z-map-camera: 530;       /* mapCameraControls */
+  --z-map-route-chip: 540;   /* mappedRouteChip — below activeRoundChip, as on main */
+  --z-map-chip: 541;         /* activeRoundChip */
+  --z-map-onboard-chip: 545; /* bandOnboardingChip, logIntentFallback */
+  --z-map-toolbar: 560;      /* mapToolbar, citySwitcher */
+  --z-night-card: 640;       /* nightCard fixed sheet — above map chrome, below planning drawer (650) and tab bar (700) */
+  --z-nav: 650;              /* planning-open drawer lift */
+  --z-tabbar: 1350;          /* mobile bottom tab bar (above map sheets, below modals) */
+  --z-float-action: 1290;    /* floating create action — BELOW the map sheet portal (1300), so an open sheet is never painted over */
+  --z-modal: 1200;           /* siteNav floating rails, full-screen overlays */
+  --z-overlay-top: 1300;     /* map onboarding — topmost transient overlay */
+  --z-splash: 1400;          /* aperture splash - pre-paint full-viewport takeover, above everything */
+
+  /* — Spill (always-dark) palette: the "spilling right now" / spill-composer
+       surfaces stay dark in BOTH themes by design. One shared token set so
+       feed.css + spillComposer.css can't drift (was hardcoded #0c0b08 in both). */
+  --spill-surface: #0c0b08;
+  --spill-veil: rgba(12, 11, 8, 0.72);
+  --spill-veil-strong: rgba(12, 11, 8, 0.78);
+
+  /* Theme-coherent card tints: a raised surface warmed slightly toward an
+     accent, used for gradient end-stops that must not go bright-cream in the
+     dark theme (color-mix tracks --panel-raised, so it always sits in the
+     current theme's tonal range). */
+  --surface-tint-river: color-mix(in srgb, var(--panel-raised) 86%, var(--river) 14%);
+  --surface-tint-brass: color-mix(in srgb, var(--panel-raised) 84%, var(--brass) 16%);
+  --surface-tint-pint: color-mix(in srgb, var(--panel-raised) 86%, var(--pint) 14%);
+  --surface-tint-lager: color-mix(in srgb, var(--panel-raised) 84%, var(--amber) 16%);
+  /* Page wash — was three tri-colour radial blobs (coral + blue + green) that
+     read as generic "AI gradient" spray. Replaced with a single soft light
+     falling from above onto warm candle paper: candle warmth, zero colour
+     spray. Dark keeps its own neutral ramp (theme.css). */
+  --gradient-party:
+    radial-gradient(150% 100% at 50% -25%, color-mix(in srgb, var(--paper) 80%, #ffffff 20%) 0%, transparent 62%),
+    var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ── Pressed-ink / bar-mat utility ──────────────────────────────────────────
+   One shared treatment for anything that should read as "stamped" rather
+   than merely styled: the repeated price signature, passport seals,
+   provenance chips, and achievements. Generic numeric badges stay plain.
+   Apply `.ink-stamp` alongside a component's existing class — it only adds
+   the shared border/shadow/tilt/type, it never resets layout (display,
+   padding, colour stay owned by the component's own class).
+
+   API for other agents/components to adopt:
+     .ink-stamp        — base treatment: brass hairline border, inset
+                          "pressed" shadow, data face, tabular numerals.
+     .ink-stamp--tilt   — adds the signature -1.5deg press tilt. Reserved for
+                          prices, so only the figure leans.
+     .ink-stamp--flat   — same border/shadow, no data face (for chips whose
+                          copy is words, not numbers, e.g. provenance/vibe).
+   Existing .provChip / .vibeChip classes are untouched; this is additive so
+   artifact chips can opt in with a single extra class. */
+.ink-stamp {
+  border: var(--ink-stamp-border);
+  border-radius: var(--ink-stamp-radius);
+  box-shadow: var(--ink-stamp-shadow);
+  font-family: var(--font-data);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ink-stamp--flat {
+  font-family: var(--font-body);
+  font-variant-numeric: normal;
+}
+
+.ink-stamp--tilt {
+  transform: rotate(var(--ink-stamp-tilt));
+}
+
+body {
+  margin: 0;
+  background: var(--gradient-party);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+/* ── Light DOM surface remap (color-v2) ─────────────────────────────────────
+   The SAME html-vs-body split #500 introduced for dark, now applied to light.
+   The light basemap (accepted) is painted from tokens the map reads at
+   documentElement — components/map/canvas/tokens.ts readTokens() pulls --paper,
+   --panel-raised, --line (+ --ink, --ink-deep) from the html node. Those stay at
+   their :root values so the basemap is byte-identical. Everything the DOM paints
+   lives UNDER <body>, so re-pointing these three here gives the DOM the visible
+   elevation ladder + neutral hairline without repainting one map pixel. Scoped
+   `:not([data-theme="dark"])` so it never touches dark (theme.css sets the dark
+   values at html[data-theme="dark"], and its own `body` rule handles dark --line).
+     DOM ladder (luminance): panel #eee7df < paper #f8f2ec < card #fdf9f4 < overlay #fff. */
+html:not([data-theme="dark"]) body {
+  --paper: #f8f2ec; /* page — warm floor, deepened so cards visibly lift (map keeps #faf8f5 at html) */
+  --panel-raised: #fdf9f4; /* card — clean candle-warm near-white, a clear step above the page (map keeps #fffdf9 at html) */
+  --line: var(--hairline); /* DOM divider = the neutral --hairline; map keeps #dedcdf road tint at html */
+}
+
+/* Data/tabular utility — price stamps, stats, route metrics, and any other
+   numeric readout. Opt-in (existing components already set their own
+   font-variant-numeric: tabular-nums; this adds the mono data face on top
+   for anything migrating to the full "stamped ticket" look). */
+.font-data,
+.tabular-data {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Price plaque (signature move) ─────────────────────────────────────────
+   The pub's brass-plaque heritage made literal: prices and headline data sit
+   on an engraved lager-gold plate — mono face, tabular figures, a warm brass
+   hairline and a hair of top shine — instead of borrowing the coral action
+   colour. This is the ONE place the amber/brass metal treatment lives, so a
+   price never reads as a coral alert. Opt in with class="price-plaque"; the
+   PriceBadge resolves every price variant to these tokens. */
+.price-plaque {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--accent-price-ink);
+  background: var(--price-plaque-surface);
+  border: 1px solid var(--price-plaque-border);
+  border-radius: var(--ink-stamp-radius);
+  box-shadow: var(--price-plaque-shine), var(--ink-stamp-shadow);
+}
+
+/* ── Typographic hierarchy (3 levels) ──────────────────────────────────────
+   Outside prices the audit found nearly everything one weight of the same
+   grey. These three role classes give a clear section → card → meta ladder
+   using the loaded stack (Space Grotesk display, Inter body): a display
+   section title, a tighter card title, and quiet tracked meta. Additive
+   utilities so components can adopt the ladder one node at a time. */
+.type-section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.type-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.type-meta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  color: var(--muted);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:where(input, textarea, select) {
+  /* iOS zooms text controls below 16px. Keep this floor shared so route
+     styles cannot make one mobile form behave differently from another.
+     `!important` is load-bearing: this selector has zero specificity, so a
+     single component rule would otherwise win and that one surface would zoom
+     again. Restored after #1049 deleted it; __tests__/iosFormZoomFloor.test.ts
+     is the fence. */
+  font-size: max(16px, 1em) !important;
+}
+
+button {
+  cursor: pointer;
+}
+
+:where(button, [role="button"], .pressable, a[data-pressable], .planBtn) {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+:where(button, a, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Global press feedback ────────────────────────────────────────────────
+   "The interface heard you." Every pressable primitive dips a hair on press
+   and springs back on release (Emil Kowalski: buttons must feel responsive;
+   Apple: respond on pointer-down, not on release). Scale is a floor, not a
+   ceiling, and composes with positioning transforms. Gated behind no-preference
+   so reduced-motion users get zero movement. Opt out per element with
+   [data-no-press]; opt IN a link/label/row with class="pressable". */
+@layer base {
+  button,
+  [role="button"]:not([aria-disabled="true"]),
+  .planBtn,
+  a[data-pressable],
+  .pressable {
+    touch-action: manipulation;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :where(
+      button:not([data-no-press]):not(:disabled),
+      [role="button"]:not([data-no-press]):not([aria-disabled="true"]),
+      .planBtn:not([data-no-press]),
+      a[data-pressable],
+      .pressable
+    ) {
+      transition: scale var(--duration-press) var(--ease-out-strong);
+    }
+    button:not([data-no-press]):not(:disabled):active,
+    [role="button"]:not([data-no-press]):not([aria-disabled="true"]):active,
+    .planBtn:not([data-no-press]):active,
+    a[data-pressable]:active,
+    .pressable:active {
+      scale: var(--shared-press-scale, var(--press-scale));
+    }
+  }
+}
+
+.loadingShell {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  background-image: radial-gradient(color-mix(in srgb, var(--brass) 8%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+  text-align: center;
+}
+
+.loadingShell .eyebrow {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.loadingShell h1 {
+  margin: 6px 0 0;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Map-first shell: the map fills the viewport; planner + detail are overlay
+   drawers that slide in over it (see .mapDrawer). No grid — the map is never
+   boxed into a column. */
+.appShell {
+  /* Desktop stacks Tonight arc below nav, then search toolbar. The previous
+     92px offset covered the venue-kind chip rail that starts at 80px. */
+  --map-top-clearance: 159px;
+  --map-overlay-top: 108px;
+  --mobile-tab-clearance: calc(58px + env(safe-area-inset-bottom, 0px));
+  --map-overlay-shadow: 0 12px 28px rgba(44, 30, 62, 0.14);
+  --map-overlay-shadow-tight: 0 8px 18px rgba(44, 30, 62, 0.12);
+  /* Shared geometry for the floating Home bar + Search/Plan toolbar so they
+     align as matching chrome cards on phone/tablet map. */
+  --map-chrome-inset: 10px;
+  --map-chrome-radius: 14px;
+  --map-chrome-gap: 6px;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.siteNav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+  border-radius: var(--radius-pill);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--panel-raised) 92%, transparent), color-mix(in srgb, var(--surface-tint-river) 82%, transparent));
+  box-shadow: 0 14px 34px rgba(44, 30, 62, 0.14), 0 5px 18px rgba(255, 90, 95, 0.08);
+}
+
+.siteNav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.siteNav a:hover {
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.siteNav a[aria-current="page"] {
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--brass) 28%, transparent);
+}
+
+.demoDataNote {
+  display: grid;
+  gap: 3px;
+  margin: 8px 0 10px;
+  padding: 9px 10px;
+  border: 1px solid color-mix(in srgb, var(--brass) 32%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 9%, transparent);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.demoDataNote span {
+  color: var(--brass);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.controlRail,
+.routePanel {
+  z-index: var(--z-map-panel);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-tint-brass) 44%, var(--panel) 56%) 0%, var(--panel) 34%),
+    var(--panel);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.controlRail {
+  border-right: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+  padding: 20px;
+  box-shadow: inset -4px 0 0 color-mix(in srgb, var(--brass) 22%, transparent);
+}
+
+.routePanel {
+  border-left: 1px solid color-mix(in srgb, var(--line) 70%, var(--river) 30%);
+  padding: 20px;
+  box-shadow: inset 4px 0 0 color-mix(in srgb, var(--river) 20%, transparent);
+}
+
+.brandBlock,
+.routeHeader,
+.sectionTitle,
+.inspectorTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandBlock {
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.brandMark {
+  width: 44px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--brass), var(--river));
+  /* Cream, not on-accent: the river end of this gradient is a mid blue that
+     dark ink fails against. On-inverse is the fixed cream for dark fills. */
+  color: var(--color-on-inverse);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--brass);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* Display face (Space Grotesk, variable) — explicit weight so headings carry a
+   confident 600, not the light 400 default a variable font falls to when no
+   weight is set. Space Grotesk's big x-height keeps caps and lowercase close in
+   size, so headings read modern and calm rather than shouty. The negative
+   tracking tightens its geometric forms at display sizes. Weight lives in the
+   `font-weight` property (never font-variation-settings, which would clobber
+   the property and defeat per-element weight). */
+h1 {
+  margin-bottom: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.24rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  margin-bottom: 6px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.16rem;
+  letter-spacing: -0.005em;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 12px;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--river) 30%);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--panel-raised) 94%, var(--surface-tint-river) 6%);
+  color: var(--muted);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.searchBox:focus-within {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brass) 18%, transparent);
+}
+
+/* The house search field (components/ui/search-field.tsx) is ONE control, so it
+   wears one focus ring: the label's. These two rules live here rather than as
+   utility classes on the input because each has to beat a rule it cannot
+   outrank from there — the global :focus-visible outline above, and the UA's
+   own cancel glyph. Both defects were visible: a focused field drew a ring
+   inside its own ring, and a second X sat beside the labelled Clear search. */
+.houseSearchField input[type="search"]:focus-visible {
+  outline: none;
+}
+
+.houseSearchField input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.searchBox input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.panelSection {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.sectionTitle,
+.inspectorTitle {
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 12px;
+}
+
+.sectionTitle > svg,
+.inspectorTitle > svg {
+  color: var(--brass);
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.segmented button {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-weight: 600;
+  transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.segmented button:hover {
+  border-color: var(--brass);
+}
+
+.segmented button.selected {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--brass) 24%, transparent);
+}
+
+.featuredHint {
+  margin: -4px 0 12px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.featuredList {
+  display: grid;
+  gap: 8px;
+}
+
+.featuredCrawl {
+  display: grid;
+  gap: 4px;
+  padding: 11px 12px;
+  text-align: left;
+  border: 1px solid color-mix(in srgb, var(--line) 78%, var(--brass) 22%);
+  border-left: 4px solid var(--brass);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--brass) 8%, var(--panel-raised)), var(--panel-raised) 58%),
+    var(--panel-raised);
+  color: var(--ink);
+  transition: transform 0.12s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.featuredCrawl[data-crawl-style="heritage"],
+.featuredCrawl[data-crawl-style="writerTrail"] {
+  border-color: color-mix(in srgb, var(--line) 72%, var(--river) 28%);
+  border-left-color: var(--river);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--river) 10%, var(--panel-raised)), var(--panel-raised) 62%),
+    var(--panel-raised);
+}
+
+.featuredCrawl[data-crawl-style="beerGarden"] {
+  border-color: color-mix(in srgb, var(--line) 72%, var(--pint) 28%);
+  border-left-color: var(--pint);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--pint) 10%, var(--panel-raised)), var(--panel-raised) 62%),
+    var(--panel-raised);
+}
+
+.featuredCrawl[data-crawl-style="heritage"] .featuredCount,
+.featuredCrawl[data-crawl-style="writerTrail"] .featuredCount {
+  color: var(--river);
+}
+
+.featuredCrawl[data-crawl-style="beerGarden"] .featuredCount {
+  color: var(--pint);
+}
+
+.featuredCrawl[data-crawl-style="heritage"] .featuredMapCta,
+.featuredCrawl[data-crawl-style="writerTrail"] .featuredMapCta {
+  background: color-mix(in srgb, var(--river) 14%, var(--panel-raised));
+  color: var(--river);
+}
+
+.featuredCrawl[data-crawl-style="beerGarden"] .featuredMapCta {
+  background: color-mix(in srgb, var(--pint) 14%, var(--panel-raised));
+  color: var(--pint);
+}
+
+.featuredCrawl:hover {
+  border-color: var(--brass);
+  border-left-color: var(--brass-bright);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.featuredCrawl[data-crawl-style="heritage"]:hover,
+.featuredCrawl[data-crawl-style="writerTrail"]:hover {
+  border-color: var(--river);
+  border-left-color: var(--river-bright);
+}
+
+.featuredCrawl[data-crawl-style="beerGarden"]:hover {
+  border-color: var(--pint);
+  border-left-color: color-mix(in srgb, var(--pint) 70%, white);
+}
+
+.featuredCrawl:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.featuredCrawlHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.featuredCrawlHead strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.featuredMapCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: start;
+  min-height: 28px;
+  margin-top: 2px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--river) 12%, var(--panel-raised));
+  color: var(--river);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.featuredCount {
+  flex: none;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--brass);
+}
+
+.featuredBlurb {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.rangeLine {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.rangeLine strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--brass);
+  margin-bottom: 14px;
+}
+
+.toggles {
+  display: grid;
+  gap: 4px;
+}
+
+.toggles label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 7px 8px;
+  margin: 0 -8px;
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-size: 0.92rem;
+  transition: background 0.12s ease;
+}
+
+.toggles label:hover {
+  background: color-mix(in srgb, var(--brass) 8%, transparent);
+}
+
+.toggles input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--pint);
+}
+
+.statsGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.statsGrid div,
+.routeMetrics div {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+}
+
+.statsGrid span,
+.routeMetrics small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.statsGrid strong {
+  font-size: 1.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The map is the full-bleed base layer; drawers and toolbar sit above it. */
+.mapStage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mapResumeUpdating {
+  position: absolute;
+  top: var(--map-overlay-top, 12px);
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%);
+  padding: 5px 9px;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel-raised) 88%, transparent);
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  pointer-events: none;
+}
+
+.mapCanvasWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Dynamic PubMapCanvas loading plate — full-bleed, map-shaped, no text so the
+   parent .mapLoading chrome (pitched-London skeleton) remains the only status
+   UI. Dark basemap ink keeps CLS at 0 when the WebGL canvas mounts over it. */
+.mapCanvasSkeleton {
+  background: var(--ink-deep, #090806);
+  min-height: 100%;
+}
+[data-theme="light"] .mapCanvasSkeleton {
+  /* Liberty/Positron-adjacent paper so light theme handoff is continuous. */
+  background: color-mix(in srgb, var(--paper, #faf8f5) 88%, var(--river, #5a7a8c) 12%);
+}
+
+.mapCameraControls {
+  position: absolute;
+  top: var(--map-overlay-top);
+  right: 10px;
+  z-index: var(--z-map-camera);
+  display: grid;
+  gap: 6px;
+  justify-items: end;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.mapFitLondonBtn,
+.mapRecenterBtn,
+.mapCompassBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  box-shadow: var(--map-overlay-shadow-tight);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.mapFitLondonBtn:hover,
+.mapRecenterBtn:not(:disabled):hover,
+.mapCompassBtn:hover {
+  border-color: var(--ink-soft);
+  background: var(--panel);
+  color: var(--ink);
+}
+
+.mapFitLondonBtn:focus-visible,
+.mapRecenterBtn:focus-visible,
+.mapCompassBtn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--river);
+}
+
+.mapCompassBtn svg {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.mapRecenterBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.appShell.sheet-full .mapCameraControls,
+.appShell.onboarding-open .mapCameraControls {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+
+.mappedRouteChip {
+  position: absolute;
+  left: 50%;
+  bottom: 82px;
+  z-index: var(--z-map-route-chip);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 9px 10px 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 38%, var(--line));
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-tint-lager) 40%, var(--panel-raised)), var(--panel-raised));
+  color: var(--ink);
+  box-shadow: var(--map-overlay-shadow);
+  transform: translateX(-50%);
+}
+
+.mappedRouteChip > svg {
+  flex: 0 0 auto;
+  color: var(--brass);
+}
+
+.mappedRouteChip div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mappedRouteChip strong,
+.mappedRouteChip span {
+  white-space: nowrap;
+}
+
+.mappedRouteChip strong {
+  font-size: 0.82rem;
+}
+
+.mappedRouteChip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.mappedRouteChip button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.mappedRouteChip button:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+/* G3 — Place story deep-link onboarding chip (mirrors mappedRouteChip chrome). */
+.bandOnboardingChip {
+  position: absolute;
+  left: 50%;
+  bottom: 82px;
+  z-index: var(--z-map-onboard-chip);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 9px 10px 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--brass) 38%, var(--line));
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--panel-raised) 94%, transparent), color-mix(in srgb, var(--surface-tint-lager) 62%, transparent)),
+    color-mix(in srgb, var(--panel-raised) 90%, transparent);
+  color: var(--ink);
+  box-shadow: var(--map-overlay-shadow);
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  transform: translateX(-50%);
+}
+
+.bandOnboardingChip div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.bandOnboardingChip strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bandOnboardingChip strong {
+  font-size: 0.82rem;
+}
+
+.bandOnboardingChip span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.bandOnboardingChip button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 32px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.bandOnboardingChip button:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+/* ── Map-first overlays: floating toolbar + sliding drawers ─────────────────*/
+.mapToolbar {
+  position: absolute;
+  top: var(--map-top-clearance);
+  left: 50%;
+  transform: translateX(-50%);
+  /* Above camera controls (530) + city-suggest banner so the city dropdown
+     stays tappable on the right edge of the toolbar. */
+  z-index: var(--z-map-toolbar);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 32px);
+  padding: 7px 8px;
+  border: 1px solid color-mix(in srgb, var(--line) 72%, var(--river) 28%);
+  border-radius: 999px;
+  /* Wave J2 — solid raised panel + soft shadow; less frosted glass over the map. */
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-tint-river) 35%, var(--panel-raised)), var(--panel-raised));
+  box-shadow: var(--map-overlay-shadow);
+}
+
+.mapToolbarSearch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  color: var(--muted);
+}
+
+.mapToolbarSearch input {
+  border: 0;
+  background: transparent;
+  outline: none;
+  color: var(--ink);
+  font-size: 0.85rem;
+  min-width: 168px;
+  min-height: 44px;
+}
+
+.mapToolbarClear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.mapToolbarClear:hover {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mapToolbarClear {
+    transition:
+      color var(--duration-base) var(--ease-out),
+      transform var(--duration-press) var(--ease-out);
+  }
+  .mapToolbarClear:active {
+    transform: scale(0.97);
+    --shared-press-scale: 1;
+  }
+}
+
+.planBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent-strong);
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  /* Louder than Drinks — primary Plan an outing CTA in map chrome.
+     D3: layered micro-shadow stack (Linear's crafted-button depth). */
+  box-shadow: var(--shadow-btn);
+  box-sizing: border-box;
+}
+
+.planBtn:hover {
+  box-shadow: var(--shadow-btn-hover);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .planBtn {
+    transition:
+      box-shadow var(--duration-base) var(--ease-out),
+      transform var(--duration-press) var(--ease-out);
+  }
+  .planBtn:active {
+    transform: scale(0.97);
+    --shared-press-scale: 1;
+  }
+}
+
+.planBtn.active {
+  background: linear-gradient(135deg, var(--ink-deep), color-mix(in srgb, var(--ink-deep) 70%, var(--river)));
+  color: var(--color-on-inverse);
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--ink-deep) 28%, transparent);
+}
+
+.mapDrawer {
+  position: absolute;
+  top: var(--map-top-clearance);
+  bottom: 0;
+  z-index: var(--z-map-panel);
+  width: 376px;
+  max-width: 92vw;
+  background: var(--sheet-material);
+  box-shadow: var(--sheet-material-shadow);
+  /* PREFIX FIRST, STANDARD LAST, and it is not a style preference. The CSS
+     minifier treats the two as one logical property and keeps whichever is
+     declared LAST, so the old standard-then-prefix order shipped a rule with
+     only `-webkit-backdrop-filter` in it. Chrome no longer honours that alias,
+     so this sheet went out over the map at 82% opacity with NO blur: road
+     lines, pins and the map's own place labels read straight through a panel
+     of prices. Tailwind's own backdrop utilities in the same bundle survive
+     because they are written in this order. */
+  -webkit-backdrop-filter: blur(20px) saturate(1.08);
+  backdrop-filter: blur(20px) saturate(1.08);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  /* iOS-like drawer travel — a sheet sliding in from the edge reads best on the
+     Ionic/Vaul curve, not the gentle Material ease. */
+  transition: transform var(--duration-slow) var(--ease-drawer);
+  will-change: auto;
+}
+
+.mapDrawer.left {
+  left: 0;
+  border-right: 1px solid var(--sheet-material-border);
+  transform: translateX(-100%);
+}
+
+.mapDrawer.right {
+  right: 0;
+  border-left: 1px solid var(--sheet-material-border);
+  transform: translateX(100%);
+}
+
+.mapDrawer.left.open,
+.mapDrawer.right.open {
+  transform: translateX(0);
+  will-change: transform;
+}
+
+/* Desktop map chrome needs one measured source for the planner lane. The
+   drawer's rendered width is 376px at this breakpoint; toolbar and banners
+   consume this variable so their free-lane geometry cannot drift from it. */
+@media (min-width: 1024px) {
+  .appShell {
+    --desktop-planner-rail-width: 376px;
+  }
+
+  .mapDrawer.left {
+    width: var(--desktop-planner-rail-width);
+  }
+}
+
+/* React owns spring presentation through this variable. The tablet sheet rules
+   below use !important for their legacy dvh snaps, so the variable is repeated
+   in that band with equal authority. */
+.mapDrawer.springDrawer {
+  transform: var(--drawer-spring-transform);
+  transition: none;
+}
+
+.mapDrawer[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+.plannerMapButton {
+  display: none;
+}
+
+/* Panels lose their own chrome inside a drawer — the drawer carries it. */
+.mapDrawer .controlRail,
+.mapDrawer .routePanel {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  max-height: none;
+  overflow: visible;
+}
+
+/* The same three-column head every surface wears: leading Back, the middle
+   (empty here, or the planner's grab handle), trailing Home. It used to be a
+   flex row pinned right, which put a Back arrow beside the close instead of at
+   the opposite edge where every other surface keeps it. */
+.mapDrawerHead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  padding: 10px 12px 0;
+  background: linear-gradient(
+    var(--sheet-material),
+    color-mix(in srgb, var(--sheet-material-solid) 38%, transparent)
+  );
+}
+
+.mapDrawerHead .venueSheetGrabZone {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+}
+
+/* MapLibre's own zoom control, dressed as one of ours.
+   It ships a white box with a 4px radius and a hairline shadow, which on this
+   map was the only pure-white, square-cornered thing on screen: every other
+   floater is a dark pill on the app's own panel surface. The phone shell
+   already re-homed and re-shaped this group (components/mobile/mobileMapShell
+   .css) and hides the zoom pair there; this is the desktop half of the same
+   job, so the control reads as map chrome rather than as the library's.
+   Scoped through .appShell .mapStage for a reason: MapLibre's own sheet loads
+   after ours, so a bare `.maplibregl-ctrl-group` loses `background` and
+   `border-radius` back to the white box while keeping the properties MapLibre
+   does not set - a half-themed control, which is worse than none. */
+.appShell .mapStage .maplibregl-ctrl-group {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  box-shadow: var(--map-overlay-shadow-tight);
+}
+
+.appShell .mapStage .maplibregl-ctrl-group button {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.appShell .mapStage .maplibregl-ctrl-group button + button {
+  border-top: 1px solid var(--line);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .appShell .mapStage .maplibregl-ctrl-group button:hover {
+    background: var(--panel);
+    color: var(--ink);
+  }
+}
+
+/* The glyphs are background images drawn dark for a white control, so on the
+   dark surface they are inverted rather than re-drawn. Light is the default
+   theme here (`html:not([data-theme="dark"])`), so only dark opts in. */
+html[data-theme="dark"] .appShell .mapStage .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+  filter: invert(1) brightness(1.6);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mapDrawer {
+    background: var(--sheet-material-solid);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .mapDrawer {
+    background: var(--sheet-material-solid);
+    /* Same order rule as the base above: the LAST of the pair is the one that
+       survives the build, and this opt-out only means anything if the standard
+       property is the one that reaches the browser. */
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* ── §4.5 curated-crawl onboarding overlay ─────────────────────────────────
+   Sits above the drawers (z 500) + toolbar (z 520). Never blocks the map: the
+   scrim and both close affordances dismiss it. Centered on desktop; on mobile
+   (control rail hidden) it's the primary onboarding, so it fills more of the
+   viewport and pins to the bottom for thumb reach. */
+.mapOnboarding {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay-top);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:
+    calc(18px + env(safe-area-inset-top, 0px))
+    16px
+    calc(18px + env(safe-area-inset-bottom, 0px));
+}
+
+.mapOnboardingScrim {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: color-mix(in srgb, var(--ink-deep) 46%, transparent);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}
+
+.mapOnboardingCard {
+  position: relative;
+  z-index: 1;
+  width: 420px;
+  max-width: 100%;
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
+  padding: 22px 22px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow);
+}
+
+.mapOnboardingClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.mapOnboardingClose:hover {
+  color: var(--ink);
+  border-color: var(--brass);
+}
+
+.mapOnboardingCard .eyebrow {
+  margin: 0;
+  color: var(--brass);
+}
+
+.mapOnboardingCard h2 {
+  margin: 2px 0 8px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0;
+  color: var(--ink);
+  font-size: 1.4rem;
+}
+
+.mapOnboardingLead {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.mapOnboardingList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mapOnboardingCrawl {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: 11px 13px;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.mapOnboardingCrawl:hover {
+  border-color: var(--brass);
+  border-left-color: var(--brass-bright);
+  background: var(--panel-raised);
+}
+
+.mapOnboardingCrawl:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.mapOnboardingCrawlHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mapOnboardingCrawlHead strong {
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.mapOnboardingCount {
+  flex: none;
+  color: var(--brass);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.mapOnboardingBlurb {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.mapOnboardingDismiss {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.mapOnboardingDismiss:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .mapOnboarding {
+    align-items: flex-end;
+    padding: 12px 12px calc(var(--mobile-tab-clearance) + 30px);
+  }
+
+  .mapOnboardingCard {
+    width: 100%;
+    max-height: min(620px, calc(100% - var(--mobile-tab-clearance) - 144px));
+    padding: 20px 18px 22px;
+  }
+
+  /* U6c — the sticky Dismiss footer floats over the card list mid-scroll;
+     reserve a footer's worth of space at the end of the list so the last
+     crawl's text can always scroll clear of the button instead of staying
+     hidden underneath it. The negative margin keeps the footer's resting
+     (scrolled-to-end) position exactly where it was. */
+  .mapOnboardingList {
+    padding-bottom: 48px;
+  }
+
+  .mapOnboardingDismiss {
+    position: sticky;
+    bottom: -10px;
+    margin-top: -34px;
+    background: linear-gradient(
+      to top,
+      var(--panel-raised) 72%,
+      color-mix(in srgb, var(--panel-raised) 86%, transparent)
+    );
+  }
+}
+
+.mapLoading {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  padding: clamp(18px, 4vw, 34px);
+  pointer-events: none;
+  /* Wave J2 — match route skeleton paper/grain so chunk→canvas handoff holds one frame. */
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--river) 10%, transparent), transparent 30% 70%, color-mix(in srgb, var(--brass) 10%, transparent)),
+    radial-gradient(color-mix(in srgb, var(--brass) 12%, transparent) 1px, transparent 1px),
+    color-mix(in srgb, var(--paper) 88%, var(--ink-deep) 12%);
+  background-size: auto, 22px 22px, auto;
+  color: var(--ink);
+}
+
+[data-theme="dark"] .mapLoading {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--river) 18%, transparent), transparent 30% 70%, color-mix(in srgb, var(--brick) 12%, transparent)),
+    radial-gradient(color-mix(in srgb, var(--brass) 14%, transparent) 1px, transparent 1px),
+    var(--ink-deep);
+  background-size: auto, 22px 22px, auto;
+  color: var(--color-on-inverse);
+}
+
+.mapLoadingScene {
+  position: relative;
+  width: min(72vw, 390px);
+  /* Match .mapSkeletonMap (380×240 → 19:12) so route→canvas handoff doesn't jump. */
+  aspect-ratio: 19 / 12;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--brass-bright) 46%, transparent);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--paper) 88%, var(--river) 12%) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--paper) 90%, var(--brass) 10%) 1px, transparent 1px),
+    color-mix(in srgb, var(--panel) 92%, var(--river) 8%);
+  background-size: 42px 42px, 42px 42px, auto;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.mapLoadingScene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0 42%,
+    color-mix(in srgb, var(--brass) 10%, transparent) 42% 44%,
+    transparent 44%
+  );
+}
+
+.mapLoadingStreet,
+.mapLoadingRiver {
+  position: absolute;
+  left: -8%;
+  width: 116%;
+  border-radius: 999px;
+  transform-origin: center;
+}
+
+.mapLoadingStreet {
+  height: 2px;
+  background: rgba(154, 106, 36, 0.22);
+}
+
+.mapLoadingStreet--one {
+  top: 34%;
+  transform: rotate(-18deg);
+}
+
+.mapLoadingStreet--two {
+  top: 62%;
+  transform: rotate(28deg);
+}
+
+.mapLoadingRiver {
+  top: 52%;
+  height: 18px;
+  background: color-mix(in srgb, var(--river) 42%, transparent);
+  transform: rotate(-5deg);
+  opacity: 0.72;
+}
+
+.mapLoadingPin {
+  position: absolute;
+  width: 13px;
+  aspect-ratio: 1;
+  border: 2px solid rgba(255, 255, 255, 0.78);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px color-mix(in srgb, currentcolor 18%, transparent);
+  color: var(--pint);
+  animation: mapSkeletonPulse 1.55s ease-in-out infinite;
+}
+
+.mapLoadingPin--pint {
+  background: var(--pint);
+  color: var(--pint);
+}
+
+.mapLoadingPin--amber {
+  background: var(--amber);
+  color: var(--amber);
+  animation-delay: 0.22s;
+}
+
+.mapLoadingPin--brick {
+  background: var(--brick);
+  color: var(--brick);
+  animation-delay: 0.44s;
+}
+
+.mapLoadingPin--one {
+  top: 26%;
+  left: 25%;
+}
+
+.mapLoadingPin--two {
+  top: 36%;
+  left: 56%;
+}
+
+.mapLoadingPin--three {
+  top: 62%;
+  left: 70%;
+}
+
+.mapLoadingPin--four {
+  top: 66%;
+  left: 36%;
+  animation-delay: 0.66s;
+}
+
+.mapLoadingCopy {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 28%, var(--line));
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--ink-deep) 16%, transparent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+[data-theme="dark"] .mapLoadingCopy {
+  border-color: color-mix(in srgb, var(--brass-bright) 42%, transparent);
+  background: color-mix(in srgb, var(--ink-deep) 84%, transparent);
+  color: var(--color-on-inverse);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+}
+
+.mapLoadingCopy::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--brass-bright);
+  box-shadow: 0 0 0 5px rgba(211, 164, 74, 0.16);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+/* The pill is ONE row: the pulsing dot, then this stack. Every line the frame
+   prints is a row of the stack, so a line added later drops UNDER the one
+   above it rather than growing the pill a third column at 390px. */
+.mapLoadingLines {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.mapLoadingEyebrow {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--brass);
+  font-family: var(--font-data);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mapLoadingSlow {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.mapLoadingProgress {
+  width: min(88vw, 390px);
+  max-width: 100%;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line) 70%, transparent);
+  overflow: hidden;
+}
+
+.mapLoadingProgressBar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--brass-bright);
+  transition: width 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapLoadingProgressBar {
+    transition: none;
+  }
+}
+
+[data-theme="dark"] .mapLoadingEyebrow {
+  color: var(--brass-bright);
+}
+
+@media (max-width: 640px) {
+  .mapLoading {
+    padding: 16px;
+  }
+
+  .mapLoadingScene {
+    width: min(88vw, 390px);
+  }
+
+  .mapLoadingCopy {
+    max-width: min(88vw, 390px);
+  }
+}
+
+/* Issue #35 — map loading skeleton. app/map/loading.tsx paints a pitched-London
+   impression (a river curve + pulsing price-coloured dots) during the route
+   chunk load; PubMap's .mapLoading (above) continues the SAME dot idiom while
+   the WebGL canvas style loads, so the transition reads as one held frame.
+   Every colour derives from existing tokens; reduced-motion holds the dots
+   still. --ink-deep backs the dark mode; the paper grid backs light. */
+.mapSkeleton {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: clamp(18px, 4vw, 44px);
+  background: var(--paper);
+  background-image:
+    linear-gradient(90deg, rgba(47, 111, 143, 0.08), transparent 30% 70%, rgba(181, 73, 58, 0.08)),
+    radial-gradient(rgba(154, 106, 36, 0.13) 1px, transparent 1px);
+  background-size: auto, 22px 22px;
+}
+
+[data-theme="dark"] .mapSkeleton {
+  background: var(--ink-deep);
+  background-image:
+    linear-gradient(90deg, rgba(47, 111, 143, 0.2), transparent 30% 70%, rgba(181, 73, 58, 0.14)),
+    radial-gradient(rgba(211, 164, 74, 0.12) 1px, transparent 1px);
+  background-size: auto, 22px 22px;
+}
+
+.mapSkeletonInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(86vw, 560px);
+}
+
+.mapSkeletonMap {
+  width: 100%;
+  aspect-ratio: 19 / 12;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  border-radius: var(--radius-sm);
+  /* Wave J2 — warmer paper wash so skeleton ↔ first pins share one atmosphere. */
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--paper) 82%, var(--river) 18%) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--paper) 86%, var(--pint) 14%) 1px, transparent 1px),
+    color-mix(in srgb, var(--paper) 92%, var(--amber) 8%);
+  background-size: 42px 42px, 42px 42px, auto;
+  box-shadow: 0 24px 58px color-mix(in srgb, var(--ink-deep) 18%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--panel-raised) 70%, transparent);
+  animation: mapSkeletonEnter var(--duration-slow) var(--ease-out) both;
+}
+
+@keyframes mapSkeletonEnter {
+  from {
+    opacity: 0.72;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.mapSkeletonStreet {
+  stroke: var(--brass);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  opacity: 0.2;
+}
+
+.mapSkeletonStreet--minor {
+  stroke-width: 0.9;
+  opacity: 0.15;
+}
+
+.mapSkeletonRiver {
+  stroke: var(--river);
+  stroke-width: 12;
+  stroke-linecap: round;
+  opacity: 0.42;
+}
+
+.mapSkeletonPin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapSkeletonPulse 1.6s ease-in-out infinite;
+}
+
+.mapSkeletonDotHalo {
+  fill: rgba(211, 164, 74, 0.18);
+}
+
+.mapSkeletonDot {
+  stroke: rgba(255, 255, 255, 0.78);
+  stroke-width: 1.8;
+  filter: drop-shadow(0 3px 5px rgba(24, 34, 26, 0.18));
+}
+
+@keyframes mapSkeletonPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+.mapSkeletonCopy {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  max-width: min(86vw, 420px);
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 24%, var(--line));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--panel-raised) 92%, transparent);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink-soft);
+}
+
+.mapSkeletonCopy h1 {
+  margin: 0 0 2px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.mapSkeletonCopy p {
+  margin: 0;
+  font-size: 0.84rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.mapSkeletonSpinnerDot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 0 0 5px rgba(154, 106, 36, 0.14);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .mapSkeletonInner {
+    width: min(92vw, 560px);
+  }
+
+  .mapSkeletonCopy {
+    width: 100%;
+  }
+}
+
+/* Reduced motion: the field stays legible but still; status pulses stop. */
+@media (prefers-reduced-motion: reduce) {
+  .mapSkeletonPin,
+  .mapLoadingPin {
+    animation: none;
+    opacity: 0.9;
+  }
+  .mapSkeletonSpinnerDot,
+  .mapLoadingCopy::before {
+    animation: none;
+    opacity: 0.9;
+  }
+  .mapSkeletonMap {
+    animation: none;
+  }
+}
+
+/* POI category toggles — LEGACY (Wave J moved mid-map strip into Layers FAB).
+   No TSX renders .poiToggle anymore; keep selectors only so old mobile clearance
+   rules that still name the class stay harmless. Do not reintroduce the strip. */
+.poiToggle {
+  display: none;
+  position: absolute;
+  right: 10px;
+  bottom: 14px;
+  z-index: var(--z-map-poi);
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  box-shadow: var(--shadow);
+}
+
+.poiToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.poiToggleBtn.on {
+  background: var(--ink-deep);
+  /* Fixed-contrast token, NOT var(--paper): in dark theme --paper is itself
+     near-black, which rendered the active chip labels invisible on the
+     ink-deep fill. Cream-on-ink-deep clears AA in both themes. */
+  color: var(--color-on-inverse);
+}
+
+.poiSwatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.poiToggleBtn:not(.on) .poiSwatch {
+  opacity: 0.4;
+}
+
+/* Tapped-POI name — a light label, not the sourced landmark card. */
+.poiLabelCard {
+  position: absolute;
+  top: var(--map-overlay-top);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-map-cards);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 0.82rem;
+  box-shadow: var(--shadow);
+}
+
+.poiLabelCard .poiKind {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+}
+
+.poiLabelCard button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.poiLabelCard button:hover {
+  color: var(--ink);
+}
+
+.maplibreMap {
+  width: 100%;
+  height: 100%;
+  background: var(--ink-deep);
+}
+
+/* The reader's dot moved onto the canvas, beneath the pins, so a pin the
+   reader is standing on keeps its price readable. Its paint lives in
+   buildUserLocation (components/map/canvas/buildScene.ts) and reads
+   --color-info-strong, the river blue this rule read. River, not coral:
+   "you are here" is information in standard map grammar, and a coral dot
+   would wear the selection ring's colour (design judgement 2026-08-01,
+   finding 2.1's three-place accent budget). Its CSS pulse did not survive
+   the move. */
+
+/* Landmark history card — a sourced note pinned over the map. */
+.landmarkCard {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: var(--z-map-cards);
+  max-width: 310px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+/* A real photo of the landmark, bled to the card edges as a header image. The
+   negative margins cancel the card's 14px/16px padding so it sits flush. */
+.landmarkPhoto {
+  position: relative;
+  margin: -14px -16px 11px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.landmarkPhoto img {
+  display: block;
+  width: 100%;
+  height: 148px;
+  object-fit: cover;
+}
+
+.landmarkPhoto figcaption {
+  /* Full-width bottom bar (not a bottom-right chip): the compliant CC credit is
+     author + licence + link, longer than the old platform-only caption, so it
+     wraps cleanly instead of crowding a corner. */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3px 7px;
+  font-size: 0.6rem;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--color-on-inverse);
+  background: rgba(15, 28, 22, 0.72);
+}
+
+.landmarkPhoto figcaption a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 1.5px;
+}
+
+.landmarkCardHead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.landmarkCardHead svg {
+  color: var(--brass);
+  flex-shrink: 0;
+}
+
+.landmarkCardHead strong {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0;
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+
+.landmarkChapterLink {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--brass);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.landmarkCardHead button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.landmarkCardHead button:hover {
+  color: var(--ink);
+  border-color: var(--brass);
+}
+
+.landmarkCard p {
+  margin: 0 0 9px;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.landmarkCard a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+/* Landmark → heritage wiring: nearest story pubs, tappable. */
+.landmarkNearby {
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.landmarkNearby h4 {
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0;
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+
+.landmarkNearby button {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.landmarkNearby button span:first-child {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.landmarkNearby button span:last-child {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.landmarkNearby button:hover span:first-child {
+  color: var(--brass);
+}
+
+/* Issue #15: landmark card → journey. Two actions under the sourced history —
+   start a crawl from the nearest pubs, or open the nearest story pub's guide. */
+.landmarkActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.landmarkAction {
+  flex: 1 1 auto;
+  padding: 7px 10px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--brass);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.landmarkAction.primary {
+  background: var(--brass);
+  color: var(--paper);
+}
+
+.landmarkAction:hover {
+  background: var(--brass);
+  color: var(--paper);
+}
+
+/* Issue #15: story-band picker — a map overlay in the toolbar idiom (pill row,
+   frosted panel), sat above the POI toggles at bottom-right. */
+.placeStoriesControl {
+  position: absolute;
+  right: 10px;
+  bottom: 58px;
+  z-index: var(--z-map-controls);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  max-width: min(300px, calc(100vw - 24px));
+}
+
+.placeStoriesToggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel-raised) 94%, transparent);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.placeStoriesToggle.on {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  color: var(--brass);
+}
+
+.bandPicker {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  z-index: var(--z-map-controls);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 300px;
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--panel-raised) 94%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.bandPickerLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+.bandPickerRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.bandBtn {
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bandBtn.on {
+  background: var(--ink-deep);
+  border-color: var(--ink-deep);
+  color: var(--paper);
+}
+
+.bandBtn:hover {
+  border-color: var(--brass);
+}
+
+.bandActiveCard {
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+
+.bandActiveCopy {
+  margin: 0 0 5px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.bandActiveMeta {
+  margin: 0 0 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.bandActiveCard a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+/* Soft basemap retry chip — recoverable tile/WebGL failures after first paint.
+   Sits over the live canvas (DOM overlays stay) so we never leave silent grey. */
+.mapSoftRetry {
+  position: absolute;
+  left: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  z-index: var(--z-map-camera, 20);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(360px, calc(100% - 24px));
+  padding: 10px 12px 10px 14px;
+  border: 1px solid color-mix(in srgb, var(--brass, #c4a35a) 55%, transparent);
+  border-radius: var(--radius-sm, 8px);
+  background: color-mix(in srgb, var(--ink-deep, #090806) 92%, transparent);
+  color: var(--paper, #faf8f5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  transform: translateX(-50%);
+  backdrop-filter: blur(8px);
+}
+[data-theme="light"] .mapSoftRetry {
+  background: color-mix(in srgb, var(--paper, #faf8f5) 94%, transparent);
+  color: var(--ink, #1a1814);
+  box-shadow: 0 8px 24px rgba(20, 16, 10, 0.12);
+}
+.mapSoftRetryMessage {
+  flex: 1;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: inherit;
+}
+.mapSoftRetryBtn {
+  flex-shrink: 0;
+  min-width: 64px;
+  min-height: 44px;
+  padding: 5px 12px;
+  border: 1px solid var(--brass, #c4a35a);
+  border-radius: var(--radius-sm, 8px);
+  background: transparent;
+  color: inherit;
+  font-family: var(--serif, inherit);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+.mapSoftRetryBtn:hover {
+  background: var(--brass, #c4a35a);
+  color: var(--ink-deep, #090806);
+}
+.mapSoftRetryBtn:focus-visible {
+  outline: 2px solid var(--brass, #c4a35a);
+  outline-offset: 2px;
+}
+
+/* WebGL-failure fallback — a calm notice where the canvas would be. */
+.mapFallback {
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  height: 100%;
+  padding: 32px;
+  text-align: center;
+  background: var(--color-surface-inverse);
+  color: var(--color-on-inverse);
+  /* The static venue list can outgrow a short viewport — scroll inside the
+     card rather than clipping the Retry button off-screen. */
+  overflow-y: auto;
+}
+
+@media (max-width: 640px) {
+  .mapFallback {
+    place-content: start center;
+    padding-top: calc(
+      var(--mobile-map-top) + var(--mobile-map-bar-h) +
+      var(--mobile-map-rail-h) + 70px
+    );
+  }
+}
+
+.mapFallback strong {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0;
+  font-size: 1.15rem;
+}
+
+.mapFallback p {
+  margin: 0 auto;
+  max-width: 340px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--color-on-inverse);
+}
+
+/* The technical diagnostic now lives behind a collapsed disclosure — never
+   shown by default, still one tap away for a bug report. A plain controlled
+   button (not native <details>/<summary>): this fallback's mount effect
+   leaves its RAF loop running even after the error settles, and that
+   continuous background rendering raced native <details> click-activation
+   often enough in headless/automated clicks to occasionally miss the tap
+   entirely. A React-controlled toggle has no such race. */
+.mapFallbackDisclosure {
+  margin: 2px auto 0;
+  max-width: 340px;
+  text-align: center;
+}
+
+.mapFallbackDisclosureToggle {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.72rem;
+  color: var(--brass);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.mapFallbackDisclosureToggle:hover,
+.mapFallbackDisclosureToggle:focus-visible {
+  opacity: 1;
+}
+
+.mapFallbackDisclosureToggle:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* The technical diagnostic — a printer's-mark footnote: monospaced, dim, so it
+   reads as a stamp rather than prose. Wraps so long statusMessages don't clip. */
+.mapFallbackDetail {
+  display: block;
+  max-width: 340px;
+  margin: 6px auto 0;
+  font-family: var(--mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: var(--color-on-inverse);
+  opacity: 0.75;
+  overflow-wrap: anywhere;
+}
+
+/* Retry — a brass-rimmed field-guide button, matching the candle-lit accents
+   used for guidebook actions elsewhere; lifts on hover like the map's cards. */
+.mapFallbackRetry {
+  margin-top: 14px;
+  min-height: 44px;
+  padding: 7px 20px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-on-inverse);
+  font-family: var(--serif, inherit);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.mapFallbackRetry:hover {
+  background: var(--brass);
+  color: var(--ink-deep);
+}
+
+.mapFallbackRetry:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Static venue alternative inside the fallback — the venue content stays
+   reachable without a single WebGL frame. Rows open the DOM venue sheet. */
+.mapFallbackVenues {
+  display: grid;
+  gap: 6px;
+  margin: 14px auto 0;
+  padding: 0;
+  width: min(340px, 100%);
+  list-style: none;
+}
+
+.mapFallbackVenue {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--color-on-inverse) 18%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-on-inverse) 6%, transparent);
+  color: var(--color-on-inverse);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.mapFallbackVenue:hover,
+.mapFallbackVenue:focus-visible {
+  background: color-mix(in srgb, var(--color-on-inverse) 12%, transparent);
+}
+
+.mapFallbackVenueName {
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.mapFallbackVenueMeta {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: var(--color-on-inverse);
+}
+
+.mapFallbackBrowse {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--brass);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Lazy pub preview on map hover. Full venue detail is fetched only after hover,
+   so the slim first-paint map payload stays small while desktop users still get
+   the "pictures hovering over pubs" affordance. */
+.venueHoverCard {
+  position: absolute;
+  z-index: var(--z-map-hover);
+  display: flex;
+  gap: 10px;
+  width: min(292px, calc(100vw - 32px));
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--line) 68%, var(--pint) 32%);
+  border-radius: 18px;
+  /* Wave J2 — solid panel-raised (no frost) so hover previews match landmark/hero cards. */
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow, 0 18px 42px rgba(44, 30, 62, 0.18));
+  pointer-events: none;
+}
+
+.venueHoverPhoto,
+.venueHoverPhotoFallback {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--pint) 16%, var(--panel));
+}
+
+.venueHoverPhoto {
+  margin: 0;
+}
+
+.venueHoverPhoto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venueHoverPhotoFallback {
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--pint) 24%, transparent);
+  color: var(--pint);
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.venueHoverBody {
+  display: grid;
+  min-width: 0;
+  align-content: center;
+  gap: 3px;
+}
+
+.venueHoverEyebrow {
+  color: var(--brass);
+  font-family: var(--font-data);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.venueHoverBody strong {
+  overflow: hidden;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.venueHoverMeta {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.venueHoverProvenance {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* The provisional badge, explained. Its dot is the pin's dot — same token, so
+   the card describes a mark on the map rather than adding one of its own. */
+.venueHoverPending {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--river-bright);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.venueHoverPendingDot {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--river-bright);
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 700px) {
+  .venueHoverCard {
+    display: none;
+  }
+}
+
+/* Hero story teaser on first paint — guidebook margin note, bottom-left.
+   Sit above the price colour key + Prices FAB so the two never collide. */
+.mapHeroCard {
+  position: absolute;
+  bottom: calc(18px + var(--map-price-chrome-height, 96px));
+  left: 18px;
+  z-index: var(--z-map-base);
+  max-width: 300px;
+  padding: 13px 15px;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--brass) 30%);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--brass) 9%, var(--panel-raised)), var(--panel-raised) 60%),
+    var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mapHeroCard {
+    animation: heroCardIn 0.45s ease-out;
+  }
+
+  @keyframes heroCardIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.mapHeroCardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.mapHeroCardHead span {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--brass);
+}
+
+.mapHeroCardHead button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.mapHeroCardHead button:hover {
+  color: var(--ink);
+  border-color: var(--brass);
+}
+
+.mapHeroCard strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0;
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+
+.mapHeroCopy {
+  margin: 6px 0 9px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  overflow-wrap: break-word;
+}
+
+.mapHeroVisit {
+  padding: 6px 14px;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brass);
+  cursor: pointer;
+}
+
+.mapHeroVisit:hover {
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+}
+
+.modeToggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 4px;
+  border: 1px solid color-mix(in srgb, var(--line) 74%, var(--river) 26%);
+  background: color-mix(in srgb, var(--surface-tint-river) 46%, var(--panel-raised) 54%);
+  border-radius: var(--radius-pill);
+}
+
+.modeToggle button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.modeToggle button:hover:not(.selected) {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--brass) 8%, transparent);
+}
+
+.modeToggle button.selected {
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.nearbyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  margin-bottom: 14px;
+  padding: 0 12px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 9%, transparent);
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.nearbyBtn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--brass) 16%, transparent);
+}
+
+.nearbyBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.nearbyBtn:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.nearbyError {
+  margin: -6px 0 14px;
+  color: var(--brick);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.buildHint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 11px 12px;
+  border: 1px dashed rgba(47, 143, 91, 0.5);
+  border-radius: var(--radius-sm);
+  background: rgba(47, 143, 91, 0.08);
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.clearBtn,
+.resetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--brick);
+  font-size: 0.74rem;
+  font-weight: 700;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.clearBtn {
+  margin-left: auto;
+}
+
+.clearBtn:hover,
+.resetBtn:hover {
+  border-color: var(--brick);
+  background: rgba(181, 73, 58, 0.06);
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 6px 12px;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--brass);
+  font-size: 0.76rem;
+  font-weight: 700;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.shareBtn:hover,
+.shareBtn:focus-visible {
+  border-color: var(--brass-bright);
+  background: var(--brass);
+  color: var(--color-on-accent-strong);
+}
+
+.addStopBtn {
+  width: 100%;
+  margin-top: 12px;
+  min-height: 44px;
+  border: 1px solid var(--ink-deep);
+  border-radius: var(--control-radius, 14px);
+  background: var(--ink-deep);
+  color: var(--color-on-inverse);
+  font-weight: 700;
+  transition: transform 0.12s ease, filter 0.15s ease;
+}
+
+.addStopBtn:hover {
+  filter: brightness(1.15);
+}
+
+.addStopBtn:active {
+  transform: translateY(1px);
+}
+
+.emptyRoute {
+  padding: 16px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.emptyState {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  text-align: center;
+  padding: 26px 18px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-raised);
+}
+
+.emptyState svg {
+  color: var(--brass);
+}
+
+.emptyState h3 {
+  margin: 0;
+}
+
+.emptyState p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.mapLegend {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: var(--z-map-base);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 13px;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, var(--pint) 20%);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--ink-deep) 14%, transparent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.mapLegend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #3d4842; /* light-theme ink-soft; legend chip bg is always light */
+}
+
+.mapLegend i {
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+}
+
+.mapLegend .green {
+  background: var(--pint);
+}
+
+.mapLegend .amber {
+  background: var(--amber);
+}
+
+.mapLegend .red {
+  background: var(--brick);
+}
+
+.mapLegend .brassRing {
+  background: transparent;
+  border: 2px solid var(--brass-bright);
+}
+
+.mapLegend .gold {
+  background: var(--brass-bright);
+}
+
+.writerCard {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid rgba(47, 111, 143, 0.28);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--panel-raised) 0%, var(--surface-tint-river) 100%);
+  box-shadow: var(--shadow);
+}
+
+.writerHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.writerHeader > svg {
+  flex: 0 0 auto;
+  color: var(--river);
+}
+
+.writerCard p {
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 0.89rem;
+  line-height: 1.5;
+}
+
+.writerFacts,
+.sourceLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.writerFacts span,
+.sourceLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.12s ease;
+}
+
+.sourceLinks a:hover {
+  border-color: var(--river);
+  transform: translateY(-1px);
+}
+
+.writerCard ul {
+  margin: 12px 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+.writerCard li + li {
+  margin-top: 5px;
+}
+
+.sourceLinks a {
+  color: var(--river);
+}
+
+/* Provenance chips — Sourced / Contributor / Anecdote never blur. */
+.provChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px 2px 6px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.provChip::before {
+  content: "";
+  width: 7px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: currentcolor;
+}
+
+.provChip.sourced {
+  color: var(--river);
+  border-color: rgba(47, 111, 143, 0.35);
+  background: rgba(47, 111, 143, 0.1);
+}
+
+.provChip.contributor {
+  color: var(--pint);
+  border-color: rgba(47, 143, 91, 0.35);
+  background: rgba(47, 143, 91, 0.1);
+}
+
+.provChip.anecdote {
+  color: var(--amber);
+  border-color: rgba(194, 136, 42, 0.35);
+  background: rgba(194, 136, 42, 0.1);
+}
+
+.provChip.demo {
+  color: var(--brass);
+  border-color: color-mix(in srgb, var(--brass) 40%, transparent);
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+}
+
+/* Needs Source: unverified editorial — visibly distinct from Sourced. */
+.provChip.needs-source {
+  color: var(--amber);
+  border-color: rgba(194, 136, 42, 0.4);
+  background: rgba(194, 136, 42, 0.1);
+}
+
+.provChip.baseline {
+  color: var(--muted);
+  border-color: var(--line);
+  background: transparent;
+}
+
+.amenityRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.amenity {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.amenity.active {
+  border-color: rgba(47, 143, 91, 0.4);
+  background: rgba(47, 143, 91, 0.12);
+  color: var(--pint);
+}
+
+.contributorPrice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin: 10px 0;
+  padding: 10px 11px;
+  border: 1px solid rgba(47, 143, 91, 0.3);
+  border-radius: var(--radius-sm);
+  background: rgba(47, 143, 91, 0.08);
+}
+
+.contributorPrice span:not(.priceBadge) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.contributorPrice strong {
+  color: var(--pint);
+  font-variant-numeric: tabular-nums;
+}
+
+.contributorPrice small {
+  flex: 1 1 100%;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.contributorPrice .communityPriceNote {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* The publisher behind a sourced price is the one link that proves the
+   product's central claim, and it shipped with no rule at all: the browser's
+   own rgb(0,0,238) inside an --ink-soft provenance line. Same defect and the
+   same answer as `.profileFloor a` and `.lpFooterLegal a` - inherit the
+   sentence's colour, keep an underline so it still reads as a link. Keyed on
+   the CONTAINER as well as the class, so the next anchor dropped into a price
+   row cannot repeat it. */
+.contributorPrice a,
+.priceSourceLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  vertical-align: middle;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contributorPrice a:hover,
+.priceSourceLink:hover {
+  color: var(--ink);
+}
+
+/* First-drop nudge (Cycle-8 item 3) — the honest empty-price invitation shown
+   in the overview price slot when a venue has no price on any source. Sits in
+   the same footprint as .contributorPrice so an unpriced pub reads as "one to
+   claim", not a gap. One line + one CTA — deliberately not a banner. Tokens
+   only, so it themes with the rest of the sheet in light and dark. */
+.firstDropNudge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin: 10px 0;
+  padding: 10px 11px;
+  border: 1px dashed color-mix(in srgb, var(--brass) 40%, var(--line));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 6%, var(--panel-raised));
+}
+
+.firstDropNudgeLine {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+
+.firstDropNudgeTrust {
+  flex: 1 1 100%;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.firstDropNudgeSecondary {
+  flex: 1 1 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.75rem;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  cursor: pointer;
+}
+
+.firstDropNudgeCta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--brass) 22%, transparent);
+  /* Colour transitions only; the press-scale (0.97, <=250ms) comes from the
+     global button:active rule so motion stays consistent sheet-wide. */
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.firstDropNudgeCta:hover {
+  border-color: var(--brass-bright);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brass) 28%, transparent);
+}
+
+.firstDropNudgeCta:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Claim list — every provenance-stamped claim renders as its own card so a
+   Sourced editorial claim and an Anecdote drop are always both visible. */
+.claimList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.claimCard {
+  padding: 12px;
+  border: 1px solid rgba(47, 111, 143, 0.28);
+  border-radius: var(--radius-sm);
+  background: rgba(47, 111, 143, 0.07);
+}
+
+.claimCard .claimHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.claimCard .claimEra {
+  color: var(--river);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.claimCard p {
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 0.87rem;
+  line-height: 1.5;
+}
+
+.claimCard p:last-child {
+  margin-bottom: 0;
+}
+
+.claimCard a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--river);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.claimCard a:hover {
+  text-decoration: underline;
+}
+
+/* ── The Landlord: grounded heritage chat ─────────────────────────────── */
+.landlord {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+}
+
+.landlordBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--ink-deep);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--ink-deep), color-mix(in srgb, var(--ink-deep) 70%, var(--river)));
+  color: var(--color-on-inverse);
+  font-weight: 700;
+  transition: filter 0.15s ease;
+}
+
+.landlordBtn:hover {
+  filter: brightness(1.15);
+}
+
+.landlordBtn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.landlordForm {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.landlordForm input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink);
+}
+
+.landlordForm input:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+  border-color: var(--brass);
+}
+
+.landlordForm button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+}
+
+.landlordForm button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.landlordSuggest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.landlordSuggest button {
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease;
+}
+
+.landlordSuggest button:hover {
+  border-color: var(--brass);
+}
+
+.landlordAnswer {
+  margin-top: 12px;
+  padding: 13px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--panel-raised) 0%, var(--surface-tint-brass) 100%);
+}
+
+.landlordAnswer p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.landlordAnswer .landlordClarify {
+  margin-top: 8px;
+  color: var(--brass);
+  font-style: italic;
+}
+
+.landlordThinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.landlordThinking::before {
+  content: "";
+  width: 9px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: var(--brass);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+
+.landlordCitations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+}
+
+.citationChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.citationChip::before {
+  content: "";
+  width: 6px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: var(--river);
+}
+
+.citationChip:hover {
+  border-color: var(--river);
+}
+
+.landlordMsg {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--brick);
+}
+
+.routeMetrics {
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.routeMetrics div {
+  min-width: 0;
+}
+
+.routeMetrics div > svg {
+  color: var(--brass);
+}
+
+.routeMetrics span {
+  display: block;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  margin: 4px 0 2px;
+}
+
+.routeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.routeList li {
+  border: 1px solid color-mix(in srgb, var(--line) 76%, var(--brass) 24%);
+  border-radius: 17px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--panel-raised) 94%, var(--surface-tint-lager) 6%), var(--panel-raised)),
+    var(--panel-raised);
+  transition: border-color 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+}
+
+/* Route rows are real buttons now (keyboard operable); li keeps the chrome. */
+.routeList li > button {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 11px;
+  padding: 11px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  color: inherit;
+  border-radius: inherit;
+}
+
+.routeList li:hover {
+  border-color: var(--brass);
+  transform: translateX(2px);
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--brass) 11%, transparent);
+}
+
+.routeList li.active {
+  border-color: var(--brass);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--brass) 16%, transparent), inset 4px 0 0 var(--brass);
+}
+
+.stopNumber {
+  width: 28px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--brass), var(--river));
+  /* Cream for the same reason as .brandMark: the river end fails dark ink. */
+  color: var(--color-on-inverse);
+  border-radius: 999px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.routeList strong,
+.routeList p,
+.routeList small {
+  display: block;
+}
+
+.routeList strong {
+  font-size: 0.96rem;
+}
+
+.routeList p {
+  margin: 3px 0;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.routeList small {
+  color: var(--brass);
+  font-weight: 600;
+}
+
+/* Walk/run pace toggle + honest route-total line (story 25). */
+.routePace {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  flex-wrap: wrap;
+}
+
+.routePaceBtn {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.routePaceBtn.active {
+  border-color: var(--brass);
+  color: var(--color-on-accent);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+}
+
+.routePaceTotal {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.routeSafetyNote {
+  margin: -4px 0 12px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.routeMapPrompt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--river) 34%, var(--line));
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--river) 8%, var(--panel-raised)), var(--panel-raised)),
+    var(--panel-raised);
+}
+
+.routeMapPrompt.active {
+  border-color: color-mix(in srgb, var(--brass) 48%, var(--line));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--brass) 10%, var(--panel-raised)), var(--panel-raised)),
+    var(--panel-raised);
+}
+
+.routeMapPrompt div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.routeMapPrompt strong {
+  color: var(--ink);
+  font-size: 0.86rem;
+}
+
+.routeMapPrompt span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.routeMapPrompt small {
+  color: var(--river);
+  font-size: 0.74rem;
+  font-weight: 750;
+}
+
+.routeMapPrompt button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Per-leg walk/run time + "on the way" POI line, rendered under each stop that
+   has a next stop (story 25/26). Honest straight-line label lives in the text
+   itself (see lib/routeLegs.formatLeg), not just a tooltip. */
+.routeLeg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 2px 0 0 41px;
+  padding: 4px 0 6px;
+  font-size: 0.76rem;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--line);
+}
+
+.routeLeg svg {
+  color: var(--brass);
+  flex-shrink: 0;
+}
+
+.routeLegOnWay {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--ink-soft, var(--muted));
+}
+
+.routeLegTransit {
+  flex-basis: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 0;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--river) 12%, var(--panel-raised));
+  color: var(--river);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.routeStopDirections {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 0 0 41px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--river) 30%);
+  color: var(--river);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+}
+.routeStopDirections:hover {
+  background: color-mix(in srgb, var(--river) 10%, transparent);
+}
+
+/* Keyboard route-building path: filtered venue list with Add/Remove controls. */
+.venuePicker {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  display: grid;
+  gap: 8px;
+}
+
+.venuePickerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.venuePickerList button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  text-align: left;
+  color: inherit;
+}
+
+.venuePickerList button:hover {
+  border-color: var(--brass);
+}
+
+.venuePickerList button[aria-pressed="true"] {
+  border-color: var(--ink-deep);
+  box-shadow: inset 3px 0 0 var(--brass);
+}
+
+.venuePickerList strong {
+  display: block;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.venuePickerList small {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.venuePickerList .pickAction {
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.pickerNote {
+  color: var(--muted);
+}
+
+.venueInspector {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.venueInspector > p {
+  color: var(--muted);
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.priceList {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--panel-raised);
+}
+
+.priceList div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 11px;
+  border-top: 1px solid var(--line-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.priceList div:first-child {
+  border-top: 0;
+}
+
+.pintDrops {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+}
+
+.dropList {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+}
+
+.dropCard {
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+}
+
+.dropCard .dropHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.dropCard .dropHandle {
+  font-weight: 800;
+  font-size: 0.84rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropCard .dropPrice {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--pint);
+}
+
+.dropCard p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.dropCard small {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.dropCard .dropFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.dropPhotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.dropPhotos:has(img:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.dropPhoto {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+}
+
+/* ── InstaPint: bigger, Instagram-ish photo pair on a drop card ─────────────
+   A photo-backed drop gets a taller, framed image pair — the pint and the
+   cheeky bar selfie side by side — with the note reading as the caption below.
+   One photo fills the frame (single column). Text-only drops never get here. */
+.dropCard.instaPint {
+  padding: 0;
+  overflow: hidden;
+}
+
+.dropCard.instaPint .dropHead {
+  padding: 11px 12px 8px;
+  margin-bottom: 0;
+}
+
+.instaFrame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* A drop with a single photo fills the frame edge to edge. */
+.instaFrame:has(figure:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.instaShot {
+  position: relative;
+  margin: 0;
+  background: var(--panel);
+}
+
+.instaShot .dropPhoto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: none;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+}
+
+.instaShot figcaption {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(20, 16, 12, 0.68);
+  color: var(--color-on-photo);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}
+
+/* Note + tags + footer sit inside the padded caption zone of a framed card. */
+.dropCard.instaPint .dropCaption,
+.dropCard.instaPint .dropVibeTags,
+.dropCard.instaPint .dropFoot {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.dropCard.instaPint .dropCaption {
+  padding-top: 10px;
+}
+
+.dropCard.instaPint .dropFoot {
+  padding-bottom: 11px;
+}
+
+.reportBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.reportBtn:hover {
+  border-color: var(--brick);
+  color: var(--brick);
+}
+
+/* ── Photo-backed composer ────────────────────────────────────────────── */
+.photoRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.photoField {
+  min-width: 0;
+}
+
+.photoPick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-height: 84px;
+  padding: 12px 10px;
+  border: 1px dashed var(--brass);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 6%, transparent);
+  color: var(--brass);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.photoPick small {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.photoPick:hover {
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+}
+
+.photoPick input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.photoPreview {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.photoPreview img {
+  display: block;
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+}
+
+.photoRemove {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--brick);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.photoRemove:hover {
+  border-color: var(--brick);
+}
+
+.consentNote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.analyticsConsentPrompt {
+  position: fixed;
+  z-index: 1000;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: max(12px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: min(960px, calc(100vw - 24px));
+  margin-inline: auto;
+  padding: 8px 8px 8px 14px;
+  border: 1px solid var(--hairline, var(--line));
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--panel-raised) 96%, transparent);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(14px) saturate(125%);
+}
+
+.analyticsConsentPrompt p {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.analyticsConsentPrompt a {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.analyticsConsentPromptActions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+
+.analyticsConsentPromptActions button {
+  min-width: 84px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, var(--radius-sm));
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.analyticsConsentPromptActions button:hover,
+.analyticsConsentPromptActions button:focus-visible {
+  border-color: var(--brass);
+}
+
+/* Any open map surface owns the reader's attention; the consent card must not
+   bleed through semi-transparent scrims or sit above sheet chrome. The desktop
+   choose-area picker is the second shape of that surface, and it dims the map
+   with a scrim of its own rather than the phone sheet portal. */
+body:has(.mobileSheetPortal) .analyticsConsentPrompt,
+body:has(.chooseAreaDesktopScrim) .analyticsConsentPrompt {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Desktop: reserve foot clearance while the fixed consent bar is mounted so
+   list cards and page footers are not half-covered. */
+@media (min-width: 641px) {
+  body:has(.analyticsConsentPrompt) {
+    padding-bottom: calc(
+      var(--analytics-consent-clearance, 72px) + max(12px, env(safe-area-inset-bottom))
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  /* Phone: the card sits 8px above the tab bar and may grow to 120px, so scroll
+     surfaces must reserve that lane or Today, Plan and /pubs actions sit under it. */
+  body:has(.analyticsConsentPrompt):has(.mobileTabBar, .mobileTabBarClearance) {
+    padding-bottom: calc(
+        var(--tabbar-h, 64px) + env(safe-area-inset-bottom, 0px) + var(--analytics-consent-mobile-clearance, 128px)
+    );
+  }
+
+  body:has(.analyticsConsentPrompt):not(:has(.mobileTabBar, .mobileTabBarClearance)) {
+    padding-bottom: calc(
+      var(--analytics-consent-mobile-clearance, 128px) + max(12px, env(safe-area-inset-bottom))
+    );
+  }
+
+  .analyticsConsentPrompt {
+    bottom: calc(var(--tabbar-h, 64px) + env(safe-area-inset-bottom) + 8px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 100px;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    max-height: 120px;
+    padding: 10px;
+  }
+
+  body:not(:has(.mobileTabBar, .mobileTabBarClearance)) .analyticsConsentPrompt {
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .analyticsConsentPrompt p {
+    font-size: 0.72rem;
+  }
+
+  /* NOTHING here clamps the sentence. A clamp on the card cuts the two buttons
+     that are the only way out of a fixed overlay; a clamp on the paragraph cuts
+     the banner's only route to the privacy notice, which is the last thing on
+     it; and a clamp on the sentence alone silently drops the "never sold"
+     half of the disclosure on a 320px phone. The card holds its 120px ceiling
+     by the COPY being short enough to wrap inside it at every phone width,
+     with the Privacy link riding the last line rather than a line of its own. */
+
+  .analyticsConsentPromptActions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .analyticsConsentPromptActions button {
+    min-width: 0;
+    padding-inline: 8px;
+  }
+
+  body:has(.mapArrivalCard) .analyticsConsentPrompt,
+  body:has(.mobilePlanActivation) .analyticsConsentPrompt {
+    /* Sit above first-visit arrival or Describe the outing. */
+    bottom: calc(var(--mobile-map-dock-clearance) + 86px);
+    max-height: none;
+    background: var(--panel-raised);
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  body:has(.mapArrivalCard) .analyticsConsentPrompt {
+    /* The card's own published top edge (mobileNav.css), never a second
+       height written down here. Consent already waits behind the card
+       (lib/promptBudget.ts), so this is the belt to that braces. */
+    bottom: calc(var(--float-stack-top-map-arrival) + var(--float-stack-gap));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .analyticsConsentPrompt {
+    animation: analytics-consent-arrive 160ms var(--ease-out, ease-out);
+  }
+}
+
+@keyframes analytics-consent-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.dropComposer {
+  display: grid;
+  gap: 9px;
+  margin-top: 12px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 5%, transparent);
+}
+
+.dropComposer .composerRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.dropComposer input,
+.dropComposer textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--ink);
+}
+
+.dropComposer input:focus-visible,
+.dropComposer textarea:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+  border-color: var(--brass);
+}
+
+.dropComposer textarea {
+  resize: vertical;
+  min-height: 58px;
+  line-height: 1.45;
+}
+
+.dropComposer .composerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropComposer button[type="submit"],
+.dropComposer .spillSubmitLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+
+.dropComposer button[type="submit"]:hover,
+.dropComposer .spillSubmitLink:hover {
+  filter: brightness(1.08);
+}
+
+.dropComposer button[type="submit"]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.composerToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 12px;
+  min-height: 42px;
+  border: 1px dashed var(--brass);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 6%, transparent);
+  color: var(--brass);
+  font-weight: 700;
+  transition: background 0.15s ease;
+}
+
+.composerToggle:hover {
+  background: color-mix(in srgb, var(--brass) 12%, transparent);
+}
+
+.composerMsg {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.composerMsg.error {
+  color: var(--brick);
+}
+
+.composerMsg.ok {
+  color: var(--pint);
+}
+
+.composerMsgLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 6px;
+}
+
+.composerMsgLink {
+  color: var(--brass);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.composerMsgLink:hover {
+  border-bottom-color: var(--brass);
+}
+
+.composerMsgLink:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Vibe tags ────────────────────────────────────────────────────────────
+   Tappable multi-select chips in the composer, plus read-only chips on drop
+   cards. Mirrors the .amenity pill shape; selected state reuses the brass
+   accent so it reads as "chosen" without a new colour token. */
+.vibeTagField {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.vibeTagField legend {
+  padding: 0;
+  margin-bottom: 6px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.vibeTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vibeChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.vibeChip:hover:not(:disabled) {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.vibeChip.selected {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 14%, transparent);
+  color: var(--brass);
+}
+
+.vibeChip:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.vibeChip:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+/* Read-only chips shown on a drop card — smaller, non-interactive. */
+.dropVibeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 8px 0 0;
+}
+
+.vibeChip.small {
+  min-height: 0;
+  padding: 2px 8px;
+  border-color: color-mix(in srgb, var(--brass) 35%, transparent);
+  background: rgba(176, 129, 58, 0.1);
+  color: var(--brass);
+  font-size: 0.7rem;
+  cursor: default;
+}
+
+/* ── Sticky "Log a Pint Drop" primary action ──────────────────────────────
+   Prominent, thumb-reachable primary button. Sticks to the bottom of the
+   scroll area on narrow (mobile) widths so it stays in reach; static on wide. */
+.logDropBar {
+  margin-top: 12px;
+}
+
+.logDropBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid var(--brass);
+  border-radius: var(--control-radius, 14px);
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.12s ease;
+}
+
+.logDropBtn:hover {
+  filter: brightness(1.08);
+}
+
+.logDropBtn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logDropBtn:active {
+    transform: translateY(1px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .logDropBar {
+    position: sticky;
+    bottom: 8px;
+    z-index: 2;
+    padding-top: 8px;
+    /* Fade the panel behind the sticky button so drop cards don't crowd it. */
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--panel) 0%, transparent) 0%,
+      var(--panel) 45%
+    );
+  }
+}
+
+/* ── Chrome micro-interactions: hover warm-up, focus rings, disabled ──────
+   Color/focus/disabled states are unconditional (a11y). Transform-based
+   press/lift feedback lives in the no-preference block below so reduced-motion
+   users get instant, static states. Tokens only, both themes. */
+
+/* Consistent brass focus ring on interactive chrome that lacked one. */
+.modeToggle button:focus-visible,
+.mapHeroVisit:focus-visible,
+.clearBtn:focus-visible,
+.resetBtn:focus-visible,
+.reportBtn:focus-visible,
+.composerToggle:focus-visible,
+.landlordBtn:focus-visible,
+.landlordSuggest button:focus-visible,
+.landmarkNearby button:focus-visible,
+.landmarkCardHead button:focus-visible,
+.mapHeroCardHead button:focus-visible,
+.photoPick:focus-within,
+.photoRemove:focus-visible,
+.citationChip:focus-visible,
+.sourceLinks a:focus-visible,
+.claimCard a:focus-visible,
+.landmarkCard a:focus-visible,
+.landmarkAction:focus-visible,
+.bandBtn:focus-visible,
+.bandActiveCard a:focus-visible,
+.venuePickerList button:focus-visible,
+.routeList li > button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Consistent disabled dimming where missing. */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hover warm-up (color/border only) for list-style controls. */
+.landmarkNearby button:hover,
+.landlordSuggest button:hover,
+.citationChip:hover {
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+}
+
+.dropCard,
+.claimCard {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dropCard:hover,
+.claimCard:hover {
+  border-color: var(--brass);
+}
+
+.venuePickerList button {
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.venuePickerList button:hover {
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Short, scoped transitions so hover/focus states ease rather than snap. */
+  .modeToggle button,
+  .mapHeroVisit,
+  .clearBtn,
+  .resetBtn,
+  .reportBtn,
+  .composerToggle,
+  .landlordBtn,
+  .landlordSuggest button,
+  .landmarkNearby button,
+  .citationChip,
+  .landmarkCardHead button,
+  .mapHeroCardHead button,
+  .photoPick,
+  .photoRemove {
+    transition:
+      background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease,
+      transform 0.12s ease, box-shadow 0.15s ease;
+  }
+
+  /* Press feedback — buttons dip on tap so interactions feel responsive. */
+  .segmented button:active,
+  .modeToggle button:active,
+  .nearbyBtn:active,
+  .clearBtn:active,
+  .resetBtn:active,
+  .shareBtn:active,
+  .reportBtn:active,
+  .composerToggle:active,
+  .landlordBtn:active,
+  .landlordForm button:active,
+  .landlordSuggest button:active,
+  .dropComposer button[type="submit"]:active,
+  .mapHeroVisit:active,
+  .photoPick:active,
+  .venuePickerList button:active,
+  .featuredCrawl:active {
+    transform: translateY(1px);
+  }
+
+  /* Featured cards and drop/claim cards lift a hair on hover. */
+  .featuredCrawl:hover,
+  .dropCard:hover,
+  .claimCard:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 1050px) {
+  .mapLegend {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .siteNav {
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .siteNav a {
+    min-height: 28px;
+    padding: 0 8px;
+    font-size: 0.74rem;
+  }
+}
+
+/* ── Phone: map stays the hero, rails read as scrollable bottom sheets ──────
+   The ≤1050px rule already stacks to one column (map first, order:-1). Here we
+   make it feel like a phone app: a taller map hero, comfortable padding, and
+   the two panels as rounded "sheets" that overlap up under the map with their
+   own scroll. Pure CSS — no JS to drag/collapse, so the sheets simply live in
+   the page scroll with a grab-handle affordance. */
+@media (max-width: 768px) {
+  .appShell {
+    --map-top-clearance: calc(159px + env(safe-area-inset-top, 0px));
+    --map-overlay-top: calc(var(--map-top-clearance) + 86px);
+  }
+
+  /* Map stays full-bleed; drawers slide UP as bottom sheets instead of in from
+     the sides, so they're thumb-reachable and never crowd a narrow screen. */
+  .mapDrawer {
+    top: auto;
+    bottom: var(--mobile-tab-clearance);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 82vh;
+    border: 0;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -10px 30px rgba(15, 28, 22, 0.28);
+    transform: translateY(calc(100% + var(--mobile-tab-clearance)));
+  }
+
+  .mapDrawer.springDrawer {
+    transform: var(--drawer-spring-transform) !important;
+    transition: none;
+  }
+
+  .mapDrawer.left:not(.open):not(.sheet-dragging),
+  .mapDrawer.right:not(.open):not(.sheet-dragging) {
+    /* Production CSS bundling can place the desktop side-drawer transform after
+       this mobile block. Keep the phone drawer on the vertical sheet axis. */
+    transform: translateY(calc(100% + var(--mobile-tab-clearance))) !important;
+  }
+
+  .mapDrawer.left.open,
+  .mapDrawer.right.open {
+    transform: translateY(0);
+  }
+
+  .mapDrawer.left.open:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.right.open:not(.sheet-dragging):not(.mobileSharedSheet) {
+    transform: translateY(0) !important;
+  }
+
+  /* Keep in sync with lib/sheetSnap.ts SHEET_SNAP_FRACTIONS / venueSheet.css.
+     dvh (visible viewport) with vh fallback — see venueSheet.css for why.
+     `:not(.mobileSharedSheet)` fences these to the LEGACY 641–768 inline drawer:
+     the ≤640 phone portal (.mobileSharedSheet) is a bottom-anchored, content-
+     height flex box (mobileMapShell.css) — a viewport-tall translateY panel would
+     reintroduce the void the rebuild removed, and these !important rules would
+     otherwise win over the portal's own geometry. */
+  .mapDrawer.left.open.sheet-half:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-half:not(.sheet-dragging):not(.mobileSharedSheet) {
+    transform: translateY(45vh) !important;
+    transform: translateY(45dvh) !important;
+  }
+
+  .mapDrawer.left.open.sheet-peek:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-peek:not(.sheet-dragging):not(.mobileSharedSheet) {
+    transform: translateY(78vh) !important;
+    transform: translateY(78dvh) !important;
+  }
+
+  .mapDrawer.left.open.sheet-full:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-full:not(.sheet-dragging):not(.mobileSharedSheet) {
+    transform: translateY(8vh) !important;
+    transform: translateY(8dvh) !important;
+  }
+
+  .mapDrawer.left.open.sheet-full:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.left.open.sheet-half:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.left.open.sheet-peek:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-full:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-half:not(.sheet-dragging):not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-peek:not(.sheet-dragging):not(.mobileSharedSheet) {
+    height: 100dvh;
+    max-height: none;
+  }
+
+  /* SpringDrawer must outrank the legacy snap declarations above, including
+     their !important fence. The extra spring class and axis attribute make
+     ownership explicit without weakening the legacy fallback. */
+  .mapDrawer.springDrawer.left.open.sheet-full[data-spring-axis="vertical"]:not(.mobileSharedSheet),
+  .mapDrawer.springDrawer.left.open.sheet-half[data-spring-axis="vertical"]:not(.mobileSharedSheet),
+  .mapDrawer.springDrawer.left.open.sheet-peek[data-spring-axis="vertical"]:not(.mobileSharedSheet),
+  .mapDrawer.springDrawer.right.open.sheet-full[data-spring-axis="vertical"]:not(.mobileSharedSheet),
+  .mapDrawer.springDrawer.right.open.sheet-half[data-spring-axis="vertical"]:not(.mobileSharedSheet),
+  .mapDrawer.springDrawer.right.open.sheet-peek[data-spring-axis="vertical"]:not(.mobileSharedSheet),
+  .mapDrawer.springDrawer.left[data-spring-axis="vertical"]:not(.open),
+  .mapDrawer.springDrawer.right[data-spring-axis="vertical"]:not(.open) {
+    transform: var(--drawer-spring-transform) !important;
+  }
+
+  .mapDrawer.springDrawer.left.open[data-spring-axis="vertical"] {
+    z-index: var(--z-nav);
+  }
+
+  .mapDrawer.springDrawer.right.open[data-spring-axis="vertical"] {
+    z-index: calc(var(--z-nav) + 1);
+  }
+
+  .plannerMapButton {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: calc(100% - 28px);
+    min-height: 44px;
+    margin: 12px 14px 2px;
+    border: 1px solid color-mix(in srgb, var(--river) 34%, var(--line));
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--river) 10%, var(--panel-raised)), var(--panel-raised));
+    color: var(--river);
+    box-shadow: 0 12px 26px color-mix(in srgb, var(--ink) 10%, transparent);
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .plannerMapButton:hover {
+    border-color: var(--river);
+    background: color-mix(in srgb, var(--river) 14%, var(--panel-raised));
+  }
+
+  /* Keep the floating theme toggle clear of the map legend and reachable, and
+     below the notch on fixed chrome (dark-mode-v1 audit). */
+  .themeToggle.floating {
+    top: max(12px, env(safe-area-inset-top, 0px));
+    right: 12px;
+  }
+
+  /* Comfortable touch targets on the primary controls. */
+  .segmented button,
+  .modeToggle button,
+  .nearbyBtn,
+  .addStopBtn,
+  .landlordBtn,
+  .composerToggle {
+    min-height: 44px;
+  }
+
+  .featuredCrawl {
+    padding: 13px 14px;
+  }
+
+  /* Full-width, tappable share/clear/reset instead of tiny pills. */
+  .clearBtn,
+  .resetBtn {
+    min-height: 34px;
+    padding: 6px 12px;
+  }
+
+  /* Cards pinned over the map must not swallow it on a narrow screen. */
+  .landmarkCard,
+  .mapHeroCard {
+    max-width: min(78vw, 300px);
+  }
+
+  .landmarkCard {
+    top: var(--map-overlay-top);
+    left: 12px;
+  }
+
+  .mapHeroCard {
+    bottom: calc(var(--mobile-tab-clearance) + 10px);
+    left: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Keep phone mid-field and corners clear for map and primary controls. */
+  .mapHeroCard {
+    display: none !important;
+  }
+
+  .appShell {
+    /* Declutter: chrome hugs corners; no mid-map POI/legend stack. */
+    --map-mobile-hero-clearance: 0px;
+    --map-mobile-legend-clearance: 0px;
+    --map-overlay-shadow: 0 8px 20px rgba(44, 30, 62, 0.12);
+    --map-overlay-shadow-tight: 0 5px 13px rgba(44, 30, 62, 0.11);
+    /* Compact matched chrome: nav (~40px) + gap + safe area; toolbar controls use 44px targets. */
+    --map-top-clearance: calc(
+      10px + env(safe-area-inset-top, 0px) + 40px + var(--map-chrome-gap)
+    );
+    --map-overlay-top: calc(var(--map-top-clearance) + 46px);
+    /* Stack FABs clearly above the compact tab bar; chips one row higher. */
+    --map-bottom-fab-row: calc(var(--mobile-tab-clearance) + 28px);
+    --map-bottom-chip-row: calc(var(--mobile-tab-clearance) + 78px);
+  }
+
+  .mapSoftRetry {
+    bottom: calc(var(--mobile-tab-clearance) + 10px);
+  }
+
+  /* Tab bar is hidden while planning/detail sheets own the bottom edge. */
+  .appShell.detail-open,
+  .appShell.planning-open {
+    --mobile-tab-clearance: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Toolbar hugs the top under the nav; same inset/radius as the floating Home
+     bar — both switch to full-width at the same 640px breakpoint. */
+  .mapToolbar {
+    top: var(--map-top-clearance);
+    left: var(--map-chrome-inset);
+    right: var(--map-chrome-inset);
+    max-width: none;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: var(--map-chrome-radius);
+    box-sizing: border-box;
+  }
+
+  .mapToolbarSearch input {
+    min-width: 120px;
+  }
+
+  .mapCameraControls {
+    top: calc(var(--map-top-clearance) + 58px);
+    right: 10px;
+    gap: 4px;
+  }
+
+  /* MapLibre's built-in zoom/compass compete with the bottom tab bar and
+     corner FABs on phones. App-owned London/Recenter stay visible. */
+  .maplibregl-ctrl-bottom-left .maplibregl-ctrl-group {
+    display: none;
+  }
+
+  .mapFitLondonBtn,
+  .mapRecenterBtn {
+    min-height: 44px;
+    padding: 0 9px;
+    font-size: 0.68rem;
+    border-radius: 999px;
+  }
+
+  /* .mapToolbar / .mapLegend sheet-full, onboarding-open, and detail-open hide
+     rules live in mapToolbar.css. Planner peek/half keep floating chrome so
+     the map stays usable; sheet-full (venue OR planner at full snap) clears it.
+     Keep other floating chrome here so those overlays still clear the sheet. */
+  .appShell.sheet-full .mapHeroCard,
+  .appShell.sheet-full .mappedRouteChip,
+  .appShell.sheet-full .activeRoundChip,
+  .appShell.sheet-full .bandOnboardingChip,
+  .appShell.sheet-full .poiToggle,
+  .appShell.sheet-full .bandPicker,
+  .appShell.route-mapped .mapHeroCard,
+  .appShell.sheet-full .mapCameraControls,
+  .appShell.planning-open .mapCameraControls,
+  .appShell.planning-open .mapHeroCard,
+  .appShell.planning-open .mappedRouteChip,
+  .appShell.planning-open .activeRoundChip,
+  .appShell.planning-open .bandOnboardingChip,
+  .appShell.planning-open .poiToggle,
+  .appShell.planning-open .bandPicker,
+  .appShell.planning-open .placeStoriesControl,
+  .appShell.sheet-full .placeStoriesControl,
+  .appShell.detail-open .mappedRouteChip,
+  .appShell.detail-open .activeRoundChip,
+  .appShell.detail-open .bandOnboardingChip {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+  }
+
+  .mapLegend {
+    left: 10px;
+    right: auto;
+    bottom: var(--map-bottom-fab-row, calc(var(--mobile-tab-clearance) + 18px));
+    max-width: min(220px, calc(100vw - 120px));
+    gap: 8px;
+    padding: 8px 10px;
+    justify-content: flex-start;
+  }
+
+  .mappedRouteChip,
+  .activeRoundChip,
+  .bandOnboardingChip {
+    left: 10px;
+    right: 10px;
+    bottom: var(--map-bottom-chip-row);
+    max-width: none;
+    transform: none;
+  }
+
+  .bandOnboardingChip {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  .bandOnboardingChip > div {
+    grid-column: 1 / -1;
+  }
+
+  .bandOnboardingChip > button:first-of-type {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .bandOnboardingChip > button:last-child {
+    grid-column: 2;
+    min-width: 44px;
+    padding-inline: 0;
+  }
+
+  .bandOnboardingChip button {
+    min-height: 44px;
+  }
+
+  .activeRoundChip {
+    bottom: calc(var(--map-bottom-chip-row) + 52px);
+  }
+
+  /* Mobile: hide the mid-map POI strip + place-stories chrome.
+     Layers live in the corner MapLayersControl instead. */
+  .poiToggleDesktop,
+  .placeStoriesDesktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px), (hover: none), (pointer: coarse) {
+  .mapFitLondonBtn,
+  .mapRecenterBtn,
+  .mappedRouteChip,
+  .activeRoundChip,
+  .bandOnboardingChip,
+  .mapToolbar,
+  .mapLoading,
+  .poiToggle,
+  .poiLabelCard,
+  .bandPicker,
+  .placeStoriesControl,
+  .mapLegend,
+  .mapHeroCard {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .mapFitLondonBtn,
+  .mapRecenterBtn,
+  .poiToggle,
+  .bandPicker,
+  .placeStoriesControl,
+  .mapLegend,
+  .mapHeroCard {
+    background: var(--panel-raised);
+    box-shadow: var(--map-overlay-shadow-tight);
+  }
+
+  .mapToolbar,
+  .mappedRouteChip,
+  .activeRoundChip,
+  .bandOnboardingChip {
+    background:
+      linear-gradient(135deg, var(--panel-raised), color-mix(in srgb, var(--surface-tint-river) 36%, var(--panel-raised) 64%)),
+      var(--panel-raised);
+    box-shadow: var(--map-overlay-shadow);
+  }
+
+  .mappedRouteChip,
+  .activeRoundChip,
+  .bandOnboardingChip {
+    border-color: color-mix(in srgb, var(--brass) 34%, var(--line));
+  }
+
+  .mapDrawer.left.open,
+  .mapDrawer.right.open,
+  .mapDrawer.left.sheet-dragging,
+  .mapDrawer.right.sheet-dragging {
+    will-change: transform;
+  }
+}
+
+@media (max-width: 480px) {
+  .controlRail,
+  .routePanel {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  h1 {
+    font-size: 1.34rem;
+  }
+
+  .brandBlock {
+    margin-bottom: 16px;
+  }
+
+  /* Grids that were two/three columns get cramped on a phone — go single. */
+  .statsGrid,
+  .routeMetrics,
+  .photoRow,
+  .dropComposer .composerRow,
+  .dropPhotos {
+    grid-template-columns: 1fr;
+  }
+
+  /* The InstaPint pair stays two-up on a phone (square thumbs read fine) so the
+     pint and the bar selfie sit side by side, not stacked full-bleed. */
+  .instaFrame {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Segmented + mode toggles stay two-up (short labels), just taller. */
+  .segmented button,
+  .modeToggle button {
+    font-size: 0.82rem;
+  }
+
+  .statsGrid strong {
+    font-size: 1.24rem;
+  }
+
+  /* Landlord ask row: stack input above the send button so both stay ≥44px. */
+  .landlordForm {
+    flex-wrap: wrap;
+  }
+
+  .landlordForm input {
+    min-height: 44px;
+  }
+
+  .landlordForm button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  /* Legend wraps to two rows on the narrowest phones without clipping. */
+  .mapLegend {
+    bottom: calc(var(--mobile-tab-clearance) + var(--map-mobile-hero-clearance));
+    gap: 8px 12px;
+    padding: 8px 10px;
+    font-size: 0.74rem;
+  }
+
+  .mappedRouteChip,
+  .activeRoundChip,
+  .bandOnboardingChip {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .mappedRouteChip strong,
+  .activeRoundChip strong,
+  .bandOnboardingChip strong {
+    font-size: 0.78rem;
+  }
+
+  .mappedRouteChip span,
+  .activeRoundChip span,
+  .bandOnboardingChip span {
+    font-size: 0.68rem;
+  }
+
+  .routeMapPrompt {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .routeMapPrompt button {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Route rows: keep the number + text comfortable, no overflow. */
+  .routeList li > button {
+    grid-template-columns: 28px 1fr;
+    gap: 9px;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────
+   Legacy Mode (issue #28) — a global, persisted accessibility toggle for
+   older + low-vision users, mirroring ThemeToggle's persistence pattern
+   (see components/LegacyToggle.tsx + public/theme-init.js: html[data-legacy]
+   is set no-flash-safe before paint, same as html[data-theme]).
+
+   This is a pure TOKEN-OVERRIDE layer, exactly like html[data-theme="dark"]
+   in theme.css overrides the same :root tokens — no component is forked.
+   Bumping --text-* and swapping a few surface tokens for higher-contrast
+   values cascades through every component that already reads them.
+   ──────────────────────────────────────────────────────────────────────── */
+html[data-legacy="1"] {
+  /* — Larger base type (~112-120% across the scale). Components that read
+       var(--text-base) etc. (not literal rem values) grow automatically.
+       Scoped ONLY under data-legacy — not a second global --text-2xs. Default
+       remains 0.68rem on :root so eyebrows (messagesThreadEyebrow etc.) stay
+       predictable unless the reader opted into Legacy Mode. */
+  --text-2xs: 0.78rem;
+  --text-xs: 0.88rem;
+  --text-sm: 0.98rem;
+  --text-base: 1.15rem;
+  --text-md: 1.34rem;
+  --text-lg: 1.62rem;
+  --text-xl: 1.98rem;
+  --text-2xl: 2.42rem;
+  --text-3xl: 2.95rem;
+  --leading-normal: 1.6;
+  --leading-snug: 1.45;
+
+  /* — Higher contrast: push text/border tokens toward pure ink/white and
+       thicken the hairline border so low-vision users get a stronger edge
+       between surfaces, without abandoning the theme's palette (light vs.
+       dark keeps working — this just tightens contrast within whichever
+       theme is active). */
+  --ink: #0b0f0c;
+  --ink-soft: #1c231e;
+  --muted: #40473f;
+  --line: #8a8172;
+  --color-border: var(--line);
+}
+
+html[data-theme="dark"][data-legacy="1"] {
+  --ink: #fdfaf2;
+  --ink-soft: #f1ecdd;
+  --muted: #cfc8b4;
+  --line: #6d6a5c;
+  --color-border: var(--line);
+}
+
+/* — Viral mechanics are optional (PRD: "a Boomer never sees a Chaos Score").
+     Legacy Mode hides every chaos surface — the feed badge and the crawl-story
+     panel — via the same data-legacy flag the rest of the mode keys on. */
+html[data-legacy="1"] .feedChaos,
+html[data-legacy="1"] .storyChaos {
+  display: none;
+}
+
+/* — Stronger focus rings: 2px brass outline everywhere already, Legacy Mode
+     widens it and adds an offset so keyboard focus never gets lost in the
+     bigger type. */
+html[data-legacy="1"] :where(button, a, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 3px;
+}
+
+/* — Reduced motion, forced: Legacy Mode implies prefers-reduced-motion,
+     independent of the OS setting. This does not touch the existing
+     @media (prefers-reduced-motion: reduce) rules elsewhere in this file —
+     those keep working for users who set the OS preference without Legacy
+     Mode. This rule only adds the same "no motion" outcome when Legacy Mode
+     is on, by neutralising animation/transition wherever it runs. */
+html[data-legacy="1"] *,
+html[data-legacy="1"] *::before,
+html[data-legacy="1"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Map mobile nav guard: /map renders the shared SiteNav over a full-bleed map.
+   The bottom tab bar owns primary nav at this width, while the compact PX mark
+   remains the landing-page affordance. Keep the utility cluster tight so the
+   390px demo viewport never overflows. */
+@media (max-width: 640px) {
+  .siteNavBarFloating .siteNavActions {
+    gap: 6px;
+  }
+
+  .siteNavBarFloating .authSignIn {
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .siteNavBarFloating .authSignInLabelFull,
+  .siteNavBarFloating .authSignInLabelShort {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Epic E5 — Category colour & drink-imagery identity (APPEND-ONLY)
+   ---------------------------------------------------------------------------
+   NEW section. Nothing above this line is modified. This adds:
+     1. per-drink-category colour tokens (--cat-*), light + dark + Legacy
+     2. a subtle paper/linen `.textured-panel` utility
+   These are ADDITIVE accents on top of the brass base — brass is still the one
+   brand accent. Category colours identify a drink family (like the semantic
+   --pint/--amber/--river hues), not a licence to "add colour" anywhere.
+
+   Source of truth for JS consumers is lib/categoryColors.ts — keep the two in
+   sync. Values are tuned to pass WCAG contrast on the recessed panel
+   (--panel: #fbf8f0 light / #171712 dark). See docs/DESIGN_SYSTEM.md →
+   "Category colour & drink imagery" for the adoption guide + contrast table.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* — Light theme (default). beer == brass on purpose (one identity with the
+     map's cheapest-pint hue). All others clear 4.5:1 on #fbf8f0. */
+:root {
+  --cat-beer: #9a6a24; /* brass — 4.44 (AA-large / glyph) */
+  --cat-wine: #8a2846; /* burgundy — 8.00 */
+  --cat-whisky: #985a12; /* amber — 5.20 */
+  --cat-gin: #0f7a72; /* botanical teal — 4.89 */
+  --cat-vodka: #2f6f8f; /* ice-blue — 5.22 */
+  --cat-rum: #8a4a24; /* mahogany — 6.41 */
+  --cat-cocktail: #b5493a; /* sunset — 4.97 */
+  --cat-shot: #6a3fb0; /* electric — 6.71 */
+  --cat-alcohol-free: #176b72; /* clear teal */
+  --cat-soft-drink: #7a4f00; /* citrus */
+  --cat-coffee: #6b3d16; /* roasted brown */
+  --cat-other: #5c5347; /* neutral bark — 7.11 */
+}
+
+/* — Dark theme: brightened so each clears AA on the charcoal panel (#171712). */
+html[data-theme="dark"] {
+  --cat-beer: #d3a44a; /* 7.86 */
+  --cat-wine: #e07a97; /* 6.34 */
+  --cat-whisky: #e0a34e; /* 8.15 */
+  --cat-gin: #4fc9bd; /* 8.92 */
+  --cat-vodka: #7ec4e0; /* 9.30 */
+  --cat-rum: #cd8a5a; /* 6.32 */
+  --cat-cocktail: #ef8a6a; /* 7.29 */
+  --cat-shot: #b28ae8; /* 6.59 */
+  --cat-alcohol-free: #67cbd0;
+  --cat-soft-drink: #f0b65a;
+  --cat-coffee: #d4a06a;
+  --cat-other: #a89e8c; /* 6.79 */
+}
+
+/* — Legacy Mode: darker (light) / brighter (dark) high-contrast overrides,
+     mirroring how the rest of Legacy Mode tightens contrast within whichever
+     theme is active. Keyed on the same html[data-legacy="1"] flag. */
+html[data-legacy="1"] {
+  --cat-beer: #7a5417;
+  --cat-wine: #701d38;
+  --cat-whisky: #7a4708;
+  --cat-gin: #0a5d57;
+  --cat-vodka: #245672;
+  --cat-rum: #6e3915;
+  --cat-cocktail: #93362a;
+  --cat-shot: #522d90;
+  --cat-alcohol-free: #0e555b;
+  --cat-soft-drink: #5f3c00;
+  --cat-coffee: #522e10;
+  --cat-other: #463f34;
+}
+
+html[data-theme="dark"][data-legacy="1"] {
+  --cat-beer: #e6bd63;
+  --cat-wine: #f296ac;
+  --cat-whisky: #f0b866;
+  --cat-gin: #6fdccf;
+  --cat-vodka: #9dd6ee;
+  --cat-rum: #e0a074;
+  --cat-cocktail: #ffa484;
+  --cat-shot: #c8a6f2;
+  --cat-alcohol-free: #86e0e2;
+  --cat-soft-drink: #ffd17f;
+  --cat-coffee: #e8b87a;
+  --cat-other: #c2b8a4;
+}
+
+/* — Paper/linen texture utility. A tiny, tiled, brass-tinted noise/weave laid
+     over a surface at very low opacity — texture, not noise. Static (no
+     animation → reduced-motion irrelevant). Apply to NEW surfaces you own;
+     do NOT retrofit onto existing panels. The texture sits in a ::before so
+     the panel's own background/border/content are untouched, and it never
+     intercepts pointer events. */
+.textured-panel {
+  position: relative;
+  isolation: isolate;
+}
+
+.textured-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.textured-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  /* Two faint diagonal weaves + a soft brass wash = linen. Kept ~4% so it
+     reads as tactile grain, never as pattern. */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--brass) 5%, transparent) 0,
+      color-mix(in srgb, var(--brass) 5%, transparent) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      color-mix(in srgb, var(--ink) 4%, transparent) 0,
+      color-mix(in srgb, var(--ink) 4%, transparent) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+
+/* On the dark theme, multiply would darken toward black and vanish — screen
+     the weave up instead so the linen stays legible as warm grain. */
+html[data-theme="dark"] .textured-panel::before {
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+/* Legacy Mode / forced-contrast users: drop the texture entirely so it never
+     competes with text legibility. */
+html[data-legacy="1"] .textured-panel::before {
+  display: none;
+}
+
+@media (forced-colors: active) {
+  .textured-panel::before {
+    display: none;
+  }
+}
+
+/* ── View Transitions (IDEAS B4) ─────────────────────────────────────────────
+   Tasteful, SHORT crossfade between map ↔ feed ↔ venue and every other
+   App-Router route swap. Enabled by experimental.viewTransition in
+   next.config.mjs, which wraps each client navigation in the browser's
+   startViewTransition(): the browser snapshots the old page and the new page
+   into the ::view-transition-old/new pseudo-elements, and these rules simply
+   crossfade between them. No shared-element choreography (no viewTransitionName
+   anywhere) — the whole-page snapshot fades, which sidesteps the WebGL-canvas
+   snapshot jank called out in B4 (the map canvas is inside the fading snapshot,
+   never a persisted named element).
+
+   Progressive enhancement, three ways: (1) browsers without the View
+   Transitions API never create these pseudo-elements, so navigation stays
+   exactly today's instant swap; (2) the whole block is inside a
+   prefers-reduced-motion: no-preference guard, so reduced-motion users get no
+   animation; (3) durations reach for the shared motion tokens
+   (--duration-base 0.15s / --ease-out), keeping it inside the DESIGN_SYSTEM
+   motion language rather than inlining fresh numbers. */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    /* Crossfade only — no slide/scale. Kept ~150ms per the B4 brief. */
+    animation-duration: var(--duration-base);
+    animation-timing-function: var(--ease-out);
+  }
+
+  ::view-transition-old(root) {
+    animation-name: pubmax-vt-fade-out;
+  }
+
+  ::view-transition-new(root) {
+    animation-name: pubmax-vt-fade-in;
+  }
+
+  @keyframes pubmax-vt-fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pubmax-vt-fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Design pass D1 — text-on-category-fill token (APPEND-ONLY)
+   ---------------------------------------------------------------------------
+   When a SOLID --cat-* fill is used as a background (a nav active pill, a chip),
+   the text on it must stay legible in every theme. But the category tokens are
+   TUNED AS TEXT/ICON on the panel, so they're mid-DARK in the light themes and
+   BRIGHT in the dark themes — the opposite text colour is needed on each:
+
+     · light + legacy-light  → --cat-* is dark  → CREAM text  (AA min 4.51 / 6.48)
+     · dark  + legacy-dark   → --cat-* is bright → INK-DEEP text (AA min 6.96 / 8.91)
+
+   `--cat-on-fill` encodes exactly that flip, mirroring how the design system's
+   --color-on-accent theme flip works for regular brass. Consumers set
+   `color: var(--cat-on-fill)` on any solid category fill and get an AA-clearing
+   pairing in all four theme×legacy combinations —
+   verified with computed WCAG ratios, not eyeballed.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* Light theme: cat tokens are dark → cream text clears AA (min 4.51). */
+  --cat-on-fill: #fdfaf2;
+}
+
+html[data-theme="dark"] {
+  /* Dark theme: cat tokens are bright → dark ink text clears AA (min 6.96). */
+  --cat-on-fill: var(--ink-deep);
+}
+
+/* Legacy Mode keeps the same per-theme direction — legacy-light cats are still
+   dark (cream, min 6.48), legacy-dark cats still bright (ink, min 8.91) — so the
+   :root / dark rules above already resolve correctly and need no legacy override.
+   (Left explicit for the reader; values match the base rules by design.) */
+html[data-legacy="1"] {
+  --cat-on-fill: #fdfaf2;
+}
+
+html[data-theme="dark"][data-legacy="1"] {
+  --cat-on-fill: var(--ink-deep);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Design pass D3 — layered micro-shadow button depth (APPEND-ONLY)
+   ---------------------------------------------------------------------------
+   Linear's crafted-button tell: depth from a STACK of faint micro-shadows, not
+   one blurry drop. --shadow-btn is the resting stack for primary action
+   surfaces (.planBtn family); --shadow-btn-hover deepens it a hair on hover.
+   Both are tuned per theme — light keeps a warm brass glow as the bottom layer
+   so the coral CTA still reads lifted off candle paper; dark uses a TIGHTER,
+   DARKER black-based stack per #328's neutral elevation ladder (the coral CTA
+   sits over near-black, so the contact layers are near-opaque black, not glow).
+   New tokens only; nothing above is modified. Announced to token-lane (#328).
+   The pressed state keeps the existing scale-down press (see the reduced-motion
+   press block) — the stack visually collapses as the surface sinks under it. */
+:root {
+  --shadow-btn:
+    0 1px 2px rgba(60, 30, 20, 0.10),
+    0 3px 6px rgba(255, 90, 95, 0.14),
+    0 8px 18px color-mix(in srgb, var(--brass) 22%, transparent);
+  --shadow-btn-hover:
+    0 1px 2px rgba(60, 30, 20, 0.12),
+    0 4px 8px rgba(255, 90, 95, 0.18),
+    0 10px 24px color-mix(in srgb, var(--brass) 28%, transparent);
+}
+
+html[data-theme="dark"] {
+  --shadow-btn:
+    0 1px 1px rgba(0, 0, 0, 0.50),
+    0 2px 4px rgba(0, 0, 0, 0.45),
+    0 6px 14px color-mix(in srgb, var(--brass) 22%, transparent);
+  --shadow-btn-hover:
+    0 1px 2px rgba(0, 0, 0, 0.55),
+    0 3px 6px rgba(0, 0, 0, 0.50),
+    0 8px 18px color-mix(in srgb, var(--brass) 28%, transparent);
+}

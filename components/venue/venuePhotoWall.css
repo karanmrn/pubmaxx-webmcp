@@ -1,0 +1,270 @@
+/* The pub photo wall. A column-masonry grid so a portrait crop and a slightly
+   shorter one sit next to each other without either being letterboxed, and a
+   fixed aspect on every tile so the wall reserves its own height before the
+   first byte arrives. Two columns at 390px, three from the tablet width up. */
+
+.venuePhotoWall {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* On the venue sheet the wall owns its whole tab panel, so it needs no rule of
+   its own. On a venue PAGE it follows another section, and without this its
+   heading sat hard against the line above it and read as part of that block. */
+.venuePhotoWall:not(:first-child) {
+  margin-block-start: 20px;
+  padding-block-start: 16px;
+  border-block-start: 1px solid var(--rule, rgba(0, 0, 0, 0.12));
+}
+
+.venuePhotoWallHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.venuePhotoWallTitle {
+  font-size: 1rem;
+  font-weight: 650;
+  margin: 0;
+}
+
+.venuePhotoWallCount {
+  color: var(--ink-soft, #6b6257);
+  font-size: 0.8125rem;
+}
+
+.venuePhotoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (min-width: 700px) {
+  .venuePhotoGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.venuePhotoTile {
+  position: relative;
+  display: block;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--paper-sunk, rgba(0, 0, 0, 0.06));
+  aspect-ratio: 4 / 5;
+}
+
+.venuePhotoTile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* The byline sits over the bottom of the photo on a scrim rather than beside
+   it, so a tile is the photo at the size it was cropped for. The scrim is a
+   gradient, not a flat tint: a flat one washes out a dark pub interior. */
+.venuePhotoByline {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 8px 6px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.venuePhotoBylineHandle {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.venuePhotoBylineAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+/* The brass mark, exactly as the profile card wears it. */
+.venuePhotoBylineFounding {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--brass, #c8a24a);
+  font-weight: 650;
+}
+
+.venuePhotoTag {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+}
+
+.venuePhotoCaption {
+  margin: 6px 2px 0;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--ink, inherit);
+}
+
+.venuePhotoWallEmpty {
+  color: var(--ink-soft, #6b6257);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.venuePhotoWallActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.venuePhotoWallButton {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--rule, rgba(0, 0, 0, 0.16));
+  background: var(--paper, #fff);
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.venuePhotoWallButton:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.venuePhotoWallMore {
+  align-self: center;
+}
+
+/* The signed-out door. It carries a whole sentence rather than a two-word
+   label, so it wraps and centres instead of riding one line like "Add a
+   photo". */
+.venuePhotoWallSignIn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.35;
+}
+
+.venuePhotoWallStatus {
+  font-size: 0.8125rem;
+  color: var(--ink-soft, #6b6257);
+  margin: 0;
+}
+
+.venuePhotoWallStatusErr {
+  color: var(--danger, #a3352c);
+}
+
+/* ── Composer ─────────────────────────────────────────────────────────────── */
+
+.venuePhotoComposer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--rule, rgba(0, 0, 0, 0.16));
+  border-radius: 14px;
+}
+
+.venuePhotoComposerFile {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.venuePhotoComposerField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.venuePhotoComposerField label,
+.venuePhotoComposerLegend {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.venuePhotoComposerTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.venuePhotoComposerTag {
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--rule, rgba(0, 0, 0, 0.16));
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.venuePhotoComposerTag[aria-pressed="true"] {
+  background: var(--ink, #241f1a);
+  color: var(--paper, #fff);
+  border-color: var(--ink, #241f1a);
+}
+
+.venuePhotoComposerCaption {
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--rule, rgba(0, 0, 0, 0.16));
+  background: var(--paper, #fff);
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+
+.venuePhotoComposerShare {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  min-height: 44px;
+}
+
+.venuePhotoComposerShare input {
+  width: 20px;
+  height: 20px;
+}
+
+.venuePhotoComposerActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}

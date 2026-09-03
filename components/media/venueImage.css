@@ -1,0 +1,84 @@
+.venueImage {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--panel-raised) 80%, var(--ink-deep) 8%);
+}
+
+.venueImage__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.venueImage--empty {
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+  padding: 1rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  /* Honest gradient placeholder for photo-less pubs — never a stock photo. */
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--panel-raised) 85%, var(--ink-deep) 6%),
+    color-mix(in srgb, var(--panel-raised) 70%, var(--accent, #8a6d3b) 14%)
+  );
+}
+
+.venueImage__caption {
+  margin: 0;
+  padding: 0.35rem 0.55rem 0.45rem;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.venueImage__provenance {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink-deep) 70%, transparent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+/* R4 — the sheet header's "No photo yet" fallback used to inherit the same
+   16:9 aspect ratio (and, on desktop, the 180-220px min/max height) as a
+   real photo, so on photo-less pubs it alone ate most of the first
+   viewport and pushed the Golden Thread price block below the fold.
+   Collapse it to a slim fixed-height banner at every width; the real-photo
+   path (.venueImage__img) is untouched. Specificity (0,2,0) beats
+   .venueBaselinePhoto's aspect-ratio (0,1,0) in venueSheet.css regardless
+   of stylesheet load order. */
+.venueImage--header.venueImage--empty {
+  aspect-ratio: auto;
+  min-height: 0;
+  height: 56px;
+  padding: 0 1rem;
+}
+
+/* N3 desktop inspector photo header — taller, edge-to-edge under title.
+   Real-photo path only; the empty fallback stays slim (rule above).
+   ≥1024px matches venueSheet.css / globals "real desktop" cut. */
+@media (min-width: 1024px) {
+  .venueInspector .venueImage--header {
+    border-radius: 0 0 14px 14px;
+    margin: 0 0 0.75rem;
+  }
+
+  .venueInspector .venueImage--header .venueImage__img {
+    min-height: 180px;
+    max-height: 220px;
+    object-fit: cover;
+  }
+}

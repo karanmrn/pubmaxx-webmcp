@@ -1,0 +1,1504 @@
+/* Mobile-first tab bar + "sheet" feel for the venue detail panel.
+   Scoped to elements *inside* .venueInspector only — we never restyle the
+   outer .venueInspector box (positioning/size stays owned by globals.css) so
+   there is no desktop layout regression. Uses the shared app tokens
+   (--brass, --ink, --line, --paper, --muted, --panel-raised, --radius-sm). */
+
+/* A short grabber bar gives the panel a bottom-sheet affordance on phones.
+   The visual bar (.venueSheetGrab) stays a thin 4px line; the surrounding
+   .venueSheetGrabZone is the real pointer target — a much taller strip so a
+   thumb doesn't need pinpoint accuracy to start a drag (WCAG 2.5.5-ish target
+   size, even though this control isn't in the accessibility tree itself). */
+.venueSheetGrabZone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  margin: -6px 0 4px;
+  touch-action: none; /* the sheet owns vertical drags here, not page/map scroll */
+}
+
+.venueSheetGrab {
+  display: block;
+  width: 42px;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 55%, var(--line));
+}
+
+.venueInspector > h3 {
+  max-width: 18ch;
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 740;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.venueAcceptanceReceipt {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--color-positive) 42%, var(--line));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-positive) 10%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+/* Venue detail hydration skeleton — keeps sheet geometry stable while the
+   lazy /api/venue/[id] payload arrives (Loop 1 perceived-speed pass). */
+.venueSheetSkeleton {
+  display: grid;
+  gap: 12px;
+  margin: 0 18px 14px;
+  padding: 12px 0 4px;
+}
+
+.venueSheetSkeletonLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.venueSheetSkeletonTitle,
+.venueSheetSkeletonMeta span,
+.venueSheetSkeletonTabs span,
+.venueSheetSkeletonStamp,
+.venueSheetSkeletonBody span {
+  display: block;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--line-soft) 70%, transparent),
+    color-mix(in srgb, var(--brass) 12%, var(--panel)),
+    color-mix(in srgb, var(--line-soft) 70%, transparent)
+  );
+  background-size: 200% 100%;
+  /* A calm, slow sweep — a lit page warming up, not a busy loading bar. Motion
+     is non-essential: it degrades to a static tint under reduced-motion below. */
+  animation: venueSheetSkeletonShimmer 1.6s var(--ease-in-out-strong) infinite;
+}
+
+.venueSheetSkeletonTitle {
+  width: 62%;
+  height: 22px;
+}
+
+.venueSheetSkeletonMeta {
+  display: flex;
+  gap: 8px;
+}
+
+.venueSheetSkeletonMeta span {
+  width: 72px;
+  height: 14px;
+  border-radius: 999px;
+}
+
+.venueSheetSkeletonTabs {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.venueSheetSkeletonTabs span {
+  width: 58px;
+  height: 28px;
+  border-radius: 999px;
+}
+
+.venueSheetSkeletonStamp {
+  width: 112px;
+  height: 40px;
+  border-radius: var(--radius);
+}
+
+.venueSheetSkeletonBody {
+  display: grid;
+  gap: 8px;
+}
+
+.venueSheetSkeletonBody span {
+  height: 12px;
+}
+
+.venueSheetSkeletonBody span:nth-child(1) {
+  width: 94%;
+}
+
+.venueSheetSkeletonBody span:nth-child(2) {
+  width: 78%;
+}
+
+.venueSheetSkeletonBody span:nth-child(3) {
+  width: 66%;
+}
+
+@keyframes venueSheetSkeletonShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venueSheetSkeletonTitle,
+  .venueSheetSkeletonMeta span,
+  .venueSheetSkeletonTabs span,
+  .venueSheetSkeletonStamp,
+  .venueSheetSkeletonBody span {
+    animation: none;
+  }
+}
+
+/* Horizontally-scrollable tab strip with comfortable touch targets. */
+.venueTabs {
+  display: flex;
+  gap: 6px;
+  margin: 12px 0 2px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox — the strip scrolls, no visible bar */
+  border-bottom: 1px solid var(--line);
+}
+
+.venueTabShort {
+  display: none;
+}
+
+.venueTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.venueTab {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+  cursor: pointer;
+  /* Clear active-tab indicator: an underline that transitions in. */
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.venueTab:hover {
+  color: var(--ink);
+}
+
+.venueTab.active {
+  color: var(--ink);
+  /* A faint brass wash on the raised active tab so the selected section reads as
+     "lit" rather than only underlined — the candle-lit guidebook idiom. Brass is
+     the one accent, so this stays a wash, not a fill; the underline + weight are
+     the real active cue (colour is never the sole affordance, WCAG 1.4.1). */
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  border-color: var(--line);
+  border-bottom-color: var(--brass);
+}
+
+/* A hair of warmth under a hovered inactive tab — a hint the strip is alive. */
+.venueTab:not(.active):hover {
+  background: color-mix(in srgb, var(--brass) 6%, transparent);
+}
+
+/* Visible keyboard focus on tabs. The outline sits INSIDE the tab: an offset
+   ring drew a second coral box around the selected pill, which is the shape
+   finding 2.16 was about. */
+.venueTab:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+.venueTabPanel {
+  position: relative;
+  margin-top: 12px;
+  padding: 14px 2px 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* De-box: a photo is not an input, and its own fill already gives it an edge.
+   The coral-tinted border round an empty "No photo yet" placeholder drew a box
+   about the one thing the pub does not have (finding 2.16). */
+.venueBaselinePhoto {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 14px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--brass) 10%, var(--panel)), color-mix(in srgb, var(--river) 8%, var(--panel)));
+  /* One shadow language: the theme-aware token instead of a hand-rolled
+     ink-deep shade, matching the panel this photo sits inside. */
+  box-shadow: var(--shadow-sm);
+}
+
+.venueBaselinePhoto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+/* The address used to inherit its muted colour from `.venueInspector > p` in
+   globals.css; now that it lives inside a tab panel that selector no longer
+   matches, so we preserve the exact look here (no globals.css edit needed). */
+.venueAddress {
+  color: var(--muted);
+}
+
+/* Respect reduced-motion: none of the above motion is essential. */
+@media (prefers-reduced-motion: reduce) {
+  .venueTab {
+    transition: none;
+  }
+}
+
+/* ── Mobile drag bottom-sheet (GH #17) ───────────────────────────────────────
+   Gesture + snap points are active only ≤640px, matching the breakpoint the
+   rest of the mobile chrome uses (mobileNav.css, siteNav.css). Above that
+   width the panel stays the existing, un-draggable side drawer — none of the
+   rules below apply (no .sheet-* class is ever added by PubMap on desktop
+   widths, but we still scope by media query as a hard belt-and-braces cut). */
+@media (max-width: 640px) {
+  /* Resting transforms must match lib/sheetSnap.ts SHEET_SNAP_FRACTIONS
+     (revealed: peek 0.22 / half 0.55 / full 0.92 → translateY 78vh / 45vh /
+     8vh). The sheet is viewport-tall (height: 100dvh below); translateY pushes
+     it down so only the revealed fraction stays on-screen. globals.css's
+     closed/open base transforms still apply when the drawer is closed; these
+     rules override once `.open.sheet-*` is present. Keep in sync with
+     globals.css's ≤768px `.sheet-*` overrides. Venue = right, planner = left. */
+  /* dvh, not vh: iOS Safari's `vh` is the LARGE viewport (URL bar ignored),
+     so a vh-positioned sheet under-reveals and its sticky bar floats mid-
+     content over the copy (owner screenshot, The Black Friar). `dvh` tracks
+     the visible viewport, matching the JS drag math (lib/sheetSnap.ts uses
+     innerHeight-derived fractions). vh lines stay as the older-browser
+     fallback. These transforms belong only to the legacy inline drawer; the
+     portal `.mobileSharedSheet` owns its height and position in mobileMapShell.css. */
+  .mapDrawer.left.open.sheet-full:not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-full:not(.mobileSharedSheet) {
+    transform: translateY(8vh);
+    transform: translateY(8dvh);
+  }
+
+  .mapDrawer.left.open.sheet-half:not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-half:not(.mobileSharedSheet) {
+    /* Reveal ~55dvh of sheet content above the fixed mobile tab bar. */
+    transform: translateY(45vh);
+    transform: translateY(45dvh);
+  }
+
+  .mapDrawer.left.open.sheet-peek:not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-peek:not(.mobileSharedSheet) {
+    /* Reveal ~22dvh — grabber plus the useful venue summary and action. */
+    transform: translateY(78vh);
+    transform: translateY(78dvh);
+  }
+
+  /* Viewport-tall so translateY(dvh) reveals exactly SHEET_SNAP_FRACTIONS. */
+  .mapDrawer.left.open.sheet-full:not(.mobileSharedSheet),
+  .mapDrawer.left.open.sheet-half:not(.mobileSharedSheet),
+  .mapDrawer.left.open.sheet-peek:not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-full:not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-half:not(.mobileSharedSheet),
+  .mapDrawer.right.open.sheet-peek:not(.mobileSharedSheet) {
+    height: 100dvh;
+    max-height: none;
+  }
+
+  /* While actively dragging, PubMap sets an inline transform (a live px
+     offset) and `transition: none` directly on the element — this class is
+     a marker for disabling ancillary motion (nothing currently needs it,
+     but it keeps the "no transition mid-drag" contract visible in one place
+     for future rules) and for disabling text selection while dragging. */
+  .mapDrawer.left.sheet-dragging,
+  .mapDrawer.right.sheet-dragging {
+    user-select: none;
+    -webkit-user-select: none;
+    /* Promote to its own compositor layer for the duration of the drag so the
+       1:1 finger-tracked transform never touches layout/paint — glass-smooth. */
+    will-change: transform;
+  }
+
+  /* The header (grabber + close button) is a drag surface too, not just the
+     grabber itself — a slightly bigger, more forgiving target. */
+  .sheetDragHandle {
+    touch-action: none;
+    cursor: grab;
+  }
+
+  .mapDrawer.left.sheet-dragging .sheetDragHandle,
+  .mapDrawer.right.sheet-dragging .sheetDragHandle {
+    cursor: grabbing;
+  }
+
+  /* Planner head: centered grabber (no close X — dismiss is "View map"). */
+  .plannerSheetHead {
+    display: flex;
+    justify-content: center;
+    padding: 8px 12px 0;
+  }
+
+  .plannerSheetHead .venueSheetGrabZone {
+    margin: 0;
+  }
+
+  /* Snap without an animated transition for reduced-motion users — the sheet
+     still moves between snaps, just instantly rather than eased. */
+  @media (prefers-reduced-motion: reduce) {
+    .mapDrawer.left,
+    .mapDrawer.right {
+      transition: none;
+    }
+  }
+}
+
+/* Hide the planner GRABBER on desktop - the left drawer stays a plain side
+   panel with no drag. The head itself stays, because it carries the way out.
+   It used to be hidden whole, which left the planner's only exit a "View the
+   map" link buried in its body: the reader had to read the panel to leave it.
+   Every other surface keeps Back and Home at the top, in the same two cells. */
+@media (min-width: 641px) {
+  .plannerSheetHead .venueSheetGrabZone {
+    display: none;
+  }
+}
+
+/* The portal sheet's own header (.mobileSharedSheetHeader > h2) already shows
+   the venue name as the centred sheet title, so the in-panel "Venue Detail"
+   eyebrow and the duplicate <h3> name are redundant there — the name rendered
+   twice, once in the sheet header and once in the panel. Trim both on the
+   portal path ONLY: the desktop legacy drawer has no titled head, so its
+   unscoped .inspectorTitle + <h3> stay the single source of the name. Scoped to
+   direct children of .venueInspector so the tab panels' own .inspectorTitle
+   headings ("On record", "Place stories", …) are untouched. */
+.mobileSharedSheet .venueInspector > .inspectorTitle,
+.mobileSharedSheet .venueInspector > h3 {
+  display: none;
+}
+
+/* Venue command bar. It stays pinned in the desktop inspector and moves into
+   the shared sheet footer on phones. */
+.venueSheetStickyBar {
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px -4px 0;
+  padding: 10px 8px;
+  border-top: 1px solid color-mix(in srgb, var(--brass) 28%, var(--line));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--panel) 0%, transparent) 0%,
+    color-mix(in srgb, var(--panel) 96%, transparent) 14%,
+    var(--panel) 30%
+  );
+}
+
+.venueSheetStickyPrimary,
+.venueSheetStickyGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: var(--control-radius, 14px);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.venueSheetStickyPrimary {
+  flex: 1.2 1 0;
+  border: 1px solid var(--brass);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent-strong);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--brass) 22%, transparent);
+}
+
+.venueSheetStickyGhost {
+  flex: 1 1 0;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--brass) 8%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.venueSheetStickyGhost[aria-pressed="true"] {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  color: var(--brass);
+}
+
+.venueSheetShareFeedback {
+  flex: 1 0 100%;
+  min-height: 18px;
+  padding: 0 2px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.venueSheetShareFeedback.ok {
+  color: var(--pint);
+}
+
+.venueSheetShareFeedback.error {
+  color: var(--brick);
+}
+
+.venueSheetStickyPrimary:focus-visible,
+.venueSheetStickyGhost:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.venuePriceSignInGate {
+  scroll-margin-top: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.venuePriceSignInGate h3,
+.venuePriceSignInGate p {
+  margin: 0;
+}
+
+.venuePriceSignInGate h3 {
+  color: var(--ink);
+  font-family: var(--font-display, var(--serif));
+  font-size: 1.05rem;
+}
+
+.venuePriceSignInGate p {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+/* Gated to the bottom-sheet drawer band (≤768px), the same band globals.css
+   turns .mapDrawer into a translated bottom sheet. Previously this was ≤640
+   (the gesture band): in the 641–768 band the legacy .mapDrawer.right became a
+   translated bottom sheet (globals @media 768) yet the command bar stayed
+   display:none and reserved no clearance, so the Drop/Share bar was never
+   pinned — the snap-fraction offsets below (which keep the bar visible in the
+   translated legacy sheet) never fired either. Aligning the band fixes both. */
+@media (max-width: 768px) {
+  /* Tab bar is hidden on detail-open; --mobile-tab-clearance shrinks to a
+     safe-area breathing buffer (see globals.css). Don't hardcode tab height. */
+  .venueInspector {
+    /* Clearance for the sticky command bar (44px controls + 20px padding +
+       border) so the last content row ("Share location for travel times")
+       can always scroll clear of it. */
+    padding-bottom: calc(var(--mobile-tab-clearance, 12px) + 84px);
+    /* U6b — inside the bottom sheet the title block used to sit flush at x=0;
+       give the whole inspector the sheet's standard 18px gutter (matches
+       .venueSheetSkeleton's `margin: 0 18px`). */
+    padding-inline: 18px;
+    /* U6b — collapse the desktop drawer's separator spacing (20px margin +
+       18px padding + border) so there isn't ~40px of dead air between the
+       sticky close row and the grabber/title when the sheet is expanded. */
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  /* U6b — tighten the grab zone's clearance above the title; the zone keeps
+     its 28px touch target, it just stops adding extra empty margin. */
+  .mapDrawer.right .venueSheetGrabZone {
+    margin: -10px 0 0;
+  }
+
+  .venueSheetStickyBar {
+    padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
+  }
+
+  /* LEGACY viewport-tall drawer only: that sheet is translated DOWN by its
+     snap fraction, so its scrollport extends that far below the physical
+     viewport and the sticky bar needs the same offset to stay visible.
+     The portal sheet (.mobileSharedSheet) is EXCLUDED: its body is already
+     sized to the visible height, so these offsets would float the bar
+     mid-content over the copy (the owner's Black Friar screenshot) — there
+     the base `bottom: 0` is correct. dvh to match the transforms. */
+  .mapDrawer.right.open.sheet-full:not(.mobileSharedSheet) .venueSheetStickyBar {
+    bottom: calc(8vh + 8px);
+    bottom: calc(8dvh + 8px);
+  }
+
+  .mapDrawer.right.open.sheet-half:not(.mobileSharedSheet) .venueSheetStickyBar {
+    bottom: calc(45vh + 8px);
+    bottom: calc(45dvh + 8px);
+  }
+
+  .mapDrawer.right.open.sheet-peek:not(.mobileSharedSheet) .venueSheetStickyBar {
+    bottom: calc(78vh + 8px);
+    bottom: calc(78dvh + 8px);
+  }
+
+}
+
+/* ── Portal sheet footer slot (systemic rebuild) ─────────────────────────────
+   The venue command bar (VenueStickyBar) no longer lives inside the scroll body
+   with fixed/sticky positioning against a transformed sheet (the five-patch
+   #536 machinery is gone). It now portals into `.mobileSharedSheetFooter` — a
+   real flex child of the bottom-anchored sheet column (mobileMapShell.css). So
+   here the bar just resets to an in-flow strip: no position, no offsets, no
+   reserved-height var. It rides 1:1 with the sheet on drag/snap because it IS in
+   the sheet's flow, and never scrolls under the tabs because it sits below the
+   scroll body, not inside it. The last content pixel (the bar's own bottom) sits
+   exactly the safe-area inset above the sheet's visible bottom edge — no dock
+   band. The legacy 641–768 inline drawer keeps the sticky bar rules above
+   (`:not(.mobileSharedSheet)`); this only touches the ≤640 portal footer. */
+@media (max-width: 640px) {
+  .mobileSharedSheetFooter .venueSheetStickyBar {
+    position: static;
+    margin: 0;
+    padding: 12px 16px calc(env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid color-mix(in srgb, var(--brass) 28%, var(--line));
+    /* Solid surface: the bar sits below the scrollport now, so the old scrim
+       gradient (for content bleeding under a sticky bar) is unnecessary. */
+    background: var(--color-surface-raised, var(--panel));
+  }
+
+  /* The bar left the venue-inspector flow (it portals to the sheet footer), so
+     the ≤768 in-tab 84px sticky-bar reserve is dead space in the portal — it
+     would push a gap between the last content and the footer. Drop it to a plain
+     gutter so short content hugs tight and tall content ends flush above the
+     footer bar. */
+  .mobileSharedSheet .venueInspector {
+    padding-bottom: 8px;
+  }
+
+  /* ONE handle. The portal sheet draws its own grab bar in the header and owns
+     the drag (PubMap passes no onGrabDrag* handlers on a phone), so the
+     inspector's bar rendered a SECOND handle, in a second colour, above the
+     photo — two bars promising two different drags, only one of which worked
+     (design judgement 2026-08-01, finding 2.16). Hidden here, not deleted: the
+     641–1023 inline drawer still drags by this one. */
+  .mobileSharedSheet .venueSheetGrabZone {
+    display: none;
+  }
+}
+
+/* ── Large-text / 200% zoom pass (user story 18) ─────────────────────────────
+   Fixed px heights clip under large text; rem-based sizing and no fixed
+   max-height on the tab strip lets the strip and its labels grow with the
+   user's font size instead of clipping. */
+@media (max-width: 640px) {
+  .venueTabs {
+    flex-wrap: nowrap;
+    max-height: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .venueTab {
+    min-height: 2.75rem;
+    height: auto;
+    scroll-snap-align: start;
+  }
+}
+
+
+/* ── Last-train badge (IDEAS A5) ─────────────────────────────────────────────
+   A small candle-lit chip stamped on a Pint Drop's foot when the Getting-home
+   tab has loaded a live Last Pint decision AND the drop's post time backs an
+   honest claim (see lib/lastTrainBadge.ts — it returns null otherwise, so this
+   never paints on a guess). Two tones only: `safe` (posted with time to spare —
+   warm brass/green) and `risk` (posted after the leave-by clock — rust). No
+   animation, so reduced-motion is a non-issue. */
+.trainBadge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  vertical-align: baseline;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.trainBadge[data-tone="safe"] {
+  color: var(--brass, #ff5a5f);
+  background: color-mix(in srgb, var(--brass, #ff5a5f) 12%, transparent);
+  border-color: color-mix(in srgb, var(--brass, #ff5a5f) 32%, transparent);
+}
+
+.trainBadge[data-tone="risk"] {
+  --rust: #a4451f;
+  color: var(--rust);
+  background: color-mix(in srgb, var(--rust) 12%, transparent);
+  border-color: color-mix(in srgb, var(--rust) 34%, transparent);
+}
+
+/* The base rust is too dark to read on the dark sheet — lift it to a warmer,
+   lighter rust that keeps the "past the leave-by clock" warning tone legible. */
+html[data-theme="dark"] .trainBadge[data-tone="risk"] {
+  --rust: #e0885c;
+}
+
+/* ── Focused visual polish: brighter sheet, stronger listings, clear accents ── */
+.venueSheetGrabZone {
+  margin: -2px 0 8px;
+}
+
+.venueSheetGrab {
+  width: 44px;
+  background: color-mix(in srgb, var(--river) 34%, var(--line));
+}
+
+.venueSheetGrabZone:active .venueSheetGrab,
+.mapDrawer.sheet-dragging .venueSheetGrab {
+  background: color-mix(in srgb, var(--brass) 68%, var(--line));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .venueSheetGrab {
+    transition:
+      transform var(--duration-press) var(--ease-out-strong),
+      background-color var(--duration-press) var(--ease-out);
+  }
+
+  .venueSheetGrabZone:active .venueSheetGrab,
+  .mapDrawer.sheet-dragging .venueSheetGrab {
+    transform: scaleX(0.78);
+  }
+}
+
+/* The strip is one group with one hairline, and it SCROLLS, so its overflowing
+   edge fades rather than clipping a label mid-word ("Last train" cut to
+   "Train" with a hard edge — design judgement 2026-08-01, finding 2.16). The
+   fade is a mask, so it works over any sheet material. */
+.venueTabs {
+  gap: 4px;
+  margin: 12px 0 10px;
+  padding: 4px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* The fade is a claim that a tab is hidden past the edge, so it is drawn only
+   while that is true: lib/useTrailingEdgeFade.ts sets this attribute and drops
+   it at the end of the scroll, and whenever the whole overflow is narrower than
+   the fade itself. Unconditional, this dimmed the last tab on every 390px
+   phone at every scroll position, and a half-faded tab reads as disabled.
+   The 28px here is the width that hook publishes; __tests__/venueTabsEdgeFade
+   .test.ts fails when the two drift apart. */
+.venueTabs[data-trailing-fade="on"] {
+  mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+}
+
+.venueTab {
+  /* 44px WCAG tap target across all bands (the ≤640 rule already floors to 44;
+     this covers the 641-1023 tablet band that previously inherited 38px). */
+  min-height: 44px;
+  padding: 8px 13px;
+  border: 0;
+  /* A PILL sized to its label, not a circle. The 999px radius on a 44px-tall
+     button turned a five-letter tab into a blob wider than its own word
+     (design judgement 2026-08-01, finding 2.16). */
+  border-radius: var(--radius);
+  color: var(--muted);
+  border-bottom: 0;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.venueTab:hover,
+.venueTab:not(.active):hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--brass) 8%, transparent);
+}
+
+/* Selection is the fill. Coral appears as a 2px underline only, so it marks
+   the tab without becoming the loudest object on the pub's own sheet
+   (DESIGN.md, The One Accent Rule). */
+.venueTab.active {
+  background: var(--panel-raised);
+  box-shadow: inset 0 -2px 0 var(--brass);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.venueBaselinePhoto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 56%,
+    color-mix(in srgb, var(--ink-deep) 28%, transparent) 100%
+  );
+}
+
+.venueAddress {
+  margin-bottom: 12px;
+  color: var(--ink-soft);
+}
+
+.venueTabPanel .amenity,
+.venueTabPanel .accessibilityChip {
+  background: var(--panel-raised);
+}
+
+.venueTabPanel .contributorPrice {
+  padding-inline: 0;
+  border-inline: 0;
+  border-radius: 0;
+  border-color: color-mix(in srgb, var(--pint) 34%, var(--line));
+  background: transparent;
+  box-shadow: none;
+}
+
+.venueTabPanel .priceList {
+  border-inline: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.venueTabPanel .addStopBtn,
+.venueTabPanel .logDropBtn,
+.venueTabPanel .saveToListCreate,
+.venueTabPanel .dropComposer button[type="submit"],
+.venueTabPanel .landlordForm button {
+  border-color: var(--brass);
+  background: linear-gradient(135deg, var(--brass), var(--brass-bright));
+  color: var(--color-on-accent);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brass) 24%, transparent);
+}
+
+.venueTabPanel .saveToListToggle,
+.venueTabPanel .composerToggle {
+  border-color: color-mix(in srgb, var(--brass) 34%, var(--line));
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised));
+  color: var(--brass);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--panel-raised) 82%, transparent);
+}
+
+.venueTabPanel .saveToListToggle:hover,
+.venueTabPanel .composerToggle:hover {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+}
+
+.venueTabPanel .dropList {
+  gap: 12px;
+}
+
+.venueTabPanel .dropCard,
+.venueTabPanel .saveToList,
+.venueTabPanel .claimCard {
+  border-color: color-mix(in srgb, var(--line) 74%, var(--panel-raised));
+}
+
+.venueTabPanel .dropCard,
+.venueTabPanel .claimCard {
+  border-inline: 0;
+  border-top: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.venueTabPanel .dropCard:hover,
+.venueTabPanel .claimCard:hover {
+  border-color: color-mix(in srgb, var(--brass) 42%, var(--line));
+  background: color-mix(in srgb, var(--brass) 5%, transparent);
+  box-shadow: none;
+}
+
+.venueTabPanel .instaFrame {
+  gap: 3px;
+  border-color: color-mix(in srgb, var(--river) 20%, var(--line));
+  background: color-mix(in srgb, var(--river) 18%, var(--line));
+}
+
+.venueTabPanel .instaShot figcaption {
+  background: color-mix(in srgb, var(--ink-deep) 72%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.venueTabPanel .dropCard .dropPrice {
+  color: var(--pint);
+}
+
+.venueTabPanel .cuisineRow {
+  margin: 0 0 12px;
+}
+
+.venueTabPanel .cuisineServes {
+  margin: 0 0 6px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.venueTabPanel .cuisineTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.venueTabPanel .cuisineChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px solid color-mix(in srgb, var(--amber, #c48a3a) 40%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--amber, #c48a3a) 10%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.venueTabPanel .placeStories {
+  margin: 16px 0 12px;
+}
+
+.venueTabPanel .placeStoriesLead {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.venueTabPanel .placeStoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.venueTabPanel .placeStoryCard {
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--line) 74%, var(--panel-raised));
+  border-radius: 14px;
+  background: var(--panel-raised);
+}
+
+.venueTabPanel .placeStoryTitle {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+}
+
+.venueTabPanel .placeStoryCopy {
+  margin: 0 0 8px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.venueTabPanel .placeStoryActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.venueTabPanel .placeStoryWalk {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--brass) 36%, var(--line));
+  background: color-mix(in srgb, var(--brass) 10%, var(--panel));
+}
+
+.venueTabPanel .placeStoryWalk:hover {
+  background: color-mix(in srgb, var(--brass) 16%, var(--panel));
+}
+
+.venueTabPanel .placeStoryCrawl {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.venueTabPanel .placeStoryCrawl:hover {
+  text-decoration: underline;
+}
+
+.venueTabPanel .placeStorySource {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.venueTabPanel .placeStorySource:hover {
+  text-decoration: underline;
+}
+
+.venueTabPanel .aroundHere {
+  margin-top: 12px;
+}
+
+.venueTabPanel .aroundHereLabel {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.venueTabPanel .aroundHereList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.venueTabPanel .aroundHereList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+
+.venueTabPanel .aroundHereList small {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+#venuePanel-getting-home {
+  border-color: color-mix(in srgb, var(--river) 30%, var(--line));
+  background:
+    radial-gradient(
+      280px 150px at 100% 0%,
+      color-mix(in srgb, var(--river) 9%, transparent),
+      transparent 70%
+    ),
+    var(--panel-raised);
+}
+
+#venuePanel-getting-home > section {
+  --line: color-mix(in srgb, var(--river) 36%, var(--line-soft));
+  --panel-raised: color-mix(in srgb, var(--river) 7%, var(--paper));
+
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--river) 14%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .venueTab:hover {
+    transform: translateY(-1px);
+  }
+
+  .venueBaselinePhoto:hover img {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venueTab,
+  .venueBaselinePhoto img {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .venueTabs {
+    gap: 3px;
+    margin-top: 10px;
+    padding: 3px;
+    scroll-padding-inline: 3px;
+    border-radius: var(--radius-lg);
+  }
+
+  .venueTab {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 7px 10px;
+    font-size: 0.8rem;
+    /* Tighter tracking (not just a smaller size) buys back a couple of px per
+       tab so the short labels sit comfortably instead of clipping. */
+    letter-spacing: -0.01em;
+  }
+
+  .venueTabFull {
+    display: none;
+  }
+
+  .venueTabShort {
+    display: inline;
+  }
+
+  .venueTabPanel {
+    padding: 12px 12px 24px;
+  }
+}
+
+/* Keep every section discoverable at the common 400px and 430px phone widths.
+   The roomier tab spacing above leaves only a sliver of Train visible at 400px,
+   which reads as clipped copy instead of another control. Horizontal scrolling
+   stays available for narrower or large-text layouts. */
+@media (max-width: 430px) {
+  .venueTabs {
+    gap: 2px;
+  }
+
+  .venueTab {
+    padding-inline: 7px;
+    font-size: 0.76rem;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ── Tab content crossfade (signature-surface motion polish) ──────────────────
+   Each tab panel is display:none via [hidden] until selected; the moment it
+   becomes the shown panel it settles in with a short rise + fade. Because the
+   old panel leaves instantly and the new one eases in, tab switches read as a
+   quick crossfade rather than a hard swap. Keyed purely to the display flip, so
+   it replays on every visit but never on an unrelated re-render, and it only
+   ever animates the one visible panel. transform/opacity only; --ease-out-strong
+   (never ease-in on UI). Fully gated behind no-preference — reduced-motion users
+   get the instant, static swap. */
+@media (prefers-reduced-motion: no-preference) {
+  .venueTabPanel:not([hidden]) {
+    /* `backwards` (not `both`/`forwards`): the panel takes the from-state before
+       the first frame (no flash) but reverts to no-transform once settled — a
+       lingering transform would break `position: sticky` descendants (e.g. the
+       desktop in-tab Drop bar). The transform is only live for the ~150ms run,
+       while the panel is just appearing and nothing is being scrolled. */
+    animation: venueTabPanelIn var(--duration-base) var(--ease-out-strong) backwards;
+  }
+}
+
+@keyframes venueTabPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* "On tonight at this venue" chips (Wave A · A1). A glyph-led chip per event
+   kind sits just under the venue title; the whole row is fed by the grounded
+   CityMCP things_to_do tonight window and fail-softs to nothing when the venue
+   has no listing. Kept compact so it never crowds the title/tabs. */
+.venueTonightChips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 2px;
+}
+
+.venueTonightChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border: 1px solid color-mix(in srgb, var(--brass) 40%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.venueTonightChip svg {
+  color: var(--brass);
+}
+
+.venueTonightChecked {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Desktop docked-panel treatment (N3) ─────────────────────────────────────
+   ≥1024px matches the app's established "real desktop" cut (see globals.css
+   .logDropBar / .mapLegend @media (max-width: 1050px) — the inverse of that
+   is roughly here) rather than the 641px mobile-gesture cut above, which only
+   tells us the drag-sheet is off; a narrow tablet width still wants the
+   mobile-shaped strip. Scoped to the right drawer that actually hosts the
+   open right drawer so the planner's left drawer — a different, already
+   desktop-plain side panel — is untouched. Everything here is presentation
+   only: no gesture/tab logic changes, and nothing below 1024px is affected. */
+@media (min-width: 1024px) {
+  /* How much of the screen the open drawer owns. Published as a variable
+     because the map toolbar has to stay OUT of that lane (mapToolbar.css):
+     a bar centred on the whole viewport ran its right half under the sheet
+     and printed a ghost row through it. One source, so the two agree. */
+  .appShell {
+    --desktop-venue-drawer-width: min(640px, 46vw);
+  }
+
+  .mapDrawer.right.open {
+    /* Wide enough for the two-column Pints layout below without feeling like
+       a full takeover — still clearly a docked side panel, not the map. */
+    width: var(--desktop-venue-drawer-width);
+  }
+
+  /* The mobile bottom-sheet grab affordance has no meaning on a docked side
+     panel — PubMap never wires drag handlers above the gesture breakpoint,
+     so this was always a visual no-op; hide it outright at desktop widths. */
+  .venueInspector .venueSheetGrabZone {
+    display: none;
+  }
+
+  /* Full, non-scrolling tab bar — the mobile "strip" (horizontal scroll,
+     short labels, tight padding) is a small-viewport affordance the docked
+     panel doesn't need at this width. */
+  .venueInspector .venueTabs {
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .venueInspector .venueTab {
+    padding: 9px 16px;
+    font-size: 0.9rem;
+  }
+
+  .venueInspector .venueTabFull {
+    display: inline;
+  }
+
+  .venueInspector .venueTabShort {
+    display: none;
+  }
+
+  .venueInspector .venueTabPanel {
+    padding: 18px;
+  }
+
+  /* Golden Thread (or the composer, when open) beside the Pint Drops list
+     instead of stacked — the panel is wide enough now to read both at once. */
+  .venuePintsCols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .venuePintsCols .pintDrops {
+    /* Reset the stacked-section rule (globals.css) — as a grid column it no
+       longer needs the dashed divider that used to separate it from the
+       Golden Thread above. */
+    margin: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+}
+
+/* ── Passive cited heritage ("On record") ────────────────────────────────────
+   The facts a pub carries on record, surfaced at the top of the Lore tab the
+   instant it opens so the story reads passively — no need to interrogate the
+   Landlord. Provenance rides every fact: a source chip (Wikipedia / Wikidata /
+   OpenStreetMap / "On record" for our own seed) plus a citation link when the
+   record has one. Matches the sheet's card idiom + the /historic source chips;
+   tokens only, so it reads cleanly in both themes. */
+.venueTabPanel .heritageOnRecord {
+  margin: 0 0 14px;
+}
+
+.venueTabPanel .heritageFactList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.venueTabPanel .heritageFact {
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--line) 74%, var(--panel-raised));
+  border-radius: var(--radius-lg);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+/* A listed-building fact (Historic England NHLE) is the pub's real brass plaque,
+   so it wears the amber/brass plaque idiom (per #328 --price-plaque-* tokens)
+   rather than the plain panel — engraved metal, not an alert. The plaque metal
+   lives ONLY on the priced/heritage surfaces; this is one of them. */
+.venueTabPanel .heritageFact[data-source="nhle"] {
+  background: var(--price-plaque-surface);
+  border-color: var(--price-plaque-border);
+  box-shadow: var(--price-plaque-shine), var(--shadow-sm);
+}
+
+.venueTabPanel .heritageFact[data-source="nhle"] .heritageFactText {
+  color: var(--accent-price-ink);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* The Historic England chip reads as an engraved brass tab, matching the plaque
+   it sits on rather than the quieter external-source pill. */
+.venueTabPanel .heritageSourceChip[data-source="nhle"] {
+  border-color: var(--price-plaque-border);
+  background: color-mix(in srgb, var(--amber) 20%, var(--panel-raised));
+  color: var(--accent-price-ink);
+}
+
+.venueTabPanel .heritageFactText {
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.venueTabPanel .heritageFactMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+}
+
+.venueTabPanel .heritageSourceChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border: 1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--brass);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Seed facts are our own curation ("on record") — a quieter, river-tinted chip
+   distinguishes them from named external sources without inventing authority. */
+.venueTabPanel .heritageSourceChip[data-source="seed"] {
+  border-color: color-mix(in srgb, var(--river) 30%, var(--line));
+  background: color-mix(in srgb, var(--river) 12%, var(--panel-raised));
+  color: var(--river);
+}
+
+.venueTabPanel .heritageFactCite {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px; /* 44px-safe tap target on the citation link */
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.venueTabPanel .heritageFactCite:hover {
+  text-decoration: underline;
+}
+
+.venueTabPanel .heritageFactCite:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.venueTabPanel .landlordSuggest button,
+.venueTabPanel .citationChip {
+  min-height: 44px;
+}
+
+.venueTabPanel .heritageFollowUp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px; /* 44px-safe tap target */
+  margin-top: 12px;
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--brass) 34%, var(--line));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel-raised));
+  color: var(--brass);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--panel-raised) 82%, transparent);
+}
+
+.venueTabPanel .heritageFollowUp:hover {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+}
+
+.venueTabPanel .heritageFollowUp:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* Venue reveal choreography — transform/opacity only; figures stay static.
+   Every rule sits behind prefers-reduced-motion: no-preference. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes venue-reveal-bloom {
+    from {
+      opacity: 0.6;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes venue-reveal-bloom-short {
+    from {
+      opacity: 0.75;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes venue-reveal-beermat-drop {
+    0% {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    72% {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes venue-reveal-price-slide {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes venue-reveal-record {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .venueReveal--full .venueRevealBloom {
+    animation: venue-reveal-bloom 280ms var(--ease-out-strong)
+      calc(80ms - var(--venue-reveal-elapsed, 0ms)) forwards;
+  }
+
+  .venueReveal--short .venueRevealBloom {
+    animation: venue-reveal-bloom-short 160ms var(--ease-out-strong)
+      calc(0ms - var(--venue-reveal-elapsed, 0ms)) forwards;
+  }
+
+  .venueRevealRecords .venueRevealRecord {
+    animation: venue-reveal-record 160ms var(--ease-out-strong) forwards;
+  }
+
+  .venueReveal--full .venueRevealPriceChrome--drop {
+    animation: venue-reveal-beermat-drop 180ms var(--ease-spring)
+      calc(240ms - var(--venue-reveal-elapsed, 0ms)) forwards;
+  }
+
+  .venueReveal--full .venueRevealPriceChrome--slide {
+    animation: venue-reveal-price-slide 180ms var(--ease-out-strong)
+      calc(240ms - var(--venue-reveal-elapsed, 0ms)) forwards;
+  }
+
+  .venueReveal--full .venueRevealRecord {
+    animation: venue-reveal-record 160ms var(--ease-out-strong) forwards;
+  }
+
+  .venueReveal--full .venueRevealRecord[data-reveal-delay="0"] {
+    animation-delay: calc(200ms - var(--venue-reveal-elapsed, 0ms));
+  }
+
+  .venueReveal--full .venueRevealRecord[data-reveal-delay="1"] {
+    animation-delay: calc(240ms - var(--venue-reveal-elapsed, 0ms));
+  }
+
+  .venueReveal--full .venueRevealRecord[data-reveal-delay="2"] {
+    animation-delay: calc(280ms - var(--venue-reveal-elapsed, 0ms));
+  }
+
+  .venueReveal--full .venueRevealRecord[data-reveal-delay="3"] {
+    animation-delay: calc(320ms - var(--venue-reveal-elapsed, 0ms));
+  }
+  .venueReveal--interrupted .venueRevealBloom,
+  .venueReveal--interrupted .venueRevealPriceChrome--drop,
+  .venueReveal--interrupted .venueRevealPriceChrome--slide,
+  .venueReveal--interrupted .venueRevealRecord {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

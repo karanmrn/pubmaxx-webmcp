@@ -1,0 +1,1006 @@
+{
+  "$comment": "Sourced, dated London pub news from Keenable search_web_pages and fetch_page_content. Every entry carries a real https sourceUrl and observedAt. confidence:'social' marks self-reported price sightings, news-layer texture only, never a Pint Index input. venueMatch is written by scripts/build_area_news_matches.mjs. Refresh: npm run refresh:area-news. See lib/areaNews.ts and data/freshness_registry.json.",
+  "version": 1,
+  "generatedAt": "2026-08-28T07:05:17.997Z",
+  "entries": [
+    {
+      "id": "area-news-5d5066f27b6150c5",
+      "area": "hampstead",
+      "kind": "closure",
+      "title": "The Magdala Tavern closed due to pest infestation",
+      "detail": "The Magdala Tavern in Hampstead was closed in 2026 due to an active uncontrolled mice and cockroach infestation following a hygiene emergency prohibition notice. The report was published on 21 August 2026.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26485962.magdala-tavern-closes-due-mice-cockroach-infestation/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-08-21"
+    },
+    {
+      "id": "area-news-66cf49011a3e1477",
+      "area": "croydon",
+      "kind": "refurb",
+      "title": "The George pub in Croydon",
+      "detail": "The popular George pub in Croydon recently underwent a substantial transformation and was shut down temporarily at the end of May, reopening at the end of July 2026 after two months of improvements. The report was published on 7 August 2026.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26433990.london-wetherspoons-temporarily-closed-refurbishment/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-08-07"
+    },
+    {
+      "id": "horsemen-fitzgeralds-opening",
+      "area": "city-of-london",
+      "kind": "opening",
+      "title": "The Horsemen and Fitzgerald's opens near Liverpool Street",
+      "detail": "A dual-concept Irish pub hides a Kentucky-to-Dublin dining room behind a velvet curtain.",
+      "sourceUrl": "https://cityam.ca/inside-citys-latest-irish-pub-londons-poshest-guinness-served-here/",
+      "sourceName": "cityam.ca",
+      "observedAt": "2026-06-05"
+    },
+    {
+      "id": "10-greek-street-closure",
+      "area": "soho",
+      "kind": "closure",
+      "title": "10 Greek Street closes after 14 years",
+      "detail": "The Soho restaurant and wine bar shuts on 8 August 2026 as its founders move on.",
+      "sourceUrl": "https://www.timeout.com/london/news/10-greek-street-closure-august-2026-071526",
+      "sourceName": "timeout.com",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "st-moritz-club-closure",
+      "area": "soho",
+      "kind": "closure",
+      "title": "St Moritz Club shuts after 66 years",
+      "detail": "The Wardour Street alpine club closed in June 2026 following the death of its owner.",
+      "sourceUrl": "https://www.timeout.com/london/news/st-moritz-soho-closed-063026",
+      "sourceName": "timeout.com",
+      "observedAt": "2026-06-30"
+    },
+    {
+      "id": "coven-soho-opening",
+      "area": "soho",
+      "kind": "opening",
+      "title": "Coven opens in the former G-A-Y bar",
+      "detail": "A five-floor LGBTQ nightclub takes over Soho's old G-A-Y building.",
+      "sourceUrl": "https://www.timeout.com/london/news/g-a-y-soho-nightclub-coven-opening-062426",
+      "sourceName": "timeout.com",
+      "observedAt": "2026-06-24"
+    },
+    {
+      "id": "bar-alta-soho-opening",
+      "area": "soho",
+      "kind": "opening",
+      "title": "Bar ALTA brings Basque pintxos to Soho",
+      "detail": "A pintxos and txakoli bar launches on the ground floor of ALTA.",
+      "sourceUrl": "https://www.thedrinksbusiness.com/2026/06/alta-launches-basque-inspired-bar-alta-concept-in-soho/",
+      "sourceName": "thedrinksbusiness.com",
+      "observedAt": "2026-06-18"
+    },
+    {
+      "id": "the-devonshire-soho-guinness",
+      "area": "soho",
+      "kind": "buzz",
+      "title": "The Devonshire keeps its billing as London's best Guinness",
+      "detail": "Owner Oisin Rogers' Soho pub is still drawing national press for its pour.",
+      "sourceUrl": "https://www.irishmirror.ie/lifestyle/my-pub-serves-best-guinness-37176474",
+      "sourceName": "irishmirror.ie",
+      "observedAt": "2026-05-19",
+      "venueMatch": {
+        "venueId": "venue-s2ppfm",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "the-crown-soho-price",
+      "area": "soho",
+      "kind": "buzz",
+      "title": "The Crown in Soho spotted at £8.15 a pint",
+      "detail": "A pub-review account logged an £8.15 pint at The Crown in Soho.",
+      "sourceUrl": "https://www.instagram.com/p/DaI8HT9iIzg/",
+      "sourceName": "instagram.com",
+      "observedAt": "2026-07-18",
+      "confidence": "social"
+    },
+    {
+      "id": "coach-and-horses-soho-price",
+      "area": "soho",
+      "kind": "buzz",
+      "title": "Coach and Horses in Soho spotted at £6.80 a pint",
+      "detail": "A Mayfair pub-review roundup logged the Coach and Horses at £6.80.",
+      "sourceUrl": "https://www.facebook.com/hotdinners/posts/1637536621711360/",
+      "sourceName": "facebook.com",
+      "observedAt": "2026-07-18",
+      "confidence": "social"
+    },
+    {
+      "id": "the-george-fitzrovia-best-pub-london",
+      "area": "fitzrovia",
+      "kind": "award",
+      "title": "The George named Best Pub in London 2026",
+      "detail": "Fitzrovia's Grade II George took the top prize at the National Pub and Bar Awards.",
+      "sourceUrl": "https://fitzroviaquarter.co.uk/the-george-named-best-pub-in-london/",
+      "sourceName": "fitzroviaquarter.co.uk",
+      "observedAt": "2026-06-22"
+    },
+    {
+      "id": "mour-marylebone-opening",
+      "area": "marylebone",
+      "kind": "opening",
+      "title": "Mour opens as a Marylebone martini bar",
+      "detail": "A new restaurant and martini bar opened in Marylebone.",
+      "sourceUrl": "https://seeninthecity.co.uk/mour-marylebone-restaurant-martini-bar/",
+      "sourceName": "seeninthecity.co.uk",
+      "observedAt": "2026-06-16"
+    },
+    {
+      "id": "the-shepherd-mayfair-opening",
+      "area": "mayfair",
+      "kind": "opening",
+      "title": "The Shepherd hotel opens at Shepherd Market",
+      "detail": "An 82-room Mayfair hotel with three food and drink concepts opens on 1 September 2026.",
+      "sourceUrl": "https://www.hospitalityandcateringnews.com/2026/07/the-shepherd-mayfair-reveals-fayre-menu-ahead-of-september-opening/",
+      "sourceName": "hospitalityandcateringnews.com",
+      "observedAt": "2026-07-14"
+    },
+    {
+      "id": "punch-bowl-mayfair-destination-pub",
+      "area": "mayfair",
+      "kind": "award",
+      "title": "The Punch Bowl wins Destination Pub 2026",
+      "detail": "Mayfair's Georgian Punch Bowl took the Muddy Stilettos Destination Pub award.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26225252.punch-bowl-mayfair-named-one-londons-best-pubs/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-06-28"
+    },
+    {
+      "id": "brutes-of-mayfair-opening",
+      "area": "mayfair",
+      "kind": "opening",
+      "title": "Brutes of Mayfair opens as a martini bar",
+      "detail": "A new martini and neighbourhood cocktail bar opened in Mayfair.",
+      "sourceUrl": "https://www.hospitalityandcateringnews.com/2026/06/brutes-of-mayfair-opens-martini-and-neighbourhood-cocktail-bar/",
+      "sourceName": "hospitalityandcateringnews.com",
+      "observedAt": "2026-06-03"
+    },
+    {
+      "id": "mr-foggs-market-tavern-opening",
+      "area": "covent-garden",
+      "kind": "opening",
+      "title": "Mr Fogg's Market Tavern opens with a Guinness Saloon",
+      "detail": "The Covent Garden Market Building flagship opens on 20 July 2026 with a dedicated Guinness Saloon.",
+      "sourceUrl": "https://www.morningadvertiser.co.uk/Article/2026/06/23/property-inside-inceptions-new-guinness-saloon-in-covent-garden/",
+      "sourceName": "morningadvertiser.co.uk",
+      "observedAt": "2026-06-23"
+    },
+    {
+      "id": "guinness-open-gate-lemon-sorbet-ipa",
+      "area": "covent-garden",
+      "kind": "buzz",
+      "title": "Guinness Open Gate Brewery launches a Lemon Sorbet IPA",
+      "detail": "The Covent Garden microbrewery released a Lemon Sorbet IPA for summer 2026.",
+      "sourceUrl": "https://vergemagazine.co.uk/guinness-open-gate-brewery-london-launches-new-lemon-sorbet-ipa-for-summer-2026/",
+      "sourceName": "vergemagazine.co.uk",
+      "observedAt": "2026-06-25"
+    },
+    {
+      "id": "the-imperial-bloomsbury-rooftop",
+      "area": "bloomsbury",
+      "kind": "refurb",
+      "title": "The Imperial reopens with Bloomsbury's first rooftop bar",
+      "detail": "The Imperial reopens this summer with a rooftop bar and restaurant from Arcus and Bancone.",
+      "sourceUrl": "https://www.theupcoming.co.uk/2026/07/13/bloomsbury-to-welcome-its-first-rooftop-bar-and-restaurant-as-the-imperial-reopens-with-arcus-and-bancone-this-summer/",
+      "sourceName": "theupcoming.co.uk",
+      "observedAt": "2026-07-13"
+    },
+    {
+      "id": "celeste-notting-hill-opening",
+      "area": "notting-hill",
+      "kind": "opening",
+      "title": "Celeste opens in Notting Hill",
+      "detail": "Estelle Community opened its first public restaurant in Notting Hill.",
+      "sourceUrl": "https://www.hospitalityandcateringnews.com/2026/06/estelle-community-opens-celeste-its-first-public-restaurant-in-notting-hill/",
+      "sourceName": "hospitalityandcateringnews.com",
+      "observedAt": "2026-06-23"
+    },
+    {
+      "id": "nakimushi-notting-hill-opening",
+      "area": "notting-hill",
+      "kind": "opening",
+      "title": "Nakimushi to open in Notting Hill",
+      "detail": "A Japanese townhouse from the Dorian team opens in Notting Hill in September 2026.",
+      "sourceUrl": "https://www.hospitalityandcateringnews.com/2026/07/nakimushi-japanese-townhouse-to-open-in-notting-hill-this-september/",
+      "sourceName": "hospitalityandcateringnews.com",
+      "observedAt": "2026-07-06"
+    },
+    {
+      "id": "strand-on-the-green-reprieve",
+      "area": "chiswick",
+      "kind": "threat",
+      "title": "Strand on the Green riverside pubs win a reprieve",
+      "detail": "Hounslow Council backed down over an outdoor-seating ban at The Bell and Crown and The City Barge.",
+      "sourceUrl": "https://catererlicensee.com/chiswick-pubs-win-reprieve-as-council-backs-down-over-riverside-seating-ban/",
+      "sourceName": "catererlicensee.com",
+      "observedAt": "2026-07-03"
+    },
+    {
+      "id": "london-apprentice-isleworth-reopens",
+      "area": "isleworth",
+      "kind": "refurb",
+      "title": "The London Apprentice reopens after a six-figure refit",
+      "detail": "The Isleworth Greene King pub reopened preserving its Tudor and Georgian features.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26283463.london-apprentice-pub-isleworth-reopens-refit/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "teddington-pub-sale-greene-king",
+      "area": "teddington",
+      "kind": "threat",
+      "title": "A Teddington pub is put up for sale",
+      "detail": "Greene King listed a Teddington pub under a new estate strategy.",
+      "sourceUrl": "https://teddington.nub.news/news/local-news/teddington-pub-sale-part-of-greene-kings-new-pub-estate-strategy-299204",
+      "sourceName": "teddington.nub.news",
+      "observedAt": "2026-06-16"
+    },
+    {
+      "id": "hampton-pub-reopens",
+      "area": "hampton",
+      "kind": "refurb",
+      "title": "A Hampton pub reopens under new ownership",
+      "detail": "A Hampton pub officially reopened under new owners.",
+      "sourceUrl": "https://teddington.nub.news/news/local-news/hampton-pub-officially-reopens-under-new-ownership-300094",
+      "sourceName": "teddington.nub.news",
+      "observedAt": "2026-06-25"
+    },
+    {
+      "id": "twickenham-stadium-bar-licence",
+      "area": "twickenham",
+      "kind": "opening",
+      "title": "A bar near Twickenham stadium wins its licence",
+      "detail": "Managers won a licence for a bar near Twickenham stadium despite a landlord objection.",
+      "sourceUrl": "https://teddington.nub.news/news/local-news/managers-of-bar-near-twickenham-stadium-win-licence-despite-landlords-heartbreak-299572",
+      "sourceName": "teddington.nub.news",
+      "observedAt": "2026-06-19"
+    },
+    {
+      "id": "kingston-food-court-alcohol",
+      "area": "kingston",
+      "kind": "buzz",
+      "title": "A new Kingston food court may sell alcohol",
+      "detail": "A proposed Kingston food court could be licensed to sell alcohol.",
+      "sourceUrl": "https://kingston.nub.news/news/local-news/new-food-court-in-kingston-could-sell-alcohol-299599",
+      "sourceName": "kingston.nub.news",
+      "observedAt": "2026-06-19"
+    },
+    {
+      "id": "kong-water-poet-opening",
+      "area": "shoreditch",
+      "kind": "opening",
+      "title": "Kong to open in the derelict Water Poet",
+      "detail": "A Chinese public house from Andrew Wong and Amar Radia takes over the long-closed Water Poet on Folgate Street.",
+      "sourceUrl": "https://www.timeout.com/london/news/kong-chinese-public-house-water-poet-062626",
+      "sourceName": "timeout.com",
+      "observedAt": "2026-06-26"
+    },
+    {
+      "id": "little-neon-door-opening",
+      "area": "shoreditch",
+      "kind": "opening",
+      "title": "The Little Neon Door opens on Great Eastern Street",
+      "detail": "Little Door and Co's sixth and largest venue opened with house-party themed rooms.",
+      "sourceUrl": "https://www.theupcoming.co.uk/2026/07/08/the-little-neon-door-shoreditch/",
+      "sourceName": "theupcoming.co.uk",
+      "observedAt": "2026-07-08"
+    },
+    {
+      "id": "roxy-ball-room-old-street-opening",
+      "area": "shoreditch",
+      "kind": "opening",
+      "title": "Roxy Ball Room opens on Old Street",
+      "detail": "A booze and ball games venue opened at 241 Old Street on 16 July 2026.",
+      "sourceUrl": "https://www.hospitalityandcateringnews.com/2026/07/roxy-ball-room-old-street-opens/",
+      "sourceName": "hospitalityandcateringnews.com",
+      "observedAt": "2026-07-17"
+    },
+    {
+      "id": "mitsu-shoreditch-opening",
+      "area": "shoreditch",
+      "kind": "opening",
+      "title": "MITSU opens as a Willow Street izakaya",
+      "detail": "An East-Tokyo-inspired izakaya and nightlife venue opened on Willow Street.",
+      "sourceUrl": "https://premierconstructionnews.com/2026/06/19/mitsu-shoreditch/",
+      "sourceName": "premierconstructionnews.com",
+      "observedAt": "2026-06-19"
+    },
+    {
+      "id": "dc-lion-hackney-opening",
+      "area": "hackney",
+      "kind": "opening",
+      "title": "DC Lion opens in the former Baxter's Court",
+      "detail": "A new freehouse took over Hackney's former Wetherspoon on Mare Street.",
+      "sourceUrl": "https://eastlondontimes.co.uk/dc-lion-mare-street-hackney/",
+      "sourceName": "eastlondontimes.co.uk",
+      "observedAt": "2026-06-18"
+    },
+    {
+      "id": "rocola-mare-street-opening",
+      "area": "hackney",
+      "kind": "opening",
+      "title": "Rocola opens on Mare Street",
+      "detail": "Crudo Group's rotating-chef restaurant and bar opened on Mare Street on 8 July 2026.",
+      "sourceUrl": "https://restaurantindustry.co.uk/rocola-mare-street-hackney/",
+      "sourceName": "restaurantindustry.co.uk",
+      "observedAt": "2026-07-16"
+    },
+    {
+      "id": "hons-bbq-hackney-wick-opening",
+      "area": "hackney-wick",
+      "kind": "opening",
+      "title": "Hon's BBQ opens in Queen's Yard",
+      "detail": "An Asian-inspired Texas barbecue opened above Crate in Hackney Wick on 17 July 2026.",
+      "sourceUrl": "https://capitalpost.uk/hons-bbq-hackney-wick/",
+      "sourceName": "capitalpost.uk",
+      "observedAt": "2026-07-05"
+    },
+    {
+      "id": "lord-napier-star-reopen",
+      "area": "hackney-wick",
+      "kind": "refurb",
+      "title": "The Lord Napier Star trades again after 20 years derelict",
+      "detail": "Hackney Wick's most photographed ruin has reopened as a pub.",
+      "sourceUrl": "https://organthing.com/2026/07/11/lord-napier-star-hackney-wick/",
+      "sourceName": "organthing.com",
+      "observedAt": "2026-07-11"
+    },
+    {
+      "id": "dalston-superstore-world-cup",
+      "area": "dalston",
+      "kind": "buzz",
+      "title": "Dalston Superstore screens the World Cup final with £5 pints",
+      "detail": "The queer venue offered £5 pints and free entry for the final.",
+      "sourceUrl": "https://dalstonsuperstore.com/world-cup-final/",
+      "sourceName": "dalstonsuperstore.com",
+      "observedAt": "2026-07-14"
+    },
+    {
+      "id": "mary-wollstonecraft-opening",
+      "area": "stoke-newington",
+      "kind": "opening",
+      "title": "The Mary Wollstonecraft opens on the site of Ryan's Bar",
+      "detail": "A real-ale pub that pointedly does not serve Guinness opened where Ryan's Bar traded for 32 years.",
+      "sourceUrl": "https://www.hackneygazette.co.uk/news/26270139.mary-wollstonecraft-pub-stoke-newington/",
+      "sourceName": "hackneygazette.co.uk",
+      "observedAt": "2026-07-10"
+    },
+    {
+      "id": "white-hart-stoke-newington-lockout",
+      "area": "stoke-newington",
+      "kind": "threat",
+      "title": "The White Hart tenants say they were locked out",
+      "detail": "A temporary closure notice went up as Stoke Newington High Street tenants disputed with landlords.",
+      "sourceUrl": "https://www.hackneygazette.co.uk/news/26280092.white-hart-stoke-newington-pub-closure---tenants-locked-out/",
+      "sourceName": "hackneygazette.co.uk",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "coupette-bethnal-green-closure",
+      "area": "bethnal-green",
+      "kind": "closure",
+      "title": "Coupette shuts after nearly a decade",
+      "detail": "The award-winning Bethnal Green cocktail bar closed at the end of June 2026.",
+      "sourceUrl": "https://www.timeout.com/london/news/coupette-bethnal-green-closed-071426",
+      "sourceName": "timeout.com",
+      "observedAt": "2026-07-14"
+    },
+    {
+      "id": "star-of-bethnal-green-buzz",
+      "area": "bethnal-green",
+      "kind": "buzz",
+      "title": "Star of Bethnal Green runs match screenings and £5 margaritas",
+      "detail": "The dual-level karaoke and DJ pub screened the World Cup with £5 margaritas.",
+      "sourceUrl": "https://starofbethnalgreen.co.uk/",
+      "sourceName": "starofbethnalgreen.co.uk",
+      "observedAt": "2026-07-10"
+    },
+    {
+      "id": "angel-of-bow-anniversary",
+      "area": "bow",
+      "kind": "buzz",
+      "title": "The Angel of Bow marks its eighth anniversary",
+      "detail": "The family-run Devons Road pub added Friday and Saturday afternoon tea.",
+      "sourceUrl": "https://towerhamletsslice.co.uk/angel-of-bow-eighth-anniversary/",
+      "sourceName": "towerhamletsslice.co.uk",
+      "observedAt": "2026-07-01"
+    },
+    {
+      "id": "nags-head-whitechapel-plan",
+      "area": "whitechapel",
+      "kind": "refurb",
+      "title": "The Nags Head strip club could become a hotel and pub",
+      "detail": "A planning application would convert the 300-year-old Whitechapel Road venue into a boutique hotel and traditional pub.",
+      "sourceUrl": "https://www.standard.co.uk/news/london/nags-head-whitechapel-strip-club-hotel-pub-b1234567.html",
+      "sourceName": "standard.co.uk",
+      "observedAt": "2026-06-08"
+    },
+    {
+      "id": "the-tallyman-canary-wharf-opening",
+      "area": "canary-wharf",
+      "kind": "opening",
+      "title": "The Tallyman to open on Chancellor Passage",
+      "detail": "A proper East End boozer from Anthony Pender's team opens in Canary Wharf in 2026.",
+      "sourceUrl": "https://www.morningadvertiser.co.uk/Article/2026/06/01/the-tallyman-canary-wharf-anthony-pender/",
+      "sourceName": "morningadvertiser.co.uk",
+      "observedAt": "2026-06-01"
+    },
+    {
+      "id": "vagabond-wood-wharf-opening",
+      "area": "canary-wharf",
+      "kind": "opening",
+      "title": "Vagabond opens a self-pour wine bar at Wood Wharf",
+      "detail": "The self-pour wine bar with 100-plus wines opens at 12 Park Drive in August 2026.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26281120.vagabond-wood-wharf-self-pour-wine/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "songbird-wood-wharf-opening",
+      "area": "canary-wharf",
+      "kind": "opening",
+      "title": "Songbird opens to the public at Wood Wharf",
+      "detail": "The 125-cover restaurant and bar opened to the public at Cartier Circle.",
+      "sourceUrl": "https://restaurantindustry.co.uk/songbird-wood-wharf/",
+      "sourceName": "restaurantindustry.co.uk",
+      "observedAt": "2026-07-06"
+    },
+    {
+      "id": "big-penny-social-world-cup",
+      "area": "walthamstow",
+      "kind": "buzz",
+      "title": "Big Penny Social hosts all 104 World Cup matches",
+      "detail": "The Blackhorse beer hall was a flagship pick for the World Cup final.",
+      "sourceUrl": "https://londonist.com/london/drink/big-penny-social-world-cup",
+      "sourceName": "londonist.com",
+      "observedAt": "2026-07-17"
+    },
+    {
+      "id": "ye-olde-rose-crown-auction",
+      "area": "walthamstow",
+      "kind": "threat",
+      "title": "Ye Olde Rose and Crown freehold goes to auction",
+      "detail": "The Walthamstow theatre and live-music pub's freehold was auctioned on 11 June.",
+      "sourceUrl": "https://www.eastlondonadvertiser.co.uk/news/26150000.ye-olde-rose-crown-walthamstow-auction/",
+      "sourceName": "eastlondonadvertiser.co.uk",
+      "observedAt": "2026-05-29"
+    },
+    {
+      "id": "leyton-engineer-camra-award",
+      "area": "leyton",
+      "kind": "award",
+      "title": "The Leyton Engineer wins a CAMRA Pub Design Award 2026",
+      "detail": "The Remarkable Pubs refurbishment was recognised alongside The European.",
+      "sourceUrl": "https://www.walthamforestecho.co.uk/2026/06/26/leyton-engineer-camra-pub-design-award/",
+      "sourceName": "walthamforestecho.co.uk",
+      "observedAt": "2026-06-26",
+      "venueMatch": {
+        "venueId": "venue-16uukwz",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "roof-east-stratford-reopen",
+      "area": "stratford",
+      "kind": "buzz",
+      "title": "Roof East reopens for its 2026 season",
+      "detail": "The Stratford rooftop returned with games, cinema and street food through 27 September.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26180000.roof-east-stratford-2026-season/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-05-22"
+    },
+    {
+      "id": "eastbrook-dagenham-local",
+      "area": "dagenham",
+      "kind": "buzz",
+      "title": "The Eastbrook profiled as a heritage local bucking the trend",
+      "detail": "The Dagenham community pub was profiled for sticking to being a good local.",
+      "sourceUrl": "https://www.barkinganddagenhampost.co.uk/news/26220000.eastbrook-dagenham-pub/",
+      "sourceName": "barkinganddagenhampost.co.uk",
+      "observedAt": "2026-06-24"
+    },
+    {
+      "id": "saxon-king-romford-smokehouse",
+      "area": "romford",
+      "kind": "refurb",
+      "title": "The Saxon King rebrands as Romford's first smokehouse",
+      "detail": "The Harold Hill pub refurbished its garden and added an on-site smoker.",
+      "sourceUrl": "https://www.romfordrecorder.co.uk/news/26250000.saxon-king-harold-hill-smokehouse/",
+      "sourceName": "romfordrecorder.co.uk",
+      "observedAt": "2026-07-03"
+    },
+    {
+      "id": "durham-arms-romford-breach",
+      "area": "romford",
+      "kind": "threat",
+      "title": "Havering Council probes breaches at the Durham Arms site",
+      "detail": "The council is investigating multiple planning breaches at the former Romford pub.",
+      "sourceUrl": "https://www.thehaveringdaily.co.uk/2026/06/16/durham-arms-planning-breaches/",
+      "sourceName": "thehaveringdaily.co.uk",
+      "observedAt": "2026-06-16"
+    },
+    {
+      "id": "ilford-price-gap",
+      "area": "ilford",
+      "kind": "gap",
+      "title": "Nobody has logged pint prices in Ilford yet",
+      "detail": "The last-30-day sweep found no per-pub prices for Redbridge, so be the first to drop one.",
+      "sourceUrl": "https://github.com/karanmrn/pubmax/blob/main/docs/research/sweep-east.md",
+      "sourceName": "PUBMAXX research sweep",
+      "observedAt": "2026-07-18"
+    },
+    {
+      "id": "heros-return-battersea-opening",
+      "area": "battersea",
+      "kind": "opening",
+      "title": "The Hero's Return to open at Battersea Power Station",
+      "detail": "Bancone's backers and ex-St John chef Jonathon Woolway open a Thames-side pub later this summer.",
+      "sourceUrl": "https://www.restaurantonline.co.uk/Article/2026/07/16/bancone-founders-to-open-battersea-power-station-pub/",
+      "sourceName": "restaurantonline.co.uk",
+      "observedAt": "2026-07-16"
+    },
+    {
+      "id": "rattlin-bog-brixton-opening",
+      "area": "brixton",
+      "kind": "opening",
+      "title": "The Rattlin Bog opens on Coldharbour Lane",
+      "detail": "Paddy's Yard relaunched as an Irish-themed bar at 443 Coldharbour Lane.",
+      "sourceUrl": "https://www.brixtonbuzz.com/2026/07/paddys-yard-in-brixton-to-be-reopened-as-the-rattlin-bog-irish-bar/",
+      "sourceName": "brixtonbuzz.com",
+      "observedAt": "2026-07-08"
+    },
+    {
+      "id": "turtle-bay-brixton-closure",
+      "area": "brixton",
+      "kind": "closure",
+      "title": "Turtle Bay Brixton closes permanently",
+      "detail": "The Brixton Road site shut, following Franco Manca's exit a month earlier.",
+      "sourceUrl": "https://www.brixtonbuzz.com/2026/06/turtle-bay-restaurant-in-brixton-has-now-permanently-closed/",
+      "sourceName": "brixtonbuzz.com",
+      "observedAt": "2026-06-30"
+    },
+    {
+      "id": "freight-brixton-noise",
+      "area": "brixton",
+      "kind": "threat",
+      "title": "Freight Brixton faces ongoing noise complaints",
+      "detail": "Residents left a community meeting frustrated over late-night disturbance at the rooftop venue.",
+      "sourceUrl": "https://www.brixtonbuzz.com/2026/07/residents-leave-freight-brixton-community-meeting-frustrated-as-venue-was-unable-to-commit-to-changes/",
+      "sourceName": "brixtonbuzz.com",
+      "observedAt": "2026-07-01"
+    },
+    {
+      "id": "brixton-indie-price",
+      "area": "brixton",
+      "kind": "buzz",
+      "title": "A Brixton independent pours £3 pints all day",
+      "detail": "A self-described independent advertised £3 pints all day and £3.50 cask ales in the afternoon.",
+      "sourceUrl": "https://www.instagram.com/reel/DZ-gq69s03v/",
+      "sourceName": "instagram.com",
+      "observedAt": "2026-07-18",
+      "confidence": "social"
+    },
+    {
+      "id": "bar-levan-peckham",
+      "area": "peckham",
+      "kind": "buzz",
+      "title": "Bar Levan anchors Peckham's drink scene",
+      "detail": "Bar Levan was profiled as the anchor of Peckham's natural-wine scene.",
+      "sourceUrl": "https://www.codehospitality.co.uk/industry_insights/code-neighbourhoods-mark-gurneys-peckham/",
+      "sourceName": "codehospitality.co.uk",
+      "observedAt": "2026-07-10"
+    },
+    {
+      "id": "camberwell-arms-gastropub-award",
+      "area": "camberwell",
+      "kind": "award",
+      "title": "The Camberwell Arms named among Britain's best gastropubs",
+      "detail": "Time Out ranked it one of only two London entries in its 2026 top gastropubs.",
+      "sourceUrl": "https://www.timeout.com/london/news/best-uk-gastropubs-in-london-2026-062026",
+      "sourceName": "timeout.com",
+      "observedAt": "2026-06-20"
+    },
+    {
+      "id": "the-victory-east-dulwich-opening",
+      "area": "dulwich",
+      "kind": "opening",
+      "title": "The Victory opens in East Dulwich",
+      "detail": "A modern European bistro from former Palmerston managers opened in East Dulwich.",
+      "sourceUrl": "https://southwarknews.co.uk/area/dulwich/east-dulwich-welcomes-modern-european-bistro-the-victory-owned-by-former-palmerston-managers/",
+      "sourceName": "southwarknews.co.uk",
+      "observedAt": "2026-07-17"
+    },
+    {
+      "id": "the-hill-streatham-opening",
+      "area": "streatham",
+      "kind": "opening",
+      "title": "The Hill opens as a Streatham neighbourhood pub",
+      "detail": "The operators behind Exhibit transformed the SW16 Bar and Kitchen into a proper pub.",
+      "sourceUrl": "https://www.brixtonbuzz.com/2026/07/the-hill-in-streatham-opens-up-as-a-proper-neighbourhood-pub/",
+      "sourceName": "brixtonbuzz.com",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "crown-sceptre-streatham-threat",
+      "area": "streatham",
+      "kind": "threat",
+      "title": "The Crown and Sceptre faces demolition by development",
+      "detail": "A housing plan would demolish the interior and surround Streatham's pub with residential units.",
+      "sourceUrl": "https://www.brixtonbuzz.com/2026/06/deadline-extended-for-comments-on-the-huge-housing-development-at-the-crown-sceptre-pub-in-streatham/",
+      "sourceName": "brixtonbuzz.com",
+      "observedAt": "2026-06-24"
+    },
+    {
+      "id": "ramble-inn-tooting-price",
+      "area": "tooting",
+      "kind": "buzz",
+      "title": "The Ramble Inn in Tooting spotted at £5.70 a pint",
+      "detail": "A drinker logged Timothy Taylor Landlord at £5.70 in Tooting.",
+      "sourceUrl": "https://www.facebook.com/groups/guinnesscommunity/posts/4467280013589837/",
+      "sourceName": "facebook.com",
+      "observedAt": "2026-07-18",
+      "confidence": "social"
+    },
+    {
+      "id": "deptford-food-scene",
+      "area": "deptford",
+      "kind": "buzz",
+      "title": "Deptford's food and drink scene is changing fast",
+      "detail": "Deptford Market Yard has become a hub for independents and craft-beer vendors.",
+      "sourceUrl": "https://www.newsshopper.co.uk/news/26274979.everyones-talking-deptfords-changing-food-scene/",
+      "sourceName": "newsshopper.co.uk",
+      "observedAt": "2026-07-16"
+    },
+    {
+      "id": "new-cross-inn-gigs",
+      "area": "new-cross",
+      "kind": "buzz",
+      "title": "The New Cross Inn keeps a busy live-music calendar",
+      "detail": "The New Cross Inn hosted touring gigs through July 2026.",
+      "sourceUrl": "https://www.punktuationmag.com/psychomosher-london-new-cross-inn-14th-july-2026/",
+      "sourceName": "punktuationmag.com",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "model-market-lewisham-reopen",
+      "area": "lewisham",
+      "kind": "opening",
+      "title": "Model Market returns under German Kraft Brewery",
+      "detail": "The Lewisham High Street venue reopens in late summer 2026 as an all-day food and beer hub.",
+      "sourceUrl": "https://www.newsshopper.co.uk/news/26274359.model-market-returns-lewisham-shopping-centre-summer/",
+      "sourceName": "newsshopper.co.uk",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "fox-and-firkin-lewisham",
+      "area": "lewisham",
+      "kind": "buzz",
+      "title": "The Fox and Firkin runs a full gig calendar",
+      "detail": "The Lewisham live-music pub programmed big-screen football and weekly gigs.",
+      "sourceUrl": "https://foxfirkin.com/",
+      "sourceName": "foxfirkin.com",
+      "observedAt": "2026-07-18"
+    },
+    {
+      "id": "baring-hall-grove-park-refurb",
+      "area": "grove-park",
+      "kind": "refurb",
+      "title": "The Baring Hall Hotel restoration begins",
+      "detail": "Grove Park's only pub, shut for years, is being restored by The Baring Trust.",
+      "sourceUrl": "https://www.newsshopper.co.uk/news/26259433.baring-hall-hotel-grove-park-refurbishment-works-begin-restore-pub/",
+      "sourceName": "newsshopper.co.uk",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "craft-metropolis-penge",
+      "area": "penge",
+      "kind": "buzz",
+      "title": "Craft Metropolis pours ten rotating taps in Penge",
+      "detail": "The Penge craft-beer bar carries ten rotating taps and 400-plus cans.",
+      "sourceUrl": "https://intravel.net/london/nightlife/craft-metropolis-penge",
+      "sourceName": "intravel.net",
+      "observedAt": "2026-06-21"
+    },
+    {
+      "id": "the-mitre-penge-demolition",
+      "area": "penge",
+      "kind": "threat",
+      "title": "The Mitre in Penge is being demolished",
+      "detail": "A neighbour's 1.5 million pound lawsuit against the Croydon Road demolition failed.",
+      "sourceUrl": "https://www.newsshopper.co.uk/news/26219645.mitre-penge-pub-demolition---neighbours-1-5m-lawsuit-fails/",
+      "sourceName": "newsshopper.co.uk",
+      "observedAt": "2026-06-23"
+    },
+    {
+      "id": "george-wetherspoon-croydon-reopen",
+      "area": "croydon",
+      "kind": "refurb",
+      "title": "The George Wetherspoon reveals its Croydon reopening date",
+      "detail": "The Croydon pub reopens after a major refurbishment.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26279310.george-wetherspoon-pub-reopening-date-revealed/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-07-15"
+    },
+    {
+      "id": "bishops-wine-bar-croydon-closure",
+      "area": "croydon",
+      "kind": "closure",
+      "title": "Bishop's Wine Bar closes in the Whitgift Centre",
+      "detail": "A casualty of Croydon town-centre development blight, the wine bar shut for the final time.",
+      "sourceUrl": "https://insidecroydon.com/2026/06/26/bishops-wine-bar-set-to-bid-final-farewell-to-whitgift-centre/",
+      "sourceName": "insidecroydon.com",
+      "observedAt": "2026-06-26"
+    },
+    {
+      "id": "cinatras-croydon-guinness-price",
+      "area": "croydon",
+      "kind": "buzz",
+      "title": "A Croydon-area bar spotted with a £5 Guinness",
+      "detail": "A drinker logged a £5 pint of Guinness at a Croydon-area bar.",
+      "sourceUrl": "https://www.instagram.com/reel/DZzrdsAxHYU/",
+      "sourceName": "instagram.com",
+      "observedAt": "2026-07-18",
+      "confidence": "social"
+    },
+    {
+      "id": "sutton-price-gap",
+      "area": "sutton",
+      "kind": "gap",
+      "title": "Nobody has logged pint prices in Sutton yet",
+      "detail": "The last-30-day sweep found no Sutton pub prices, so be the first to drop one.",
+      "sourceUrl": "https://github.com/karanmrn/pubmax/blob/main/docs/research/sweep-south.md",
+      "sourceName": "PUBMAXX research sweep",
+      "observedAt": "2026-07-18"
+    },
+    {
+      "id": "purley-price-gap",
+      "area": "purley",
+      "kind": "gap",
+      "title": "Nobody has logged pint prices in Purley yet",
+      "detail": "The last-30-day sweep found no Purley pub prices, so be the first to drop one.",
+      "sourceUrl": "https://github.com/karanmrn/pubmax/blob/main/docs/research/sweep-south.md",
+      "sourceName": "PUBMAXX research sweep",
+      "observedAt": "2026-07-18"
+    },
+    {
+      "id": "camden-barfly-reopen",
+      "area": "camden",
+      "kind": "refurb",
+      "title": "The Camden Barfly reopens under its old name",
+      "detail": "The music venue reverted to the Barfly name with Frank Turner on opening night.",
+      "sourceUrl": "https://www.nme.com/news/music/the-camden-barfly-has-returned-to-build-on-legendary-legacy-for-a-new-generation-3952731",
+      "sourceName": "nme.com",
+      "observedAt": "2026-06-23"
+    },
+    {
+      "id": "porters-camden-price",
+      "area": "camden",
+      "kind": "buzz",
+      "title": "Porters of Camden Street logged a £7.20 pint",
+      "detail": "A London-pubs group logged Camden Head Ale at £5.75 and a standard pint at £7.20.",
+      "sourceUrl": "https://www.facebook.com/groups/londonpubs/posts/porters-camden/",
+      "sourceName": "facebook.com",
+      "observedAt": "2026-06-28",
+      "confidence": "social"
+    },
+    {
+      "id": "lord-southampton-design-award",
+      "area": "kentish-town",
+      "kind": "award",
+      "title": "The Lord Southampton wins a pub design award",
+      "detail": "A neglected 175-year-old Kentish Town pub restored by Chris Harrington and Aimee Brown was recognised.",
+      "sourceUrl": "https://www.hamhigh.co.uk/news/26223348.lord-southampton-kentish-town-wins-pub-design-award/",
+      "sourceName": "hamhigh.co.uk",
+      "observedAt": "2026-06-25"
+    },
+    {
+      "id": "woodbine-islington-flats-refused",
+      "area": "islington",
+      "kind": "threat",
+      "title": "The Woodbine's flats bid is refused",
+      "detail": "Islington Council threw out a plan for six flats after around 300 objections from regulars.",
+      "sourceUrl": "https://www.islingtontribune.co.uk/article/delight-as-pub-flats-bid-thrown-out",
+      "sourceName": "islingtontribune.co.uk",
+      "observedAt": "2026-06-19"
+    },
+    {
+      "id": "clissold-park-tavern-surge",
+      "area": "highbury",
+      "kind": "buzz",
+      "title": "The Clissold Park Tavern charged £20 to watch the World Cup semi",
+      "detail": "The Highbury pub charged £20 entry with a free can while others offered free entry.",
+      "sourceUrl": "https://www.islingtontribune.co.uk/article/come-in-the-footys-on-thatll-be-20-please",
+      "sourceName": "islingtontribune.co.uk",
+      "observedAt": "2026-07-17"
+    },
+    {
+      "id": "mother-red-cap-archway-reopen",
+      "area": "archway",
+      "kind": "refurb",
+      "title": "The Mother Red Cap reopens in Archway",
+      "detail": "The Archway pub reopened under new management after around two years closed, with traditional Irish music.",
+      "sourceUrl": "https://www.hamhigh.co.uk/news/26170431.mother-red-cap-archway-reopens-new-management/",
+      "sourceName": "hamhigh.co.uk",
+      "observedAt": "2026-06-05"
+    },
+    {
+      "id": "coronet-holloway-closed",
+      "area": "holloway",
+      "kind": "closure",
+      "title": "The Coronet on Holloway Road stays shuttered",
+      "detail": "A heritage piece marked the closed Wetherspoon that began life as a cinema.",
+      "sourceUrl": "https://www.kilburntimes.co.uk/news/26266195.closed-wetherspoons-holloway-road-pub-started-cinema/",
+      "sourceName": "kilburntimes.co.uk",
+      "observedAt": "2026-07-12"
+    },
+    {
+      "id": "brendan-the-navigator-reopen",
+      "area": "highgate",
+      "kind": "refurb",
+      "title": "Brendan the Navigator reopens in Highgate",
+      "detail": "The Highgate pub reopened under Conexus Pub Group after a shock closure.",
+      "sourceUrl": "https://www.hamhigh.co.uk/news/26260664.brendan-navigator-highgate-pub-reopens-new-management/",
+      "sourceName": "hamhigh.co.uk",
+      "observedAt": "2026-07-14"
+    },
+    {
+      "id": "king-william-iv-hampstead-reopen",
+      "area": "hampstead",
+      "kind": "refurb",
+      "title": "The King William IV reopens after a pest closure",
+      "detail": "The Hampstead pub reopened on 17 July after a pest problem forced it shut.",
+      "sourceUrl": "https://www.hamhigh.co.uk/news/26287452.king-william-iv-hampstead-pub-reopens-pest-problem/",
+      "sourceName": "hamhigh.co.uk",
+      "observedAt": "2026-07-17"
+    },
+    {
+      "id": "the-alliance-west-hampstead-campaign",
+      "area": "west-hampstead",
+      "kind": "threat",
+      "title": "The Alliance closes as a save-the-pub campaign starts",
+      "detail": "A campaign is under way to save the closed West Hampstead pub.",
+      "sourceUrl": "https://www.hamhigh.co.uk/news/26225506.alliance-closure-west-hampstead---campaign-save-pub/",
+      "sourceName": "hamhigh.co.uk",
+      "observedAt": "2026-06-25",
+      "venueMatch": {
+        "venueId": "venue-816uzg",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "the-queens-crouch-end-refurb",
+      "area": "crouch-end",
+      "kind": "refurb",
+      "title": "The Queens reopens after a 150,000 pound refurbishment",
+      "detail": "The Grade II Crouch End pub restored its Victorian and Art Nouveau glass.",
+      "sourceUrl": "https://www.hamhigh.co.uk/news/26200506.queens-pub-crouch-end-reopens-refurbishment/",
+      "sourceName": "hamhigh.co.uk",
+      "observedAt": "2026-06-17",
+      "venueMatch": {
+        "venueId": "venue-1gy9xkj",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "angel-of-malvern-muswell-hill",
+      "area": "muswell-hill",
+      "kind": "opening",
+      "title": "The Angel of Malvern set to reopen in Muswell Hill",
+      "detail": "A Broadway fixture referenced since 1897 is reopening in 2026.",
+      "sourceUrl": "https://www.instagram.com/reel/DagAOCDNdNh/",
+      "sourceName": "instagram.com",
+      "observedAt": "2026-07-07",
+      "confidence": "social"
+    },
+    {
+      "id": "wood-green-high-road-fire",
+      "area": "wood-green",
+      "kind": "threat",
+      "title": "A major fire hits Wood Green High Road",
+      "detail": "Twelve engines tackled a blaze at an adjoining mixed-use building, hitting high-street trade.",
+      "sourceUrl": "https://www.london-fire.gov.uk/incidents/2026/july/fire-at-mixed-use-building-wood-green/",
+      "sourceName": "london-fire.gov.uk",
+      "observedAt": "2026-07-07"
+    },
+    {
+      "id": "golden-tooth-harringay-opening",
+      "area": "harringay",
+      "kind": "opening",
+      "title": "The Golden Tooth opens on Green Lanes",
+      "detail": "A buzzy new pub from the team behind Papi opened in Harringay in June 2026.",
+      "sourceUrl": "https://www.instagram.com/p/Dazu_iCE0Vc/",
+      "sourceName": "instagram.com",
+      "observedAt": "2026-06-18",
+      "confidence": "social"
+    },
+    {
+      "id": "black-horse-barnet-reopen",
+      "area": "barnet",
+      "kind": "refurb",
+      "title": "The Black Horse in High Barnet reopens, saved by regulars",
+      "detail": "One of the borough's oldest pubs, dating to the 1720s, reopened after three regulars rescued it.",
+      "sourceUrl": "https://www.bbc.co.uk/news/articles/c9w2w8wq481o",
+      "sourceName": "bbc.co.uk",
+      "observedAt": "2026-07-15",
+      "venueMatch": {
+        "venueId": "venue-6ntpf",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "windsor-castle-finchley-best-licensees",
+      "area": "finchley",
+      "kind": "award",
+      "title": "The Windsor Castle landlords named the UK's best licensees",
+      "detail": "East Finchley's Eamonn England and Arina Piskunova won the national award.",
+      "sourceUrl": "https://www.hamhigh.co.uk/news/26207309.windsor-castle-east-finchley-landlords-named-best-uk/",
+      "sourceName": "hamhigh.co.uk",
+      "observedAt": "2026-06-18"
+    },
+    {
+      "id": "the-fox-palmers-green-acv",
+      "area": "palmers-green",
+      "kind": "refurb",
+      "title": "The Fox becomes Enfield's first Asset of Community Value",
+      "detail": "The refurbished Palmers Green pub is trading as a thriving community local.",
+      "sourceUrl": "https://www.instagram.com/p/DaYA5uMjdr2/",
+      "sourceName": "instagram.com",
+      "observedAt": "2026-07-04",
+      "confidence": "social"
+    },
+    {
+      "id": "station-tavern-brimsdown-hmo",
+      "area": "enfield",
+      "kind": "closure",
+      "title": "The former Station Tavern is converted to an HMO",
+      "detail": "Enfield approved a retrospective HMO conversion of the Brimsdown pub.",
+      "sourceUrl": "https://enfielddispatch.co.uk/council-approves-retrospective-application-for-brimsdown-hmo-already-being-lived-in/",
+      "sourceName": "enfielddispatch.co.uk",
+      "observedAt": "2026-07-10"
+    },
+    {
+      "id": "the-lion-enfield-closed",
+      "area": "enfield",
+      "kind": "closure",
+      "title": "The Lion in Enfield closes after a nearby stabbing",
+      "detail": "The pub shut until further notice after a police cordon on Stainton Road.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26172824.stainton-road-enfield-closed-police-stabbing/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-06-07"
+    },
+    {
+      "id": "the-george-harrow-lease",
+      "area": "harrow",
+      "kind": "threat",
+      "title": "The George in Harrow is put up for lease",
+      "detail": "The George in Harrow town centre was listed for lease as an operator opportunity.",
+      "sourceUrl": "https://harrowonline.org/2026/07/06/the-george-pub-in-harrow-town-centre-put-on-the-market-for-lease/",
+      "sourceName": "harrowonline.org",
+      "observedAt": "2026-07-06"
+    },
+    {
+      "id": "starling-pinner-redevelopment",
+      "area": "pinner",
+      "kind": "closure",
+      "title": "The former Starling pub in Pinner faces redevelopment",
+      "detail": "Plans were submitted to redevelop the former Starling pub and SYNC karaoke venue.",
+      "sourceUrl": "https://harrowonline.org/2026/06/19/plans-submitted-for-former-starling-pub-and-sync-karaoke-venue-in-pinner/",
+      "sourceName": "harrowonline.org",
+      "observedAt": "2026-06-19"
+    },
+    {
+      "id": "kilburn-snooker-club-closed",
+      "area": "kilburn",
+      "kind": "closure",
+      "title": "Kilburn Snooker Club closes after a drugs raid",
+      "detail": "The Kilburn snooker club closed following a drugs raid.",
+      "sourceUrl": "https://www.london-now.co.uk/news/26278380.kilburn-snooker-club-closed-following-drugs-raid/",
+      "sourceName": "london-now.co.uk",
+      "observedAt": "2026-07-14"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 940" fill="none">
+  <defs><linearGradient id="p" x1="250" y1="120" x2="590" y2="760"><stop stop-color="#FFE9E4" stop-opacity=".3"/><stop offset=".45" stop-color="#F07A70" stop-opacity=".17"/><stop offset="1" stop-color="#433BFF" stop-opacity="0"/></linearGradient><filter id="s"><feGaussianBlur stdDeviation="18"/></filter></defs>
+  <ellipse cx="433" cy="420" rx="260" ry="340" fill="#F07A70" fill-opacity=".05" filter="url(#s)"/>
+  <path d="M305 145c74-62 203-33 265 65 57 91 34 259-8 365-37 92-102 139-180 113-83-28-128-116-144-222-18-122-2-251 67-321Z" fill="url(#p)" stroke="#FFB5AE" stroke-opacity=".46"/>
+  <path d="M285 200c85 74 180 50 282-6M252 269c115 71 224 48 341-8M236 343c126 54 244 39 371-14M235 421c126 32 244 26 368-12M246 502c112 7 217 14 325-5M272 579c87-18 168-4 244 8" stroke="#F07A70" stroke-opacity=".17"/>
+  <path d="M315 346c33-22 70-22 102-1m51-7c30-20 63-16 89 8M330 372c21 11 48 10 70-3m82-4c20 10 43 10 62-1M434 356l-17 128 41 8M374 543c42 22 90 18 126-11" stroke="#FFF1EF" stroke-opacity=".72" stroke-width="3" stroke-linecap="round"/>
+  <path d="M260 221c68-124 244-151 331-37-79-21-127 33-204 38-47 3-88-6-127-1Z" fill="#050315" fill-opacity=".72" stroke="#F07A70" stroke-opacity=".26"/>
+  <path d="M116 716c68-61 160-44 221 41l60 83-206 48-84-93c-23-26-19-54 9-79Z" fill="url(#p)" stroke="#F07A70" stroke-opacity=".4"/><path d="M174 683c32-22 62-11 93 27l70 86" stroke="#FFAAA2" stroke-opacity=".38" stroke-width="20" stroke-linecap="round"/>
+  <g transform="rotate(-7 286 699)"><path d="M222 584c0-66 33-112 77-112 45 0 78 46 78 112 0 64-29 111-65 124v115h65m-78-115v115h-70" stroke="#FFEAE7" stroke-opacity=".72" stroke-width="2"/><path d="M238 575c0-46 24-78 61-78 38 0 62 32 62 78 0 54-25 97-62 97-36 0-61-43-61-97Z" fill="#A84237" fill-opacity=".7"/><path d="M249 544c22-18 73-24 101 0" stroke="#FFCEC8" stroke-opacity=".55"/></g>
+  <g stroke="#F07A70" stroke-opacity=".3"><path d="M639 205c30 67 32 126 7 177-27 57-21 117 17 180"/><path d="M660 198c30 70 32 133 6 188-25 54-19 110 18 169"/><path d="M681 202c26 70 28 133 4 186-24 51-18 104 17 158"/></g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- FINAL — PUBMAXX "Crossing X", owner-approved 2026-07-22. The X Corp /
+       blackboard-bold (double-struck) construction: one THICK solid descending
+       stroke (\, ~12u) drawn over an ascending stroke (/) SPLIT INTO TWO thin
+       parallel strokes (~5u each) that pass either side of the thick one, with a
+       ~4u channel between them where the thick stroke crosses. Flat sharp
+       terminals, zero ornament. Coral #ff5a5f on ink; the single source of truth
+       is MARK_GEOMETRY in components/brand/PubmaxxMark.tsx. No ember on the icon
+       silhouette (kept only on the lit in-app surfaces). At 16px the double
+       stroke closes up, so the favicon.ico 16px entry uses the simplified single
+       ascending stroke: points="45,10 53,10 19,54 11,54" + the thick stroke. -->
+  <polygon points="42,10 47,10 13,54 8,54" fill="#ff5a5f"/>
+  <polygon points="51,10 56,10 22,54 17,54" fill="#ff5a5f"/>
+  <polygon points="9,10 21,10 55,54 43,54" fill="#ff5a5f"/>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "$comment": "Evidence-backed corrections applied after stable app price ids are assigned and before postcode-coordinate quarantine. Raw scrape artifacts remain unchanged. Every listed id must exist and exactly match the recorded identity or the build fails.",
+  "corrections": [
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceIds": [
+        "app_price_002050",
+        "app_price_002051",
+        "app_price_002052",
+        "app_price_002053",
+        "app_price_002054",
+        "app_price_002055",
+        "app_price_002056",
+        "app_price_002057",
+        "app_price_002058",
+        "app_price_002059"
+      ],
+      "match": {
+        "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+        "postcode": "W5 3TJ",
+        "latitude": 51.5071,
+        "longitude": -0.127917
+      },
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "evidence": [
+        {
+          "url": "https://www.jdwetherspoon.com/pubs/the-sir-michael-balcon-ealing/",
+          "finding": "Official venue page identifies The Sir Michael Balcon at 46-47 The Mall, Ealing W5 3TJ."
+        },
+        {
+          "source": "data/osm/uk/uk_osm_pubs.json",
+          "finding": "OpenStreetMap node 1117274890 records the same name and postcode at 51.5136177, -0.2988011."
+        }
+      ]
+    }
+  ]
+}

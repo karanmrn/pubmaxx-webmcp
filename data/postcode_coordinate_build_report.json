@@ -1,0 +1,342 @@
+{
+  "inputs": {
+    "data/pint_prices_canonical_enriched.csv": {
+      "sha256": "0ad2b60e8d9aaf95e1fdd3713d70689868e98ea355f147c2f5de3b9d308d196c"
+    },
+    "data/borough_embedded_pint_prices.csv": {
+      "sha256": "3ccc6f8fb718bd645b5d3c9656b08f944a53e769b5e01e0dd5f63f56a1f7bf7a"
+    },
+    "data/pub_page_pint_prices.csv": {
+      "sha256": "4bde028b4242740372fed5f7678b4e34887e8f3ba4e0fccc231a0c16bb49dc24"
+    },
+    "data/osm/uk/uk_osm_pubs.json": {
+      "sha256": "e2271bc37cd7855e8eb6d3e0d24fd868d637ad970d10aca6a39ebb108ad5d066"
+    },
+    "data/postcode_coordinate_corrections.json": {
+      "sha256": "95997a516fd8ba7acab7a5b1e0b6f5a2d6fc30bf8c1d374859f58f8227e26b87"
+    },
+    "data/postcode_coordinate_quarantine.json": {
+      "sha256": "56bac489da4e1cd999f1aa0bdd2e40abdd33d7c21621b9b3b99b26331512c1d8"
+    },
+    "data/postcode_coordinate_exceptions.json": {
+      "sha256": "d1a496eaef7e17ee859ac444c8a0d8a43a063012e388c1984e60871b9243a74f"
+    }
+  },
+  "checkedRows": 2194,
+  "outwardCodeReferences": 2611,
+  "corrections": [
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002050",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002051",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002052",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002053",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002054",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002055",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002056",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002057",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002058",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    },
+    {
+      "decisionId": "sir-michael-balcon-ealing",
+      "appPriceId": "app_price_002059",
+      "pubName": "The Sir Michael Balcon - JD Wetherspoon",
+      "reason": "Official Wetherspoons identity and committed OpenStreetMap node 1117274890 both place this named venue at 46-47 The Mall, Ealing W5 3TJ. The scraped coordinates point at Whitehall.",
+      "changes": {
+        "latitude": 51.5136177,
+        "longitude": -0.2988011,
+        "boroughs_visible": "",
+        "boroughs_raw_embedded_non_anomaly": "",
+        "boroughs_all_sources": "Havering|Hillingdon|Redbridge",
+        "primary_borough": "Ealing",
+        "rank_visible_borough": "",
+        "estimated_average_price_text": "",
+        "borough_urls": "",
+        "pub_key": "The Sir Michael Balcon - JD Wetherspoon51.5136177",
+        "has_visible_borough_row": false,
+        "is_clean_canonical_app_row": false
+      },
+      "dataQualityNote": "postcode_coordinate_corrected_from_osm"
+    }
+  ],
+  "quarantines": [
+    {
+      "appPriceId": "app_price_000263",
+      "pubName": "The Bishops Finger",
+      "postcode": "CT2 8AF",
+      "latitude": 51.5185,
+      "longitude": -0.101913,
+      "reason": "The price URL names the Canterbury postcode while the point names the Smithfield pub. No individual pub-page extraction ties the price to either physical venue."
+    },
+    {
+      "appPriceId": "app_price_000274",
+      "pubName": "The Coach & Horses",
+      "postcode": "WD3 1ER",
+      "latitude": 51.5139,
+      "longitude": -0.129688,
+      "reason": "The source URL and map point identify different same-named pubs, so price ownership is not established."
+    },
+    {
+      "appPriceId": "app_price_000339",
+      "pubName": "The Lincoln Arms",
+      "postcode": "EN1 1QT",
+      "latitude": 51.5332,
+      "longitude": -0.1222,
+      "reason": "Both postcode and coordinates correspond to distinct pubs named The Lincoln Arms. Evidence does not establish which pub owns the recorded £4.40 Guinness price, so assigning the row to either venue would be a guess."
+    },
+    {
+      "appPriceId": "app_price_000719",
+      "pubName": "The Globe",
+      "postcode": "E9 6NA",
+      "latitude": 51.5081,
+      "longitude": -0.0971864,
+      "reason": "Common venue name and conflicting source geography leave the £2.45 observation without a proven physical owner."
+    },
+    {
+      "appPriceId": "app_price_000977",
+      "pubName": "The Lounge",
+      "postcode": "NE24 1AX",
+      "latitude": 51.3719,
+      "longitude": -0.108514,
+      "reason": "Available committed evidence does not establish whether postcode or coordinates own the price observation."
+    },
+    {
+      "appPriceId": "app_price_001220",
+      "pubName": "McCafferty’s",
+      "postcode": "KT19 8BT",
+      "latitude": 51.5838,
+      "longitude": -0.116568,
+      "reason": "Source postcode and product point identify different areas, with no individual pub-page extraction to settle price ownership."
+    },
+    {
+      "appPriceId": "app_price_001614",
+      "pubName": "The Crown",
+      "postcode": "CV37 7ZY",
+      "latitude": 51.4512,
+      "longitude": -0.318682,
+      "reason": "The Crown is too common a name to infer which venue owns the price when source postcode and point disagree."
+    },
+    {
+      "appPriceId": "app_price_002037",
+      "pubName": "The Prince Albert",
+      "postcode": "SW13 9QQ",
+      "latitude": 51.4796,
+      "longitude": -0.16579,
+      "reason": "Correcting would duplicate the separately preserved Battersea price and guess that the SW13 Fosters price belongs there."
+    },
+    {
+      "appPriceId": "app_price_002038",
+      "pubName": "The Prince Albert",
+      "postcode": "SW13 9QQ",
+      "latitude": 51.4796,
+      "longitude": -0.16579,
+      "reason": "Correcting would duplicate the separately preserved Battersea price and guess that the SW13 Fosters price belongs there."
+    },
+    {
+      "appPriceId": "app_price_002312",
+      "pubName": "Kings Lounge",
+      "postcode": "SW17 9HP",
+      "latitude": 51.5385,
+      "longitude": 0.0793927,
+      "reason": "No visible leaderboard or individual pub-page source establishes which area owns the price."
+    },
+    {
+      "appPriceId": "app_price_002483",
+      "pubName": "The Barley Mow",
+      "postcode": "LE6 6FE",
+      "latitude": 51.5197,
+      "longitude": -0.155659,
+      "reason": "London identity enrichment cannot prove that the Leicestershire price belongs to the Marylebone pub."
+    },
+    {
+      "appPriceId": "app_price_002908",
+      "pubName": "The Stags Head",
+      "postcode": "W1W 6XW",
+      "latitude": 51.4658,
+      "longitude": -0.252189,
+      "reason": "The correct W1W venue and price already exist; retaining the caught row would attach the same observation to a different pub."
+    }
+  ],
+  "output": {
+    "path": "data/pint_prices_app_dataset.csv",
+    "sha256": "3ed70ce41eaf36424ad585e6214e6f36a075ea5dd7924c303fdfb9afc2796be1",
+    "rows": 3085
+  }
+}

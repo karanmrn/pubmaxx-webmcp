@@ -1,0 +1,201 @@
+.nearbyBusDepartures {
+  min-width: 0;
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.nearbyBusDeparturesSummary {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 6px 2px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.nearbyBusDeparturesSummary::-webkit-details-marker {
+  display: none;
+}
+
+.nearbyBusDeparturesSummary > span {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.nearbyBusDeparturesSummary strong {
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.nearbyBusDeparturesSummary small {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.nearbyBusDeparturesSummary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--brass);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.nearbyBusDepartures[open] .nearbyBusDeparturesSummary::after {
+  content: "−";
+}
+
+.nearbyBusDeparturesSummary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.nearbyBusDeparturesBody {
+  min-width: 0;
+  padding: 2px 2px 6px;
+}
+
+.nearbyBusDeparturesNote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.nearbyBusAnnouncement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nearbyBusRetry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  margin-top: 6px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--brass);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.nearbyBusRetry[aria-disabled="true"] {
+  color: var(--muted);
+  cursor: default;
+}
+
+.nearbyBusRetry:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.nearbyBusFreshness {
+  min-width: 0;
+  margin-bottom: 6px;
+  overflow-wrap: anywhere;
+}
+
+.nearbyBusStopList,
+.nearbyBusDepartureList {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nearbyBusStop {
+  min-width: 0;
+  padding: 9px 0;
+  border-top: 1px solid color-mix(in srgb, var(--line) 68%, transparent);
+}
+
+.nearbyBusStop:first-child {
+  padding-top: 2px;
+  border-top: 0;
+}
+
+.nearbyBusStopHeader {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.nearbyBusStopIdentity {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+  font-size: 0.76rem;
+  line-height: 1.3;
+}
+
+.nearbyBusStopIdentity > span,
+.nearbyBusDistance {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.nearbyBusDistance {
+  flex: 0 1 112px;
+  min-width: 0;
+  margin-left: auto;
+  text-align: right;
+  line-height: 1.3;
+}
+
+.nearbyBusDepartureList {
+  display: grid;
+  gap: 3px;
+}
+
+.nearbyBusDeparture {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: baseline;
+  min-width: 0;
+  gap: 7px;
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.nearbyBusLine {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.nearbyBusDestination {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+
+.nearbyBusDue {
+  color: var(--ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

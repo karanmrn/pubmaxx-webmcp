@@ -1,0 +1,212 @@
+[
+  {
+    "id": "rail-manchester-piccadilly",
+    "name": "Manchester Piccadilly",
+    "category": "rail",
+    "coordinates": [-2.2309, 53.4774],
+    "rank": 1
+  },
+  {
+    "id": "rail-manchester-victoria",
+    "name": "Manchester Victoria",
+    "category": "rail",
+    "coordinates": [-2.2425, 53.4872],
+    "rank": 1
+  },
+  {
+    "id": "rail-manchester-oxford-road",
+    "name": "Manchester Oxford Road",
+    "category": "rail",
+    "coordinates": [-2.242, 53.474],
+    "rank": 1
+  },
+  {
+    "id": "rail-deansgate",
+    "name": "Deansgate",
+    "category": "rail",
+    "coordinates": [-2.2509, 53.4742],
+    "rank": 1
+  },
+  {
+    "id": "tram-piccadilly-gardens",
+    "name": "Piccadilly Gardens (Metrolink)",
+    "category": "rail",
+    "coordinates": [-2.237, 53.4805],
+    "rank": 1
+  },
+  {
+    "id": "tram-st-peters-square",
+    "name": "St Peter's Square (Metrolink)",
+    "category": "rail",
+    "coordinates": [-2.2435, 53.478],
+    "rank": 1
+  },
+  {
+    "id": "tram-victoria",
+    "name": "Victoria (Metrolink)",
+    "category": "rail",
+    "coordinates": [-2.242, 53.4875],
+    "rank": 1
+  },
+  {
+    "id": "tram-deansgate-castlefield",
+    "name": "Deansgate-Castlefield (Metrolink)",
+    "category": "rail",
+    "coordinates": [-2.2505, 53.4745],
+    "rank": 1
+  },
+  {
+    "id": "tram-market-street",
+    "name": "Market Street (Metrolink)",
+    "category": "rail",
+    "coordinates": [-2.2415, 53.4818],
+    "rank": 2
+  },
+  {
+    "id": "tram-shudehill",
+    "name": "Shudehill (Metrolink)",
+    "category": "rail",
+    "coordinates": [-2.2365, 53.4855],
+    "rank": 2
+  },
+  {
+    "id": "park-piccadilly-gardens",
+    "name": "Piccadilly Gardens",
+    "category": "park",
+    "coordinates": [-2.2365, 53.4808],
+    "rank": 1
+  },
+  {
+    "id": "park-albert-square",
+    "name": "Albert Square",
+    "category": "park",
+    "coordinates": [-2.2455, 53.4795],
+    "rank": 1
+  },
+  {
+    "id": "park-whitworth",
+    "name": "Whitworth Park",
+    "category": "park",
+    "coordinates": [-2.2305, 53.4605],
+    "rank": 2
+  },
+  {
+    "id": "park-platt-fields",
+    "name": "Platt Fields Park",
+    "category": "park",
+    "coordinates": [-2.223, 53.45],
+    "rank": 2
+  },
+  {
+    "id": "canal-castlefield-basin",
+    "name": "Castlefield Basin",
+    "category": "historic",
+    "coordinates": [-2.2535, 53.4748],
+    "rank": 1
+  },
+  {
+    "id": "canal-rochdale-lock",
+    "name": "Rochdale Canal (Piccadilly lock)",
+    "category": "historic",
+    "coordinates": [-2.231, 53.4795],
+    "rank": 2
+  },
+  {
+    "id": "sight-manchester-cathedral",
+    "name": "Manchester Cathedral",
+    "category": "historic",
+    "coordinates": [-2.2441, 53.4851],
+    "rank": 1
+  },
+  {
+    "id": "sight-john-rylands",
+    "name": "John Rylands Library",
+    "category": "historic",
+    "coordinates": [-2.2486, 53.4803],
+    "rank": 1
+  },
+  {
+    "id": "sight-town-hall",
+    "name": "Manchester Town Hall",
+    "category": "historic",
+    "coordinates": [-2.2446, 53.4793],
+    "rank": 1
+  },
+  {
+    "id": "sight-central-library",
+    "name": "Central Library",
+    "category": "sight",
+    "coordinates": [-2.2448, 53.478],
+    "rank": 2
+  },
+  {
+    "id": "sight-bridgewater-hall",
+    "name": "Bridgewater Hall",
+    "category": "sight",
+    "coordinates": [-2.2465, 53.4755],
+    "rank": 2
+  },
+  {
+    "id": "market-afflecks",
+    "name": "Afflecks",
+    "category": "market",
+    "coordinates": [-2.2355, 53.4835],
+    "rank": 1
+  },
+  {
+    "id": "market-arndale",
+    "name": "Manchester Arndale",
+    "category": "market",
+    "coordinates": [-2.2415, 53.4835],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-beetham-tower",
+    "name": "Beetham Tower / Hilton",
+    "category": "viewpoint",
+    "coordinates": [-2.2502, 53.4754],
+    "rank": 1
+  },
+  {
+    "id": "sight-science-industry",
+    "name": "Science and Industry Museum",
+    "category": "sight",
+    "coordinates": [-2.2545, 53.477],
+    "rank": 1
+  },
+  {
+    "id": "sight-people-history",
+    "name": "People's History Museum",
+    "category": "historic",
+    "coordinates": [-2.2515, 53.4815],
+    "rank": 2
+  },
+  {
+    "id": "sight-national-football",
+    "name": "National Football Museum",
+    "category": "sight",
+    "coordinates": [-2.2428, 53.4858],
+    "rank": 2
+  },
+  {
+    "id": "bus-shudehill-interchange",
+    "name": "Shudehill Interchange",
+    "category": "bus",
+    "coordinates": [-2.2368, 53.4858],
+    "rank": 1
+  },
+  {
+    "id": "bus-chorlton-street",
+    "name": "Chorlton Street Coach Station",
+    "category": "bus",
+    "coordinates": [-2.2375, 53.4778],
+    "rank": 2
+  },
+  {
+    "id": "sight-china-town-arch",
+    "name": "Chinatown Arch",
+    "category": "sight",
+    "coordinates": [-2.2405, 53.4785],
+    "rank": 2
+  }
+]

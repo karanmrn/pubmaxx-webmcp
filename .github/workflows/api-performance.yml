@@ -1,0 +1,52 @@
+name: API performance
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+jobs:
+  api-latency-budget:
+    name: API latency budget
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      (github.event.deployment_status.environment == 'Production' ||
+      github.event.deployment_status.environment == 'production') &&
+      (github.event.deployment.ref == 'main' ||
+      github.event.deployment.ref == 'refs/heads/main') &&
+      github.event.deployment_status.target_url != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # PR previews are excluded because this job executes deployed source; the main-only gate keeps that source trusted.
+      - name: Checkout trusted deployed commit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.deployment.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate production target
+        env:
+          PUBMAX_PROBE_BASE_URL: ${{ github.event.deployment_status.target_url }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { PRODUCTION_DEPLOYMENT_HOSTS } from "./lib/productionDeploymentHosts.mjs";
+
+          const target = process.env.PUBMAX_PROBE_BASE_URL;
+          const url = new URL(target);
+          const allowedHosts = new Set(Object.values(PRODUCTION_DEPLOYMENT_HOSTS));
+          if (url.protocol !== "https:" || url.username || url.password || url.port || !allowedHosts.has(url.hostname)) {
+            throw new Error(`Unallowlisted deployment target: ${target}`);
+          }
+          NODE
+
+      - name: Probe production API budgets
+        env:
+          PUBMAX_PROBE_BASE_URL: ${{ github.event.deployment_status.target_url }}
+        run: node scripts/probe-api-budgets.mjs

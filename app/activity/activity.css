@@ -1,0 +1,266 @@
+/* Activity feed (story 34) — a quiet, readable list of social events. Reuses the
+   app's tokens; nothing bespoke beyond layout + the unread accent. */
+
+/* Full-width shell: the nav renders here at natural width (never inside the
+   640px column, which wrapped its link row into overlapping lines); the shell
+   owns the page gutters + bottom clearance so the column stays flush with it. */
+.activityShell {
+  margin: 0 auto;
+  padding: 20px 16px 96px;
+}
+
+.activity {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.activityHead {
+  margin: 24px 0 16px;
+}
+.activityHead h1 {
+  margin: 0;
+  font-size: 28px;
+}
+.activitySub {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* Loading skeleton — reuses the ready-state grid classes (.activityGrid /
+   .activityRail / .activityList / .activityItem) so it collapses to the phone
+   list below 1024 and blooms into the rail + two-up timeline above it, exactly
+   like the real content. Blocks are the soft line tone; the shimmer sweep lives
+   in the prefers-reduced-motion: no-preference block, so it's static blocks for
+   anyone who opts out. Same idiom as the feed skeleton. */
+.activitySkelItem {
+  display: grid;
+  gap: 10px;
+  min-height: 68px;
+  align-content: center;
+}
+
+.activitySkelChip {
+  width: 64px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--line-soft, var(--line));
+}
+.activitySkelChip:first-child {
+  width: 48px;
+}
+
+.activitySkelSummary {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.activitySkelLine {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--line-soft, var(--line));
+}
+.activitySkelLine.activitySkelLineShort {
+  width: 45%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .activitySkelChip,
+  .activitySkelLine {
+    background: linear-gradient(
+      100deg,
+      var(--line-soft, var(--line)) 30%,
+      color-mix(in srgb, var(--line) 55%, var(--panel-raised) 45%) 50%,
+      var(--line-soft, var(--line)) 70%
+    );
+    background-size: 220% 100%;
+    animation: activityShimmer 1.9s linear infinite;
+  }
+}
+
+@keyframes activityShimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.activityList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.activityItem {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+/* Unread rows carry a brass left-edge accent so what's new reads at a glance. */
+.activityItem.isUnread {
+  border-left: 3px solid var(--brass);
+  background: var(--panel-raised);
+}
+
+.activityActor {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 2px;
+  color: var(--brass);
+  font-weight: 700;
+  text-decoration: none;
+}
+.activityActor:hover {
+  text-decoration: underline;
+}
+
+.activityVerb {
+  color: var(--ink);
+}
+.activitySubject {
+  color: var(--ink-soft);
+}
+.activityTime {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.activityLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  margin-left: 8px;
+  padding: 0 8px;
+  color: var(--brass);
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.activityLink:hover {
+  text-decoration: underline;
+}
+
+.activityCta {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--brass);
+  color: var(--panel-raised);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ── Desktop density (≥1024) ──────────────────────────────────────────────
+   Below this the page is the phone-density single column above, byte-for-byte.
+   At desktop the list gains an intentional two-region layout: a sticky rail
+   with kind filters + a quick tally, and a denser two-up timeline so a wide
+   monitor stops rendering a lone 640px column in a void. The grid wrapper and
+   rail collapse (display: contents / none) under the breakpoint, so the filter
+   state — which always defaults to "all" — never changes the mobile render. */
+.activityGrid {
+  display: contents;
+}
+.activityRail {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .activity {
+    max-width: 1080px;
+  }
+
+  .activityGrid {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+  }
+
+  .activityRail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 96px; /* clears the floating SiteNav pill, same offset as feed/tonight */
+  }
+
+  .activityList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+  }
+}
+
+.activityFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activityFilter {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.activityFilter:hover {
+  border-color: var(--brass);
+  color: var(--ink);
+}
+/* The selected kind wears the brass plate so the active filter reads at a glance. */
+.activityFilter[aria-pressed="true"] {
+  border-color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 14%, var(--panel));
+  color: var(--brass);
+}
+.activityFilter:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.activitySummary {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.activitySummaryRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.activitySummaryRow dt {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+.activitySummaryRow dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

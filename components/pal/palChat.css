@@ -1,0 +1,607 @@
+/* Pub Pal chat surface (/pal/chat). Mobile-first, both themes. Uses only the
+   shared house tokens (--paper/--ink/--brass/--line/--panel-raised/font tokens)
+   so light and dark are inherited from the app theme, never re-hardcoded. */
+
+.palChat {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-top: env(safe-area-inset-top, 0px);
+  background:
+    radial-gradient(circle at 82% 8%, color-mix(in srgb, var(--brass) 9%, transparent), transparent 26rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.palChat *,
+.palChat *::before,
+.palChat *::after {
+  box-sizing: border-box;
+}
+
+.palChat button,
+.palChat input,
+.palChat a {
+  font: inherit;
+}
+
+.palChat button,
+.palChat a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.palChat button:focus-visible,
+.palChat a:focus-visible,
+.palChat input:focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.palChatSr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* — Header — */
+.palChatHead {
+  flex: 0 0 auto;
+  width: min(46rem, 100%);
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 1.75rem) clamp(1rem, 4vw, 1.5rem) 0.85rem;
+}
+
+.palChatEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.55rem;
+  color: var(--brass);
+  font: 650 var(--text-2xs)/1 var(--font-data);
+  letter-spacing: 0.01em;
+}
+
+.palChatEyebrow picture {
+  display: block;
+  line-height: 0;
+  flex: 0 0 auto;
+}
+
+.palChatEyebrow img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 50%;
+}
+
+.palChatTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 7vw, 2.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.palChatIntro {
+  max-width: 40ch;
+  margin: 0.6rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* — Scroll region (transcript + example chips) — */
+.palChatScroll {
+  flex: 0 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.palChatTranscript {
+  width: min(46rem, 100%);
+  margin: 0 auto;
+  padding: 0.75rem clamp(1rem, 4vw, 1.5rem) 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.palChatRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.palChatRow--user {
+  align-items: flex-end;
+}
+
+.palChatRow--pal {
+  align-items: stretch;
+}
+
+.palChatBubble {
+  max-width: 85%;
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 16px);
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.palChatBubble--user {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+  border-bottom-right-radius: 0.35rem;
+  background: color-mix(in srgb, var(--brass) 15%, var(--panel-raised));
+  color: var(--ink);
+}
+
+.palChatRow--pal .palChatBubble {
+  max-width: 100%;
+  border-bottom-left-radius: 0.35rem;
+  background: var(--panel-raised);
+}
+
+.palChatBubble--empty {
+  border-style: dashed;
+  color: var(--ink-soft);
+}
+
+.palChatBubble--error {
+  border-color: color-mix(in srgb, var(--brass) 45%, var(--line));
+  color: var(--ink-soft);
+}
+
+.palChatBubble--pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.palChatDots {
+  display: inline-flex;
+  gap: 0.28rem;
+}
+
+.palChatDots i {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--brass);
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .palChatDots i {
+    animation: palChatDot 1.1s ease-in-out infinite;
+  }
+  .palChatDots i:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .palChatDots i:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes palChatDot {
+  50% {
+    opacity: 1;
+    transform: translateY(-0.18rem);
+  }
+}
+
+/* — Answer cards (the facts) — */
+.palChatCards {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.palChatCard {
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 12px);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.palChatCardBody {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  color: var(--ink);
+  text-align: left;
+}
+
+.palChatCardBody:has(.palChatCardBody--link) {
+  cursor: pointer;
+  transition: background var(--duration-base, 0.18s) var(--ease-out, ease-out);
+}
+
+.palChatCardBody:has(.palChatCardBody--link):hover {
+  background: color-mix(in srgb, var(--brass) 7%, var(--panel));
+}
+
+.palChatCardBody:has(.palChatCardBody--link):active {
+  transform: scale(0.995);
+  --shared-press-scale: 1;
+}
+
+.palChatCardMain {
+  display: grid;
+  gap: 0.35rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.palChatCardTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.palChatCardTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.palChatCardPrice {
+  flex: 0 0 auto;
+  font: 650 0.9rem/1 var(--font-data);
+  color: color-mix(in srgb, var(--amber) 82%, var(--ink));
+}
+
+.palChatCardPlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+.palChatCardPlace svg {
+  flex: 0 0 auto;
+  color: var(--brass);
+}
+
+.palChatCardWhen {
+  margin: 0;
+  color: var(--river-bright, var(--ink-soft));
+  font: 600 0.76rem/1.3 var(--font-data);
+}
+
+.palChatCardNote {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.palChatCardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+/* Provenance chip — kept on every card, never optional. */
+.palChatProv {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--brass) 32%, var(--line));
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+  color: color-mix(in srgb, var(--brass) 76%, var(--ink));
+  font: 640 0.64rem/1 var(--font-data);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.palChatProv--link:hover {
+  border-color: var(--brass);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.palChatConfidence {
+  color: var(--muted);
+  font: 600 0.64rem/1 var(--font-data);
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+
+.palChatCardCta {
+  margin-left: auto;
+  color: var(--brass);
+  font: 640 0.68rem/1 var(--font-data);
+  letter-spacing: 0.03em;
+}
+
+/* — Example prompt chips (empty state) — */
+.palChatExamples {
+  width: min(46rem, 100%);
+  margin: 0 auto;
+  padding: 0.25rem clamp(1rem, 4vw, 1.5rem) 1.5rem;
+}
+
+/* — Tonight at a glance (judge-w1 wave 2) —
+   One quiet panel of real spine counts under the vibe chips, filling the
+   first-open dead zone with receipts. Enters with transform+opacity only
+   (ease-out, under 300ms); the zone below is empty and the composer is
+   pinned, so the entrance shifts nothing. */
+.palGlance {
+  width: min(30rem, 100%);
+  margin: 0.9rem auto 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--brass) 18%, var(--line));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel-raised) 82%, transparent);
+  animation: palGlanceIn var(--duration-base, 0.22s) var(--ease-out, ease-out) both;
+}
+
+.palGlanceLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--brass);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.palGlanceLine {
+  margin: 0.3rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.palGlanceExit {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--brass) 55%, transparent);
+}
+
+@keyframes palGlanceIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palGlance {
+    animation: none;
+  }
+}
+
+/* — Composer — */
+.palChatComposer {
+  flex: 0 0 auto;
+  width: min(46rem, 100%);
+  margin: 0 auto;
+  padding: 0.7rem clamp(1rem, 4vw, 1.5rem) calc(0.7rem + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(0.8rem) saturate(140%);
+}
+
+.palChatInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.palChatInput::placeholder {
+  color: var(--muted);
+}
+
+.palChatSend {
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--brass) 70%, var(--line));
+  border-radius: 50%;
+  background: var(--brass);
+  color: var(--color-on-accent);
+  cursor: pointer;
+  transition:
+    background var(--duration-base, 0.18s) var(--ease-out, ease-out),
+    opacity var(--duration-base, 0.18s) var(--ease-out, ease-out);
+}
+
+.palChatSend:hover:not(:disabled) {
+  background: var(--brass-bright);
+}
+
+.palChatSend:active:not(:disabled) {
+  transform: scale(0.94);
+  --shared-press-scale: 1;
+}
+
+.palChatSend:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+/* Clear the fixed mobile tab bar AND the floating re-open pill so the composer
+   never hides behind either. --night-pill-clearance is 0px unless a pill is
+   actually mounted (see components/night/nightMode.css). */
+@media (max-width: 640px) {
+  .palChat {
+    padding-bottom: calc(var(--tabbar-h, 64px) + env(safe-area-inset-bottom, 0px) + var(--night-pill-clearance, 0px));
+  }
+  .palChatComposer {
+    padding-bottom: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .palChatComposer {
+    background: var(--paper);
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palChat *,
+  .palChat *::before,
+  .palChat *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .palChat {
+    --line: currentColor;
+  }
+}
+
+/* Trusted Handoff L16: gazetteer-grounded locality line, explicit acceptance
+   handoff, and Pal-local back path. All render only when palHandoff is on. */
+.palChatBack {
+  align-self: flex-start;
+  color: var(--ink-soft);
+  font: 500 0.85rem/1 var(--font-body);
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+
+.palChatBack:hover {
+  color: var(--ink);
+}
+
+.palChatLocality {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--ink-soft);
+  font: 500 0.82rem/1.35 var(--font-body);
+}
+
+/* In-thread recall: quieter than the answer it sits under, because it is the
+   Pal noticing something rather than telling you something. */
+.palChatRecall {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--ink-soft);
+  font: 500 0.8rem/1.35 var(--font-body);
+  opacity: 0.85;
+}
+
+.palChatCardAccept {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--brass);
+  color: var(--color-on-accent);
+  font: 600 0.85rem/1 var(--font-body);
+  text-decoration: none;
+}
+
+.palChatCardAccept:hover {
+  background: var(--brass-bright);
+}
+
+.palChatProposals {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Confirm and Dismiss are one decision, so they stay on one row. A long pub
+   name wraps inside its own button rather than pushing Dismiss to a line of
+   its own, which at 390px read as two unrelated controls. */
+.palChatProposal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.palChatPlanHandoff {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.65rem;
+  font: 700 0.82rem/1.25 var(--font-body);
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.palChatPlanHandoff:hover {
+  background: color-mix(in srgb, var(--paper) 88%, var(--brass) 12%);
+}
+
+.palChatProposalConfirm,
+.palChatProposalDismiss {
+  min-height: 44px;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.65rem;
+  font: 700 0.82rem/1.25 var(--font-body);
+}
+
+.palChatProposalConfirm {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+.palChatProposalDismiss {
+  flex: 0 0 auto;
+}
+
+.palChatProposalConfirm {
+  border: 1px solid color-mix(in srgb, var(--line) 50%, var(--brass) 50%);
+  background: color-mix(in srgb, var(--brass) 22%, transparent);
+  color: var(--ink);
+}
+
+.palChatProposalDismiss {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+}

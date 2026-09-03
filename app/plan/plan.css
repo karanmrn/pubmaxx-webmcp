@@ -1,0 +1,1327 @@
+.planPage {
+  --plan-accent: #e75f50;
+  --plan-accent-strong: #b93e32;
+  /* Get-in verdict ramp — the app's semantic positive/caution/negative roles
+     (globals.css), which already flip per-theme; no one-off hexes. */
+  --fit-likely: var(--color-positive);
+  --fit-uncertain: var(--color-caution);
+  --fit-unlikely: var(--color-negative);
+  --fit-book: var(--plan-accent-strong);
+  min-height: 100dvh;
+  padding: clamp(18px, 4vw, 48px) max(var(--page-gutter), clamp(16px, 5vw, 72px)) 96px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--plan-accent) 6%, transparent) 1px, transparent 1px) 0 0 / 28px 28px,
+    var(--paper);
+  color: var(--ink);
+}
+
+.planPage__masthead {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.01em;
+}
+
+.planPage__masthead a { color: inherit; text-decoration: none; }
+.planPage__masthead a:hover { color: var(--plan-accent-strong); }
+.planPage__brand { color: var(--ink) !important; font-weight: 850; letter-spacing: 0.01em; }
+
+.planPage__intro,
+.planPage__hero {
+  max-width: 920px;
+  margin: clamp(50px, 9vw, 112px) auto clamp(34px, 6vw, 72px);
+}
+
+.planPage__eyebrow {
+  margin: 0 0 10px;
+  color: var(--plan-accent-strong);
+  font-size: var(--text-2xs);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.planPage h1,
+.planPage h2 {
+  font-family: var(--display, var(--serif));
+  text-wrap: balance;
+}
+
+.planPage__intro h1,
+.planPage__hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 7.3rem);
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+}
+
+.planPage__intro > p:last-child,
+.planPage__hero > p:last-child {
+  max-width: 610px;
+  margin: 24px 0 0;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.planPage__grid {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(310px, 0.7fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+}
+
+.planPage__side { display: grid; gap: 20px; }
+
+@media (min-width: 761px) {
+  .planPage__intro,
+  .planPage__hero {
+    margin: clamp(36px, 4vw, 56px) auto clamp(28px, 3vw, 40px);
+  }
+
+  .planPage__intro h1,
+  .planPage__hero h1 {
+    max-width: 920px;
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+  }
+}
+
+.planSummary,
+.planCrew,
+.planVibe,
+.planShare,
+.planComposer {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: clamp(18px, 3vw, 28px);
+  background: color-mix(in srgb, var(--panel-raised) 94%, transparent);
+  box-shadow: var(--shadow-sm);
+}
+
+.planSummary { min-height: 500px; padding: clamp(26px, 5vw, 52px); overflow: hidden; }
+.planSummary__heading { margin-left: 72px; }
+.planSummary__headingRow { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.planSummary__edit,
+.planSummary__swap,
+.planSummary__save,
+.planSummary__cancel {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  padding: 8px 14px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.planSummary__edit:hover,
+.planSummary__swap:hover,
+.planSummary__cancel:hover { border-color: var(--plan-accent); color: var(--plan-accent-strong); }
+.planSummary__edit:disabled,
+.planSummary__swap:disabled,
+.planSummary__save:disabled,
+.planSummary__cancel:disabled { opacity: 0.56; cursor: wait; }
+.planSummary__editor {
+  display: grid;
+  gap: 10px;
+  margin: 30px 0 0 72px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--plan-accent) 34%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--plan-accent) 6%, var(--panel));
+}
+.planSummary__editor h3 { margin: 0; font-size: 1.05rem; }
+.planSummary__editor > p,
+.planSummary__editorNote { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
+.planSummary__editStops { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.planSummary__editStops li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 9px; align-items: center; min-height: 56px; }
+.planSummary__editStops li > span:nth-child(2) { min-width: 0; display: grid; gap: 2px; }
+.planSummary__editStops strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.planSummary__editStops small { color: var(--muted); font-size: 0.7rem; }
+.planSummary__editMarker { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--plan-accent); color: #fff; font-size: 0.75rem; font-weight: 850; }
+.planSummary__editorActions { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Primary action fill — mobile CTA recipe: --accent-action (#ff5a5f / --brass).
+   Not --plan-accent (dark remaps that to night-amber for rails/chips only). */
+.planSummary__save { border-color: var(--accent-action); background: var(--accent-action); color: var(--color-on-accent); }
+.planSummary__save:hover:not(:disabled) { border-color: var(--accent-action-strong); background: var(--accent-action-strong); }
+.planSummary__status { margin: 18px 0 0 72px; color: var(--ink-soft); font-size: 0.8rem; line-height: 1.4; }
+.planCollab {
+  display: grid;
+  gap: 16px;
+  margin: 30px 0 0 72px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+}
+.planCollab__heading { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.planCollab__heading h3 { margin: 0; font-family: var(--display, var(--serif)); font-size: 1.35rem; }
+.planCollab__heading > span { padding: 6px 10px; border-radius: 999px; background: color-mix(in srgb, var(--plan-accent) 12%, var(--panel)); color: var(--plan-accent-strong); font-size: 0.7rem; font-weight: 850; text-transform: uppercase; }
+.planCollab button,
+.planCollab input,
+.planCollab select,
+.planCollab textarea { min-height: 44px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-raised); color: var(--ink); font: inherit; }
+.planCollab button { padding: 9px 13px; border-color: var(--plan-accent); background: var(--plan-accent); color: #fff; font-size: 0.76rem; font-weight: 850; cursor: pointer; }
+.planCollab button:disabled { opacity: 0.55; cursor: wait; }
+.planCollab .planCollab__quiet { border-color: var(--line); background: var(--panel-raised); color: var(--ink-soft); }
+.planCollab__invite { display: flex; flex-wrap: wrap; gap: 8px; }
+.planCollab__invite output { flex-basis: 100%; overflow-wrap: anywhere; color: var(--muted); font-size: 0.7rem; line-height: 1.4; }
+.planCollab__activeInvite { flex-basis: 100%; min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.planCollab__activeInvite small { color: var(--muted); font-size: 0.7rem; }
+.matchGroupPrefs { display: grid; gap: 12px; padding: 14px; border: 1px solid var(--line-soft); border-radius: 16px; background: color-mix(in srgb, var(--plan-accent) 7%, var(--panel)); }
+.matchGroupPrefs__heading { display: flex; align-items: start; justify-content: space-between; gap: 10px; }
+.matchGroupPrefs__heading h4 { margin: 0; font-size: 1rem; }
+.matchGroupPrefs__heading > span { padding: 5px 8px; border-radius: 999px; background: var(--panel-raised); color: var(--muted); font-size: 0.62rem; font-weight: 850; text-transform: uppercase; white-space: nowrap; }
+.matchGroupPrefs__eyebrow,
+.matchGroupPrefs__intro,
+.matchGroupPrefs__status { margin: 0; color: var(--muted); font-size: 0.72rem; line-height: 1.45; }
+.matchGroupPrefs__eyebrow { color: var(--plan-accent-strong); font-weight: 850; letter-spacing: 0.01em; }
+.matchGroupPrefs__field { display: grid; gap: 7px; }
+.matchGroupPrefs__field > strong { font-size: 0.78rem; }
+.matchGroupPrefs__chips,
+.matchGroupPrefs__actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.planCollab .matchGroupPrefs__chip { min-height: 36px; padding: 7px 10px; border-color: var(--line); background: var(--panel-raised); color: var(--ink-soft); font-size: 0.72rem; }
+.planCollab .matchGroupPrefs__chip[aria-pressed="true"] { border-color: var(--plan-accent); background: var(--plan-accent); color: #fff; box-shadow: 0 0 0 3px color-mix(in srgb, var(--plan-accent) 22%, transparent); }
+.matchGroupPrefs__summary,
+.matchGroupPrefs__mustHaves { padding: 10px; border-radius: 12px; background: var(--panel-raised); color: var(--ink-soft); font-size: 0.74rem; line-height: 1.45; }
+.matchGroupPrefs__mustHaves { border: 1px solid color-mix(in srgb, var(--plan-accent) 35%, var(--line)); }
+.planCollab__form { display: grid; gap: 9px; padding-top: 14px; border-top: 1px solid var(--line-soft); }
+.planCollab__form > strong,
+.planCollab__proposals > strong { font-size: 0.82rem; }
+.planCollab__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.planCollab input,
+.planCollab select,
+.planCollab textarea { width: 100%; padding: 9px 11px; font-size: 0.8rem; }
+.planCollab textarea { min-height: 78px; resize: vertical; }
+.planCollab__inputRow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.planCollab fieldset { display: grid; gap: 7px; margin: 0; padding: 10px; border: 1px solid var(--line); border-radius: 12px; }
+.planCollab legend { padding: 0 5px; color: var(--muted); font-size: 0.72rem; }
+.planCollab fieldset label { display: flex; align-items: center; gap: 8px; color: var(--ink-soft); font-size: 0.75rem; }
+.planCollab fieldset input { width: 20px; min-height: 20px; }
+.planCollab__constraints { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.planCollab__constraints li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line-soft); font-size: 0.78rem; }
+.planCollab__constraints small { color: var(--muted); text-align: right; }
+.planCollab__provenance { display: grid; gap: 3px; margin-top: 5px; }
+.planCollab__provenance a { color: var(--plan-accent-strong); font-size: 0.68rem; text-underline-offset: 2px; }
+.planCollab__source { display: grid; gap: 6px; padding: 10px; border: 1px solid var(--line-soft); border-radius: 12px; }
+.planCollab__source > strong { font-size: 0.75rem; }
+.planCollab__proposals { display: grid; gap: 10px; }
+.planCollab__proposals article { display: grid; gap: 9px; padding: 13px; border: 1px solid var(--line); border-radius: 14px; }
+.planCollab__proposals p,
+.planCollab__proposals ol { margin: 0; }
+.planCollab__proposals ol { padding-left: 18px; color: var(--ink-soft); font-size: 0.75rem; }
+.planCollab__proposals small,
+.planCollab__status { color: var(--muted); font-size: 0.72rem; line-height: 1.4; }
+.planCollab__evidenceNote { margin: 0; color: var(--color-caution); font-size: 0.74rem; line-height: 1.45; }
+.planCollab__blocked { padding: 9px 10px; border-radius: var(--radius); background: color-mix(in srgb, var(--color-caution) 10%, transparent); color: var(--ink-soft); font-size: 0.74rem; }
+.planCollab__blocked ul { margin: 5px 0 0; padding-left: 18px; }
+.planCollab__actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.planCollab__actions button[aria-pressed="true"] { box-shadow: 0 0 0 3px color-mix(in srgb, var(--plan-accent) 28%, transparent); }
+.planSummary__heading h2,
+.planCrew h2,
+.planVibe h2,
+.planShare h2 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.8rem); line-height: 1; }
+
+.planSummary__rail {
+  position: absolute;
+  left: clamp(46px, 7vw, 78px);
+  top: 120px;
+  bottom: 56px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--plan-accent);
+}
+
+.planSummary__stops { list-style: none; margin: 42px 0 0; padding: 0; display: grid; gap: 14px; }
+.planSummary__stops li { min-height: 92px; display: grid; grid-template-columns: 58px 1fr; gap: 22px; align-items: center; position: relative; }
+.planSummary__marker {
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--plan-accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 850;
+  box-shadow: 0 0 0 7px var(--panel-raised);
+}
+.planSummary__stops strong { display: block; font-family: var(--display, var(--serif)); font-size: clamp(1.35rem, 3vw, 2.15rem); letter-spacing: -0.035em; }
+.planSummary__stops a { display: inline-flex; min-height: 44px; align-items: center; color: var(--muted); font-size: 0.86rem; text-underline-offset: 3px; }
+.planSummary__stops a:hover { color: var(--plan-accent-strong); }
+
+/* ── Get-in signal ─────────────────────────────────────────────────────────
+   A per-stop, honest entry estimate layered onto the server-rendered route.
+   Provenance: every value is an estimate, never a guarantee — the caption says
+   so once, and the accent only encodes the group-fit verdict. */
+.planRoute__basis {
+  margin: 30px 0 -8px;
+  padding-left: 72px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+.planRoute__body { display: grid; gap: 6px; min-width: 0; }
+
+/* "See the walking route" — deep links the whole ordered crawl to the map,
+   where the route follows real walking roads. Sits above the stop list, aligned
+   with the numbered rows' text column. */
+.planRoute__walk {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 22px 0 -4px 72px;
+  color: var(--plan-accent-strong);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  text-underline-offset: 3px;
+}
+
+/* ── On-tonight event chips (C3) ───────────────────────────────────────────
+   Mirrors the venue-sheet W1 "on tonight" chip system (venueSheet.css
+   .venueTonightChip) so a real quiz/sport/deal/music row reads as the same
+   honest, provenance-first signal wherever it surfaces. --brass is the app's
+   shared "on tonight" accent token (app/theme.css), read here, not redefined.
+   Honest empty: a stop with no matching tonight row renders nothing. */
+.planRoute__event {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  padding: 3px 8px;
+  border: 1px solid color-mix(in srgb, var(--brass) 40%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 12%, var(--panel-raised));
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: default;
+}
+.planRoute__event svg { color: var(--brass); flex-shrink: 0; }
+.planRoute__eventSource {
+  margin-left: 2px;
+  padding-left: 6px;
+  border-left: 1px solid color-mix(in srgb, var(--brass) 35%, var(--line));
+  color: var(--muted);
+  font-weight: 650;
+  font-size: 0.68rem;
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+.planRoute__eventSource:hover,
+.planRoute__eventSource:focus-visible { color: var(--plan-accent-strong); text-decoration: underline; }
+.planRoute__signal {
+  --fit-accent: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 12px;
+  margin-top: 3px;
+  font-size: 0.8rem;
+}
+.planRoute__signal[data-fit="likely"] { --fit-accent: var(--fit-likely); }
+.planRoute__signal[data-fit="uncertain"] { --fit-accent: var(--fit-uncertain); }
+.planRoute__signal[data-fit="unlikely"] { --fit-accent: var(--fit-unlikely); }
+.planRoute__signal[data-fit="book-ahead"] { --fit-accent: var(--fit-book); }
+
+.planRoute__busy { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-soft); font-weight: 600; }
+.planRoute__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--muted) 16%, transparent);
+}
+.planRoute__dot[data-level="quiet"] { background: var(--fit-likely); box-shadow: 0 0 0 3px color-mix(in srgb, var(--fit-likely) 20%, transparent); }
+.planRoute__dot[data-level="moderate"] { background: var(--fit-uncertain); box-shadow: 0 0 0 3px color-mix(in srgb, var(--fit-uncertain) 22%, transparent); }
+.planRoute__dot[data-level="busy"] { background: var(--fit-unlikely); box-shadow: 0 0 0 3px color-mix(in srgb, var(--fit-unlikely) 22%, transparent); }
+.planRoute__dot[data-level="rammed"] { background: var(--fit-unlikely); box-shadow: 0 0 0 4px color-mix(in srgb, var(--fit-unlikely) 26%, transparent); }
+
+.planRoute__fit {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 11px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--fit-accent) 42%, transparent);
+  background: color-mix(in srgb, var(--fit-accent) 12%, transparent);
+  color: var(--fit-accent);
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  cursor: default;
+}
+.planRoute__book {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  color: var(--plan-accent-strong);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-underline-offset: 3px;
+}
+
+/* Loading placeholder shaped like the signal row — not a spinner (Emil: skeletal
+   loaders match the final layout). Shimmer only when motion is welcome. */
+.planRoute__signal--loading {
+  display: block;
+  width: min(210px, 72%);
+  height: 13px;
+  margin-top: 7px;
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(100deg,
+      color-mix(in srgb, var(--line) 55%, transparent) 30%,
+      color-mix(in srgb, var(--line-soft) 85%, transparent) 50%,
+      color-mix(in srgb, var(--line) 55%, transparent) 70%);
+  background-size: 220% 100%;
+  background-position: 140% 0;
+}
+
+.planCrew,
+.planVibe,
+.planShare { padding: 26px; }
+.planCrew__heading { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.planCrew__heading > span { min-width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--paper); font-weight: 800; }
+.planCrew__list { list-style: none; margin: 22px 0; padding: 0; display: grid; gap: 8px; }
+.planCrew__list li { min-height: 48px; padding: 10px 12px; display: flex; justify-content: space-between; gap: 12px; align-items: center; border-bottom: 1px solid var(--line-soft); }
+.planCrew__list small { color: var(--plan-accent-strong); font-weight: 750; }
+.planCrew__empty { color: var(--muted); }
+.planCrew__join { margin-top: 22px; }
+.planCrew__join label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--ink-soft); }
+.planCrew__join > div { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.planCrew input,
+.planComposer input { min-width: 0; min-height: 48px; border: 1px solid var(--line); border-radius: 11px; padding: 10px 13px; background: var(--panel); color: var(--ink); font: inherit; }
+.planCrew input:focus-visible,
+.planComposer input:focus-visible,
+.planPage button:focus-visible { outline: 3px solid color-mix(in srgb, var(--plan-accent) 55%, transparent); outline-offset: 2px; }
+.planCrew__join button,
+.planComposer__submit { min-height: 48px; border: 0; border-radius: 11px; padding: 0 20px; font: inherit; font-weight: 800; cursor: pointer; }
+/* Join stays secondary (plan-accent → amber in dark). Lock it in = mobile primary. */
+.planCrew__join button { background: var(--plan-accent); color: #fff; }
+.planComposer__submit { background: var(--accent-action); color: var(--color-on-accent); }
+.planComposer__submit:hover:not(:disabled) { background: var(--accent-action-strong); }
+.planCrew__join button:disabled { opacity: 0.58; cursor: wait; }
+/* M3: disabled primary CTAs stay coral (accent-action) at ~0.58 opacity —
+   never a muddy brick hue that reads "broken" next to vivid enabled coral. */
+.planComposer__submit:disabled,
+.planComposer__conciergeInput button:disabled {
+  background: var(--accent-action);
+  color: var(--color-on-accent);
+  opacity: 0.58;
+  cursor: wait;
+  filter: none;
+}
+.planCrew__presence { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+.planCrew__presence button,
+.planComposer__add,
+.planComposer__remove { min-height: 44px; border: 1px solid var(--line); border-radius: var(--control-radius, 14px); padding: 8px 13px; background: var(--panel); color: var(--ink); font: inherit; font-size: 0.8rem; font-weight: 750; cursor: pointer; }
+.planCrew__presence button:hover,
+.planComposer__add:hover { border-color: var(--plan-accent); color: var(--plan-accent-strong); }
+/* Your current status reads back instantly (set optimistically on tap). Without
+   this, the presence buttons gave no sign which one you chose. */
+.planCrew__presence button[data-active] {
+  border-color: var(--plan-accent);
+  background: color-mix(in srgb, var(--plan-accent) 15%, var(--panel));
+  color: var(--plan-accent-strong);
+  font-weight: 850;
+}
+
+.planShare > p:not(.planPage__eyebrow) { color: var(--ink-soft); line-height: 1.5; }
+.planShare .shareBar { margin-top: 20px; }
+
+/* Inevitable post-plan next step: WhatsApp first, Copy invite second. */
+.planInviteNext {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+}
+.planInviteNext__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 11px;
+  border: 1px solid color-mix(in srgb, var(--plan-accent, var(--amber)) 55%, var(--line));
+  background: color-mix(in srgb, var(--plan-accent, var(--amber)) 22%, var(--panel-raised));
+  color: var(--ink);
+  font-weight: 750;
+  text-decoration: none;
+}
+.planInviteNext__whatsapp:hover {
+  background: color-mix(in srgb, var(--plan-accent, var(--amber)) 32%, var(--panel-raised));
+}
+.planInviteNext__whatsapp--pending {
+  border-style: dashed;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 650;
+  cursor: default;
+}
+.planInviteNext__whatsapp--pending:hover {
+  background: transparent;
+}
+.planInviteNext__error {
+  margin: 0;
+  color: #a52c24;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+.planInviteNext .planHostInviteLink {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.planInviteNext__more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 650;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+/* Crew vibe picker (vibe layer, surface 3 wiring; issue #438). Chips keep the
+   Tonight pill silhouette but deliberately stay on the house face: at sidebar
+   density these labels sit far below the 20px+ floor the party accent demands,
+   so the plan surface leaves the Bungee quarantine budget untouched and the
+   register rides the words alone. */
+.planVibe__lede { margin: 12px 0 0; color: var(--ink-soft); line-height: 1.5; font-size: 0.85rem; }
+.planVibe__row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.planVibe__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.planVibe__chip:hover { border-color: var(--plan-accent); color: var(--plan-accent-strong); }
+.planVibe__chip:disabled { opacity: 0.58; cursor: wait; }
+.planVibe__chip[data-active="true"] {
+  border-color: var(--plan-accent);
+  background: color-mix(in srgb, var(--plan-accent) 15%, var(--panel));
+  color: var(--plan-accent-strong);
+  font-weight: 850;
+}
+/* The tally is the same line the share card prints (lib/vibeTally), so it
+   reads as a caption of the stamp, not another data row. */
+.planVibe__tally { margin: 16px 0 0; color: var(--ink-soft); font-style: italic; line-height: 1.5; }
+.planVibe__note { margin: 10px 0 0; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+
+.planComposer { max-width: 920px; margin: 0 auto; padding: clamp(22px, 5vw, 46px); display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+.planComposer__accepted {
+  grid-column: 1 / -1;
+  min-width: 0;
+  padding: clamp(16px, 3vw, 24px);
+  border: 1px solid color-mix(in srgb, var(--plan-accent) 42%, var(--line));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--plan-accent) 8%, var(--panel));
+}
+.planComposer__acceptedList {
+  margin: 14px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 12px;
+}
+.planComposer__acceptedList > div { min-width: 0; display: grid; gap: 4px; }
+.planComposer__acceptedList dt { color: var(--muted); font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
+.planComposer__acceptedList dd { min-width: 0; margin: 0; color: var(--ink); font-weight: 800; overflow-wrap: anywhere; }
+.planComposer__acceptedNote { margin: 14px 0 0; color: var(--ink-soft); font-size: 0.8rem; }
+/* The way out of a held acceptance. Quiet by weight, full 44px by touch: it is
+   never the thing to do next, but it must be reachable with a thumb. */
+.planComposer__acceptedRelease {
+  min-height: 44px;
+  margin: 8px 0 0;
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  background: var(--panel);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.planComposer__acceptedRelease:hover { border-color: var(--plan-accent); color: var(--plan-accent-strong); }
+.planComposer__conflicts {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 0;
+  padding: 14px 16px 14px 34px;
+  border: 1px solid color-mix(in srgb, var(--color-caution) 52%, var(--line));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--color-caution) 9%, var(--panel));
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+/* Describe-first entry: the default open for /plan. One question, one input,
+   a handful of real example chips. The five-step wizard (.planIntake below)
+   sits one quiet link away rather than gating the free-text path. */
+.planDescribeFirst {
+  grid-column: 1 / -1;
+  min-width: 0;
+  padding: clamp(18px, 4vw, 30px);
+  border: 1px solid color-mix(in srgb, var(--plan-accent) 34%, var(--line));
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--plan-accent) 9%, transparent), transparent 38%),
+    color-mix(in srgb, var(--panel) 92%, var(--paper));
+  text-align: center;
+}
+.planDescribeFirst h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 0.98; letter-spacing: -0.035em; }
+.planDescribeFirst__form { margin: 20px auto 0; max-width: 560px; display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.planDescribeFirst__form input { min-height: 48px; border: 1px solid var(--line); border-radius: 11px; padding: 0 16px; font: inherit; background: var(--panel-raised); color: var(--ink); }
+.planDescribeFirst__form button { min-height: 48px; border: 0; border-radius: 11px; padding: 0 20px; background: var(--accent-action); color: var(--color-on-accent); font: inherit; font-weight: 800; cursor: pointer; }
+.planDescribeFirst__form button:hover:not(:disabled) { background: var(--accent-action-strong); }
+.planDescribeFirst__form button:disabled { opacity: 0.5; cursor: not-allowed; }
+.planStopCount { margin: 14px auto 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.planStopCount__label { color: var(--muted); font-size: 0.78rem; font-weight: 800; }
+.planStopCount__choices { display: flex; gap: 6px; }
+.planStopCount__choices button { min-width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); font: inherit; font-size: 0.8rem; font-weight: 800; cursor: pointer; }
+.planStopCount__choices button[aria-pressed="true"] { border-color: var(--plan-accent); background: color-mix(in srgb, var(--plan-accent) 13%, var(--panel)); color: var(--plan-accent-strong); }
+.planStopCount__choices button:focus-visible { outline: 3px solid color-mix(in srgb, var(--plan-accent) 55%, transparent); outline-offset: 2px; }
+.planDescribeFirst__chips { margin: 16px auto 0; max-width: 640px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.planDescribeFirst__chip {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  padding: 8px 14px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.planDescribeFirst__chip:hover,
+.planDescribeFirst__chip:focus-visible { border-color: var(--plan-accent); color: var(--plan-accent-strong); outline: none; }
+/* Culture Crawl lane. It reads as its own offer above the plain examples, so
+   the group carries a lead line and a warmer chip edge without becoming a
+   second primary action. */
+.planDescribeFirst__culture { margin: 22px auto 0; max-width: 640px; }
+.planDescribeFirst__cultureLead {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.planDescribeFirst__cultureChips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.planDescribeFirst__chip--culture {
+  border-color: color-mix(in srgb, var(--plan-accent) 40%, var(--line));
+  background: color-mix(in srgb, var(--plan-accent) 7%, var(--panel));
+}
+.planDescribeFirst__guide {
+  margin: 20px auto 0;
+  display: block;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  padding: 8px 14px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.planDescribeFirst__guide:hover,
+.planDescribeFirst__guide:focus-visible { border-color: var(--plan-accent); color: var(--plan-accent-strong); outline: none; }
+@media (max-width: 640px) {
+  .planDescribeFirst__form { grid-template-columns: 1fr; }
+}
+
+/* Progressive Plan intake. This is inline, resumable planning context rather
+   than an interruptive prompt, so it never competes for the shared prompt
+   budget or changes entry routing. One question is visible at a time. */
+.planIntake {
+  grid-column: 1 / -1;
+  min-width: 0;
+  padding: clamp(18px, 4vw, 30px);
+  border: 1px solid color-mix(in srgb, var(--plan-accent) 34%, var(--line));
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--plan-accent) 9%, transparent), transparent 38%),
+    color-mix(in srgb, var(--panel) 92%, var(--paper));
+}
+.planIntake__header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.planIntake__palEntry { margin: 10px 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+.planIntake__palEntry a { color: var(--plan-accent-strong); font-weight: 750; text-underline-offset: 3px; }
+.planIntake__palEntry a:hover { color: var(--ink); }
+.planIntake__header > div { min-width: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+.planIntake__kicker,
+.planIntake__count,
+.planIntake__eyebrow { margin: 0; }
+.planIntake__kicker,
+.planIntake__eyebrow { color: var(--plan-accent-strong); font-size: var(--text-2xs); font-weight: 850; letter-spacing: 0.01em; }
+.planIntake__count { color: var(--muted); font-size: 0.74rem; font-weight: 720; }
+.planIntake__describe,
+.planIntake__back,
+.planIntake__skip,
+.planIntake__continue,
+.planIntake__tune,
+.planIntake__summaryChips button {
+  min-height: 44px;
+  border-radius: var(--control-radius, 14px);
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.planIntake__describe,
+.planIntake__back,
+.planIntake__skip,
+.planIntake__tune,
+.planIntake__summaryChips button { border: 1px solid var(--line); background: var(--panel-raised); color: var(--ink-soft); }
+.planIntake__continue { border: 1px solid var(--accent-action); background: var(--accent-action); color: var(--color-on-accent); padding-inline: 20px; }
+.planIntake__continue:hover:not(:disabled) { border-color: var(--accent-action-strong); background: var(--accent-action-strong); }
+/* Quiet secondary intake buttons when disabled. */
+.planIntake button:disabled { opacity: 0.5; cursor: not-allowed; }
+/* M3: Continue primary — coral fill @ 0.58 (beats `button:disabled` specificity). */
+.planIntake button.planIntake__continue:disabled {
+  border-color: var(--accent-action);
+  background: var(--accent-action);
+  color: var(--color-on-accent);
+  opacity: 0.58;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.planIntake__progress { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
+.planIntake__progress li { min-width: 0; display: grid; grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 7px; color: var(--muted); font-size: 0.67rem; font-weight: 740; }
+.planIntake__progress li::after { content: ""; grid-column: 1 / -1; height: 3px; border-radius: 999px; background: var(--line); }
+.planIntake__progress li > span:first-child { width: 24px; height: 24px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--panel-raised); }
+.planIntake__progress li > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.planIntake__progress li[data-state="current"] { color: var(--ink); }
+.planIntake__progress li[data-state="current"]::after,
+.planIntake__progress li[data-state="settled"]::after { background: var(--plan-accent); }
+.planIntake__progress li[data-state="settled"] > span:first-child { border-color: var(--plan-accent); color: var(--plan-accent-strong); }
+
+.planIntake__stage { min-height: 244px; padding: clamp(28px, 5vw, 42px) 0 24px; }
+.planIntake__stage h2,
+.planIntake__summaryBody h2 { max-width: 650px; margin: 8px 0 0; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 0.98; letter-spacing: -0.035em; }
+.planIntake__stage h2:focus {
+  outline: 3px solid color-mix(in srgb, var(--plan-accent) 60%, transparent);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+.planIntake__note { max-width: 610px; margin: 12px 0 0; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.5; }
+.planIntake__choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.planIntake__areaPicker { display: grid; justify-items: start; gap: 10px; margin-top: 22px; }
+.planIntake__locate {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--accent-action);
+  border-radius: var(--control-radius, 14px);
+  padding: 8px 15px;
+  background: var(--accent-action);
+  color: var(--color-on-accent);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 820;
+  cursor: pointer;
+}
+.planIntake__locate:hover:not(:disabled) {
+  border-color: var(--accent-action-strong);
+  background: var(--accent-action-strong);
+}
+.planIntake__locationStatus { max-width: 610px; margin: 0; color: var(--ink-soft); font-size: 0.78rem; line-height: 1.45; }
+.planIntake__locationStatus--error { color: var(--color-negative, #a52c24); font-weight: 700; }
+.planIntake__areaPicker .planIntake__choices { margin-top: 2px; }
+.planIntake__choices button,
+.planIntake__numberChoices button {
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 9px 14px;
+  background: var(--panel-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 760;
+  cursor: pointer;
+}
+.planIntake__choices button[aria-pressed="true"],
+.planIntake__numberChoices button[aria-pressed="true"] { border-color: var(--plan-accent); background: color-mix(in srgb, var(--plan-accent) 13%, var(--panel)); color: var(--plan-accent-strong); }
+.planIntake__choices--areas button { display: inline-flex; align-items: center; gap: 7px; border-radius: var(--control-radius, 14px); }
+.planIntake__choices--cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.planIntake__choices--cards button { min-height: 74px; display: grid; align-content: center; gap: 3px; text-align: left; }
+.planIntake__choices--cards small { color: var(--muted); font-size: 0.69rem; font-weight: 650; line-height: 1.35; }
+.planIntake__exactTime { grid-column: 1 / -1; display: grid; gap: 7px; margin-top: 6px; color: var(--ink-soft); font-size: 0.78rem; }
+.planIntake__exactTime input { width: min(100%, 270px); }
+.planIntake__choices--access button { display: grid; grid-template-columns: 22px 1fr; align-items: center; gap: 7px; text-align: left; }
+.planIntake__choices--access button > span { width: 20px; height: 20px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 6px; }
+.planIntake__group,
+.planIntake__budget { display: grid; gap: 14px; margin-top: 22px; }
+.planIntake__group label,
+.planIntake__budget > label { color: var(--muted); font-size: 0.74rem; }
+.planIntake__group > input { width: min(100%, 190px); }
+.planIntake__numberChoices { display: flex; flex-wrap: wrap; gap: 8px; }
+.planIntake__numberChoices button { width: 48px; padding: 0; border-radius: 50%; }
+.planIntake__moneyInput { width: min(100%, 190px); display: grid; grid-template-columns: 38px 1fr; align-items: center; border: 1px solid var(--line); border-radius: 11px; background: var(--panel); }
+.planIntake__moneyInput > span { display: grid; place-items: center; color: var(--muted); }
+.planIntake__moneyInput input { width: 100%; border: 0; background: transparent; }
+.planIntake__actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
+.planIntake__actions > div { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+
+.planIntake--complete { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+.planIntake__completeMark { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--color-positive) 15%, var(--panel)); color: var(--color-positive); }
+.planIntake__summaryBody { min-width: 0; }
+.planIntake__summaryBody h2 { font-size: clamp(1.3rem, 3vw, 2rem); line-height: 1.05; overflow-wrap: anywhere; }
+.planIntake__summaryBody > p:last-of-type { margin: 8px 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+.planIntake__summaryChips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.planIntake__summaryChips button { min-height: 44px; padding-inline: 12px; color: var(--plan-accent-strong); }
+.planIntake__tune { display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; }
+
+.planComposer__templates {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 10px;
+  padding: 0 0 8px;
+}
+
+.planComposer__templates h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.planComposer__usualLot {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--plan-accent, var(--amber)) 35%, var(--line));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--plan-accent, var(--amber)) 10%, var(--panel-raised));
+}
+.planComposer__usualLot p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+.planComposer__templatesLead {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.planComposer__templateRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.planComposer__template {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--control-radius, 14px);
+  padding: 8px 14px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.planComposer__template:hover,
+.planComposer__template:focus-visible {
+  border-color: var(--plan-accent);
+  color: var(--plan-accent-strong);
+  outline: none;
+}
+
+.planComposer__concierge { grid-column: 1 / -1; padding: 0 0 28px; border-bottom: 1px solid var(--line); }
+.planComposer__concierge h2 { margin: 0; max-width: 600px; font-size: clamp(1.6rem, 4vw, 2.7rem); line-height: 1; }
+.planComposer__conciergeInput { margin-top: 20px; display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+/* Plan my night — same --accent-action fill as mobile Find my pint / Claim handle. */
+.planComposer__conciergeInput button { min-height: 48px; border: 0; border-radius: 11px; padding: 0 20px; background: var(--accent-action); color: var(--color-on-accent); font: inherit; font-weight: 800; cursor: pointer; }
+.planComposer__conciergeInput button:hover:not(:disabled) { background: var(--accent-action-strong); }
+/* disabled styles shared with .planComposer__submit:disabled (M3) above */
+.planComposer__concierge > p { margin: 12px 0 0; color: var(--ink-soft); font-size: 0.9rem; }
+.planComposer__conciergeStatus:empty { display: none; }
+.planComposer__conciergeStatus { min-height: 1.4em; }
+.planComposer__routeStale { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding: 12px; border: 1px solid color-mix(in srgb, var(--color-caution) 50%, var(--line)); border-radius: 14px; background: color-mix(in srgb, var(--color-caution) 10%, var(--panel)); }
+.planComposer__routeStale > div { display: grid; gap: 2px; min-width: 0; }
+.planComposer__routeStale strong { font-size: 0.84rem; }
+.planComposer__routeStale span { color: var(--ink-soft); font-size: 0.78rem; line-height: 1.35; }
+.planComposer__regenerate { flex: 0 0 auto; min-height: 44px; border: 0; border-radius: var(--control-radius, 14px); padding: 8px 14px; background: var(--plan-accent); color: #fff; font: inherit; font-size: 0.78rem; font-weight: 800; cursor: pointer; }
+.planComposer__regenerate:disabled { opacity: 0.58; cursor: wait; }
+.planComposer__context { margin: 18px 0 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.planComposer__context legend { width: 100%; margin-bottom: 2px; }
+.planComposer__contextNote { width: 100%; margin: 0 0 2px; color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+.planComposer__context label { display: flex; align-items: center; gap: 6px; min-width: 0; min-height: 44px; padding: 0 10px; border: 1px solid var(--line); border-radius: var(--control-radius, 14px); background: var(--panel); }
+.planComposer__context select, .planComposer__context input { min-width: 0; max-width: 100%; width: auto; min-height: 44px; padding: 4px; border: 0; background: transparent; color: var(--ink); font: inherit; font-weight: 760; }
+.planComposer__context input { width: 54px; }
+.planComposer__srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.planComposer__coverage { grid-column: 1 / -1; margin: -4px 0 2px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.planComposer__coverage summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; color: var(--ink); font-size: 0.92rem; font-weight: 800; cursor: pointer; list-style: none; }
+.planComposer__coverage summary::-webkit-details-marker { display: none; }
+.planComposer__coverage summary::after { content: "+"; display: grid; place-items: center; width: 24px; height: 24px; border: 1px solid var(--line); border-radius: 50%; color: var(--plan-accent-strong); font-size: 1.05rem; line-height: 1; }
+.planComposer__coverage details[open] summary::after { content: "−"; }
+.planComposer__coverage summary:focus-visible { outline: 3px solid color-mix(in srgb, var(--plan-accent) 55%, transparent); outline-offset: 3px; border-radius: 6px; }
+.planComposer__coverageMeta { color: var(--muted); font-size: 0.76rem; font-weight: 700; text-align: right; }
+.planComposer__coverageIntro { max-width: 680px; margin: 0 0 16px; color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
+.planComposer__coverageGroups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding-bottom: 18px; }
+.planComposer__coverageGroups section { min-width: 0; padding: 14px; border: 1px solid var(--line-soft); border-radius: 14px; background: color-mix(in srgb, var(--panel) 68%, transparent); }
+.planComposer__coverageGroups h3 { margin: 0 0 10px; color: var(--ink-soft); font-size: var(--text-2xs); letter-spacing: 0.01em; }
+.planComposer__coverageGroups ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.planComposer__coverageGroups li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line-soft); font-size: 0.8rem; }
+.planComposer__coverageGroups li:last-child { border-bottom: 0; padding-bottom: 0; }
+.planComposer__coverageGroups li > div { min-width: 0; display: grid; gap: 2px; }
+.planComposer__coverageGroups li strong { color: var(--ink); font-size: 0.82rem; }
+.planComposer__coverageGroups li small { color: var(--muted); line-height: 1.35; }
+.planComposer__coverageGroups li .planComposer__coverageMetaLine { color: var(--ink-soft); font-size: 0.7rem; }
+.planComposer__coverageActions { justify-items: end; align-content: start; gap: 2px !important; }
+.planComposer__coverageActions > span { color: var(--muted); font-size: 0.68rem; font-weight: 800; text-align: right; }
+.planComposer__coverageGroups li[data-tone="ready"] .planComposer__coverageActions > span { color: var(--color-positive); }
+.planComposer__coverageGroups li[data-tone="paused"] .planComposer__coverageActions > span { color: var(--color-negative); }
+.planComposer__coverageMapLink { display: inline-flex; min-height: 44px; align-items: center; color: var(--plan-accent-strong); font-size: 0.72rem; font-weight: 800; text-underline-offset: 3px; white-space: nowrap; }
+.planComposer__coverageMapLink:focus-visible { outline: 3px solid color-mix(in srgb, var(--plan-accent) 55%, transparent); outline-offset: 2px; border-radius: 5px; }
+.planComposer__field { display: grid; gap: 8px; }
+.planComposer__field--wide { grid-column: 1 / -1; }
+.planComposer label,
+.planComposer legend { color: var(--ink-soft); font-size: 0.82rem; font-weight: 760; letter-spacing: 0.02em; }
+.planComposer__field--wide input { font-family: var(--display, var(--serif)); font-size: 1.45rem; font-weight: 700; }
+.planComposer__stops { grid-column: 1 / -1; min-width: 0; margin: 8px 0 0; padding: 24px 0 0; border: 0; border-top: 1px solid var(--line); }
+.planComposer__stops legend { padding: 0 10px 0 0; color: var(--plan-accent-strong); letter-spacing: 0.01em; }
+.planComposer__stop { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 12px; align-items: end; margin-bottom: 14px; }
+.planComposer__stop > div { display: grid; gap: 6px; }
+.planComposer__stopActions { display: flex; flex-wrap: wrap; align-items: center; justify-content: end; gap: 6px; }
+/* M4: Swap/Remove ghost labels — lift contrast to WCAG AA on dark panel
+   (amber-toward-ink / ink-soft), both themes. Structure unchanged. */
+.planComposer__swap {
+  min-height: 44px;
+  border: 1px solid color-mix(in srgb, var(--plan-accent) 45%, var(--line));
+  border-radius: var(--control-radius, 14px);
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--plan-accent) 8%, var(--panel));
+  color: color-mix(in srgb, var(--plan-accent-strong) 42%, var(--ink));
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.planComposer__swap:disabled { opacity: 0.48; cursor: not-allowed; }
+.planComposer__previewLabel { margin-left: 8px; color: var(--muted); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; text-transform: none; }
+.planComposer__routeStatus { min-height: 1.35em; margin: 0 0 18px 56px; color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+.planComposer__stopReason { display: block; color: var(--muted); font-size: 0.72rem; line-height: 1.35; }
+/* Culture Crawl opener. It sits above stop 1 and is deliberately unnumbered:
+   a number would read as a fourth Stop, and this is a thing to see, not a pub
+   we priced. It carries no swap and no remove for the same reason. */
+.planComposer__opener {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px dashed color-mix(in srgb, var(--plan-accent) 40%, var(--line));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--plan-accent) 5%, var(--panel));
+}
+.planComposer__openerEyebrow { display: block; color: var(--plan-accent-strong); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.planComposer__openerPlace { margin: 6px 0 0; display: grid; gap: 2px; }
+.planComposer__openerPlace strong { font-size: 0.95rem; font-weight: 800; }
+.planComposer__openerPlace span { color: var(--muted); font-size: 0.76rem; line-height: 1.4; }
+.planComposer__openerNote { margin: 6px 0 0; color: var(--muted); font-size: 0.72rem; line-height: 1.4; }
+.planComposer__number { align-self: center; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--plan-accent) 15%, var(--panel)); color: var(--plan-accent-strong); font-weight: 850; }
+.planComposer__remove { color: var(--ink-soft); }
+.planComposer__add { margin-top: 6px; }
+.planComposer__submit { grid-column: 1 / -1; min-height: 56px; font-size: 1rem; }
+.planComposer__trust { grid-column: 1 / -1; margin: -8px 0 0; text-align: center; color: var(--muted); font-size: 0.78rem; }
+.planComposer__error { grid-column: 1 / -1; margin: 0; color: #a52c24; font-weight: 700; }
+
+html[data-theme="dark"] .planPage {
+  --plan-accent: var(--night-amber, #f0a01a);
+  --plan-accent-strong: #ffc45e;
+  /* Verdict ramp inherits the dark values of the semantic roles via theme.css. */
+  --fit-book: var(--plan-accent-strong);
+  background:
+    radial-gradient(circle at 80% 12%, color-mix(in srgb, var(--plan-accent) 9%, transparent), transparent 30%),
+    var(--paper);
+}
+html[data-theme="dark"] .planSummary,
+html[data-theme="dark"] .planCrew,
+html[data-theme="dark"] .planVibe,
+html[data-theme="dark"] .planShare,
+html[data-theme="dark"] .planComposer { border-radius: 12px; }
+/* Dark ink on amber fills only — primary CTAs use coral + --color-on-accent. */
+html[data-theme="dark"] .planSummary__marker,
+html[data-theme="dark"] .planCrew__join button { color: #090d0b; }
+
+@media (max-width: 760px) {
+  .planPage {
+    padding-top: max(10px, env(safe-area-inset-top, 0px));
+  }
+  .planPage__masthead {
+    padding-bottom: 10px;
+  }
+  .planPage__grid { grid-template-columns: 1fr; }
+  .planPage__side { order: -1; }
+  .planPage__hero { margin-top: 50px; }
+  .planPage__intro { margin: 10px auto 10px; }
+  .planPage__intro h1 { font-size: clamp(2.45rem, 11vw, 3.1rem); }
+  .planPage__intro > p:last-child { margin-top: 8px; font-size: 0.9rem; line-height: 1.35; }
+  .planPage__hero h1 { font-size: clamp(3rem, 16vw, 5rem); }
+  .planComposer { grid-template-columns: 1fr; padding: 14px; gap: 16px; }
+  .planIntake { grid-column: 1; padding: 18px; }
+  .planIntake__progress { grid-template-columns: repeat(5, 38px); justify-content: space-between; margin-top: 14px; overflow: hidden; }
+  .planIntake__stage { padding-top: 14px; }
+  .planIntake__progress li { display: block; }
+  .planIntake__progress li > span:last-child { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  .planIntake__progress li::after { display: block; margin-top: 7px; }
+  .planIntake__choices--cards { grid-template-columns: 1fr; }
+  .planIntake__actions { align-items: stretch; flex-direction: column-reverse; }
+  .planIntake__actions > div { display: grid; grid-template-columns: 1fr 1fr; }
+  .planIntake__back { align-self: flex-start; }
+  .planIntake--complete { grid-template-columns: 44px minmax(0, 1fr); align-items: start; }
+  .planIntake__tune { grid-column: 1 / -1; width: 100%; }
+  .planComposer__concierge { grid-column: 1; }
+  .planComposer__conciergeInput { grid-template-columns: 1fr; }
+  .planComposer__context { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .planComposer__context legend,
+  .planComposer__contextNote,
+  .planComposer__context label:first-of-type { grid-column: 1 / -1; }
+  .planComposer__context label { border-radius: 12px; padding: 0 8px; }
+  .planComposer__coverage summary { align-items: flex-start; padding: 10px 0; }
+  .planComposer__coverageMeta { max-width: 10.5rem; }
+  .planComposer__coverageGroups { grid-template-columns: 1fr; gap: 10px; }
+  .planComposer__coverageGroups section { padding: 12px; }
+  .planComposer__coverageGroups li { grid-template-columns: 1fr; gap: 2px; }
+  .planComposer__coverageActions { grid-auto-flow: column; align-items: center; justify-content: space-between; width: 100%; }
+  .planComposer__field,
+  .planComposer__field--wide { grid-column: 1; }
+  .planComposer__stop { grid-template-columns: 38px 1fr; }
+  .planComposer__stop > div,
+  .planComposer__stopActions { grid-column: 2; justify-content: start; }
+  .planComposer__stops,
+  .planComposer__submit,
+  .planComposer__trust,
+  .planComposer__error { grid-column: 1; }
+  .planSummary { padding: 26px 20px; }
+  .planSummary__rail { left: 43px; top: 105px; }
+  .planSummary__heading { margin-left: 57px; }
+  .planSummary__headingRow { align-items: flex-start; }
+  .planSummary > .roundStarter { width: calc(100% - 44px); margin-left: 44px; }
+  .planSummary__editor { margin-left: 0; }
+  .planSummary__status { margin-left: 0; }
+  .planCollab { margin-left: 0; padding: 15px; }
+  .planCollab__fields { grid-template-columns: 1fr; }
+  .planSummary__stops li { grid-template-columns: 48px 1fr; gap: 14px; }
+  .planSummary__marker { width: 42px; height: 42px; box-shadow: 0 0 0 5px var(--panel-raised); }
+  .planComposer__routeStale { align-items: stretch; flex-direction: column; }
+  .planComposer__regenerate { width: 100%; }
+  .planComposer__routeStatus { margin-left: 0; }
+}
+
+/* Entrances live only inside no-preference so the base state is fully visible —
+   reduced-motion users get the sorted night instantly, no hidden content.
+   Motivated motion: the route and crew reveal the plan as a sequence. */
+@keyframes planReveal { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+@keyframes planShimmer { from { background-position: 140% 0; } to { background-position: -40% 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .planSummary__stops li {
+    animation: planReveal 0.5s var(--ease-out-strong) both;
+    animation-delay: calc(var(--i, 0) * 55ms);
+  }
+  .planCrew__list li {
+    animation: planReveal 0.42s var(--ease-out-strong) both;
+    animation-delay: calc(var(--i, 0) * 40ms);
+  }
+  .planRoute__signal--loading { animation: planShimmer 1.3s linear infinite; }
+}
+
+/* Primary CTA link — used on the not-found surface's "Start your own plan".
+   Mirrors the composer's primary button (ink fill, paper ink) so the branded
+   404 offers one clear, on-brand route on rather than a bare Next 404. */
+.planPage__cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 11px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 800;
+  text-decoration: none;
+}
+.planPage__cta:hover { background: color-mix(in srgb, var(--ink) 88%, var(--plan-accent)); }
+.planPage__cta:focus-visible { outline: 3px solid color-mix(in srgb, var(--plan-accent) 55%, transparent); outline-offset: 2px; }
+
+/* Sort My Night P1 — usual-lot re-invite on the plan share panel. */
+.lastCrewInvite {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+}
+.lastCrewInvite__lede {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+.lastCrewInvite__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid color-mix(in srgb, var(--plan-accent, var(--amber)) 45%, var(--line));
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--plan-accent, var(--amber)) 14%, var(--panel-raised));
+  color: var(--ink);
+  font-weight: 750;
+  cursor: pointer;
+}
+.lastCrewInvite__status {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--muted);
+}
+
+/* Task: plan-invite-host-ui — Copy-invite-link control on the Plan share panel. */
+.planHostInviteLink {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+}
+.planHostInviteLink__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+.planHostInviteLink__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid color-mix(in srgb, var(--plan-accent, var(--amber)) 45%, var(--line));
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--plan-accent, var(--amber)) 14%, var(--panel-raised));
+  color: var(--ink);
+  font-weight: 750;
+  cursor: pointer;
+}
+.planHostInviteLink__rotate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--panel-raised);
+  color: var(--muted);
+  font-weight: 650;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.planHostInviteLink__rotate:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.planHostInviteLink__status {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .planPage *, .planPage *::before, .planPage *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+/* ── Route mini-map (T8) ────────────────────────────────────────────────────
+   A lightweight static route card for the locked plan page: the crawl's stops
+   as numbered discs on the walking line, drawn as a self-contained SVG (no
+   MapLibre mount, no tiles, no basemap) styled like a transit diagram. The
+   honesty rule mirrors the big map — the line is SOLID for a real routed walk
+   ("ors") and DASHED for the straight-line approximation. The route colour and
+   the numbered discs reuse the shared map tokens (--route-line deep-crimson
+   light / coral-ember dark; disc fill --ink-deep with a --brass-bright ring,
+   matching buildRouteStops) so the card reads as the same route system. */
+.planRouteMiniMap {
+  margin: 22px 0 4px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 18px);
+  background:
+    radial-gradient(120% 120% at 0% 0%, color-mix(in srgb, var(--route-line) 6%, transparent), transparent 60%),
+    var(--panel-raised);
+  overflow: hidden;
+}
+/* A faint transit-diagram dot grid so the card reads as an abstract map rather
+   than a blank panel — pinned to the route-line hue at a whisper of opacity. */
+.planRouteMiniMap__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-lg, 18px) - 8px);
+  background-image: radial-gradient(color-mix(in srgb, var(--route-line) 14%, transparent) 0.6px, transparent 0.7px);
+  background-size: 15px 15px;
+  background-position: -1px -1px;
+}
+.planRouteMiniMap__casing {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+}
+[data-theme="dark"] .planRouteMiniMap__casing { stroke: var(--ink-deep); }
+.planRouteMiniMap__line {
+  fill: none;
+  stroke: var(--route-line);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Honesty: dashed = approximate straight-line; solid = real routed roads. */
+.planRouteMiniMap[data-source="straight"] .planRouteMiniMap__line {
+  stroke-dasharray: 5 6;
+  opacity: 0.9;
+}
+.planRouteMiniMap__disc {
+  fill: var(--ink-deep);
+  stroke: var(--brass-bright);
+  stroke-width: 2;
+}
+.planRouteMiniMap__num {
+  fill: var(--paper);
+  font-family: var(--font-data, ui-monospace, "SFMono-Regular", monospace);
+  font-size: 12px;
+  font-weight: 800;
+}
+[data-theme="dark"] .planRouteMiniMap__num { fill: var(--ink); }
+
+/* Subtle draw-in — gated behind no-preference (the .planPage reduce block above
+   also hard-stops it via animation: none). The card rises/fades in once its
+   stops resolve; a real routed line additionally draws itself along its length
+   (pathLength=1), which replays when the straight line upgrades to roads. The
+   dashed straight line keeps its dash and simply fades, so the honesty pattern
+   is never animated away. Reduced-motion users get a static solid/dashed line. */
+@media (prefers-reduced-motion: no-preference) {
+  .planRouteMiniMap--in { animation: planRouteMiniMapRise 460ms ease-out both; }
+  .planRouteMiniMap[data-source="ors"] .planRouteMiniMap__line {
+    stroke-dasharray: 1;
+    animation: planRouteMiniMapDraw 900ms ease-out both;
+  }
+}
+@keyframes planRouteMiniMapRise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes planRouteMiniMapDraw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Invite privacy preview (Wayfinder 4.2) ────────────────────────────────
+   Shown to pre-acceptance viewers in place of the route stop list + mini-map.
+   Reveals only: host name, broad area, time, stop count, vibe, accessibility.
+   No venue ids or names appear in the rendered output. */
+.invitePreview {
+  padding: clamp(22px, 4vw, 44px) 0 clamp(22px, 4vw, 44px) 72px;
+}
+.invitePreview h2 {
+  margin: 8px 0 28px;
+  font-family: var(--display, var(--serif));
+  font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.invitePreview__details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px 24px;
+  margin: 0 0 28px;
+  padding: 0;
+}
+.invitePreview__detail {
+  display: grid;
+  gap: 3px;
+}
+.invitePreview__detail dt {
+  color: var(--muted);
+  font-size: var(--text-2xs);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.invitePreview__detail dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.invitePreview__hint {
+  margin: 0 0 22px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.invitePreview__join {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--plan-accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: background 140ms ease;
+}
+.invitePreview__join:hover { background: var(--plan-accent-strong); }
+@media (max-width: 600px) {
+  .invitePreview { padding-left: 0; }
+}

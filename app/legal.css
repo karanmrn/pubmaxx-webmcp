@@ -1,0 +1,212 @@
+/* Shared styling for the two legal content pages (/privacy, /terms).
+   Same shape and rhythm as /about (app/about/about.css): one narrow reading
+   column, display-face headings, panel-backed lists, tokens only (paper, ink,
+   ink-soft, muted, line, brass, panel, radius + shadow scales) so both themes
+   track automatically. These are content pages, not a wall of boilerplate:
+   short sections, scannable lists, plain sentences.
+   Mobile-first (390px), 44px tap targets, bottom padding clears the mobile tab
+   bar + safe area. */
+
+.legalPage {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px var(--page-gutter) calc(96px + env(safe-area-inset-bottom, 0px));
+  color: var(--ink);
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.legalHead {
+  margin: 8px 0 28px;
+}
+
+.legalEyebrow {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+.legalTitle {
+  margin: 0 0 14px;
+  font-family: var(--font-display, var(--serif));
+  font-size: clamp(1.9rem, 7vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.legalLede {
+  margin: 0 0 12px;
+  max-width: 56ch;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.legalUpdated {
+  margin: 0;
+  color: var(--muted);
+  font: 550 12px/1.4 var(--font-data);
+}
+
+/* ── Sections ───────────────────────────────────────────────── */
+.legalSection {
+  margin: 28px 0;
+}
+
+.legalH2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display, var(--serif));
+  font-size: clamp(1.3rem, 4.5vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.legalH3 {
+  margin: 18px 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.legalBody {
+  margin: 0 0 12px;
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.62;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.legalBody strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.legalBody:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Plain bullet list ──────────────────────────────────────── */
+.legalList {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  max-width: 62ch;
+  display: grid;
+  gap: 8px;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.legalList strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ── Panel list — the "cards" rhythm from /about's ethos list ─ */
+.legalPanelList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.legalPanelList li {
+  padding: 14px 16px 14px 18px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brass);
+  border-radius: var(--radius, 10px);
+  background: var(--panel);
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.legalPanelList li strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ── Definition rows (third parties, rights) ────────────────── */
+.legalRows {
+  margin: 0;
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 18px);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.legalRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--line);
+}
+
+.legalRow:first-child {
+  border-top: 0;
+}
+
+.legalRow dt {
+  font: 650 12px/1.3 var(--font-data);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.legalRow dd {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 640px) {
+  .legalRow {
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+    align-items: baseline;
+  }
+}
+
+/* ── Links + contact block ──────────────────────────────────── */
+.legalLink {
+  color: var(--brass);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--brass) 40%, transparent);
+}
+
+.legalLink:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.legalContact {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 18px);
+  background: var(--panel-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.legalContactEmail {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 650 1rem/1 var(--font-data);
+}

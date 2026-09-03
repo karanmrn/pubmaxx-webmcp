@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "london-pint-index-public-20260716-v1",
+  "status": "empty",
+  "generatedAt": "2026-07-16T00:00:00.000Z",
+  "observationWindow": null,
+  "classification": {
+    "version": "london-borough-point-v1",
+    "method": "point_in_polygon",
+    "sourceArtifact": "data/london_boroughs_simplified.json",
+    "licence": "Open Government Licence v3.0"
+  },
+  "sources": [],
+  "observations": [],
+  "excluded": [
+    {
+      "reason": "source_not_eligible_for_public_index",
+      "observationCount": 2796,
+      "note": "Legacy competitor-derived baseline remains quarantined from this citable snapshot."
+    }
+  ]
+}

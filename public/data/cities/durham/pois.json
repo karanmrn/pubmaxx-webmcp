@@ -1,0 +1,86 @@
+[
+  {
+    "id": "rail-durham",
+    "name": "Durham station",
+    "category": "rail",
+    "coordinates": [-1.5814, 54.7794],
+    "rank": 1
+  },
+  {
+    "id": "bus-north-road",
+    "name": "North Road bus station",
+    "category": "bus",
+    "coordinates": [-1.5795, 54.7778],
+    "rank": 1
+  },
+  {
+    "id": "sight-durham-cathedral",
+    "name": "Durham Cathedral",
+    "category": "historic",
+    "coordinates": [-1.5761, 54.7734],
+    "rank": 1
+  },
+  {
+    "id": "sight-durham-castle",
+    "name": "Durham Castle",
+    "category": "historic",
+    "coordinates": [-1.5755, 54.7749],
+    "rank": 1
+  },
+  {
+    "id": "sight-palace-green",
+    "name": "Palace Green",
+    "category": "historic",
+    "coordinates": [-1.5758, 54.7742],
+    "rank": 1
+  },
+  {
+    "id": "sight-elvet-bridge",
+    "name": "Elvet Bridge",
+    "category": "historic",
+    "coordinates": [-1.5732, 54.7757],
+    "rank": 1
+  },
+  {
+    "id": "sight-framwellgate-bridge",
+    "name": "Framwellgate Bridge",
+    "category": "historic",
+    "coordinates": [-1.5778, 54.7765],
+    "rank": 2
+  },
+  {
+    "id": "market-market-place",
+    "name": "Market Place",
+    "category": "market",
+    "coordinates": [-1.5755, 54.7768],
+    "rank": 1
+  },
+  {
+    "id": "park-wharton-park",
+    "name": "Wharton Park",
+    "category": "park",
+    "coordinates": [-1.5865, 54.78],
+    "rank": 2
+  },
+  {
+    "id": "viewpoint-prebends-bridge",
+    "name": "Prebends Bridge",
+    "category": "viewpoint",
+    "coordinates": [-1.5785, 54.7718],
+    "rank": 1
+  },
+  {
+    "id": "river-riverwear-elvet",
+    "name": "River Wear (Elvet)",
+    "category": "river",
+    "coordinates": [-1.5715, 54.7752],
+    "rank": 1
+  },
+  {
+    "id": "sight-crook-hall",
+    "name": "Crook Hall Gardens",
+    "category": "garden",
+    "coordinates": [-1.571, 54.7805],
+    "rank": 2
+  }
+]

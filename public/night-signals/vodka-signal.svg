@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 940" fill="none">
+  <defs><linearGradient id="v" x1="240" y1="100" x2="610" y2="780"><stop stop-color="#F8FAFF" stop-opacity=".3"/><stop offset=".5" stop-color="#C5CCFF" stop-opacity=".13"/><stop offset="1" stop-color="#433BFF" stop-opacity="0"/></linearGradient><filter id="gl"><feGaussianBlur stdDeviation="16"/></filter></defs>
+  <ellipse cx="430" cy="420" rx="270" ry="350" fill="#C5CCFF" fill-opacity=".05" filter="url(#gl)"/>
+  <path d="M304 149c79-64 211-27 268 74 51 90 27 251-18 353-39 88-103 133-178 109-82-26-128-109-145-214-20-122-1-255 73-322Z" fill="url(#v)" stroke="#E9ECFF" stroke-opacity=".5"/>
+  <path d="m306 149 83 105 87-142 20 157 82-40-57 129 80 58-109 53 36 153-109-75-43 138-28-150-90 37 54-135-81-36 95-66-52-104 115 23-83-105Z" stroke="#C5CCFF" stroke-opacity=".21"/>
+  <path d="M314 345c32-22 69-23 101-2m53-7c30-20 64-16 90 8M329 371c20 10 47 10 69-3m84-4c19 10 43 10 62-1M435 354l-19 127 41 9M373 541c43 22 90 17 126-10" stroke="#FBFCFF" stroke-opacity=".72" stroke-width="3" stroke-linecap="round"/>
+  <path d="M258 221c70-127 257-148 338-28-73-29-129 23-207 28-48 3-91-7-131 0Z" fill="#050315" fill-opacity=".76" stroke="#C5CCFF" stroke-opacity=".26"/>
+  <path d="M115 718c65-68 159-55 227 34l67 87-215 51-88-91c-25-26-22-56 9-81Z" fill="url(#v)" stroke="#C5CCFF" stroke-opacity=".4"/><path d="M171 686c31-23 63-12 94 25l75 89" stroke="#DDE1FF" stroke-opacity=".4" stroke-width="20" stroke-linecap="round"/>
+  <g transform="rotate(-5 290 700)"><path d="M252 529h86l24 259c4 43-17 65-67 65-49 0-71-22-66-65l23-259Z" fill="#C5CCFF" fill-opacity=".06" stroke="#F5F6FF" stroke-opacity=".72" stroke-width="2"/><path d="M240 712h110l10 77c3 30-17 45-65 45-47 0-68-15-64-45l9-77Z" fill="#C5CCFF" fill-opacity=".18"/><path d="m264 735 31-19 34 23-10 43-39 4-24-27Z" fill="#EEF0FF" fill-opacity=".22" stroke="#FFF" stroke-opacity=".35"/></g>
+  <g fill="#C5CCFF" fill-opacity=".55"><path d="m641 236 34-19 28 31-14 44-46-1-21-32Z"/><path d="m622 410 25-12 21 21-10 33-35 3-17-22Z"/><path d="m660 574 30-15 26 26-12 37-40 2-18-25Z"/></g>
+  <g stroke="#EEF0FF" stroke-opacity=".27"><path d="M604 316h107M617 326h66M595 476h124M632 486h81M601 651h111M620 662h51"/></g>
+</svg>

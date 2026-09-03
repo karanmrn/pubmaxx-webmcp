@@ -1,0 +1,15 @@
+/* Claim-moment welcome: a one-line, once-only greeting after a genuine claim
+   or rename, never a modal. Sits just above the first-actions row so the
+   emphasis lands on what to do next, not on the greeting itself. Tokens
+   only, per docs/DESIGN_SYSTEM.md. */
+
+.claimWelcome {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3);
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}

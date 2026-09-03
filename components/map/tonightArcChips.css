@@ -1,0 +1,184 @@
+.tonightArcChips {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: var(--z-map-toolbar);
+  top: 80px;
+  left: 50%;
+  display: grid;
+  gap: 8px;
+  max-width: calc(100vw - 24px);
+  padding: 6px 8px 7px;
+  border: 0;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+  box-shadow: var(--shadow-float);
+  backdrop-filter: blur(14px);
+  transform: translateX(-50%);
+}
+
+.tonightArcRow {
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tonightArcChip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  font: 650 0.7rem/1 var(--font-sans);
+  cursor: pointer;
+}
+
+.tonightArcChipLabel {
+  position: relative;
+  z-index: 1;
+}
+
+/* Selection is a raised neutral fill plus a tick, never the accent: coral on
+   the map belongs to the primary CTA, the selected pin ring and the active
+   tab glyph alone (design judgement 2026-08-01, finding 2.1). */
+.tonightArcChip.isOn {
+  border-color: var(--ink-soft);
+  background: var(--panel-raised);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.tonightArcChipTick {
+  position: relative;
+  z-index: 1;
+  margin-right: 3px;
+  font-weight: 800;
+}
+
+.tonightArcChip[aria-disabled="true"] {
+  border-color: var(--line);
+  background: var(--panel-raised);
+  /* Match unselected sibling chip ink; muted + strike read as missing. */
+  color: var(--ink-soft);
+  cursor: help;
+  opacity: 1;
+}
+
+.tonightArcChip:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+}
+
+.tonightArcUnavailableReason {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  z-index: 1;
+  width: max-content;
+  max-width: min(280px, calc(100vw - 24px));
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-raised);
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-float);
+  font: 700 0.7rem/1.25 var(--font-sans);
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+/* Map-floating copy only. The sheet copy is content the reader opened, so a
+   full sheet or an open venue may never fade it out. */
+.appShell.sheet-full .tonightArcChips:not(.tonightArcChipsSheet),
+.appShell.detail-open .tonightArcChips:not(.tonightArcChipsSheet),
+.appShell.onboarding-open .tonightArcChips:not(.tonightArcChipsSheet) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 641px) {
+  .tonightArcChips {
+    width: var(--desktop-map-surface-width);
+    max-width: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .tonightArcRow {
+    justify-content: center;
+  }
+}
+
+/* Sheet variant — the phone home for these toggles (design judgement
+   2026-08-01, finding 2.3). They used to float as a third chrome bar over the
+   map; they now sit in the Filters sheet beside "Show me", so the map keeps
+   the band they occupied. In a sheet the row is plain content: it wraps
+   instead of scrolling, and each control takes the 44px tap floor. */
+.tonightArcChipsSheet {
+  position: static;
+  display: grid;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transform: none;
+}
+
+.tonightArcChipsSheet .tonightArcRow {
+  flex-wrap: wrap;
+}
+
+.tonightArcChipsSheet .tonightArcChip {
+  min-height: 44px;
+}
+
+/* De-box (design judgement 2026-08-01, finding 2.4): in the sheet these five
+   drew five hard pills, and the SELECTED ones drew the loudest edge of the lot
+   (--ink-soft is near-white in dark). Borders are for inputs; a toggle's
+   selection is its fill. Off = no fill, muted label. On = the raised fill, the
+   tick, and the weight. The float-over-map variant above keeps its edges: out
+   there a chip has no panel behind it to sit on. */
+.tonightArcChipsSheet .tonightArcChip {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.tonightArcChipsSheet .tonightArcChip:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--brass) 9%, transparent);
+}
+
+.tonightArcChipsSheet .tonightArcChip.isOn {
+  border: 0;
+  background: var(--panel-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+
+.tonightArcChipsSheet .tonightArcChip[aria-disabled="true"] {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--ink-soft) 45%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tonightArcChipsSheet .tonightArcChip {
+    transition: none;
+  }
+}

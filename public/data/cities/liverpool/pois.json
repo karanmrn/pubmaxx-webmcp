@@ -1,0 +1,170 @@
+[
+  {
+    "id": "rail-liverpool-lime-street",
+    "name": "Liverpool Lime Street",
+    "category": "rail",
+    "coordinates": [-2.9775, 53.4075],
+    "rank": 1
+  },
+  {
+    "id": "rail-liverpool-central",
+    "name": "Liverpool Central",
+    "category": "rail",
+    "coordinates": [-2.9802, 53.4046],
+    "rank": 1
+  },
+  {
+    "id": "rail-james-street",
+    "name": "James Street (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-2.9918, 53.4047],
+    "rank": 1
+  },
+  {
+    "id": "rail-moorfields",
+    "name": "Moorfields (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-2.9895, 53.4086],
+    "rank": 1
+  },
+  {
+    "id": "rail-sandhills",
+    "name": "Sandhills (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-2.9917, 53.4301],
+    "rank": 1
+  },
+  {
+    "id": "rail-kirkdale",
+    "name": "Kirkdale (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-2.9845, 53.4408],
+    "rank": 2
+  },
+  {
+    "id": "rail-walton",
+    "name": "Walton (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-2.9658, 53.4565],
+    "rank": 2
+  },
+  {
+    "id": "rail-bootle-oriel-road",
+    "name": "Bootle Oriel Road (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-2.9945, 53.4468],
+    "rank": 2
+  },
+  {
+    "id": "rail-hamilton-square",
+    "name": "Hamilton Square (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-3.0142, 53.3947],
+    "rank": 1
+  },
+  {
+    "id": "rail-conway-park",
+    "name": "Conway Park (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-3.0225, 53.3935],
+    "rank": 2
+  },
+  {
+    "id": "rail-birkenhead-central",
+    "name": "Birkenhead Central (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-3.0205, 53.3885],
+    "rank": 2
+  },
+  {
+    "id": "rail-brunswick",
+    "name": "Brunswick (Merseyrail)",
+    "category": "rail",
+    "coordinates": [-2.9765, 53.3835],
+    "rank": 2
+  },
+  {
+    "id": "park-st-johns-gardens",
+    "name": "St John's Gardens",
+    "category": "park",
+    "coordinates": [-2.9805, 53.4088],
+    "rank": 1
+  },
+  {
+    "id": "park-stanley-park",
+    "name": "Stanley Park",
+    "category": "park",
+    "coordinates": [-2.9635, 53.4345],
+    "rank": 1
+  },
+  {
+    "id": "park-sefton-park",
+    "name": "Sefton Park",
+    "category": "park",
+    "coordinates": [-2.9365, 53.3815],
+    "rank": 1
+  },
+  {
+    "id": "river-mersey-pier-head",
+    "name": "Pier Head",
+    "category": "river",
+    "coordinates": [-2.9955, 53.4055],
+    "rank": 1
+  },
+  {
+    "id": "sight-albert-dock",
+    "name": "Albert Dock",
+    "category": "historic",
+    "coordinates": [-2.9925, 53.4003],
+    "rank": 1
+  },
+  {
+    "id": "sight-st-georges-hall",
+    "name": "St George's Hall",
+    "category": "historic",
+    "coordinates": [-2.9798, 53.4085],
+    "rank": 1
+  },
+  {
+    "id": "sight-liverpool-cathedral",
+    "name": "Liverpool Cathedral",
+    "category": "historic",
+    "coordinates": [-2.9732, 53.3975],
+    "rank": 1
+  },
+  {
+    "id": "sight-anfield",
+    "name": "Anfield Stadium",
+    "category": "sight",
+    "coordinates": [-2.9608, 53.4308],
+    "rank": 1
+  },
+  {
+    "id": "sight-goodison",
+    "name": "Goodison Park",
+    "category": "sight",
+    "coordinates": [-2.9663, 53.4388],
+    "rank": 2
+  },
+  {
+    "id": "sight-baltic-triangle",
+    "name": "Baltic Triangle",
+    "category": "sight",
+    "coordinates": [-2.9845, 53.3955],
+    "rank": 1
+  },
+  {
+    "id": "market-bold-street",
+    "name": "Bold Street",
+    "category": "market",
+    "coordinates": [-2.9775, 53.4028],
+    "rank": 1
+  },
+  {
+    "id": "viewpoint-waterfront",
+    "name": "Liverpool Waterfront",
+    "category": "viewpoint",
+    "coordinates": [-2.9945, 53.4035],
+    "rank": 1
+  }
+]

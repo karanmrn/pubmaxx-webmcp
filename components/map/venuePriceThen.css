@@ -1,0 +1,87 @@
+/* "What it used to cost" — the dated archive price against today's, in the
+   venue sheet's overview. Scoped to .venuePriceThen; shared tokens only
+   (--ink, --ink-soft, --muted, --price-plaque-*, --accent-price-ink,
+   --radius-sm) so it themes with the rest of the sheet.
+
+   Deliberately quiet, and on the PRICE role rather than the loud CTA coral: the
+   live price rows own the green (--pint), history wears the brass plaque, so a
+   reader can never mistake the old figure for tonight's. */
+
+.venuePriceThen {
+  margin: 10px 0;
+  padding: 11px 12px;
+  border: 1px solid var(--price-plaque-border);
+  border-radius: var(--radius-sm);
+  background: var(--price-plaque-surface);
+}
+
+.venuePriceThen .vptTitle {
+  margin: 0;
+  /* --ink-soft, not --muted: this block sits on the amber plaque surface, where
+     muted small text lands under 4.5:1 in the dark theme. */
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.venuePriceThen .vptLine {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  /* A price is a number to be compared, so the figures line up. */
+  font-variant-numeric: tabular-nums;
+  /* A price caption never truncates: it wraps (see the phone-chrome rule). */
+  overflow-wrap: anywhere;
+}
+
+/* One sentence, one line. The pair stacks on a phone and sits inline on a wider
+   sheet, and neither ever leaves a lone "now." hanging. */
+.venuePriceThen .vptClause {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.venuePriceThen .vptThen {
+  /* The price role, pulled toward ink so the figure clears AA against the
+     plaque surface in both themes rather than relying on its size. */
+  color: color-mix(in srgb, var(--accent-price-ink) 62%, var(--ink));
+}
+
+.venuePriceThen .vptNow {
+  color: var(--ink);
+}
+
+.venuePriceThen .vptMovement {
+  margin: 3px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.venuePriceThen .vptSource {
+  margin: 7px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.venuePriceThen .vptSource a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.venuePriceThen .vptNote {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+}

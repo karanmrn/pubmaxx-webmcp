@@ -1,0 +1,95 @@
+/* Map first-load banner staging (journey P1 #7). The map's ambient banners used
+   to stack on top of the onboarding overlay all at once ("banner soup"): the
+   closure / safety status band (.cityStatusBanner), the city-suggest banner
+   (.citySuggestBanner), and the Tonight-nearby card (.tonightLaneCollapsed).
+
+   Each banner still self-gates on its own data and persists its own dismissal.
+   This stylesheet governs which eligible sibling banners may render
+   CONCURRENTLY; prompt eligibility is owned by lib/mapLocationPrompt.ts and
+   lib/promptBudget.ts. Keying CSS staging on element presence avoids lifting
+   each banner's private data eligibility.
+
+   Desktop only (min-width:641px), matching where these banners mount, so the
+   mobile map shell and its own Tonight pill are never affected.
+
+   Policy:
+   1. Location owns first paint while available, so onboarding eligibility
+      defers to it. While onboarding is open, status and Tonight do not render.
+   2. Otherwise location keeps the centred prompt slot. A simultaneous status
+      alert yields to the left map lane instead of building a centred banner
+      stack. Tonight-nearby yields to either one. Each banner renders its root
+      only when eligible and UNMOUNTS it on dismissal, so removing both higher
+      siblings releases Tonight normally. */
+
+@media (min-width: 641px) {
+  /* 1. Onboarding open — suppress ambient status and Tonight. */
+  .appShell.onboarding-open .cityStatusStack,
+  .appShell.onboarding-open .cityStatusBanner,
+  .appShell.onboarding-open .tonightLaneCollapsed {
+    display: none;
+  }
+
+  /* 2. Keep the opt-in location control available while either prompt defers
+     the lower Tonight card. Keyed on element PRESENCE (eligibility), so
+     dismissing both higher siblings releases Tonight normally. */
+  .mapStage:has(.cityStatusBanner) .tonightLaneCollapsed,
+  .mapStage:has(.citySuggestBanner) .tonightLaneCollapsed {
+    display: none;
+  }
+
+  /* Location owns first-run centre. The actionable status remains visible but
+     yields into Tonight's now-vacant left lane, so two eligible banners do not
+     form a stack across the map's focal point. */
+  .mapStage:has(.citySuggestBanner) .citySuggestBanner {
+    max-width: min(420px, calc(100vw - 384px));
+  }
+
+  .mapStage:has(.citySuggestBanner) .cityStatusStack {
+    left: 16px;
+    width: min(460px, max(160px, calc(50vw - 242px)));
+    transform: none;
+  }
+}
+
+/* 3. An open venue drawer owns the right edge from 1024px up. These banners are
+   centred on the whole stage, so their right half read as a ghost strip through
+   the sheet. Re-centre them on the map lane that is left, the same way the
+   toolbar above them does (mapToolbar.css). */
+@media (min-width: 1024px) {
+  .appShell.detail-open .cityStatusStack,
+  .appShell.detail-open .citySuggestBanner {
+    left: calc((100% - var(--desktop-venue-drawer-width)) / 2);
+    max-width: calc(100% - var(--desktop-venue-drawer-width) - 32px);
+  }
+
+  /* The planner owns the mirrored left edge. Keep both ambient banners inside
+     the remaining map lane using the same centre and width as the toolbar. */
+  .appShell.planning-open .cityStatusStack,
+  .appShell.planning-open .citySuggestBanner {
+    left: calc((100% + var(--desktop-planner-rail-width)) / 2);
+    max-width: calc(100% - var(--desktop-planner-rail-width) - 32px);
+  }
+
+  .appShell.planning-open .cityStatusStack {
+    transform: translateX(-50%);
+  }
+
+  /* A drawer leaves too little horizontal room for both prompts. Keep the
+     location prompt in the drawer-aware centre and move status to the bottom
+     of that same free lane instead of rebuilding the first-load stack. */
+  .appShell.detail-open .mapStage:has(.citySuggestBanner) .cityStatusStack {
+    top: auto;
+    bottom: 16px;
+    left: 16px;
+    width: min(460px, calc(100% - var(--desktop-venue-drawer-width) - 32px));
+    transform: none;
+  }
+
+  .appShell.planning-open .mapStage:has(.citySuggestBanner) .cityStatusStack {
+    top: auto;
+    bottom: 16px;
+    left: calc(var(--desktop-planner-rail-width) + 16px);
+    width: min(460px, calc(100% - var(--desktop-planner-rail-width) - 32px));
+    transform: none;
+  }
+}

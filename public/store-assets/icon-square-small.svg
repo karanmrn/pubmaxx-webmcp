@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!--
+    Small-size optics variant of icon-square.svg, used for exports at or under
+    64px (iOS 20/29/40/58/60 slots). Same white tile + coral mark, but the
+    double-struck channel closes up below ~24px (the 20px slot lives here), so
+    this variant takes the canonical small-optics cut — the simplified single
+    ascending stroke `slashSimple` over the thick descending stroke, exactly the
+    `simple:true` cut scripts/gen-brand-assets.mjs stamps into the 16px
+    favicon.ico member (MARK_GEOMETRY.slashSimple). One clean forward slash + the
+    thick stroke reads crisply across the whole 20–64px tier where the two thin
+    parallel strokes would merge. No ember (static icon exports never carry it),
+    no glow. Same #ffffff field, same coral #ff5a5f, same 0.82 tile inset as
+    icon-square.svg. Keep geometry in lockstep with MARK_GEOMETRY.
+  -->
+  <rect width="64" height="64" fill="#ffffff"/>
+  <g transform="translate(32 32) scale(0.82) translate(-32 -32)">
+    <polygon points="45,10 53,10 19,54 11,54" fill="#ff5a5f"/>
+    <polygon points="9,10 21,10 55,54 43,54" fill="#ff5a5f"/>
+  </g>
+</svg>
