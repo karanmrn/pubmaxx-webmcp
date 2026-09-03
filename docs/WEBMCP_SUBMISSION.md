@@ -2,7 +2,7 @@
 
 ## Links
 
-- Live application: `https://chengdu-ndpx8fznc-pubmax69.vercel.app/webmcp`
+- Verified preview: `https://chengdu-ndpx8fznc-pubmax69.vercel.app/webmcp`
 - Public source: `https://github.com/karanmrn/pubmaxx-webmcp`
 - Public demo video: `YOUTUBE_URL_PENDING`
 
@@ -30,7 +30,7 @@ The top-level `/webmcp` client registers five tools through `document.modelConte
 
 ### 0:00 to 0:20 - Problem
 
-Open `chengdu-ndpx8fznc-pubmax69.vercel.app/webmcp`.
+Open `https://chengdu-ndpx8fznc-pubmax69.vercel.app/webmcp`.
 
 "Planning a London night needs personal taste, but venue and route claims still need a trusted product source. This is the PUBMAXX Agent Night Board, one visible surface for a person and a browser agent."
 
