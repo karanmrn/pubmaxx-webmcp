@@ -388,8 +388,8 @@ export default function WebMcpNightBoard() {
   const boardRef = useRef(board);
   const actionsRef = useRef<WebMcpToolImplementations | null>(null);
   const [registration, setRegistration] = useState<WebMcpRegistrationStatus>("registering");
-  const [request, setRequest] = useState("Three affordable lively pubs in Clapham, with a short walk");
-  const [searchQuery, setSearchQuery] = useState("Clapham");
+  const [request, setRequest] = useState("Three pubs in Victoria");
+  const [searchQuery, setSearchQuery] = useState("Victoria");
   const [busy, setBusy] = useState<ManualAction | null>(null);
   const [notice, setNotice] = useState("");
 
