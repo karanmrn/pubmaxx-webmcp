@@ -24,7 +24,7 @@ An agent can discover five purpose-built actions, gather bounded evidence, draft
 
 ### How WebMCP was implemented
 
-The top-level `/webmcp` client registers five tools through `document.modelContext.registerTool`. Each tool has a closed JSON Schema, runtime validation, accurate read-only and untrusted-content annotations, and cancellation support. One abort-owned lifecycle removes registrations on unmount. Tool callbacks and manual controls call the same actions and reducer-owned board state. Existing same-origin PUBMAXX APIs remain the only search, context, and route authorities. No WebMCP package, polyfill, database migration, sign-in, secret, or new provider was added.
+The top-level `/webmcp` client registers five tools through `document.modelContext.registerTool`. Each tool has a closed JSON Schema, runtime validation, accurate read-only and untrusted-content annotations, and cancellation support. One abort-owned lifecycle removes registrations on unmount. Tool callbacks and manual controls call the same actions and shared board state. Existing same-origin PUBMAXX APIs remain the only search, context, and route authorities. No WebMCP package, polyfill, database migration, sign-in, secret, or new provider was added.
 
 ## Demo script, 2 minutes 35 seconds
 
